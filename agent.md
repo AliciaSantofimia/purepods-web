@@ -25,4 +25,4 @@ Sustainability is an essential part of the PurePods concept:
 The website must convey exclusivity, simplicity and respect for the environment.  
 It should never feel commercial or promotional, but calm, honest and experience-led.
 
-<!-- test commit -->
+Test: agent.md update
