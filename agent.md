@@ -370,3 +370,132 @@ The following parts of the system must never be modified or recreated:
 - scripts and assets loaded from Newbook domains
 
 These components are part of an external booking system integration and must be preserved as they are.
+
+## 3. Reference HTML Structure
+
+The project includes a set of reference HTML files located in the `reference-html` directory.
+
+These files represent the visual and structural reference of the current PurePods pages and should be used as guidance when recreating pages in the new website.
+
+The folder structure mirrors the real URL structure of the site.
+
+Example:
+
+reference-html/
+  location/
+    kahutara/
+      index.html
+    atatu/
+      index.html
+    greystone/
+      index.html
+  experiences/
+    night-falls/
+      index.html
+  home/
+    index.html
+
+Rules:
+
+- Use these HTML files as **design and content references**, not as final production code.
+- The new website should recreate their structure using reusable components.
+- Do not copy inline styles directly unless necessary.
+- Maintain the same semantic structure when possible (headings, sections, content hierarchy).
+- Preserve important SEO elements such as titles, descriptions, and heading hierarchy.
+- Respect the real URL structure such as `/location/kahutara`.
+
+These files serve as reference material to guide layout, content sections and page hierarchy.
+
+## 4. Typography
+
+### Primary Font (Body)
+
+Font family:
+
+"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif
+
+Usage:
+
+- Body text
+- Paragraphs
+- Navigation
+- Buttons
+- Subtitles
+- Section headings (h2, h3)
+- Price display
+
+Font weights used:
+
+- 400 (Regular)
+- 500 (Medium)
+- 600 (SemiBold)
+- 700 (Bold)
+- 800 (ExtraBold – buttons)
+
+---
+
+### Secondary Font (Hero)
+
+Font family:
+
+"Noto Serif Display", Georgia, "Times New Roman", serif
+
+Usage:
+
+- Main hero title (h1.heroTitle)
+
+Font weights used:
+
+- 400
+- 500
+- 600
+
+## 5. Color Palette
+
+Defined in :root
+
+```css
+:root{
+ --bg:#F7F6F3;
+ --ink:#5C5F3E;
+ --muted:rgba(92,95,62,.72);
+ --card:rgba(255,255,255,.85);
+ --stroke:rgba(92,95,62,.18);
+ --brand-green:#5C5F3E;
+ --brand-beige:#C2B59E;
+}
+
+Primary Brand Green
+
+Hex: #5C5F3E
+RGB: 92, 95, 62
+
+Usage:
+
+Section headings
+
+Highlighted links
+
+Price display
+
+Solid navbar state
+
+Core brand elements
+
+Primary Brand Green
+
+Hex: #5C5F3E
+RGB: 92, 95, 62
+
+Usage:
+
+Section headings
+
+Highlighted links
+
+Price display
+
+Solid navbar state
+
+Core brand elements
+
