@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kahutara | PurePods</title>
+<meta name="description" content="PurePod Kahutara is a remote glass cabin retreat on the Kaikōura coast. Open skies, native landscape and complete privacy for two in a unique off-grid escape." />
+<link rel="canonical" href="https://purepods.com/location/kahutara/" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+Display:wght@500;600&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+  --bg:#F7F6F3;                 /* fondo real */
+  --ink:#5C5F3E;                /* verde marca */
+  --muted:rgba(92,95,62,.72);
+  --card:rgba(255,255,255,.85);
+  --stroke:rgba(92,95,62,.18);
+  --shadow:0 18px 44px rgba(0,0,0,.08);
+  --r:24px;
+  --r2:18px;
+
+  --brand-green:#5C5F3E;
+  --brand-beige:#C2B59E;
+  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+--font-heading: "Noto Serif Display", Georgia, "Times New Roman", serif;
+  }
+  *{box-sizing:border-box}
+  body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:#1b1b1b;
+  }
+
+  /* Contenido centrado */
+  .wrap{max-width:980px;margin:0 auto;padding:18px 14px 88px;}
+
+  .top{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px;}
+  .back{
+    font-size:13px;color:var(--muted);text-decoration:none;
+    border:1px solid var(--stroke);background:rgba(255,255,255,.55);
+    padding:8px 12px;border-radius:999px;
+  }
+  .chips{display:flex;gap:8px;flex-wrap:wrap;}
+  .chip{
+    font-size:12px;color:rgba(23,24,27,.78);
+    border:1px solid var(--stroke);
+    background:rgba(255,255,255,.55);
+    padding:7px 10px;border-radius:999px;
+  }
+
+  /* HERO FULL WIDTH */
+  .hero--full{border:0;border-radius:0;box-shadow:none;background:transparent;}
+  .heroMedia{
+    height: 420px;
+    position: relative;
+    overflow: hidden;
+    background:#ddd;
+  }
+  .heroMedia img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* ↓ Bajamos el encuadre para que se vea el pod (ajusta fino si quieres) */
+    object-position: 70% 85%;
+    display: block;
+  }
+  .heroMedia::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(0,0,0,.16), transparent 55%),
+      linear-gradient(to bottom, rgba(0,0,0,.18) 0%, rgba(0,0,0,.10) 45%, rgba(0,0,0,.68) 100%);
+    pointer-events:none;
+  }
+  .heroOverlay{
+    position:absolute; inset:0; z-index:1;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    padding: 18px 0 16px;
+  }
+  .heroInner{max-width:980px;margin:0 auto;padding: 0 14px;}
+  .heroTitle{
+    margin:0;
+    font-size:34px;
+    letter-spacing:-.02em;
+    line-height:1.05;
+    color:#fff;
+    text-shadow:0 2px 14px rgba(0,0,0,.35);
+    font-family: "Noto Serif Display", serif;
+    font-weight: 600;
+  }
+  .heroSub{
+    margin:8px 0 0;
+    color:rgba(255,255,255,.92);
+    line-height:1.55;
+    font-size:14px;
+    text-shadow:0 2px 14px rgba(0,0,0,.25);
+    max-width:60ch;
+  }
+  .metaRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+  .pill{
+    font-size:12px;
+    border:1px solid rgba(255,255,255,.22);
+    background: rgba(255,255,255,.18);
+    padding:7px 10px;
+    border-radius:999px;
+    color: rgba(255,255,255,.92);
+    backdrop-filter: blur(8px);
+  }
+
+  /* Secciones */
+  .sectionHeader{
+  display:flex;
+  flex-direction:column;
+  align-items:center;      /* centra horizontalmente */
+  justify-content:center;
+  text-align:center;       /* centra el texto */
+  gap:6px;
+  margin: 14px 2px 16px;
+  }
+ 
+  /* Ajuste fino títulos principales */
+.sectionHeader h2{
+  font-size: 22px;
+  letter-spacing: -.01em;
+}
+  
+  .hint{margin:0;color:var(--muted);font-size:12px;}
+
+  .card{
+    border:1px solid var(--stroke);
+    background: var(--card);
+    border-radius: var(--r);
+    box-shadow: var(--shadow);
+    padding: 14px;
+  }
+  .card p{margin: 0 0 10px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 14px;}
+  .card p:last-child{margin-bottom:0;}
+
+  /* Galería POD */
+  .imgRow{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+    margin-top:12px;
+    align-items: stretch;
+}
+    .imgRow p{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 14px;
+}
+  
+  .imgPh{
+    height: 170px;
+    border-radius: var(--r2);
+    border:1px solid var(--stroke);
+    background:#ddd;
+    overflow:hidden;
+    padding:0;
+    cursor: zoom-in;
+    appearance:none;
+    display:block;
+  }
+  .imgPh.big{ height: 260px; grid-column: 1 / -1; }
+  .imgPh img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position: 50% 50%;
+    display:block;
+
+/* --- Fix hueco blanco en The Pod (kahutara1) --- */
+.imgRow{
+  grid-auto-rows: 170px; /* crea filas “de referencia” */
+}
+
+
+}
+.imgPh.fillGap{
+  grid-row: span 2;      /* ocupa dos filas => rellena el hueco */
+  height: auto;          /* no uses la altura fija */
+}
+
+  .imgPh:hover{ transform: translateY(-1px); transition: transform .15s ease; }
+
+  /* ===== ANTES DE VIAJAR: collage 2 fotos + clima sin foto ===== */
+  .travelGrid{ display:grid; gap:18px; }
+
+  .travelCard{
+    border:1px solid var(--stroke);
+    background: rgba(255,255,255,.62);
+    border-radius: var(--r);
+    overflow:hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .travelCollage2{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+    padding:12px;
+    background: rgba(255,255,255,.38);
+  }
+
+  .travelCollage2 .shot{
+    height: 230px;
+    border-radius: 18px;
+    overflow:hidden;
+    border:1px solid var(--stroke);
+    cursor: zoom-in;
+    background:#ddd;
+  }
+
+  .travelCollage2 img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    display:block;
+  }
+
+  .travelBody{padding:14px;}
+  .travelBody h3{margin:0 0 6px;font-size:16px;}
+  .travelBody p{margin:0;color:var(--muted);line-height:1.55;font-size:14px;}
+
+  .plainCard{padding:18px;}
+  .plainCard h3{margin:0 0 6px;font-size:16px;}
+  .plainCard p{margin:0;color:var(--muted);line-height:1.55;font-size:14px;}
+
+  /* Sticky CTA */
+  .stickyCta{
+    position:fixed;
+    left:0; right:0; bottom:0;
+    padding:10px 14px;
+    background: rgba(245,243,238,.86);
+    backdrop-filter: blur(8px);
+    border-top:1px solid rgba(80,76,68,.18);
+  }
+  .ctaInner{max-width:980px;margin:0 auto;display:flex;gap:10px;align-items:center;}
+  .price{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: .3px;
+    color: var(--brand-green);
+    white-space: nowrap;}
+  .btn{
+    flex:1;
+   border:2px solid var(--brand-beige);
+  background: var(--brand-beige);
+  color: var(--brand-green);
+  padding: 12px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  cursor:pointer;
+  }
+  .btn.secondary{
+    flex:0 0 auto;
+    background: transparent;
+  color: var(--brand-green);
+  border: 2px solid rgba(92,95,62,.35);
+  }
+
+  /* Responsive */
+  @media (min-width: 920px){
+    .wrap{padding-bottom:40px;}
+    .stickyCta{position:static;background:transparent;border:0;padding:0;margin-top:12px;}
+    .ctaInner{justify-content:flex-end;}
+    .btn{flex:0 0 auto;min-width:220px;}
+  }
+  @media (max-width: 760px){
+    .travelCollage2{ grid-template-columns: 1fr; }
+    .travelCollage2 .shot{ height: 220px; }
+  }
+  @media (max-width: 560px){
+    .heroMedia{ height: 320px; }
+    .heroTitle{font-size:30px;}
+  }
+
+  /* LIGHTBOX */
+  .lightbox{position:fixed;inset:0;display:none;z-index:999;}
+  .lightbox[aria-hidden="false"]{ display:block; }
+  .lightboxBackdrop{position:absolute; inset:0;background: rgba(0,0,0,.75);}
+  .lightboxPanel{
+    position:relative;
+    width:min(980px, 92vw);
+    height:min(82vh, 700px);
+    margin: 6vh auto 0;
+    border-radius: 18px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.18);
+    box-shadow: 0 30px 90px rgba(0,0,0,.35);
+    background: rgba(0,0,0,.2);
+  }
+  .lightboxPanel img{
+    width:100%;
+    height:100%;
+    object-fit: contain;
+    background: rgba(0,0,0,.15);
+  }
+  .lightboxClose{
+    position:absolute;
+    top:10px; right:10px;
+    width:38px; height:38px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.22);
+    background: rgba(0,0,0,.35);
+    color:#fff;
+    cursor:pointer;
+  }
+
+  /* ===== ACTIVIDADES (AISLADO) ===== */
+  .pp-acts{ margin-top: 0; }
+
+  .pp-actsCard{
+    border:1px solid var(--stroke);
+    background: var(--card);
+    border-radius: var(--r);
+    box-shadow: var(--shadow);
+    padding: 14px;
+  }
+
+  .pp-actsIntro{
+  margin: 0 0 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 14px;
+  }
+
+  .pp-actsGrid{
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 12px;
+  }
+
+  .pp-act{
+    border:1px solid var(--stroke);
+    background: rgba(255,255,255,.62);
+    border-radius: var(--r);
+    overflow:hidden;
+  }
+
+  .pp-actMedia{
+    height: 160px;           /* 👈 control principal del tamaño */
+    background:#ddd;
+    overflow:hidden;
+    cursor: zoom-in;
+  }
+
+  .pp-actMedia img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:50% 50%;
+    display:block;
+  }
+
+  .pp-actBody{ padding: 12px 12px 14px; }
+
+  .pp-actTitle{
+    margin: 0 0 8px;
+    font-size: 15px;
+    letter-spacing: -.01em;
+  }
+
+  .pp-actBody p{
+     margin: 0 0 10px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 14px;
+  }
+
+  .pp-actBody p:last-of-type{ margin-bottom: 12px; }
+
+  .pp-actLink{
+    display:inline-flex;
+    gap:8px;
+    align-items:center;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--brand-green);
+    text-decoration:none;
+    border-bottom: 1px solid rgba(23,24,27,.18);
+    padding-bottom: 2px;
+  }
+
+  .pp-actUrl{
+    display:block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--muted);
+    word-break: break-word;
+  }
+
+  @media (max-width: 900px){
+    .pp-actsGrid{ grid-template-columns: 1fr; }
+    .pp-actMedia{ height: 220px; }
+  }
+
+  /* Bloque extra debajo de las 3 actividades */
+  .pp-actsExtra{
+    margin-top: 14px;
+    border-top: 1px solid var(--stroke);
+    padding-top: 14px;
+  }
+  .pp-actsExtra h3{
+    margin: 0 0 8px;
+    font-size: 15px;
+    letter-spacing: -.01em;
+  }
+  .pp-actsExtra p{
+  margin: 0 0 10px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 14px;
+  }
+  .pp-actsExtra p:last-child{ margin-bottom: 0; }
+  /* --- Top nav (silent) --- */
+.topnav{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  padding: 14px 18px;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background .22s ease, border-color .22s ease, backdrop-filter .22s ease;
+}
+
+.topnav__inner{
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.topnav__left{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.topnav__brand{
+  font-weight: 700;
+  text-decoration: none;
+  color: rgba(244,244,234,.96);
+}
+
+.topnav__back{
+  font-size: 14px;
+  text-decoration: none;
+  color: rgba(244,244,234,.85);
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(244,244,234,.18);
+  background: rgba(17,18,23,.14);
+  backdrop-filter: blur(6px);
+}
+
+.topnav__links{
+  display: flex;
+  gap: 18px;
+}
+
+.topnav__links a,
+.topnav__links a:link,
+.topnav__links a:visited{
+  text-decoration: none;
+  color: rgba(244,244,234,.88) !important;
+  font-size: 14px;
+}
+.topnav__links a:visited{
+  color: rgba(244,244,234,.88);
+}
+
+.topnav__links a:hover{
+  color: #ffffff !important;
+}
+.topnav__cta{
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(244,244,234,.22);
+  background: rgba(244,244,234,.10);
+}
+
+/* Estado sólido al hacer scroll (verde PurePods) */
+.topnav.is-solid{
+  background: var(--brand-green);
+  border-bottom-color: rgba(244,244,234,.14);
+  backdrop-filter: blur(10px);
+}
+
+/* === Headings en verde corporativo === */
+
+.sectionHeader h2,
+.pp-actTitle,
+.travelBody h3,
+.plainCard h3,
+.pp-actsExtra h3 {
+  color: var(--brand-green);
+  font-weight: 600;
+}
+
+.sectionHeader h2,
+.pp-actTitle,
+.travelBody h3,
+.plainCard h3,
+.pp-actsExtra h3 {
+  font-family: "Inter", sans-serif;
+}
+
+
+</style>
+</head>
+
+<body>
+<header class="topnav" id="topnav">
+  <div class="topnav__inner">
+    <div class="topnav__left">
+      <a class="topnav__back" href="../../pods.html">
+        ← All Pods
+      </a>
+
+      <a class="topnav__brand" href="../../index.html">
+        PurePods
+      </a>
+    </div>
+
+    <nav class="topnav__links">
+      <a href="../../pods.html">Pods</a>
+      <a href="../../experiences.html">Experiences</a>
+      <a class="topnav__cta" href="#reserve">Book</a>
+    </nav>
+  </div>
+</header>
+  <!-- HERO FULL WIDTH -->
+  <section class="hero--full">
+    <div class="heroMedia">
+      <img src="../../assets/img/kahutara/kahutara-purepod-glass-cabin-kaikoura-new-zealand.jpg" alt="Kahutara PurePod glass cabin overlooking the Kaikōura mountains and river valley in New Zealand">
+      <div class="heroOverlay">
+        <div class="heroInner">
+          <h1 class="heroTitle">Kaikōura, Kahutara</h1>
+          <p class="heroSub">
+            Open hills, endless skies and the Seaward Kaikōura Range rising behind you.
+            A remote retreat where everything slows down and nature sets the pace..
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <div class="wrap">
+
+    <!-- EL POD -->
+    <div class="section">
+      <div class="sectionHeader">
+        <h2>The Pod</h2>
+        <p class="hint">The essentials, no fluff</p>
+      </div>
+
+      <div class="card">
+        <p>
+          On the wild Kaikōura coast, where open hills and endless skies meet the ocean, 
+          PurePod Kahutara offers a rare escape — quiet, private and deeply connected to the landscape.
+        </p>
+        <p>
+          Arrival is part of the experience. A short walk takes you away from the everyday world 
+          and into complete stillness. At the end of the track, a fully private retreat awaits — 
+          no neighbours, no distractions, just you and the natural world.
+        </p>
+
+        <div class="imgRow">
+          <button class="imgPh big js-lightbox" data-full="../../assets/img/kahutara/kahutara-purepod-river-valley-view-kaikoura.jpg" aria-label="Ver foto grande">
+            <img src="../../assets/img/kahutara/kahutara-purepod-river-valley-view-kaikoura.jpg" alt="Kahutara PurePod glass cabin at sunset in the Kaikōura countryside, New Zealand" style="object-position:50% 78%;">
+          </button>
+          <p>
+          PurePod Kahutara is not a typical place to stay. It is a full immersion in the natural landscape of the Kaikōura coast.
+  
+          Surrounded by open hills and native vegetation, the pod is completely secluded — 
+          no neighbours, no shared spaces, just wind across the hills, silence, and a deep sense of being in nature.
+  
+          Inside, everything is designed for two: a warm and comfortable retreat from which to 
+          watch the wide sky, shifting light and open landscape, all from the privacy of your 
+          own hideaway in nature.
+        </p>
+
+          <button class="imgPh js-lightbox fillGap" data-full="../../assets/img/kahutara/kahutara-purepod-bedroom-view-kaikoura-mountain.jpg" aria-label="Ver foto">
+            <img src="../../assets/img/kahutara/kahutara-purepod-bedroom-view-kaikoura-mountain.jpg" alt="Bed inside Kahutara PurePod with panoramic view of the Kaikōura mountains, New Zealand" style="object-position:50% 58%;">
+          </button>
+
+          <button class="imgPh js-lightbox" data-full="../../assets/img/kahutara/kahutara-purepod-glass-cabin-mountain-landscape-kaikoura.jpg" aria-label="View Kahutara PurePod glass cabin in the Kaikōura mountain landscape">
+            <img src="../../assets/img/kahutara/kahutara-purepod-glass-cabin-mountain-landscape-kaikoura.jpg" alt="Kahutara PurePod glass cabin surrounded by hills and Kaikōura mountains in New Zealand" style="object-position:50% 70%;">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIVIDADES -->
+    <div class="section pp-acts">
+      <div class="sectionHeader">
+        <h2>Experiences that define Kahutara</h2>
+        <p class="hint">Mountains meeting the sea, marine wildlife and open horizons</p>
+      </div>
+
+      <div class="pp-actsCard">
+        <p class="pp-actsIntro">
+          A curated selection of three experiences that capture the essence of this place — 
+          wild coastline, marine wildlife and dramatic landscapes.        
+        </p>
+
+        <div class="pp-actsGrid">
+
+          <article class="pp-act">
+            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/kahutara/kaikoura-whale-watching-new-zealand.jpg" role="button" aria-label="Ver foto Whale Watch Kaikōura">
+              <img src="../../assets/img/kahutara/kaikoura-whale-watching-new-zealand.jpg" alt="Sperm whale tail diving in the ocean during whale watching in Kaikōura, New Zealand">
+            </div>
+            <div class="pp-actBody">
+              <h3 class="pp-actTitle">Kaikōura Whale Experiences</h3>
+      
+              <p>
+                A unique opportunity to see whales both from the air and from the ocean, 
+                revealing the full scale and beauty of Kaikōura’s marine landscape — 
+                where deep waters, dramatic mountains and open sea meet.
+              </p>
+              <p>
+                An iconic Kaikōura experience combining extraordinary marine wildlife, 
+                open horizons and the striking mountain range rising beside the ocean.
+              </p>
+
+              <a class="pp-actLink" href="https://whalewatch.co.nz/your-experience/our-tours/whale-watch-trip-gift-voucher/" target="_blank" rel="noopener">
+                → Explore Whale Watch Kaikōura
+              </a>
+              
+              <a class="pp-actLink" href="https://gchaviation.com/kaikoura-scenic-flights/" target="_blank" rel="noopener">
+                → Explore Kaikōura Scenic Flights
+              </a>
+            
+            </div>
+          </article>
+
+          <article class="pp-act">
+            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/kahutara/kaikoura-peninsula-walkway-coastal-track.jpg" role="button" aria-label="Ver foto Kaikōura Peninsula Walkway">
+              <img src="../../assets/img/kahutara/kaikoura-peninsula-walkway-coastal-track.jpg" alt="Coastal cliffs along the Kaikōura Peninsula Walkway in New Zealand">
+            </div>
+            <div class="pp-actBody">
+              <h3 class="pp-actTitle">Kaikōura Peninsula Walkway</h3>
+
+              <p>
+                A scenic coastal walk with open ocean views, rocky headlands and distant mountains — 
+                perfect for exploring at a relaxed pace while observing wildlife in its natural habitat, 
+                including New Zealand fur seals, seabirds and, at times, dolphins and whales offshore.
+              </p>
+              <p>
+                Staying at Kahutara places you right in the heart of this wild coastal landscape.
+              </p>
+
+              <a class="pp-actLink" href="https://www.google.com/maps/place/Kaik%C5%8Dura+Peninsula+Walkway,+Canterbury+Region+7300,+Nueva+Zelanda/@-42.4256257,173.6889881,17z/data=!3m1!4b1!4m6!3m5!1s0x6d3756eddf4f8b21:0xfb5bf3dd60e6a6e3!8m2!3d-42.4256297!4d173.691563!16s%2Fg%2F1tjz83vq?entry=tts&g_ep=EgoyMDI2MDEyMC4wIPu8ASoASAFQAw%3D%3D&skid=09f8529a-2ee2-4abf-b76e-3f474682f623" target="_blank" rel="noopener">
+                → Explore Kaikōura Peninsula Walkway
+              </a>
+              
+            </div>
+          </article>
+
+          <article class="pp-act">
+            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/kahutara/kaikoura-seal-colony-new-zealand.jpg" role="button" aria-label="Ver foto Seal Kayak & Seal Swim Kaikōura ">
+              <img src="../../assets/img/kahutara/kaikoura-seal-colony-new-zealand.jpg" alt="New Zealand fur seal resting on rocks near the Kaikōura coast">
+            </div>
+            <div class="pp-actBody">
+              <h3 class="pp-actTitle">Seal Kayak & Seal Swim Kaikōura</h3>
+
+              <p>
+                An active and immersive way to explore the coastline — paddling alongside seals 
+                or swimming with them in their natural habitat for a truly close-to-nature experience.
+              </p>
+              <p>
+                A signature Kaikōura experience where wild coastline, marine wildlife and open ocean 
+                combine in a direct encounter with nature.
+              </p>
+
+               <a class="pp-actLink" href="https://www.sealkayakkaikoura.com/tours/seal-kayak-tour" target="_blank" rel="noopener">
+      → Explorar Seal Kayak Kaikōura
+    </a>
+
+    <a class="pp-actLink" href="https://www.sealswimkaikoura.co.nz/" target="_blank" rel="noopener">
+      → Explorar Seal Swim Kaikōura
+    </a>
+            </div>
+          </article>
+
+        </div><!-- /pp-actsGrid -->
+
+        <!-- BLOQUE EXTRA -->
+        <div class="pp-actsExtra">
+          <h3>More ways to explore Kaikōura</h3>
+      <p><strong>Beyond the pod, the coastline continues to unfold at a gentle pace.</strong></p>
+      <p>
+        Coastal walks and easy trails invite you to explore without hurry.
+        Lookouts such as Ohau Point Lookout, Point Kean Viewpoint and Dolphin View Lookout 
+        offer wide horizons and ever-changing ocean views.
+      </p>
+      <p>
+        The constant presence of the sea and marine wildlife accompanies every journey.
+        Quiet hills and inland vineyards complete the feeling of space, stillness and open sky.
+      </p>
+
+        </div>
+
+      </div><!-- /pp-actsCard -->
+    </div><!-- /section pp-acts -->
+
+    <!-- ANTES DE VIAJAR -->
+    <div class="section">
+      <div class="sectionHeader">
+        <h2>Before you travel</h2>
+        <p class="hint">Practical details, without losing the mood</p>
+      </div>
+
+      <div class="travelGrid">
+
+        <!-- El viaje (foto) -->
+        <div class="travelCard">
+          <div class="travelCollage2">
+            <div class="shot js-lightbox" data-full="../../assets/img/kahutara/kaikoura-river-valley-landscape.jpg" role="button" aria-label="Ver foto El viaje">
+              <img src="../../assets/img/kahutara/kaikoura-river-valley-landscape.jpg" alt="River valley landscape in the Kaikōura countryside, New Zealand">
+            </div>
+            <div class="shot js-lightbox" data-full="../../assets/img/kahutara/kaikoura-countryside-farm-entrance.jpg" role="button" aria-label="Ver foto extra viaje">
+              <img src="../../assets/img/kahutara/kaikoura-countryside-farm-entrance.jpg" alt="Countryside farm entrance along the rural road near Kahutara PurePod in the Kaikōura region">
+            </div>
+          </div>
+          <div class="travelBody">
+            <h3>The journey</h3>
+          <p>
+            The final part of the journey is completed on foot. A short 10–15 minute walk 
+            leads you from the parking area to the pod, creating a sense of privacy 
+            and gentle disconnection from the outside world.
+        </p>
+          </div>
+        </div>
+
+        <!-- El clima (SIN FOTO) -->
+        <div class="travelCard plainCard">
+          <h3>The climate</h3>
+          <p>
+            Kahutara sits on the exposed Kaikōura coast, where conditions can change quickly. 
+            Expect fresh air, coastal winds and cooler evenings throughout the year. 
+            Rain is part of the landscape and often adds even more atmosphere to the experience.
+          </p>
+        </div>
+
+        <!-- La comida (foto) -->
+        <div class="travelCard">
+          <div class="travelCollage2">
+            <div class="shot js-lightbox" data-full="../../assets/img/kahutara/kahutara-local-food-platter-kaikoura.jpg" role="button" aria-label="See photo The food ">
+              <img src="../../assets/img/kahutara/kahutara-local-food-platter-kaikoura.jpg" alt="Local food platter served at Kahutara PurePod with mountain views in Kaikōura">
+            </div>
+            <div class="shot js-lightbox" data-full="../../assets/img/kahutara/kahutara-wine-and-cheese-board-kaikoura.jpg" role="button" aria-label="See extra food photo">
+              <img src="../../assets/img/kahutara/kahutara-wine-and-cheese-board-kaikoura.jpg" alt="Wine and cheese board on the deck at Kahutara PurePod with countryside views in Kaikōura">
+            </div>
+          </div>
+          <div class="travelBody">
+            <h3>Food & dining</h3>
+            <p>
+              Each PurePod is equipped with a gas cooktop, barbecue, small fridge and all the 
+              essential cookware — utensils, pots, plates and cutlery — to prepare simple meals 
+              during your stay.
+  
+              You will also find a selection of tea and coffee to enjoy at the pod. 
+              You are welcome to bring your own food or pre-book a PurePod locally sourced 
+              dinner and breakfast package, ready to prepare and enjoy at your own pace.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="stickyCta" id="reserve">
+      <div class="ctaInner">
+        <div class="price">From $890.00— / night</div>
+        <button class="btn secondary" onclick="location.href='../../pods.html'">View other pods</button>
+        <button class="btn" onclick="alert('Demo: abrir Newbook / motor de reservas')">Book now</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightboxBackdrop" data-close></div>
+    <div class="lightboxPanel">
+      <button class="lightboxClose" data-close aria-label="Cerrar">✕</button>
+      <img id="lightboxImg" alt="">
+    </div>
+  </div>
+
+  <script>
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+
+    function openLightbox(src, alt){
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(){
+      lb.setAttribute('aria-hidden', 'true');
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.js-lightbox');
+      if(btn){
+        const src = btn.dataset.full || btn.querySelector('img')?.src;
+        const alt = btn.querySelector('img')?.alt || '';
+        openLightbox(src, alt);
+        return;
+      }
+      if(e.target.matches('[data-close]')) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') closeLightbox();
+    });
+  </script>
+<script>
+  (function(){
+    const nav = document.getElementById('topnav');
+    if(!nav) return;
+
+    function onScroll(){
+      if(window.scrollY > 40) nav.classList.add('is-solid');
+      else nav.classList.remove('is-solid');
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
+</body>
+</html>
+
