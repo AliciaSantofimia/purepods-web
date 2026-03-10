@@ -1,0 +1,94 @@
+/* Header — transparent over hero, solid (brand green) on scroll (reference) */
+
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 14px 18px;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background 0.22s ease,
+    border-color 0.22s ease,
+    backdrop-filter 0.22s ease;
+}
+
+.topnavSolid {
+  background: var(--brand-green);
+  border-bottom-color: rgba(244, 244, 234, 0.14);
+  backdrop-filter: blur(10px);
+}
+
+.inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand {
+  font-weight: 700;
+  text-decoration: none;
+  color: rgba(244, 244, 234, 0.96);
+}
+
+.brand:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.back {
+  font-size: 14px;
+  text-decoration: none;
+  color: rgba(244, 244, 234, 0.85);
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(244, 244, 234, 0.18);
+  background: rgba(17, 18, 23, 0.14);
+  backdrop-filter: blur(6px);
+}
+
+.back:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.links a {
+  text-decoration: none;
+  color: rgba(244, 244, 234, 0.88);
+  font-size: 14px;
+}
+
+.links a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.cta {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(244, 244, 234, 0.22);
+  background: rgba(244, 244, 234, 0.1);
+}
+
+.cta:hover {
+  background: rgba(244, 244, 234, 0.2);
+}
+
+/* When nav is transparent, ensure contrast on light hero (optional: add .topnavSolid only when scrolled) */

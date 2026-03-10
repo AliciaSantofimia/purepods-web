@@ -1,0 +1,33 @@
+/* agent.md: buttons use font-weight 800, brand-beige primary, brand-green text */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.primary {
+  background: var(--brand-beige);
+  color: var(--brand-green);
+  border-color: var(--brand-beige);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--brand-green);
+  border-color: rgba(92, 95, 62, 0.35);
+}

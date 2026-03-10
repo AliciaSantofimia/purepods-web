@@ -1,0 +1,145 @@
+/* ==========================================================================
+   PurePods — Global styles & design tokens (agent.md)
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@400;500;600&display=swap");
+
+/* --------------------------------------------------------------------------
+   Design tokens (colors, spacing, typography)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Colors — agent.md §5 */
+  --bg: #f7f6f3;
+  --ink: #5c5f3e;
+  --muted: rgba(92, 95, 62, 0.72);
+  --card: rgba(255, 255, 255, 0.85);
+  --stroke: rgba(92, 95, 62, 0.18);
+  --brand-green: #5c5f3e;
+  --brand-beige: #c2b59e;
+
+  /* Layout */
+  --content-max: 980px;
+  --content-padding: 18px 14px;
+  --radius: 24px;
+  --radius-sm: 18px;
+  --shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
+
+  /* Typography — agent.md §4 */
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  --font-heading: "Noto Serif Display", Georgia, "Times New Roman", serif;
+
+  /* Nav (for header scroll state) */
+  --nav-height: 56px;
+}
+
+/* --------------------------------------------------------------------------
+   Base / reset
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 400;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Layout: push footer to bottom */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  padding-top: var(--nav-height, 56px);
+}
+
+/* --------------------------------------------------------------------------
+   Typography foundation
+   -------------------------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Hero title — Noto Serif Display (agent.md) */
+.hero-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 4vw, 2.125rem);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+/* Section headings — Inter, brand green */
+h2,
+h3 {
+  font-family: var(--font-body);
+  color: var(--brand-green);
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.375rem;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0 0 1em;
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--brand-green);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Utility classes (content width, hints)
+   -------------------------------------------------------------------------- */
+.content-wrap {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--content-padding);
+}
+
+.text-muted {
+  color: var(--muted);
+  font-size: 0.75rem;
+}

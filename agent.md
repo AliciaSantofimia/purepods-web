@@ -33,17 +33,13 @@ Test: agent.md update
 The booking system is an external Newbook integration and must always be preserved.  
 Any redesign of the website must maintain compatibility with the existing booking flow.
 
-### Current booking flow
-All booking CTAs must link to the booking page using the existing parameter:
-https://purepods.com/booking/?force_site_id=16
+
 
 This parameter is required by the current Newbook integration and must be preserved.
 
 Do not remove or modify the `force_site_id` parameter when linking to the booking system.
 
-### Booking CTA rules
 
-All "Book Now" or "Book This Pod" buttons must link to the booking page using the same base URL and parameters used on the current site.
 
 Do not change the booking entry URL structure.
 
@@ -370,6 +366,54 @@ The following parts of the system must never be modified or recreated:
 - scripts and assets loaded from Newbook domains
 
 These components are part of an external booking system integration and must be preserved as they are.
+
+
+## Booking CTA Types
+
+There are two different booking entry types in the PurePods website and they must not be confused.
+
+### 1. General booking entry
+
+Used in:
+- main header
+- navigation menus
+- footer booking links
+- global booking CTAs not tied to a specific pod
+
+URL:
+https://purepods.com/booking/
+
+This entry must lead to the general booking page and must not preselect a specific pod.
+
+---
+
+### 2. Pod-specific booking entry
+
+Used in:
+- "Book this pod" buttons
+- booking CTAs inside individual pod detail pages
+
+URL pattern:
+
+https://purepods.com/booking/?force_site_id={id}
+
+Example:
+
+https://purepods.com/booking/?force_site_id=16
+
+This entry preserves pod-specific booking context and may preselect a specific pod inside the Newbook booking flow.
+
+---
+
+### Rules
+
+- Do not use a pod-specific booking URL for global booking CTAs.
+- Do not replace global booking entry with a forced pod URL.
+- Do not remove pod-specific booking behaviour from pod detail pages when it exists in the current site.
+
+
+
+
 
 ## 3. Reference HTML Structure
 

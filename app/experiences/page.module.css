@@ -1,0 +1,24 @@
+.page {
+  padding: 2rem 0 3rem;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.intro {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.back {
+  font-size: 0.875rem;
+  color: var(--brand-green);
+  text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
