@@ -412,7 +412,25 @@ This entry preserves pod-specific booking context and may preselect a specific p
 - Do not remove pod-specific booking behaviour from pod detail pages when it exists in the current site.
 
 
+Audit all booking CTAs in the project and fix them according to agent.md.
 
+Rules:
+1. Global booking CTAs used in header, navigation and footer must link to:
+https://purepods.com/booking/
+
+2. Pod-specific booking CTAs used inside individual pod pages must link to the correct pod-specific booking URL.
+
+For Kahutara, the pod-specific booking CTA must link to:
+https://purepods.com/booking/?force_site_id=16
+
+Tasks:
+- update the header booking button
+- update any footer booking button
+- keep the Kahutara page CTA as pod-specific
+- refactor booking constants if needed so global and pod-specific booking URLs are separated clearly
+
+Do not change any unrelated layout or styling.
+Before applying changes, explain which files will be updated.
 
 
 ## 3. Reference HTML Structure
