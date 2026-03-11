@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pāmu | PurePods</title>
+
+
+<style>
+  :root{
+    --bg:#f5f3ee;
+    --ink:#17181b;
+    --muted:rgba(23,24,27,.72);
+    --card:rgba(255,255,255,.72);
+    --stroke:rgba(80,76,68,.18);
+    --shadow:0 18px 44px rgba(17,18,23,.10);
+    --r:24px;
+    --r2:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+  }
+
+  /* Contenido centrado */
+  .wrap{max-width:980px;margin:0 auto;padding:18px 14px 88px;}
+
+  .top{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px;}
+  .back{
+    font-size:13px;color:var(--muted);text-decoration:none;
+    border:1px solid var(--stroke);background:rgba(255,255,255,.55);
+    padding:8px 12px;border-radius:999px;
+  }
+  .chips{display:flex;gap:8px;flex-wrap:wrap;}
+  .chip{
+    font-size:12px;color:rgba(23,24,27,.78);
+    border:1px solid var(--stroke);
+    background:rgba(255,255,255,.55);
+    padding:7px 10px;border-radius:999px;
+  }
+
+  /* HERO FULL WIDTH */
+  .hero--full{border:0;border-radius:0;box-shadow:none;background:transparent;}
+  .heroMedia{
+    height: 420px;
+    position: relative;
+    overflow: hidden;
+    background:#ddd;
+  }
+  .heroMedia img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* ↓ Bajamos el encuadre para que se vea el pod (ajusta fino si quieres) */
+    object-position: 15% 70%;
+    display: block;
+  }
+  
+
+
+  .heroMedia::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(0,0,0,.16), transparent 55%),
+      linear-gradient(to bottom, rgba(0,0,0,.18) 0%, rgba(0,0,0,.10) 45%, rgba(0,0,0,.68) 100%);
+    pointer-events:none;
+  }
+  .heroOverlay{
+    position:absolute; inset:0; z-index:1;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    padding: 18px 0 16px;
+  }
+  .heroInner{max-width:980px;margin:0 auto;padding: 0 14px;}
+  .heroTitle{
+    margin:0;
+    font-size:34px;
+    letter-spacing:-.02em;
+    line-height:1.05;
+    color:#fff;
+    text-shadow:0 2px 14px rgba(0,0,0,.35);
+  }
+  .heroSub{
+    margin:8px 0 0;
+    color:rgba(255,255,255,.92);
+    line-height:1.55;
+    font-size:14px;
+    text-shadow:0 2px 14px rgba(0,0,0,.25);
+    max-width:60ch;
+  }
+  .metaRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+  .pill{
+    font-size:12px;
+    border:1px solid rgba(255,255,255,.22);
+    background: rgba(255,255,255,.18);
+    padding:7px 10px;
+    border-radius:999px;
+    color: rgba(255,255,255,.92);
+    backdrop-filter: blur(8px);
+  }
+
+  /* Secciones */
+  .section{margin-top:14px;}
+  .sectionHeader{
+    display:flex;align-items:flex-end;justify-content:space-between;gap:10px;
+    margin: 14px 2px 10px;
+  }
+  .sectionHeader h2{margin:0;font-size:16px;letter-spacing:-.01em;}
+  .hint{margin:0;color:var(--muted);font-size:12px;}
+
+  .card{
+    border:1px solid var(--stroke);
+    background: var(--card);
+    border-radius: var(--r);
+    box-shadow: var(--shadow);
+    padding: 14px;
+  }
+  .card p{margin:0 0 10px;color:rgba(23,24,27,.76);line-height:1.6;font-size:14px;}
+  .card p:last-child{margin-bottom:0;}
+
+  /* Galería POD */
+  .imgRow{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+    margin-top:12px;
+  }
+  
+  /* ===== Ajuste fino texto dentro de la galería ===== */
+
+/* El texto ocupa todo el ancho del grid */
+.imgRow > p{
+  grid-column: 1 / -1;
+  margin: 2px 2px 6px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(23,24,27,.76);
+}
+
+/* Reducimos el espacio general del grid */
+.imgRow{
+  gap: 8px;          /* antes 10px */
+  align-items: start;
+}
+
+ .imgPh{
+  border-radius: var(--r2);
+  border:1px solid var(--stroke);
+  background:#ddd;
+  overflow:hidden;
+  padding:0;
+  cursor: zoom-in;
+  appearance:none;
+  display:block;
+
+  /* 👇 clave: el tamaño se vuelve “bonito” y consistente */
+  aspect-ratio: 4 / 3;     /* fotos normales */
+}
+
+
+
+  .imgPh.big{ height: 260px; grid-column: 1; }
+ .imgPh{
+  background: rgba(0,0,0,.04); /* fondo suave para “bandas” si sobran */
+}
+
+.imgPh img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: center;
+  display:block;
+}
+
+
+  .imgPh:hover{ transform: translateY(-1px); transition: transform .15s ease; }
+
+  /* ===== ANTES DE VIAJAR: collage 2 fotos + clima sin foto ===== */
+  .travelGrid{ display:grid; gap:18px; }
+
+  .travelCard{
+    border:1px solid var(--stroke);
+    background: rgba(255,255,255,.62);
+    border-radius: var(--r);
+    overflow:hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .travelCollage2{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+    padding:8px;
+    background: rgba(255,255,255,.38);
+  }
+
+  .travelCollage2 .shot{
+  height: 230px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 0; /* 🔥 fuera borde */
+  cursor: zoom-in;
+  background:#ddd;
+
+  /* sombra MUY suave */
+  box-shadow: 0 8px 24px rgba(17,18,23,.08);
+}
+
+
+ .travelCollage2 .shot{
+  background: rgba(0,0,0,.04);
+}
+
+.travelCollage2 img{
+  width:100%;
+  height:100%;
+  object-fit: cover;     /* 👈 entera */
+  object-position: center;
+  display:block;
+}
+
+
+  .travelBody{padding:14px;}
+  .travelBody h3{margin:0 0 6px;font-size:16px;}
+  .travelBody p{margin:0;color:var(--muted);line-height:1.55;font-size:14px;}
+
+  .plainCard{padding:18px;}
+  .plainCard h3{margin:0 0 6px;font-size:16px;}
+  .plainCard p{margin:0;color:var(--muted);line-height:1.55;font-size:14px;}
+
+  /* Sticky CTA */
+  .stickyCta{
+    position:fixed;
+    left:0; right:0; bottom:0;
+    padding:10px 14px;
+    background: rgba(245,243,238,.86);
+    backdrop-filter: blur(8px);
+    border-top:1px solid rgba(80,76,68,.18);
+  }
+  .ctaInner{max-width:980px;margin:0 auto;display:flex;gap:10px;align-items:center;}
+  .price{font-weight:800;font-size:14px;white-space:nowrap;}
+  .btn{
+    flex:1;
+    border:1px solid rgba(23,24,27,.12);
+    background: rgba(23,24,27,.92);
+    color:#fff;
+    padding: 12px 14px;
+    border-radius: 999px;
+    font-weight: 800;
+    cursor:pointer;
+  }
+  .btn.secondary{
+    flex:0 0 auto;
+    background: rgba(255,255,255,.65);
+    color: var(--ink);
+  }
+
+  /* Responsive */
+  @media (min-width: 920px){
+    .wrap{padding-bottom:40px;}
+    .stickyCta{position:static;background:transparent;border:0;padding:0;margin-top:12px;}
+    .ctaInner{justify-content:flex-end;}
+    .btn{flex:0 0 auto;min-width:220px;}
+  }
+  @media (max-width: 760px){
+    .travelCollage2{ grid-template-columns: 1fr; }
+    .travelCollage2 .shot{ height: 220px; }
+  }
+  @media (max-width: 560px){
+    .heroMedia{ height: 320px; }
+    .heroTitle{font-size:30px;}
+  }
+
+  /* LIGHTBOX */
+  .lightbox{position:fixed;inset:0;display:none;z-index:999;}
+  .lightbox[aria-hidden="false"]{ display:block; }
+  .lightboxBackdrop{position:absolute; inset:0;background: rgba(0,0,0,.75);}
+  .lightboxPanel{
+    position:relative;
+    width:min(980px, 92vw);
+    height:min(82vh, 700px);
+    margin: 6vh auto 0;
+    border-radius: 18px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.18);
+    box-shadow: 0 30px 90px rgba(0,0,0,.35);
+    background: rgba(0,0,0,.2);
+  }
+  .lightboxPanel img{
+    width:100%;
+    height:100%;
+    object-fit: contain;
+    background: rgba(0,0,0,.15);
+  }
+  .lightboxClose{
+    position:absolute;
+    top:10px; right:10px;
+    width:38px; height:38px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.22);
+    background: rgba(0,0,0,.35);
+    color:#fff;
+    cursor:pointer;
+  }
+
+  /* ===== ACTIVIDADES (AISLADO) ===== */
+  .pp-acts{ margin-top: 0; }
+
+  .pp-actsCard{
+    border:1px solid var(--stroke);
+    background: var(--card);
+    border-radius: var(--r);
+    box-shadow: var(--shadow);
+    padding: 14px;
+  }
+
+  .pp-actsIntro{
+    margin: 0 0 14px;
+    color: rgba(23,24,27,.76);
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  .pp-actsGrid{
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 12px;
+  }
+
+  .pp-act{
+    border:1px solid var(--stroke);
+    background: rgba(255,255,255,.62);
+    border-radius: var(--r);
+    overflow:hidden;
+  }
+
+  .pp-actMedia{
+    height: 160px;           /* 👈 control principal del tamaño */
+    background:#ddd;
+    overflow:hidden;
+    cursor: zoom-in;
+  }
+
+  .pp-actMedia img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:50% 50%;
+    display:block;
+  }
+
+  .pp-actBody{ padding: 12px 12px 14px; }
+
+  .pp-actTitle{
+    margin: 0 0 8px;
+    font-size: 15px;
+    letter-spacing: -.01em;
+  }
+
+  .pp-actBody p{
+    margin: 0 0 10px;
+    color: rgba(23,24,27,.76);
+    line-height: 1.6;
+    font-size: 13.5px;
+  }
+
+  .pp-actBody p:last-of-type{ margin-bottom: 12px; }
+
+  .pp-actLink{
+    display:inline-flex;
+    gap:8px;
+    align-items:center;
+    font-weight: 800;
+    font-size: 13px;
+    color: rgba(23,24,27,.88);
+    text-decoration:none;
+    border-bottom: 1px solid rgba(23,24,27,.18);
+    padding-bottom: 2px;
+  }
+
+  .pp-actUrl{
+    display:block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--muted);
+    word-break: break-word;
+  }
+
+  @media (max-width: 900px){
+    .pp-actsGrid{ grid-template-columns: 1fr; }
+    .pp-actMedia{ height: 220px; }
+  }
+
+  /* Bloque extra debajo de las 3 actividades */
+  .pp-actsExtra{
+    margin-top: 14px;
+    border-top: 1px solid var(--stroke);
+    padding-top: 14px;
+  }
+  .pp-actsExtra h3{
+    margin: 0 0 8px;
+    font-size: 15px;
+    letter-spacing: -.01em;
+  }
+  .pp-actsExtra p{
+    margin: 0 0 10px;
+    color: rgba(23,24,27,.76);
+    line-height: 1.6;
+    font-size: 14px;
+  }
+  .pp-actsExtra p:last-child{ margin-bottom: 0; }
+
+  .text-link{
+  color: var(--flora);           /* mismo verde que PurePods */
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(92,95,60,.35);
+}
+
+.text-link:hover{
+  border-bottom-color: rgba(92,95,60,.7);
+}
+/* Coloca el texto “En el interior…” en el hueco derecho de la foto grande */
+.imgRow > .podIntro{
+  padding-top: 8px;
+  grid-column: 2;
+  grid-row: 1;        /* misma fila que la foto grande */
+  align-self: center; 
+  margin: 0;
+}
+
+/* Ajuste de estilo del texto */
+.podIntro p{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(23,24,27,.76);
+}
+
+/* Móvil: que se ponga a lo ancho */
+@media (max-width: 560px){
+  .imgRow > .podIntro{
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+}
+
+/* Ajuste HERO en móvil */
+@media (max-width: 560px){
+  .heroMedia img{
+    object-position: 50% 40%;
+  }
+  }
+</style>
+</head>
+
+<body>
+
+  <!-- HERO FULL WIDTH -->
+  <section class="hero--full">
+    <div class="heroMedia">
+      <img src="../../assets/img/pamu/pamu-purepod-aerial-glass-cabin-landscape-rotorua.jpg">alt="Pamu hero">
+      <div class="heroOverlay">
+        <div class="heroInner">
+          <h1 class="heroTitle">Pāmu</h1>
+          <p class="heroSub">
+            <strong>Donde el fuego, el agua y el silencio se encuentran bajo las estrellas.</strong>
+Un refugio apartado para parejas atraídas por paisajes geotérmicos, aguas termales, cultura māorí viva y cielos nocturnos profundos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <div class="wrap">
+
+    <!-- EL POD -->
+    <div class="section">
+      <div class="sectionHeader">
+        <h2>El Pod</h2>
+        <p class="hint">Lo esencial, sin rodeos</p>
+      </div>
+
+      <div class="card">
+        <p>
+          Un breve paseo te aleja del mundo y te lleva a un claro privado, rodeado de vegetación nativa y canto de aves.
+El pod es completamente aislado, diseñado para dos personas y ubicado para sentirse plenamente integrado en el entorno.
+        </p>
+       
+
+        <div class="imgRow">
+          <button class="imgPh big js-lightbox" data-full="../../assets/img/pamu/pamu-purepod-bedroom-interior-view-rotorua.png" aria-label="Ver foto grande">
+            <img src="../../assets/img/pamu/pamu-purepod-bedroom-interior-view-rotorua.png" alt="PurePod matu interior" style="object-position:50% 55%;">
+          </button>
+           <div class="podIntro">
+        <p>
+          En el interior, el espacio es cálido y sencillo: cama king, ducha caliente, inodoro con cisterna, lo esencial de cocina y calefacción acogedora.
+        </p>
+        </div>
+
+          <p>Las paredes de cristal disuelven la frontera entre dentro y fuera, permitiendo que el paisaje forme parte de la experiencia.
+En el exterior, la terraza invita a largas veladas — vapor en el aire, silencio alrededor, estrellas sobre ti.
+Confort en plena naturaleza, vivido despacio y en silencio.</p>
+
+          <button class="imgPh js-lightbox" data-full="../../assets/img/pamu/pamu-purepod-bathroom-shower-view-rotorua.jpg" aria-label="Ver foto">
+            <img src="../../assets/img/pamu/pamu-purepod-bathroom-shower-view-rotorua.jpg" alt="Interior Mākoha" style="object-position:50% 50%;">
+          </button>
+
+          <button class="imgPh js-lightbox" data-full="../../assets/img/pamu/pamu-purepod-bedroom-view-landscape-rotorua.jpg" aria-label="Ver foto">
+            <img src="../../assets/img/pamu/pamu-purepod-bedroom-view-landscape-rotorua.jpg" alt="Vista aerea" style="object-position:50% 45%;">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIVIDADES -->
+    <div class="section pp-acts">
+      <div class="sectionHeader">
+        <h2>Las experiencias que definen Pāmu</h2>
+        <p class="hint">tierra geotérmica, cultura viva y paisaje volcánico</p>
+      </div>
+
+      <div class="pp-actsCard">
+        <p class="pp-actsIntro">
+          Tres experiencias que conectan con la fuerza geotérmica, el paisaje volcánico y la cultura viva que rodean Pāmu.
+        </p>
+
+        <div class="pp-actsGrid">
+
+          <article class="pp-act">
+            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/pamu/rotorua-geothermal-hot-springs-lake-new-zealand.jpg" role="button" aria-label="Ver foto Wai-O-Tapu Thermal Wonderland">
+              <img src="../../assets/img/pamu/rotorua-geothermal-hot-springs-lake-new-zealand.jpg" alt="Wai-O-Tapu Thermal Wonderland">
+            </div>
+            <div class="pp-actBody">
+              <h3 class="pp-actTitle">Wai-O-Tapu Thermal Wonderland</h3>
+              <p>
+                Un paisaje que parece irreal: charcas de lodo hirviente, colores intensos y vapor emergiendo de la tierra. <br> Uno de los lugares geotérmicos más icónicos de Nueva Zelanda.
+
+              <br> Por qué es especial → color • vapor • tierra viva
+              </p>
+             
+              <a class="pp-actLink" href="https://www.waiotapu.co.nz/" target="_blank" rel="noopener">
+                → Explorar Wai-O-Tapu Thermal Wonderland
+              </a>
+              
+            </div>
+          </article>
+
+          <article class="pp-act">
+            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/pamu/rotorua-volcanic-geothermal-valley-landscape-new-zealand..jpg" role="button" aria-label="Ver foto Waimangu Volcanic Valley">
+              <img src="../../assets/img/pamu/rotorua-volcanic-geothermal-valley-landscape-new-zealand..jpg" alt="Waimangu Volcanic Valley">
+            </div>
+            <div class="pp-actBody">
+              <h3 class="pp-actTitle">Waimangu Volcanic Valley</h3>
+              <p>
+                Nacido de la mayor erupción volcánica registrada en la historia, este vasto valle se define por lagos, fumarolas y un silencio profundo y persistente.
+
+                <br>Por qué es especial → escala • geología • atmósfera
+              </p>
+             
+              <a class="pp-actLink" href="https://www.waimangu.co.nz/" target="_blank" rel="noopener">
+                → Visitar Waimangu Volcanic Valley
+              </a>
+              
+            </div>
+          </article>
+
+          <article class="pp-act">
+            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/pamu/rotorua-maori-cultural-experience-village-new-zealand.jpg" role="button" aria-label="Ver foto Tamaki Māori Village (Te Pā Tū)">
+              <img src="../../assets/img/pamu/rotorua-maori-cultural-experience-village-new-zealand.jpg" alt="Tamaki Māori Village (Te Pā Tū)">
+            </div>
+            <div class="pp-actBody">
+              <h3 class="pp-actTitle">Tamaki Māori Village (Te Pā Tū)</h3>
+              <p>
+                Una velada inmersiva de cultura māorí, relatos, actuaciones y gastronomía — auténtica, significativa y compartida con respeto.
+
+Por qué es especial → cultura viva • significado • conexión
+              </p>
+             
+              <a class="pp-actLink" href="https://te-pa-tu.com/" target="_blank" rel="noopener">
+                → Ver Tamaki Māori Village (Te Pā Tū)
+              </a>
+              
+            </div>
+          </article>
+
+        </div><!-- /pp-actsGrid -->
+
+        <!-- BLOQUE EXTRA -->
+        <div class="pp-actsExtra">
+          <h3>Más allá del mundo geotérmico</h3>
+         <p>
+  Cuando el ritmo se desacelera de forma natural, los alrededores de Pāmu también ofrecen momentos más tranquilos.
+  <a class="text-link"
+     href="https://www.polynesianspa.co.nz/"
+     target="_blank"
+     rel="noopener">
+    Polynesian Spa
+  </a>
+  y
+  <a class="text-link"
+     href="https://waiariki.co.nz/"
+     target="_blank"
+     rel="noopener">
+    Wai Ariki Hot Springs
+  </a>
+  — aguas minerales bajo el cielo nocturno.
+</p>
+
+          <p>
+           <strong>
+            <a class="text-link"
+     href="https://www.treewalk.co.nz/"
+       target="_blank"
+       rel="noopener">
+      Redwoods Treewalk
+    </a>
+  </strong> — un paseo suave por el bosque al atardecer.
+
+Estos momentos aportan equilibrio — calma y quietud junto a la energía cruda de la tierra.
+          </p>
+        </div>
+
+      </div><!-- /pp-actsCard -->
+    </div><!-- /section pp-acts -->
+
+    <!-- ANTES DE VIAJAR -->
+    <div class="section">
+      <div class="sectionHeader">
+        <h2>Antes de viajar</h2>
+        <p class="hint">Lo práctico, sin matar el mood</p>
+      </div>
+
+      <div class="travelGrid">
+
+        <!-- El viaje (foto) -->
+        <div class="travelCard">
+          <div class="travelCollage2">
+            <div class="shot js-lightbox" data-full="../../assets/img/pamu/pamu-purepod-farm-fence-landscape-rotorua.jpg" role="button" aria-label="Ver foto El camino">
+              <img src="../../assets/img/pamu/pamu-purepod-farm-fence-landscape-rotorua.jpg" alt="El viaje a Pamu">
+            </div>
+            <div class="shot js-lightbox" data-full="../../assets/img/pamu/pamu-purepod-outdoor-bbq-cooking-view-rotorua.jpg" role="button" aria-label="Ver foto extra camino">
+              <img src="../../assets/img/pamu/pamu-purepod-outdoor-bbq-cooking-view-rotorua.jpg" alt="Paisaje durante el viaje">
+            </div>
+          </div>
+          <div class="travelBody">
+            <h3>El viaje</h3>
+            <p>
+              Pāmu PurePod se alcanza con un trayecto sencillo y escénico hasta la región de Rotorua, seguido de una breve caminata por el bosque nativo — el instante en que el ritmo se reduce y el mundo exterior comienza a desvanecerse.
+            </p>
+          </div>
+        </div>
+
+        <!-- El clima (SIN FOTO) -->
+        <div class="travelCard plainCard">
+          <h3>El clima</h3>
+          <p>
+            Los paisajes geotérmicos traen contrastes: mañanas frescas, tardes templadas y noches suaves. Bastan capas ligeras, especialmente para disfrutar de la terraza o pasear por el bosque.
+          </p>
+        </div>
+
+        <!-- La comida (foto) -->
+        <div class="travelCard">
+          <div class="travelCollage2">
+            <div class="shot js-lightbox" data-full="../../assets/img/pamu/pamu-purepod-outdoor-bbq-cooking-view-rotorua.jpg" role="button" aria-label="Ver foto bbq">
+              <img src="../../assets/img/pamu/pamu-purepod-outdoor-bbq-cooking-view-rotorua.jpg" alt="BBQ">
+            </div>
+            <div class="shot js-lightbox" data-full="../../assets/img/pamu/pamu-purepod-local-cheese-platter-food-rotorua.jpg" role="button" aria-label="Ver foto tabla de quesos">
+              <img src="../../assets/img/pamu/pamu-purepod-local-cheese-platter-food-rotorua.jpg" alt="Tabla de quesos">
+            </div>
+          </div>
+          <div class="travelBody">
+            <h3>La comida</h3>
+            <p>
+              Puedes llevar tus propios suministros o reservar, al hacer la reserva, una cesta de desayuno o cena con productos locales.
+
+Todo está pensado para ser sencillo, nutritivo y disfrutado sin prisas, al aire libre siempre que el clima lo permita.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="stickyCta">
+      <div class="ctaInner">
+        <div class="price">Desde $— / noche</div>
+        <button class="btn secondary" onclick="location.href='pods.html'">Ver otros pods</button>
+
+        <button class="btn" onclick="alert('Demo: abrir Newbook / motor de reservas')">Reservar ahora</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightboxBackdrop" data-close></div>
+    <div class="lightboxPanel">
+      <button class="lightboxClose" data-close aria-label="Cerrar">✕</button>
+      <img id="lightboxImg" alt="">
+    </div>
+  </div>
+
+  <script>
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+
+    function openLightbox(src, alt){
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(){
+      lb.setAttribute('aria-hidden', 'true');
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.js-lightbox');
+      if(btn){
+        const src = btn.dataset.full || btn.querySelector('img')?.src;
+        const alt = btn.querySelector('img')?.alt || '';
+        openLightbox(src, alt);
+        return;
+      }
+      if(e.target.matches('[data-close]')) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>
