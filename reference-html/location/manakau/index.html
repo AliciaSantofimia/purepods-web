@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Manakau | PurePods</title>
+
+<style>
+  :root{
+    --bg:#f5f3ee;
+    --ink:#17181b;
+    --muted:rgba(23,24,27,.72);
+    --card:rgba(255,255,255,.72);
+    --stroke:rgba(80,76,68,.18);
+    --shadow:0 18px 44px rgba(17,18,23,.10);
+    --r:24px;
+    --r2:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+  }
+
+  /* Contenido centrado */
+  .wrap{max-width:980px;margin:0 auto;padding:18px 14px 88px;}
+
+  .top{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px;}
+  .back{
+    font-size:13px;color:var(--muted);text-decoration:none;
+    border:1px solid var(--stroke);background:rgba(255,255,255,.55);
+    padding:8px 12px;border-radius:999px;
+  }
+  .chips{display:flex;gap:8px;flex-wrap:wrap;}
+  .chip{
+    font-size:12px;color:rgba(23,24,27,.78);
+    border:1px solid var(--stroke);
+    background:rgba(255,255,255,.55);
+    padding:7px 10px;border-radius:999px;
+  }
+
+  /* HERO FULL WIDTH */
+  .hero--full{border:0;border-radius:0;box-shadow:none;background:transparent;}
+  .heroMedia{
+    height: 420px;
+    position: relative;
+    overflow: hidden;
+    background:#ddd;
+  }
+  .heroMedia img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* ↓ Bajamos el encuadre para que se vea el pod (ajusta fino si quieres) */
+    object-position: 70% 95%;
+    display: block;
+  }
+  .heroMedia::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(0,0,0,.16), transparent 55%),
+      linear-gradient(to bottom, rgba(0,0,0,.18) 0%, rgba(0,0,0,.10) 45%, rgba(0,0,0,.68) 100%);
+    pointer-events:none;
+  }
+  .heroOverlay{
+    position:absolute; inset:0; z-index:1;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    padding: 18px 0 16px;
+  }
+  .heroInner{max-width:980px;margin:0 auto;padding: 0 14px;}
+  .heroTitle{
+    margin:0;
+    font-size:34px;
+    letter-spacing:-.02em;
+    line-height:1.05;
+    color:#fff;
+    text-shadow:0 2px 14px rgba(0,0,0,.35);
+  }
+  .heroSub{
+    margin:8px 0 0;
+    color:rgba(255,255,255,.92);
+    line-height:1.55;
+    font-size:14px;
+    text-shadow:0 2px 14px rgba(0,0,0,.25);
+    max-width:60ch;
+  }
+  .metaRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+  .pill{
+    font-size:12px;
+    border:1px solid rgba(255,255,255,.22);
+    background: rgba(255,255,255,.18);
+    padding:7px 10px;
+    border-radius:999px;
+    color: rgba(255,255,255,.92);
+    backdrop-filter: blur(8px);
+  }
+
+  /* Secciones */
+  .section{margin-top:14px;}
+  .sectionHeader{
+    display:flex;align-items:flex-end;justify-content:space-between;gap:10px;
+    margin: 14px 2px 10px;
+  }
+  .sectionHeader h2{margin:0;font-size:16px;letter-spacing:-.01em;}
+  .hint{margin:0;color:var(--muted);font-size:12px;}
+
+  .card{
+    border:1px solid var(--stroke);
+    background: var(--card);
+    border-radius: var(--r);
+    box-shadow: var(--shadow);
+    padding: 14px;
+  }
+  .card p{margin:0 0 10px;color:rgba(23,24,27,.76);line-height:1.6;font-size:14px;}
+  .card p:last-child{margin-bottom:0;}
+
+  /* Galería POD */
+  .imgRow{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+    margin-top:12px;
+  }
+  .imgPh{
+    height: 170px;
+    border-radius: var(--r2);
+    border:1px solid var(--stroke);
+    background:#ddd;
+    overflow:hidden;
+    padding:0;
+    cursor: zoom-in;
+    appearance:none;
+    display:block;
+  }
+  .imgPh.big{ height: 260px; grid-column: 1 / -1; }
+  .imgPh img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position: 50% 50%;
+    display:block;
+  }
+  .imgPh:hover{ transform: translateY(-1px); transition: transform .15s ease; }
+
+  /* ===== ANTES DE VIAJAR: collage 2 fotos + clima sin foto ===== */
+  .travelGrid{ display:grid; gap:18px; }
+
+  .travelCard{
+    border:1px solid var(--stroke);
+    background: rgba(255,255,255,.62);
+    border-radius: var(--r);
+    overflow:hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .travelCollage2{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+    padding:12px;
+    background: rgba(255,255,255,.38);
+  }
+
+  .travelCollage2 .shot{
+    height: 230px;
+    border-radius: 18px;
+    overflow:hidden;
+    border:1px solid var(--stroke);
+    cursor: zoom-in;
+    background:#ddd;
+  }
+
+  .travelCollage2 img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    display:block;
+  }
+
+  .travelBody{padding:14px;}
+  .travelBody h3{margin:0 0 6px;font-size:16px;}
+  .travelBody p{margin:0;color:var(--muted);line-height:1.55;font-size:14px;}
+
+  .plainCard{padding:18px;}
+  .plainCard h3{margin:0 0 6px;font-size:16px;}
+  .plainCard p{margin:0;color:var(--muted);line-height:1.55;font-size:14px;}
+
+  /* Sticky CTA */
+  .stickyCta{
+    position:fixed;
+    left:0; right:0; bottom:0;
+    padding:10px 14px;
+    background: rgba(245,243,238,.86);
+    backdrop-filter: blur(8px);
+    border-top:1px solid rgba(80,76,68,.18);
+  }
+  .ctaInner{max-width:980px;margin:0 auto;display:flex;gap:10px;align-items:center;}
+  .price{font-weight:800;font-size:14px;white-space:nowrap;}
+  .btn{
+    flex:1;
+    border:1px solid rgba(23,24,27,.12);
+    background: rgba(23,24,27,.92);
+    color:#fff;
+    padding: 12px 14px;
+    border-radius: 999px;
+    font-weight: 800;
+    cursor:pointer;
+  }
+  .btn.secondary{
+    flex:0 0 auto;
+    background: rgba(255,255,255,.65);
+    color: var(--ink);
+  }
+
+  /* Responsive */
+  @media (min-width: 920px){
+    .wrap{padding-bottom:40px;}
+    .stickyCta{position:static;background:transparent;border:0;padding:0;margin-top:12px;}
+    .ctaInner{justify-content:flex-end;}
+    .btn{flex:0 0 auto;min-width:220px;}
+  }
+  @media (max-width: 760px){
+    .travelCollage2{ grid-template-columns: 1fr; }
+    .travelCollage2 .shot{ height: 220px; }
+  }
+  @media (max-width: 560px){
+    .heroMedia{ height: 320px; }
+    .heroTitle{font-size:30px;}
+  }
+
+  /* LIGHTBOX */
+  .lightbox{position:fixed;inset:0;display:none;z-index:999;}
+  .lightbox[aria-hidden="false"]{ display:block; }
+  .lightboxBackdrop{position:absolute; inset:0;background: rgba(0,0,0,.75);}
+  .lightboxPanel{
+    position:relative;
+    width:min(980px, 92vw);
+    height:min(82vh, 700px);
+    margin: 6vh auto 0;
+    border-radius: 18px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.18);
+    box-shadow: 0 30px 90px rgba(0,0,0,.35);
+    background: rgba(0,0,0,.2);
+  }
+  .lightboxPanel img{
+    width:100%;
+    height:100%;
+    object-fit: contain;
+    background: rgba(0,0,0,.15);
+  }
+  .lightboxClose{
+    position:absolute;
+    top:10px; right:10px;
+    width:38px; height:38px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.22);
+    background: rgba(0,0,0,.35);
+    color:#fff;
+    cursor:pointer;
+  }
+
+  /* ===== ACTIVIDADES (AISLADO) ===== */
+  .pp-acts{ margin-top: 0; }
+
+  .pp-actsCard{
+    border:1px solid var(--stroke);
+    background: var(--card);
+    border-radius: var(--r);
+    box-shadow: var(--shadow);
+    padding: 14px;
+  }
+
+  .pp-actsIntro{
+    margin: 0 0 14px;
+    color: rgba(23,24,27,.76);
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  .pp-actsGrid{
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 12px;
+  }
+
+  .pp-act{
+    border:1px solid var(--stroke);
+    background: rgba(255,255,255,.62);
+    border-radius: var(--r);
+    overflow:hidden;
+  }
+
+  .pp-actMedia{
+    height: 160px;           /* 👈 control principal del tamaño */
+    background:#ddd;
+    overflow:hidden;
+    cursor: zoom-in;
+  }
+
+  .pp-actMedia img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:50% 50%;
+    display:block;
+  }
+
+  .pp-actBody{ padding: 12px 12px 14px; }
+
+  .pp-actTitle{
+    margin: 0 0 8px;
+    font-size: 15px;
+    letter-spacing: -.01em;
+  }
+
+  .pp-actBody p{
+    margin: 0 0 10px;
+    color: rgba(23,24,27,.76);
+    line-height: 1.6;
+    font-size: 13.5px;
+  }
+
+  .pp-actBody p:last-of-type{ margin-bottom: 12px; }
+
+  .pp-actLink{
+    display:inline-flex;
+    gap:8px;
+    align-items:center;
+    font-weight: 800;
+    font-size: 13px;
+    color: rgba(23,24,27,.88);
+    text-decoration:none;
+    border-bottom: 1px solid rgba(23,24,27,.18);
+    padding-bottom: 2px;
+  }
+
+  .pp-actUrl{
+    display:block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--muted);
+    word-break: break-word;
+  }
+
+  @media (max-width: 900px){
+    .pp-actsGrid{ grid-template-columns: 1fr; }
+    .pp-actMedia{ height: 220px; }
+  }
+
+  /* Bloque extra debajo de las 3 actividades */
+  .pp-actsExtra{
+    margin-top: 14px;
+    border-top: 1px solid var(--stroke);
+    padding-top: 14px;
+  }
+  .pp-actsExtra h3{
+    margin: 0 0 8px;
+    font-size: 15px;
+    letter-spacing: -.01em;
+  }
+  .pp-actsExtra p{
+    margin: 0 0 10px;
+    color: rgba(23,24,27,.76);
+    line-height: 1.6;
+    font-size: 14px;
+  }
+  .pp-actsExtra p:last-child{ margin-bottom: 0; }
+
+  /* --- Top nav (silent) --- */
+.topnav{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  padding: 14px 18px;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background .22s ease, border-color .22s ease, backdrop-filter .22s ease;
+}
+
+.topnav__inner{
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.topnav__left{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.topnav__brand{
+  font-weight: 700;
+  text-decoration: none;
+  color: rgba(244,244,234,.96);
+}
+
+.topnav__back{
+  font-size: 14px;
+  text-decoration: none;
+  color: rgba(244,244,234,.85);
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(244,244,234,.18);
+  background: rgba(17,18,23,.14);
+  backdrop-filter: blur(6px);
+}
+
+.topnav__links{
+  display: flex;
+  gap: 18px;
+}
+
+.topnav__links a{
+  text-decoration: none;
+  color: rgba(244,244,234,.88);
+  font-size: 14px;
+}
+
+.topnav__cta{
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(244,244,234,.22);
+  background: rgba(244,244,234,.10);
+}
+
+/* Estado sólido al hacer scroll (verde PurePods) */
+.topnav.is-solid{
+  background: rgba(34, 54, 43, .72);
+  border-bottom-color: rgba(244,244,234,.14);
+  backdrop-filter: blur(10px);
+}
+/* Ajuste SOLO para la foto grande del bloque El Pod */
+.imgPh.big img{
+  object-position: 50% 30% !important;
+}
+
+</style>
+</head>
+
+<body>
+    <header class="topnav" id="topnav">
+  <div class="topnav__inner">
+    <div class="topnav__left">
+      <a class="topnav__back" href="../../pods.html">
+        ← All Pods
+      </a>
+
+      <a class="topnav__brand" href="../../index.html">
+        PurePods
+      </a>
+    </div>
+
+    <nav class="topnav__links">
+      <a href="../../pods.html">Pods</a>
+      <a href="../../experiencias.html">Experiences</a>
+      <a class="topnav__cta" href="#reserve">Reserva</a>
+    </nav>
+  </div>
+</header>
+
+  <!-- HERO FULL WIDTH -->
+  <section class="hero--full">
+    <div class="heroMedia">
+      <img src="../../assets/img/manakau/manakau-purepod-glass-cabin-seaward-kaikoura-mountains.jpg" alt="Manakau PurePod glass cabin overlooking the Seaward Kaikōura mountains in New Zealand">
+      <div class="heroOverlay">
+        <div class="heroInner">
+          <h1 class="heroTitle">Manakau</h1>
+          <p class="heroSub">
+            Colinas abiertas, cielos infinitos y la cordillera Seaward Kaikōura a tu espalda. Un refugio remoto donde todo se ralentiza y la naturaleza marca el ritmo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <div class="wrap">
+
+    <!-- EL POD -->
+    <div class="section">
+      <div class="sectionHeader">
+        <h2>El Pod</h2>
+        <p class="hint">Lo esencial, sin rodeos</p>
+      </div>
+
+      <div class="card">
+        <p>
+          En la costa salvaje de Kaikōura, donde colinas abiertas y cielos infinitos se encuentran con el océano, PurePod Manakau ofrece una escapada poco común — silenciosa, privada y profundamente conectada con el paisaje.
+
+    Diseñado para dos personas, es un lugar para detenerse, desconectar y experimentar Kaikōura en su forma más pura: horizontes amplios, luz cambiante, fauna marina cercana y la presencia imponente de la cordillera Seaward Kaikōura.
+
+
+        </p>
+        <p>
+           Llegar forma parte del viaje. Un breve paseo te aleja del mundo cotidiano y marca el paso hacia la quietud. Al final del sendero te espera un refugio completamente privado — sin vecinos, sin distracciones, solo tú y la naturaleza. En el interior, el diseño sencillo y los materiales cálidos crean un espacio acogedor para descansar, dormir y simplemente ir más despacio.
+        </p>
+
+        <div class="imgRow">
+          <button class="imgPh big js-lightbox" data-full="../../assets/img/manakau/manakau-purepod-glass-cabin-sunset-kaikoura.jpg" aria-label="Ver foto grande">
+            <img src="../../assets/img/manakau/manakau-purepod-glass-cabin-sunset-kaikoura.jpg" alt="Manakau PurePod glass cabin at sunset with the Seaward Kaikōura mountains in New Zealand" style="object-position:50% 55%;">
+          </button>
+          <p> PurePod Manakau no es un alojamiento típico. Es una inmersión en el paisaje natural de la costa de Kaikōura.
+
+      Rodeado de colinas abiertas y vegetación nativa, el pod se encuentra completamente aislado — sin vecinos, sin espacios compartidos, solo el viento sobre las colinas, el silencio y una profunda sensación de naturaleza en estado puro.
+
+      En el interior, todo está pensado para dos: un refugio cálido y confortable desde donde observar el cielo amplio, la luz cambiante y el paisaje abierto, todo ello desde la intimidad de tu escondite en plena naturaleza.</p>
+
+          <button class="imgPh imgFill js-lightbox" data-full="../../assets/img/manakau/manakau-purepod-bedroom-view-kaikoura.jpg" aria-label="Ver foto">
+            <img src="../../assets/img/manakau/manakau-purepod-bedroom-view-kaikoura.jpg" alt="Bedroom inside Manakau PurePod with panoramic countryside views in Kaikōurau">
+          </button>
+
+
+          <button class="imgPh js-lightbox" data-full="../../assets/img/manakau/manakau-purepod-milky-way-stargazing-kaikoura.jpg" aria-label="Ver foto">
+            <img src="../../assets/img/manakau/manakau-purepod-milky-way-stargazing-kaikoura.jpg" alt="Manakau PurePod under the Milky Way during a stargazing night in Kaikōura, New Zealand" style="object-position:50% 45%;">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIVIDADES -->
+    <div class="section pp-acts">
+      <div class="sectionHeader">
+        <h2>Las experiencias que definen Manakau</h2>
+        <p class="hint">montañas hacia el mar, fauna marina y horizontes abiertos</p>
+      </div>
+
+      <div class="pp-actsCard">
+        <p class="pp-actsIntro">
+          Una cuidada selección de tres experiencias que capturan la esencia de este lugar — costas salvajes, fauna marina y paisajes espectaculares.
+        </p>
+
+        <div class="pp-actsGrid">
+
+          <article class="pp-act">
+            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/manakau/kaikoura-whale-watching-sperm-whale.jpge.jpg" role="button" aria-label="Ver foto Whale Watch Kaikōura">
+              <img src="../../assets/img/manakau/kaikoura-whale-watching-sperm-whale.jpg" alt="Sperm whale tail diving during whale watching in Kaikōura, New Zealand"">
+            </div>
+            <div class="pp-actBody">
+              <h3 class="pp-actTitle">Kaikōura Whale Experiences
+</h3>
+              <p>
+                Una oportunidad única de ver ballenas tanto desde el aire como desde el océano, revelando toda la magnitud y belleza del paisaje marino de Kaikōura — donde las aguas profundas, las montañas dramáticas y el océano abierto se encuentran.              </p>
+              <p>
+                 Una experiencia emblemática de Kaikōura que combina fauna marina extraordinaria, horizontes abiertos y la imponente cordillera emergiendo junto al mar.
+              </p>
+              <a class="pp-actLink" href="https://whalewatch.co.nz/your-experience/our-tours/whale-watch-trip-gift-voucher/" target="_blank" rel="noopener">
+                → Explore Whale Watch Kaikōura
+              </a>
+              
+              <a class="pp-actLink" href="https://gchaviation.com/kaikoura-scenic-flights/" target="_blank" rel="noopener">
+                → Explore Kaikōura Scenic Flights
+              </a>
+            
+            </div>
+          </article>
+
+          <article class="pp-act">
+            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/manakau/kaikoura-peninsula-walkway-coastal-view.jpg" role="button" aria-label="Ver foto Kaikōura Peninsula Walkway">
+              <img src="../../assets/img/manakau/kaikoura-peninsula-walkway-coastal-view.jpg" alt="View from the Kaikōura Peninsula Walkway overlooking the coastline in New Zealand">
+            </div>
+            <div class="pp-actBody">
+              <h3 class="pp-actTitle">Kaikōura Peninsula Walkway</h3>
+              <p>
+                Un paseo costero escénico con vistas abiertas al océano, promontorios rocosos y montañas lejanas — ideal para recorrer a un ritmo tranquilo mientras observas fauna marina en su hábitat natural, incluyendo focas neozelandesas, aves marinas y, en ocasiones, delfines y ballenas a lo lejos.
+              </p>
+              <p>
+                Alojarte en Kahutara te sitúa en el corazón de este paisaje salvaje junto al mar.
+              </p>
+              <a class="pp-actLink" href="https://www.google.com/maps/place/Kaik%C5%8Dura+Peninsula+Walkway,+Canterbury+Region+7300,+Nueva+Zelanda/@-42.4256257,173.6889881,17z/data=!3m1!4b1!4m6!3m5!1s0x6d3756eddf4f8b21:0xfb5bf3dd60e6a6e3!8m2!3d-42.4256297!4d173.691563!16s%2Fg%2F1tjz83vq?entry=tts&g_ep=EgoyMDI2MDEyMC4wIPu8ASoASAFQAw%3D%3D&skid=09f8529a-2ee2-4abf-b76e-3f474682f623" target="_blank" rel="noopener">
+                → Explore Kaikōura Peninsula Walkway
+              </a>
+              
+            </div>
+          </article>
+
+          <article class="pp-act">
+            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/manakau/kaikoura-seal-colony-new-zealand.jpg" role="button" aria-label="Ver foto Seal Kayak & Seal Swim Kaikōura ">
+              <img src="../../assets/img/manakau/kaikoura-seal-colony-new-zealand.jpg" alt="New Zealand fur seal resting on rocks along the Kaikōura coast">
+            </div>
+            <div class="pp-actBody">
+              <h3 class="pp-actTitle">Seal Kayak & Seal Swim Kaikōura</h3>
+              <p>
+                 Una forma activa y cercana de explorar la costa — remando junto a focas o nadando con ellas en su hábitat natural para vivir una experiencia de naturaleza verdaderamente inmersiva.
+              </p>
+              <p>
+                 Una experiencia emblemática de Kaikōura donde la costa salvaje, la fauna marina y el océano abierto se combinan en un encuentro directo con la vida marina.
+              </p>
+               <a class="pp-actLink" href="https://www.sealkayakkaikoura.com/tours/seal-kayak-tour" target="_blank" rel="noopener">
+      → Explorar Seal Kayak Kaikōura
+    </a>
+
+    <a class="pp-actLink" href="https://www.sealswimkaikoura.co.nz/" target="_blank" rel="noopener">
+      → Explorar Seal Swim Kaikōura
+    </a>
+            </div>
+          </article>
+
+        </div><!-- /pp-actsGrid -->
+
+        <!-- BLOQUE EXTRA -->
+        <div class="pp-actsExtra">
+          <h3>Más formas de explorar Kaikōura</h3>
+          <p><strong>MMás allá del pod, la costa sigue abriéndose con calma.</strong></p>
+          <p>
+            Paseos junto al mar y senderos suaves invitan a descubrir el paisaje sin prisa.
+            Miradores como Ohau Point Lookout, Point Kean Viewpoint o Dolphin View Lookout ofrecen horizontes abiertos y vistas cambiantes del océano.
+          </p>
+          <p>
+              La presencia constante del mar y la fauna marina acompaña cada recorrido.
+            Colinas tranquilas y viñedos del interior completan la sensación de espacio, silencio y horizonte.          </p>
+        </div>
+
+      </div><!-- /pp-actsCard -->
+    </div><!-- /section pp-acts -->
+
+    <!-- ANTES DE VIAJAR -->
+    <div class="section">
+      <div class="sectionHeader">
+        <h2>Antes de viajar</h2>
+        <p class="hint">Lo práctico, sin matar el mood</p>
+      </div>
+
+      <div class="travelGrid">
+
+        <!-- El viaje (foto) -->
+        <div class="travelCard">
+          <div class="travelCollage2">
+            <div class="shot js-lightbox" data-full="../../assets/img/manakau/kaikoura-river-valley-landscape.jpg" role="button" aria-label="Ver foto El viaje">
+              <img src="../../assets/img/manakau/kaikoura-river-valley-landscape.jpg" alt="River valley landscape in the Kaikōura countryside, New Zealand">
+            </div>
+            <div class="shot js-lightbox" data-full="../../assets/img/manakau/kaikoura-countryside-farm-entrance.jpg" role="button" aria-label="Ver foto extra viaje">
+              <img src="../../assets/img/manakau/kaikoura-countryside-farm-entrance.jpg" alt="Rural farm entrance along a countryside track near Manakau PurePod in the Kaikōura region">
+            </div>
+          </div>
+          <div class="travelBody">
+            <h3>El viaje</h3>
+            <p>
+              La última parte del recorrido se realiza a pie. Un breve paseo de unos 10–15 minutos te lleva desde el área de aparcamiento hasta el pod, ayudando a crear una sensación de privacidad y desconexión del camino.
+            </p>
+          </div>
+        </div>
+
+        <!-- El clima (SIN FOTO) -->
+        <div class="travelCard plainCard">
+          <h3>El clima</h3>
+          <p>
+            Manakau se sitúa en la expuesta costa de Kaikōura, donde las condiciones pueden cambiar rápidamente. Encontrarás aire fresco, vientos costeros y noches más frescas durante todo el año. La lluvia forma parte del paisaje y a menudo aporta aún más atmósfera al entorno.
+          </p>
+        </div>
+
+        <!-- La comida (foto) -->
+        <div class="travelCard">
+          <div class="travelCollage2">
+            <div class="shot js-lightbox" data-full="../../assets/img/manakau/manakau-breakfast-outdoor-kaikoura.jpg" role="button" aria-label="Ver foto La comida">
+              <img src="../../assets/img/manakau/manakau-breakfast-outdoor-kaikoura.jpg" alt="Breakfast served outdoors at Manakau PurePod with views of the Kaikōura mountains">
+            </div>
+            <div class="shot js-lightbox" data-full="../../assets/img/manakau/manakau-local-food-platter-kaikoura.jpg" role="button" aria-label="Ver foto extra comida">
+              <img src="../../assets/img/manakau/manakau-local-food-platter-kaikoura.jpg" alt="Local cheese and charcuterie platter served outdoors at Manakau PurePod with views of the Kaikōura mountains">
+            </div>
+          </div>
+          <div class="travelBody">
+            <h3>La comida</h3>
+            <p>
+              Cada PurePod dispone de cocina de gas, barbacoa, una pequeña nevera y todo el menaje necesario — utensilios, ollas, platos y cubiertos — para preparar comidas sencillas durante tu estancia.
+
+                Encontrarás también una selección de té y café para disfrutar con calma en el pod. Puedes traer tu propia comida o reservar con antelación un paquete gastronómico PurePod con cena y desayuno de origen local, listo para preparar y disfrutar sin prisas.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="stickyCta" id="reserve">
+      <div class="ctaInner">
+        <div class="price">Desde $— / noche</div>
+        <button class="btn secondary" onclick="location.href='../../pods.html'">Ver otros pods</button>
+        <button class="btn" onclick="alert('Demo: abrir Newbook / motor de reservas')">Reservar ahora</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightboxBackdrop" data-close></div>
+    <div class="lightboxPanel">
+      <button class="lightboxClose" data-close aria-label="Cerrar">✕</button>
+      <img id="lightboxImg" alt="">
+    </div>
+  </div>
+
+  <script>
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+
+    function openLightbox(src, alt){
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(){
+      lb.setAttribute('aria-hidden', 'true');
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.js-lightbox');
+      if(btn){
+        const src = btn.dataset.full || btn.querySelector('img')?.src;
+        const alt = btn.querySelector('img')?.alt || '';
+        openLightbox(src, alt);
+        return;
+      }
+      if(e.target.matches('[data-close]')) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') closeLightbox();
+    });
+  </script>
+<script>
+  (function(){
+    const nav = document.getElementById('topnav');
+    if(!nav) return;
+
+    function onScroll(){
+      if(window.scrollY > 40) nav.classList.add('is-solid');
+      else nav.classList.remove('is-solid');
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
+</body>
+</html>
+

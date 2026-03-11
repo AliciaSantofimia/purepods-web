@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Greystone  | PurePods</title>
+
+<style>
+  :root{
+    --bg:#f5f3ee;
+    --ink:#17181b;
+    --muted:rgba(23,24,27,.72);
+    --card:rgba(255,255,255,.72);
+    --stroke:rgba(80,76,68,.18);
+    --shadow:0 18px 44px rgba(17,18,23,.10);
+    --r:24px;
+    --r2:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+  }
+
+  /* Contenido centrado */
+  .wrap{max-width:980px;margin:0 auto;padding:18px 14px 88px;}
+
+  .top{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px;}
+  .back{
+    font-size:13px;color:var(--muted);text-decoration:none;
+    border:1px solid var(--stroke);background:rgba(255,255,255,.55);
+    padding:8px 12px;border-radius:999px;
+  }
+  .chips{display:flex;gap:8px;flex-wrap:wrap;}
+  .chip{
+    font-size:12px;color:rgba(23,24,27,.78);
+    border:1px solid var(--stroke);
+    background:rgba(255,255,255,.55);
+    padding:7px 10px;border-radius:999px;
+  }
+
+  /* HERO FULL WIDTH */
+  
+   .hero--full{border:0;border-radius:0;box-shadow:none;background:transparent;}
+  .heroMedia{
+    height: 420px;
+    position: relative;
+    overflow: hidden;
+    background:#ddd;
+}
+
+.heroMedia img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% 70%;
+  display:block;
+}
+
+@media (min-width: 1200px){
+  .heroMedia img{
+    object-position: 60% 75%;
+  }
+}
+
+@media (min-width: 1600px){
+  .heroMedia{
+    height: clamp(520px, 75vh, 900px);
+  }
+  .heroMedia img{
+    object-position: 55% 70%;
+  }
+}
+
+  .heroMedia::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(0,0,0,.16), transparent 55%),
+      linear-gradient(to bottom, rgba(0,0,0,.18) 0%, rgba(0,0,0,.10) 45%, rgba(0,0,0,.68) 100%);
+    pointer-events:none;
+  }
+  .heroOverlay{
+    position:absolute; inset:0; z-index:1;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    padding: 18px 0 16px;
+  }
+  .heroInner{max-width:980px;margin:0 auto;padding: 0 14px;}
+  .heroTitle{
+    margin:0;
+    font-size:34px;
+    letter-spacing:-.02em;
+    line-height:1.05;
+    color:#fff;
+    text-shadow:0 2px 14px rgba(0,0,0,.35);
+  }
+  .heroSub{
+    margin:8px 0 0;
+    color:rgba(255,255,255,.92);
+    line-height:1.55;
+    font-size:14px;
+    text-shadow:0 2px 14px rgba(0,0,0,.25);
+    max-width:60ch;
+  }
+  .metaRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+  .pill{
+    font-size:12px;
+    border:1px solid rgba(255,255,255,.22);
+    background: rgba(255,255,255,.18);
+    padding:7px 10px;
+    border-radius:999px;
+    color: rgba(255,255,255,.92);
+    backdrop-filter: blur(8px);
+  }
+
+  /* Secciones */
+  .section{margin-top:14px;}
+  .sectionHeader{
+    display:flex;align-items:flex-end;justify-content:space-between;gap:10px;
+    margin: 14px 2px 10px;
+  }
+  .sectionHeader h2{margin:0;font-size:16px;letter-spacing:-.01em;}
+  .hint{margin:0;color:var(--muted);font-size:12px;}
+
+  .card{
+    border:1px solid var(--stroke);
+    background: var(--card);
+    border-radius: var(--r);
+    box-shadow: var(--shadow);
+    padding: 14px;
+  }
+  .card p{margin:0 0 10px;color:rgba(23,24,27,.76);line-height:1.6;font-size:14px;}
+  .card p:last-child{margin-bottom:0;}
+
+  /* Galería POD */
+  .imgRow{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+    margin-top:12px;
+  }
+  .imgPh{
+    height: 170px;
+    border-radius: var(--r2);
+    border:1px solid var(--stroke);
+    background:#ddd;
+    overflow:hidden;
+    padding:0;
+    cursor: zoom-in;
+    appearance:none;
+    display:block;
+  }
+  .imgPh.big{ height: 260px; grid-column: 1 / -1; }
+  .imgPh img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position: 50% 50%;
+    display:block;
+  }
+  .imgPh:hover{ transform: translateY(-1px); transition: transform .15s ease; }
+
+  /* ===== ANTES DE VIAJAR: collage 2 fotos + clima sin foto ===== */
+  .travelGrid{ display:grid; gap:18px; }
+
+  .travelCard{
+    border:1px solid var(--stroke);
+    background: rgba(255,255,255,.62);
+    border-radius: var(--r);
+    overflow:hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .travelCollage2{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+    padding:12px;
+    background: rgba(255,255,255,.38);
+  }
+
+  .travelCollage2 .shot{
+    height: 230px;
+    border-radius: 18px;
+    overflow:hidden;
+    border:1px solid var(--stroke);
+    cursor: zoom-in;
+    background:#ddd;
+  }
+
+  .travelCollage2 img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    display:block;
+  }
+
+  .travelBody{padding:14px;}
+  .travelBody h3{margin:0 0 6px;font-size:16px;}
+  .travelBody p{margin:0;color:var(--muted);line-height:1.55;font-size:14px;}
+
+  .plainCard{padding:18px;}
+  .plainCard h3{margin:0 0 6px;font-size:16px;}
+  .plainCard p{margin:0;color:var(--muted);line-height:1.55;font-size:14px;}
+
+  /* Sticky CTA */
+  .stickyCta{
+    position:fixed;
+    left:0; right:0; bottom:0;
+    padding:10px 14px;
+    background: rgba(245,243,238,.86);
+    backdrop-filter: blur(8px);
+    border-top:1px solid rgba(80,76,68,.18);
+  }
+  .ctaInner{max-width:980px;margin:0 auto;display:flex;gap:10px;align-items:center;}
+  .price{font-weight:800;font-size:14px;white-space:nowrap;}
+  .btn{
+    flex:1;
+    border:1px solid rgba(23,24,27,.12);
+    background: rgba(23,24,27,.92);
+    color:#fff;
+    padding: 12px 14px;
+    border-radius: 999px;
+    font-weight: 800;
+    cursor:pointer;
+  }
+  .btn.secondary{
+    flex:0 0 auto;
+    background: rgba(255,255,255,.65);
+    color: var(--ink);
+  }
+
+  /* Responsive */
+  @media (min-width: 920px){
+    .wrap{padding-bottom:40px;}
+    .stickyCta{position:static;background:transparent;border:0;padding:0;margin-top:12px;}
+    .ctaInner{justify-content:flex-end;}
+    .btn{flex:0 0 auto;min-width:220px;}
+  }
+  @media (max-width: 760px){
+    .travelCollage2{ grid-template-columns: 1fr; }
+    .travelCollage2 .shot{ height: 220px; }
+  }
+  @media (max-width: 560px){
+    .heroMedia{ height: 320px; }
+    .heroTitle{font-size:30px;}
+  }
+
+  /* LIGHTBOX */
+  .lightbox{position:fixed;inset:0;display:none;z-index:999;}
+  .lightbox[aria-hidden="false"]{ display:block; }
+  .lightboxBackdrop{position:absolute; inset:0;background: rgba(0,0,0,.75);}
+  .lightboxPanel{
+    position:relative;
+    width:min(980px, 92vw);
+    height:min(82vh, 700px);
+    margin: 6vh auto 0;
+    border-radius: 18px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.18);
+    box-shadow: 0 30px 90px rgba(0,0,0,.35);
+    background: rgba(0,0,0,.2);
+  }
+  .lightboxPanel img{
+    width:100%;
+    height:100%;
+    object-fit: contain;
+    background: rgba(0,0,0,.15);
+  }
+  .lightboxClose{
+    position:absolute;
+    top:10px; right:10px;
+    width:38px; height:38px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.22);
+    background: rgba(0,0,0,.35);
+    color:#fff;
+    cursor:pointer;
+  }
+
+  /* ===== ACTIVIDADES (AISLADO) ===== */
+  .pp-acts{ margin-top: 0; }
+
+  .pp-actsCard{
+    border:1px solid var(--stroke);
+    background: var(--card);
+    border-radius: var(--r);
+    box-shadow: var(--shadow);
+    padding: 14px;
+  }
+
+  .pp-actsIntro{
+    margin: 0 0 14px;
+    color: rgba(23,24,27,.76);
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  .pp-actsGrid{
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 12px;
+  }
+
+  .pp-act{
+    border:1px solid var(--stroke);
+    background: rgba(255,255,255,.62);
+    border-radius: var(--r);
+    overflow:hidden;
+  }
+
+  .pp-actMedia{
+    height: 160px;           /* 👈 control principal del tamaño */
+    background:#ddd;
+    overflow:hidden;
+    cursor: zoom-in;
+  }
+
+  .pp-actMedia img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:50% 50%;
+    display:block;
+  }
+
+  .pp-actBody{ padding: 12px 12px 14px; }
+
+  .pp-actTitle{
+    margin: 0 0 8px;
+    font-size: 15px;
+    letter-spacing: -.01em;
+  }
+
+  .pp-actBody p{
+    margin: 0 0 10px;
+    color: rgba(23,24,27,.76);
+    line-height: 1.6;
+    font-size: 13.5px;
+  }
+
+  .pp-actBody p:last-of-type{ margin-bottom: 12px; }
+
+  .pp-actLink{
+    display:inline-flex;
+    gap:8px;
+    align-items:center;
+    font-weight: 800;
+    font-size: 13px;
+    color: rgba(23,24,27,.88);
+    text-decoration:none;
+    border-bottom: 1px solid rgba(23,24,27,.18);
+    padding-bottom: 2px;
+  }
+
+  .pp-actUrl{
+    display:block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--muted);
+    word-break: break-word;
+  }
+
+  @media (max-width: 900px){
+    .pp-actsGrid{ grid-template-columns: 1fr; }
+    .pp-actMedia{ height: 220px; }
+  }
+
+  /* Bloque extra debajo de las 3 actividades */
+  .pp-actsExtra{
+    margin-top: 14px;
+    border-top: 1px solid var(--stroke);
+    padding-top: 14px;
+  }
+  .pp-actsExtra h3{
+    margin: 0 0 8px;
+    font-size: 15px;
+    letter-spacing: -.01em;
+  }
+  .pp-actsExtra p{
+    margin: 0 0 10px;
+    color: rgba(23,24,27,.76);
+    line-height: 1.6;
+    font-size: 14px;
+  }
+  .pp-actsExtra p:last-child{ margin-bottom: 0; }
+
+  /* --- Top nav (silent) --- */
+.topnav{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  padding: 14px 18px;
+  transition: background .22s ease, border-color .22s ease, backdrop-filter .22s ease;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.topnav__inner{
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.topnav__left{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.topnav__brand{
+  font-weight: 700;
+  letter-spacing: .2px;
+  text-decoration: none;
+  color: rgba(244,244,234,.96);
+  white-space: nowrap;
+}
+
+.topnav__back{
+  text-decoration: none;
+  color: rgba(244,244,234,.85);
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(244,244,234,.18);
+  background: rgba(17,18,23,.14);
+  backdrop-filter: blur(6px);
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+
+.topnav__back:hover{
+  transform: translateY(-1px);
+  background: rgba(17,18,23,.22);
+  border-color: rgba(244,244,234,.26);
+}
+
+.topnav__links{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.topnav__links a{
+  text-decoration: none;
+  color: rgba(244,244,234,.88);
+  font-size: 14px;
+  letter-spacing: .2px;
+}
+
+.topnav__links a:hover{
+  color: rgba(244,244,234,1);
+}
+
+/* CTA */
+.topnav__cta{
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(244,244,234,.22);
+  background: rgba(244,244,234,.10);
+}
+
+/* Solid state on scroll */
+.topnav.is-solid{
+  background: rgba(34, 54, 43, .72);
+  border-bottom-color: rgba(244,244,234,.14);
+  backdrop-filter: blur(10px);
+}
+
+
+
+
+/* Mobile tweaks */
+@media (max-width: 720px){
+  .topnav__links a:not(.topnav__cta){
+    display: none;
+  }
+  .topnav__inner{
+    gap: 10px;
+  }
+}
+
+
+
+/* Empuja solo el contenido, no la foto */
+.el-pod{
+  padding-top: 72px;
+}
+
+.pp-actsExtra a{
+  color: inherit;        /* usa el color normal del texto (negro) */
+  text-decoration: none; /* quita subrayado */
+  font-weight: 700;      /* opcional: mantener efecto tipo <strong> */
+}
+
+.pp-actsExtra a:hover{
+  text-decoration: underline; /* opcional: solo al pasar ratón */
+}
+
+/* Foto vertical derecha para rellenar hueco */
+.imgPh.tallRight{
+  height: 340px;        /* ajusta: 300–380 según te guste */
+  grid-column: 2;       /* columna derecha */
+  grid-row: 2 / span 2; /* ocupa 2 filas (texto + foto de abajo) */
+}
+
+/* En móvil (1 columna) volvemos a normal */
+@media (max-width: 640px){
+  .imgPh.tallRight{
+    grid-column: 1;
+    grid-row: auto;
+    height: 220px;
+  }
+}
+
+.card a{
+  color: inherit;        /* mismo color que el texto */
+  text-decoration: none; /* sin subrayado */
+  font-weight: 700;      /* negrita */
+}
+
+.card a:hover{
+  text-decoration: underline; /* opcional: solo al pasar ratón */
+}
+
+.imgPh.tall{
+  height: 240px;
+}
+
+</style>
+</head>
+
+<body>
+
+  <header class="topnav" id="topnav">
+  <div class="topnav__inner">
+    <div class="topnav__left">
+      <a class="topnav__back" href="../../pods.html" aria-label="Volver a todos los pods">
+        <span aria-hidden="true">←</span> All Pods
+      </a>
+
+      <a class="topnav__brand" href="../../index.html" aria-label="Ir a Home">
+        PurePods
+      </a>
+    </div>
+
+    <nav class="topnav__links" aria-label="Navegación principal">
+      <a href="../../pods.html">Pods</a>
+      <a href="../../experiencias.html">Experiences</a>
+      <a class="topnav__cta" href="#reserve">Reserva</a>
+    </nav>
+    </div>
+  </div>
+  </header>
+
+  <!-- HERO FULL WIDTH -->
+  <section class="hero--full">
+    <div class="heroMedia">
+      <img src="../../assets/img/greystone/greystone-purepod-aerial-vineyard-landscape-waipara.jpg" alt="Aerial view of Greystone PurePod surrounded by vineyards and rolling hills in Waipara, New Zealand">
+      <div class="heroOverlay">
+        <div class="heroInner">
+          <h1 class="heroTitle">Greystone</h1>
+          <p class="heroSub">
+                    En el corazón del valle de Waipara, PurePod Greystone se define por el vino, el paisaje y la calma rural. Viñedos que se extienden sobre suaves colinas, luz cambiante sobre las hileras de vides y una sensación constante de espacio abierto. Aquí el tiempo sigue el ritmo de la tierra.         </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <div class="wrap">
+
+    <!-- EL POD -->
+    <div class="section">
+      <div class="sectionHeader">
+        <h2>El Pod</h2>
+        <p class="hint">Lo esencial, sin rodeos</p>
+      </div>
+
+      <div class="card">
+        <p>
+          El Greystone PurePod se encuentra en lo alto del <a href="https://www.greystonewines.co.nz/" target="_blank" rel="noopener"> <strong>galardonado viñedo Greystone</strong></a>, 
+          elevado sobre las hileras de vides y con amplias vistas sobre el valle de Waipara y las colinas que lo rodean, inmerso en un paisaje donde la viticultura y la naturaleza conviven en equilibrio.   
+        </p>
+        <p>Llegar forma parte de la experiencia: un paseo de aproximadamente 10 minutos cuesta arriba conduce hasta el pod. Situado en la parte más alta de la colina y fuera de la vista desde abajo, la sensación de privacidad es inmediata. Desde su posición privilegiada, el pod se abre a un horizonte amplio y tranquilo. Según la estación, es posible ver al equipo del viñedo trabajando a lo lejos — podando, cosechando o cuidando las vides — conectando tu estancia con el ritmo vivo de la tierra.
+        </p>
+        <div class="imgRow">
+          <button class="imgPh big js-lightbox" data-full="../../assets/img/greystone/greystone-purepod-aerial-view-waipara.jpg" aria-label="Ver foto grande">
+            <img src="../../assets/img/greystone/greystone-purepod-aerial-view-waipara.jpg" alt="Greystone PurePod aerial view surrounded by Waipara countryside landscape" style="object-position:50% 55%;">
+          </button>
+          <p>Diseñado para dos personas, PurePod Greystone ofrece un alojamiento sencillo y confortable: un espacio para descansar, dormir y dejar que los días transcurran lentamente entre viñedos y silencio.</p>
+
+          <button class="imgPh tallRight js-lightbox" data-full="../../assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg" aria-label="Ver foto">
+            <img src="../../assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg" alt="Greystone PurePod glass cabin exterior in Waipara Valley New Zealand" style="object-position:50% 70%;">
+          </button>
+
+
+          <button class="imgPh tall js-lightbox" data-full="../../assets/img/greystone/greystone-purepod-bedroom-interior-waipara.jpg" aria-label="Ver foto">
+            <img src="../../assets/img/greystone/greystone-purepod-bedroom-interior-waipara.jpg" alt="Greystone PurePod bedroom interior with glass walls in Waipara Valley New Zealand" style="object-position:50% 45%;">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIVIDADES -->
+    <div class="section pp-acts">
+      <div class="sectionHeader">
+        <h2>Las experiencias que definen Greystone</h2>
+        <p class="hint">Viñedos, arte y senderos entre colinas calizas</p>
+      </div>
+
+      <div class="pp-actsCard">
+        <p class="pp-actsIntro">
+          Una cuidada selección de experiencias que reflejan la vida en el valle de Waipara — vino, paisaje y descubrimientos tranquilos que marcan el ritmo de la estancia.
+
+        </p>
+
+        <div class="pp-actsGrid">
+
+          <article class="pp-act">
+            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/greystone/greystone-wine-dinner-experience-waipara.jpg" role="button" aria-label="Ver foto Crucero por Bay of Islands">
+              <img src="../../assets/img/greystone/greystone-wine-dinner-experience-waipara.jpg" alt="Greystone wine and dinner experience in Waipara Valley New Zealand">
+            </div>
+            <div class="pp-actBody">
+              <h3 class="pp-actTitle">Living the Vineyard — Greystone, Waipara</h3>
+              <p>
+                  PurePod Greystone se encuentra dentro de un viñedo en funcionamiento y galardonado, ofreciendo una forma inmersiva de experimentar el país del vino de Waipara. Rodeado de vides y elevado sobre el valle, la estancia se ve influida por la luz, las estaciones y el ritmo silencioso del trabajo en el viñedo.
+
+              <p>Un entorno donde el paisaje productivo y la calma rural se encuentran.  </p>            
+              
+              
+              <a class="pp-actLink" href="https://www.greystonewines.co.nz/" target="_blank" rel="noopener">
+                → Explorar Greystone Wines
+              </a>
+              
+              
+            </div>
+          </article>
+
+          <article class="pp-act">
+            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/greystone/waipara-iron-ridge-sculpture-park-landscape.jpg" role="button" aria-label="Ver foto Iron Ridge Quarry Sculpture Park">
+              <img src="../../assets/img/greystone/waipara-iron-ridge-sculpture-park-landscape.jpg" alt="Iron Ridge Quarry Sculpture Park landscape near Waipara Valley New Zealand">
+            </div>
+            <div class="pp-actBody">
+              <h3 class="pp-actTitle">Iron Ridge Quarry Sculpture Park</h3>
+              <p>
+                Un parque de esculturas al aire libre situado en una antigua cantera de piedra caliza, donde el arte contemporáneo dialoga con formas naturales dramáticas. <strong>Iron Ridge Quarry Sculpture Park</strong>  ofrece un paseo relajado y sugerente, en el que arte y paisaje se experimentan como un todo.
+              </p>
+              <p>
+                Creatividad, piedra caliza y horizonte abierto.
+
+              </p>
+              <a class="pp-actLink" href="https://www.ironridgequarry.co.nz/sculpture-park" target="_blank" rel="noopener">
+                → Visitar Iron Ridge Quarry Sculpture Park
+              </a>
+              
+            </div>
+          </article>
+
+          <article class="pp-act">
+            <div class="pp-actMedia js-lightbox" data-full="../../assets/greystone/waipara-vineyard-walking-trail.jpg" role="button" aria-label="Ver foto Te Ara Paparārangi & Mt Cass">
+              <img src="../../assets/img/greystone/waipara-vineyard-walking-trail.jpg" alt="Waipara Valley vineyard rows along Te Ara Paparārangi walking trail in North Canterbury New Zealand">
+            </div>
+            <div class="pp-actBody">
+              <h3 class="pp-actTitle">Te Ara Paparārangi & Mt Cass</h3>
+              <p>
+                Dos caminatas distintivas muestran el carácter vinícola y calizo de North Canterbury. <strong>Te Ara Paparārangi </strong>comienza en Greystone Wines y recorre el paisaje de viñedos desde dentro, mientras que el <strong>Cass Walkway</strong>  asciende sobre las colinas de piedra caliza para ofrecer amplias vistas del valle de Waipara y el océano Pacífico.
+              </p>
+              <p>
+                Senderos entre viñas, colinas y panorámicas abiertas.
+              </p>
+
+              <a class="pp-actLink" href="https://www.greystonewines.co.nz/" target="_blank" rel="noopener">
+                → Explore Te Ara Paparārangi
+              </a>
+              <a class="pp-actLink" href="https://transwastecanterbury.co.nz/walkways/mt-cass-walkway-2/" target="_blank" rel="noopener">
+                → Explore Mt Cass Walkway
+              </a>
+          </article>
+
+        </div><!-- /pp-actsGrid -->
+
+        <!-- BLOQUE EXTRA -->
+        <div class="pp-actsExtra">
+          <h3>Más formas de explorar Waipara</h3>
+          <p><strong>Costa abierta y senderos tranquilos</strong></p>
+          <p>
+              Más allá del viñedo, el paisaje de North Canterbury se abre hacia la costa y los ríos, invitando a descubrir el territorio con calma. Lugares como <strong>Beach Clifftop Coastal Reserve </strong> revelan horizontes abiertos y acantilados sobre el mar, mientras senderos suaves recorren colinas y riberas tranquilas características de la región.
+          </p>
+
+          <p>
+                Pequeños cafés rurales y rincones locales completan la experiencia, prolongando la sensación de calma, espacio y conexión con el entorno.
+
+          </p>
+
+        </div>
+
+      </div><!-- /pp-actsCard -->
+    </div><!-- /section pp-acts -->
+
+    <!-- ANTES DE VIAJAR -->
+    <div class="section">
+      <div class="sectionHeader">
+        <h2>Antes de viajar</h2>
+        <p class="hint">Lo práctico, sin matar el mood</p>
+      </div>
+
+      <div class="travelGrid">
+
+        <!-- El viaje (foto) -->
+        <div class="travelCard">
+          <div class="travelCollage2">
+            <div class="shot js-lightbox" data-full="../../assets/img/greystone/waipara-valley-countryside-landscape.jpg" role="button" aria-label="Ver foto El viaje">
+              <img src="../../assets/img/greystone/waipara-valley-countryside-landscape.jpg" alt="Waipara Valley countryside landscape with Greystone PurePod in North Canterbury New Zealand " style="object-position: 50% 35%;">
+            </div>
+            <div class="shot js-lightbox" data-full="../../assets/img/greystone/kaikoura-sheep-farm-track-countryside-landscape-new-zealand.jpg" role="button" aria-label="Ver foto extra viaje">
+              <img src="../../assets/img/greystone/kaikoura-sheep-farm-track-countryside-landscape-new-zealand.jpg" alt="Sheep herd walking along a countryside track near Kaikōura, New Zealand" style="object-position: 50% 50%;">
+            </div>
+          </div>
+          <div class="travelBody">
+            <h3>El viaje</h3>
+            <p>
+              PurePod Greystone se encuentra a menos de una hora al norte de Christchurch, en el valle de Waipara. La parte final del recorrido incluye una corta pero empinada caminata cuesta arriba hasta el pod, por lo que se recomienda llevar calzado cómodo y equipaje ligero.          </div>
+        </div>
+
+        <!-- El clima (SIN FOTO) -->
+        <div class="travelCard plainCard">
+          <h3>El clima</h3>
+          <p>
+          Waipara disfruta de veranos cálidos y secos e inviernos más frescos. Las tardes pueden refrescar durante todo el año, por lo que es recomendable llevar ropa por capas para adaptarse a los cambios de temperatura.  </p>      
+        
+        </div>
+
+        <!-- La comida (foto) -->
+        <div class="travelCard">
+          <div class="travelCollage2">
+            <div class="shot js-lightbox" data-full="../../assets/img/greystone/greystone-local-food-basket-new-zealand.jpg" role="button" aria-label="Ver foto La comida">
+              <img src="../../assets/img/greystone/greystone-local-food-basket-new-zealand.jpg" alt="Local produce food basket at Greystone PurePod in New Zealand">
+            </div>
+            <div class="shot js-lightbox" data-full="../../assets/img/greystone/greystone-outdoor-dinner-wine-view-new-zealand.jpg" role="button" aria-label="Ver foto extra comida">
+              <img src="../../assets/img/greystone/greystone-outdoor-dinner-wine-view-new-zealand.jpg" alt="Outdoor dinner with wine and countryside views at Greystone PurePod, New Zealand">
+            </div>
+          </div>
+          <div class="travelBody">
+            <h3>La comida</h3>
+            <p>
+              Tu PurePod Greystone está completamente equipado para una estancia tranquila, cómoda y autosuficiente. En el interior encontrarás una cuidada selección de comidas gourmet listas para calentar, provisiones para el desayuno, snacks, té y café — siempre que es posible, provenientes de productores locales de la región de Hurunui. Las comidas están pensadas para prepararse de forma sencilla, para que pases menos tiempo cocinando y más tiempo disfrutando del paisaje, la luz cambiante y la calma del entorno, disfrutándolas en el pod o en la terraza, con vistas a los viñedos. Como no hay tiendas ni restaurantes cerca, todo está previsto dentro del pod para que tu estancia sea fácil, confortable y sin preocupaciones.            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="stickyCta" id="reserve">
+
+      <div class="ctaInner">
+        <div class="price">Desde $— / noche</div>
+        <button class="btn secondary" onclick="location.href='../../pods.html'">Ver otros pods</button>
+
+        <button class="btn" onclick="alert('Demo: abrir Newbook / motor de reservas')">Reservar ahora</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightboxBackdrop" data-close></div>
+    <div class="lightboxPanel">
+      <button class="lightboxClose" data-close aria-label="Cerrar">✕</button>
+      <img id="lightboxImg" alt="">
+    </div>
+  </div>
+
+  <script>
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+
+    function openLightbox(src, alt){
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(){
+      lb.setAttribute('aria-hidden', 'true');
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.js-lightbox');
+      if(btn){
+        const src = btn.dataset.full || btn.querySelector('img')?.src;
+        const alt = btn.querySelector('img')?.alt || '';
+        openLightbox(src, alt);
+        return;
+      }
+      if(e.target.matches('[data-close]')) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+<script>
+  (function(){
+    const nav = document.getElementById('topnav');
+    const solidAt = 40; // px de scroll para activar estado sólido
+
+    function onScroll(){
+      if(window.scrollY > solidAt) nav.classList.add('is-solid');
+      else nav.classList.remove('is-solid');
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
+
+</body>
+
+
+</html>
+
+
+
