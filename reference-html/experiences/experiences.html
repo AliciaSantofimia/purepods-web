@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Experiencias — PurePods</title>
+
+  <style>
+    :root{
+      --flora:#5C5F3C;
+      --sand:#F4F4EA;
+      --tussock:#C2B59D;
+      --moon:#111217;
+      --muted: rgba(17,18,23,.72);
+      --radius: 22px;
+      --shadow: 0 18px 50px rgba(17,18,23,.12);
+      --max: 1120px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--sand);
+      color: var(--moon);
+      line-height: 1.5;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+
+    /* NAV */
+    .nav{
+      position: sticky; top:0; z-index:50;
+      background: rgba(244,244,234,.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(17,18,23,.08);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0; gap:16px;
+    }
+    .brand{ display:flex; align-items:center; gap:10px; }
+    .brand img{ height: 30px; width:auto; display:block; }
+    .links{
+      display:flex; gap:18px; align-items:center;
+      font-size:13px; letter-spacing:.06em; text-transform:uppercase;
+    }
+    .links a{ color: rgba(17,18,23,.75); }
+    .links a:hover{ color: rgba(17,18,23,1); }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 14px; border-radius:999px;
+      border: 1px solid rgba(17,18,23,.14);
+      background: rgba(244,244,234,.55);
+      font-weight:600;
+    }
+    .btn-primary{
+      background: var(--flora);
+      border-color: rgba(255,255,255,.15);
+      color:#fff;
+      box-shadow: 0 16px 30px rgba(92,95,60,.28);
+    }
+
+    /* HERO */
+    .hero{
+      padding: 64px 0 28px;
+      text-align:center;
+    }
+    .kicker{
+      display:inline-block;
+      padding: 8px 12px;
+      border-radius:999px;
+      border: 1px solid rgba(17,18,23,.10);
+      background: rgba(255,255,255,.35);
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color: rgba(17,18,23,.70);
+    }
+    h1{
+      margin: 18px auto 12px;
+      font-size: clamp(30px, 4.2vw, 48px);
+      letter-spacing: -0.02em;
+      max-width: 22ch;
+    }
+    .lead{
+      margin: 0 auto 0;
+      max-width: 70ch;
+      color: var(--muted);
+      font-size:16px;
+      line-height:1.7;
+    }
+
+    /* GRID */
+    .grid{
+      padding: 26px 0 70px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .card{
+      border-radius: 24px;
+      border: 1px solid rgba(17,18,23,.10);
+      background: rgba(255,255,255,.45);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      min-height: 180px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 22px 55px rgba(17,18,23,.14);
+    }
+    .tag{
+      display:inline-flex;
+      padding: 7px 10px;
+      border-radius:999px;
+      border: 1px solid rgba(92,95,60,.22);
+      background: rgba(92,95,60,.10);
+      color: rgba(17,18,23,.75);
+      font-size: 12px;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      width: fit-content;
+    }
+    .card h3{
+      margin: 10px 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .card p{
+      margin: 0 0 14px;
+      color: rgba(17,18,23,.72);
+      line-height:1.6;
+      font-size: 14px;
+    }
+    .card .go{
+      display:inline-flex;
+      width: fit-content;
+      padding: 9px 12px;
+      border-radius:999px;
+      border: 1px solid rgba(17,18,23,.14);
+      background: rgba(244,244,234,.55);
+      font-weight:600;
+      font-size: 13px;
+    }
+
+    /* Coming soon */
+    .soon{
+      opacity: .55;
+      filter: grayscale(.2);
+      cursor: default;
+    }
+    .soon:hover{ transform:none; box-shadow: var(--shadow); }
+
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px){
+      .links{ gap:12px; }
+      .grid{ grid-template-columns: 1fr; }
+      .brand img{ height: 28px; }
+    }
+
+    /* NIGHT FALLS DESTACADA (una sola definición, sin duplicados) */
+    .card.featured{
+      grid-column: 1 / -1;
+      min-height: 240px;
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Imagen + overlay */
+    .card.featured.night-falls{
+      background:
+        linear-gradient(
+          to right,
+          rgba(17,18,23,.70),
+          rgba(17,18,23,.40),
+          rgba(17,18,23,.15)
+        ),
+        url("assets/img/night-falls.jpg");
+      background-size: cover;
+      background-position: center 30%;
+
+      color: #fff;
+      border-color: rgba(255,255,255,.14);
+      box-shadow: 0 22px 60px rgba(17,18,23,.18);
+    }
+
+    .card.featured.night-falls .tag{
+      border-color: rgba(255,255,255,.25);
+      background: rgba(255,255,255,.10);
+      color: rgba(255,255,255,.92);
+    }
+
+    .card.featured.night-falls h3{
+      font-size: 24px;
+      color:#fff;
+    }
+    .card.featured.night-falls p{
+      max-width: 70ch;
+      color: rgba(255,255,255,.90);
+      margin-bottom: 16px;
+    }
+    .card.featured.night-falls .go{
+      color:#fff;
+      border-color: rgba(255,255,255,.40);
+      background: rgba(255,255,255,.08);
+    }
+    .card.featured.night-falls .go:hover{
+      background: rgba(255,255,255,.14);
+    }
+
+    /* Cards con foto (no hero) */
+.card.with-photo{
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Imagen arriba */
+.card.with-photo::before{
+  content:"";
+  display:block;
+  height:200px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Romantic image */
+.card.with-photo.romantic::before{
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(17,18,23,.02),
+      rgba(244,244,234,.38)
+    ),
+    url("assets/img/romantic.jpg");
+}
+.card.with-photo.journeys::before{
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(17,18,23,.06),
+      rgba(244,244,234,.62)
+    ),
+    url("assets/img/journey.jpg");
+}
+
+
+
+
+/* Ajustes de contenido debajo de la imagen */
+.card.with-photo h3{
+  margin-top: 6px;
+}
+
+
+.card.with-photo .tag{
+  margin-top: -6px;
+}
+
+/* Ajustes de contenido debajo de la imagen */
+.card.with-photo h3{
+  margin-top: 6px;
+}
+
+
+.card.with-photo .tag{
+  margin-top: -6px;
+}
+.card.with-photo p{
+  margin-bottom: 18px;
+  line-height: 1.65;
+}
+
+.card.with-photo .go{
+  margin-top: 4px;
+}
+
+/* Romantic: aire real (infalible) */
+.card.with-photo .card-body{
+  padding: 20px 26px;
+}
+
+.card.with-photo .card-body p{
+  margin-bottom: 18px;
+  line-height: 1.65;
+}
+
+.btn-primary,
+.links .btn-primary{
+  color: #fff !important;
+}
+
+/* Journeys image */
+.card.with-photo.journey::before{
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(17,18,23,.12),
+      rgba(244,244,234,.88)
+    ),
+    url("assets/img/journeyjpg");
+}
+
+.card.with-photo{
+  position: relative;
+  overflow: hidden;
+  padding: 0; /* muy importante */
+}
+.card.with-photo::before{
+  content:"";
+  display:block;
+  height: 150px;          /* aquí vive la foto */
+  background-size: cover;
+  background-position: center;
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.png""PurePods">
+      </a>
+
+      <div class="links">
+        <a href="pods.html">Pods</a>
+        <a href="experiencias.html">Experiencias</a>
+        <a href="mi-viaje.html">Mi viaje</a>
+        <a class="btn btn-primary" href="https://purepods.com/booking/?cart=Checkout">Reservar</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="hero">
+      <span class="kicker">Experiencias</span>
+      <h1>Elige tu forma de vivir PurePods</h1>
+      <p class="lead">
+        Una misma idea, vivida de distintas formas.
+      </p>
+    </section>
+
+    <section class="grid">
+      <!-- DESTACADA -->
+      <a class="card featured night-falls" href="night-falls.html">
+        
+        <div>
+          <h3>Night Falls</h3>
+          <p>Cielo profundo, silencio real y la sensación de estar lejos de todo.</p>
+        </div>
+        <span class="go">Ver Night Falls →</span>
+      </a>
+
+      <!-- HECHAS -->
+      <a class="card with-photo romantic" href="romantic.html">
+  <div class="card-body">
+    
+
+    <div>
+      <h3>Romantic</h3>
+      <p>Para quedarse, bajar el ritmo y dejar que la noche haga lo demás.</p>
+    </div>
+
+    <span class="go">Ver más </span>
+  </div>
+</a>
+
+
+    <a class="card with-photo journeys" href="journeys.html">
+  <div class="card-body">
+    <h3>Journeys</h3>
+    <p>Rutas escénicas y planes que encajan antes o después de tu PurePod.</p>
+    <span class="go">Ver más </span>
+  </div>
+</a>
+
+
+
+      <!-- PRÓXIMAMENTE -->
+      <div class="card soon">
+        <span class="tag">Adventure & Wildlife</span>
+        <div>
+          <h3>Adventure & Wildlife</h3>
+          <p>Explorar, caminar, observar. Naturaleza en versión “muy cerca”.</p>
+        </div>
+        <span class="go">Próximamente</span>
+      </div>
+
+      <div class="card soon">
+        <span class="tag">Wine & Dine </span>
+        <div>
+          <h3>Wine & Dine </h3>
+          <p>Sabores locales, productores cercanos y cenas sin prisas.</p>
+        </div>
+        <span class="go">Próximamente</span>
+      </div>
+
+      <div class="card soon">
+        <span class="tag">Relax & Coastal</span>
+        <div>
+          <h3>Relax & Coastal</h3>
+          <p>Mar, calma y ese tipo de descanso que se nota de verdad.</p>
+        </div>
+        <span class="go">Próximamente</span>
+      </div>
+
+      <div class="card soon">
+        <span class="tag">Culture</span>
+        <div>
+          <h3>Culture</h3>
+          <p>Historias del lugar, rutas culturales y planes con alma.</p>
+        </div>
+        <span class="go">Próximamente</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
+
