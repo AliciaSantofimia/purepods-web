@@ -1,27 +1,33 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Experiencias — PurePods</title>
+  <meta name="description" content="Discover experiences around PurePods — stargazing, romantic retreats, scenic journeys and nature. Choose how you want to live the landscape." />
+  <title>Experiences — PurePods</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --flora:#5C5F3C;
-      --sand:#F4F4EA;
-      --tussock:#C2B59D;
-      --moon:#111217;
-      --muted: rgba(17,18,23,.72);
-      --radius: 22px;
-      --shadow: 0 18px 50px rgba(17,18,23,.12);
+      --bg:#F7F6F3;
+      --ink:#5C5F3E;
+      --muted:rgba(92,95,62,.72);
+      --card:rgba(255,255,255,.85);
+      --stroke:rgba(92,95,62,.18);
+      --brand-green:#5C5F3E;
+      --brand-beige:#C2B59E;
+      --shadow: 0 18px 44px rgba(0,0,0,.08);
       --max: 1120px;
     }
     *{ box-sizing:border-box; }
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: var(--sand);
-      color: var(--moon);
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
       line-height: 1.5;
     }
     a{ color:inherit; text-decoration:none; }
@@ -29,10 +35,10 @@
 
     /* NAV */
     .nav{
-      position: sticky; top:0; z-index:50;
-      background: rgba(244,244,234,.85);
+      position: sticky; top:0; z-index:60;
+      background: rgba(247,246,243,.92);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(17,18,23,.08);
+      border-bottom: 1px solid var(--stroke);
     }
     .nav-inner{
       display:flex; align-items:center; justify-content:space-between;
@@ -44,386 +50,489 @@
       display:flex; gap:18px; align-items:center;
       font-size:13px; letter-spacing:.06em; text-transform:uppercase;
     }
-    .links a{ color: rgba(17,18,23,.75); }
-    .links a:hover{ color: rgba(17,18,23,1); }
+    .links a{ color: var(--muted); }
+    .links a:hover{ color: var(--ink); }
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
-      padding: 10px 14px; border-radius:999px;
-      border: 1px solid rgba(17,18,23,.14);
-      background: rgba(244,244,234,.55);
-      font-weight:600;
+      padding: 12px 14px; border-radius:999px;
+      border: 2px solid var(--stroke);
+      background: var(--card);
+      font-weight: 600;
+      white-space:nowrap;
     }
     .btn-primary{
-      background: var(--flora);
-      border-color: rgba(255,255,255,.15);
-      color:#fff;
-      box-shadow: 0 16px 30px rgba(92,95,60,.28);
+      background: var(--brand-beige);
+      border-color: var(--brand-beige);
+      color: var(--brand-green) !important;
+      font-weight: 800;
+      box-shadow: 0 16px 30px rgba(92,95,60,.2);
     }
 
     /* HERO */
     .hero{
-      padding: 64px 0 28px;
+      padding: 48px 0 32px;
       text-align:center;
     }
     .kicker{
       display:inline-block;
       padding: 8px 12px;
       border-radius:999px;
-      border: 1px solid rgba(17,18,23,.10);
-      background: rgba(255,255,255,.35);
+      border: 1px solid var(--stroke);
+      background: var(--card);
       font-size:12px;
       letter-spacing:.12em;
       text-transform:uppercase;
-      color: rgba(17,18,23,.70);
+      color: var(--muted);
     }
-    h1{
-      margin: 18px auto 12px;
-      font-size: clamp(30px, 4.2vw, 48px);
+    .hero h1{
+      margin: 14px auto 10px;
+      font-family: "Noto Serif Display", Georgia, "Times New Roman", serif;
+      font-weight: 600;
+      font-size: clamp(28px, 4vw, 44px);
       letter-spacing: -0.02em;
       max-width: 22ch;
+      color: var(--brand-green);
     }
     .lead{
-      margin: 0 auto 0;
-      max-width: 70ch;
+      margin: 0 auto;
+      max-width: 65ch;
       color: var(--muted);
-      font-size:16px;
+      font-size: 16px;
       line-height:1.7;
     }
 
-    /* GRID */
+    /* INTRO */
+    .intro{
+      text-align: center;
+      max-width: 60ch;
+      margin: 0 auto 36px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* FEATURED CARD (full width) */
+    .featured{
+      border-radius: 24px;
+      border: 1px solid var(--stroke);
+      overflow: hidden;
+      margin-bottom: 24px;
+      min-height: 280px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background-size: cover;
+      background-position: center 40%;
+      box-shadow: var(--shadow);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .featured:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 22px 55px rgba(0,0,0,.12);
+    }
+    .featured::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(17,18,23,.75) 0%, rgba(17,18,23,.2) 50%, transparent 100%);
+      pointer-events: none;
+    }
+    .featured .featured-inner{
+      position: relative;
+      z-index: 1;
+      padding: 28px 24px;
+    }
+    .featured .tag{
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.3);
+      background: rgba(255,255,255,.12);
+      color: rgba(255,255,255,.95);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .featured h2{
+      margin: 0 0 8px;
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.01em;
+    }
+    .featured p{
+      margin: 0 0 14px;
+      color: rgba(255,255,255,.9);
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 50ch;
+    }
+    .featured .go{
+      display: inline-flex;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 2px solid rgba(255,255,255,.4);
+      background: rgba(255,255,255,.1);
+      color: #fff;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .featured:hover .go{ background: rgba(255,255,255,.18); }
+
+    /* EXPERIENCE GRID */
+    .section{
+      padding: 20px 0 48px;
+    }
+    .section-title{
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--brand-green);
+      margin: 0 0 18px;
+      letter-spacing: -0.01em;
+    }
     .grid{
-      padding: 26px 0 70px;
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
     .card{
       border-radius: 24px;
-      border: 1px solid rgba(17,18,23,.10);
-      background: rgba(255,255,255,.45);
+      border: 1px solid var(--stroke);
+      background: var(--card);
       box-shadow: var(--shadow);
-      padding: 18px;
-      min-height: 180px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 300px;
       transition: transform .15s ease, box-shadow .15s ease;
     }
     .card:hover{
       transform: translateY(-2px);
-      box-shadow: 0 22px 55px rgba(17,18,23,.14);
+      box-shadow: 0 22px 55px rgba(0,0,0,.1);
     }
-    .tag{
-      display:inline-flex;
-      padding: 7px 10px;
-      border-radius:999px;
-      border: 1px solid rgba(92,95,60,.22);
-      background: rgba(92,95,60,.10);
-      color: rgba(17,18,23,.75);
-      font-size: 12px;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-      width: fit-content;
-    }
-    .card h3{
-      margin: 10px 0 8px;
-      font-size: 18px;
-      letter-spacing: -0.01em;
-    }
-    .card p{
-      margin: 0 0 14px;
-      color: rgba(17,18,23,.72);
-      line-height:1.6;
-      font-size: 14px;
-    }
-    .card .go{
-      display:inline-flex;
-      width: fit-content;
-      padding: 9px 12px;
-      border-radius:999px;
-      border: 1px solid rgba(17,18,23,.14);
-      background: rgba(244,244,234,.55);
-      font-weight:600;
-      font-size: 13px;
-    }
-
-    /* Coming soon */
-    .soon{
-      opacity: .55;
-      filter: grayscale(.2);
-      cursor: default;
-    }
-    .soon:hover{ transform:none; box-shadow: var(--shadow); }
-
-    @media (max-width: 980px){
-      .grid{ grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 640px){
-      .links{ gap:12px; }
-      .grid{ grid-template-columns: 1fr; }
-      .brand img{ height: 28px; }
-    }
-
-    /* NIGHT FALLS DESTACADA (una sola definición, sin duplicados) */
-    .card.featured{
-      grid-column: 1 / -1;
-      min-height: 240px;
-      padding: 22px;
+    .card .media{
+      height: 180px;
+      background-size: cover;
+      background-position: center;
       position: relative;
       overflow: hidden;
     }
+    .card .media::after{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(17,18,23,.03), rgba(247,246,243,.2));
+      pointer-events: none;
+    }
+    .card .body{
+      padding: 20px 22px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    .card .tag{
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(92,95,62,.08);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+    .card h3{
+      margin: 0;
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--brand-green);
+    }
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      flex: 1;
+    }
+    .card .go{
+      display: inline-flex;
+      width: fit-content;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 2px solid rgba(92,95,62,.35);
+      background: rgba(92,95,62,.08);
+      color: var(--brand-green);
+      font-weight: 600;
+      font-size: 13px;
+    }
 
-    /* Imagen + overlay */
-    .card.featured.night-falls{
-      background:
-        linear-gradient(
-          to right,
-          rgba(17,18,23,.70),
-          rgba(17,18,23,.40),
-          rgba(17,18,23,.15)
-        ),
-        url("assets/img/night-falls.jpg");
+    /* EDITORIAL BLOCKS */
+    .editorial{
+      padding: 48px 0 56px;
+    }
+    .editorial-head{
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .editorial-head h2{
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--brand-green);
+      margin: 0 0 6px;
+      letter-spacing: -0.01em;
+    }
+    .editorial-head p{
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 55ch;
+    }
+    .editorial-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .editorial-block{
+      border-radius: 24px;
+      border: 1px solid var(--stroke);
+      overflow: hidden;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .editorial-block:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 22px 55px rgba(0,0,0,.1);
+    }
+    .editorial-block .media{
+      height: 160px;
       background-size: cover;
-      background-position: center 30%;
-
-      color: #fff;
-      border-color: rgba(255,255,255,.14);
-      box-shadow: 0 22px 60px rgba(17,18,23,.18);
+      background-position: center;
+    }
+    .editorial-block .body{
+      padding: 18px 20px;
+    }
+    .editorial-block h3{
+      margin: 0 0 6px;
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--brand-green);
+    }
+    .editorial-block p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .editorial-block a.whole {
+      display: block;
+      text-decoration: none;
+      color: inherit;
     }
 
-    .card.featured.night-falls .tag{
-      border-color: rgba(255,255,255,.25);
-      background: rgba(255,255,255,.10);
-      color: rgba(255,255,255,.92);
+    /* COMING SOON CARDS */
+    .soon-section{
+      padding: 32px 0 64px;
+    }
+    .soon-section h2{
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--brand-green);
+      margin: 0 0 16px;
+      letter-spacing: -0.01em;
+    }
+    .soon-grid{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .card.soon{
+      min-height: auto;
+      opacity: 0.85;
+    }
+    .card.soon .body{ padding: 18px 20px; }
+    .card.soon h3{ font-family: "Inter", system-ui, sans-serif; }
+    .card.soon .go{
+      cursor: default;
+      border-style: dashed;
+      color: var(--muted);
     }
 
-    .card.featured.night-falls h3{
-      font-size: 24px;
-      color:#fff;
-    }
-    .card.featured.night-falls p{
-      max-width: 70ch;
-      color: rgba(255,255,255,.90);
-      margin-bottom: 16px;
-    }
-    .card.featured.night-falls .go{
-      color:#fff;
-      border-color: rgba(255,255,255,.40);
-      background: rgba(255,255,255,.08);
-    }
-    .card.featured.night-falls .go:hover{
-      background: rgba(255,255,255,.14);
+    /* FOOTER */
+    footer{
+      padding: 32px 0 40px;
+      border-top: 1px solid var(--stroke);
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    /* Cards con foto (no hero) */
-.card.with-photo{
-  padding: 0;
-  overflow: hidden;
-}
-
-/* Imagen arriba */
-.card.with-photo::before{
-  content:"";
-  display:block;
-  height:200px;
-  background-size: cover;
-  background-position: center;
-}
-
-/* Romantic image */
-.card.with-photo.romantic::before{
-  background-image:
-    linear-gradient(
-      to bottom,
-      rgba(17,18,23,.02),
-      rgba(244,244,234,.38)
-    ),
-    url("assets/img/romantic.jpg");
-}
-.card.with-photo.journeys::before{
-  background-image:
-    linear-gradient(
-      to bottom,
-      rgba(17,18,23,.06),
-      rgba(244,244,234,.62)
-    ),
-    url("assets/img/journey.jpg");
-}
-
-
-
-
-/* Ajustes de contenido debajo de la imagen */
-.card.with-photo h3{
-  margin-top: 6px;
-}
-
-
-.card.with-photo .tag{
-  margin-top: -6px;
-}
-
-/* Ajustes de contenido debajo de la imagen */
-.card.with-photo h3{
-  margin-top: 6px;
-}
-
-
-.card.with-photo .tag{
-  margin-top: -6px;
-}
-.card.with-photo p{
-  margin-bottom: 18px;
-  line-height: 1.65;
-}
-
-.card.with-photo .go{
-  margin-top: 4px;
-}
-
-/* Romantic: aire real (infalible) */
-.card.with-photo .card-body{
-  padding: 20px 26px;
-}
-
-.card.with-photo .card-body p{
-  margin-bottom: 18px;
-  line-height: 1.65;
-}
-
-.btn-primary,
-.links .btn-primary{
-  color: #fff !important;
-}
-
-/* Journeys image */
-.card.with-photo.journey::before{
-  background-image:
-    linear-gradient(
-      to bottom,
-      rgba(17,18,23,.12),
-      rgba(244,244,234,.88)
-    ),
-    url("assets/img/journeyjpg");
-}
-
-.card.with-photo{
-  position: relative;
-  overflow: hidden;
-  padding: 0; /* muy importante */
-}
-.card.with-photo::before{
-  content:"";
-  display:block;
-  height: 150px;          /* aquí vive la foto */
-  background-size: cover;
-  background-position: center;
-}
-
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+      .editorial-grid{ grid-template-columns: 1fr; }
+      .soon-grid{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px){
+      .links{ gap: 12px; }
+      .brand img{ height: 28px; }
+      .card .media{ height: 160px; }
+      .featured{ min-height: 240px; }
+    }
   </style>
 </head>
 
 <body>
+  <!-- NAV -->
   <div class="nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="index.html">
-        <img src="assets/img/logo.png""PurePods">
+      <a class="brand" href="../home/index.html">
+        <img src="../../assets/img/purepods-logo-new-zealand.png" alt="PurePods">
       </a>
-
       <div class="links">
-        <a href="pods.html">Pods</a>
-        <a href="experiencias.html">Experiencias</a>
-        <a href="mi-viaje.html">Mi viaje</a>
-        <a class="btn btn-primary" href="https://purepods.com/booking/?cart=Checkout">Reservar</a>
+        <a href="../explore.html">Pods</a>
+        <a href="experiences.html">Experiences</a>
+        <a href="../my-journey.html">My journey</a>
+        <a class="btn btn-primary" href="https://purepods.com/booking/">Book</a>
       </div>
     </div>
   </div>
 
   <main class="wrap">
+    <!-- HERO -->
     <section class="hero">
-      <span class="kicker">Experiencias</span>
-      <h1>Elige tu forma de vivir PurePods</h1>
+      <span class="kicker">Experiences</span>
+      <h1>Choose how you experience PurePods</h1>
       <p class="lead">
-        Una misma idea, vivida de distintas formas.
+        The same idea, lived in different ways.
       </p>
     </section>
 
-    <section class="grid">
-      <!-- DESTACADA -->
-      <a class="card featured night-falls" href="night-falls.html">
-        
-        <div>
-          <h3>Night Falls</h3>
-          <p>Cielo profundo, silencio real y la sensación de estar lejos de todo.</p>
-        </div>
-        <span class="go">Ver Night Falls →</span>
-      </a>
+    <p class="intro">
+      Beyond each pod lies a landscape — dark skies, scenic routes, quiet moments. Here you can explore the experiences that connect you to place and to the night.
+    </p>
 
-      <!-- HECHAS -->
-      <a class="card with-photo romantic" href="romantic.html">
-  <div class="card-body">
-    
-
-    <div>
-      <h3>Romantic</h3>
-      <p>Para quedarse, bajar el ritmo y dejar que la noche haga lo demás.</p>
-    </div>
-
-    <span class="go">Ver más </span>
-  </div>
-</a>
-
-
-    <a class="card with-photo journeys" href="journeys.html">
-  <div class="card-body">
-    <h3>Journeys</h3>
-    <p>Rutas escénicas y planes que encajan antes o después de tu PurePod.</p>
-    <span class="go">Ver más </span>
-  </div>
-</a>
-
-
-
-      <!-- PRÓXIMAMENTE -->
-      <div class="card soon">
-        <span class="tag">Adventure & Wildlife</span>
-        <div>
-          <h3>Adventure & Wildlife</h3>
-          <p>Explorar, caminar, observar. Naturaleza en versión “muy cerca”.</p>
-        </div>
-        <span class="go">Próximamente</span>
+    <!-- FEATURED: NIGHT FALLS -->
+    <a class="featured" href="night-falls.html" style="background-image: url('../../assets/img/experiences/night-falls/dark-sky-purepod.jpg');">
+      <div class="featured-inner">
+        <span class="tag">Stargazing</span>
+        <h2>Night Falls</h2>
+        <p>Dark skies, real silence and the feeling of being far from everything.</p>
+        <span class="go">View Night Falls →</span>
       </div>
+    </a>
 
-      <div class="card soon">
-        <span class="tag">Wine & Dine </span>
-        <div>
-          <h3>Wine & Dine </h3>
-          <p>Sabores locales, productores cercanos y cenas sin prisas.</p>
-        </div>
-        <span class="go">Próximamente</span>
+    <!-- EXPERIENCE CARDS -->
+    <section class="section">
+      <h2 class="section-title">Experiences</h2>
+      <div class="grid">
+        <a class="card" href="romantic.html">
+          <div class="media" style="background-image: url('../../assets/img/experiences/romantic/purepods-romantic-getaway-bedroom-fireplace-night.jpg');"></div>
+          <div class="body">
+            <span class="tag">Retreat</span>
+            <h3>Romantic</h3>
+            <p>Stay in, slow down and let the night do the rest.</p>
+            <span class="go">View more →</span>
+          </div>
+        </a>
+        <a class="card" href="journeys.html">
+          <div class="media" style="background-image: url('../../assets/img/experiences/journeys/new-zealand-native-forest-sunrise-landscape.jpg');"></div>
+          <div class="body">
+            <span class="tag">Journeys</span>
+            <h3>Scenic routes</h3>
+            <p>Scenic routes and plans that fit before or after your PurePod stay.</p>
+            <span class="go">View more →</span>
+          </div>
+        </a>
       </div>
+    </section>
 
-      <div class="card soon">
-        <span class="tag">Relax & Coastal</span>
-        <div>
-          <h3>Relax & Coastal</h3>
-          <p>Mar, calma y ese tipo de descanso que se nota de verdad.</p>
-        </div>
-        <span class="go">Próximamente</span>
+    <!-- EDITORIAL: THEMES -->
+    <section class="editorial">
+      <div class="editorial-head">
+        <h2>Ways to explore</h2>
+        <p>Nature, stillness and local flavour — each pod region offers something different.</p>
       </div>
+      <div class="editorial-grid">
+        <a class="editorial-block whole" href="night-falls.html">
+          <div class="media" style="background-image: url('../../assets/img/experiences/night-falls/purepod-full-moon.jpg');"></div>
+          <div class="body">
+            <h3>Stargazing & dark skies</h3>
+            <p>Clear nights, minimal light. Experience the sky from your pod.</p>
+          </div>
+        </a>
+        <a class="editorial-block whole" href="journeys.html">
+          <div class="media" style="background-image: url('../../assets/img/experiences/journeys/te-wairere-waterfall-north-island-new-zealand.jpg');"></div>
+          <div class="body">
+            <h3>Nature & walks</h3>
+            <p>Forest tracks, coastlines and quiet trails near your stay.</p>
+          </div>
+        </a>
+        <a class="editorial-block whole" href="../explore.html">
+          <div class="media" style="background-image: url('../../assets/img/experiences/romantic/purepods-romantic-getaway-couple-sunset-view-new-zealand.jpg');"></div>
+          <div class="body">
+            <h3>Slow travel</h3>
+            <p>Choose your pod. Each place has its own rhythm and landscape.</p>
+          </div>
+        </a>
+      </div>
+    </section>
 
-      <div class="card soon">
-        <span class="tag">Culture</span>
-        <div>
-          <h3>Culture</h3>
-          <p>Historias del lugar, rutas culturales y planes con alma.</p>
+    <!-- COMING SOON -->
+    <section class="soon-section">
+      <h2>More to come</h2>
+      <div class="soon-grid">
+        <div class="card soon">
+          <div class="body">
+            <span class="tag">Adventure & Wildlife</span>
+            <h3>Adventure & Wildlife</h3>
+            <p>Explore, walk, observe. Nature up close.</p>
+            <span class="go">Coming soon</span>
+          </div>
         </div>
-        <span class="go">Próximamente</span>
+        <div class="card soon">
+          <div class="body">
+            <span class="tag">Wine & Dine</span>
+            <h3>Wine & Dine</h3>
+            <p>Local flavours, nearby producers and unhurried dinners.</p>
+            <span class="go">Coming soon</span>
+          </div>
+        </div>
+        <div class="card soon">
+          <div class="body">
+            <span class="tag">Relax & Coastal</span>
+            <h3>Relax & Coastal</h3>
+            <p>Sea, calm and the kind of rest you can feel.</p>
+            <span class="go">Coming soon</span>
+          </div>
+        </div>
+        <div class="card soon">
+          <div class="body">
+            <span class="tag">Culture</span>
+            <h3>Culture</h3>
+            <p>Stories of place, cultural routes and experiences with soul.</p>
+            <span class="go">Coming soon</span>
+          </div>
+        </div>
       </div>
     </section>
   </main>
+
+  <footer>
+    <div class="wrap">
+      PurePods · Home · Pods · Experiences · My journey
+    </div>
+  </footer>
 </body>
 </html>
-
-

@@ -1,26 +1,34 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PurePods — Experiencias para dormir distinto</title>
+  <meta name="description" content="PurePods are glass eco-cabins in the natural landscapes of New Zealand. A different way to travel — connect with the landscape and experience the night in complete privacy." />
+  <title>PurePods — Sleep different. Wake in silence.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
  <style>
   :root{
-    --flora:#5C5F3C;
-    --sand:#F4F4EA;
-    --ink:#111217;
-    --muted: rgba(17,18,23,.72);
+    --bg:#F7F6F3;
+    --ink:#5C5F3E;
+    --muted:rgba(92,95,62,.72);
+    --card:rgba(255,255,255,.85);
+    --stroke:rgba(92,95,62,.18);
+    --brand-green:#5C5F3E;
+    --brand-beige:#C2B59E;
     --radius: 22px;
-    --shadow: 0 18px 50px rgba(17,18,23,.12);
+    --shadow: 0 18px 44px rgba(0,0,0,.08);
     --max: 1120px;
   }
 
   *{ box-sizing:border-box; }
   body{
     margin:0;
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-    background: var(--sand);
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--bg);
     color: var(--ink);
     line-height: 1.5;
   }
@@ -29,7 +37,7 @@
   .wrap{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
 
   /* =========================
-     NAV PREMIUM CENTRADA (overlay)
+     NAV (overlay)
      ========================= */
   .nav{
     position:absolute;
@@ -48,7 +56,6 @@
     gap: 16px;
   }
 
-  /* Ocultar el logo de la barra (solo se verá el del hero) */
   .nav .brand{ display:none; }
 
   .links{
@@ -59,7 +66,6 @@
     font-size:13px;
     letter-spacing:.10em;
     text-transform:uppercase;
-
     padding:10px 16px;
     border-radius:999px;
     border:1px solid rgba(255,255,255,.18);
@@ -71,12 +77,12 @@
   .links a{ color: rgba(255,255,255,.86); }
   .links a:hover{ color:#fff; }
 
-  /* Botón reservar en la pill */
   .links .btn-primary{
-    background: rgba(92,95,60,.95);
-    color:#fff;
-    border: 1px solid rgba(255,255,255,.18);
-    box-shadow: 0 14px 26px rgba(92,95,60,.28);
+    background: var(--brand-beige);
+    color: var(--brand-green);
+    border: 2px solid rgba(255,255,255,.18);
+    font-weight: 800;
+    box-shadow: 0 14px 26px rgba(92,95,60,.2);
   }
 
   @media (max-width: 760px){
@@ -90,22 +96,24 @@
   }
 
   /* =========================
-     TIPOGRAFÍA HERO
+     HERO TYPOGRAPHY
      ========================= */
   .kicker{
     display:inline-block;
     padding: 8px 12px;
     border-radius:999px;
-    border: 1px solid rgba(17,18,23,.10);
+    border: 1px solid rgba(92,95,62,.18);
     background: rgba(255,255,255,.35);
     font-size:12px;
     letter-spacing:.12em;
     text-transform:uppercase;
-    color: rgba(17,18,23,.70);
+    color: var(--muted);
   }
 
   h1{
     margin: 18px auto 12px;
+    font-family: "Noto Serif Display", Georgia, "Times New Roman", serif;
+    font-weight: 600;
     font-size: clamp(34px, 4.8vw, 62px);
     letter-spacing: -0.02em;
     max-width: 16ch;
@@ -127,30 +135,30 @@
   }
 
   /* =========================
-     BOTONES
+     BUTTONS
      ========================= */
   .btn{
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    padding: 10px 14px;
+    padding: 12px 14px;
     border-radius:999px;
-    border: 1px solid rgba(17,18,23,.14);
-    background: rgba(244,244,234,.55);
-    font-weight:600;
+    border: 2px solid var(--stroke);
+    background: rgba(255,255,255,.55);
+    font-weight: 600;
   }
 
   .btn-primary{
-    background: var(--flora);
-    border-color: rgba(255,255,255,.15);
-    color: #FFFFFF;
-    font-weight: 600;
+    background: var(--brand-beige);
+    border: 2px solid var(--brand-beige);
+    color: var(--brand-green);
+    font-weight: 800;
     letter-spacing: .04em;
-    box-shadow: 0 16px 30px rgba(92,95,60,.28);
+    box-shadow: 0 16px 30px rgba(92,95,60,.2);
   }
 
   /* =========================
-     HERO CON FOTO GRANDE + LOGO
+     HERO (full-width image + logo)
      ========================= */
   .hero{
     position: relative;
@@ -159,19 +167,15 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-
-    /* deja aire para nav + logo */
     padding: 72px 0 48px;
-
     background-image:
       linear-gradient(rgba(17,18,23,.55), rgba(17,18,23,.55)),
-      url("../../assets/img/purepods-glass-eco-cabin-new-zealand-nature-stay-hero-home.jpg"); 
+      url("../../assets/img/purepods-glass-eco-cabin-new-zealand-nature-stay-hero-home.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  /* sombra superior sutil (para que la nav se lea siempre) */
   .hero::before{
     content:"";
     position:absolute;
@@ -183,18 +187,17 @@
 
   .hero .kicker,
   .hero h1,
-  .hero .lead{ color: var(--sand); }
+  .hero .lead{ color: #F7F6F3; }
 
   .hero .lead{ max-width: 58ch; }
 
   .hero-actions .btn{
     border-color: rgba(255,255,255,.35);
-    background: rgba(244,244,234,.15);
-    color: #FFFFFF;
+    background: rgba(247,246,243,.15);
+    color: #F7F6F3;
   }
-  .hero-actions .btn:hover{ background: rgba(244,244,234,.25); }
+  .hero-actions .btn:hover{ background: rgba(247,246,243,.28); }
 
-  /* Logo grande flotando */
   .heroLogo{
     position:absolute;
     top:90px;
@@ -205,12 +208,12 @@
     border-radius:999px;
     display:grid;
     place-items:center;
-    background: rgba(245,243,238,.92);
-    border:1px solid rgba(80,76,68,.22);
-    box-shadow: 0 18px 44px rgba(17,18,23,.18);
+    background: rgba(247,246,243,.92);
+    border:1px solid var(--stroke);
+    box-shadow: var(--shadow);
     backdrop-filter: blur(8px);
     text-decoration:none;
-    z-index:70; /* por encima de la nav */
+    z-index:70;
   }
 
   .heroLogo img{
@@ -220,7 +223,6 @@
     display:block;
   }
 
-  /* empuja el contenido para que NO quede debajo del logo */
   .hero-content{
     padding-top:170px;
   }
@@ -235,10 +237,10 @@
   }
 
   /* =========================
-     DISCOVER (bloque de tarjetas)
+     DISCOVER (card grid)
      ========================= */
   .discover{
-    background: var(--sand);
+    background: var(--bg);
     padding: 54px 0 78px;
   }
 
@@ -252,6 +254,8 @@
     margin: 0 0 8px;
     font-size: clamp(22px, 2.3vw, 30px);
     letter-spacing: -0.01em;
+    color: var(--brand-green);
+    font-weight: 600;
   }
 
   .discover-head p{
@@ -267,16 +271,14 @@
     margin-top: 22px;
   }
 
-  /* Tarjetas claras PurePods (esta es la versión final) */
   .tile{
     border-radius: 26px;
-    border: 1px solid rgba(92,95,60,.22);
+    border: 1px solid var(--stroke);
     background:
-      radial-gradient(circle at 20% 20%, rgba(92,95,60,.18), transparent 55%),
-      radial-gradient(circle at 85% 30%, rgba(194,181,157,.38), transparent 55%),
-      rgba(244,244,234,1);
-
-    box-shadow: 0 20px 55px rgba(17,18,23,.14);
+      radial-gradient(circle at 20% 20%, rgba(92,95,62,.12), transparent 55%),
+      radial-gradient(circle at 85% 30%, rgba(194,181,158,.28), transparent 55%),
+      var(--card);
+    box-shadow: var(--shadow);
     padding: 24px;
     min-height: 230px;
     display:flex;
@@ -287,19 +289,20 @@
 
   .tile:hover{
     transform: translateY(-2px);
-    box-shadow: 0 26px 65px rgba(17,18,23,.18);
+    box-shadow: 0 26px 65px rgba(0,0,0,.12);
   }
 
   .tile h3{
     margin: 2px 0 0;
     font-size: 18px;
     letter-spacing: -0.01em;
-    color: var(--ink);
+    color: var(--brand-green);
+    font-weight: 600;
   }
 
   .tile p{
     margin: 0;
-    color: rgba(17,18,23,.72);
+    color: var(--muted);
     line-height: 1.65;
     font-size: 14px;
   }
@@ -310,9 +313,9 @@
     width: fit-content;
     padding: 9px 12px;
     border-radius: 999px;
-    border: 1px solid rgba(92,95,60,.30);
-    background: rgba(92,95,60,.12);
-    color: var(--ink);
+    border: 2px solid rgba(92,95,62,.35);
+    background: rgba(92,95,62,.08);
+    color: var(--brand-green);
     font-weight: 600;
     font-size: 13px;
   }
@@ -325,9 +328,9 @@
     font-size: 12px;
     letter-spacing: .12em;
     text-transform: uppercase;
-    border: 1px solid rgba(92,95,60,.28);
-    background: rgba(244,244,234,.75);
-    color: rgba(17,18,23,.75);
+    border: 1px solid var(--stroke);
+    background: var(--card);
+    color: var(--muted);
   }
 
   @media (max-width: 900px){
@@ -342,8 +345,8 @@
      ========================= */
   footer{
     padding: 32px 0 40px;
-    border-top: 1px solid rgba(17,18,23,.08);
-    color: rgba(17,18,23,.60);
+    border-top: 1px solid var(--stroke);
+    color: var(--muted);
     font-size:13px;
   }
 </style>
@@ -361,31 +364,27 @@
 
       <div class="links">
         <a href="../explore.html">Pods</a>
-        <a href="../experiences.html">Experiences</a>
+        <a href="../experiences/experiences.html">Experiences</a>
         <a href="../my-journey.html">My journey</a>
-        <a class="btn btn-primary" href="https://purepods.com/booking/?cart=Checkout">Book</a>
+        <a class="btn btn-primary" href="https://purepods.com/booking/">Book</a>
       </div>
     </div>
   </div>
 
   <!-- HERO -->
   <section class="hero">
-    <a class="heroLogo" href="index.html" aria-label="PurePods — inicio">
+    <a class="heroLogo" href="index.html" aria-label="PurePods — Home">
   <img src="../../assets/img/purepods-logo-new-zealand.png" alt="PurePods">
-
 </a>
 
   <div class="hero-content">
-    
-    <h1>Dormir distinto.<br>Despertar en silencio.</h1>
+    <h1>Sleep different.<br>Wake in silence.</h1>
     <p class="lead">
-      PurePods no es solo un lugar donde dormir.
-      Es una forma distinta de viajar, conectar con el paisaje y vivir la noche.
+      PurePods is not just a place to sleep. It is a different way to travel — to connect with the landscape and experience the night.
     </p>
     <div class="hero-actions">
-      <a class="btn" href="../explore.html">Explorar Pods</a>
-      <a class="btn" href="../experiences.html">Explorar Experiencias</a>
-
+      <a class="btn" href="../explore.html">Explore Pods</a>
+      <a class="btn" href="../experiences/experiences.html">Explore Experiences</a>
     </div>
   </div>
 </section>
@@ -397,24 +396,21 @@
    <section id="experiencias" class="discover">
   <div class="wrap">
     <div class="discover-head">
-      <h2>Cada viaje empieza de una forma distinta</h2>
-      <p>En PurePods, tú eliges cómo comenzar.</p>
+      <h2>Every journey begins differently</h2>
+      <p>At PurePods, you choose how to begin.</p>
     </div>
 
     <div class="discover-grid">
-      <a class="tile" href="/explore.html">
-        
-        <h3>Elige tu lugar</h3>
-        <p>Cada PurePod tiene su propio ritmo. Elige el que encaja contigo</p>
-        <span class="tile-cta">Explorar PurePods</span>
+      <a class="tile" href="../explore.html">
+        <h3>Choose your place</h3>
+        <p>Each PurePod has its own rhythm. Choose the one that fits you.</p>
+        <span class="tile-cta">Explore PurePods</span>
       </a>
 
-      <a class="tile" href="/experiences.html">
-
-        
-        <h3>Elige tu experiencia</h3>
-        <p>Cada estancia se vive de una forma distinta.</p>
-        <span class="tile-cta">Ver Experiencias →</span>
+      <a class="tile" href="../experiences/experiences.html">
+        <h3>Choose your experience</h3>
+        <p>Each stay is experienced in a different way.</p>
+        <span class="tile-cta">View Experiences →</span>
       </a>
     </div>
   </div>
@@ -424,10 +420,9 @@
   <!-- FOOTER -->
   <footer>
     <div class="wrap">
-      Demo navegable · PurePods · Home + Pods + Experiencias + Mi viaje
+      PurePods · Home · Pods · Experiences · My journey
     </div>
   </footer>
-<!-- test github -->
 
 </body>
 </html>
