@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pods — PurePods (Demo)</title>
+
+  <style>
+    :root{
+      --flora:#5C5F3C;
+      --sand:#F4F4EA;
+      --tussock:#C2B59D;
+      --moon:#111217;
+      --muted: rgba(17,18,23,.72);
+      --shadow: 0 18px 50px rgba(17,18,23,.12);
+      --max: 1120px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--sand);
+      color: var(--moon);
+      line-height: 1.5;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+
+    /* NAV */
+    .nav{
+      position: sticky; top:0; z-index:60;
+      background: rgba(244,244,234,.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(17,18,23,.08);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0; gap:16px;
+    }
+    .brand{ display:flex; align-items:center; gap:10px; }
+    .brand img{ height: 30px; width:auto; display:block; }
+
+    .links{
+      display:flex; gap:18px; align-items:center;
+      font-size:13px; letter-spacing:.06em; text-transform:uppercase;
+    }
+    .links a{ color: rgba(17,18,23,.75); }
+    .links a:hover{ color: rgba(17,18,23,1); }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 14px; border-radius:999px;
+      border: 1px solid rgba(17,18,23,.14);
+      background: rgba(244,244,234,.55);
+      font-weight:600;
+      white-space:nowrap;
+    }
+    .btn-primary{
+      background: var(--flora);
+      border-color: rgba(255,255,255,.15);
+      color:#fff !important;
+      box-shadow: 0 16px 30px rgba(92,95,60,.28);
+    }
+
+    /* HERO */
+    .hero{ padding: 44px 0 14px; }
+    h1{
+      margin: 0 0 10px;
+      font-size: clamp(30px, 4.2vw, 46px);
+      letter-spacing: -0.02em;
+    }
+    .lead{
+      margin:0;
+      max-width: 72ch;
+      color: var(--muted);
+      font-size: 16px;
+      line-height:1.7;
+    }
+
+    /* ISLAND TABS (sticky bajo la nav) */
+    .tabs-wrap{
+      position: sticky;
+      top: 62px; /* aprox altura nav */
+      z-index:55;
+      background: linear-gradient(to bottom, rgba(244,244,234,.92), rgba(244,244,234,.75));
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(17,18,23,.06);
+    }
+    .tabs{
+      display:flex;
+      gap:10px;
+      padding: 14px 0;
+      overflow:auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .tab{
+      flex:0 0 auto;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(17,18,23,.14);
+      background: rgba(255,255,255,.35);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: rgba(17,18,23,.78);
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      user-select:none;
+    }
+    .tab:hover{ transform: translateY(-1px); }
+    .tab.active{
+      background: rgba(92,95,60,.12);
+      border-color: rgba(92,95,60,.28);
+      color: rgba(17,18,23,.92);
+    }
+
+    /* GRID */
+    .section{
+      padding: 18px 0 70px;
+    }
+    .section-head{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:12px;
+      margin: 10px 0 16px;
+    }
+    .section-title{
+      font-size: 18px;
+      letter-spacing: -0.01em;
+      margin:0;
+    }
+    .count{
+      color: rgba(17,18,23,.62);
+      font-size: 13px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .pod{
+      border-radius: 24px;
+      border: 1px solid rgba(17,18,23,.10);
+      background: rgba(255,255,255,.45);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height: 330px;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .pod:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 22px 55px rgba(17,18,23,.14);
+    }
+
+    .media{
+  height: 260px;   /* antes 170 */
+  background-size: cover;
+  background-position: center 30%;
+}
+
+
+    .body{
+      padding: 18px 22px 22px;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      flex:1;
+    }
+
+    .pill{
+      display:inline-flex;
+      padding: 6px 10px;
+      border-radius:999px;
+      border: 1px solid rgba(92,95,60,.22);
+      background: rgba(92,95,60,.10);
+      color: rgba(17,18,23,.75);
+      font-size: 12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      width: fit-content;
+    }
+
+    .pod h3{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+
+    .meta{
+      color: rgba(17,18,23,.72);
+      font-size: 14px;
+      line-height:1.6;
+    }
+
+    .spacer{ flex:1; }
+
+    .cta{
+      display:inline-flex;
+      width: fit-content;
+      padding: 9px 12px;
+      border-radius:999px;
+      border: 1px solid rgba(17,18,23,.14);
+      background: rgba(244,244,234,.55);
+      font-weight:700;
+      font-size: 13px;
+    }
+
+    /* Estado: oculto por filtro */
+    .hidden{ display:none !important; }
+
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+      .tabs-wrap{ top: 60px; }
+    }
+    @media (max-width: 640px){
+      .grid{ grid-template-columns: 1fr; }
+      .brand img{ height: 28px; }
+      .tabs-wrap{ top: 58px; }
+    }
+
+    /* La foto vive aquí */
+.pod .media{
+  background-size: cover;
+  background-position: center 35%;
+}
+
+/* La niebla uniforme vive aquí (encima de la foto) */
+.pod .media{
+  position: relative;
+  overflow: hidden;
+}
+
+.pod .media::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(17,18,23,.02),
+    rgba(244,244,234,.38)
+  );
+  pointer-events:none;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.png" alt="PurePods">
+      </a>
+
+      <div class="links">
+        <a href="pods.html">Pods</a>
+        <a href="experiencias.html">Experiencias</a>
+        <a href="mi-viaje.html">Mi viaje</a>
+        <a class="btn btn-primary" href="https://purepods.com/booking/?cart=Checkout">Reservar</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Elige tu lugar</h1>
+      <p class="lead">
+        No todos los silencios suenan igual.
+Descubre dónde quieres pasar la noche.
+      </p>
+    </section>
+
+    <!-- TABS -->
+    <div class="tabs-wrap">
+      <div class="wrap">
+        <div class="tabs" role="tablist" aria-label="Filtrar por isla">
+          <button class="tab active" data-filter="north" role="tab" aria-selected="true">North Island</button>
+          <button class="tab" data-filter="south" role="tab" aria-selected="false">South Island</button>
+          <button class="tab" data-filter="stewart" role="tab" aria-selected="false">Stewart Island</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIST -->
+    <section class="section">
+      <div class="section-head">
+       
+        <div class="count" id="countLabel"></div>
+      </div>
+
+      <div class="grid" id="podsGrid">
+        <!-- NOTE: Cambia href y rutas de imagen según tus nombres de archivo reales -->
+        <!-- Recomendación filenames (seguro): makoha.html, pamu.html, rewarewa.html, matu.html, ruru.html, kokomea.html... -->
+
+        <!-- NORTH -->
+        <a class="pod" data-island="north" href="makoha.html">
+
+          <div class="media" style="background-image:
+            url('assets/img/makoha.jpg');"></div>
+          <div class="body">
+            <span class="pill">Kerikeri</span>
+            <h3>Mākoha</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">Ver detalles →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="north" href="rewarewa.html">
+          <div class="media" style="background-image:
+            url('assets/img/rewarewa.jpg');"></div>
+          <div class="body">
+            <span class="pill">Muriwai Coast</span>
+            <h3>Rewarewa</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">Ver detalles →</span>
+          </div>
+        </a>
+
+        <a class="pod ruru" data-island="north" href="ruru.html">
+
+          
+          <div class="media" style="background-image: url('assets/img/ruru.jpg'); background-position:center 25%;"></div>
+
+          <div class="body">
+            <span class="pill">Coromandel</span>
+            <h3>Ruru</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">Ver detalles →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="north" href="pamu.html">
+          <div class="media" style="background-image:
+              url('assets/img/pamu.jpg');"></div>
+          <div class="body">
+            <span class="pill">Rotorua</span>
+            <h3>Pāmu</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">Ver detalles →</span>
+          </div>
+        </a>
+
+        
+
+        <a class="pod" data-island="north" href="matu.html">
+          <div class="media" style="background-image:
+           url('assets/img/matu.jpg');"></div>
+          <div class="body">
+            <span class="pill">Waitomo</span>
+            <h3>Matū</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">Ver detalles →</span>
+          </div>
+        </a>
+
+        
+
+        
+          <a class="pod kokomea" data-island="north" href="kokomea.html">
+
+  <div class="media" style="background-image:
+   url('assets/img/kokomea.jpg');"></div>
+  <div class="body">
+    <span class="pill">Kapiti Coast</span>
+    <h3>Kokomea</h3>
+    <div class="meta">North Island</div>
+    <div class="spacer"></div>
+    <span class="cta">Ver detalles →</span>
+  </div>
+</a>
+
+
+        <!-- SOUTH -->
+        <a class="pod" data-island="south" href="manakau.html">
+          <div class="media" style="background-image:
+            
+            url('assets/img/manakau/manakau.jpg');"></div>
+          <div class="body">
+            <span class="pill">Kaikōura</span>
+            <h3>Manakau</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">Ver detalles →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" href="kahutara.html">
+          <div class="media" style="background-image:
+            url('assets/img/kahutara/kahutara.jpg');background-position:center 80%;"></div>
+          <div class="body">
+            <span class="pill">Kaikōura</span>
+            <h3>Kahutara</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">Ver detalles →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" href="atatu.html">
+          <div class="media" style="background-image:
+            url('assets/img/atatu/atatu.jpg');"></div>
+          <div class="body">
+            <span class="pill">Hurunui</span>
+            <h3>Atatū</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">Ver detalles →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" href="korimako.html">
+          <div class="media" style="background-image:
+            
+            url('assets/img/kiromako/kiromako.jpg');"></div>
+          <div class="body">
+            <span class="pill">Hurunui</span>
+            <h3>Korimako</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">Ver detalles →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" href="greystone.html">
+          <div class="media" style="background-image:
+            url('assets/img/greystone/greystone.jpg');"></div>
+          <div class="body">
+            <span class="pill">Waipara</span>
+            <h3>Greystone</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">Ver detalles →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" href="pohue.html">
+          <div class="media" style="background-image:
+             url('assets/img/pohue/pohue.jpg');"></div>
+          <div class="body">
+            <span class="pill">Banks Peninsula</span>
+            <h3>Pōhue</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">Ver detalles →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" href="haurapa.html">
+          <div class="media" style="background-image:
+            
+            url('assets/img/haurapa/haurapa.jpg');"></div>
+          <div class="body">
+            <span class="pill">Central Otago</span>
+            <h3>Haurapa</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">Ver detalles →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" href="taima.html">
+          <div class="media" style="background-image:
+
+            url('assets/img/taima/taima.jpg');"></div>
+          <div class="body">
+            <span class="pill">Central Otago</span>
+            <h3>Tāima</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">Ver detalles →</span>
+          </div>
+        </a>
+
+        <!-- STEWART -->
+        <a class="pod" data-island="stewart" href="tokoeka.html">
+          <div class="media" style="background-image:
+           url('assets/img/tokoeka/tokoeka.jpg');"></div>
+          <div class="body">
+            <span class="pill">Stewart Island</span>
+            <h3>Tokoeka</h3>
+            <div class="meta">Stewart Island</div>
+            <div class="spacer"></div>
+            <span class="cta">Ver detalles →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="stewart" href="hananui.html">
+          <div class="media" style="background-image:
+            url('assets/img/hananui/hananui.jpg');"></div>
+          <div class="body">
+            <span class="pill">Stewart Island</span>
+            <h3>Hananui</h3>
+            <div class="meta">Stewart Island</div>
+            <div class="spacer"></div>
+            <span class="cta">Ver detalles →</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const tabs = document.querySelectorAll(".tab");
+    const cards = document.querySelectorAll(".pod");
+    const title = document.getElementById("sectionTitle");
+    const count = document.getElementById("countLabel");
+
+    function applyFilter(filter){
+      tabs.forEach(t => {
+        const isActive = t.dataset.filter === filter;
+        t.classList.toggle("active", isActive);
+        t.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+
+      let visible = 0;
+      cards.forEach(c => {
+        const show = c.dataset.island === filter;
+        c.classList.toggle("hidden", !show);
+        if(show) visible++;
+      });
+
+      const label =
+        filter === "north" ? "North Island" :
+        filter === "south" ? "South Island" : "Stewart Island";
+
+      title.textContent = label;
+      count.textContent = `${visible} pods`;
+    }
+
+    tabs.forEach(t => t.addEventListener("click", () => applyFilter(t.dataset.filter)));
+
+    // default
+    applyFilter("north");
+  </script>
+</body>
+</html>
+
