@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>PurePods — Romantic</title>
+<meta content="Un refugio para dos: silencio, paisaje y noches oscuras para mirar el cielo." name="description"/>
+<style>
+    :root {
+      --flora:#5C5F3C;
+      --sand:#F4F4EA;
+      --tussock:#C2B59D;
+      --moon:#111217;
+
+      --text:#111217;
+      --muted: rgba(17,18,23,.72);
+
+      --radius: 24px;
+      --radius-sm: 16px;
+      --shadow: 0 18px 40px rgba(17,18,23,.16);
+      --shadow-soft: 0 10px 24px rgba(17,18,23,.10);
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: var(--sand);
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* Nav */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(244,244,234,.78);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(17,18,23,.08);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 220px;
+    }
+    .brand img { width: 42px; height: 42px; border-radius: 999px; }
+    .brand b { letter-spacing: .08em; font-weight: 650; font-size: 14px; }
+    .links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .links a {
+      font-size: 13px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: rgba(17,18,23,.78);
+    }
+    .links a:hover { color: rgba(17,18,23,1); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(17,18,23,.14);
+      background: rgba(244,244,234,.6);
+      box-shadow: var(--shadow-soft);
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0px); }
+    .btn-primary {
+      background: var(--flora);
+      border-color: rgba(255,255,255,.12);
+      color: var(--sand);
+      box-shadow: 0 16px 30px rgba(92,95,60,.30);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 78vh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+    }
+    .hero::before {
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(17,18,23,.10) 0%, rgba(17,18,23,.55) 70%, rgba(17,18,23,.70) 100%);
+      z-index: 1;
+    }
+    .hero-bg {
+      position: absolute; inset:0;
+      background: url("../assets/img/experiences/romantic/purepods-romantic-getaway-hero-new-zealand.jpg") center/cover no-repeat;
+      transform: scale(1.02);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 56px 0 44px;
+    }
+    .kicker {
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(244,244,234,.14);
+      border: 1px solid rgba(244,244,234,.22);
+      color: rgba(244,244,234,.92);
+      font-size: 12px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      margin: 14px 0 10px;
+      font-size: clamp(34px, 4.6vw, 64px);
+      line-height: 1.02;
+      color: var(--sand);
+      letter-spacing: -0.02em;
+    }
+    .hero p {
+      max-width: 64ch;
+      margin: 0 0 22px;
+      color: rgba(244,244,234,.86);
+      font-size: clamp(15px, 1.35vw, 18px);
+    }
+    .hero-cta {
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+
+    /* Sections */
+    section { padding: 64px 0; }
+    .section-title {
+      display:flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-end;
+      margin-bottom: 22px;
+    }
+    .section-title h2 {
+      margin:0;
+      font-size: clamp(22px, 2.6vw, 34px);
+      letter-spacing: -0.02em;
+    }
+    .section-title p {
+      margin:0;
+      max-width: 52ch;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* Feature cards */
+    .grid-3 {
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .card {
+      background: rgba(255,255,255,.45);
+      border: 1px solid rgba(17,18,23,.08);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow-soft);
+    }
+    .card h3 {
+      margin: 10px 0 6px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .icon {
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      display:grid;
+      place-items:center;
+      background: rgba(92,95,60,.10);
+      border: 1px solid rgba(92,95,60,.18);
+    }
+    .icon svg { width: 22px; height: 22px; color: var(--flora); }
+
+    /* Split moments */
+    .moment {
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 22px;
+      align-items: center;
+      margin-top: 18px;
+    }
+    .moment.reverse {
+      grid-template-columns: .95fr 1.05fr;
+    }
+    .moment .media {
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(17,18,23,.10);
+    }
+  .moment .media img {
+  width: 100%;
+  height: auto;
+  max-height: 380px;   /* 👈 aquí controlas el tamaño */
+  object-fit: contain;
+}
+
+
+    .moment .copy {
+      padding: 10px 4px;
+    }
+    .tag {
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      color: rgba(17,18,23,.78);
+      font-size: 12px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .tag .dot {
+      width: 8px; height: 8px; border-radius: 999px;
+      background: var(--flora);
+    }
+    .moment h3 {
+      margin: 10px 0 10px;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+    }
+    .moment p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* Gallery collage */
+    .collage {
+      display:grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      grid-template-rows: 220px 220px;
+      gap: 14px;
+    }
+    .tile {
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(17,18,23,.10);
+      background: rgba(255,255,255,.35);
+    }
+    .tile img {
+      width:100%; height:100%;
+      object-fit: cover;
+    }
+    .tile.big { grid-row: 1 / span 2; grid-column: 1; }
+    .tile.wide { grid-column: 2 / span 2; }
+    .tile.small1 { grid-column: 2; }
+    .tile.small2 { grid-column: 3; }
+
+    /* Dark section */
+    .dark {
+      background: var(--moon);
+      color: var(--sand);
+    }
+    .dark .section-title p { color: rgba(244,244,234,.74); }
+    .quote-grid {
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+    .quote {
+      border-radius: var(--radius);
+      border: 1px solid rgba(244,244,234,.12);
+      background: rgba(244,244,234,.06);
+      padding: 18px;
+    }
+    .quote p {
+      margin: 0 0 12px;
+      color: rgba(244,244,234,.82);
+      font-size: 14px;
+    }
+    .quote b {
+      display:block;
+      font-size: 13px;
+      letter-spacing: .02em;
+      color: rgba(244,244,234,.92);
+    }
+    .quote span {
+      display:block;
+      font-size: 12px;
+      color: rgba(244,244,234,.62);
+    }
+
+    /* Palette mini */
+    .swatches {
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .swatch {
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(17,18,23,.10);
+      background: rgba(255,255,255,.35);
+    }
+    .swatch .top {
+      height: 64px;
+    }
+    .swatch .meta {
+      padding: 10px 12px 12px;
+      font-size: 12px;
+      color: rgba(17,18,23,.72);
+    }
+    .swatch .meta b {
+      display:block;
+      margin-bottom: 4px;
+      color: rgba(17,18,23,.9);
+      font-size: 12px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .swatch code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12px;
+    }
+
+    /* Footer CTA */
+    .cta {
+      background: linear-gradient(135deg, rgba(92,95,60,.14), rgba(194,181,157,.22));
+      border-top: 1px solid rgba(17,18,23,.08);
+      border-bottom: 1px solid rgba(17,18,23,.08);
+    }
+    .cta-inner {
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .cta h2 {
+      margin:0;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+    }
+    .cta p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+
+    footer {
+      padding: 34px 0;
+      color: rgba(17,18,23,.72);
+      font-size: 13px;
+    }
+    footer .foot {
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    footer img { width: 28px; height: 28px; border-radius: 999px; opacity: .9; }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .grid-3 { grid-template-columns: 1fr; }
+      .moment, .moment.reverse { grid-template-columns: 1fr; }
+      .moment .media img { height: 340px; }
+      .collage {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 220px 220px 220px;
+      }
+      .tile.big { grid-column: 1 / span 2; grid-row: 1; }
+      .tile.wide { grid-column: 1 / span 2; grid-row: 2; }
+      .tile.small1 { grid-column: 1; grid-row: 3; }
+      .tile.small2 { grid-column: 2; grid-row: 3; }
+      .quote-grid { grid-template-columns: 1fr; }
+      .swatches { grid-template-columns: 1fr 1fr; }
+      .brand { min-width: unset; }
+    }
+  
+    /* Added v3: media blocks */
+    .essentials-photo{
+      margin-top: 22px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(17,18,23,.08);
+      background: var(--sand);
+      box-shadow: 0 14px 40px rgba(17,18,23,.08);
+    }
+    .essentials-photo img{ display:block; width:100%; height:auto; }
+
+    .teaser{ padding: 42px 0; background: transparent; }
+    .teaser-wrap{
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(17,18,23,.10);
+      box-shadow: 0 18px 48px rgba(17,18,23,.10);
+    }
+    .teaser-img{ display:block; width:100%; height: min(520px, 62vw); object-fit: cover; }
+    .teaser-overlay{
+      position:absolute; inset:0;
+      display:flex; flex-direction:column; justify-content:flex-end;
+      padding: 26px;
+      background: linear-gradient(180deg, rgba(17,18,23,0) 20%, rgba(17,18,23,.65) 100%);
+      color: #fff;
+      gap: 10px;
+    }
+    .teaser-overlay h2{ margin:0; font-size: clamp(22px, 3.2vw, 36px); letter-spacing:-0.02em; }
+    .teaser-overlay p{ margin:0; max-width: 52ch; opacity:.92; }
+    .teaser-overlay .btn{ width: fit-content; }
+
+
+    /* --- V4 tweaks --- */
+
+    /* --- Compact Experience block (V4+ tweaks) --- */
+    .experience-block{
+      position: relative;
+      padding: 44px 0 34px;
+      overflow: hidden;
+      background: transparent;
+    }
+    .experience-block:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: url("assets/pod_teaser.jpg") center/cover no-repeat;
+      opacity: .18;
+      transform: scale(1.03);
+      filter: saturate(1.02) contrast(1.02);
+      pointer-events:none;
+    }
+    .experience-block:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(244,244,234,.92) 0%, rgba(244,244,234,.82) 100%);
+      pointer-events:none;
+    }
+    .experience-surface{
+      position: relative;
+      z-index: 1;
+      padding: 18px 18px 16px;
+      border-radius: 26px;
+      border: 1px solid rgba(17,18,23,.08);
+      background: rgba(244,244,234,.86);
+      box-shadow: 0 16px 40px rgba(17,18,23,.08);
+    }
+    .experience-block .eyebrow{ margin: 0 0 10px; }
+    .experience-block .lead{ font-size: 15px; line-height: 1.55; }
+    .experience-grid{ margin-top: 18px; gap: 16px 22px; }
+    .experience-item{ gap: 12px; }
+    .icon-sq{
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: rgba(92,95,60,.14);
+      border: 1px solid rgba(92,95,60,.18);
+      color: var(--flora);
+      font-size: 17px;
+    }
+
+    /* Moments section – make kicker a small title */
+#moments .section-kicker{
+  font-size: clamp(20px, 2.6vw, 30px);
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  margin-bottom: 10px;
+  color: rgba(17,18,23,.92);
+}
+
+
+    /* Celebraciones image: show more of the scene */
+    .moment .media img.img-contain{
+      object-fit: contain;
+      background: rgba(244,244,234,.55);
+    }
+
+    /* Night section without black */
+    .night-soft{
+      background: linear-gradient(135deg, rgba(92,95,60,.10), rgba(194,181,157,.16));
+      color: var(--text);
+      border-top: 1px solid rgba(17,18,23,.08);
+      border-bottom: 1px solid rgba(17,18,23,.08);
+    }
+    .night-soft .section-title p{ color: rgba(17,18,23,.70); }
+    .night-soft .quote{
+      background: rgba(244,244,234,.78);
+      border: 1px solid rgba(17,18,23,.08);
+    }
+    .night-soft .quote p{ color: rgba(17,18,23,.78); }
+    .night-soft .quote b{ color: rgba(17,18,23,.92); }
+    .night-soft .quote span{ color: rgba(17,18,23,.62); }
+
+    /* CTA panel: PurePods tones, keep heart */
+    .cta-panel{
+      background: rgba(244,244,234,.92) !important;
+      color: rgba(17,18,23,.92) !important;
+      border: 1px solid rgba(17,18,23,.08);
+      box-shadow: 0 20px 50px rgba(17,18,23,.12);
+    }
+    .cta-icon{
+      background: rgba(92,95,60,.14) !important;
+      border: 1px solid rgba(92,95,60,.18) !important;
+      color: var(--flora);
+    }
+    .cta-kicker{ color: rgba(17,18,23,.70) !important; }
+    .cta-text{ color: rgba(17,18,23,.78) !important; }
+    .center { text-align: center; }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(17,18,23,.62);
+      margin: 0 0 10px;
+    }
+    .lead {
+      margin: 0 auto;
+      max-width: 70ch;
+      color: rgba(17,18,23,.72);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .experience-grid{
+      margin-top: 26px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px 34px;
+    }
+    .experience-item{
+      display:flex;
+      gap: 16px;
+      align-items:flex-start;
+    }
+    .icon-sq{
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(17,18,23,.92);
+      color: #fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size: 18px;
+      line-height: 1;
+      flex: 0 0 auto;
+      box-shadow: 0 10px 20px rgba(17,18,23,.12);
+    }
+    .experience-item h3{
+      margin: 0 0 6px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .experience-item p{
+      margin: 0;
+      color: rgba(17,18,23,.72);
+      line-height: 1.6;
+    }
+
+    .gallery-grid2{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .gallery-grid2 .gitem{
+      margin: 0;
+      overflow: hidden;
+      border-radius: 18px;
+      background: rgba(255,255,255,.6);
+      border: 1px solid rgba(17,18,23,.08);
+      box-shadow: 0 16px 40px rgba(17,18,23,.08);
+    }
+    .gallery-grid2 img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+    }
+    /* simple varied layout */
+    .gallery-grid2 .gitem:nth-child(1){ grid-column: span 6; grid-row: span 2; }
+    .gallery-grid2 .gitem:nth-child(2){ grid-column: span 6; grid-row: span 2; }
+    .gallery-grid2 .gitem:nth-child(3){ grid-column: span 4; }
+    .gallery-grid2 .gitem:nth-child(4){ grid-column: span 4; }
+    .gallery-grid2 .gitem:nth-child(5){ grid-column: span 4; }
+    .gallery-grid2 .gitem:nth-child(6){ grid-column: span 6; }
+    .gallery-grid2 .gitem:nth-child(7){ grid-column: span 6; }
+    .gallery-grid2 .gitem:nth-child(8){ grid-column: span 4; }
+    .gallery-grid2 .gitem:nth-child(9){ grid-column: span 4; }
+    .gallery-grid2 .gitem:nth-child(10){ grid-column: span 4; }
+
+    .cta .wrap{
+      display:flex;
+      justify-content:center;
+    }
+    .cta-panel{
+      width: min(880px, 100%);
+      padding: 34px 26px;
+      border-radius: 26px;
+      background: rgba(17,18,23,.94);
+      color: rgba(255,255,255,.92);
+      box-shadow: 0 22px 60px rgba(17,18,23,.22);
+      text-align: center;
+      position: relative;
+      overflow:hidden;
+    }
+    .cta-panel:before{
+      content:"";
+      position:absolute;
+      inset:-80px;
+      background: radial-gradient(circle at 20% 10%, rgba(92,95,60,.55), transparent 55%),
+                  radial-gradient(circle at 80% 30%, rgba(194,181,157,.35), transparent 60%);
+      opacity:.55;
+      pointer-events:none;
+    }
+    .cta-panel > *{ position: relative; }
+    .cta-icon{
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      margin: 0 auto 14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.12);
+      font-size: 18px;
+    }
+    .cta-kicker{
+      margin: 0 0 10px;
+      font-size: 13px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.74);
+    }
+    .cta-text{
+      margin: 0 auto 18px;
+      max-width: 70ch;
+      line-height: 1.6;
+      color: rgba(255,255,255,.86);
+      font-size: 16px;
+    }
+    .cta-actions{
+      display:flex;
+      gap: 12px;
+      justify-content:center;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .cta-note{
+      margin: 18px 0 0;
+      font-size: 13px;
+      color: rgba(255,255,255,.70);
+    }
+
+    @media (max-width: 900px){
+      .experience-grid{ grid-template-columns: 1fr; }
+      .gallery-grid2{ grid-template-columns: repeat(6, 1fr); }
+      .gallery-grid2 .gitem:nth-child(1),
+      .gallery-grid2 .gitem:nth-child(2){ grid-column: span 6; }
+      .gallery-grid2 .gitem:nth-child(n+3){ grid-column: span 3; }
+    }
+    @media (max-width: 560px){
+      .gallery-grid2{ grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid2 .gitem{ grid-column: span 2 !important; }
+    }
+
+/* --- Experience text centered & compact --- */
+.experience-grid--single{
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.experience-item--text{
+  max-width: 720px;   /* ajusta: 680px más editorial / 780px más aire */
+  width: 100%;
+}
+
+.experience-item--text p{
+  line-height: 1.7;
+  margin: 0 0 1.4rem;
+  text-align: left;
+}
+
+/* Experience text — single column, centered */
+.experience-text{
+  max-width: 720px;      /* controla el ancho del texto */
+  margin: 26px auto 0;   /* lo centra en la página */
+}
+
+.experience-text p{
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  text-align: left;      /* lectura cómoda */
+}
+
+/* Gallery hidden by default */
+.gallery-hidden{
+  display: none;
+  margin-top: 26px;
+}
+
+/* When open */
+.gallery-hidden.is-open{
+  display: grid;
+}
+
+/* Make the title feel clickable but elegant */
+.gallery-trigger{
+  cursor: pointer;
+}
+
+.gallery-trigger .eyebrow{
+  transition: opacity .25s ease;
+}
+
+.gallery-trigger:hover .eyebrow{
+  opacity: .7;
+}
+
+.booking-panel {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  display: none;
+}
+
+.booking-fields {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.field label {
+  margin-bottom: 6px;
+  opacity: 0.7;
+}
+
+.field input {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.15);
+  font-family: inherit;
+}
+
+.booking-results {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.pods-cards{
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.pod-card{
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 18px;
+  border: 1px solid rgba(17,18,23,.10);
+  background: rgba(255,255,255,.35);
+  box-shadow: 0 10px 24px rgba(17,18,23,.08);
+  text-align: left;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.pod-card:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 16px 34px rgba(17,18,23,.10);
+}
+
+.pod-thumb{
+  width: 92px;
+  height: 92px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(17,18,23,.10);
+  background: rgba(244,244,234,.55);
+}
+
+.pod-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pod-meta{
+  display: grid;
+  gap: 4px;
+}
+
+.pod-name{
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+.pod-location{
+  margin: 0;
+  font-size: 12px;
+  color: rgba(17,18,23,.68);
+}
+
+.pod-desc{
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: rgba(17,18,23,.76);
+  line-height: 1.35;
+}
+
+.pod-cta{
+  margin-top: 8px;
+  display: inline-flex;
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(17,18,23,.14);
+  background: rgba(244,244,234,.55);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+@media (max-width: 720px){
+  .pods-cards{ grid-template-columns: 1fr; }
+}
+
+
+</style>
+</head>
+<body>
+<div class="nav">
+<div class="wrap nav-inner">
+<a class="brand" href="#top">
+<img alt="PurePods" src="../../assets/img/purepods-logo-new-zealand.png"/>
+<b>PUREPODS</b>
+</a>
+<div class="links">
+<a href="#moments">Momentos</a>
+<a href="#gallery">Galería</a>
+<a href="#night">Noche</a>
+<a class="btn btn-primary" href="https://purepods.com/booking/?cart=Checkout">Reservar</a>
+</div>
+</div>
+</div>
+<header class="hero" id="top">
+<div aria-hidden="true" class="hero-bg"></div>
+<div class="wrap hero-content">
+
+<h1>Donde el tiempo va más lento.</h1>
+<p>
+        Un refugio íntimo para desconectar, brindar sin prisa y ver cómo la luz cambia en silencio —
+        hasta que la noche se llena de estrellas.
+      </p>
+<div class="hero-cta">
+
+<a class="btn" href="#moments">Explorar la experiencia</a>
+</div>
+</div>
+</header>
+<main>
+
+<section class="experience-block" id="essentials">
+  <div class="container">
+    <div class="experience-surface">
+
+      <p class="eyebrow center">La experiencia que nunca olvidaréis</p>
+
+      <p class="lead center">
+        PurePods no es solo alojamiento. Es un lugar donde los momentos se transforman en memorias imborrables,
+        donde el amor se respira en cada detalle.
+      </p>
+
+      <!-- TEXTO CONTINUO CENTRADO -->
+      <div class="experience-text">
+
+        <p>
+          PurePods no es solo alojamiento: es una experiencia pensada para vivir el amor con calma y profundidad.
+          Aquí disfrutaréis de <strong>privacidad absoluta</strong>, en vuestro propio santuario de cristal en plena naturaleza,
+          sin interrupciones ni distracciones, solo vosotros y el horizonte infinito.
+        </p>
+
+        <p>
+          Os rodeará la <strong>naturaleza virgen</strong> de Nueva Zelanda en su estado más puro: paisajes que quitan el aliento,
+          amaneceres únicos y atardeceres que parecen creados solo para vosotros.
+          Todo invita a bajar el ritmo y a reconectar con lo esencial.
+        </p>
+
+        <p>
+          Cuando cae la noche, los <strong>cielos que enamoran</strong> se convierten en protagonistas.
+          Miles de estrellas iluminan vuestras veladas bajo algunos de los cielos más limpios del hemisferio sur,
+          creando un escenario íntimo y casi irreal para compartir en silencio.
+        </p>
+
+        <p>
+          Lejos del ruido y de las pantallas, PurePods invita a <strong>reconectar de verdad</strong>:
+          tiempo compartido sin prisas, conversaciones que fluyen y la tranquilidad de estar presentes
+          el uno para el otro, sin nada que interfiera.
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="moments">
+<div class="wrap">
+<div class="section-title">
+<p class="section-kicker center">Momentos que merecen lo extraordinario</p>
+<p class="lead center">Cada historia de amor es única. Sea cual sea vuestro momento especial, PurePods lo convierte en inolvidable.</p>
+</div>
+<div class="moment">
+<div class="media">
+<img alt="Dos personas sentadas mirando el paisaje al atardecer" loading="lazy" src="/assets/img/experiences/romantic/purepods-romantic-getaway-couple-sunset-view-new-zealand.jpg"/>
+</div>
+<div class="copy">
+<h3>Aniversarios memorables</h3>
+<p>Hay fechas que merecen algo más que una cena especial.
+ Cada historia de amor merece su propia celebración, y PurePods es el lugar perfecto para celebrar <strong>aniversarios de boda, bodas de plata, bodas de oro </strong> o ese <strong>aniversario de noviazgo </strong> que marcó un antes y un después.
+Un brindis tranquilo, el sol cayendo tras el paisaje y la sensación de que el tiempo se detiene solo para vosotros. Un entorno íntimo para recordar lo vivido, renovar promesas y crear nuevas memorias que querréis atesorar para siempre.</p>
+<a class="btn" href="#cta">Elige tu fecha</a>
+</div>
+</div>
+<div class="moment reverse">
+<div class="copy">
+
+<h3>La pregunta perfecta</h3>
+<p>PurePods ha sido el escenario de muchas <strong> pedidas de mano inolvidables </strong>. Un lugar donde prometerse, donde dar ese paso importante rodeados de silencio, naturaleza y tiempo compartido.
+
+Un atardecer que lo envuelve todo, la calma necesaria y la certeza de haber elegido el lugar adecuado para hacer la pregunta a vuestra manera, sin prisas y sin testigos, solo vosotros y el momento.
+
+Aquí, las palabras salen solas…
+y el recuerdo dura para siempre.</p>
+<a class="btn" href="#cta">Elige el momento</a>
+</div>
+<div class="media">
+<img alt="Pedida de mano en un Purepod" loading="lazy" src="/assets/img/experiences/romantic/purepods-romantic-proposal-experience-new-zealand.jpg"/>
+</div>
+</div>
+<div class="moment">
+<div class="media">
+<img alt="Celebraciones especiales" loading="lazy" class="img-contain" src="/assets/img/experiences/romantic/purepods-romantic-getaway-picnic-wine-experience-new-zealand.jpg"/>
+</div>
+<div class="copy">
+<h3>Celebraciones especiales</h3>
+<p>Hay fechas que piden salirse de lo habitual. Un <strong>San Valentín </strong> lejos del ruido, un <strong> cumpleaños </strong> que se celebra sin prisas o una <strong> buena noticia </strong> que merece un brindis especial.
+En PurePods, estas ocasiones se viven de otra manera: atardeceres que se alargan, copas al caer la noche y la sensación de estar en un lugar pensado solo para vosotros. Un entorno íntimo donde cada celebración se transforma en un recuerdo que perdura.</p>
+<a class="btn" href="#cta">Reserva tu momento especial</a>
+</div>
+</div>
+<div class="moment reverse">
+<div class="copy">
+<h3>Sin motivo, solo amor</h3>
+<p>No es una celebración. <strong> Es una tentación </strong>.
+Aquí no hay agenda ni despertador. Solo pausas largas, miradas que se entienden sin hablar y noches que no tienen prisa por terminar.
+
+Hay escapadas en las que el plan es no tener plan: un espacio íntimo, silencio alrededor y la libertad de dejarse llevar.
+En PurePods, la conexión se intensifica y cada momento invita a quedarse un poco más cerca.</p>
+<a class="btn" href="#cta">Es tu momento</a>
+
+
+</div>
+<div class="media">
+<img alt="Amanecer visto desde la cama" loading="lazy" src="/assets/img/experiences/romantic/purepods-romantic-getaway-bedroom-fireplace-night.jpg"/>
+</div>
+</div>
+
+</div>
+</section>
+<section id="gallery">
+  <div class="wrap">
+
+    <!-- TÍTULO CLICABLE -->
+    <div class="section-title gallery-trigger" id="toggleGallery">
+      <p class="eyebrow center">Imagínate aquí</p>
+    </div>
+
+    <!-- GALERÍA OCULTA -->
+    <div class="gallery-grid2 gallery-hidden" id="galleryHidden">
+
+      <figure class="gitem">
+        <img src="assets/cama y estrellas.jpg" alt="Cama del pod">
+      </figure>
+
+      <figure class="gitem">
+        <img src="assets/shower_sunset.jpg" alt="Ducha con vistas">
+      </figure>
+
+    
+
+      <figure class="gitem">
+        <img src="assets/GreyStone Purepod 16.jpg" alt="copitas">
+      </figure>
+<figure class="gitem">
+        <img src="assets/Kapiti PurePod - Full (82).jpg" alt="Interior del pod">
+      </figure>
+
+<figure class="gitem">
+        <img src="assets/DSC02828   Lisa McLean @lisi__.jpg" alt="Interior del pod">
+      </figure>
+
+    </div>
+
+  </div>
+</section>
+<section class="night-soft" id="night">
+<div class="wrap">
+<div class="section-title">
+<h2>La noche, sin filtros</h2>
+<p>Menos luces. Más estrellas. Y esa sensación de estar lejos de todo.</p>
+</div>
+<div class="quote-grid">
+<div class="quote">
+<p>“No hicimos nada y fue perfecto. Solo estar ahí, escuchando el campo y mirando el cielo.”</p>
+<b>Escapada para dos</b>
+<span>Una noche</span>
+</div>
+<div class="quote">
+<p>“El atardecer desde la cama… y luego la oscuridad total. Es difícil explicar esa calma.”</p>
+<b>Fin de semana</b>
+<span>Dos noches</span>
+</div>
+<div class="quote">
+<p>“Cena sencilla, copa en mano, y la sensación de que el tiempo se estira.”</p>
+<b>Celebración</b>
+<span>Una noche</span>
+</div>
+</div>
+</div>
+</section>
+<section class="cta" id="cta">
+<div class="wrap cta-inner">
+<div class="cta-panel">
+<div aria-hidden="true" class="cta-icon">♥</div>
+<p class="cta-kicker">¿Estáis listos para crear vuestra historia?</p>
+<p class="cta-text">El momento perfecto os está esperando. Un lugar donde el tiempo se detiene, donde solo importáis vosotros dos — y la naturaleza hace el resto.</p>
+<div class="cta-actions">
+<div class="cta-actions">
+ <button class="btn btn-primary" id="openBooking" type="button">
+  Ver PurePods disponibles →
+</button>
+
+</div>
+
+<div class="booking-panel" id="bookingPanel">
+  <div class="booking-fields">
+    <div class="field">
+      <label for="checkin">Entrada</label>
+      <input id="checkin" type="date" value="2026-02-12">
+    </div>
+
+    <div class="field">
+      <label for="checkout">Salida</label>
+      <input id="checkout" type="date" value="2026-02-13">
+    </div>
+
+    <button class="btn" id="searchPods" type="button">Buscar disponibilidad</button>
+  </div>
+
+  <div class="booking-results" id="bookingResults"></div>
+</div>
+
+<div class="cta-box">
+    <div class="booking-panel" id="booking-panel">
+    <div class="booking-fields">
+      <div class="field">
+        <label for="checkin">Entrada</label>
+        <input type="date" id="checkin">
+      </div>
+
+      <div class="field">
+        <label for="checkout">Salida</label>
+        <input type="date" id="checkout">
+      </div>
+
+      <button class="btn btn-secondary" id="search-pods">
+        Buscar disponibilidad
+      </button>
+    </div>
+
+    <div class="booking-results" id="booking-results">
+      <!-- aquí aparecerán los resultados -->
+    </div>
+  </div>
+</div>
+
+</div>
+<p class="cta-note">Cada momento cuenta. No esperéis más para crear el vuestro.</p>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap foot">
+<div style="display:flex; align-items:center; gap: 10px;">
+<img alt="PurePods" src="../../assets/img/purepods-logo-new-zealand.png">
+<div>Maqueta HTML • Romantic • PurePods</div>
+</img></div>
+<div>© PurePods (contenido de ejemplo basado en las fotos que enviaste)</div>
+</div>
+</footer>
+<script>
+  const toggleBtn = document.getElementById('toggle-booking');
+  const panel = document.getElementById('booking-panel');
+  const searchBtn = document.getElementById('search-pods');
+  const results = document.getElementById('booking-results');
+
+  toggleBtn.addEventListener('click', () => {
+    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+  });
+
+  searchBtn.addEventListener('click', () => {
+    const checkin = document.getElementById('checkin').value;
+    const checkout = document.getElementById('checkout').value;
+
+    if (!checkin || !checkout) {
+      results.innerHTML = `
+  <p><strong>PurePods disponibles para tus fechas:</strong></p>
+
+  <div class="pods-cards">
+
+    <a class="pod-card" href="https://purepods.com/booking/?cart=Checkout" aria-label="Reservar PurePod A">
+      <div class="pod-thumb">
+        <img src="assets/pod_sunrise.jpg" alt="PurePod A">
+      </div>
+      <div class="pod-meta">
+        <p class="pod-location">Kaikōura</p>
+        <p class="pod-name">Manakau</p>
+        <p class="pod-desc">Vistas abiertas, luz dorada al amanecer y silencio total para desconectar.</p>
+        <span class="pod-cta">Reservar →</span>
+      </div>
+    </a>
+
+    <a class="pod-card" href="https://purepods.com/booking/?cart=Checkout" aria-label="Reservar GreyStone">
+      <div class="pod-thumb">
+        <img src="assets/GreyStone Purepod 8.jpg" alt="PurePod B">
+      </div>
+      <div class="pod-meta">
+        <p class="pod-location">Central Otago</p>
+        <p class="pod-name">Greystone</p>
+        <p class="pod-desc">Atardeceres largos, cielo limpio y una cama frente al paisaje.</p>
+        <span class="pod-cta">Reservar →</span>
+      </div>
+    </a>
+
+  </div>
+`;
+  });
+</script>
+
+<script>
+  const trigger = document.getElementById('toggleGallery');
+  const gallery = document.getElementById('galleryHidden');
+
+  trigger.addEventListener('click', () => {
+    gallery.classList.toggle('is-open');
+  });
+
+<script>
+  const trigger = document.getElementById('toggleGallery');
+  const gallery = document.getElementById('galleryHidden');
+
+  if (trigger && gallery) {
+    trigger.addEventListener('click', () => {
+      gallery.classList.toggle('is-open');
+    });
+  }
+</script>
+
+<script>
+  const openBtn = document.getElementById("openBooking");
+  const panel = document.getElementById("bookingPanel");
+  const searchBtn = document.getElementById("searchPods");
+  const results = document.getElementById("bookingResults");
+
+  if (openBtn && panel) {
+    openBtn.addEventListener("click", () => {
+      const isOpen = panel.style.display === "block";
+      panel.style.display = isOpen ? "none" : "block";
+      if (!isOpen) panel.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  }
+
+  if (searchBtn && results) {
+    searchBtn.addEventListener("click", () => {
+      results.innerHTML = `
+        <p><strong>PurePods disponibles para tus fechas:</strong></p>
+
+        <div class="pods-cards">
+
+          <a class="pod-card" href="https://purepods.com/booking/?cart=Checkout">
+            <div class="pod-thumb">
+              <img src="assets/pod_sunrise.jpg" alt="PurePod A">
+            </div>
+            <div class="pod-meta">
+              <p class="pod-location">Canterbury • Alpes del Sur</p>
+              <p class="pod-name">PurePod A</p>
+              <p class="pod-desc">Vistas abiertas, amanecer dorado y silencio absoluto.</p>
+              <span class="pod-cta">Reservar →</span>
+            </div>
+          </a>
+
+          <a class="pod-card" href="https://purepods.com/booking/?cart=Checkout">
+            <div class="pod-thumb">
+              <img src="assets/sunset_pod.jpg" alt="PurePod B">
+            </div>
+            <div class="pod-meta">
+              <p class="pod-location">Otago • Lago y montañas</p>
+              <p class="pod-name">PurePod B</p>
+              <p class="pod-desc">Atardeceres largos y una cama frente al paisaje.</p>
+              <span class="pod-cta">Reservar →</span>
+            </div>
+          </a>
+
+        </div>
+      `;
+    });
+  }
+</script>
+
+<script>
+  const toggleGallery = document.getElementById('toggleGallery');
+  const galleryHidden = document.getElementById('galleryHidden');
+
+  if (toggleGallery && galleryHidden) {
+    toggleGallery.addEventListener('click', () => {
+      galleryHidden.classList.toggle('is-open');
+    });
+  }
+</script>
+
+</body>
+</html>
