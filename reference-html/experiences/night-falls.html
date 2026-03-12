@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Night Falls by PurePods | Dark Skies, Moon Calendar & Stargazing</title>
+  <meta name="description" content="Plan your perfect stargazing night with Night Falls by PurePods. Follow the moon, find the darkest skies, and book a glass cabin stay under unforgettable New Zealand skies." />
+<link rel="canonical" href="https://purepods.com/night-falls/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="PurePods" />
+<meta property="og:locale" content="en_NZ" />
+<meta property="og:title" content="Night Falls by PurePods | Dark Skies & Stargazing" />
+<meta property="og:description" content="Follow the moon, find the darkest skies, and book a glass cabin stay under unforgettable New Zealand skies." />
+<meta property="og:url" content="https://purepods.com/night-falls/" />
+<meta property="og:image" content="https://purepods.com/assets/img/night-falls/og-night-falls.jpg" />
+<meta property="og:image:alt" content="Starry night sky above a PurePod glass cabin" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Night Falls by PurePods | Dark Skies & Stargazing" />
+<meta name="twitter:description" content="Follow the moon, find the darkest skies, and book a glass cabin stay under unforgettable New Zealand skies." />
+<meta name="twitter:image" content="https://purepods.com/assets/img/night-falls/og-night-falls.jpg" />
+<meta name="twitter:site" content="@PUREPODS" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/night-falls/night-falls-stargazing.jpg">
+
+
+  <style>
+    :root{
+  --bg:#F7F6F3;
+  --ink:#5C5F3E;
+  --muted:rgba(92,95,62,.72);
+
+  --card:rgba(255,255,255,.85);
+  --stroke:rgba(92,95,62,.18);
+  --shadow:0 18px 44px rgba(17,18,23,.10);
+
+  --r:24px;
+  --r2:18px;
+
+  /* brand */
+  --brand-green:#5C5F3E;
+  --brand-beige:#C2B59E;
+}
+    
+
+    *{box-sizing:border-box}
+    body{
+    margin:0;
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    padding-top: 0;
+    }
+
+    @media (max-width:700px){
+    body{ padding-top: 0px; }
+}
+    a{color:inherit}
+
+    /* layout */
+    .wrap{
+      max-width:980px;
+      margin:0 auto;
+      padding:18px 14px;
+    }
+
+    /* Top nav (coherente con tu demo) */
+    
+    .topinner{
+      max-width:980px;
+      margin:0 auto;
+      padding:12px 14px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+    }
+    .brand img{
+      width:22px;height:22px;object-fit:contain;
+      filter: drop-shadow(0 2px 10px rgba(0,0,0,.12));
+    }
+    .brand b{letter-spacing:.08em;font-size:12px}
+    .navlinks{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .pillLink{
+      font-size:13px;
+      color: var(--brand-green);
+      border-color: rgba(92,95,62,.28);
+      text-decoration:none;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.75);
+      padding:8px 12px;
+      border-radius:999px;
+    }
+    .btnPrimary{
+    font-size:13px;
+    font-weight:800;
+    text-decoration:none;
+    border:1px solid var(--stroke);
+    background: var(--brand-beige);
+    color: var(--brand-green);
+    padding:8px 12px;
+    border-radius:999px;
+}
+.btnPrimary:hover{
+  filter: saturate(1.02) brightness(.98);
+}
+
+    /* HERO full width pero con texto centrado al estilo demo */
+    .hero{
+      position:relative;
+      min-height: 520px;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
+      border-bottom:1px solid var(--stroke);
+      background: #111217;
+    }
+    .heroBg{
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(194,181,157,.18), transparent 45%),
+        radial-gradient(circle at 80% 25%, rgba(92,95,60,.16), transparent 50%),
+        radial-gradient(circle at 50% 70%, rgba(255,255,255,.06), transparent 55%),
+        linear-gradient(to bottom, rgba(17,18,23,.35) 0%, rgba(17,18,23,.72) 70%, rgba(17,18,23,.88) 100%);
+      filter: saturate(1.05);
+    }
+    .heroStars{
+      position:absolute;
+      inset:0;
+      opacity:.7;
+      background-image:
+        radial-gradient(circle at 10% 30%, rgba(255,255,255,.9) 0 1px, transparent 2px),
+        radial-gradient(circle at 25% 60%, rgba(255,255,255,.7) 0 1px, transparent 2px),
+        radial-gradient(circle at 40% 15%, rgba(255,255,255,.8) 0 1px, transparent 2px),
+        radial-gradient(circle at 60% 45%, rgba(255,255,255,.65) 0 1px, transparent 2px),
+        radial-gradient(circle at 75% 20%, rgba(255,255,255,.85) 0 1px, transparent 2px),
+        radial-gradient(circle at 90% 55%, rgba(255,255,255,.7) 0 1px, transparent 2px);
+      background-size: 520px 420px;
+      mix-blend-mode: screen;
+    }
+    .heroInner{
+      position:relative;
+      width:100%;
+      max-width:980px;
+      margin:0 auto;
+      padding:  160px 14px 40px;
+      color:#fff;
+      z-index:2;
+    }
+    .heroInner h1{
+      margin:0;
+      font-family: "Noto Serif Display", Georgia, "Times New Roman", serif;
+      font-weight: 500; 
+      font-size: 38px;
+      letter-spacing:-.02em;
+      line-height:1.06;
+      text-shadow: 0 2px 18px rgba(0,0,0,.35);
+      max-width: 18ch;
+    }
+    .heroInner p{
+      margin:10px 0 0;
+      color: rgba(255,255,255,.90);
+      line-height:1.55;
+      font-size: 14.5px;
+      text-shadow: 0 2px 14px rgba(0,0,0,.25);
+      max-width: 62ch;
+    }
+    .heroCtas{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btnGhost{
+      font-size:13px;
+      font-weight:800;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.12);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:999px;
+      backdrop-filter: blur(10px);
+    }
+    .btnGhost:hover{background: rgba(255,255,255,.16);}
+
+    /* Section header */
+    .section{padding:18px 0;}
+    .sectionHeader{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:10px;
+      margin: 0 2px 10px;
+    }
+    .sectionHeader h2{
+      margin:0;
+      font-size:16px;
+      letter-spacing:-.01em;
+    }
+    .hint{
+      margin:0;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    /* Cards */
+    .card{
+      border:1px solid var(--stroke);
+      background: var(--card);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      padding: 14px;
+    }
+    .card p{
+      margin:0 0 10px;
+      color: rgba(92,95,62,.72);      
+      line-height:1.6;
+      font-size:14px;
+    }
+    .card p:last-child{margin-bottom:0;}
+
+    .eyebrow{
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color: rgba(92,95,62,.72);
+      margin:0 0 10px;
+      text-align:center;
+    }
+    .centerText{
+      max-width: 70ch;
+      margin: 0 auto;
+      text-align:center;
+    }
+
+    /* ===== Follow the Moon (tabs) ===== */
+    .moonBox{
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.62);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .moonHead{
+      padding:14px 14px 10px;
+      border-bottom:1px solid var(--stroke);
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .moonHead h3{
+      margin:0;
+      font-size:16px;
+      letter-spacing:-.01em;
+    }
+    .moonHead p{
+      margin:0;
+      color:var(--muted);
+      font-size:12.5px;
+    }
+
+    .moonTabs{
+      display:flex;
+      gap:8px;
+      padding:12px 14px;
+      border-bottom:1px solid var(--stroke);
+      flex-wrap:wrap;
+    }
+    .moonTab{
+    appearance:none;
+    border:1px solid var(--stroke);
+    background: rgba(255,255,255,.82);
+    padding:10px 16px;
+    border-radius:999px;
+
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight:600;
+    font-size:14px;
+
+    color: var(--brand-green);
+
+    cursor:pointer;
+    transition: all .2s ease;
+    }
+    .moonTab.is-active{
+    background: var(--brand-green);
+    color:#fff;
+    border-color: var(--brand-green);
+    }
+    .moonTab:hover{
+    background: rgba(92,95,62,.08);
+    border-color: rgba(92,95,62,.25);
+    }
+    .moonPanel{
+      display:none;
+      padding:14px;
+    }
+    .moonPanel.is-active{display:block;}
+    .moonPanel h4{
+    margin:0 0 8px;
+    font-size:15px;
+    font-weight:700;
+    color: var(--brand-green);
+    letter-spacing:-.01em;
+    }
+    
+    .moonSub{
+  margin:0 0 12px;
+  color: var(--muted);
+  font-size:14px;
+  line-height:1.6;
+  max-width: 70ch;
+}
+    
+
+    /* tabla estilo “grid”, con CTA reservar */
+    .moonTable{
+      display:grid;
+      gap:8px;
+    }
+    /* ===== CALENDARIO modo “timeline cards” ===== */
+.moonTable{
+  display:grid;
+  gap:10px;
+}
+
+.moonRow{
+  position:relative;
+  display:grid;
+  grid-template-columns: 170px 110px 1fr auto;
+  gap:14px;
+  align-items:center;
+  padding:18px 16px;
+  border-radius: 18px;
+  border:1px solid var(--stroke);
+  background: rgba(255,255,255,.82);
+  box-shadow: 0 8px 22px rgba(17,18,23,.05);
+  overflow:hidden;
+}
+
+/* barra lateral sutil (PurePods vibe) */
+.moonRow::before{
+  content:"";
+  position:absolute;
+  left:0; top:0; bottom:0;
+  width:5px;
+  background: linear-gradient(
+    to bottom,
+    rgba(92,95,62,.38),
+    rgba(194,181,158,.32)
+  );
+  opacity:.9;
+}
+
+.moonRow:hover{
+  transform: translateY(-1px);
+  transition: transform .15s ease, box-shadow .15s ease;
+  box-shadow: 0 16px 36px rgba(17,18,23,.10);
+}
+
+/* Header fila */
+.moonRow.head{
+  display:none; /* en modo timeline no hace falta cabecera */
+}
+
+/* Mes como “título” */
+.moonRow > div:nth-child(1){
+  font-weight:700;
+  letter-spacing:-.01em;
+  font-size:15px;
+  color: var(--brand-green);
+}
+
+/* Fecha grande */
+.moonRow > div:nth-child(2){
+  font-weight:700;
+  font-size:15px;
+  color: var(--brand-green);
+  white-space:nowrap;
+
+}
+
+/* texto principal */
+.moonRow > div:nth-child(3){
+  color: var(--muted);
+  line-height:1.6;
+  font-size:15px;
+  font-weight:400;
+}
+
+
+/* Extra: resaltar filas con <strong> en el texto */
+.moonRow strong{
+  font-weight:700;
+  color: var(--brand-green);
+}
+
+/* ===== responsive ===== */
+@media (max-width: 860px){
+  .moonRow{
+    grid-template-columns: 1fr;
+    gap:8px;
+    padding:14px;
+  }
+  .moonRow::before{ width:5px; }
+  .moonRow > div:nth-child(2){
+    opacity:.9;
+  }
+  .moonBook{
+    width:100%;
+    text-align:center;
+    padding:12px 14px;
+  }
+}
+
+
+    .moonBook{
+  display:inline-block;
+  text-decoration:none;
+  font-weight:900;
+  font-size:12.5px;
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid var(--stroke);
+  background: var(--brand-green);
+  color: #fff;
+  white-space:nowrap;
+}
+.moonBook:hover{ filter: brightness(1.03); 
+    }
+
+    .moonBadge{
+      justify-self:start;
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(92,95,60,.25);
+      background: rgba(92,95,60,.10);
+      color: rgba(23,24,27,.78);
+      white-space:nowrap;
+    }
+
+    /* ===== Cómo vivir la noche (grid) ===== */
+    .momentsGrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:12px;
+    }
+    .moment{
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.62);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      padding:14px;
+    }
+    .moment h3{
+      margin:0 0 6px;
+      font-size:15px;
+    }
+    .moment p{
+      margin:0;
+      color: rgba(23,24,27,.74);
+      line-height:1.6;
+      font-size:14px;
+    }
+    .moment small{
+      display:block;
+      margin-top:10px;
+      color: var(--muted);
+      font-size:12px;
+    }
+
+    /* booking mini panel */
+    .booking{
+      margin-top:12px;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.62);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .bookingTop{
+      padding:14px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .bookingTop strong{font-size:14px}
+    .bookingBtn{
+      border:1px solid var(--stroke);
+      background: var(--brand-green);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:900;
+      cursor:pointer;
+      font-size:13px;
+    }
+    .bookingPanel{
+      display:none;
+      padding:14px;
+      border-top:1px solid var(--stroke);
+    }
+    .fields{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    .field label{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+    .field input{
+      width:100%;
+      padding:10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(80,76,68,.18);
+      background: rgba(255,255,255,.78);
+      outline:none;
+    }
+    .bookingResults{
+      margin-top:12px;
+      padding-top:12px;
+      border-top:1px dashed rgba(80,76,68,.22);
+      color: rgba(23,24,27,.76);
+      font-size:13.5px;
+      line-height:1.55;
+    }
+
+    /* Sticky CTA coherente demo */
+    .stickyCta{
+      position:fixed;
+      left:0; right:0; bottom:0;
+      padding:10px 14px;
+      background: rgba(245,243,238,.86);
+      backdrop-filter: blur(8px);
+      border-top:1px solid rgba(80,76,68,.18);
+      z-index:30;
+    }
+    .ctaInner{
+      max-width:980px;
+      margin:0 auto;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .ctaInner .price{
+      font-weight:900;
+      font-size:13px;
+      color: rgba(23,24,27,.78);
+      white-space:nowrap;
+    }
+    .ctaInner .ctaBtn{
+      border:1px solid var(--stroke);
+      background: var(--brand-green);
+      color:#fff;
+      padding:12px 14px;
+      border-radius:999px;
+      font-weight:900;
+      cursor:pointer;
+      font-size:13px;
+    }
+    .ctaInner .ctaGhost{
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.62);
+      color: var(--ink);
+      padding:12px 14px;
+      border-radius:999px;
+      font-weight:900;
+      cursor:pointer;
+      font-size:13px;
+    }
+
+    /* responsive */
+    @media (max-width: 860px){
+      .hero{min-height: 380px;}
+      .heroInner h1{font-size:32px;}
+      .momentsGrid{grid-template-columns:1fr;}
+      .fields{grid-template-columns:1fr;}
+      .moonRow{grid-template-columns:1fr; gap:6px;}
+      .moonBadge{justify-self:start;}
+    }
+    @media (min-width: 920px){
+      body{padding-bottom:0;}
+      .stickyCta{position:static;border-top:0;background:transparent;padding:0;}
+      .ctaInner{justify-content:flex-end;}
+      .ctaInner .price{display:none;}
+    }
+    /* para que el contenido no quede tapado por el sticky en móvil */
+    .padBottom{padding-bottom:88px;}
+
+    .heroImg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position: 50% 55%; /* ajusta para “subir/bajar” el encuadre */
+  filter: saturate(1.05) contrast(1.05);
+  z-index:0;
+}
+
+/* asegúrate de que overlays van por encima de la foto */
+.heroBg, .heroStars{ z-index:1; }
+.heroInner{ position:relative; z-index:2; }
+
+/* === Night Sections (El Cielo Oscuro / Experiencia Lunar / Fenómenos) === */
+
+.nightSection{
+  margin-top:18px;
+  display:grid;
+  gap:18px;
+}
+
+.nightBlock{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:18px;
+  align-items:center;
+}
+
+.nightBlock.reverse{
+  direction:rtl;
+}
+.nightBlock.reverse > *{
+  direction:ltr;
+}
+
+.nightImg{
+  border-radius: var(--r);
+  overflow:hidden;
+  border:1px solid var(--stroke);
+  box-shadow: var(--shadow);
+  aspect-ratio: 4 / 3;
+}
+
+.nightImg img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
+
+.nightText{
+  padding:6px 4px;
+}
+
+.nightText h3{
+  margin:0 0 10px;
+  font-size:20px;
+  letter-spacing:-.01em;
+}
+
+.nightText p{
+  margin:0 0 12px;
+  color: rgba(92,95,62,.72);
+  line-height:1.6;
+  font-size:14px;
+}
+
+.nightBtn{
+  display:inline-block;
+  margin-top:6px;
+  padding:10px 16px;
+  border-radius:999px;
+  border:1px solid var(--stroke);
+  background: rgba(255,255,255,.62);
+  font-weight:800;
+  font-size:13px;
+  text-decoration:none;
+}
+
+.nightBtn.primary{
+   background: var(--brand-green);
+   color:#fff;
+   border-color: var(--stroke);
+}
+
+.nightNote{
+  margin-top:12px;
+  font-size:14px;
+  color: var(--muted);
+  line-height:1.6;
+  padding-left:14px;
+  border-left:3px solid rgba(92,95,62,.25);
+}
+
+/* Responsive */
+@media (max-width: 860px){
+  .nightBlock{
+    grid-template-columns:1fr;
+  }
+}
+
+:focus-visible{
+  outline: 3px solid rgba(194,181,158,.85);
+  outline-offset: 3px;
+  border-radius: 14px;
+}
+
+/* ===== Topnav: overlay → solid on scroll (FINAL) ===== */
+.topnav{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 60;
+  padding: 14px 14px;
+  background: transparent;
+  transition: background .2s ease, padding .2s ease, box-shadow .2s ease;
+}
+
+.topnav__inner{
+  max-width:980px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.topnav__brand{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  font-weight:700;
+  padding:10px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(17,18,23,.22);
+  backdrop-filter:blur(10px);
+  color:rgba(255,255,255,.96);
+}
+.topnav__brand img{
+  width:22px;height:22px;object-fit:contain;
+  filter: drop-shadow(0 2px 10px rgba(0,0,0,.25));
+}
+
+.topnav__nav{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.topnav__pill{
+  font-size:13px;
+  font-weight:700;
+  text-decoration:none;
+  padding:10px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(17,18,23,.22);
+  backdrop-filter:blur(10px);
+  color:rgba(255,255,255,.92);
+  white-space:nowrap;
+}
+.topnav__pill:hover{ background: rgba(17,18,23,.30); }
+
+.topnav.is-scrolled{
+  background: var(--brand-green);
+  padding: 10px 14px;
+  box-shadow: 0 10px 30px rgba(17,18,23,.12);
+}
+.topnav.is-scrolled .topnav__brand,
+.topnav.is-scrolled .topnav__pill{
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.18);
+  color: rgba(255,255,255,.95);
+}
+
+@media (max-width: 700px){
+  .topnav__inner{ flex-direction:column; align-items:flex-start; }
+  .topnav__nav{ width:100%; justify-content:flex-start; }
+}
+
+  </style>
+
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "PurePods",
+ "url": "https://purepods.com",
+ "logo": "https://purepods.com/assets/img/logo.png",
+ "sameAs": [
+   "https://www.instagram.com/purepods",
+   "https://twitter.com/purepods",
+   "https://www.facebook.com/purepods"
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebPage",
+ "name": "Night Falls by PurePods",
+ "description": "description": "Plan your perfect stargazing night with Night Falls by PurePods. Follow the moon, find the darkest skies, and book a glass cabin stay under unforgettable New Zealand skies."
+ "url": "https://purepods.com/night-falls/",
+ "inLanguage": "en-NZ",
+ "isPartOf": {
+   "@type": "WebSite",
+   "name": "PurePods",
+   "url": "https://purepods.com"
+ },
+ "about": [
+   {
+     "@type": "Thing",
+     "name": "Dark Sky Stargazing"
+   },
+   {
+     "@type": "Thing",
+     "name": "Milky Way Observation"
+   },
+   {
+     "@type": "Thing",
+     "name": "New Zealand Dark Sky Experience"
+   }
+ ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+   {
+     "@type": "Question",
+     "name": "When is the best time to see the Milky Way in New Zealand?",
+     "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "The Milky Way is most visible during dark-sky nights when the moon is absent. In New Zealand this is typically best between autumn and early spring."
+     }
+   },
+   {
+     "@type": "Question",
+     "name": "Are PurePods good for stargazing?",
+     "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. PurePods are located in remote landscapes with very low light pollution. Their glass design allows guests to observe the night sky directly from inside the cabin."
+     }
+   },
+   {
+     "@type": "Question",
+     "name": "What makes a dark-sky location special?",
+     "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Dark-sky locations have minimal artificial light pollution, allowing thousands of stars, the Milky Way and meteor showers to be visible to the naked eye."
+     }
+   }
+ ]
+}
+
+</script>
+</head>
+
+<body>
+
+ <!-- TOPNAV (Kahutara-style overlay) -->
+<header class="topnav" id="topnav">
+  <div class="topnav__inner">
+
+    <a class="topnav__brand" href="index.html" aria-label="PurePods home">
+      <img src="assets/img/purepods-logo-new-zealand.png" alt="PurePods logo – luxury glass eco cabins in remote nature locations across New Zealand" />
+      <span>PurePods</span>
+    </a>
+
+    <nav class="topnav__nav" aria-label="Primary navigation">
+      <a class="topnav__pill" href="experiences.html">Experiences</a>
+      <a class="topnav__pill" href="#calendario">Follow the Moon</a>
+      <a class="topnav__pill" href="#vivir">How to live the night</a>
+      <a class="topnav__pill topnav__book" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a>
+    </nav>
+
+  </div>
+</header>
+
+  <!-- HERO -->
+<header class="hero" id="top">
+  <img
+    class="heroImg"
+    src="assets/img/night-falls/night-falls-stargazing.jpg"
+    alt="Night Falls starry sky experience"
+    fetchpriority="high"
+  >
+
+  <div class="heroBg" aria-hidden="true"></div>
+  <div class="heroStars" aria-hidden="true"></div>
+
+  <div class="heroInner">
+    <h1>Night Falls: dark-sky stargazing by PurePods</h1>
+    <p>
+        When the light fades, the universe takes center stage. Silence, true darkness, and a sky you won't forget. A stargazing experience in New Zealand like no other.
+    </p>
+    <div class="heroCtas">
+      <a class="btnGhost" href="#calendario">View the lunar calendar</a>
+      <a class="btnGhost" href="#vivir">How to live Night Falls</a>
+    </div>
+  </div>
+</header>
+
+
+  <main class="wrap padBottom">
+
+    <!-- QUÉ ES -->
+    <section class="section" id="essentials">
+      <div class="card">
+        <p class="eyebrow"> <strong>What is Night Falls</strong> </p>
+        <div class="centerText">
+          <p>
+        Night Falls is the art of choosing the moment.
+        Arrive when the moon stays hidden, when the stars multiply, and time slows down enough to look up again.
+        This is PurePods’ dark-sky stargazing experience in remote New Zealand landscapes, designed for Milky Way viewing on the best nights.
+    </p>
+
+    <p>
+        No schedules. No performances. Just space, stillness, and the chance to see more than you expected.
+    </p>
+        </div>
+      </div>
+    </section>
+    
+     <!-- El Cielo Oscuro -->
+  <div class="nightBlock">
+    <div class="nightImg">
+      <img src="assets/img/night-falls/dark-sky-purepod.jpg" alt="Dark sky stargazing above a PurePod glass cabin in New Zealand">
+    </div>
+    <div class="nightText">
+      <h3>The Dark Sky</h3>
+      <p>
+        On <strong>new moon</strong> nights — when the moon barely shows —
+        the sky reaches its deepest darkness. Far from any city lights,
+        thousands of stars appear, along with distant nebulae and the dusty detail of the Milky Way.
+      </p>
+      <p>
+        It’s the <strong>best moment</strong> for anyone who wants to see the galaxy as it truly is:
+        vast, silent, and completely real.
+      </p>
+      <a href="#calendario" class="nightBtn">Choose your date</a>
+    </div>
+  </div>
+
+  <!-- Experiencia Lunar -->
+  <div class="nightBlock reverse">
+    <div class="nightImg">
+      <img src="assets/img/night-falls/purepod-full-moon.jpg" alt="PurePod glass cabin under a full moon in New Zealand">
+    </div>
+    <div class="nightText">
+      <h3>The Lunar Experience</h3>
+      <p>
+        When the moon lights the landscape, the sky changes character.
+        Fainter stars fade, but a silver glow appears — outlining hills and mountains with almost unreal clarity.
+      </p>
+      <p>
+        It’s a different kind of night: calmer, more contemplative,
+        perfect for looking at lunar detail — or simply letting the light wrap around everything.
+      </p>
+      <a href="#calendario" class="nightBtn">Pick the moment</a>
+    </div>
+  </div>
+
+  <!-- NIGHT SECTIONS -->
+<section class="section nightSection" id="night-sections">
+
+  <!-- Fenómenos especiales -->
+  <div class="nightBlock">
+    <div class="nightImg">
+      <img src="assets/img/night-falls/southern-aurora-purepod.jpg" alt="Southern Aurora visible above a PurePod glass cabin in New Zealand">
+    </div>
+    <div class="nightText">
+      <h3>Special Phenomena</h3>
+      <p>
+        Some nights offer something extra. Around March and September,
+        there’s a chance — never guaranteed — of seeing the <strong>Southern Aurora</strong>
+        glow on the southern horizon.
+      </p>
+      <p>
+        Sometimes it’s only minutes. Sometimes it doesn’t show up.
+        And yet the sky still delivers: bright planets, naked-eye stars,
+        and extraordinary darkness.
+      </p>
+      <a href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener" class="nightBtn primary">
+        Book a special night
+      </a>
+      <div class="nightNote">
+        In Māori tradition, the stars were guidance, time, and story.
+        Looking up has always been a way of listening.
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+    <!-- FOLLOW THE MOON -->
+<section class="section" id="calendario">
+  <div class="sectionHeader">
+    <h2>Follow the Moon</h2>
+    <p class="hint">Find the perfect moment</p>
+  </div>
+
+  <div class="moonBox">
+    <div class="moonHead">
+      <div>
+        <h3>Night Falls Calendar</h3>
+        <p>Explore the best dates for each stargazing experience.</p>
+      </div>
+    </div>
+
+    <div class="moonTabs" role="tablist" aria-label="Night Falls calendar">
+      <button class="moonTab is-active" type="button" role="tab" aria-selected="true" aria-controls="tab-dark" id="tabbtn-dark" data-tab="dark">Dark sky</button>
+      <button class="moonTab" type="button" role="tab" aria-selected="false" aria-controls="tab-full" id="tabbtn-full" data-tab="full">Full moon</button>
+      <button class="moonTab" type="button" role="tab" aria-selected="false" aria-controls="tab-dust" id="tabbtn-dust" data-tab="dust">Meteor showers</button>
+    </div>
+
+    <!-- Panel 1 -->
+    <div class="moonPanel is-active" role="tabpanel" id="tab-dark" aria-labelledby="tabbtn-dark">
+      <h4>Deep-sky forecast (12 months)</h4>
+      <p class="moonSub">
+        When the moon disappears, the sky reaches peak darkness. This is the best time to observe the Milky Way and deep-sky objects.
+      </p>
+
+      <div class="moonTable">
+
+        <div class="moonRow">
+          <div>February 2026</div><div>17 Feb</div><div>Perfect dark skies</div>
+          <div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div>
+        </div>
+
+        <div class="moonRow">
+          <div>March 2026</div><div>19 Mar</div><div><strong>Equinox (aurora peak period)</strong></div>
+          <div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div>
+        </div>
+
+        <div class="moonRow">
+          <div>April 2026</div><div>18 Apr</div><div>Milky Way core rising (autumn skies)</div>
+          <div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div>
+        </div>
+
+        <div class="moonRow">
+          <div>May 2026</div><div>17 May</div><div>Crisp skies and winter constellations</div>
+          <div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div>
+        </div>
+
+        <div class="moonRow">
+          <div>June 2026</div><div>16 Jun</div><div>Longest nights of the year</div>
+          <div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div>
+        </div>
+
+        <div class="moonRow">
+          <div>July 2026</div><div>15 Jul</div><div>Deep winter clarity</div>
+          <div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div>
+        </div>
+
+        <div class="moonRow">
+          <div>August 2026</div><div>13 Aug</div><div><strong>Perseids meteor shower peak</strong></div>
+          <div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div>
+        </div>
+
+        <div class="moonRow">
+          <div>September 2026</div><div>12 Sep</div><div><strong>Equinox (aurora peak period)</strong></div>
+          <div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div>
+        </div>
+
+        <div class="moonRow">
+          <div>October 2026</div><div>11 Oct</div><div>Spring constellations emerging</div>
+          <div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div>
+        </div>
+
+        <div class="moonRow">
+          <div>November 2026</div><div>10 Nov</div><div>Early summer stars</div>
+          <div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div>
+        </div>
+
+        <div class="moonRow">
+          <div>December 2026</div><div>9 Dec</div><div><strong>Geminids meteor shower peak</strong></div>
+          <div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div>
+        </div>
+
+        <div class="moonRow">
+          <div>January 2027</div><div>8 Jan</div><div>Summer Milky Way visibility</div>
+          <div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Panel 2 -->
+    <div class="moonPanel" role="tabpanel" id="tab-full" aria-labelledby="tabbtn-full">
+      <h4>Full moon forecast (12 months)</h4>
+      <p class="moonSub">
+        When the moon lights the landscape, the sky changes character. Fainter stars disappear, but the land glows in silver light.
+      </p>
+
+      <div class="moonTable">
+
+        <div class="moonRow"><div>February 2026</div><div>2 Feb</div><div>Snow Moon</div><div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div></div>
+        <div class="moonRow"><div>March 2026</div><div>4 Mar</div><div><strong>Blood Moon (total eclipse)</strong></div><div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div></div>
+        <div class="moonRow"><div>April 2026</div><div>2 Apr</div><div>Pink Moon</div><div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div></div>
+        <div class="moonRow"><div>May 2026</div><div>1 & 31 May</div><div><strong>Blue Moon month</strong></div><div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div></div>
+        <div class="moonRow"><div>June 2026</div><div>29 Jun</div><div>Strawberry Moon</div><div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div></div>
+        <div class="moonRow"><div>July 2026</div><div>29 Jul</div><div>Buck Moon</div><div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div></div>
+        <div class="moonRow"><div>August 2026</div><div>28 Aug</div><div>Sturgeon Moon</div><div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div></div>
+        <div class="moonRow"><div>September 2026</div><div>27 Sep</div><div>Harvest Moon</div><div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div></div>
+        <div class="moonRow"><div>October 2026</div><div>26 Oct</div><div>Hunter’s Moon</div><div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div></div>
+        <div class="moonRow"><div>November 2026</div><div>24 Nov</div><div><strong>Beaver Supermoon</strong></div><div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div></div>
+        <div class="moonRow"><div>December 2026</div><div>24 Dec</div><div><strong>Christmas Eve Full Moon</strong></div><div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div></div>
+        <div class="moonRow"><div>January 2027</div><div>23 Jan</div><div>Wolf Moon</div><div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div></div>
+
+      </div>
+    </div>
+
+    <!-- Panel 3 -->
+    <div class="moonPanel" role="tabpanel" id="tab-dust" aria-labelledby="tabbtn-dust">
+      <h4>Meteor showers</h4>
+      <p class="moonSub">
+        Nights filled with brief flashes of light as meteors streak across the sky.
+      </p>
+
+      <div class="moonTable">
+
+        <div class="moonRow"><div>Eta Aquariids</div><div>5–6 May</div><div>50–80 per hour</div><div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div></div>
+        <div class="moonRow"><div>Perseids</div><div>12–13 Aug</div><div>60–100 per hour</div><div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div></div>
+        <div class="moonRow"><div>Geminids</div><div>14–15 Dec</div><div>120–150 per hour</div><div><a class="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a></div></div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- EXPERIENCIA VISUAL NIGHT FALLS -->
+<section class="section nightSection" id="night-sections">
+
+
+
+    <!-- CÓMO VIVIR -->
+    <section class="section" id="vivir">
+      <div class="sectionHeader">
+        <h2> How to live the night</h2>
+        <p class="hint">slowly, with intention</p>
+      </div>
+
+      <div class="momentsGrid">
+        <div class="moment">
+          <h3>1) Switch the world off</h3>
+            <p>
+                Put your phone away, lower the lights and listen. The silence here is not empty — it is part of the experience.
+            </p>
+            <small>Tip: a warm light torch helps preserve the atmosphere.</small>
+        </div>
+
+        <div class="moment">
+          <h3>2) Look up</h3>
+            <p>
+            When the sky opens, everything changes. If you arrive during a new moon, you will understand why this is called Night Falls.
+            </p>
+            <small>Tip: give your eyes 10 minutes without light to fully adapt.</small>
+        </div>
+
+        <div class="moment">
+          <h3>3) Choose the moment</h3>
+            <p>
+            It’s not just about booking a night — it’s about choosing the type of sky you want. That’s why the lunar calendar exists.
+            </p>
+            <small>Tip: if you want to see the Milky Way clearly, prioritise dark sky nights.</small>
+        </div>
+
+        <div class="moment">
+          <h3>4) Keep it simple</h3>
+            <p>
+            A simple dinner, a glass of wine, a blanket. The night will take care of the rest. The key is not to overplan.
+            </p>
+            <small>Tip: the best moments happen when you don’t force them.</small>
+        </div>
+      </div>
+
+      <!-- booking demo -->
+      <div class="booking">
+        <div class="bookingTop">
+          <strong>Want a PurePod that’s perfect for Night Falls?</strong>
+          <button class="bookingBtn" id="openBooking" type="button">See available PurePods →</button>
+        </div>
+        <div class="bookingPanel" id="bookingPanel">
+          <div class="fields">
+            <div class="field">
+              <label for="checkin">Check-in</label>
+              <input id="checkin" type="date" />
+            </div>
+            <div class="field">
+              <label for="checkout">Check-out</label>
+              <input id="checkout" type="date" />
+            </div>
+          </div>
+
+          <div class="bookingResults" id="bookingResults">
+            (Demo) Aquí puedes mostrar tarjetas de pods recomendados según fechas.
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="section">
+  <div class="sectionHeader">
+    <h2>Stargazing questions</h2>
+    <p class="hint">Things guests often ask before their Night Falls stay</p>
+  </div>
+
+  <div class="card">
+    <p><strong>When is the best time to see the Milky Way in New Zealand?</strong><br>
+    The Milky Way is visible most clearly during dark-sky nights when the moon is absent. In New Zealand this is often best between autumn and early spring, when the nights are longer and the sky is darker.</p>
+
+    <p><strong>Are PurePods good for stargazing?</strong><br>
+    Yes. PurePods are located in remote natural landscapes with very low light pollution. Their glass architecture allows guests to watch the night sky directly from the bed, making them ideal for stargazing.</p>
+
+    <p><strong>What makes a dark-sky location special?</strong><br>
+    A dark-sky location has very little artificial light. This allows thousands of stars, the Milky Way, and meteor showers to become visible to the naked eye — something rarely seen near cities.</p>
+  </div>
+
+</section>
+
+
+    <!-- CTA -->
+    <div class="stickyCta">
+      <div class="ctaInner">
+        <div class="price">Night Falls · Best on a new moon</div>
+        <button class="ctaGhost" type="button" onclick="location.href='experiences.html'">View experiences</button>
+        <button class="ctaBtn" type="button" onclick="window.open('https://purepods.com/booking/?cart=Checkout','_blank')">Book</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // Tabs (robusto + estado inicial garantizado)
+    (function(){
+      const root = document.getElementById("calendario");
+      if(!root) return;
+
+      const tabs = root.querySelectorAll(".moonTab");
+      const panels = root.querySelectorAll(".moonPanel");
+
+      function activate(name){
+        tabs.forEach(t=>{
+          const active = t.dataset.tab === name;
+          t.classList.toggle("is-active", active);
+          t.setAttribute("aria-selected", active ? "true" : "false");
+        });
+        panels.forEach(p=>{
+          p.classList.toggle("is-active", p.id === ("tab-" + name));
+        });
+      }
+
+      tabs.forEach(btn => btn.addEventListener("click", () => activate(btn.dataset.tab)));
+
+      // fuerza estado inicial
+      const initial = root.querySelector(".moonTab.is-active")?.dataset.tab || "dark";
+      activate(initial);
+    })();
+
+    // Booking panel
+(function(){
+  const openBtn = document.getElementById("openBooking");
+  const panel = document.getElementById("bookingPanel");
+  const results = document.getElementById("bookingResults");
+
+  if(openBtn && panel){
+    openBtn.addEventListener("click", ()=>{
+      const isOpen = panel.style.display === "block";
+      panel.style.display = isOpen ? "none" : "block";
+
+      if(!isOpen && results){
+        results.innerHTML = `
+          <strong>Available PurePods for your dates:</strong><br>
+          Select check-in and check-out to see real-time availability.<br>
+          <span style="color: rgba(92,95,62,.72); font-size:12.5px;">
+            (Demo) This will later connect to the Nesbook API to display live availability.
+          </span>
+        `;
+      }
+    });
+  }
+})();
+
+
+
+  // Topnav solid background on scroll (Kahutara behavior)
+  (function(){
+    const nav = document.getElementById("topnav");
+    if(!nav) return;
+
+    function onScroll(){
+      nav.classList.toggle("is-scrolled", window.scrollY > 16);
+    }
+
+    window.addEventListener("scroll", onScroll, { passive:true });
+    onScroll();
+  })();
+</script>
+  </script>
+
+
+</body>
+</html>
