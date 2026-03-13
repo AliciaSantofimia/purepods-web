@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>PurePods — Romantic</title>
-<meta content="Un refugio para dos: silencio, paisaje y noches oscuras para mirar el cielo." name="description"/>
+<meta content="A retreat for two: silence, landscape and dark skies to gaze at the stars." name="description"/>
 <style>
-    :root {
-      --flora:#5C5F3C;
-      --sand:#F4F4EA;
-      --tussock:#C2B59D;
-      --moon:#111217;
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@400;500;600&display=swap');
 
-      --text:#111217;
-      --muted: rgba(17,18,23,.72);
+    :root {
+      /* Official PurePods palette (agent.md) */
+      --bg: #F7F6F3;
+      --ink: #5C5F3E;
+      --muted: rgba(92, 95, 62, .72);
+      --card: rgba(255, 255, 255, .85);
+      --stroke: rgba(92, 95, 62, .18);
+      --brand-green: #5C5F3E;
+      --brand-beige: #C2B59E;
+
+      --moon: #111217;
 
       --radius: 24px;
       --radius-sm: 16px;
-      --shadow: 0 18px 40px rgba(17,18,23,.16);
-      --shadow-soft: 0 10px 24px rgba(17,18,23,.10);
+      --shadow: 0 18px 40px rgba(92, 95, 62, .16);
+      --shadow-soft: 0 10px 24px rgba(92, 95, 62, .10);
       --max: 1120px;
     }
 
@@ -27,9 +32,9 @@
     html, body { height: 100%; }
     body {
       margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color: var(--text);
-      background: var(--sand);
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
       line-height: 1.45;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -48,9 +53,9 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(244,244,234,.78);
+      background: rgba(247, 246, 243, .78);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(17,18,23,.08);
+      border-bottom: 1px solid var(--stroke);
     }
     .nav-inner {
       display: flex;
@@ -66,7 +71,7 @@
       min-width: 220px;
     }
     .brand img { width: 42px; height: 42px; border-radius: 999px; }
-    .brand b { letter-spacing: .08em; font-weight: 650; font-size: 14px; }
+    .brand b { letter-spacing: .08em; font-weight: 600; font-size: 14px; font-family: "Inter", system-ui, sans-serif; }
     .links {
       display: flex;
       gap: 18px;
@@ -76,11 +81,26 @@
     }
     .links a {
       font-size: 13px;
+      font-weight: 500;
       letter-spacing: .06em;
       text-transform: uppercase;
-      color: rgba(17,18,23,.78);
+      color: var(--muted);
     }
-    .links a:hover { color: rgba(17,18,23,1); }
+
+    .links .btn-primary {
+  background: var(--brand-green);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+.links .btn {
+  flex-shrink: 0;
+}
+
+    .links a:hover { color: var(--ink); }
 
     .btn {
       display: inline-flex;
@@ -89,79 +109,76 @@
       gap: 10px;
       padding: 12px 16px;
       border-radius: 999px;
-      border: 1px solid rgba(17,18,23,.14);
-      background: rgba(244,244,234,.6);
+      border: 1px solid var(--stroke);
+      background: var(--card);
       box-shadow: var(--shadow-soft);
-      font-weight: 600;
+      font-family: "Inter", system-ui, sans-serif;
+      font-weight: 800;
       letter-spacing: .02em;
     }
-    .btn:hover { transform: translateY(-1px); }
-    .btn:active { transform: translateY(0px); }
-    .btn-primary {
-      background: var(--flora);
-      border-color: rgba(255,255,255,.12);
-      color: var(--sand);
-      box-shadow: 0 16px 30px rgba(92,95,60,.30);
-    }
+    .btn-primary { 
+  background: var(--brand-green);
+  border-color: var(--brand-green);
+  color: #ffffff;
+  box-shadow: 0 16px 30px rgba(92, 95, 62, .30);
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 12px 24px;
+};
+
 
     /* Hero */
-    .hero {
-      position: relative;
-      min-height: 78vh;
-      display: grid;
-      align-items: end;
-      overflow: hidden;
-    }
-    .hero::before {
-      content:"";
-      position:absolute; inset:0;
-      background:
-        linear-gradient(180deg, rgba(17,18,23,.10) 0%, rgba(17,18,23,.55) 70%, rgba(17,18,23,.70) 100%);
-      z-index: 1;
-    }
-    .hero-bg {
-      position: absolute; inset:0;
-      background: url("../assets/img/experiences/romantic/purepods-romantic-getaway-hero-new-zealand.jpg") center/cover no-repeat;
-      transform: scale(1.02);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 56px 0 44px;
-    }
-    .kicker {
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(244,244,234,.14);
-      border: 1px solid rgba(244,244,234,.22);
-      color: rgba(244,244,234,.92);
-      font-size: 12px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-    .hero h1 {
-      margin: 14px 0 10px;
-      font-size: clamp(34px, 4.6vw, 64px);
-      line-height: 1.02;
-      color: var(--sand);
-      letter-spacing: -0.02em;
-    }
-    .hero p {
-      max-width: 64ch;
-      margin: 0 0 22px;
-      color: rgba(244,244,234,.86);
-      font-size: clamp(15px, 1.35vw, 18px);
-    }
-    .hero-cta {
-      display:flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items:center;
-    }
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+}
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(92, 95, 62, .08) 0%,
+      rgba(92, 95, 62, .42) 58%,
+      rgba(92, 95, 62, .62) 100%
+    );
+  z-index: 1;
+}
+
+.hero-bg {
+    position: absolute; inset:0;
+      background: url("../../assets/img/experiences/romantic/romantic-getaway-new-zealand-purepods-hero.jpg") center/cover no-repeat;
+      transform: scale(1.02);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 88px 0 48px;
+  max-width: 760px;
+}
+
+.hero h1 {
+  margin: 14px 0 10px;
+  font-family: "Noto Serif Display", Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 4.6vw, 64px);
+  font-weight: 500;
+  line-height: 1.02;
+  color: var(--bg);
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  max-width: 64ch;
+  margin: 0 0 22px;
+  color: rgba(247, 246, 243, .92);
+  font-size: clamp(15px, 1.35vw, 18px);
+}
     /* Sections */
     section { padding: 64px 0; }
     .section-title {
@@ -173,7 +190,10 @@
     }
     .section-title h2 {
       margin:0;
+      font-family: "Inter", system-ui, sans-serif;
       font-size: clamp(22px, 2.6vw, 34px);
+      font-weight: 700;
+      color: var(--ink);
       letter-spacing: -0.02em;
     }
     .section-title p {
@@ -190,8 +210,8 @@
       gap: 16px;
     }
     .card {
-      background: rgba(255,255,255,.45);
-      border: 1px solid rgba(17,18,23,.08);
+      background: var(--card);
+      border: 1px solid var(--stroke);
       border-radius: var(--radius);
       padding: 18px;
       box-shadow: var(--shadow-soft);
@@ -199,6 +219,8 @@
     .card h3 {
       margin: 10px 0 6px;
       font-size: 16px;
+      font-weight: 600;
+      color: var(--ink);
       letter-spacing: -0.01em;
     }
     .card p {
@@ -211,10 +233,10 @@
       border-radius: 14px;
       display:grid;
       place-items:center;
-      background: rgba(92,95,60,.10);
-      border: 1px solid rgba(92,95,60,.18);
+      background: rgba(92, 95, 62, .10);
+      border: 1px solid var(--stroke);
     }
-    .icon svg { width: 22px; height: 22px; color: var(--flora); }
+    .icon svg { width: 22px; height: 22px; color: var(--brand-green); }
 
     /* Split moments */
     .moment {
@@ -231,7 +253,7 @@
       border-radius: var(--radius);
       overflow:hidden;
       box-shadow: var(--shadow);
-      border: 1px solid rgba(17,18,23,.10);
+      border: 1px solid var(--stroke);
     }
   .moment .media img {
   width: 100%;
@@ -248,18 +270,21 @@
       display:inline-flex;
       align-items:center;
       gap: 8px;
-      color: rgba(17,18,23,.78);
+      color: var(--muted);
       font-size: 12px;
+      font-weight: 500;
       letter-spacing: .1em;
       text-transform: uppercase;
     }
     .tag .dot {
       width: 8px; height: 8px; border-radius: 999px;
-      background: var(--flora);
+      background: var(--brand-green);
     }
     .moment h3 {
       margin: 10px 0 10px;
       font-size: 26px;
+      font-weight: 600;
+      color: var(--ink);
       letter-spacing: -0.02em;
     }
     .moment p {
@@ -279,8 +304,8 @@
       border-radius: var(--radius);
       overflow:hidden;
       box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(17,18,23,.10);
-      background: rgba(255,255,255,.35);
+      border: 1px solid var(--stroke);
+      background: var(--card);
     }
     .tile img {
       width:100%; height:100%;
@@ -294,9 +319,9 @@
     /* Dark section */
     .dark {
       background: var(--moon);
-      color: var(--sand);
+      color: var(--bg);
     }
-    .dark .section-title p { color: rgba(244,244,234,.74); }
+    .dark .section-title p { color: rgba(247, 246, 243, .74); }
     .quote-grid {
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -305,25 +330,26 @@
     }
     .quote {
       border-radius: var(--radius);
-      border: 1px solid rgba(244,244,234,.12);
-      background: rgba(244,244,234,.06);
+      border: 1px solid rgba(247, 246, 243, .12);
+      background: rgba(247, 246, 243, .06);
       padding: 18px;
     }
     .quote p {
       margin: 0 0 12px;
-      color: rgba(244,244,234,.82);
+      color: rgba(247, 246, 243, .82);
       font-size: 14px;
     }
     .quote b {
       display:block;
       font-size: 13px;
+      font-weight: 600;
       letter-spacing: .02em;
-      color: rgba(244,244,234,.92);
+      color: rgba(247, 246, 243, .92);
     }
     .quote span {
       display:block;
       font-size: 12px;
-      color: rgba(244,244,234,.62);
+      color: rgba(247, 246, 243, .62);
     }
 
     /* Palette mini */
@@ -335,8 +361,8 @@
     .swatch {
       border-radius: 18px;
       overflow:hidden;
-      border: 1px solid rgba(17,18,23,.10);
-      background: rgba(255,255,255,.35);
+      border: 1px solid var(--stroke);
+      background: var(--card);
     }
     .swatch .top {
       height: 64px;
@@ -344,13 +370,14 @@
     .swatch .meta {
       padding: 10px 12px 12px;
       font-size: 12px;
-      color: rgba(17,18,23,.72);
+      color: var(--muted);
     }
     .swatch .meta b {
       display:block;
       margin-bottom: 4px;
-      color: rgba(17,18,23,.9);
+      color: var(--ink);
       font-size: 12px;
+      font-weight: 600;
       letter-spacing: .04em;
       text-transform: uppercase;
     }
@@ -361,9 +388,9 @@
 
     /* Footer CTA */
     .cta {
-      background: linear-gradient(135deg, rgba(92,95,60,.14), rgba(194,181,157,.22));
-      border-top: 1px solid rgba(17,18,23,.08);
-      border-bottom: 1px solid rgba(17,18,23,.08);
+      background: linear-gradient(135deg, rgba(92, 95, 62, .14), rgba(194, 181, 158, .22));
+      border-top: 1px solid var(--stroke);
+      border-bottom: 1px solid var(--stroke);
     }
     .cta-inner {
       display:flex;
@@ -375,6 +402,8 @@
     .cta h2 {
       margin:0;
       font-size: 28px;
+      font-weight: 700;
+      color: var(--ink);
       letter-spacing: -0.02em;
     }
     .cta p {
@@ -385,7 +414,7 @@
 
     footer {
       padding: 34px 0;
-      color: rgba(17,18,23,.72);
+      color: var(--muted);
       font-size: 13px;
     }
     footer .foot {
@@ -414,15 +443,20 @@
       .swatches { grid-template-columns: 1fr 1fr; }
       .brand { min-width: unset; }
     }
+
+    @media (max-width: 640px) {
+      .hero { min-height: 72vh; }
+      .hero-content { padding: 48px 0 32px; }
+    }
   
     /* Added v3: media blocks */
     .essentials-photo{
       margin-top: 22px;
       border-radius: 18px;
       overflow: hidden;
-      border: 1px solid rgba(17,18,23,.08);
-      background: var(--sand);
-      box-shadow: 0 14px 40px rgba(17,18,23,.08);
+      border: 1px solid var(--stroke);
+      background: var(--bg);
+      box-shadow: 0 14px 40px rgba(92, 95, 62, .08);
     }
     .essentials-photo img{ display:block; width:100%; height:auto; }
 
@@ -433,19 +467,19 @@
       margin: 0 auto;
       border-radius: 22px;
       overflow: hidden;
-      border: 1px solid rgba(17,18,23,.10);
-      box-shadow: 0 18px 48px rgba(17,18,23,.10);
+      border: 1px solid var(--stroke);
+      box-shadow: 0 18px 48px rgba(92, 95, 62, .10);
     }
     .teaser-img{ display:block; width:100%; height: min(520px, 62vw); object-fit: cover; }
     .teaser-overlay{
       position:absolute; inset:0;
       display:flex; flex-direction:column; justify-content:flex-end;
       padding: 26px;
-      background: linear-gradient(180deg, rgba(17,18,23,0) 20%, rgba(17,18,23,.65) 100%);
+      background: linear-gradient(180deg, rgba(92, 95, 62, 0) 20%, rgba(92, 95, 62, .65) 100%);
       color: #fff;
       gap: 10px;
     }
-    .teaser-overlay h2{ margin:0; font-size: clamp(22px, 3.2vw, 36px); letter-spacing:-0.02em; }
+    .teaser-overlay h2{ margin:0; font-family: "Inter", system-ui, sans-serif; font-size: clamp(22px, 3.2vw, 36px); font-weight: 700; letter-spacing:-0.02em; }
     .teaser-overlay p{ margin:0; max-width: 52ch; opacity:.92; }
     .teaser-overlay .btn{ width: fit-content; }
 
@@ -473,7 +507,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background: linear-gradient(180deg, rgba(244,244,234,.92) 0%, rgba(244,244,234,.82) 100%);
+      background: linear-gradient(180deg, rgba(247, 246, 243, .92) 0%, rgba(247, 246, 243, .82) 100%);
       pointer-events:none;
     }
     .experience-surface{
@@ -481,9 +515,9 @@
       z-index: 1;
       padding: 18px 18px 16px;
       border-radius: 26px;
-      border: 1px solid rgba(17,18,23,.08);
-      background: rgba(244,244,234,.86);
-      box-shadow: 0 16px 40px rgba(17,18,23,.08);
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      box-shadow: 0 16px 40px rgba(92, 95, 62, .08);
     }
     .experience-block .eyebrow{ margin: 0 0 10px; }
     .experience-block .lead{ font-size: 15px; line-height: 1.55; }
@@ -493,71 +527,72 @@
       width: 38px;
       height: 38px;
       border-radius: 12px;
-      background: rgba(92,95,60,.14);
-      border: 1px solid rgba(92,95,60,.18);
-      color: var(--flora);
+      background: rgba(92, 95, 62, .14);
+      border: 1px solid var(--stroke);
+      color: var(--brand-green);
       font-size: 17px;
     }
 
     /* Moments section – make kicker a small title */
 #moments .section-kicker{
   font-size: clamp(20px, 2.6vw, 30px);
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: -0.01em;
   text-transform: none;
   margin-bottom: 10px;
-  color: rgba(17,18,23,.92);
+  color: var(--ink);
 }
 
 
     /* Celebraciones image: show more of the scene */
     .moment .media img.img-contain{
       object-fit: contain;
-      background: rgba(244,244,234,.55);
+      background: rgba(247, 246, 243, .55);
     }
 
     /* Night section without black */
     .night-soft{
-      background: linear-gradient(135deg, rgba(92,95,60,.10), rgba(194,181,157,.16));
-      color: var(--text);
-      border-top: 1px solid rgba(17,18,23,.08);
-      border-bottom: 1px solid rgba(17,18,23,.08);
+      background: linear-gradient(135deg, rgba(92, 95, 62, .10), rgba(194, 181, 158, .16));
+      color: var(--ink);
+      border-top: 1px solid var(--stroke);
+      border-bottom: 1px solid var(--stroke);
     }
-    .night-soft .section-title p{ color: rgba(17,18,23,.70); }
+    .night-soft .section-title p{ color: var(--muted); }
     .night-soft .quote{
-      background: rgba(244,244,234,.78);
-      border: 1px solid rgba(17,18,23,.08);
+      background: var(--card);
+      border: 1px solid var(--stroke);
     }
-    .night-soft .quote p{ color: rgba(17,18,23,.78); }
-    .night-soft .quote b{ color: rgba(17,18,23,.92); }
-    .night-soft .quote span{ color: rgba(17,18,23,.62); }
+    .night-soft .quote p{ color: var(--muted); }
+    .night-soft .quote b{ color: var(--ink); }
+    .night-soft .quote span{ color: rgba(92, 95, 62, .62); }
 
     /* CTA panel: PurePods tones, keep heart */
     .cta-panel{
-      background: rgba(244,244,234,.92) !important;
-      color: rgba(17,18,23,.92) !important;
-      border: 1px solid rgba(17,18,23,.08);
-      box-shadow: 0 20px 50px rgba(17,18,23,.12);
+      background: var(--card) !important;
+      color: var(--ink) !important;
+      border: 1px solid var(--stroke);
+      box-shadow: 0 20px 50px rgba(92, 95, 62, .12);
     }
     .cta-icon{
-      background: rgba(92,95,60,.14) !important;
-      border: 1px solid rgba(92,95,60,.18) !important;
-      color: var(--flora);
+      background: rgba(92, 95, 62, .14) !important;
+      border: 1px solid var(--stroke) !important;
+      color: var(--brand-green);
     }
-    .cta-kicker{ color: rgba(17,18,23,.70) !important; }
-    .cta-text{ color: rgba(17,18,23,.78) !important; }
+    .cta-kicker{ color: var(--muted) !important; }
+    .cta-text{ color: var(--muted) !important; }
     .center { text-align: center; }
     .eyebrow {
       font-size: 12px;
+      font-weight: 500;
       letter-spacing: .16em;
       text-transform: uppercase;
-      color: rgba(17,18,23,.62);
+      color: var(--muted);
       margin: 0 0 10px;
     }
     .lead {
       margin: 0 auto;
       max-width: 70ch;
-      color: rgba(17,18,23,.72);
+      color: var(--muted);
       line-height: 1.6;
       font-size: 16px;
     }
@@ -577,24 +612,26 @@
       width: 42px;
       height: 42px;
       border-radius: 10px;
-      background: rgba(17,18,23,.92);
-      color: #fff;
+      background: var(--brand-green);
+      color: var(--bg);
       display:flex;
       align-items:center;
       justify-content:center;
       font-size: 18px;
       line-height: 1;
       flex: 0 0 auto;
-      box-shadow: 0 10px 20px rgba(17,18,23,.12);
+      box-shadow: 0 10px 20px rgba(92, 95, 62, .12);
     }
     .experience-item h3{
       margin: 0 0 6px;
       font-size: 18px;
+      font-weight: 600;
+      color: var(--ink);
       letter-spacing: -0.01em;
     }
     .experience-item p{
       margin: 0;
-      color: rgba(17,18,23,.72);
+      color: var(--muted);
       line-height: 1.6;
     }
 
@@ -607,9 +644,9 @@
       margin: 0;
       overflow: hidden;
       border-radius: 18px;
-      background: rgba(255,255,255,.6);
-      border: 1px solid rgba(17,18,23,.08);
-      box-shadow: 0 16px 40px rgba(17,18,23,.08);
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      box-shadow: 0 16px 40px rgba(92, 95, 62, .08);
     }
     .gallery-grid2 img{
       width: 100%;
@@ -637,9 +674,9 @@
       width: min(880px, 100%);
       padding: 34px 26px;
       border-radius: 26px;
-      background: rgba(17,18,23,.94);
-      color: rgba(255,255,255,.92);
-      box-shadow: 0 22px 60px rgba(17,18,23,.22);
+      background: var(--brand-green);
+      color: rgba(255, 255, 255, .92);
+      box-shadow: 0 22px 60px rgba(92, 95, 62, .22);
       text-align: center;
       position: relative;
       overflow:hidden;
@@ -648,8 +685,8 @@
       content:"";
       position:absolute;
       inset:-80px;
-      background: radial-gradient(circle at 20% 10%, rgba(92,95,60,.55), transparent 55%),
-                  radial-gradient(circle at 80% 30%, rgba(194,181,157,.35), transparent 60%);
+      background: radial-gradient(circle at 20% 10%, rgba(92, 95, 62, .55), transparent 55%),
+                  radial-gradient(circle at 80% 30%, rgba(194, 181, 158, .35), transparent 60%);
       opacity:.55;
       pointer-events:none;
     }
@@ -761,7 +798,7 @@
 .booking-panel {
   margin-top: 24px;
   padding-top: 20px;
-  border-top: 1px solid rgba(0,0,0,0.08);
+  border-top: 1px solid var(--stroke);
   display: none;
 }
 
@@ -809,16 +846,16 @@
   align-items: center;
   padding: 12px;
   border-radius: 18px;
-  border: 1px solid rgba(17,18,23,.10);
-  background: rgba(255,255,255,.35);
-  box-shadow: 0 10px 24px rgba(17,18,23,.08);
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  box-shadow: 0 10px 24px rgba(92, 95, 62, .08);
   text-align: left;
   transition: transform .15s ease, box-shadow .15s ease;
 }
 
 .pod-card:hover{
   transform: translateY(-1px);
-  box-shadow: 0 16px 34px rgba(17,18,23,.10);
+  box-shadow: 0 16px 34px rgba(92, 95, 62, .10);
 }
 
 .pod-thumb{
@@ -826,8 +863,8 @@
   height: 92px;
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid rgba(17,18,23,.10);
-  background: rgba(244,244,234,.55);
+  border: 1px solid var(--stroke);
+  background: rgba(247, 246, 243, .55);
 }
 
 .pod-thumb img{
@@ -846,19 +883,20 @@
   margin: 0;
   font-weight: 700;
   font-size: 14px;
+  color: var(--ink);
   letter-spacing: -0.01em;
 }
 
 .pod-location{
   margin: 0;
   font-size: 12px;
-  color: rgba(17,18,23,.68);
+  color: var(--muted);
 }
 
 .pod-desc{
   margin: 2px 0 0;
   font-size: 13px;
-  color: rgba(17,18,23,.76);
+  color: var(--muted);
   line-height: 1.35;
 }
 
@@ -868,8 +906,8 @@
   width: fit-content;
   padding: 8px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(17,18,23,.14);
-  background: rgba(244,244,234,.55);
+  border: 1px solid var(--stroke);
+  background: var(--card);
   font-weight: 600;
   font-size: 13px;
 }
@@ -889,10 +927,10 @@
 <b>PUREPODS</b>
 </a>
 <div class="links">
-<a href="#moments">Momentos</a>
-<a href="#gallery">Galería</a>
-<a href="#night">Noche</a>
-<a class="btn btn-primary" href="https://purepods.com/booking/?cart=Checkout">Reservar</a>
+<a href="#moments">Moments</a>
+<a href="#gallery">Gallery</a>
+<a href="#night">Night</a>
+<a class="btn btn-primary" href="https://purepods.com/booking/?cart=Checkout">Book</a>
 </div>
 </div>
 </div>
@@ -900,14 +938,14 @@
 <div aria-hidden="true" class="hero-bg"></div>
 <div class="wrap hero-content">
 
-<h1>Donde el tiempo va más lento.</h1>
+<h1>Where time moves slower.</h1>
 <p>
-        Un refugio íntimo para desconectar, brindar sin prisa y ver cómo la luz cambia en silencio —
-        hasta que la noche se llena de estrellas.
+        An intimate retreat to disconnect, raise a glass without rush, and watch the light shift in silence —
+        until the night fills with stars.
       </p>
 <div class="hero-cta">
 
-<a class="btn" href="#moments">Explorar la experiencia</a>
+<a class="btn" href="#moments">Explore the experience</a>
 </div>
 </div>
 </header>
@@ -917,38 +955,38 @@
   <div class="container">
     <div class="experience-surface">
 
-      <p class="eyebrow center">La experiencia que nunca olvidaréis</p>
+      <p class="eyebrow center">The experience you'll never forget</p>
 
       <p class="lead center">
-        PurePods no es solo alojamiento. Es un lugar donde los momentos se transforman en memorias imborrables,
-        donde el amor se respira en cada detalle.
+        PurePods is more than accommodation. It's a place where moments become lasting memories,
+        and where connection is felt in every detail.
       </p>
 
       <!-- TEXTO CONTINUO CENTRADO -->
       <div class="experience-text">
 
         <p>
-          PurePods no es solo alojamiento: es una experiencia pensada para vivir el amor con calma y profundidad.
-          Aquí disfrutaréis de <strong>privacidad absoluta</strong>, en vuestro propio santuario de cristal en plena naturaleza,
-          sin interrupciones ni distracciones, solo vosotros y el horizonte infinito.
+          PurePods is more than accommodation: it's an experience designed for connection, calm and depth.
+          Here you'll have <strong>complete privacy</strong> in your own glass sanctuary in the heart of nature —
+          no interruptions, no distractions, just the two of you and the horizon.
         </p>
 
         <p>
-          Os rodeará la <strong>naturaleza virgen</strong> de Nueva Zelanda en su estado más puro: paisajes que quitan el aliento,
-          amaneceres únicos y atardeceres que parecen creados solo para vosotros.
-          Todo invita a bajar el ritmo y a reconectar con lo esencial.
+          You're surrounded by New Zealand's <strong>wild landscape</strong> at its purest: breathtaking views,
+          one-of-a-kind sunrises and sunsets that feel made for you.
+          Everything invites you to slow down and reconnect with what matters.
         </p>
 
         <p>
-          Cuando cae la noche, los <strong>cielos que enamoran</strong> se convierten en protagonistas.
-          Miles de estrellas iluminan vuestras veladas bajo algunos de los cielos más limpios del hemisferio sur,
-          creando un escenario íntimo y casi irreal para compartir en silencio.
+          When night falls, the <strong>starry skies</strong> take centre stage.
+          Thousands of stars light your evenings under some of the clearest skies in the southern hemisphere,
+          creating an intimate, almost unreal setting to share in silence.
         </p>
 
         <p>
-          Lejos del ruido y de las pantallas, PurePods invita a <strong>reconectar de verdad</strong>:
-          tiempo compartido sin prisas, conversaciones que fluyen y la tranquilidad de estar presentes
-          el uno para el otro, sin nada que interfiera.
+          Away from noise and screens, PurePods invites you to <strong>reconnect in earnest</strong>:
+          unhurried time together, conversations that flow, and the calm of being fully present
+          for each other, with nothing in the way.
         </p>
 
       </div>
@@ -961,32 +999,32 @@
 <section id="moments">
 <div class="wrap">
 <div class="section-title">
-<p class="section-kicker center">Momentos que merecen lo extraordinario</p>
-<p class="lead center">Cada historia de amor es única. Sea cual sea vuestro momento especial, PurePods lo convierte en inolvidable.</p>
+<p class="section-kicker center">Moments that deserve something extraordinary</p>
+<p class="lead center">Every love story is unique. Whatever your special moment, PurePods makes it unforgettable.</p>
 </div>
 <div class="moment">
 <div class="media">
 <img alt="Dos personas sentadas mirando el paisaje al atardecer" loading="lazy" src="/assets/img/experiences/romantic/purepods-romantic-getaway-couple-sunset-view-new-zealand.jpg"/>
 </div>
 <div class="copy">
-<h3>Aniversarios memorables</h3>
-<p>Hay fechas que merecen algo más que una cena especial.
- Cada historia de amor merece su propia celebración, y PurePods es el lugar perfecto para celebrar <strong>aniversarios de boda, bodas de plata, bodas de oro </strong> o ese <strong>aniversario de noviazgo </strong> que marcó un antes y un después.
-Un brindis tranquilo, el sol cayendo tras el paisaje y la sensación de que el tiempo se detiene solo para vosotros. Un entorno íntimo para recordar lo vivido, renovar promesas y crear nuevas memorias que querréis atesorar para siempre.</p>
-<a class="btn" href="#cta">Elige tu fecha</a>
+<h3>Memorable anniversaries</h3>
+<p>Some dates deserve more than a special dinner.
+ Every love story deserves its own celebration, and PurePods is the perfect place to mark <strong>wedding anniversaries, silver or golden anniversaries</strong>, or that <strong>milestone together</strong> that changed everything.
+A quiet toast, the sun setting over the landscape, and the feeling that time has stopped just for you. An intimate setting to look back on what you've shared, renew your promises and create new memories you'll treasure.</p>
+<a class="btn" href="#cta">Choose your date</a>
 </div>
 </div>
 <div class="moment reverse">
 <div class="copy">
 
-<h3>La pregunta perfecta</h3>
-<p>PurePods ha sido el escenario de muchas <strong> pedidas de mano inolvidables </strong>. Un lugar donde prometerse, donde dar ese paso importante rodeados de silencio, naturaleza y tiempo compartido.
+<h3>The perfect question</h3>
+<p>PurePods has been the setting for many <strong>unforgettable proposals</strong>. A place to commit to each other, to take that important step surrounded by silence, nature and time together.
 
-Un atardecer que lo envuelve todo, la calma necesaria y la certeza de haber elegido el lugar adecuado para hacer la pregunta a vuestra manera, sin prisas y sin testigos, solo vosotros y el momento.
+A sunset that wraps around you, the calm you need, and the certainty that you've chosen the right place to ask in your own way — no rush, no audience, just the two of you and the moment.
 
-Aquí, las palabras salen solas…
-y el recuerdo dura para siempre.</p>
-<a class="btn" href="#cta">Elige el momento</a>
+Here, the words find their way…
+and the memory lasts forever.</p>
+<a class="btn" href="#cta">Choose your moment</a>
 </div>
 <div class="media">
 <img alt="Pedida de mano en un Purepod" loading="lazy" src="/assets/img/experiences/romantic/purepods-romantic-proposal-experience-new-zealand.jpg"/>
@@ -997,21 +1035,21 @@ y el recuerdo dura para siempre.</p>
 <img alt="Celebraciones especiales" loading="lazy" class="img-contain" src="/assets/img/experiences/romantic/purepods-romantic-getaway-picnic-wine-experience-new-zealand.jpg"/>
 </div>
 <div class="copy">
-<h3>Celebraciones especiales</h3>
-<p>Hay fechas que piden salirse de lo habitual. Un <strong>San Valentín </strong> lejos del ruido, un <strong> cumpleaños </strong> que se celebra sin prisas o una <strong> buena noticia </strong> que merece un brindis especial.
-En PurePods, estas ocasiones se viven de otra manera: atardeceres que se alargan, copas al caer la noche y la sensación de estar en un lugar pensado solo para vosotros. Un entorno íntimo donde cada celebración se transforma en un recuerdo que perdura.</p>
-<a class="btn" href="#cta">Reserva tu momento especial</a>
+<h3>Special celebrations</h3>
+<p>Some occasions call for something out of the ordinary. <strong>Valentine's</strong> away from the noise, a <strong>birthday</strong> celebrated at your own pace, or <strong>good news</strong> that deserves a proper toast.
+At PurePods, these moments are different: long sunsets, a drink as night falls, and the feeling of being in a place made for just you. An intimate setting where every celebration becomes a lasting memory.</p>
+<a class="btn" href="#cta">Book your special moment</a>
 </div>
 </div>
 <div class="moment reverse">
 <div class="copy">
-<h3>Sin motivo, solo amor</h3>
-<p>No es una celebración. <strong> Es una tentación </strong>.
-Aquí no hay agenda ni despertador. Solo pausas largas, miradas que se entienden sin hablar y noches que no tienen prisa por terminar.
+<h3>No occasion, just us</h3>
+<p>It's not a celebration. <strong>It's a chance to escape.</strong>
+Here there's no schedule and no alarm. Just long pauses, looks that say everything without words, and nights in no hurry to end.
 
-Hay escapadas en las que el plan es no tener plan: un espacio íntimo, silencio alrededor y la libertad de dejarse llevar.
-En PurePods, la conexión se intensifica y cada momento invita a quedarse un poco más cerca.</p>
-<a class="btn" href="#cta">Es tu momento</a>
+Some getaways work best with no plan at all: an intimate space, silence around you, and the freedom to simply be.
+At PurePods, connection deepens and every moment invites you to stay a little closer.</p>
+<a class="btn" href="#cta">Make it yours</a>
 
 
 </div>
@@ -1027,32 +1065,39 @@ En PurePods, la conexión se intensifica y cada momento invita a quedarse un poc
 
     <!-- TÍTULO CLICABLE -->
     <div class="section-title gallery-trigger" id="toggleGallery">
-      <p class="eyebrow center">Imagínate aquí</p>
+      <p class="eyebrow center">Imagine yourself here</p>
     </div>
 
     <!-- GALERÍA OCULTA -->
     <div class="gallery-grid2 gallery-hidden" id="galleryHidden">
 
       <figure class="gitem">
-        <img src="assets/cama y estrellas.jpg" alt="Cama del pod">
+        <img src="../../assets/img/experiences/romantic/purepods-romantic-getaway-dinner-wine-view-new-zealand.jpg" alt="Romantic PurePods glass cabin bedroom with fireplace in New Zealand">
       </figure>
 
       <figure class="gitem">
-        <img src="assets/shower_sunset.jpg" alt="Ducha con vistas">
+        <img src="../../assets/img/experiences/romantic/purepods-romantic-getaway-outdoor-shower-sunset-new-zealand.jpg" alt="Outdoor shower with sunset views at a PurePods glass cabin in New Zealand">
       </figure>
-
-    
 
       <figure class="gitem">
-        <img src="assets/GreyStone Purepod 16.jpg" alt="copitas">
-      </figure>
-<figure class="gitem">
-        <img src="assets/Kapiti PurePod - Full (82).jpg" alt="Interior del pod">
+        <img src="../../assets/img/experiences/romantic/purepods-romantic-getaway-glass-cabin-bedroom-fireplace.jpg" alt="Romantic wine and dinner experience at a PurePods glass cabin in New Zealand">
       </figure>
 
-<figure class="gitem">
-        <img src="assets/DSC02828   Lisa McLean @lisi__.jpg" alt="Interior del pod">
-      </figure>
+        <figure class="gitem">
+        <img src="../../assets/img/experiences/romantic/purepods-romantic-getaway-dinner-wine-view-new-zealand.jpg" alt="Romantic dinner with wine at a PurePods glass cabin in New Zealand">
+       </figure>
+
+       <figure class="gitem">
+        <img src="../../assets/img/experiences/romantic/purepods-romantic-getaway-bedroom-sunrise-view.jpg" alt="omantic glass cabin bedroom at PurePods with nature views in New Zealand">
+       </figure>
+
+       <figure class="gitem">
+        <img src="../../assets/img/experiences/romantic/purepods-romantic-getaway-couple-shower-sunset.jpg" alt="Couple enjoying a sunset shower in a PurePods glass cabin">
+       </figure>
+
+       <figure class="gitem">
+        <img src="../../assets/img/experiences/romantic/purepods-romantic-getaway-stargazing-bed-glass-roof.jpg" alt="Stargazing from a PurePods glass cabin bed under the night sky in New Zealand">
+       </figure>
 
     </div>
 
@@ -1061,24 +1106,24 @@ En PurePods, la conexión se intensifica y cada momento invita a quedarse un poc
 <section class="night-soft" id="night">
 <div class="wrap">
 <div class="section-title">
-<h2>La noche, sin filtros</h2>
-<p>Menos luces. Más estrellas. Y esa sensación de estar lejos de todo.</p>
+<h2>Night, unfiltered</h2>
+<p>Fewer lights. More stars. And the feeling of being far from everything.</p>
 </div>
 <div class="quote-grid">
 <div class="quote">
-<p>“No hicimos nada y fue perfecto. Solo estar ahí, escuchando el campo y mirando el cielo.”</p>
-<b>Escapada para dos</b>
-<span>Una noche</span>
+<p>“We did nothing and it was perfect. Just being there, listening to the land and watching the sky.”</p>
+<b>Getaway for two</b>
+<span>One night</span>
 </div>
 <div class="quote">
-<p>“El atardecer desde la cama… y luego la oscuridad total. Es difícil explicar esa calma.”</p>
-<b>Fin de semana</b>
-<span>Dos noches</span>
+<p>“Sunset from bed… and then total darkness. That calm is hard to put into words.”</p>
+<b>Weekend</b>
+<span>Two nights</span>
 </div>
 <div class="quote">
-<p>“Cena sencilla, copa en mano, y la sensación de que el tiempo se estira.”</p>
-<b>Celebración</b>
-<span>Una noche</span>
+<p>“Simple dinner, drink in hand, and the feeling that time stretches.”</p>
+<b>Celebration</b>
+<span>One night</span>
 </div>
 </div>
 </div>
@@ -1087,12 +1132,12 @@ En PurePods, la conexión se intensifica y cada momento invita a quedarse un poc
 <div class="wrap cta-inner">
 <div class="cta-panel">
 <div aria-hidden="true" class="cta-icon">♥</div>
-<p class="cta-kicker">¿Estáis listos para crear vuestra historia?</p>
-<p class="cta-text">El momento perfecto os está esperando. Un lugar donde el tiempo se detiene, donde solo importáis vosotros dos — y la naturaleza hace el resto.</p>
+<p class="cta-kicker">Ready to write your story?</p>
+<p class="cta-text">The perfect moment is waiting. A place where time stands still, where it's just the two of you — and nature does the rest.</p>
 <div class="cta-actions">
 <div class="cta-actions">
  <button class="btn btn-primary" id="openBooking" type="button">
-  Ver PurePods disponibles →
+  See available PurePods →
 </button>
 
 </div>
@@ -1100,36 +1145,28 @@ En PurePods, la conexión se intensifica y cada momento invita a quedarse un poc
 <div class="booking-panel" id="bookingPanel">
   <div class="booking-fields">
     <div class="field">
-      <label for="checkin">Entrada</label>
+      <label for="checkin">Check-in</label>
       <input id="checkin" type="date" value="2026-02-12">
     </div>
 
     <div class="field">
-      <label for="checkout">Salida</label>
+      <label for="checkout">Check-out</label>
       <input id="checkout" type="date" value="2026-02-13">
     </div>
 
-    <button class="btn" id="searchPods" type="button">Buscar disponibilidad</button>
+    <button class="btn" id="searchPods" type="button">Check availability</button>
   </div>
 
   <div class="booking-results" id="bookingResults"></div>
 </div>
 
-<div class="cta-box">
-    <div class="booking-panel" id="booking-panel">
-    <div class="booking-fields">
       <div class="field">
-        <label for="checkin">Entrada</label>
-        <input type="date" id="checkin">
-      </div>
-
-      <div class="field">
-        <label for="checkout">Salida</label>
+        <label for="checkout">Check-out</label>
         <input type="date" id="checkout">
       </div>
 
       <button class="btn btn-secondary" id="search-pods">
-        Buscar disponibilidad
+        Check availability
       </button>
     </div>
 
@@ -1140,7 +1177,7 @@ En PurePods, la conexión se intensifica y cada momento invita a quedarse un poc
 </div>
 
 </div>
-<p class="cta-note">Cada momento cuenta. No esperéis más para crear el vuestro.</p>
+<p class="cta-note">Every moment counts. Don't wait to make yours.</p>
 </div>
 </div>
 </section>
@@ -1149,67 +1186,12 @@ En PurePods, la conexión se intensifica y cada momento invita a quedarse un poc
 <div class="wrap foot">
 <div style="display:flex; align-items:center; gap: 10px;">
 <img alt="PurePods" src="../../assets/img/purepods-logo-new-zealand.png">
-<div>Maqueta HTML • Romantic • PurePods</div>
+<div>HTML mockup • Romantic • PurePods</div>
 </img></div>
-<div>© PurePods (contenido de ejemplo basado en las fotos que enviaste)</div>
+<div>© PurePods (sample content for reference)</div>
 </div>
 </footer>
-<script>
-  const toggleBtn = document.getElementById('toggle-booking');
-  const panel = document.getElementById('booking-panel');
-  const searchBtn = document.getElementById('search-pods');
-  const results = document.getElementById('booking-results');
 
-  toggleBtn.addEventListener('click', () => {
-    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-  });
-
-  searchBtn.addEventListener('click', () => {
-    const checkin = document.getElementById('checkin').value;
-    const checkout = document.getElementById('checkout').value;
-
-    if (!checkin || !checkout) {
-      results.innerHTML = `
-  <p><strong>PurePods disponibles para tus fechas:</strong></p>
-
-  <div class="pods-cards">
-
-    <a class="pod-card" href="https://purepods.com/booking/?cart=Checkout" aria-label="Reservar PurePod A">
-      <div class="pod-thumb">
-        <img src="assets/pod_sunrise.jpg" alt="PurePod A">
-      </div>
-      <div class="pod-meta">
-        <p class="pod-location">Kaikōura</p>
-        <p class="pod-name">Manakau</p>
-        <p class="pod-desc">Vistas abiertas, luz dorada al amanecer y silencio total para desconectar.</p>
-        <span class="pod-cta">Reservar →</span>
-      </div>
-    </a>
-
-    <a class="pod-card" href="https://purepods.com/booking/?cart=Checkout" aria-label="Reservar GreyStone">
-      <div class="pod-thumb">
-        <img src="assets/GreyStone Purepod 8.jpg" alt="PurePod B">
-      </div>
-      <div class="pod-meta">
-        <p class="pod-location">Central Otago</p>
-        <p class="pod-name">Greystone</p>
-        <p class="pod-desc">Atardeceres largos, cielo limpio y una cama frente al paisaje.</p>
-        <span class="pod-cta">Reservar →</span>
-      </div>
-    </a>
-
-  </div>
-`;
-  });
-</script>
-
-<script>
-  const trigger = document.getElementById('toggleGallery');
-  const gallery = document.getElementById('galleryHidden');
-
-  trigger.addEventListener('click', () => {
-    gallery.classList.toggle('is-open');
-  });
 
 <script>
   const trigger = document.getElementById('toggleGallery');
@@ -1239,47 +1221,36 @@ En PurePods, la conexión se intensifica y cada momento invita a quedarse un poc
   if (searchBtn && results) {
     searchBtn.addEventListener("click", () => {
       results.innerHTML = `
-        <p><strong>PurePods disponibles para tus fechas:</strong></p>
+        <p><strong>PurePods available for your dates:</strong></p>
 
-        <div class="pods-cards">
+<div class="pods-cards">
 
-          <a class="pod-card" href="https://purepods.com/booking/?cart=Checkout">
-            <div class="pod-thumb">
-              <img src="assets/pod_sunrise.jpg" alt="PurePod A">
-            </div>
-            <div class="pod-meta">
-              <p class="pod-location">Canterbury • Alpes del Sur</p>
-              <p class="pod-name">PurePod A</p>
-              <p class="pod-desc">Vistas abiertas, amanecer dorado y silencio absoluto.</p>
-              <span class="pod-cta">Reservar →</span>
-            </div>
-          </a>
+  <a class="pod-card" href="https://purepods.com/booking/?force_site_id=3">
+    <div class="pod-thumb">
+      <img src="assets/GreyStone Purepod 8.jpg" alt="Greystone PurePod in Central Otago">
+    </div>
+    <div class="pod-meta">
+      <p class="pod-location">Central Otago</p>
+      <p class="pod-name">Greystone</p>
+      <p class="pod-desc">Expansive views, long sunsets and a glass pod immersed in nature.</p>
+      <span class="pod-cta">Book now →</span>
+    </div>
+  </a>
 
-          <a class="pod-card" href="https://purepods.com/booking/?cart=Checkout">
-            <div class="pod-thumb">
-              <img src="assets/sunset_pod.jpg" alt="PurePod B">
-            </div>
-            <div class="pod-meta">
-              <p class="pod-location">Otago • Lago y montañas</p>
-              <p class="pod-name">PurePod B</p>
-              <p class="pod-desc">Atardeceres largos y una cama frente al paisaje.</p>
-              <span class="pod-cta">Reservar →</span>
-            </div>
-          </a>
+  <a class="pod-card" href="https://purepods.com/booking/?force_site_id=2">
+    <div class="pod-thumb">
+      <img src="assets/pod_sunrise.jpg" alt="Manakau PurePod near Kaikōura">
+    </div>
+    <div class="pod-meta">
+      <p class="pod-location">Kaikōura</p>
+      <p class="pod-name">Manakau</p>
+      <p class="pod-desc">A secluded glass cabin with sweeping countryside views and star-filled skies.</p>
+      <span class="pod-cta">Book now →</span>
+    </div>
+  </a>
 
-        </div>
+</div>
       `;
-    });
-  }
-</script>
-
-<script>
-  const toggleGallery = document.getElementById('toggleGallery');
-  const galleryHidden = document.getElementById('galleryHidden');
-
-  if (toggleGallery && galleryHidden) {
-    toggleGallery.addEventListener('click', () => {
-      galleryHidden.classList.toggle('is-open');
     });
   }
 </script>
