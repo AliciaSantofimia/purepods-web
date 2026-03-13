@@ -1,25 +1,33 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Atatū  | PurePods</title>
+<meta name="description" content="PurePod Atatū is a hilltop glass cabin retreat in the Hurunui region. Open landscapes, distant mountains and ocean glimpses — a quiet escape for two." />
+<link rel="canonical" href="https://purepods.com/location/atatu/" />
+<title>Atatū | PurePods</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --bg:#f5f3ee;
-    --ink:#17181b;
-    --muted:rgba(23,24,27,.72);
-    --card:rgba(255,255,255,.72);
-    --stroke:rgba(80,76,68,.18);
-    --shadow:0 18px 44px rgba(17,18,23,.10);
+    --bg:#F7F6F3;
+    --ink:#5C5F3E;
+    --muted:rgba(92,95,62,.72);
+    --card:rgba(255,255,255,.85);
+    --stroke:rgba(92,95,62,.18);
+    --shadow:0 18px 44px rgba(0,0,0,.08);
     --r:24px;
     --r2:18px;
+    --brand-green:#5C5F3E;
+    --brand-beige:#C2B59E;
   }
   *{box-sizing:border-box}
   body{
     margin:0;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     background:var(--bg);
     color:var(--ink);
   }
@@ -35,7 +43,7 @@
   }
   .chips{display:flex;gap:8px;flex-wrap:wrap;}
   .chip{
-    font-size:12px;color:rgba(23,24,27,.78);
+    font-size:12px;color:var(--muted);
     border:1px solid var(--stroke);
     background:rgba(255,255,255,.55);
     padding:7px 10px;border-radius:999px;
@@ -96,6 +104,8 @@
     line-height:1.05;
     color:#fff;
     text-shadow:0 2px 14px rgba(0,0,0,.35);
+    font-family: "Noto Serif Display", Georgia, "Times New Roman", serif;
+    font-weight: 600;
   }
   .heroSub{
     margin:8px 0 0;
@@ -119,10 +129,15 @@
   /* Secciones */
   .section{margin-top:14px;}
   .sectionHeader{
-    display:flex;align-items:flex-end;justify-content:space-between;gap:10px;
-    margin: 14px 2px 10px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    gap:6px;
+    margin: 14px 2px 16px;
   }
-  .sectionHeader h2{margin:0;font-size:16px;letter-spacing:-.01em;}
+  .sectionHeader h2{margin:0;font-size:22px;letter-spacing:-.01em;color:var(--brand-green);font-weight:600;font-family:"Inter",sans-serif;}
   .hint{margin:0;color:var(--muted);font-size:12px;}
 
   .card{
@@ -132,7 +147,7 @@
     box-shadow: var(--shadow);
     padding: 14px;
   }
-  .card p{margin:0 0 10px;color:rgba(23,24,27,.76);line-height:1.6;font-size:14px;}
+  .card p{margin:0 0 10px;color:var(--muted);line-height:1.6;font-size:14px;}
   .card p:last-child{margin-bottom:0;}
 
   /* Galería POD */
@@ -200,11 +215,11 @@
   }
 
   .travelBody{padding:14px;}
-  .travelBody h3{margin:0 0 6px;font-size:16px;}
+  .travelBody h3{margin:0 0 6px;font-size:16px;color:var(--brand-green);font-weight:600;font-family:"Inter",sans-serif;}
   .travelBody p{margin:0;color:var(--muted);line-height:1.55;font-size:14px;}
 
   .plainCard{padding:18px;}
-  .plainCard h3{margin:0 0 6px;font-size:16px;}
+  .plainCard h3{margin:0 0 6px;font-size:16px;color:var(--brand-green);font-weight:600;font-family:"Inter",sans-serif;}
   .plainCard p{margin:0;color:var(--muted);line-height:1.55;font-size:14px;}
 
   /* Sticky CTA */
@@ -217,21 +232,26 @@
     border-top:1px solid rgba(80,76,68,.18);
   }
   .ctaInner{max-width:980px;margin:0 auto;display:flex;gap:10px;align-items:center;}
-  .price{font-weight:800;font-size:14px;white-space:nowrap;}
+  .price{font-family:"Inter",sans-serif;font-weight:600;font-size:15px;letter-spacing:.3px;color:var(--brand-green);white-space:nowrap;}
   .btn{
     flex:1;
-    border:1px solid rgba(23,24,27,.12);
-    background: rgba(23,24,27,.92);
-    color:#fff;
+    border:2px solid var(--brand-beige);
+    background: var(--brand-beige);
+    color: var(--brand-green);
     padding: 12px 14px;
     border-radius: 999px;
     font-weight: 800;
     cursor:pointer;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
   }
   .btn.secondary{
     flex:0 0 auto;
-    background: rgba(255,255,255,.65);
-    color: var(--ink);
+    background: transparent;
+    color: var(--brand-green);
+    border: 2px solid rgba(92,95,62,.35);
   }
 
   /* Responsive */
@@ -295,7 +315,7 @@
 
   .pp-actsIntro{
     margin: 0 0 14px;
-    color: rgba(23,24,27,.76);
+    color: var(--muted);
     line-height: 1.6;
     font-size: 14px;
   }
@@ -338,9 +358,9 @@
 
   .pp-actBody p{
     margin: 0 0 10px;
-    color: rgba(23,24,27,.76);
+    color: var(--muted);
     line-height: 1.6;
-    font-size: 13.5px;
+    font-size: 14px;
   }
 
   .pp-actBody p:last-of-type{ margin-bottom: 12px; }
@@ -349,9 +369,9 @@
     display:inline-flex;
     gap:8px;
     align-items:center;
-    font-weight: 800;
+    font-weight: 600;
     font-size: 13px;
-    color: rgba(23,24,27,.88);
+    color: var(--brand-green);
     text-decoration:none;
     border-bottom: 1px solid rgba(23,24,27,.18);
     padding-bottom: 2px;
@@ -383,11 +403,19 @@
   }
   .pp-actsExtra p{
     margin: 0 0 10px;
-    color: rgba(23,24,27,.76);
+    color: var(--muted);
     line-height: 1.6;
     font-size: 14px;
   }
   .pp-actsExtra p:last-child{ margin-bottom: 0; }
+  .pp-actTitle,
+  .travelBody h3,
+  .plainCard h3,
+  .pp-actsExtra h3 {
+    color: var(--brand-green);
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+  }
 
   /* --- Top nav (silent) --- */
 .topnav{
@@ -469,7 +497,7 @@
 
 /* Solid state on scroll */
 .topnav.is-solid{
-  background: rgba(34, 54, 43, .72);
+  background: var(--brand-green);
   border-bottom-color: rgba(244,244,234,.14);
   backdrop-filter: blur(10px);
 }
@@ -528,35 +556,33 @@
   <header class="topnav" id="topnav">
   <div class="topnav__inner">
     <div class="topnav__left">
-      <a class="topnav__back" href="../../pods.html" aria-label="Volver a todos los pods">
-        <span aria-hidden="true">←</span> All Pods
+      <a class="topnav__back" href="../../explore.html" aria-label="Back to all pods">
+        ← All Pods
       </a>
 
-      <a class="topnav__brand" href="../../index.html" aria-label="Ir a Home">
+      <a class="topnav__brand" href="../../home/index.html" aria-label="PurePods Home">
         PurePods
       </a>
     </div>
 
-    <nav class="topnav__links" aria-label="Navegación principal">
-      <a href="../../pods.html">Pods</a>
-      <a href="../../experiencias.html">Experiences</a>
-      <a class="topnav__cta" href="#reserve">Reserva</a>
+    <nav class="topnav__links" aria-label="Main navigation">
+      <a href="../../explore.html">Pods</a>
+      <a href="../../experiences/experiences.html">Experiences</a>
+      <a class="topnav__cta" href="https://purepods.com/booking/?force_site_id=5">Book</a>
     </nav>
-    </div>
   </div>
   </header>
 
   <!-- HERO FULL WIDTH -->
   <section class="hero--full">
     <div class="heroMedia">
-      <img src="../../assets/img/atatu/atatu-purepod-glass-cabin-night-stars-new-zealand.jpg" alt="Atatū PurePod glass cabin at night under a starry sky in the New Zealand countryside">
+      <img src="../../../assets/img/atatu/atatu-purepod-glass-cabin-night-stars-new-zealand.jpg" alt="Atatū PurePod glass cabin at night under a starry sky in the New Zealand countryside">
       <div class="heroOverlay">
         <div class="heroInner">
           <h1 class="heroTitle">Atatū</h1>
           <p class="heroSub">
-                    En lo alto del paisaje de Hurunui, PurePod Atatū se define por el espacio y la amplitud. 
-                    Vistas que se abren sobre colinas y campos, con montañas a lo lejos y, en días despejados, el océano. 
-                    Aquí la luz cambia, el tiempo se estira y todo invita a bajar el ritmo.          </p>
+            High on the Hurunui landscape, PurePod Atatū is defined by space and openness. Views unfold over hills and fields, with mountains in the distance and, on clear days, the ocean. Here the light shifts, time stretches and everything invites you to slow down.
+          </p>
         </div>
       </div>
     </div>
@@ -565,187 +591,176 @@
   <!-- CONTENIDO -->
   <div class="wrap">
 
-    <!-- EL POD -->
+    <!-- THE POD -->
     <div class="section">
       <div class="sectionHeader">
-        <h2>El Pod</h2>
-        <p class="hint">Lo esencial, sin rodeos</p>
+        <h2>The Pod</h2>
+        <p class="hint">The essentials, no fluff</p>
       </div>
 
       <div class="card">
         <p>
-        PurePod Atatū es una escapada abierta, silenciosa y profundamente conectada con la tierra. Situado en altura sobre el paisaje de Hurunui, el pod se rodea de colinas suaves, campos abiertos y horizontes amplios que se extienden hacia montañas lejanas; en días claros, incluso el océano aparece en la distancia.</p>
+          PurePod Atatū is an open, quiet escape deeply connected to the land. Set high on the Hurunui landscape, the pod is surrounded by gentle hills, open fields and wide horizons stretching toward distant mountains; on clear days, the ocean appears on the horizon.
+        </p>
         <p>
-              Llegar forma parte del viaje: un paseo de 10–15 minutos (aprox. 750 m) marca la transición hacia la calma. Al final, no hay vecinos ni distracciones — solo espacio, privacidad y vistas que se abren en todas direcciones. Diseñado para dos, es un refugio sencillo y cómodo donde descansar, respirar hondo y dejar que el ritmo del día se vuelva más lento.
-
+          Arrival is part of the journey: a 10–15 minute walk (about 750 m) marks the transition into calm. At the end there are no neighbours or distractions — only space, privacy and views that open in every direction. Designed for two, it is a simple, comfortable retreat to rest, breathe and let the pace of the day slow down.
         </p>
 
         <div class="imgRow">
-          <button class="imgPh big js-lightbox" data-full="../../assets/img/atatu/atatu-purepod-glass-cabin-hilltop-landscape-new-zealand.jpg" aria-label="Ver foto grande">
-            <img src="../../assets/img/atatu/atatu-purepod-glass-cabin-hilltop-landscape-new-zealand.jpg" alt="Atatu PurePod glass cabin on a hilltop surrounded by rolling countryside in New Zealand" style="object-position:50% 55%;">
+          <button class="imgPh big js-lightbox" data-full="../../../assets/img/atatu/atatu-purepod-glass-cabin-hilltop-landscape-new-zealand.jpg" aria-label="View full size">
+            <img src="../../../assets/img/atatu/atatu-purepod-glass-cabin-hilltop-landscape-new-zealand.jpg" alt="Atatu PurePod glass cabin on a hilltop surrounded by rolling countryside in New Zealand" style="object-position:50% 55%;">
           </button>
-          <p>PurePod Atatū no es solo un lugar donde dormir, sino una inmersión en un paisaje amplio y abierto. Rodeado de campos y colinas onduladas, el pod se siente elevado y libre, con una conexión directa con el entorno natural.
+          <p>PurePod Atatū is not just a place to sleep but an immersion in a wide, open landscape. Surrounded by fields and rolling hills, the pod feels elevated and free, with a direct connection to the natural setting. Inside, everything is designed for two: a warm, comfortable space from which to watch the changing light, the vast sky and the stillness of the land. A place to disconnect, observe and simply be.</p>
 
-      En el interior, todo está pensado para dos: un espacio cálido y confortable desde donde contemplar la luz cambiante, el cielo inmenso y la quietud del campo. Un lugar para desconectar, observar y simplemente estar.</p>
-
-          <button class="imgPh tallRight js-lightbox" data-full="../../assets/img/atatu/atatu-purepod-glass-cabin-kitchen-ocean-view-new-zealand.jpg" aria-label="Ver foto">
-            <img src="../../assets/img/atatu/atatu-purepod-glass-cabin-kitchen-ocean-view-new-zealand.jpg" alt="Kitchen inside Atatu PurePod glass cabin with panoramic ocean views in New Zealan" style="object-position:50% 70%;">
+          <button class="imgPh tallRight js-lightbox" data-full="../../../assets/img/atatu/atatu-purepod-glass-cabin-kitchen-ocean-view-new-zealand.jpg" aria-label="View photo">
+            <img src="../../../assets/img/atatu/atatu-purepod-glass-cabin-kitchen-ocean-view-new-zealand.jpg" alt="Kitchen inside Atatu PurePod glass cabin with panoramic ocean views in New Zealan" style="object-position:50% 70%;">
           </button>
 
 
-          <button class="imgPh js-lightbox" data-full="../../assets/img/atatu/atatu-purepod-glass-cabin-bedroom-ocean-view-new-zealand.jpg" aria-label="Ver foto">
-            <img src="../../assets/img/atatu/atatu-purepod-glass-cabin-bedroom-ocean-view-new-zealand.jpg" alt="Bedroom inside Atatu PurePod glass cabin with panoramic ocean views in New Zealand" style="object-position:50% 45%;">
+          <button class="imgPh js-lightbox" data-full="../../../assets/img/atatu/atatu-purepod-glass-cabin-bedroom-ocean-view-new-zealand.jpg" aria-label="View photo">
+            <img src="../../../assets/img/atatu/atatu-purepod-glass-cabin-bedroom-ocean-view-new-zealand.jpg" alt="Bedroom inside Atatu PurePod glass cabin with panoramic ocean views in New Zealand" style="object-position:50% 45%;">
           </button>
         </div>
       </div>
     </div>
 
-    <!-- ACTIVIDADES -->
+    <!-- EXPERIENCES -->
     <div class="section pp-acts">
       <div class="sectionHeader">
-        <h2>Las experiencias que definen Atatū</h2>
-        <p class="hint">Paisaje calizo, costa abierta y vida rural</p>
+        <h2>Experiences that define Atatū</h2>
+        <p class="hint">Limestone landscape, open coast and rural life</p>
       </div>
 
       <div class="pp-actsCard">
         <p class="pp-actsIntro">
-          Una cuidada selección de tres experiencias que capturan la esencia de Hurunui — paisajes abiertos, costa esculpida y calma rural.
-
+          A curated selection of three experiences that capture the essence of Hurunui — open landscapes, sculpted coast and rural calm.
         </p>
 
         <div class="pp-actsGrid">
 
           <article class="pp-act">
-            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/atatu/atatu-experience-cathedral-gully-coastal-landscape-new-zealand.jpg" role="button" aria-label="Ver foto Crucero por Bay of Islands">
-              <img src="../../assets/img/atatu/atatu-experience-cathedral-gully-coastal-landscape-new-zealand.jpg" alt="atatu-experience-cathedral-gully-coastal-landscape-new-zealand">
+            <div class="pp-actMedia js-lightbox" data-full="../../../assets/img/atatu/atatu-experience-cathedral-gully-coastal-landscape-new-zealand.jpg" role="button" aria-label="View Cathedral Gully coastal landscape">
+              <img src="../../../assets/img/atatu/atatu-experience-cathedral-gully-coastal-landscape-new-zealand.jpg" alt="Cathedral Gully and Gore Bay coastal limestone landscape, North Canterbury, New Zealand">
             </div>
             <div class="pp-actBody">
               <h3 class="pp-actTitle">Cathedral Gully & Gore Bay</h3>
               <p>
-                Formaciones de piedra caliza, acantilados esculpidos y una costa abierta definen esta parte de North Canterbury. Cathedral Gully y Gore Bay revelan playas amplias, horizontes despejados y una fuerte sensación de espacio.
+                Limestone formations, sculpted cliffs and an open coast define this part of North Canterbury. Cathedral Gully and Gore Bay reveal wide beaches, clear horizons and a strong sense of space.
               </p>
               <p>
-                Un paisaje donde el tiempo se mueve despacio y la naturaleza marca el ritmo.
-
+                A landscape where time moves slowly and nature sets the pace.
               </p>
               <a class="pp-actLink" href="https://maps.app.goo.gl/NBLG9s4ZR81d762y9" target="_blank" rel="noopener">
-                → Explorar Cathedral Gully
+                → Explore Cathedral Gully
               </a>
-              <a class="pp-actLink" href="https://maps.app.goo.gl/Krv1Yfp9jmSp6tUz9">→ Explore Gore Bay</a>
+              <a class="pp-actLink" href="https://maps.app.goo.gl/Krv1Yfp9jmSp6tUz9" target="_blank" rel="noopener">→ Explore Gore Bay</a>
               
             </div>
           </article>
 
           <article class="pp-act">
-            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/atatu/atatu-experience-waipara-valley-wine-tasting-new-zealand.jpg" role="button" aria-label="Ver foto Waitangi Treaty Grounds">
-              <img src="../../assets/img/atatu/atatu-experience-waipara-valley-wine-tasting-new-zealand.jpg" alt="Wine tasting experience in Waipara Valley near Atatu PurePod in New Zealand">
+            <div class="pp-actMedia js-lightbox" data-full="../../../assets/img/atatu/atatu-experience-waipara-valley-wine-tasting-new-zealand.jpg" role="button" aria-label="View Waipara wine experience">
+              <img src="../../../assets/img/atatu/atatu-experience-waipara-valley-wine-tasting-new-zealand.jpg" alt="Wine tasting experience in Waipara Valley near Atatu PurePod in New Zealand">
             </div>
             <div class="pp-actBody">
               <h3 class="pp-actTitle">Wine & Local Flavour — Waipara</h3>
               <p>
-                Viñedos de clima fresco y bodegas familiares ofrecen una forma tranquila de descubrir la cultura gastronómica de la región. Waipara Springs Winery & Restaurant destaca por su cocina de temporada y vinos locales, con mesas entre las viñas.
+                Cool-climate vineyards and family-run wineries offer a relaxed way to discover the region’s food and wine culture. Waipara Springs Winery & Restaurant stands out for its seasonal cooking and local wines, with tables among the vines.
               </p>
               <p>
-                A solo 25 minutos de PurePod Atatū, es una pausa perfecta entre paisaje y sabor.
-
+                About 25 minutes from PurePod Atatū, it’s a perfect pause between landscape and flavour.
               </p>
               <a class="pp-actLink" href="https://www.waiparasprings.co.nz/" target="_blank" rel="noopener">
-                → Visitar Waipara Springs Winery & Restaurant
+                → Visit Waipara Springs Winery & Restaurant
               </a>
               
             </div>
           </article>
 
           <article class="pp-act">
-            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/atatu/atatu-experience-waipara-coast-cliffs-beach-new-zealand.jpg" role="button" aria-label="Ver foto Mahinepua Peninsula Track">
-              <img src="../../assets/img/atatu/atatu-experience-waipara-coast-cliffs-beach-new-zealand.jpg" alt="Coastal cliffs and beach landscape on the Waipara coast near Atatu PurePod in New Zealand">
+            <div class="pp-actMedia js-lightbox" data-full="../../../assets/img/atatu/atatu-experience-waipara-coast-cliffs-beach-new-zealand.jpg" role="button" aria-label="View Hurunui coast and heritage">
+              <img src="../../../assets/img/atatu/atatu-experience-waipara-coast-cliffs-beach-new-zealand.jpg" alt="Coastal cliffs and beach landscape on the Waipara coast near Atatu PurePod in New Zealand">
             </div>
             <div class="pp-actBody">
               <h3 class="pp-actTitle">Rural Heritage & Slow Discoveries — Hurunui Life</h3>
               <p>
-                Experiencias locales reflejan el carácter rural de la región. El histórico Weka Pass Railway ofrece un viaje tranquilo por el paisaje agrícola, mientras el Amberley Farmers’ Market conecta con los sabores y productos del territorio.
-
+                Local experiences reflect the rural character of the region. The historic Weka Pass Railway offers a gentle journey through the farming landscape, while the Amberley Farmers’ Market connects you with local flavours and produce.
               </p>
               <p>
-                Tradición, comunidad y vida rural en un entorno abierto y sereno.
-
+                Tradition, community and rural life in an open, peaceful setting.
               </p>
               <a class="pp-actLink" href="https://visithurunui.co.nz/" target="_blank" rel="noopener">
                 → Explore Hurunui Region
               </a>
-              
+            </div>
           </article>
 
         </div><!-- /pp-actsGrid -->
 
-        <!-- BLOQUE EXTRA -->
+        <!-- EXTRA BLOCK -->
         <div class="pp-actsExtra">
-          <h3>Más formas de explorar Hurunui</h3>
-          <p><strong>Vida local y pequeños descubrimientos.</strong></p>
+          <h3>More ways to explore Hurunui</h3>
+          <p><strong>Local life and small discoveries.</strong></p>
           <p>
-  Más allá del paisaje abierto, Atatū también conecta con la vida rural de Hurunui. 
-  El <a href="https://www.wekapassrailway.co.nz/" target="_blank"><strong>Weka Pass Railway</strong></a>, 
-  un histórico tren patrimonial que atraviesa colinas y viñedos, opera en días seleccionados (normalmente domingos y festivos) y ofrece una forma tranquila y escénica de acercarse a la historia ferroviaria local.
-</p>
-
+            Beyond the open landscape, Atatū also connects with Hurunui’s rural life. The <a href="https://www.wekapassrailway.co.nz/" target="_blank" rel="noopener"><strong>Weka Pass Railway</strong></a>, a heritage train that runs through hills and vineyards, operates on selected days (usually Sundays and holidays) and offers a quiet, scenic way to experience local railway history.
+          </p>
           <p>
-  <a href="https://www.facebook.com/amberleyfarmersmarket/" target="_blank"><strong>El Amberley Farmers’ Market</strong></a>, 
-  cada sábado por la mañana durante todo el año, reúne productos de proximidad, comida artesanal y el ritmo pausado de la comunidad. 
-  Son experiencias sencillas que revelan el lado más auténtico del lugar.
-</p>
-
+            The <a href="https://www.facebook.com/amberleyfarmersmarket/" target="_blank" rel="noopener"><strong>Amberley Farmers’ Market</strong></a>, every Saturday morning year-round, brings together local produce, artisan food and the unhurried pace of the community. Simple experiences that reveal the authentic side of the place.
+          </p>
         </div>
 
       </div><!-- /pp-actsCard -->
     </div><!-- /section pp-acts -->
 
-    <!-- ANTES DE VIAJAR -->
+    <!-- BEFORE YOU TRAVEL -->
     <div class="section">
       <div class="sectionHeader">
-        <h2>Antes de viajar</h2>
-        <p class="hint">Lo práctico, sin matar el mood</p>
+        <h2>Before you travel</h2>
+        <p class="hint">Practical details, without losing the mood</p>
       </div>
 
       <div class="travelGrid">
 
-        <!-- El viaje (foto) -->
+        <!-- The journey -->
         <div class="travelCard">
           <div class="travelCollage2">
-            <div class="shot js-lightbox" data-full="../../assets/img/atatu/aatatu-journey-countryside-road-landscape-new-zealand.jpg" role="button" aria-label="Ver foto El viaje">
-              <img src="../../assets/img/atatu/atatu-journey-countryside-road-landscape-new-zealand.jpg" alt="Countryside road through rolling hills on the journey to Atatu PurePod in New Zealand ">
+            <div class="shot js-lightbox" data-full="../../../assets/img/atatu/atatu-journey-countryside-road-landscape-new-zealand.jpg" role="button" aria-label="View journey photo">
+              <img src="../../../assets/img/atatu/atatu-journey-countryside-road-landscape-new-zealand.jpg" alt="Countryside road through rolling hills on the journey to Atatū PurePod in New Zealand">
             </div>
-            <div class="shot js-lightbox" data-full="../../assets/img/atatu/atatu-purepod-hilltop-landscape-aerial-new-zealand.jpg" role="button" aria-label="Ver foto extra viaje">
-              <img src="../../assets/img/atatu/atatu-purepod-hilltop-landscape-aerial-new-zealand.jpg" alt="Aerial landscape view of Atatu PurePod on a hilltop surrounded by rolling countryside in New Zealand">
+            <div class="shot js-lightbox" data-full="../../../assets/img/atatu/atatu-purepod-hilltop-landscape-aerial-new-zealand.jpg" role="button" aria-label="View aerial view">
+              <img src="../../../assets/img/atatu/atatu-purepod-hilltop-landscape-aerial-new-zealand.jpg" alt="Aerial landscape view of Atatu PurePod on a hilltop surrounded by rolling countryside in New Zealand">
             </div>
           </div>
           <div class="travelBody">
-            <h3>El viaje</h3>
+            <h3>The journey</h3>
             <p>
-La parte final del recorrido incluye una caminata de 750 metros hasta el pod. El sendero tiene escalones y terreno irregular, por lo que se recomienda llevar calzado adecuado. El trayecto hasta PurePod Atatū dura aproximadamente 90 minutos al norte de Christchurch (100 km), atravesando una histórica región agrícola.            </p>
+              The final part of the journey is a 750 m walk to the pod. The track has steps and uneven ground, so suitable footwear is recommended. The drive to PurePod Atatū is about 90 minutes north of Christchurch (100 km), through a historic farming region.
+            </p>
           </div>
         </div>
 
-        <!-- El clima (SIN FOTO) -->
+        <!-- The climate -->
         <div class="travelCard plainCard">
-          <h3>El clima</h3>
+          <h3>The climate</h3>
           <p>
-Atatū tiene un clima interior cálido y seco. Los días suelen ser soleados, con tardes más frescas y mañanas nítidas. Se recomienda llevar ropa por capas ligeras.          </p>
+            Atatū has a warm, dry interior climate. Days are often sunny, with cooler evenings and clear mornings. Layered clothing is recommended.
+          </p>
         </div>
 
-        <!-- La comida (foto) -->
+        <!-- Food & dining -->
         <div class="travelCard">
           <div class="travelCollage2">
-            <div class="shot js-lightbox" data-full="../../assets/img/atatu/atatu-purepod-outdoor-dining-experience-new-zealand.jpg" role="button" aria-label="Ver foto La comida">
-              <img src="../../assets/img/atatu/atatu-purepod-outdoor-dining-experience-new-zealand.jpg" alt="Outdoor dining experience at Atatu PurePod with sunset views over the New Zealand countryside">
+            <div class="shot js-lightbox" data-full="../../../assets/img/atatu/atatu-purepod-outdoor-dining-experience-new-zealand.jpg" role="button" aria-label="View dining photo">
+              <img src="../../../assets/img/atatu/atatu-purepod-outdoor-dining-experience-new-zealand.jpg" alt="Outdoor dining at Atatū PurePod with sunset views over the New Zealand countryside">
             </div>
-            <div class="shot js-lightbox" data-full="../../assets/img/atatu/atatu-purepod-local-produce-dining-experience-new-zealand.jpg" role="button" aria-label="Ver foto extra comida">
-              <img src="../../assets/img/atatu/atatu-purepod-local-produce-dining-experience-new-zealand.jpg" alt="Local gourmet food basket with fresh ingredients at Atatu PurePod in New Zealand">
+            <div class="shot js-lightbox" data-full="../../../assets/img/atatu/atatu-purepod-local-produce-dining-experience-new-zealand.jpg" role="button" aria-label="View local produce">
+              <img src="../../../assets/img/atatu/atatu-purepod-local-produce-dining-experience-new-zealand.jpg" alt="Local produce and gourmet provisions at Atatū PurePod in New Zealand">
             </div>
           </div>
           <div class="travelBody">
-            <h3>La comida</h3>
+            <h3>Food & dining</h3>
             <p>
-              Tu PurePod Atatū está completamente equipado para una estancia tranquila, cómoda y autosuficiente. En el interior encontrarás una cuidada selección de comidas gourmet listas para calentar, provisiones para el desayuno, snacks, té y café — siempre que es posible, provenientes de productores locales de la región de Hurunui. Las comidas están pensadas para prepararse de forma sencilla, para que pases menos tiempo cocinando y más tiempo disfrutando del paisaje, la luz cambiante y la calma del entorno. Como no hay tiendas ni restaurantes cerca, todo está previsto dentro del pod para que tu estancia sea fácil, confortable y sin preocupaciones.
+              Your PurePod Atatū is fully equipped for a quiet, comfortable and self-contained stay. Inside you’ll find a curated selection of heat-and-eat gourmet meals, breakfast provisions, snacks, tea and coffee — wherever possible from local Hurunui producers. Meals are designed to be simple to prepare, so you spend less time cooking and more time enjoying the landscape, the changing light and the calm. With no shops or restaurants nearby, everything is provided so your stay is easy, comfortable and worry-free.
             </p>
           </div>
         </div>
@@ -755,12 +770,10 @@ Atatū tiene un clima interior cálido y seco. Los días suelen ser soleados, co
 
     <!-- CTA -->
     <div class="stickyCta" id="reserve">
-
       <div class="ctaInner">
-        <div class="price">Desde $— / noche</div>
-        <button class="btn secondary" onclick="location.href='../../pods.html'">Ver otros pods</button>
-
-        <button class="btn" onclick="alert('Demo: abrir Newbook / motor de reservas')">Reservar ahora</button>
+        <div class="price">From $— / night</div>
+        <a class="btn secondary" href="../../explore.html">View other pods</a>
+        <a class="btn" href="https://purepods.com/booking/?force_site_id=5">Book now</a>
       </div>
     </div>
 
@@ -770,7 +783,7 @@ Atatū tiene un clima interior cálido y seco. Los días suelen ser soleados, co
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightboxBackdrop" data-close></div>
     <div class="lightboxPanel">
-      <button class="lightboxClose" data-close aria-label="Cerrar">✕</button>
+      <button class="lightboxClose" data-close aria-label="Close">✕</button>
       <img id="lightboxImg" alt="">
     </div>
   </div>
