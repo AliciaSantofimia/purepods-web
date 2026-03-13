@@ -1,47 +1,37 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Kiromako  | PurePods</title>
+<meta name="description" content="PurePod Korimako is a glass cabin retreat in the Hurunui. Open landscape, hills and distant horizons — a quiet escape for two." />
+<link rel="canonical" href="https://purepods.com/location/korimako/" />
+<title>Korimako | PurePods</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --bg:#f5f3ee;
-    --ink:#17181b;
-    --muted:rgba(23,24,27,.72);
-    --card:rgba(255,255,255,.72);
-    --stroke:rgba(80,76,68,.18);
-    --shadow:0 18px 44px rgba(17,18,23,.10);
+    --bg:#F7F6F3;
+    --ink:#5C5F3E;
+    --muted:rgba(92,95,62,.72);
+    --card:rgba(255,255,255,.85);
+    --stroke:rgba(92,95,62,.18);
+    --shadow:0 18px 44px rgba(0,0,0,.08);
     --r:24px;
     --r2:18px;
+    --brand-green:#5C5F3E;
+    --brand-beige:#C2B59E;
   }
   *{box-sizing:border-box}
   body{
     margin:0;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     background:var(--bg);
     color:var(--ink);
   }
-
-  /* Contenido centrado */
   .wrap{max-width:980px;margin:0 auto;padding:18px 14px 88px;}
-
-  .top{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px;}
-  .back{
-    font-size:13px;color:var(--muted);text-decoration:none;
-    border:1px solid var(--stroke);background:rgba(255,255,255,.55);
-    padding:8px 12px;border-radius:999px;
-  }
-  .chips{display:flex;gap:8px;flex-wrap:wrap;}
-  .chip{
-    font-size:12px;color:rgba(23,24,27,.78);
-    border:1px solid var(--stroke);
-    background:rgba(255,255,255,.55);
-    padding:7px 10px;border-radius:999px;
-  }
-
-  /* HERO FULL WIDTH */
 
   .hero--full{border:0;border-radius:0;box-shadow:none;background:transparent;}
   .heroMedia{
@@ -49,32 +39,19 @@
     position: relative;
     overflow: hidden;
     background:#ddd;
-}
-
-
-.heroMedia img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 70% 90%;
-  display:block;
-}
-
-@media (min-width: 1200px){
-  .heroMedia img{
-    object-position: 60% 75%;
-  }
-}
-
-@media (min-width: 1600px){
-  .heroMedia{
-    height: clamp(520px, 75vh, 900px);
   }
   .heroMedia img{
-    object-position: 55% 70%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 70% 50%;
+    display: block;
   }
-}
-
+  @media (min-width: 1200px){ .heroMedia img{ object-position: 60% 55%; } }
+  @media (min-width: 1600px){
+    .heroMedia{ height: clamp(520px, 75vh, 900px); }
+    .heroMedia img{ object-position: 55% 60%; }
+  }
   .heroMedia::after{
     content:"";
     position:absolute;
@@ -97,6 +74,8 @@
     line-height:1.05;
     color:#fff;
     text-shadow:0 2px 14px rgba(0,0,0,.35);
+    font-family: "Noto Serif Display", Georgia, "Times New Roman", serif;
+    font-weight: 600;
   }
   .heroSub{
     margin:8px 0 0;
@@ -106,24 +85,18 @@
     text-shadow:0 2px 14px rgba(0,0,0,.25);
     max-width:60ch;
   }
-  .metaRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
-  .pill{
-    font-size:12px;
-    border:1px solid rgba(255,255,255,.22);
-    background: rgba(255,255,255,.18);
-    padding:7px 10px;
-    border-radius:999px;
-    color: rgba(255,255,255,.92);
-    backdrop-filter: blur(8px);
-  }
 
-  /* Secciones */
   .section{margin-top:14px;}
   .sectionHeader{
-    display:flex;align-items:flex-end;justify-content:space-between;gap:10px;
-    margin: 14px 2px 10px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    gap:6px;
+    margin: 14px 2px 16px;
   }
-  .sectionHeader h2{margin:0;font-size:16px;letter-spacing:-.01em;}
+  .sectionHeader h2{margin:0;font-size:22px;letter-spacing:-.01em;color:var(--brand-green);font-weight:600;font-family:"Inter",sans-serif;}
   .hint{margin:0;color:var(--muted);font-size:12px;}
 
   .card{
@@ -133,16 +106,17 @@
     box-shadow: var(--shadow);
     padding: 14px;
   }
-  .card p{margin:0 0 10px;color:rgba(23,24,27,.76);line-height:1.6;font-size:14px;}
+  .card p{margin:0 0 10px;color:var(--muted);line-height:1.6;font-size:14px;}
   .card p:last-child{margin-bottom:0;}
 
-  /* Galería POD */
   .imgRow{
     display:grid;
     grid-template-columns: 1fr 1fr;
     gap:10px;
     margin-top:12px;
+    align-items: stretch;
   }
+  .imgRow p{ margin:0; color:var(--muted); line-height:1.6; font-size:14px; }
   .imgPh{
     height: 170px;
     border-radius: var(--r2);
@@ -164,9 +138,7 @@
   }
   .imgPh:hover{ transform: translateY(-1px); transition: transform .15s ease; }
 
-  /* ===== ANTES DE VIAJAR: collage 2 fotos + clima sin foto ===== */
   .travelGrid{ display:grid; gap:18px; }
-
   .travelCard{
     border:1px solid var(--stroke);
     background: rgba(255,255,255,.62);
@@ -174,7 +146,6 @@
     overflow:hidden;
     box-shadow: var(--shadow);
   }
-
   .travelCollage2{
     display:grid;
     grid-template-columns: 1fr 1fr;
@@ -182,7 +153,6 @@
     padding:12px;
     background: rgba(255,255,255,.38);
   }
-
   .travelCollage2 .shot{
     height: 230px;
     border-radius: 18px;
@@ -191,7 +161,6 @@
     cursor: zoom-in;
     background:#ddd;
   }
-
   .travelCollage2 img{
     width:100%;
     height:100%;
@@ -199,16 +168,13 @@
     object-position: 50% 50%;
     display:block;
   }
-
   .travelBody{padding:14px;}
-  .travelBody h3{margin:0 0 6px;font-size:16px;}
+  .travelBody h3{margin:0 0 6px;font-size:16px;color:var(--brand-green);font-weight:600;font-family:"Inter",sans-serif;}
   .travelBody p{margin:0;color:var(--muted);line-height:1.55;font-size:14px;}
-
   .plainCard{padding:18px;}
-  .plainCard h3{margin:0 0 6px;font-size:16px;}
+  .plainCard h3{margin:0 0 6px;font-size:16px;color:var(--brand-green);font-weight:600;font-family:"Inter",sans-serif;}
   .plainCard p{margin:0;color:var(--muted);line-height:1.55;font-size:14px;}
 
-  /* Sticky CTA */
   .stickyCta{
     position:fixed;
     left:0; right:0; bottom:0;
@@ -218,24 +184,27 @@
     border-top:1px solid rgba(80,76,68,.18);
   }
   .ctaInner{max-width:980px;margin:0 auto;display:flex;gap:10px;align-items:center;}
-  .price{font-weight:800;font-size:14px;white-space:nowrap;}
+  .price{font-family:"Inter",sans-serif;font-weight:600;font-size:15px;letter-spacing:.3px;color:var(--brand-green);white-space:nowrap;}
   .btn{
     flex:1;
-    border:1px solid rgba(23,24,27,.12);
-    background: rgba(23,24,27,.92);
-    color:#fff;
+    border:2px solid var(--brand-beige);
+    background: var(--brand-beige);
+    color: var(--brand-green);
     padding: 12px 14px;
     border-radius: 999px;
     font-weight: 800;
     cursor:pointer;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
   }
   .btn.secondary{
     flex:0 0 auto;
-    background: rgba(255,255,255,.65);
-    color: var(--ink);
+    background: transparent;
+    color: var(--brand-green);
+    border: 2px solid rgba(92,95,62,.35);
   }
-
-  /* Responsive */
   @media (min-width: 920px){
     .wrap{padding-bottom:40px;}
     .stickyCta{position:static;background:transparent;border:0;padding:0;margin-top:12px;}
@@ -251,7 +220,6 @@
     .heroTitle{font-size:30px;}
   }
 
-  /* LIGHTBOX */
   .lightbox{position:fixed;inset:0;display:none;z-index:999;}
   .lightbox[aria-hidden="false"]{ display:block; }
   .lightboxBackdrop{position:absolute; inset:0;background: rgba(0,0,0,.75);}
@@ -266,12 +234,7 @@
     box-shadow: 0 30px 90px rgba(0,0,0,.35);
     background: rgba(0,0,0,.2);
   }
-  .lightboxPanel img{
-    width:100%;
-    height:100%;
-    object-fit: contain;
-    background: rgba(0,0,0,.15);
-  }
+  .lightboxPanel img{ width:100%; height:100%; object-fit: contain; background: rgba(0,0,0,.15); }
   .lightboxClose{
     position:absolute;
     top:10px; right:10px;
@@ -283,9 +246,7 @@
     cursor:pointer;
   }
 
-  /* ===== ACTIVIDADES (AISLADO) ===== */
   .pp-acts{ margin-top: 0; }
-
   .pp-actsCard{
     border:1px solid var(--stroke);
     background: var(--card);
@@ -293,541 +254,375 @@
     box-shadow: var(--shadow);
     padding: 14px;
   }
-
-  .pp-actsIntro{
-    margin: 0 0 14px;
-    color: rgba(23,24,27,.76);
-    line-height: 1.6;
-    font-size: 14px;
-  }
-
+  .pp-actsIntro{ margin: 0 0 14px; color: var(--muted); line-height: 1.6; font-size: 14px; }
   .pp-actsGrid{
     display:grid;
     grid-template-columns: repeat(3, minmax(0,1fr));
     gap: 12px;
   }
-
   .pp-act{
     border:1px solid var(--stroke);
     background: rgba(255,255,255,.62);
     border-radius: var(--r);
     overflow:hidden;
   }
-
   .pp-actMedia{
-    height: 160px;           /* 👈 control principal del tamaño */
+    height: 160px;
     background:#ddd;
     overflow:hidden;
     cursor: zoom-in;
   }
-
   .pp-actMedia img{
-    width:100%;
-    height:100%;
+    width:100%; height:100%;
     object-fit:cover;
     object-position:50% 50%;
     display:block;
   }
-
   .pp-actBody{ padding: 12px 12px 14px; }
-
-  .pp-actTitle{
-    margin: 0 0 8px;
-    font-size: 15px;
-    letter-spacing: -.01em;
-  }
-
-  .pp-actBody p{
-    margin: 0 0 10px;
-    color: rgba(23,24,27,.76);
-    line-height: 1.6;
-    font-size: 13.5px;
-  }
-
+  .pp-actTitle{ margin: 0 0 8px; font-size: 15px; letter-spacing: -.01em; }
+  .pp-actBody p{ margin: 0 0 10px; color: var(--muted); line-height: 1.6; font-size: 14px; }
   .pp-actBody p:last-of-type{ margin-bottom: 12px; }
-
   .pp-actLink{
     display:inline-flex;
     gap:8px;
     align-items:center;
-    font-weight: 800;
+    font-weight: 600;
     font-size: 13px;
-    color: rgba(23,24,27,.88);
+    color: var(--brand-green);
     text-decoration:none;
     border-bottom: 1px solid rgba(23,24,27,.18);
     padding-bottom: 2px;
   }
-
-  .pp-actUrl{
-    display:block;
-    margin-top: 8px;
-    font-size: 12px;
-    color: var(--muted);
-    word-break: break-word;
-  }
-
   @media (max-width: 900px){
     .pp-actsGrid{ grid-template-columns: 1fr; }
     .pp-actMedia{ height: 220px; }
   }
-
-  /* Bloque extra debajo de las 3 actividades */
   .pp-actsExtra{
     margin-top: 14px;
     border-top: 1px solid var(--stroke);
     padding-top: 14px;
   }
-  .pp-actsExtra h3{
-    margin: 0 0 8px;
-    font-size: 15px;
-    letter-spacing: -.01em;
-  }
-  .pp-actsExtra p{
-    margin: 0 0 10px;
-    color: rgba(23,24,27,.76);
-    line-height: 1.6;
-    font-size: 14px;
-  }
+  .pp-actsExtra h3{ margin: 0 0 8px; font-size: 15px; letter-spacing: -.01em; }
+  .pp-actsExtra p{ margin: 0 0 10px; color: var(--muted); line-height: 1.6; font-size: 14px; }
   .pp-actsExtra p:last-child{ margin-bottom: 0; }
+  .pp-actTitle,
+  .travelBody h3,
+  .plainCard h3,
+  .pp-actsExtra h3 {
+    color: var(--brand-green);
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+  }
+  .pp-actsExtra a{ color: inherit; text-decoration: none; font-weight: 700; }
+  .pp-actsExtra a:hover{ text-decoration: underline; }
 
-  /* --- Top nav (silent) --- */
-.topnav{
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 50;
-  padding: 14px 18px;
-  transition: background .22s ease, border-color .22s ease, backdrop-filter .22s ease;
-  background: transparent;
-  border-bottom: 1px solid transparent;
-}
+  .imgPh.tallRight{
+    height: 340px;
+    grid-column: 2;
+    grid-row: 2 / span 2;
+  }
+  @media (max-width: 640px){
+    .imgPh.tallRight{ grid-column: 1; grid-row: auto; height: 220px; }
+  }
 
-.topnav__inner{
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.topnav__left{
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  min-width: 0;
-}
-
-.topnav__brand{
-  font-weight: 700;
-  letter-spacing: .2px;
-  text-decoration: none;
-  color: rgba(244,244,234,.96);
-  white-space: nowrap;
-}
-
-.topnav__back{
-  text-decoration: none;
-  color: rgba(244,244,234,.85);
-  font-size: 14px;
-  padding: 8px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(244,244,234,.18);
-  background: rgba(17,18,23,.14);
-  backdrop-filter: blur(6px);
-  transition: transform .15s ease, background .15s ease, border-color .15s ease;
-}
-
-.topnav__back:hover{
-  transform: translateY(-1px);
-  background: rgba(17,18,23,.22);
-  border-color: rgba(244,244,234,.26);
-}
-
-.topnav__links{
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.topnav__links a{
-  text-decoration: none;
-  color: rgba(244,244,234,.88);
-  font-size: 14px;
-  letter-spacing: .2px;
-}
-
-.topnav__links a:hover{
-  color: rgba(244,244,234,1);
-}
-
-/* CTA */
-.topnav__cta{
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(244,244,234,.22);
-  background: rgba(244,244,234,.10);
-}
-
-/* Solid state on scroll */
-.topnav.is-solid{
-  background: rgba(34, 54, 43, .72);
-  border-bottom-color: rgba(244,244,234,.14);
-  backdrop-filter: blur(10px);
-}
-
-
-
-
-/* Mobile tweaks */
-@media (max-width: 720px){
-  .topnav__links a:not(.topnav__cta){
-    display: none;
+  .topnav{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    padding: 14px 18px;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: background .22s ease, border-color .22s ease, backdrop-filter .22s ease;
   }
   .topnav__inner{
-    gap: 10px;
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
   }
-}
-
-
-
-/* Empuja solo el contenido, no la foto */
-.el-pod{
-  padding-top: 72px;
-}
-
-.pp-actsExtra a{
-  color: inherit;        /* usa el color normal del texto (negro) */
-  text-decoration: none; /* quita subrayado */
-  font-weight: 700;      /* opcional: mantener efecto tipo <strong> */
-}
-
-.pp-actsExtra a:hover{
-  text-decoration: underline; /* opcional: solo al pasar ratón */
-}
-
-/* Foto vertical derecha para rellenar hueco */
-.imgPh.tallRight{
-  height: 340px;        /* ajusta: 300–380 según te guste */
-  grid-column: 2;       /* columna derecha */
-  grid-row: 2 / span 2; /* ocupa 2 filas (texto + foto de abajo) */
-}
-
-/* En móvil (1 columna) volvemos a normal */
-@media (max-width: 640px){
-  .imgPh.tallRight{
-    grid-column: 1;
-    grid-row: auto;
-    height: 220px;
+  .topnav__left{ display: flex; align-items: center; gap: 14px; min-width: 0; }
+  .topnav__brand{
+    font-weight: 700;
+    letter-spacing: .2px;
+    text-decoration: none;
+    color: rgba(244,244,234,.96);
+    white-space: nowrap;
   }
-}
-
+  .topnav__back{
+    text-decoration: none;
+    color: rgba(244,244,234,.85);
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(244,244,234,.18);
+    background: rgba(17,18,23,.14);
+    backdrop-filter: blur(6px);
+    transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .topnav__back:hover{
+    transform: translateY(-1px);
+    background: rgba(17,18,23,.22);
+    border-color: rgba(244,244,234,.26);
+  }
+  .topnav__links{ display: flex; align-items: center; gap: 18px; }
+  .topnav__links a{
+    text-decoration: none;
+    color: rgba(244,244,234,.88);
+    font-size: 14px;
+    letter-spacing: .2px;
+  }
+  .topnav__links a:hover{ color: rgba(244,244,234,1); }
+  .topnav__cta{
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(244,244,234,.22);
+    background: rgba(244,244,234,.10);
+  }
+  .topnav.is-solid{
+    background: var(--brand-green);
+    border-bottom-color: rgba(244,244,234,.14);
+    backdrop-filter: blur(10px);
+  }
+  @media (max-width: 720px){
+    .topnav__links a:not(.topnav__cta){ display: none; }
+    .topnav__inner{ gap: 10px; }
+  }
 </style>
 </head>
-
 <body>
 
-  <header class="topnav" id="topnav">
+<header class="topnav" id="topnav">
   <div class="topnav__inner">
     <div class="topnav__left">
-      <a class="topnav__back" href="../../pods.html" aria-label="Volver a todos los pods">
-        <span aria-hidden="true">←</span> All Pods
-      </a>
-
-      <a class="topnav__brand" href="../../index.html" aria-label="Ir a Home">
-        PurePods
-      </a>
+      <a class="topnav__back" href="../../explore.html" aria-label="Back to all pods">← All Pods</a>
+      <a class="topnav__brand" href="../../home/index.html" aria-label="PurePods Home">PurePods</a>
     </div>
-
-    <nav class="topnav__links" aria-label="Navegación principal">
-      <a href="../../pods.html">Pods</a>
-      <a href="../../experiencias.html">Experiences</a>
-      <a class="topnav__cta" href="#reserve">Reserva</a>
+    <nav class="topnav__links" aria-label="Main navigation">
+      <a href="../../explore.html">Pods</a>
+      <a href="../../experiences/experiences.html">Experiences</a>
+      <a class="topnav__cta" href="https://purepods.com/booking/?force_site_id=6">Book</a>
     </nav>
+  </div>
+</header>
+
+<section class="hero--full">
+  <div class="heroMedia">
+    <img src="../../../assets/img/kiromako/kiromako-purepod-remote-glass-cabin-nature-new-zealand.jpg" alt="Korimako PurePod glass cabin in the Hurunui landscape, New Zealand">
+    <div class="heroOverlay">
+      <div class="heroInner">
+        <h1 class="heroTitle">Korimako</h1>
+        <p class="heroSub">
+          High on the Hurunui landscape, PurePod Korimako is defined by space and openness. Views unfold over hills and fields, with mountains in the distance and, on clear days, the ocean. Here the light shifts, time stretches and everything invites you to slow down.
+        </p>
+      </div>
     </div>
   </div>
-  </header>
+</section>
 
-  <!-- HERO FULL WIDTH -->
-  <section class="hero--full">
-    <div class="heroMedia">
-      <img src="../../assets/img/kiromako/kiromako-purepod-remote-glass-cabin-nature-new-zealand.jpg" alt="Kiromako PurePod remote glass cabin surrounded by native landscape in New Zealand">
-      <div class="heroOverlay">
-        <div class="heroInner">
-          <h1 class="heroTitle">Kiromako</h1>
-          <p class="heroSub">
-                    En lo alto del paisaje de Hurunui, PurePod Atatū se define por el espacio y la amplitud. 
-                    Vistas que se abren sobre colinas y campos, con montañas a lo lejos y, en días despejados, el océano. 
-                    Aquí la luz cambia, el tiempo se estira y todo invita a bajar el ritmo.          </p>
-        </div>
-      </div>
+<div class="wrap">
+
+  <div class="section">
+    <div class="sectionHeader">
+      <h2>The Pod</h2>
+      <p class="hint">The essentials, no fluff</p>
     </div>
-  </section>
-
-  <!-- CONTENIDO -->
-  <div class="wrap">
-
-    <!-- EL POD -->
-    <div class="section">
-      <div class="sectionHeader">
-        <h2>El Pod</h2>
-        <p class="hint">Lo esencial, sin rodeos</p>
-      </div>
-
-      <div class="card">
-        <p>
-        PurePod Kiromako es una escapada abierta, silenciosa y profundamente conectada con la tierra. Situado en altura sobre el paisaje de Hurunui, el pod se rodea de colinas suaves, campos abiertos y horizontes amplios que se extienden hacia montañas lejanas; en días claros, incluso el océano aparece en la distancia.</p>
-        <p>
-              Llegar forma parte del viaje: un paseo de 10–15 minutos (aprox. 750 m) marca la transición hacia la calma. Al final, no hay vecinos ni distracciones — solo espacio, privacidad y vistas que se abren en todas direcciones. Diseñado para dos, es un refugio sencillo y cómodo donde descansar, respirar hondo y dejar que el ritmo del día se vuelva más lento.
-
-        </p>
-
-        <div class="imgRow">
-          <button class="imgPh big js-lightbox" data-full="../../assets/img/kiromako/kiromako-purepod-aerial-coastal-landscape-new-zealand.jpg" aria-label="Ver foto grande">
-            <img src="../../assets/img/kiromako/kiromako-purepod-aerial-coastal-landscape-new-zealand.jpg" alt="Aerial view of Kiromako PurePod surrounded by native forest and coastal landscape in New Zealand" style="object-position:50% 45%;">
-          </button>
-          <p>PurePod Kiromako no es solo un lugar donde dormir, sino una inmersión en un paisaje amplio y abierto. Rodeado de campos y colinas onduladas, el pod se siente elevado y libre, con una conexión directa con el entorno natural.
-
-            En el interior, todo está pensado para dos: un espacio cálido y confortable desde donde contemplar la luz cambiante, el cielo inmenso y la quietud del campo. Un lugar para desconectar, observar y simplemente estar.</p>
-
-          <button class="imgPh tallRight js-lightbox" data-full="../../assets/img/kiromako/kiromako-purepod-shower-sunset-view-new-zealand.jpg" aria-label="Ver foto">
-            <img src="../../assets/img/kiromako/kiromako-purepod-shower-sunset-view-new-zealand.jpg" alt="Shower experience at Kiromako PurePod with sunset view over the New Zealand landscap" style="object-position:50% 60%;">
+    <div class="card">
+      <p>
+        PurePod Korimako is an open, quiet escape deeply connected to the land. Set high on the Hurunui landscape, the pod is surrounded by gentle hills, open fields and wide horizons stretching toward distant mountains; on clear days, the ocean appears on the horizon.
+      </p>
+      <p>
+        Arrival is part of the journey: a 10–15 minute walk (about 750 m) marks the transition into calm. At the end there are no neighbours or distractions — only space, privacy and views that open in every direction. Designed for two, it is a simple, comfortable retreat to rest, breathe and let the pace of the day slow down.
+      </p>
+      <div class="imgRow">
+        <button class="imgPh big js-lightbox" data-full="../../../assets/img/kiromako/kiromako-purepod-aerial-coastal-landscape-new-zealand.jpg" aria-label="View full size">
+          <img src="../../../assets/img/kiromako/kiromako-purepod-aerial-coastal-landscape-new-zealand.jpg" alt="Aerial view of Korimako PurePod in the Hurunui landscape, New Zealand" style="object-position:50% 55%;">
         </button>
-
-
-          <button class="imgPh js-lightbox" data-full="../../assets/img/kiromako/kiromako-purepod-glass-cabin-interior-bed-new-zealand.jpg" aria-label="Ver foto">
-            <img src="../../assets/img/kiromako/kiromako-purepod-glass-cabin-interior-bed-new-zealand.jpg" alt="Interior of Kiromako PurePod glass cabin with bed and panoramic glass roof in New Zealand" style="object-position:50% 65%;">
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ACTIVIDADES -->
-    <div class="section pp-acts">
-      <div class="sectionHeader">
-        <h2>Las experiencias que definen Atatū</h2>
-        <p class="hint">Paisaje calizo, costa abierta y vida rural</p>
-      </div>
-
-      <div class="pp-actsCard">
-        <p class="pp-actsIntro">
-          Una cuidada selección de tres experiencias que capturan la esencia de Hurunui — paisajes abiertos, costa esculpida y calma rural.
-
+        <p>
+          PurePod Korimako is not just a place to sleep but an immersion in a wide, open landscape. Surrounded by fields and rolling hills, the pod feels elevated and free, with a direct connection to the natural setting. Inside, everything is designed for two: a warm, comfortable space from which to watch the changing light, the vast sky and the stillness of the land. A place to disconnect, observe and simply be.
         </p>
-
-        <div class="pp-actsGrid">
-
-          <article class="pp-act">
-            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/kiromako/kiromako-experience-cathedral-gully-coastal-landscape-new-zealand.jpg" role="button" aria-label="Ver foto Crucero por Bay of Islands">
-              <img src="../../assets/img/kiromako/kiromako-experience-cathedral-gully-coastal-landscape-new-zealand.jpg" alt="Cathedral Gully">
-            </div>
-            <div class="pp-actBody">
-              <h3 class="pp-actTitle">Cathedral Gully & Gore Bay</h3>
-              <p>
-                Formaciones de piedra caliza, acantilados esculpidos y una costa abierta definen esta parte de North Canterbury. Cathedral Gully y Gore Bay revelan playas amplias, horizontes despejados y una fuerte sensación de espacio.
-              </p>
-              <p>
-                Un paisaje donde el tiempo se mueve despacio y la naturaleza marca el ritmo.
-
-              </p>
-              <a class="pp-actLink" href="https://maps.app.goo.gl/NBLG9s4ZR81d762y9" target="_blank" rel="noopener">
-                → Explorar Cathedral Gully
-              </a>
-              <a class="pp-actLink" href="https://maps.app.goo.gl/Krv1Yfp9jmSp6tUz9">→ Explore Gore Bay</a>
-              
-            </div>
-          </article>
-
-          <article class="pp-act">
-            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/kiromako/kiromako-experience-waipara-valley-wine-tasting-new-zealand.jpg" role="button" aria-label="Ver foto Waitangi Treaty Grounds">
-              <img src="../../assets/img/kiromako/kiromako-experience-waipara-valley-wine-tasting-new-zealand.jpg" alt="Glasses and bottles of Waipara Springs wine during a vineyard tasting experience in Waipara Valley, New Zealand">
-            </div>
-            <div class="pp-actBody">
-              <h3 class="pp-actTitle">Wine & Local Flavour — Waipara</h3>
-              <p>
-                Viñedos de clima fresco y bodegas familiares ofrecen una forma tranquila de descubrir la cultura gastronómica de la región. Waipara Springs Winery & Restaurant destaca por su cocina de temporada y vinos locales, con mesas entre las viñas.
-              </p>
-              <p>
-                A solo 25 minutos de PurePod Atatū, es una pausa perfecta entre paisaje y sabor.
-
-              </p>
-              <a class="pp-actLink" href="https://www.waiparasprings.co.nz/" target="_blank" rel="noopener">
-                → Visitar Waipara Springs Winery & Restaurant
-              </a>
-              
-            </div>
-          </article>
-
-          <article class="pp-act">
-            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/kiromako/kiromako-experience-waipara-coast-cliffs-beach-new-zealand.jpg" role="button" aria-label="Ver foto Mahinepua Peninsula Track">
-              <img src="../../assets/img/kiromako/kiromako-experience-waipara-coast-cliffs-beach-new-zealand.jpg" alt="Waipara coastline with white cliffs and pebble beach near Kiromako PurePod in New Zealand">
-              </div>
-
-            <div class="pp-actBody">
-              <h3 class="pp-actTitle">Rural Heritage & Slow Discoveries — Hurunui Life</h3>
-              <p>
-                Experiencias locales reflejan el carácter rural de la región. El histórico Weka Pass Railway ofrece un viaje tranquilo por el paisaje agrícola, mientras el Amberley Farmers’ Market conecta con los sabores y productos del territorio.
-
-              </p>
-              <p>
-                Tradición, comunidad y vida rural en un entorno abierto y sereno.
-
-              </p>
-              <a class="pp-actLink" href="https://visithurunui.co.nz/" target="_blank" rel="noopener">
-                → Explore Hurunui Region
-              </a>
-              
-          </article>
-
-        </div><!-- /pp-actsGrid -->
-
-        <!-- BLOQUE EXTRA -->
-        <div class="pp-actsExtra">
-          <h3>Más formas de explorar Hurunui</h3>
-          <p><strong>Vida local y pequeños descubrimientos.</strong></p>
-          <p>
-  Más allá del paisaje abierto, Atatū también conecta con la vida rural de Hurunui. 
-  El <a href="https://www.wekapassrailway.co.nz/" target="_blank"><strong>Weka Pass Railway</strong></a>, 
-  un histórico tren patrimonial que atraviesa colinas y viñedos, opera en días seleccionados (normalmente domingos y festivos) y ofrece una forma tranquila y escénica de acercarse a la historia ferroviaria local.
-</p>
-
-          <p>
-  <a href="https://www.facebook.com/amberleyfarmersmarket/" target="_blank"><strong>El Amberley Farmers’ Market</strong></a>, 
-  cada sábado por la mañana durante todo el año, reúne productos de proximidad, comida artesanal y el ritmo pausado de la comunidad. 
-  Son experiencias sencillas que revelan el lado más auténtico del lugar.
-</p>
-
-        </div>
-
-      </div><!-- /pp-actsCard -->
-    </div><!-- /section pp-acts -->
-
-    <!-- ANTES DE VIAJAR -->
-    <div class="section">
-      <div class="sectionHeader">
-        <h2>Antes de viajar</h2>
-        <p class="hint">Lo práctico, sin matar el mood</p>
+        <button class="imgPh tallRight js-lightbox" data-full="../../../assets/img/kiromako/kiromako-purepod-shower-sunset-view-new-zealand.jpg" aria-label="View photo">
+          <img src="../../../assets/img/kiromako/kiromako-purepod-shower-sunset-view-new-zealand.jpg" alt="Sunset view from Korimako PurePod, Hurunui, New Zealand" style="object-position:50% 60%;">
+        </button>
+        <button class="imgPh js-lightbox" data-full="../../../assets/img/kiromako/kiromako-purepod-glass-cabin-interior-bed-new-zealand.jpg" aria-label="View photo">
+          <img src="../../../assets/img/kiromako/kiromako-purepod-glass-cabin-interior-bed-new-zealand.jpg" alt="Interior of Korimako PurePod glass cabin with bed, Hurunui, New Zealand" style="object-position:50% 65%;">
+        </button>
       </div>
+    </div>
+  </div>
 
-      <div class="travelGrid">
-
-        <!-- El viaje (foto) -->
-        <div class="travelCard">
-          <div class="travelCollage2">
-            <div class="shot js-lightbox" data-full="../../assets/img/kiromako/kiromako-purepod-walking-path-arrival-new-zealand.jpg" role="button" aria-label="Ver foto El viaje">
-              <img src="../../assets/img/kiromako/kiromako-purepod-walking-path-arrival-new-zealand.jpg" alt="Guest walking along a path toward Kiromako PurePod glass cabin surrounded by native landscape in New Zealand">
-            </div>
-            <div class="shot js-lightbox" data-full="../../assets/img/kiromako/kiromako-purepod-forest-path-walking-trail-new-zealand.jpg" role="button" aria-label="Ver foto extra viaje">
-              <img src="../../assets/img/kiromako/kiromako-purepod-forest-path-walking-trail-new-zealand.jpg" alt="Forest walking trail leading through native trees near Kiromako PurePod in New Zealand ">
-            </div>
+  <div class="section pp-acts">
+    <div class="sectionHeader">
+      <h2>Experiences that define Korimako</h2>
+      <p class="hint">Limestone landscape, open coast and rural life</p>
+    </div>
+    <div class="pp-actsCard">
+      <p class="pp-actsIntro">
+        A curated selection of three experiences that capture the essence of Hurunui — open landscapes, sculpted coast and rural calm.
+      </p>
+      <div class="pp-actsGrid">
+        <article class="pp-act">
+          <div class="pp-actMedia js-lightbox" data-full="../../../assets/img/kiromako/kiromako-experience-cathedral-gully-coastal-landscape-new-zealand.jpg" role="button" aria-label="View Cathedral Gully">
+            <img src="../../../assets/img/kiromako/kiromako-experience-cathedral-gully-coastal-landscape-new-zealand.jpg" alt="Cathedral Gully and Gore Bay coastal landscape, North Canterbury, New Zealand">
           </div>
-          <div class="travelBody">
-            <h3>El viaje</h3>
+          <div class="pp-actBody">
+            <h3 class="pp-actTitle">Cathedral Gully & Gore Bay</h3>
             <p>
-        La parte final del recorrido incluye una caminata de 750 metros hasta el pod. El sendero tiene escalones y terreno irregular, por lo que se recomienda llevar calzado adecuado. El trayecto hasta PurePod Kiromako dura aproximadamente 90 minutos al norte de Christchurch (100 km), atravesando una histórica región agrícola.            </p>
-          </div>
-        </div>
-
-        <!-- El clima (SIN FOTO) -->
-        <div class="travelCard plainCard">
-          <h3>El clima</h3>
-          <p>
-Kiromako tiene un clima interior cálido y seco. Los días suelen ser soleados, con tardes más frescas y mañanas nítidas. Se recomienda llevar ropa por capas ligeras.          </p>
-        </div>
-
-        <!-- La comida (foto) -->
-        <div class="travelCard">
-          <div class="travelCollage2">
-            <div class="shot js-lightbox" data-full="../../assets/img/kiromako/kiromako-purepod-local-produce-dining-experience-new-zealand.jpg" role="button" aria-label="Ver foto La comida">
-              <img src="../../assets/img/kiromako/kiromako-purepod-local-produce-dining-experience-new-zealand.jpg" alt="Local food ingredients including meat, bread and cheeses prepared for dining at Kiromako PurePod, New Zealand">
-            </div>
-            <div class="shot js-lightbox" data-full="../../assets/img/kiromako/kiromako-purepod-local-dinner-meal-new-zealand.jpg" role="button" aria-label="Ver foto extra comida">
-              <img src="../../assets/img/kiromako/kiromako-purepod-local-dinner-meal-new-zealand.jpg" alt="Local dinner meal with roasted vegetables and meat served at Kiromako PurePod in New Zealand">
-            </div>
-          </div>
-          <div class="travelBody">
-            <h3>La comida</h3>
-            <p>
-              Tu PurePod Kiromako está completamente equipado para una estancia tranquila, cómoda y autosuficiente. En el interior encontrarás una cuidada selección de comidas gourmet listas para calentar, provisiones para el desayuno, snacks, té y café — siempre que es posible, provenientes de productores locales de la región de Hurunui. Las comidas están pensadas para prepararse de forma sencilla, para que pases menos tiempo cocinando y más tiempo disfrutando del paisaje, la luz cambiante y la calma del entorno. Como no hay tiendas ni restaurantes cerca, todo está previsto dentro del pod para que tu estancia sea fácil, confortable y sin preocupaciones.
+              Limestone formations, sculpted cliffs and an open coast define this part of North Canterbury. Cathedral Gully and Gore Bay reveal wide beaches, clear horizons and a strong sense of space.
             </p>
+            <p>
+              A landscape where time moves slowly and nature sets the pace.
+            </p>
+            <a class="pp-actLink" href="https://maps.app.goo.gl/NBLG9s4ZR81d762y9" target="_blank" rel="noopener">→ Explore Cathedral Gully</a>
+            <a class="pp-actLink" href="https://maps.app.goo.gl/Krv1Yfp9jmSp6tUz9" target="_blank" rel="noopener">→ Explore Gore Bay</a>
+          </div>
+        </article>
+        <article class="pp-act">
+          <div class="pp-actMedia js-lightbox" data-full="../../../assets/img/kiromako/kiromako-experience-waipara-valley-wine-tasting-new-zealand.jpg" role="button" aria-label="View Waipara wine">
+            <img src="../../../assets/img/kiromako/kiromako-experience-waipara-valley-wine-tasting-new-zealand.jpg" alt="Wine tasting in Waipara Valley near Korimako PurePod, New Zealand">
+          </div>
+          <div class="pp-actBody">
+            <h3 class="pp-actTitle">Wine & local flavour — Waipara</h3>
+            <p>
+              Cool-climate vineyards and family-run wineries offer a relaxed way to discover the region’s food culture. Waipara Springs Winery & Restaurant is known for seasonal cooking and local wines, with tables among the vines.
+            </p>
+            <p>
+              About 25 minutes from PurePod Korimako, it is a perfect pause between landscape and flavour.
+            </p>
+            <a class="pp-actLink" href="https://www.waiparasprings.co.nz/" target="_blank" rel="noopener">→ Visit Waipara Springs Winery & Restaurant</a>
+          </div>
+        </article>
+        <article class="pp-act">
+          <div class="pp-actMedia js-lightbox" data-full="../../../assets/img/kiromako/kiromako-experience-waipara-coast-cliffs-beach-new-zealand.jpg" role="button" aria-label="View coast">
+            <img src="../../../assets/img/kiromako/kiromako-experience-waipara-coast-cliffs-beach-new-zealand.jpg" alt="Waipara coast with cliffs and beach near Korimako PurePod, New Zealand">
+          </div>
+          <div class="pp-actBody">
+            <h3 class="pp-actTitle">Rural heritage & slow discoveries</h3>
+            <p>
+              Local experiences reflect the rural character of the region. The historic Weka Pass Railway offers a gentle journey through farming country, while the Amberley Farmers’ Market connects you with local produce and the rhythm of the community.
+            </p>
+            <p>
+              Tradition, community and rural life in an open, serene setting.
+            </p>
+            <a class="pp-actLink" href="https://visithurunui.co.nz/" target="_blank" rel="noopener">→ Explore Hurunui region</a>
+          </div>
+        </article>
+      </div>
+      <div class="pp-actsExtra">
+        <h3>More ways to explore Hurunui</h3>
+        <p><strong>Local life and quiet discoveries.</strong></p>
+        <p>
+          Beyond the open landscape, Korimako also connects with Hurunui’s rural life. The <a href="https://www.wekapassrailway.co.nz/" target="_blank" rel="noopener">Weka Pass Railway</a>, a heritage train that runs through hills and vineyards, operates on selected days (usually Sundays and holidays) and offers a quiet, scenic way to experience local railway history.
+        </p>
+        <p>
+          The <a href="https://www.facebook.com/amberleyfarmersmarket/" target="_blank" rel="noopener">Amberley Farmers’ Market</a>, every Saturday morning year-round, brings together local produce, artisan food and the slow pace of the community. Simple experiences that reveal the authentic side of the place.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sectionHeader">
+      <h2>Before you travel</h2>
+      <p class="hint">Practical details, without losing the mood</p>
+    </div>
+    <div class="travelGrid">
+      <div class="travelCard">
+        <div class="travelCollage2">
+          <div class="shot js-lightbox" data-full="../../../assets/img/kiromako/kiromako-purepod-walking-path-arrival-new-zealand.jpg" role="button" aria-label="View journey">
+            <img src="../../../assets/img/kiromako/kiromako-purepod-walking-path-arrival-new-zealand.jpg" alt="Walking path toward Korimako PurePod in the Hurunui, New Zealand">
+          </div>
+          <div class="shot js-lightbox" data-full="../../../assets/img/kiromako/kiromako-purepod-forest-path-walking-trail-new-zealand.jpg" role="button" aria-label="View path">
+            <img src="../../../assets/img/kiromako/kiromako-purepod-forest-path-walking-trail-new-zealand.jpg" alt="Forest path and walking trail near Korimako PurePod, New Zealand">
           </div>
         </div>
-
+        <div class="travelBody">
+          <h3>The journey</h3>
+          <p>
+            The final part of the journey includes a 750 m walk to the pod. The track has steps and uneven ground, so suitable footwear is recommended. The drive to PurePod Korimako is about 90 minutes north of Christchurch (100 km), through historic farming country.
+          </p>
+        </div>
+      </div>
+      <div class="travelCard plainCard">
+        <h3>The climate</h3>
+        <p>
+          Korimako enjoys a warm, dry inland climate. Days are often sunny, with cooler evenings and clear mornings. Layered clothing is recommended. The mix of open hills and distant sea keeps the air clear and the light strong.
+        </p>
+      </div>
+      <div class="travelCard">
+        <div class="travelCollage2">
+          <div class="shot js-lightbox" data-full="../../../assets/img/kiromako/kiromako-purepod-local-produce-dining-experience-new-zealand.jpg" role="button" aria-label="View dining">
+            <img src="../../../assets/img/kiromako/kiromako-purepod-local-produce-dining-experience-new-zealand.jpg" alt="Local produce and dining at Korimako PurePod, Hurunui, New Zealand">
+          </div>
+          <div class="shot js-lightbox" data-full="../../../assets/img/kiromako/kiromako-purepod-local-dinner-meal-new-zealand.jpg" role="button" aria-label="View dinner">
+            <img src="../../../assets/img/kiromako/kiromako-purepod-local-dinner-meal-new-zealand.jpg" alt="Dinner at Korimako PurePod, Hurunui, New Zealand">
+          </div>
+        </div>
+        <div class="travelBody">
+          <h3>Food & dining</h3>
+          <p>
+            Your PurePod Korimako is fully equipped for a quiet, comfortable and self-contained stay. Inside you will find a selection of gourmet meals ready to heat, breakfast provisions, snacks, tea and coffee — wherever possible from local Hurunui producers. Meals are designed to be simple to prepare, so you spend less time cooking and more time enjoying the landscape, the changing light and the calm. As there are no shops or restaurants nearby, everything is provided so your stay is easy, comfortable and worry-free.
+          </p>
+        </div>
       </div>
     </div>
-
-    <!-- CTA -->
-    <div class="stickyCta" id="reserve">
-
-      <div class="ctaInner">
-        <div class="price">Desde $— / noche</div>
-        <button class="btn secondary" onclick="location.href='../../pods.html'">Ver otros pods</button>
-
-        <button class="btn" onclick="alert('Demo: abrir Newbook / motor de reservas')">Reservar ahora</button>
-      </div>
-    </div>
-
   </div>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightboxBackdrop" data-close></div>
-    <div class="lightboxPanel">
-      <button class="lightboxClose" data-close aria-label="Cerrar">✕</button>
-      <img id="lightboxImg" alt="">
+  <div class="stickyCta" id="reserve">
+    <div class="ctaInner">
+      <div class="price">From $— / night</div>
+      <a class="btn secondary" href="../../explore.html">View other pods</a>
+      <a class="btn" href="https://purepods.com/booking/?force_site_id=6">Book now</a>
     </div>
   </div>
 
-  <script>
-    const lb = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lightboxImg');
+</div>
 
-    function openLightbox(src, alt){
-      lbImg.src = src;
-      lbImg.alt = alt || '';
-      lb.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightboxBackdrop" data-close></div>
+  <div class="lightboxPanel">
+    <button class="lightboxClose" data-close aria-label="Close">✕</button>
+    <img id="lightboxImg" alt="">
+  </div>
+</div>
+
+<script>
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  function openLightbox(src, alt){
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(){
+    lb.setAttribute('aria-hidden', 'true');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.js-lightbox');
+    if(btn){
+      const src = btn.dataset.full || btn.querySelector('img')?.src;
+      const alt = btn.querySelector('img')?.alt || '';
+      openLightbox(src, alt);
+      return;
     }
-
-    function closeLightbox(){
-      lb.setAttribute('aria-hidden', 'true');
-      lbImg.src = '';
-      document.body.style.overflow = '';
-    }
-
-    document.addEventListener('click', (e) => {
-      const btn = e.target.closest('.js-lightbox');
-      if(btn){
-        const src = btn.dataset.full || btn.querySelector('img')?.src;
-        const alt = btn.querySelector('img')?.alt || '';
-        openLightbox(src, alt);
-        return;
-      }
-      if(e.target.matches('[data-close]')) closeLightbox();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape') closeLightbox();
-    });
-  </script>
-
+    if(e.target.matches('[data-close]')) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
+</script>
 <script>
   (function(){
     const nav = document.getElementById('topnav');
-    const solidAt = 40; // px de scroll para activar estado sólido
-
     function onScroll(){
-      if(window.scrollY > solidAt) nav.classList.add('is-solid');
+      if(window.scrollY > 40) nav.classList.add('is-solid');
       else nav.classList.remove('is-solid');
     }
-
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   })();
 </script>
-
 </body>
-
-
 </html>
-
-

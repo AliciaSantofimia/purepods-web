@@ -1,47 +1,38 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mākoha | PurePods</title>
+<meta name="description" content="PurePod Mākōha is a glass cabin retreat near Kerikeri in the Bay of Islands. Native forest, coastal walks and complete privacy — a quiet escape for two." />
+<link rel="canonical" href="https://purepods.com/location/makoha/" />
+<title>Mākōha | PurePods</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --bg:#f5f3ee;
-    --ink:#17181b;
-    --muted:rgba(23,24,27,.72);
-    --card:rgba(255,255,255,.72);
-    --stroke:rgba(80,76,68,.18);
-    --shadow:0 18px 44px rgba(17,18,23,.10);
+    --bg:#F7F6F3;
+    --ink:#5C5F3E;
+    --muted:rgba(92,95,62,.72);
+    --card:rgba(255,255,255,.85);
+    --stroke:rgba(92,95,62,.18);
+    --shadow:0 18px 44px rgba(0,0,0,.08);
     --r:24px;
     --r2:18px;
+    --brand-green:#5C5F3E;
+    --brand-beige:#C2B59E;
   }
   *{box-sizing:border-box}
   body{
     margin:0;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     background:var(--bg);
     color:var(--ink);
   }
-
-  /* Contenido centrado */
   .wrap{max-width:980px;margin:0 auto;padding:18px 14px 88px;}
 
-  .top{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px;}
-  .back{
-    font-size:13px;color:var(--muted);text-decoration:none;
-    border:1px solid var(--stroke);background:rgba(255,255,255,.55);
-    padding:8px 12px;border-radius:999px;
-  }
-  .chips{display:flex;gap:8px;flex-wrap:wrap;}
-  .chip{
-    font-size:12px;color:rgba(23,24,27,.78);
-    border:1px solid var(--stroke);
-    background:rgba(255,255,255,.55);
-    padding:7px 10px;border-radius:999px;
-  }
-
-  /* HERO FULL WIDTH */
   .hero--full{border:0;border-radius:0;box-shadow:none;background:transparent;}
   .heroMedia{
     height: 420px;
@@ -53,9 +44,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* ↓ Bajamos el encuadre para que se vea el pod (ajusta fino si quieres) */
-    object-position: 70% 90%;
+    object-position: 70% 50%;
     display: block;
+  }
+  @media (min-width: 1200px){ .heroMedia img{ object-position: 60% 55%; } }
+  @media (min-width: 1600px){
+    .heroMedia{ height: clamp(520px, 75vh, 900px); }
+    .heroMedia img{ object-position: 55% 60%; }
   }
   .heroMedia::after{
     content:"";
@@ -79,6 +74,8 @@
     line-height:1.05;
     color:#fff;
     text-shadow:0 2px 14px rgba(0,0,0,.35);
+    font-family: "Noto Serif Display", Georgia, "Times New Roman", serif;
+    font-weight: 600;
   }
   .heroSub{
     margin:8px 0 0;
@@ -88,24 +85,18 @@
     text-shadow:0 2px 14px rgba(0,0,0,.25);
     max-width:60ch;
   }
-  .metaRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
-  .pill{
-    font-size:12px;
-    border:1px solid rgba(255,255,255,.22);
-    background: rgba(255,255,255,.18);
-    padding:7px 10px;
-    border-radius:999px;
-    color: rgba(255,255,255,.92);
-    backdrop-filter: blur(8px);
-  }
 
-  /* Secciones */
   .section{margin-top:14px;}
   .sectionHeader{
-    display:flex;align-items:flex-end;justify-content:space-between;gap:10px;
-    margin: 14px 2px 10px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    gap:6px;
+    margin: 14px 2px 16px;
   }
-  .sectionHeader h2{margin:0;font-size:16px;letter-spacing:-.01em;}
+  .sectionHeader h2{margin:0;font-size:22px;letter-spacing:-.01em;color:var(--brand-green);font-weight:600;font-family:"Inter",sans-serif;}
   .hint{margin:0;color:var(--muted);font-size:12px;}
 
   .card{
@@ -115,16 +106,17 @@
     box-shadow: var(--shadow);
     padding: 14px;
   }
-  .card p{margin:0 0 10px;color:rgba(23,24,27,.76);line-height:1.6;font-size:14px;}
+  .card p{margin:0 0 10px;color:var(--muted);line-height:1.6;font-size:14px;}
   .card p:last-child{margin-bottom:0;}
 
-  /* Galería POD */
   .imgRow{
     display:grid;
     grid-template-columns: 1fr 1fr;
     gap:10px;
     margin-top:12px;
+    align-items: stretch;
   }
+  .imgRow p{ margin:0; color:var(--muted); line-height:1.6; font-size:14px; }
   .imgPh{
     height: 170px;
     border-radius: var(--r2);
@@ -146,9 +138,7 @@
   }
   .imgPh:hover{ transform: translateY(-1px); transition: transform .15s ease; }
 
-  /* ===== ANTES DE VIAJAR: collage 2 fotos + clima sin foto ===== */
   .travelGrid{ display:grid; gap:18px; }
-
   .travelCard{
     border:1px solid var(--stroke);
     background: rgba(255,255,255,.62);
@@ -156,7 +146,6 @@
     overflow:hidden;
     box-shadow: var(--shadow);
   }
-
   .travelCollage2{
     display:grid;
     grid-template-columns: 1fr 1fr;
@@ -164,7 +153,6 @@
     padding:12px;
     background: rgba(255,255,255,.38);
   }
-
   .travelCollage2 .shot{
     height: 230px;
     border-radius: 18px;
@@ -173,7 +161,6 @@
     cursor: zoom-in;
     background:#ddd;
   }
-
   .travelCollage2 img{
     width:100%;
     height:100%;
@@ -181,16 +168,13 @@
     object-position: 50% 50%;
     display:block;
   }
-
   .travelBody{padding:14px;}
-  .travelBody h3{margin:0 0 6px;font-size:16px;}
+  .travelBody h3{margin:0 0 6px;font-size:16px;color:var(--brand-green);font-weight:600;font-family:"Inter",sans-serif;}
   .travelBody p{margin:0;color:var(--muted);line-height:1.55;font-size:14px;}
-
   .plainCard{padding:18px;}
-  .plainCard h3{margin:0 0 6px;font-size:16px;}
+  .plainCard h3{margin:0 0 6px;font-size:16px;color:var(--brand-green);font-weight:600;font-family:"Inter",sans-serif;}
   .plainCard p{margin:0;color:var(--muted);line-height:1.55;font-size:14px;}
 
-  /* Sticky CTA */
   .stickyCta{
     position:fixed;
     left:0; right:0; bottom:0;
@@ -200,24 +184,27 @@
     border-top:1px solid rgba(80,76,68,.18);
   }
   .ctaInner{max-width:980px;margin:0 auto;display:flex;gap:10px;align-items:center;}
-  .price{font-weight:800;font-size:14px;white-space:nowrap;}
+  .price{font-family:"Inter",sans-serif;font-weight:600;font-size:15px;letter-spacing:.3px;color:var(--brand-green);white-space:nowrap;}
   .btn{
     flex:1;
-    border:1px solid rgba(23,24,27,.12);
-    background: rgba(23,24,27,.92);
-    color:#fff;
+    border:2px solid var(--brand-beige);
+    background: var(--brand-beige);
+    color: var(--brand-green);
     padding: 12px 14px;
     border-radius: 999px;
     font-weight: 800;
     cursor:pointer;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
   }
   .btn.secondary{
     flex:0 0 auto;
-    background: rgba(255,255,255,.65);
-    color: var(--ink);
+    background: transparent;
+    color: var(--brand-green);
+    border: 2px solid rgba(92,95,62,.35);
   }
-
-  /* Responsive */
   @media (min-width: 920px){
     .wrap{padding-bottom:40px;}
     .stickyCta{position:static;background:transparent;border:0;padding:0;margin-top:12px;}
@@ -233,7 +220,6 @@
     .heroTitle{font-size:30px;}
   }
 
-  /* LIGHTBOX */
   .lightbox{position:fixed;inset:0;display:none;z-index:999;}
   .lightbox[aria-hidden="false"]{ display:block; }
   .lightboxBackdrop{position:absolute; inset:0;background: rgba(0,0,0,.75);}
@@ -248,12 +234,7 @@
     box-shadow: 0 30px 90px rgba(0,0,0,.35);
     background: rgba(0,0,0,.2);
   }
-  .lightboxPanel img{
-    width:100%;
-    height:100%;
-    object-fit: contain;
-    background: rgba(0,0,0,.15);
-  }
+  .lightboxPanel img{ width:100%; height:100%; object-fit: contain; background: rgba(0,0,0,.15); }
   .lightboxClose{
     position:absolute;
     top:10px; right:10px;
@@ -265,9 +246,7 @@
     cursor:pointer;
   }
 
-  /* ===== ACTIVIDADES (AISLADO) ===== */
   .pp-acts{ margin-top: 0; }
-
   .pp-actsCard{
     border:1px solid var(--stroke);
     background: var(--card);
@@ -275,521 +254,374 @@
     box-shadow: var(--shadow);
     padding: 14px;
   }
-
-  .pp-actsIntro{
-    margin: 0 0 14px;
-    color: rgba(23,24,27,.76);
-    line-height: 1.6;
-    font-size: 14px;
-  }
-
+  .pp-actsIntro{ margin: 0 0 14px; color: var(--muted); line-height: 1.6; font-size: 14px; }
   .pp-actsGrid{
     display:grid;
     grid-template-columns: repeat(3, minmax(0,1fr));
     gap: 12px;
   }
-
   .pp-act{
     border:1px solid var(--stroke);
     background: rgba(255,255,255,.62);
     border-radius: var(--r);
     overflow:hidden;
   }
-
   .pp-actMedia{
-    height: 160px;           /* 👈 control principal del tamaño */
+    height: 160px;
     background:#ddd;
     overflow:hidden;
     cursor: zoom-in;
   }
-
   .pp-actMedia img{
-    width:100%;
-    height:100%;
+    width:100%; height:100%;
     object-fit:cover;
     object-position:50% 50%;
     display:block;
   }
-
   .pp-actBody{ padding: 12px 12px 14px; }
-
-  .pp-actTitle{
-    margin: 0 0 8px;
-    font-size: 15px;
-    letter-spacing: -.01em;
-  }
-
-  .pp-actBody p{
-    margin: 0 0 10px;
-    color: rgba(23,24,27,.76);
-    line-height: 1.6;
-    font-size: 13.5px;
-  }
-
+  .pp-actTitle{ margin: 0 0 8px; font-size: 15px; letter-spacing: -.01em; }
+  .pp-actBody p{ margin: 0 0 10px; color: var(--muted); line-height: 1.6; font-size: 14px; }
   .pp-actBody p:last-of-type{ margin-bottom: 12px; }
-
   .pp-actLink{
     display:inline-flex;
     gap:8px;
     align-items:center;
-    font-weight: 800;
+    font-weight: 600;
     font-size: 13px;
-    color: rgba(23,24,27,.88);
+    color: var(--brand-green);
     text-decoration:none;
     border-bottom: 1px solid rgba(23,24,27,.18);
     padding-bottom: 2px;
   }
-
-  .pp-actUrl{
-    display:block;
-    margin-top: 8px;
-    font-size: 12px;
-    color: var(--muted);
-    word-break: break-word;
-  }
-
   @media (max-width: 900px){
     .pp-actsGrid{ grid-template-columns: 1fr; }
     .pp-actMedia{ height: 220px; }
   }
-
-  /* Bloque extra debajo de las 3 actividades */
   .pp-actsExtra{
     margin-top: 14px;
     border-top: 1px solid var(--stroke);
     padding-top: 14px;
   }
-  .pp-actsExtra h3{
-    margin: 0 0 8px;
-    font-size: 15px;
-    letter-spacing: -.01em;
-  }
-  .pp-actsExtra p{
-    margin: 0 0 10px;
-    color: rgba(23,24,27,.76);
-    line-height: 1.6;
-    font-size: 14px;
-  }
+  .pp-actsExtra h3{ margin: 0 0 8px; font-size: 15px; letter-spacing: -.01em; }
+  .pp-actsExtra p{ margin: 0 0 10px; color: var(--muted); line-height: 1.6; font-size: 14px; }
   .pp-actsExtra p:last-child{ margin-bottom: 0; }
+  .pp-actTitle,
+  .travelBody h3,
+  .plainCard h3,
+  .pp-actsExtra h3 {
+    color: var(--brand-green);
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+  }
+  .pp-actsExtra a{ color: inherit; text-decoration: none; font-weight: 700; }
+  .pp-actsExtra a:hover{ text-decoration: underline; }
 
-  /* --- Top nav (silent) --- */
-.topnav{
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 50;
-  padding: 14px 18px;
-  transition: background .22s ease, border-color .22s ease, backdrop-filter .22s ease;
-  background: transparent;
-  border-bottom: 1px solid transparent;
-}
+  .imgPh.tallRight{
+    height: 340px;
+    grid-column: 2;
+    grid-row: 2 / span 2;
+  }
+  @media (max-width: 640px){
+    .imgPh.tallRight{ grid-column: 1; grid-row: auto; height: 220px; }
+  }
 
-.topnav__inner{
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.topnav__left{
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  min-width: 0;
-}
-
-.topnav__brand{
-  font-weight: 700;
-  letter-spacing: .2px;
-  text-decoration: none;
-  color: rgba(244,244,234,.96);
-  white-space: nowrap;
-}
-
-.topnav__back{
-  text-decoration: none;
-  color: rgba(244,244,234,.85);
-  font-size: 14px;
-  padding: 8px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(244,244,234,.18);
-  background: rgba(17,18,23,.14);
-  backdrop-filter: blur(6px);
-  transition: transform .15s ease, background .15s ease, border-color .15s ease;
-}
-
-.topnav__back:hover{
-  transform: translateY(-1px);
-  background: rgba(17,18,23,.22);
-  border-color: rgba(244,244,234,.26);
-}
-
-.topnav__links{
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.topnav__links a{
-  text-decoration: none;
-  color: rgba(244,244,234,.88);
-  font-size: 14px;
-  letter-spacing: .2px;
-}
-
-.topnav__links a:hover{
-  color: rgba(244,244,234,1);
-}
-
-/* CTA */
-.topnav__cta{
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(244,244,234,.22);
-  background: rgba(244,244,234,.10);
-}
-
-/* Solid state on scroll */
-.topnav.is-solid{
-  background: rgba(34, 54, 43, .72);
-  border-bottom-color: rgba(244,244,234,.14);
-  backdrop-filter: blur(10px);
-}
-
-
-
-
-/* Mobile tweaks */
-@media (max-width: 720px){
-  .topnav__links a:not(.topnav__cta){
-    display: none;
+  .topnav{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    padding: 14px 18px;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: background .22s ease, border-color .22s ease, backdrop-filter .22s ease;
   }
   .topnav__inner{
-    gap: 10px;
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
   }
-}
-
-
-
-/* Empuja solo el contenido, no la foto */
-.el-pod{
-  padding-top: 72px;
-}
-
+  .topnav__left{ display: flex; align-items: center; gap: 14px; min-width: 0; }
+  .topnav__brand{
+    font-weight: 700;
+    letter-spacing: .2px;
+    text-decoration: none;
+    color: rgba(244,244,234,.96);
+    white-space: nowrap;
+  }
+  .topnav__back{
+    text-decoration: none;
+    color: rgba(244,244,234,.85);
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(244,244,234,.18);
+    background: rgba(17,18,23,.14);
+    backdrop-filter: blur(6px);
+    transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .topnav__back:hover{
+    transform: translateY(-1px);
+    background: rgba(17,18,23,.22);
+    border-color: rgba(244,244,234,.26);
+  }
+  .topnav__links{ display: flex; align-items: center; gap: 18px; }
+  .topnav__links a{
+    text-decoration: none;
+    color: rgba(244,244,234,.88);
+    font-size: 14px;
+    letter-spacing: .2px;
+  }
+  .topnav__links a:hover{ color: rgba(244,244,234,1); }
+  .topnav__cta{
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(244,244,234,.22);
+    background: rgba(244,244,234,.10);
+  }
+  .topnav.is-solid{
+    background: var(--brand-green);
+    border-bottom-color: rgba(244,244,234,.14);
+    backdrop-filter: blur(10px);
+  }
+  @media (max-width: 720px){
+    .topnav__links a:not(.topnav__cta){ display: none; }
+    .topnav__inner{ gap: 10px; }
+  }
 </style>
 </head>
-
 <body>
 
-  <header class="topnav" id="topnav">
+<header class="topnav" id="topnav">
   <div class="topnav__inner">
     <div class="topnav__left">
-      <a class="topnav__back" href="../../pods.html" aria-label="Volver a todos los pods">
-        <span aria-hidden="true">←</span> All Pods
-      </a>
-
-      <a class="topnav__brand" href="../../index.html" aria-label="Ir a Home">
-        PurePods
-      </a>
+      <a class="topnav__back" href="../../explore.html" aria-label="Back to all pods">← All Pods</a>
+      <a class="topnav__brand" href="../../home/index.html" aria-label="PurePods Home">PurePods</a>
     </div>
-
-    <nav class="topnav__links" aria-label="Navegación principal">
-      <a href="../../pods.html">Pods</a>
-      <a href="../../experiencias.html">Experiences</a>
-      <a class="topnav__cta" href="#reserve">Reserva</a>
+    <nav class="topnav__links" aria-label="Main navigation">
+      <a href="../../explore.html">Pods</a>
+      <a href="../../experiences/experiences.html">Experiences</a>
+      <a class="topnav__cta" href="https://purepods.com/booking/?force_site_id=14">Book</a>
     </nav>
+  </div>
+</header>
+
+<section class="hero--full">
+  <div class="heroMedia">
+    <img src="../../../assets/img/makoha/makoha-purepod-aerial-glass-cabin-forest-kerikeri.jpg" alt="Mākōha PurePod glass cabin in native forest near Kerikeri, Bay of Islands, New Zealand">
+    <div class="heroOverlay">
+      <div class="heroInner">
+        <h1 class="heroTitle">Mākōha</h1>
+        <p class="heroSub">
+          A private, quiet retreat for two, where you can slow down and discover the wilder side of the north — no big towns, no crowds, just nature. Native forest, coastal walks and some of the clearest night skies you will find.
+        </p>
+      </div>
     </div>
   </div>
-  </header>
+</section>
 
-  <!-- HERO FULL WIDTH -->
-  <section class="hero--full">
-    <div class="heroMedia">
-      <img src="../../assets/img/makoha/makoha-purepod-aerial-glass-cabin-forest-kerikeri.jpg" alt="Makoha PurePod aerial glass cabin surrounded by native forest in Kerikeri, New Zealand">
-      <div class="heroOverlay">
-        <div class="heroInner">
-          <h1 class="heroTitle">Mākoha</h1>
-          <p class="heroSub">
-            Un refugio privado y silencioso para parejas que quieren bajar el ritmo y descubrir el norte más salvaje de Nueva Zelanda — sin grandes ciudades, sin multitudes, solo naturaleza.
-          </p>
-        </div>
-      </div>
+<div class="wrap">
+
+  <div class="section">
+    <div class="sectionHeader">
+      <h2>The Pod</h2>
+      <p class="hint">The essentials, no fluff</p>
     </div>
-  </section>
-
-  <!-- CONTENIDO -->
-  <div class="wrap">
-
-    <!-- EL POD -->
-    <div class="section">
-      <div class="sectionHeader">
-        <h2>El Pod</h2>
-        <p class="hint">Lo esencial, sin rodeos</p>
-      </div>
-
-      <div class="card">
+    <div class="card">
+      <p>
+        In the far north of New Zealand, where subtropical forest meets the sea, PurePod Mākōha offers a different kind of escape — quiet, private and deeply connected to nature. Designed for two, it is a place to stop, disconnect and experience the Bay of Islands at its most pure: wild beaches, coastal walks, glowworms at night and vast, clear skies.
+      </p>
+      <p>
+        Inside, the minimalist design and warm materials let nature take centre stage. The bed faces the landscape. Your arrival ends with a gentle 5–10 minute walk through native forest, where the sound of roads and towns fades away. At the end of the track you find a fully private pod — no neighbours, no distractions, only birdsong, wind in the trees and the distant sound of the sea.
+      </p>
+      <div class="imgRow">
+        <button class="imgPh big js-lightbox" data-full="../../../assets/img/makoha/makoha-purepod-glass-cabin-exterior-night-kerikeri.jpg" aria-label="View full size">
+          <img src="../../../assets/img/makoha/makoha-purepod-glass-cabin-exterior-night-kerikeri.jpg" alt="Mākōha PurePod glass cabin at night in native forest, Kerikeri, New Zealand" style="object-position:50% 55%;">
+        </button>
         <p>
-          En el extremo norte de Nueva Zelanda, donde el bosque subtropical se funde con el mar, PurePod Mākōha ofrece un tipo de escapada poco común — silenciosa, privada y profundamente conectada con la naturaleza.
+          PurePod Mākōha is not a typical accommodation. It is an immersion in the natural world of Northland. Inside, everything is designed for two: a warm, comfortable retreat from which to watch the forest, the sky and the changing light — all from the intimacy of your hideaway in the heart of nature.
+        </p>
+        <button class="imgPh tallRight js-lightbox" data-full="../../../assets/img/makoha/makoha-purepod-bedroom-interior-glass-cabin-kerikeri.jpg" aria-label="View photo">
+          <img src="../../../assets/img/makoha/makoha-purepod-bedroom-interior-glass-cabin-kerikeri.jpg" alt="Bedroom inside Mākōha PurePod glass cabin, Kerikeri, New Zealand" style="object-position:50% 50%;">
+        </button>
+        <button class="imgPh js-lightbox" data-full="../../../assets/img/makoha/makoha-purepod-native-forest-landscape-kerikeri.jpg" aria-label="View photo">
+          <img src="../../../assets/img/makoha/makoha-purepod-native-forest-landscape-kerikeri.jpg" alt="Native forest landscape around Mākōha PurePod, Kerikeri, Northland, New Zealand" style="object-position:50% 45%;">
+        </button>
+      </div>
+    </div>
+  </div>
 
-Diseñado para dos personas, es un lugar para detenerse, desconectar y vivir Bay of Islands en su estado más puro y hermoso: playas salvajes, caminatas costeras, luciérnagas por la noche y algunos de los cielos más despejados que jamás hayas visto.
-
-
+  <div class="section pp-acts">
+    <div class="sectionHeader">
+      <h2>Experiences that define Mākōha</h2>
+      <p class="hint">Sea, culture and wild landscape</p>
+    </div>
+    <div class="pp-actsCard">
+      <p class="pp-actsIntro">
+        A curated selection of three experiences that capture the essence of this place: sea, culture and wild landscape.
+      </p>
+      <div class="pp-actsGrid">
+        <article class="pp-act">
+          <div class="pp-actMedia js-lightbox" data-full="../../../assets/img/makoha/bay-of-islands-boat-cruise-aerial.jpg" role="button" aria-label="View Bay of Islands cruise">
+            <img src="../../../assets/img/makoha/bay-of-islands-boat-cruise-aerial.jpg" alt="Boat cruise in the Bay of Islands near Kerikeri, Northland, New Zealand">
+          </div>
+          <div class="pp-actBody">
+            <h3 class="pp-actTitle">Bay of Islands by boat</h3>
+            <p>
+              Explore one of New Zealand’s most iconic coastal regions by boat — a scattered archipelago of islands, turquoise water and marine life that reflects the untamed coast surrounding PurePod Mākōha.
+            </p>
+            <p>
+              Seeing the Bay of Islands from the water is the best way to understand why this region feels so remote and extraordinary.
+            </p>
+            <a class="pp-actLink" href="https://www.exploregroup.co.nz/bay-of-islands/" target="_blank" rel="noopener">→ Explore Bay of Islands cruises</a>
+          </div>
+        </article>
+        <article class="pp-act">
+          <div class="pp-actMedia js-lightbox" data-full="../../../assets/img/makoha/waitangi-treaty-grounds-maori-meeting-hous.jpg" role="button" aria-label="View Waitangi Treaty Grounds">
+            <img src="../../../assets/img/makoha/waitangi-treaty-grounds-maori-meeting-hous.jpg" alt="Māori meeting house at Waitangi Treaty Grounds near Kerikeri, Bay of Islands, New Zealand">
+          </div>
+          <div class="pp-actBody">
+            <h3 class="pp-actTitle">Waitangi Treaty Grounds</h3>
+            <p>
+              The spiritual and historical heart of New Zealand. Walk the place where Māori and European cultures first met and discover the stories that shaped the country.
+            </p>
+            <p>
+              Staying at Mākōha puts you at the centre of this rich cultural landscape.
+            </p>
+            <a class="pp-actLink" href="https://www.waitangi.org.nz/" target="_blank" rel="noopener">→ Visit Waitangi Treaty Grounds</a>
+          </div>
+        </article>
+        <article class="pp-act">
+          <div class="pp-actMedia js-lightbox" data-full="../../../assets/img/makoha/mahinepua-peninsula-coastal-walk-bay-of-islands.jpg" role="button" aria-label="View Mahinepua Peninsula Track">
+            <img src="../../../assets/img/makoha/mahinepua-peninsula-coastal-walk-bay-of-islands.jpg" alt="Mahinepua Peninsula coastal walk, Bay of Islands near Kerikeri, New Zealand">
+          </div>
+          <div class="pp-actBody">
+            <h3 class="pp-actTitle">Mahinepua Peninsula Track</h3>
+            <p>
+              A striking coastal walk that winds through green hills and opens onto hidden beaches and wide ocean views.
+            </p>
+            <p>
+              Here the Bay of Islands shows its wildest, most untouched side — the perfect complement to the sense of isolation and nature you experience at PurePod Mākōha.
+            </p>
+            <a class="pp-actLink" href="https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/whangaroa-area/things-to-do/mahinepua-peninsula-track/" target="_blank" rel="noopener">→ Mahinepua Peninsula Track</a>
+          </div>
+        </article>
+      </div>
+      <div class="pp-actsExtra">
+        <h3>More ways to explore the Bay of Islands</h3>
+        <p><strong>Beyond the pod, the landscape continues to unfold at a gentle pace.</strong></p>
+        <p>
+          Kawiti Glowworm Caves and the Kerikeri River track to Rainbow Falls offer a softer, quieter side of the region — forest, water and shade, ideal for a relaxed half-day walk.
         </p>
         <p>
-          En el interior, el diseño minimalista y los materiales cálidos permiten que la naturaleza
-          sea la protagonista. La cama se orienta hacia el paisaje.
+          For open horizons and sea air, nearby beaches such as Matauri Bay and Te Ngaere Bay invite long walks, quiet swims and slow afternoons by the water.
         </p>
-
-        <div class="imgRow">
-          <button class="imgPh big js-lightbox" data-full="../../assets/img/makoha/makoha-purepod-glass-cabin-exterior-night-kerikeri.jpg" aria-label="Ver foto grande">
-            <img src="../../assets/img/makoha/makoha-purepod-glass-cabin-exterior-night-kerikeri.jpg" alt="Mākoha PurePod glass cabin exterior at night surrounded by native forest in Kerikeri, New Zealand" style="object-position:50% 55%;">
-          </button>
-          <p>PurePod Mākōha no es un alojamiento típico. Es una inmersión en el mundo natural de Northland.
-
-Tu llegada termina con un suave paseo de 5–10 minutos a través de bosque nativo, donde el ruido de las carreteras y los pueblos desaparece poco a poco. Al final del sendero te espera un pod completamente privado — sin vecinos, sin distracciones, solo el canto de los pájaros, el viento entre los árboles y el sonido lejano de las olas.
-
-En el interior, todo está pensado para dos: un refugio cálido y confortable desde donde observar el bosque, el cielo y la luz cambiante del día, todo ello desde la intimidad de tu escondite en plena naturaleza.</p>
-
-          <button class="imgPh js-lightbox" data-full="../../assets/img/makoha/makoha-purepod-bedroom-interior-glass-cabin-kerikeri.jpg" aria-label="Ver foto">
-            <img src="../../assets/img/makoha/makoha-purepod-bedroom-interior-glass-cabin-kerikeri.jpg" alt="Mākoha PurePod bedroom interior inside the glass cabin in Kerikeri, New Zealan" style="object-position:50% 50%;">
-          </button>
-
-          <button class="imgPh js-lightbox" data-full="../../assets/img/makoha/makoha-purepod-native-forest-landscape-kerikeri.jpg" aria-label="Ver foto">
-            <img src="../../assets/img/makoha/makoha-purepod-native-forest-landscape-kerikeri.jpg" alt="Native forest landscape surrounding Mākoha PurePod in Kerikeri, Northland, New Zealand" style="object-position:50% 45%;">
-          </button>
-        </div>
       </div>
-    </div>
-
-    <!-- ACTIVIDADES -->
-    <div class="section pp-acts">
-      <div class="sectionHeader">
-        <h2>Las experiencias que definen Mākōha</h2>
-        <p class="hint">mar, cultura y paisaje salvaje</p>
-      </div>
-
-      <div class="pp-actsCard">
-        <p class="pp-actsIntro">
-          Una selección cuidadosamente elegida de tres experiencias que capturan la esencia de este lugar:
-          mar, cultura y paisaje salvaje.
-        </p>
-
-        <div class="pp-actsGrid">
-
-          <article class="pp-act">
-            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/makoha/bay-of-islands-boat-cruise-aerial.jpg" role="button" aria-label="Ver foto Crucero por Bay of Islands">
-              <img src="../../assets/img/makoha/bay-of-islands-boat-cruise-aerial.jpg" alt="Boat cruise exploring the Bay of Islands near Kerikeri, Northland, New Zealand">
-            </div>
-            <div class="pp-actBody">
-              <h3 class="pp-actTitle">Crucero por Bay of Islands</h3>
-              <p>
-                Explora una de las regiones costeras más icónicas de Nueva Zelanda en barco — un archipiélago
-                disperso de islas, aguas turquesa y vida marina que refleja la costa indómita que rodea PurePod Mākōha.
-              </p>
-              <p>
-                Ver Bay of Islands desde el mar es la mejor manera de comprender por qué esta región se siente
-                tan remota y extraordinaria.
-              </p>
-              <a class="pp-actLink" href="https://www.exploregroup.co.nz/bay-of-islands/" target="_blank" rel="noopener">
-                → Explorar Crucero por Bay of Islands
-              </a>
-              
-            </div>
-          </article>
-
-          <article class="pp-act">
-            <div class="pp-actMedia js-lightbox" data-full="../../assets/img/makoha/waitangi-treaty-grounds-maori-meeting-hous.jpg" role="button" aria-label="Ver foto Waitangi Treaty Grounds">
-              <img src="../../assets/img/makoha/waitangi-treaty-grounds-maori-meeting-hous.jpg" alt="Traditional Maori meeting house at Waitangi Treaty Grounds near Kerikeri, Bay of Islands, New Zealand">
-            </div>
-            <div class="pp-actBody">
-              <h3 class="pp-actTitle">Waitangi Treaty Grounds</h3>
-              <p>
-                El corazón espiritual e histórico de Nueva Zelanda. Recorre el lugar donde las culturas maorí y europea
-                se encontraron por primera vez y descubre las historias que dieron forma al país.
-              </p>
-              <p>
-                Alojarte en Mākōha te sitúa en el centro de este rico paisaje cultural.
-              </p>
-              <a class="pp-actLink" href="https://www.waitangi.org.nz/" target="_blank" rel="noopener">
-                → Visitar Waitangi Treaty Grounds
-              </a>
-              
-            </div>
-          </article>
-
-          <article class="pp-act">
-            <div class="pp-actMedia js-lightbox" data-full="assets/img/makoha/mahinepua-peninsula-coastal-walk-bay-of-islands.jpg" role="button" aria-label="Ver foto Mahinepua Peninsula Track">
-              <img src="../../assets/img/makoha/mahinepua-peninsula-coastal-walk-bay-of-islands.jpg" alt="Mahinepua Peninsula coastal walk overlooking the Bay of Islands near Kerikeri, Northland, New Zealand">
-            </div>
-            <div class="pp-actBody">
-              <h3 class="pp-actTitle">Mahinepua Peninsula Track</h3>
-              <p>
-                Una impresionante caminata costera que serpentea entre colinas verdes y se abre hacia playas escondidas
-                y amplias vistas al océano.
-              </p>
-              <p>
-                Aquí Bay of Islands se muestra en su versión más salvaje y intacta — el complemento perfecto para la sensación
-                de aislamiento y naturaleza que se vive en PurePod Mākōha.
-              </p>
-              <a class="pp-actLink" href="https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/whangaroa-area/things-to-do/mahinepua-peninsula-track/" target="_blank" rel="noopener">
-                → Ver Mahinepua Peninsula Track
-              </a>
-              
-          </article>
-
-        </div><!-- /pp-actsGrid -->
-
-        <!-- BLOQUE EXTRA -->
-        <div class="pp-actsExtra">
-          <h3>Más formas de explorar Bay of Islands</h3>
-          <p><strong>Más allá del pod, el paisaje continúa desplegándose con calma.</strong></p>
-          <p>
-            Las Kawiti Glowworm Caves y el sendero del río Kerikeri hasta Rainbow Falls ofrecen una versión más suave y tranquila de la región — bosque, agua y sombra,
-            perfectos para una caminata relajada de medio día.
-          </p>
-          <p>
-            Para horizontes abiertos y aire marino, playas cercanas como Matauri Bay y Te Ngaere Bay invitan a largos paseos, baños tranquilos y tardes sin prisas junto al agua.
-          </p>
-        </div>
-
-      </div><!-- /pp-actsCard -->
-    </div><!-- /section pp-acts -->
-
-    <!-- ANTES DE VIAJAR -->
-    <div class="section">
-      <div class="sectionHeader">
-        <h2>Antes de viajar</h2>
-        <p class="hint">Lo práctico, sin matar el mood</p>
-      </div>
-
-      <div class="travelGrid">
-
-        <!-- El viaje (foto) -->
-        <div class="travelCard">
-          <div class="travelCollage2">
-            <div class="shot js-lightbox" data-full="../../assets/img/makoha/kerikeri-native-forest-walking-track.jpg" role="button" aria-label="Ver foto El viaje">
-              <img src="../../assets/img/makoha/kerikeri-native-forest-walking-track.jpg" alt="Native forest walking track leading through the bush near Mākoha PurePod in Kerikeri, Northland, New Zealand">
-            </div>
-            <div class="shot js-lightbox" data-full="../../assets/img/makoha/kerikeri-native-forest-bridge-walking-track.jpg" role="button" aria-label="Ver foto extra viaje">
-              <img src="../../assets/img/makoha/kerikeri-native-forest-bridge-walking-track.jpg" alt="Wooden bridge on a native forest walking track near Makoha PurePod in Kerikeri, Northland, New Zealand">
-            </div>
-          </div>
-          <div class="travelBody">
-            <h3>El viaje</h3>
-            <p>
-              La parte final de tu recorrido transcurre por tranquilas carreteras rurales y termina con una caminata de 5–10 minutos a través de bosque nativo.
-              Este último tramo es precisamente lo que hace que el pod se sienta verdaderamente escondido y privado.
-            </p>
-          </div>
-        </div>
-
-        <!-- El clima (SIN FOTO) -->
-        <div class="travelCard plainCard">
-          <h3>El clima</h3>
-          <p>
-            Bay of Islands tiene un clima subtropical — cálido y húmedo en verano, más fresco y a veces lluvioso en invierno.
-            La lluvia forma parte del paisaje aquí, intensificando ese carácter exuberante, verde y casi selvático del entorno.
-          </p>
-        </div>
-
-        <!-- La comida (foto) -->
-        <div class="travelCard">
-          <div class="travelCollage2">
-            <div class="shot js-lightbox" data-full="../../assets/img/makoha/makoha-local-food-platter-kerikeri.jpg" role="button" aria-label="Ver foto La comida">
-              <img src="../../assets/img/makoha/makoha-local-food-platter-kerikeri.jpg" alt="Local food platter with cheese, cured meats and condiments served at Makoha PurePod in Kerikeri, Northland, New Zealand">
-            </div>
-            <div class="shot js-lightbox" data-full="../../assets/img/makoha/makoha-dinner-outdoor-dining-kerikeri.jpg" role="button" aria-label="Ver foto extra comida">
-              <img src="../../assets/img/makoha/makoha-dinner-outdoor-dining-kerikeri.jpg" alt="Outdoor dinner with steak and salad served on the deck at Makoha PurePod in Kerikeri, Northland, New Zealand">
-            </div>
-          </div>
-          <div class="travelBody">
-            <h3>La comida</h3>
-            <p>
-              Tu PurePod está completamente equipado para una estancia relajada y autosuficiente.
-              En el interior encontrarás una selección de comidas gourmet listas para calentar, provisiones para el desayuno, snacks, té y café — siempre que sea posible, provenientes de productores locales de Northland.
-              Las comidas están pensadas para prepararse de forma sencilla, para que dediques menos tiempo a cocinar y más tiempo a disfrutar de las vistas.
-              Como no hay tiendas ni restaurantes cerca, todo está previsto dentro del pod para que tu estancia sea cómoda, fácil y sin preocupaciones.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- CTA -->
-    <div class="stickyCta" id="reserve">
-
-      <div class="ctaInner">
-        <div class="price">Desde $— / noche</div>
-        <button class="btn secondary" onclick="location.href='../../pods.html'">Ver otros pods</button>
-
-        <button class="btn" onclick="alert('Demo: abrir Newbook / motor de reservas')">Reservar ahora</button>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightboxBackdrop" data-close></div>
-    <div class="lightboxPanel">
-      <button class="lightboxClose" data-close aria-label="Cerrar">✕</button>
-      <img id="lightboxImg" alt="">
     </div>
   </div>
 
-  <script>
-    const lb = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lightboxImg');
+  <div class="section">
+    <div class="sectionHeader">
+      <h2>Before you travel</h2>
+      <p class="hint">Practical details, without losing the mood</p>
+    </div>
+    <div class="travelGrid">
+      <div class="travelCard">
+        <div class="travelCollage2">
+          <div class="shot js-lightbox" data-full="../../../assets/img/makoha/kerikeri-native-forest-walking-track.jpg" role="button" aria-label="View journey">
+            <img src="../../../assets/img/makoha/kerikeri-native-forest-walking-track.jpg" alt="Native forest walking track near Mākōha PurePod, Kerikeri, Northland, New Zealand">
+          </div>
+          <div class="shot js-lightbox" data-full="../../../assets/img/makoha/kerikeri-native-forest-bridge-walking-track.jpg" role="button" aria-label="View path">
+            <img src="../../../assets/img/makoha/kerikeri-native-forest-bridge-walking-track.jpg" alt="Bridge on native forest walking track near Mākōha PurePod, Kerikeri, New Zealand">
+          </div>
+        </div>
+        <div class="travelBody">
+          <h3>The journey</h3>
+          <p>
+            The final part of your journey follows quiet rural roads and ends with a 5–10 minute walk through native forest. This last stretch is what makes the pod feel truly hidden and private. Suitable footwear is recommended for the track.
+          </p>
+        </div>
+      </div>
+      <div class="travelCard plainCard">
+        <h3>The climate</h3>
+        <p>
+          The Bay of Islands has a subtropical climate — warm and humid in summer, cooler and sometimes rainy in winter. Rain is part of the landscape here, deepening the lush, green, almost jungle-like character of the place.
+        </p>
+      </div>
+      <div class="travelCard">
+        <div class="travelCollage2">
+          <div class="shot js-lightbox" data-full="../../../assets/img/makoha/makoha-local-food-platter-kerikeri.jpg" role="button" aria-label="View dining">
+            <img src="../../../assets/img/makoha/makoha-local-food-platter-kerikeri.jpg" alt="Local food platter at Mākōha PurePod, Kerikeri, New Zealand">
+          </div>
+          <div class="shot js-lightbox" data-full="../../../assets/img/makoha/makoha-dinner-outdoor-dining-kerikeri.jpg" role="button" aria-label="View dinner">
+            <img src="../../../assets/img/makoha/makoha-dinner-outdoor-dining-kerikeri.jpg" alt="Outdoor dinner at Mākōha PurePod, Kerikeri, New Zealand">
+          </div>
+        </div>
+        <div class="travelBody">
+          <h3>Food & dining</h3>
+          <p>
+            Your PurePod is fully equipped for a relaxed, self-contained stay. Inside you will find a selection of gourmet meals ready to heat, breakfast provisions, snacks, tea and coffee — wherever possible from local Northland producers. Meals are designed to be simple to prepare, so you spend less time cooking and more time enjoying the views. As there are no shops or restaurants nearby, everything is provided so your stay is comfortable, easy and worry-free.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    function openLightbox(src, alt){
-      lbImg.src = src;
-      lbImg.alt = alt || '';
-      lb.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
+  <div class="stickyCta" id="reserve">
+    <div class="ctaInner">
+      <div class="price">From $— / night</div>
+      <a class="btn secondary" href="../../explore.html">View other pods</a>
+      <a class="btn" href="https://purepods.com/booking/?force_site_id=14">Book now</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightboxBackdrop" data-close></div>
+  <div class="lightboxPanel">
+    <button class="lightboxClose" data-close aria-label="Close">✕</button>
+    <img id="lightboxImg" alt="">
+  </div>
+</div>
+
+<script>
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  function openLightbox(src, alt){
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(){
+    lb.setAttribute('aria-hidden', 'true');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.js-lightbox');
+    if(btn){
+      const src = btn.dataset.full || btn.querySelector('img')?.src;
+      const alt = btn.querySelector('img')?.alt || '';
+      openLightbox(src, alt);
+      return;
     }
-
-    function closeLightbox(){
-      lb.setAttribute('aria-hidden', 'true');
-      lbImg.src = '';
-      document.body.style.overflow = '';
-    }
-
-    document.addEventListener('click', (e) => {
-      const btn = e.target.closest('.js-lightbox');
-      if(btn){
-        const src = btn.dataset.full || btn.querySelector('img')?.src;
-        const alt = btn.querySelector('img')?.alt || '';
-        openLightbox(src, alt);
-        return;
-      }
-      if(e.target.matches('[data-close]')) closeLightbox();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape') closeLightbox();
-    });
-  </script>
-
+    if(e.target.matches('[data-close]')) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
+</script>
 <script>
   (function(){
     const nav = document.getElementById('topnav');
-    const solidAt = 40; // px de scroll para activar estado sólido
-
     function onScroll(){
-      if(window.scrollY > solidAt) nav.classList.add('is-solid');
+      if(window.scrollY > 40) nav.classList.add('is-solid');
       else nav.classList.remove('is-solid');
     }
-
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   })();
 </script>
-
 </body>
-
-
 </html>
-
-

@@ -1,209 +1,97 @@
-## 1. What is PurePods
+## 6. Language and Naming Rules
 
-PurePods is a collection of unique accommodation experiences set in the natural landscapes of New Zealand.  
-It is not a traditional hotel, nor a standard tourist accommodation.
+All website content must be written in **New Zealand English**.
 
-The PurePods experience is based on a deep and personal immersion in nature, designed to slow down, disconnect and experience the landscape in an intimate and mindful way.
+The tone should match the PurePods brand: calm, refined, nature-led and experiential.  
+The language should feel natural, elegant and premium, without sounding overly commercial or promotional.
 
-PurePods are glass eco-cabins, fully integrated into their surroundings, allowing guests to experience nature through all five senses — light, sound, weather, night skies and the ever-changing landscape — even from inside the pod.
+### Language Guidelines
 
-The experience is defined by:
-- complete privacy and true seclusion  
-- a direct connection with nature  
-- calm, silence and a strong sense of refuge  
-- minimalist, functional design that respects the environment  
-- stargazing directly from bed  
-- an experience primarily designed for couples  
+- Use **New Zealand / British spelling**, not American spelling.
+- Examples:
+  - colour (not color)
+  - favourite (not favorite)
+  - centre (not center)
+  - traveller (not traveler)
 
-Although nature is always present (rain, wind, cold, heat), guests remain safe, warm and comfortable, without losing their connection to the outside world.
+The writing style should remain:
+- calm
+- descriptive
+- nature-connected
+- intimate
+- minimal and honest
 
-Sustainability is an essential part of the PurePods concept:
-- responsible use of resources  
-- sensitive integration with the land  
-- collaboration with local landowners to support conservation and protect natural landscapes  
-
-The website must convey exclusivity, simplicity and respect for the environment.  
-It should never feel commercial or promotional, but calm, honest and experience-led.
-
-Test: agent.md update
-
-## 2. Booking rules
-
-There are two booking behaviours and they must remain separate.
-
-### 1. Global booking
-Use the global booking page when the user has not selected a specific pod yet.
-
-URL:
-https://purepods.com/booking/
-
-This applies to:
-- Home page Book CTA
-- Experiences listing page
-- Experience detail pages (e.g. Night Falls, Journey, Romantic, etc.)
-- Any page that is not a specific pod page
-
-### 2. Pod-specific booking
-Use the pod-specific booking page when the user is already on an individual pod landing page.
-
-Format:
-https://purepods.com/booking/?force_site_id=SITE_ID
-
-Confirmed mappings:
-- Kahutara -> https://purepods.com/booking/?force_site_id=1
-- Manakau -> https://purepods.com/booking/?force_site_id=2
-- Greystone -> https://purepods.com/booking/?force_site_id=3
-- Pōhue -> https://purepods.com/booking/?force_site_id=4
-- Atatū -> https://purepods.com/booking/?force_site_id=5
-- Korimako -> https://purepods.com/booking/?force_site_id=6
-- Ruru -> https://purepods.com/booking/?force_site_id=7
-- Pamu -> https://purepods.com/booking/?force_site_id=8
-- Haurapa -> https://purepods.com/booking/?force_site_id=9
-- Kokomea -> https://purepods.com/booking/?force_site_id=10
-- Tokoeka -> https://purepods.com/booking/?force_site_id=11
-- Hananui -> https://purepods.com/booking/?force_site_id=12
-- Taima -> https://purepods.com/booking/?force_site_id=13
-- Mākōha -> https://purepods.com/booking/?force_site_id=14
-- Rewarewa -> https://purepods.com/booking/?force_site_id=15
-- Matū -> https://purepods.com/booking/?force_site_id=16
-
-This applies to all booking CTAs inside a pod landing page, including:
-- header CTA
-- mobile CTA
-- hero CTA
-- sticky CTA
-- inline CTA
-- “Book this pod” buttons
-- “Book now” buttons
-
-Do not use the generic `/booking/` URL inside an individual pod landing page when a pod-specific booking URL exists.
-
-
-## 3. Reference HTML Structure
-
-The project includes a set of reference HTML files located in the `reference-html` directory.
-
-These files represent the visual and structural reference of the current PurePods pages and should be used as guidance when recreating pages in the new website.
-
-The folder structure mirrors the real URL structure of the site.
-
-Example:
-
-reference-html/
-  location/
-    kahutara/
-      index.html
-    atatu/
-      index.html
-    greystone/
-      index.html
-  experiences/
-    night-falls/
-      index.html
-  home/
-    index.html
-
-Rules:
-
-- Use these HTML files as **design and content references**, not as final production code.
-- The new website should recreate their structure using reusable components.
-- Do not copy inline styles directly unless necessary.
-- Maintain the same semantic structure when possible (headings, sections, content hierarchy).
-- Preserve important SEO elements such as titles, descriptions, and heading hierarchy.
-- Respect the real URL structure such as `/location/kahutara`.
-
-These files serve as reference material to guide layout, content sections and page hierarchy.
-
-## 4. Typography
-
-### Primary Font (Body)
-
-Font family:
-
-"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif
-
-Usage:
-
-- Body text
-- Paragraphs
-- Navigation
-- Buttons
-- Subtitles
-- Section headings (h2, h3)
-- Price display
-
-Font weights used:
-
-- 400 (Regular)
-- 500 (Medium)
-- 600 (SemiBold)
-- 700 (Bold)
-- 800 (ExtraBold – buttons)
+Avoid exaggerated marketing language.
 
 ---
 
-### Secondary Font (Hero)
+### Māori Names and Macrons
 
-Font family:
+Many PurePods locations use **Māori names** that include macrons.
 
-"Noto Serif Display", Georgia, "Times New Roman", serif
+Rules:
 
-Usage:
+- Always preserve macrons and special characters.
+- Never remove or simplify Māori spelling.
+- Macrons include: **ā ē ī ō ū**
 
-- Main hero title (h1.heroTitle)
+Examples:
 
-Font weights used:
+- Kaikōura
+- Pōhue
+- Tāima
+- Pāmu
+- Mākōha
+- Matū
 
-- 400
-- 500
-- 600
+If a location name already contains macrons, it must remain exactly as written.
 
-## 5. Color Palette
+---
 
-Defined in :root
+### Official PurePods Locations and Pod Names
 
-```css
-:root{
- --bg:#F7F6F3;
- --ink:#5C5F3E;
- --muted:rgba(92,95,62,.72);
- --card:rgba(255,255,255,.85);
- --stroke:rgba(92,95,62,.18);
- --brand-green:#5C5F3E;
- --brand-beige:#C2B59E;
-}
+The following are the **official PurePods pod names and locations**.
 
-Primary Brand Green
+These names must always be preserved exactly and must **never be translated, modified, or invented**.
 
-Hex: #5C5F3E
-RGB: 92, 95, 62
+#### North Island
 
-Usage:
+- Matū — Waitomo  
+- Mākōha — Kerikeri  
+- Rewarewa — Muriwai Coast  
+- Pāmu — Rotorua  
+- Ruru — Coromandel  
+- Kokomea PurePod
 
-Section headings
+#### South Island
 
-Highlighted links
+- Manakau — Kaikōura  
+- Kahutara — Kaikōura  
+- Atatū — Hurunui  
+- Korimako — Hurunui  
+- Greystone — Waipara  
+- Pōhue — Banks Peninsula  
+- Haurapa — Central Otago  
+- Tāima — Central Otago  
 
-Price display
+#### Stewart Island
 
-Solid navbar state
+- Tokoeka — Stewart Island  
+- Hananui — Stewart Island
 
-Core brand elements
+Rules:
 
-Primary Brand Green
+- Never modify these names.
+- Never remove macrons.
+- Never invent new pod names.
+- Only refer to pods included in this official list.
 
-Hex: #5C5F3E
-RGB: 92, 95, 62
+---
 
-Usage:
+### Brand Names
 
-Section headings
+The following names must **never be translated or altered**:
 
-Highlighted links
-
-Price display
-
-Solid navbar state
-
-Core brand elements
-
+- PurePods  
+- PurePod  
+- names of individual pods listed above
