@@ -119,24 +119,24 @@
 
     /* HERO full width pero con texto centrado al estilo demo */
     .hero{
-      position:relative;
-      min-height: 520px;
-      display:flex;
-      align-items:flex-end;
-      overflow:hidden;
-      border-bottom:1px solid var(--stroke);
-      background: #111217;
-    }
-    .heroBg{
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(circle at 20% 15%, rgba(194,181,157,.18), transparent 45%),
-        radial-gradient(circle at 80% 25%, rgba(92,95,60,.16), transparent 50%),
-        radial-gradient(circle at 50% 70%, rgba(255,255,255,.06), transparent 55%),
-        linear-gradient(to bottom, rgba(17,18,23,.35) 0%, rgba(17,18,23,.72) 70%, rgba(17,18,23,.88) 100%);
-      filter: saturate(1.05);
-    }
+  position: relative;
+  min-height: 78vh;   /* antes 520px */
+  display: grid;      /* mejor como el otro */
+  align-items: end;
+  overflow: hidden;
+  border-bottom: 1px solid var(--stroke);
+  background: #111217;
+}
+
+.hero-bg{
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(17,18,23,.10) 0%, rgba(17,18,23,.55) 70%, rgba(17,18,23,.70) 100%),
+    url("asssets/img/experiences/romantic/romantic-getaway-new-zealand-purepods-hero.jpg") center/cover no-repeat;
+  transform: scale(1.02);
+}
+    
     .heroStars{
       position:absolute;
       inset:0;
@@ -619,7 +619,7 @@
   width:100%;
   height:100%;
   object-fit:cover;
-  object-position: 50% 55%; /* ajusta para “subir/bajar” el encuadre */
+  object-position: 30% 55%; /* ajusta para “subir/bajar” el encuadre */
   filter: saturate(1.05) contrast(1.05);
   z-index:0;
 }
