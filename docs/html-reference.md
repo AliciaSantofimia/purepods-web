@@ -268,3 +268,254 @@ Internal linking should help both users and search engines understand relationsh
 Images should include descriptive **alt text** where appropriate.
 
 Alt text should describe the scene or experience rather than repeating file names.
+
+# SEO Implementation Requirements
+
+## Core Rule
+
+Every page created, migrated, or adapted for the PurePods website must include the essential on-page SEO elements.
+
+These elements must be present **even if they do not exist in the reference HTML files**.
+
+The agent must **generate them if they are missing**.
+
+This rule applies to:
+
+- pod pages
+- experience pages
+- location pages
+- landing pages
+- informational pages
+- any future pages created for the site
+
+A page **must not be considered complete** if any required SEO elements are missing.
+
+The agent must not simply copy the reference HTML.  
+If SEO elements are missing, they must be **created and implemented correctly**.
+
+---
+
+# Mandatory SEO Elements
+
+Each page must include the following elements:
+
+1. an optimized `<title>` tag  
+2. a `<meta name="description">`  
+3. a `<link rel="canonical">`  
+4. Open Graph metadata  
+5. Twitter Card metadata  
+6. a correct heading hierarchy (`H1`, `H2`, `H3` where appropriate)  
+7. descriptive `alt` text for important images  
+8. consistent social sharing metadata  
+9. structured data (Schema.org) when appropriate  
+
+If any of these elements **do not exist**, the agent must **create them**.
+
+---
+
+# 1. Meta Title
+
+Every page must include an SEO-optimized `<title>`.
+
+Rules:
+
+- must be **unique for each page**
+- must include the **primary keyword naturally**
+- must clearly describe the page content
+- must be readable for both users and search engines
+- avoid generic or vague titles
+- avoid keyword stuffing
+- align the title with search intent
+
+Poor examples:
+Kahutara | PurePods
+Romantic | PurePods
+
+
+Better examples:
+
+
+Kahutara PurePod | Glass Cabin in Kaikōura, New Zealand
+Romantic PurePod Getaway | Private Glass Cabin Escape in New Zealand
+
+
+---
+
+# 2. Meta Description
+
+Every page must include a unique meta description.
+
+Example structure:
+
+```html
+<meta name="description" content="..." />
+
+Rules:
+
+approximately 150–160 characters
+
+clearly summarize the page content
+
+include the primary keyword naturally
+
+written to encourage clicks in search results
+
+must not be duplicated across pages
+
+3. Canonical Tag
+
+Every page must include a canonical tag.
+
+Example:
+
+<link rel="canonical" href="https://purepods.com/location/kahutara/" />
+
+Rules:
+
+must point to the real production URL
+
+must match the real site structure
+
+must never use local development URLs
+
+must never reference reference-html paths
+
+must not use staging or temporary URLs
+
+Never use URLs such as:
+
+127.0.0.1
+localhost
+/reference-html/
+4. Open Graph (Social Sharing)
+
+Every page must include Open Graph metadata.
+
+Open Graph controls how pages appear when shared on platforms such as:
+
+Facebook
+
+LinkedIn
+
+WhatsApp
+
+Slack
+
+Discord
+
+Minimum required tags:
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="PurePods" />
+<meta property="og:title" content="..." />
+<meta property="og:description" content="..." />
+<meta property="og:url" content="..." />
+<meta property="og:image" content="..." />
+
+Recommended additional tags:
+
+<meta property="og:locale" content="en_NZ" />
+<meta property="og:image:alt" content="..." />
+
+Rules:
+
+og:title should align with the SEO title
+
+og:description should reflect the page content
+
+og:url must match the canonical URL
+
+og:image must be a strong, representative image
+
+images must use absolute URLs
+
+Correct example:
+
+https://purepods.com/assets/img/night-falls/og-night-falls.jpg
+
+Do not use relative paths.
+
+5. Twitter Cards
+
+Every page must include Twitter metadata.
+
+Minimum required tags:
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="..." />
+<meta name="twitter:description" content="..." />
+<meta name="twitter:image" content="..." />
+
+Optional tag:
+
+<meta name="twitter:site" content="@PUREPODS" />
+
+Rules:
+
+always use summary_large_image
+
+twitter:title should align with the page title
+
+twitter:description should align with the meta description
+
+the image must be relevant and high quality
+
+6. Image Alt Text
+
+Important images must include descriptive alt text.
+
+Rules:
+
+clearly describe the image content
+
+include location or experience context when relevant
+
+avoid repeating file names
+
+avoid generic descriptions
+
+Example:
+
+alt="Kahutara PurePod glass cabin overlooking the Kaikōura mountains and river valley in New Zealand"
+7. Structured Data (Schema.org)
+
+The site should include structured data using JSON-LD format.
+
+Example for the organization:
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "PurePods",
+ "url": "https://purepods.com",
+ "logo": "https://purepods.com/assets/img/logo.png",
+ "sameAs": [
+   "https://www.instagram.com/purepods",
+   "https://twitter.com/purepods",
+   "https://www.facebook.com/purepods"
+ ]
+}
+</script>
+
+Rules:
+
+use JSON-LD format
+
+include official social profiles using sameAs
+
+this schema should normally appear once on the site (for example in the homepage or global layout)
+
+Final Rule
+
+The agent must not simply copy the reference HTML.
+
+If any required SEO element is missing, the agent must:
+
+detect the missing element
+
+generate the correct metadata
+
+add it properly to the <head> section
+
+A page must not be considered finished until all mandatory SEO elements are implemented.
