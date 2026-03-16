@@ -114,10 +114,8 @@
     grid-template-columns: 1fr 1fr;
     gap:10px;
     margin-top:12px;
-    align-items: stretch;
   }
   .imgRow p{ margin:0; color:var(--muted); line-height:1.6; font-size:14px; }
-  .imgRow{ grid-auto-rows: 170px; }
   .imgPh{
     height: 170px;
     border-radius: var(--r2);
@@ -326,6 +324,7 @@
   @media (max-width: 640px){
     .imgPh.tallRight{ grid-column: 1; grid-row: auto; height: 220px; }
   }
+  .imgPh.tall{ height: 240px; }
 
   .topnav{
     position: fixed;
@@ -391,6 +390,7 @@
     .topnav__links a:not(.topnav__cta){ display: none; }
     .topnav__inner{ gap: 10px; }
   }
+
 </style>
 </head>
 <body>
@@ -447,7 +447,7 @@
         <button class="imgPh tallRight js-lightbox" data-full="../../../assets/img/kokomea/kokomea-purepod-glass-cabin-night-exterior-kapiti-coast.jpg" aria-label="View photo">
           <img src="../../../assets/img/kokomea/kokomea-purepod-glass-cabin-night-exterior-kapiti-coast.jpg" alt="Kokomea PurePod glass cabin at night on the Kāpiti Coast" style="object-position:50% 60%;">
         </button>
-        <button class="imgPh js-lightbox" data-full="../../../assets/img/kokomea/kokomea-purepod-bedroom-interior-sunset-kapiti-coast.jpg" aria-label="View photo">
+        <button class="imgPh tall js-lightbox" data-full="../../../assets/img/kokomea/kokomea-purepod-bedroom-interior-sunset-kapiti-coast.jpg" aria-label="View photo">
           <img src="../../../assets/img/kokomea/kokomea-purepod-bedroom-interior-sunset-kapiti-coast.jpg" alt="Bedroom inside Kokomea PurePod with sunset light, Kāpiti Coast" style="object-position:50% 45%;">
         </button>
       </div>
