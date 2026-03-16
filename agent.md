@@ -1,97 +1,28 @@
-## 6. Language and Naming Rules
+# PurePods – Agent Context
 
-All website content must be written in **New Zealand English**.
+This project stores its documentation in the `/docs` directory.
 
-The tone should match the PurePods brand: calm, refined, nature-led and experiential.  
-The language should feel natural, elegant and premium, without sounding overly commercial or promotional.
+These files define the rules, structure and behaviour of the PurePods website.
 
-### Language Guidelines
+Always consult these files before generating or modifying code, content or layouts.
 
-- Use **New Zealand / British spelling**, not American spelling.
-- Examples:
-  - colour (not color)
-  - favourite (not favorite)
-  - centre (not center)
-  - traveller (not traveler)
+## Source of truth
 
-The writing style should remain:
-- calm
-- descriptive
-- nature-connected
-- intimate
-- minimal and honest
+The following documents must be treated as the source of truth for the project:
 
-Avoid exaggerated marketing language.
+- docs/project-overview.md
+- docs/brand-guidelines.md
+- docs/language-rules.md
+- docs/pods-and-naming.md
+- docs/booking-logic.md
+- docs/html-reference.md
+- docs/assets-images.md
 
----
+## Rule
 
-### Māori Names and Macrons
+When generating or editing code, content or structure:
 
-Many PurePods locations use **Māori names** that include macrons.
+- Follow the rules defined in the `/docs` files.
+- Do not invent rules outside these documents.
+- Respect naming conventions, booking logic and page structure defined in the documentation.
 
-Rules:
-
-- Always preserve macrons and special characters.
-- Never remove or simplify Māori spelling.
-- Macrons include: **ā ē ī ō ū**
-
-Examples:
-
-- Kaikōura
-- Pōhue
-- Tāima
-- Pāmu
-- Mākōha
-- Matū
-
-If a location name already contains macrons, it must remain exactly as written.
-
----
-
-### Official PurePods Locations and Pod Names
-
-The following are the **official PurePods pod names and locations**.
-
-These names must always be preserved exactly and must **never be translated, modified, or invented**.
-
-#### North Island
-
-- Matū — Waitomo  
-- Mākōha — Kerikeri  
-- Rewarewa — Muriwai Coast  
-- Pāmu — Rotorua  
-- Ruru — Coromandel  
-- Kokomea PurePod
-
-#### South Island
-
-- Manakau — Kaikōura  
-- Kahutara — Kaikōura  
-- Atatū — Hurunui  
-- Korimako — Hurunui  
-- Greystone — Waipara  
-- Pōhue — Banks Peninsula  
-- Haurapa — Central Otago  
-- Tāima — Central Otago  
-
-#### Stewart Island
-
-- Tokoeka — Stewart Island  
-- Hananui — Stewart Island
-
-Rules:
-
-- Never modify these names.
-- Never remove macrons.
-- Never invent new pod names.
-- Only refer to pods included in this official list.
-
----
-
-### Brand Names
-
-The following names must **never be translated or altered**:
-
-- PurePods  
-- PurePod  
-- names of individual pods listed above
