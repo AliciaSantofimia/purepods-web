@@ -234,10 +234,11 @@
       transform: translateY(-2px);
       box-shadow: 0 22px 55px rgba(0,0,0,.1);
     }
+    /* --media-pos: encuadre por tarjeta (ej. center top, center 30%, 50% 20%). Por defecto: center */
     .card .media{
       height: 180px;
       background-size: cover;
-      background-position: center;
+      background-position: var(--media-pos, center);
       position: relative;
       overflow: hidden;
     }
