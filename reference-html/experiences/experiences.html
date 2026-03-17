@@ -235,65 +235,78 @@
       box-shadow: 0 22px 55px rgba(0,0,0,.1);
     }
     /* --media-pos: encuadre por tarjeta (ej. center top, center 30%, 50% 20%). Por defecto: center */
-    .card .media{
-      height: 180px;
-      background-size: cover;
-      background-position: var(--media-pos, center);
-      position: relative;
-      overflow: hidden;
-    }
-    .card .media::after{
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(17,18,23,.03), rgba(247,246,243,.2));
-      pointer-events: none;
-    }
-    .card .body{
-      padding: 20px 22px 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      flex: 1;
-    }
-    .card .tag{
-      display: inline-flex;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--stroke);
-      background: rgba(92,95,62,.08);
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      width: fit-content;
-    }
-    .card h3{
-      margin: 0;
-      font-family: "Inter", system-ui, sans-serif;
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      color: var(--brand-green);
-    }
-    .card p{
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
-      flex: 1;
-    }
-    .card .go{
-      display: inline-flex;
-      width: fit-content;
-      padding: 9px 12px;
-      border-radius: 999px;
-      border: 2px solid rgba(92,95,62,.35);
-      background: rgba(92,95,62,.08);
-      color: var(--brand-green);
-      font-weight: 600;
-      font-size: 13px;
-    }
+    .card .media,
+.editorial-block .media{
+  height: 180px;
+  background-size: cover;
+  background-position: var(--media-pos, center);
+  position: relative;
+  overflow: hidden;
+}
+
+.card .media::after,
+.editorial-block .media::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(17,18,23,.03), rgba(247,246,243,.2));
+  pointer-events: none;
+}
+
+.card .body,
+.editorial-block .body{
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.card .tag,
+.editorial-block .tag{
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  background: rgba(92,95,62,.08);
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.card h3,
+.editorial-block h3{
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--brand-green);
+}
+
+.card p,
+.editorial-block p{
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.card .go,
+.editorial-block .go{
+  display: inline-flex;
+  width: fit-content;
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 2px solid rgba(92,95,62,.35);
+  background: rgba(92,95,62,.08);
+  color: var(--brand-green);
+  font-weight: 600;
+  font-size: 13px;
+}
 
     /* EDITORIAL BLOCKS */
     .editorial{
@@ -336,9 +349,9 @@
       box-shadow: 0 22px 55px rgba(0,0,0,.1);
     }
     .editorial-block .media{
-      height: 160px;
-      background-size: cover;
-      background-position: center;
+    height: 160px;
+    background-size: cover;
+    background-position: var(--media-pos, center);
     }
     .editorial-block .body{
       padding: 18px 20px;
@@ -510,7 +523,7 @@
           </div>
         </a>
         <a class="editorial-block whole" href="../explore.html">
-          <div class="media" style="background-image: url('../../assets/img/experiences/romantic/purepods-romantic-getaway-couple-sunset-view-new-zealand.jpg');"></div>
+          <div class="media" style="background-image: url('../../assets/img/experiences/romantic/purepods-romantic-getaway-couple-sunset-view-new-zealand.jpg'); --media-pos: center 65%;"></div>
           <div class="body">
             <h3>Slow travel</h3>
             <p>Choose your pod. Each place has its own rhythm and landscape.</p>
@@ -524,7 +537,9 @@
       <h2>More to come</h2>
       <div class="soon-grid">
         <div class="card soon">
-          <div class="media" style="background-image: url('../../assets/img/experiences/experiences/new-zealand-adventure-wildlife-kayaking.jpg');"></div>
+          <div class="media"
+            style="background-image: url('../../assets/img/experiences/experiences/new-zealand-adventure-wildlife-kayaking.jpg'); --media-pos: center 90%;">
+        </div>
           <div class="body">
             <span class="tag">Adventure & Wildlife</span>
             <h3>Adventure & Wildlife</h3>
