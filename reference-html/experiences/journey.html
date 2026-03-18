@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Journey | PurePods — Walking, Hiking &amp; Cycling in New Zealand</title>
+  <meta name="description" content="Journey with PurePods: forest walks, hiking routes and cycling trails across New Zealand. Move through the landscape — then rest in a glass cabin immersed in nature." />
+  <link rel="canonical" href="https://purepods.com/experiences/journey/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PurePods" />
+  <meta property="og:title" content="Journey | PurePods — Walking, Hiking &amp; Cycling in New Zealand" />
+  <meta property="og:description" content="Forest paths, mountain routes and trail rides. Each journey is defined by motion through the land — completed with stillness at your PurePod." />
+  <meta property="og:url" content="https://purepods.com/experiences/journey/" />
+  <meta property="og:image" content="https://purepods.com/assets/img/experiences/journey/og-journey.jpg" />
+  <meta property="og:locale" content="en_NZ" />
+  <meta property="og:image:alt" content="Hiker on a New Zealand trail with forest and hills beyond" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Journey | PurePods — Walking, Hiking &amp; Cycling in New Zealand" />
+  <meta name="twitter:description" content="Forest paths, mountain routes and trail rides — then rest in a PurePod glass cabin." />
+  <meta name="twitter:image" content="https://purepods.com/assets/img/experiences/journey/og-journey.jpg" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Serif+Display:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="../../assets/img/experiences/journey/journey-hero-new-zealand.jpg" />
+  <style>
+    :root {
+      --bg: #F7F6F3;
+      --ink: #5C5F3E;
+      --muted: rgba(92, 95, 62, .72);
+      --card: rgba(255, 255, 255, .85);
+      --stroke: rgba(92, 95, 62, .18);
+      --brand-green: #5C5F3E;
+      --brand-beige: #C2B59E;
+      --moon: #111217;
+      --radius: 24px;
+      --shadow: 0 18px 40px rgba(92, 95, 62, .16);
+      --shadow-soft: 0 10px 24px rgba(92, 95, 62, .10);
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 246, 243, .78);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--stroke);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand img { width: 42px; height: 42px; border-radius: 999px; object-fit: cover; }
+    .brand b { letter-spacing: .08em; font-weight: 600; font-size: 14px; }
+    .links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .links a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .links a:hover { color: var(--ink); }
+    .btn-primary {
+      background: var(--brand-green);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      border: 1px solid var(--brand-green);
+    }
+    .hero {
+      position: relative;
+      min-height: 78vh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      border-bottom: 1px solid var(--stroke);
+    }
+    .heroImg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 45%;
+      transform: scale(1.02);
+      z-index: 0;
+    }
+    .heroBg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(17, 18, 23, .12) 0%, rgba(17, 18, 23, .5) 65%, rgba(17, 18, 23, .72) 100%);
+      z-index: 1;
+    }
+    .heroInner {
+      position: relative;
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 56px 14px 44px;
+      color: #fff;
+      z-index: 2;
+    }
+    .heroInner h1 {
+      margin: 0;
+      font-family: "Noto Serif Display", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(32px, 5vw, 42px);
+      letter-spacing: -.02em;
+      line-height: 1.06;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, .35);
+      max-width: 14ch;
+    }
+    .heroInner p {
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, .92);
+      line-height: 1.5;
+      font-size: 15px;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, .25);
+      max-width: 36ch;
+    }
+    .btnGhost {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 13px;
+      font-weight: 800;
+      border: 1px solid rgba(255, 255, 255, .22);
+      background: rgba(255, 255, 255, .12);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 999px;
+      backdrop-filter: blur(10px);
+    }
+    .btnGhost:hover { background: rgba(255, 255, 255, .18); }
+    section { padding: 56px 0; }
+    .experience-block {
+      padding: 48px 0 24px;
+      overflow: hidden;
+    }
+    .experience-surface {
+      padding: 22px 22px 20px;
+      border-radius: 26px;
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      box-shadow: var(--shadow-soft);
+    }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+      text-align: center;
+    }
+    .lead {
+      margin: 0 auto;
+      max-width: 68ch;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 16px;
+      text-align: center;
+    }
+    .journey-chapter {
+      margin-top: 56px;
+      padding-top: 48px;
+      border-top: 1px solid var(--stroke);
+    }
+    .journey-chapter:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+    .moment {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .moment.reverse {
+      grid-template-columns: .95fr 1.05fr;
+    }
+    .moment .media {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--stroke);
+      aspect-ratio: 4 / 3;
+    }
+    .moment .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .moment .copy { padding: 8px 4px; }
+    .moment h2 {
+      margin: 0 0 10px;
+      font-size: clamp(22px, 2.4vw, 28px);
+      font-weight: 600;
+      letter-spacing: -.02em;
+      color: var(--ink);
+    }
+    .moment .tagline {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    .journey-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .journey-list li {
+      position: relative;
+      padding: 10px 0 10px 18px;
+      border-bottom: 1px solid rgba(92, 95, 62, .1);
+      font-size: 14px;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    .journey-list li:last-child { border-bottom: 0; }
+    .journey-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brand-green);
+      opacity: .55;
+    }
+    .pod-bridge {
+      background: linear-gradient(135deg, rgba(92, 95, 62, .08), rgba(194, 181, 158, .14));
+      border-top: 1px solid var(--stroke);
+      border-bottom: 1px solid var(--stroke);
+    }
+    .pod-bridge .inner {
+      max-width: 62ch;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .pod-bridge p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+    .cta {
+      background: linear-gradient(135deg, rgba(92, 95, 62, .12), rgba(194, 181, 158, .2));
+      border-top: 1px solid var(--stroke);
+    }
+    .cta-panel {
+      width: min(720px, 100%);
+      margin: 0 auto;
+      padding: 40px 28px;
+      border-radius: 26px;
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+    }
+    .cta-panel .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 8px;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .cta-support {
+      margin: 16px 0 0;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    footer {
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--stroke);
+    }
+    .foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    footer img { width: 28px; height: 28px; border-radius: 999px; }
+    @media (max-width: 900px) {
+      .moment, .moment.reverse { grid-template-columns: 1fr; }
+    }
+    :focus-visible {
+      outline: 3px solid rgba(194, 181, 158, .85);
+      outline-offset: 3px;
+      border-radius: 12px;
+    }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .skip-link:focus {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 100;
+      clip: auto;
+      width: auto;
+      height: auto;
+      margin: 0;
+      padding: 10px 14px;
+      background: var(--brand-green);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      border-radius: 8px;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Journey | PurePods",
+    "description": "Walking, hiking and cycling experiences in New Zealand, paired with PurePods glass cabin stays.",
+    "url": "https://purepods.com/experiences/journey/",
+    "inLanguage": "en-NZ",
+    "publisher": {
+      "@type": "Organization",
+      "name": "PurePods",
+      "url": "https://purepods.com"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="visually-hidden skip-link">Skip to main content</a>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">
+        <img src="../../assets/img/purepods-logo-new-zealand.jpg" width="42" height="42" alt="PurePods — luxury glass eco cabins in remote New Zealand nature" />
+        <b>PUREPODS</b>
+      </a>
+      <div class="links">
+        <a href="experiences.html">Experiences</a>
+        <a href="#forest-walks">Forest walks</a>
+        <a href="#hiking">Hiking</a>
+        <a href="#cycling">Cycling</a>
+        <a class="btn-primary" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <img
+      class="heroImg"
+      src="../../assets/img/experiences/journey/journey-hero-new-zealand.jpg"
+      alt="Forest trail and New Zealand landscape — Journey experience by PurePods"
+      width="1920"
+      height="1080"
+      fetchpriority="high"
+    />
+    <div class="heroBg" aria-hidden="true"></div>
+    <div class="heroInner">
+      <h1>Journey</h1>
+      <p>Where every step becomes part of the experience</p>
+      <a class="btnGhost" href="#about">Read on</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="experience-block" id="about" aria-labelledby="journey-about-heading">
+      <div class="wrap">
+        <div class="experience-surface">
+          <h2 id="journey-about-heading" class="visually-hidden">About the Journey experience</h2>
+          <p class="lead">
+            Journey brings together experiences designed for those who move, explore, and let the landscape set the pace.
+            From quiet forest paths to demanding mountain routes, each journey is defined not by distance, but by the feeling of being in motion.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" aria-label="Journey chapters">
+      <article class="journey-chapter" id="forest-walks">
+        <div class="moment">
+          <div class="media">
+            <img
+              src="../../assets/img/experiences/journey/journey-forest-walks-new-zealand.jpg"
+              alt="Tall forest and walking path in New Zealand — forest walks and nature trails"
+              width="800"
+              height="600"
+              loading="lazy"
+            />
+          </div>
+          <div class="copy">
+            <h2>Forest walks &amp; nature trails</h2>
+            <p class="tagline">Under the canopy, pace slows to the rhythm of roots and light.</p>
+            <ul class="journey-list">
+              <li>Redwoods Treewalk (Whakarewarewa Forest)</li>
+              <li>Otaneiwainuku Scenic Reserve</li>
+              <li>Waitākere Ranges</li>
+              <li>Karangahake Gorge</li>
+              <li>Te Ara Paparārangi</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="journey-chapter" id="hiking">
+        <div class="moment reverse">
+          <div class="copy">
+            <h2>Hiking &amp; multi-day routes</h2>
+            <p class="tagline">Elevation and distance matter less than the pull of the next ridge.</p>
+            <ul class="journey-list">
+              <li>Mount Pirongia</li>
+              <li>Table Top (Tararua Range)</li>
+              <li>Te Au Track (Tararua Forest Park)</li>
+              <li>Bendigo Historic Reserve</li>
+              <li>Rakiura Track</li>
+            </ul>
+          </div>
+          <div class="media">
+            <img
+              src="../../assets/img/experiences/journey/journey-hiking-routes-new-zealand.jpg"
+              alt="Mountain hiking trail in New Zealand — multi-day and day hikes"
+              width="800"
+              height="600"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </article>
+
+      <article class="journey-chapter" id="cycling">
+        <div class="moment">
+          <div class="media">
+            <img
+              src="../../assets/img/experiences/journey/journey-cycling-trails-new-zealand.jpg"
+              alt="Cycling trail through New Zealand landscape — rail trails and mountain bike journeys"
+              width="800"
+              height="600"
+              loading="lazy"
+            />
+          </div>
+          <div class="copy">
+            <h2>Cycling &amp; trail journeys</h2>
+            <p class="tagline">Wheels on gravel or smooth trail — the land opens at a rider’s pace.</p>
+            <ul class="journey-list">
+              <li>Hauraki Rail Trail</li>
+              <li>Lake Dunstan Trail</li>
+              <li>Clyde–Alexandra River Trail</li>
+              <li>Woodhill Mountain Bike Park</li>
+              <li>Central Otago cycling routes</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="pod-bridge" id="the-pod" aria-labelledby="pod-bridge-heading">
+      <div class="wrap" style="padding: 56px 0;">
+        <div class="inner">
+          <h2 id="pod-bridge-heading" class="eyebrow" style="margin-bottom: 16px;">The pod</h2>
+          <p>
+            After a day in motion, rest becomes part of the journey.
+            Each PurePod is placed to continue the experience, not interrupt it — offering stillness, silence, and immersion in the landscape.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="cta" aria-labelledby="cta-heading">
+      <div class="wrap" style="padding: 56px 0;">
+        <div class="cta-panel">
+          <h2 id="cta-heading" class="eyebrow">Your path</h2>
+          <a class="btn-primary" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Explore your journey</a>
+          <p class="cta-support">Choose a path and find the pod that completes it.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="../../assets/img/purepods-logo-new-zealand.jpg" alt="" width="28" height="28" />
+        <span>Reference · Journey · PurePods</span>
+      </div>
+      <span>© PurePods</span>
+    </div>
+  </footer>
+</body>
+</html>
