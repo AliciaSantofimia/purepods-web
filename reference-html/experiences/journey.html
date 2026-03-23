@@ -99,6 +99,18 @@
       letter-spacing: .02em;
       border: 1px solid var(--brand-green);
     }
+    /* Nav Book: beat .links a color + stronger contrast on hero */
+    .links a.btn-primary {
+      color: #fff;
+      background: #45482f;
+      border-color: #2f3222;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset, 0 2px 10px rgba(17, 18, 23, 0.22);
+    }
+    .links a.btn-primary:hover {
+      color: #fff;
+      background: #3a3d28;
+      border-color: #25271a;
+    }
     .hero {
       position: relative;
       min-height: 78vh;
@@ -120,7 +132,7 @@
     .heroBg {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(17, 18, 23, .12) 0%, rgba(17, 18, 23, .5) 65%, rgba(17, 18, 23, .72) 100%);
+      background: linear-gradient(180deg, rgba(17, 18, 23, 0.06) 0%, rgba(17, 18, 23, 0.28) 62%, rgba(17, 18, 23, 0.48) 100%);
       z-index: 1;
     }
     .heroInner {
@@ -398,7 +410,6 @@
   opacity: .85;
   text-decoration: none;
   margin-left: 16px;
-  font-style: italic;
   white-space: nowrap;
 }
 
@@ -492,9 +503,9 @@
       align-items: center;
       padding: 6px 10px;
       border-radius: 999px;
-      background: rgba(247, 246, 243, .72);
+      background: rgba(247, 246, 243, 0.26);
       backdrop-filter: blur(8px);
-      border: 1px solid var(--stroke);
+      border: 1px solid rgba(92, 95, 62, 0.14);
     }
     #forest-walks .forest-carousel__dot {
       width: 8px;
@@ -502,15 +513,16 @@
       padding: 0;
       border: 0;
       border-radius: 50%;
-      background: rgba(92, 95, 62, .28);
+      background: rgba(92, 95, 62, 0.18);
       cursor: pointer;
       transition: background 0.2s ease, transform 0.2s ease;
     }
     #forest-walks .forest-carousel__dot:hover {
-      background: rgba(92, 95, 62, .45);
+      background: rgba(92, 95, 62, 0.34);
     }
     #forest-walks .forest-carousel__dot.is-active {
       background: var(--brand-green);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.55);
       transform: scale(1.15);
     }
     #forest-walks .forest-walks-panel {
@@ -638,9 +650,9 @@
       align-items: center;
       padding: 6px 10px;
       border-radius: 999px;
-      background: rgba(247, 246, 243, 0.72);
+      background: rgba(247, 246, 243, 0.26);
       backdrop-filter: blur(8px);
-      border: 1px solid var(--stroke);
+      border: 1px solid rgba(92, 95, 62, 0.14);
     }
     #hiking .hiking-carousel__dot {
       width: 8px;
@@ -648,15 +660,16 @@
       padding: 0;
       border: 0;
       border-radius: 50%;
-      background: rgba(92, 95, 62, 0.28);
+      background: rgba(92, 95, 62, 0.18);
       cursor: pointer;
       transition: background 0.2s ease, transform 0.2s ease;
     }
     #hiking .hiking-carousel__dot:hover {
-      background: rgba(92, 95, 62, 0.45);
+      background: rgba(92, 95, 62, 0.34);
     }
     #hiking .hiking-carousel__dot.is-active {
       background: var(--brand-green);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.55);
       transform: scale(1.15);
     }
     #hiking .hiking-place-link {
@@ -787,9 +800,9 @@
       align-items: center;
       padding: 6px 10px;
       border-radius: 999px;
-      background: rgba(247, 246, 243, 0.72);
+      background: rgba(247, 246, 243, 0.26);
       backdrop-filter: blur(8px);
-      border: 1px solid var(--stroke);
+      border: 1px solid rgba(92, 95, 62, 0.14);
     }
     #cycling .cycling-carousel__dot {
       width: 8px;
@@ -797,15 +810,16 @@
       padding: 0;
       border: 0;
       border-radius: 50%;
-      background: rgba(92, 95, 62, 0.28);
+      background: rgba(92, 95, 62, 0.18);
       cursor: pointer;
       transition: background 0.2s ease, transform 0.2s ease;
     }
     #cycling .cycling-carousel__dot:hover {
-      background: rgba(92, 95, 62, 0.45);
+      background: rgba(92, 95, 62, 0.34);
     }
     #cycling .cycling-carousel__dot.is-active {
       background: var(--brand-green);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.55);
       transform: scale(1.15);
     }
     #cycling .cycling-place-link {
@@ -840,6 +854,29 @@
       margin-left: 0;
       white-space: normal;
     }
+
+    /* Carousel “Stay at …” CTAs: no italic, green link, bold pod name */
+    #forest-walks .forest-walks-panel .journey-pod,
+    #hiking .hiking-ctas .journey-pod,
+    #cycling .cycling-ctas .journey-pod {
+      font-style: normal;
+      font-weight: 500;
+      opacity: 1;
+      color: var(--brand-green);
+    }
+    #forest-walks .forest-walks-panel .journey-pod:hover,
+    #hiking .hiking-ctas .journey-pod:hover,
+    #cycling .cycling-ctas .journey-pod:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    #forest-walks .forest-walks-panel .journey-pod .journey-pod-name,
+    #hiking .hiking-ctas .journey-pod .journey-pod-name,
+    #cycling .cycling-ctas .journey-pod .journey-pod-name {
+      font-weight: 700;
+      font-style: normal;
+      color: var(--ink);
+    }
   </style>
 
   <script type="application/ld+json">
@@ -864,7 +901,7 @@
     <div class="wrap nav-inner">
       <a class="brand" href="../home/index.html" aria-label="PurePods Home">
         <img src="../../assets/img/purepods-logo-new-zealand.jpg" width="42" height="42" alt="PurePods — luxury glass eco cabins in remote New Zealand nature" />
-        <b>PUREPODS</b>
+        <b>PurePods</b>
       </a>
       <div class="links">
         <a href="experiences.html">Experiences</a>
@@ -1009,7 +1046,7 @@
                 target="_blank"
                 rel="noopener"
                 data-forest-cta
-              >Stay at Pāmu, Rotorua →</a>
+              >Stay at <strong class="journey-pod-name">Pāmu, Rotorua</strong> →</a>
             </div>
           </div>
         </div>
@@ -1115,7 +1152,7 @@
                   href="https://purepods.com/booking/?force_site_id=16"
                   target="_blank"
                   rel="noopener"
-                >Stay at Matū, Waitomo →</a>
+                >Stay at <strong class="journey-pod-name">Matū, Waitomo</strong> →</a>
               </div>
             </div>
           </div>
@@ -1222,7 +1259,7 @@
                   href="https://purepods.com/booking/?force_site_id=7"
                   target="_blank"
                   rel="noopener"
-                >Stay at Ruru, Coromandel →</a>
+                >Stay at <strong class="journey-pod-name">Ruru, Coromandel</strong> →</a>
               </div>
             </div>
           </div>
@@ -1293,6 +1330,28 @@
     </div>
   </footer>
   <script>
+    function journeyFillStayAtCta(anchorEl, label) {
+      if (!anchorEl || !label) return;
+      var prefix = "Stay at ";
+      var suffix = " →";
+      anchorEl.textContent = "";
+      if (
+        label.length >= prefix.length + suffix.length &&
+        label.indexOf(prefix) === 0 &&
+        label.slice(-suffix.length) === suffix
+      ) {
+        var pod = label.slice(prefix.length, label.length - suffix.length);
+        anchorEl.appendChild(document.createTextNode(prefix));
+        var strongEl = document.createElement("strong");
+        strongEl.className = "journey-pod-name";
+        strongEl.textContent = pod;
+        anchorEl.appendChild(strongEl);
+        anchorEl.appendChild(document.createTextNode(suffix));
+      } else {
+        anchorEl.textContent = label;
+      }
+    }
+
     (function () {
       var root = document.querySelector("[data-forest-carousel]");
       if (!root) return;
@@ -1392,7 +1451,7 @@
         placeLink.textContent = item.title;
         placeLink.href = item.placeHref;
         descEl.textContent = item.description;
-        ctaEl.textContent = item.ctaLabel;
+        journeyFillStayAtCta(ctaEl, item.ctaLabel);
         ctaEl.href = item.ctaHref;
         root.setAttribute("aria-label", "Forest walks: " + item.title);
       }
@@ -1531,7 +1590,7 @@
           a.href = item.href;
           a.target = "_blank";
           a.rel = "noopener";
-          a.textContent = item.label;
+          journeyFillStayAtCta(a, item.label);
           ctasHost.appendChild(a);
         }
       }
@@ -1696,7 +1755,7 @@
           a.href = item.href;
           a.target = "_blank";
           a.rel = "noopener";
-          a.textContent = item.label;
+          journeyFillStayAtCta(a, item.label);
           ctasHost.appendChild(a);
         }
       }
