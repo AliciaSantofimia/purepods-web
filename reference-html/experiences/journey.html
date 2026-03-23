@@ -19,7 +19,7 @@
   <meta name="twitter:description" content="Forest paths, mountain routes and trail rides — then rest in a PurePod glass cabin." />
   <meta name="twitter:image" content="https://purepods.com/assets/img/experiences/journey/og-journey.jpg" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Serif+Display:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Serif+Display:wght@400;500;600&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="../../assets/img/experiences/journey/journey-hero-new-zealand.jpg" />
   <style>
     :root {
@@ -542,6 +542,155 @@
       margin-left: 0;
       margin-top: 2px;
     }
+
+    /* Hiking — carousel + panel (#hiking only) */
+    #hiking .journey-title {
+      font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--brand-green);
+    }
+    #hiking .hiking-carousel {
+      position: relative;
+      display: block;
+    }
+    #hiking .hiking-carousel:focus-visible {
+      outline-offset: 4px;
+    }
+    #hiking .hiking-carousel__viewport {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: inherit;
+      overflow: hidden;
+      background: var(--brand-beige);
+    }
+    #hiking .hiking-carousel__slides {
+      position: absolute;
+      inset: 0;
+      margin: 0;
+    }
+    #hiking .hiking-carousel__slide {
+      position: absolute;
+      inset: 0;
+      margin: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+      pointer-events: none;
+    }
+    #hiking .hiking-carousel__slide.is-active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      z-index: 1;
+    }
+    #hiking .hiking-carousel__slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    #hiking .hiking-carousel__btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      color: var(--ink);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      box-shadow: var(--shadow-soft);
+      transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+    }
+    #hiking .hiking-carousel__btn:hover {
+      background: #fff;
+      border-color: rgba(92, 95, 62, 0.28);
+    }
+    #hiking .hiking-carousel__btn--prev {
+      left: 12px;
+    }
+    #hiking .hiking-carousel__btn--next {
+      right: 12px;
+    }
+    #hiking .hiking-carousel__btn svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+    #hiking .hiking-carousel__dots {
+      position: absolute;
+      left: 50%;
+      bottom: 14px;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(247, 246, 243, 0.72);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--stroke);
+    }
+    #hiking .hiking-carousel__dot {
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(92, 95, 62, 0.28);
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    #hiking .hiking-carousel__dot:hover {
+      background: rgba(92, 95, 62, 0.45);
+    }
+    #hiking .hiking-carousel__dot.is-active {
+      background: var(--brand-green);
+      transform: scale(1.15);
+    }
+    #hiking .hiking-place-link {
+      display: inline-block;
+      margin: 0 0 12px;
+      font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+    }
+    #hiking .hiking-place-link:hover {
+      border-bottom-color: var(--brand-beige);
+      opacity: 0.92;
+    }
+    #hiking .hiking-desc {
+      margin: 0 0 18px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+    #hiking .hiking-ctas {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    #hiking .hiking-ctas .journey-pod {
+      margin-left: 0;
+      white-space: normal;
+    }
   </style>
 
   <script type="application/ld+json">
@@ -660,7 +809,7 @@
                 </figure>
                 <figure class="forest-carousel__slide" data-forest-slide="4">
                   <img
-                    src="../../assets/img/experiences/journeys/te -ara-pPaparārangi-waipara.jpg"
+                    src="../../assets/img/experiences/journeys/te-ara-papararangi-waipara.jpg"
                     alt="Te Ara Paparārangi"
                     width="800"
                     height="600"
@@ -718,85 +867,110 @@
       </article>
 
       <article class="journey-chapter" id="hiking">
-        <div class="moment reverse">
+        <div class="moment">
+          <div
+            class="media hiking-carousel"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Hiking and multi-day routes"
+            tabindex="0"
+            data-hiking-carousel
+          >
+            <div class="hiking-carousel__viewport">
+              <div class="hiking-carousel__slides">
+                <figure class="hiking-carousel__slide is-active" data-hiking-slide="0">
+                  <img
+                    src="../../assets/img/experiences/journeys/mount-pirongia-waitomo.jpg"
+                    alt="Mount Pirongia — native forest and summit views, Waikato"
+                    width="800"
+                    height="600"
+                    loading="eager"
+                    fetchpriority="high"
+                  />
+                </figure>
+                <figure class="hiking-carousel__slide" data-hiking-slide="1">
+                  <img
+                    src="../../assets/img/experiences/journeys/table-top-kapiti-coast.jpg"
+                    alt="Table Top — Tararua Range ridgeline walk with views toward the Kapiti Coast"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure class="hiking-carousel__slide" data-hiking-slide="2">
+                  <img
+                    src="../../assets/img/experiences/journeys/te-au-track-kapiti-coast.jpg"
+                    alt="Te Au Track — Tararua Forest Park trail through native bush"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure class="hiking-carousel__slide" data-hiking-slide="3">
+                  <img
+                    src="../../assets/img/experiences/journeys/bendigohistoric-reserve-central-otago.jpg"
+                    alt="Bendigo Historic Reserve — Central Otago goldfields landscape"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure class="hiking-carousel__slide" data-hiking-slide="4">
+                  <img
+                    src="../../assets/img/experiences/journeys/mt-cass-walkway-waipara.jpg"
+                    alt="Mt Cass Walkway — loop track with views over the Waipara Valley"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </figure>
+              </div>
+              <button
+                type="button"
+                class="hiking-carousel__btn hiking-carousel__btn--prev"
+                aria-label="Previous hike"
+                data-hiking-prev
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+              </button>
+              <button
+                type="button"
+                class="hiking-carousel__btn hiking-carousel__btn--next"
+                aria-label="Next hike"
+                data-hiking-next
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" /></svg>
+              </button>
+              <div class="hiking-carousel__dots" role="tablist" aria-label="Choose a hike" data-hiking-dots></div>
+            </div>
+          </div>
           <div class="copy">
-
-            <h2 class="journey-title">Hiking &amp; multi-day routes</h2>
-              
+            <h2 class="journey-title" id="hiking-heading">Hiking &amp; multi-day routes</h2>
             <p class="journey-intro">
               Elevation and distance matter less than the pull of the next ridge.
             </p>
-          
-            <ul class="journey-list">
-          
-              <li>
-                <a href="https://www.waikatonz.com/walking-and-hiking-trails/mt-pirongia-forest-park/" target="_blank" rel="noopener">
-                  Mount Pirongia
-                </a>
-                <a class="journey-pod" href="https://purepods.com/booking/?force_site_id=16" target="_blank" rel="noopener">
-                  Stay at Matū →
-                </a>
-              </li>
-          
-              <li>
-                <a href="https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/field-hut-and-table-top/" target="_blank" rel="noopener">
-                  Table Top (Tararua Range)
-                </a>
-                <a class="journey-pod" href="https://purepods.com/booking/?force_site_id=10" target="_blank" rel="noopener">
-                  Stay at Kokomea →
-                </a>
-              </li>
-          
-              <li>
-                <a href="https://maps.app.goo.gl/AE8yYzVvYBooYqxW9" target="_blank" rel="noopener">
-                  Te Au Track (Tararua Forest Park)
-                </a>
-                <a class="journey-pod" href="https://purepods.com/booking/?force_site_id=10" target="_blank" rel="noopener">
-                  Stay at Kokomea →
-                </a>
-              </li>
-          
-              <li>
-                <a href="https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/bendigo-area/" target="_blank" rel="noopener">
-                  Bendigo Historic Reserve
-                </a>
-              
-                <div class="journey-pods">
-                  <span class="journey-pod-label">Stay at</span>
-                  <a class="journey-pod-link" href="https://purepods.com/booking/?force_site_id=9" target="_blank" rel="noopener">Haurapa</a>
-                  <span class="journey-pod-separator">or</span>
-                  <a class="journey-pod-link" href="https://purepods.com/booking/?force_site_id=13" target="_blank" rel="noopener">Tāima →</a>
-                </div>
-              </li>
-              
-              <li>
-                <a href="https://www.doc.govt.nz/parks-and-recreation/places-to-go/southland/places/stewart-island-rakiura/rakiura-national-park/things-to-do/rakiura-track/" target="_blank" rel="noopener">
-                  Rakiura Track
-                </a>
-              
-                <div class="journey-pods">
-                  <span class="journey-pod-label">Stay at</span>
-                  <a class="journey-pod-link" href="https://purepods.com/booking/?force_site_id=11" target="_blank" rel="noopener">Tokoeka</a>
-                  <span class="journey-pod-separator">or</span>
-                  <a class="journey-pod-link" href="https://purepods.com/booking/?force_site_id=12" target="_blank" rel="noopener">Hananui →</a>
-                </div>
-              </li>
-          
-            </ul>
-          
+            <div class="hiking-panel" aria-live="polite" aria-atomic="true" aria-labelledby="hiking-heading">
+              <a
+                class="hiking-place-link"
+                href="https://www.waikatonz.com/walking-and-hiking-trails/mt-pirongia-forest-park/"
+                target="_blank"
+                rel="noopener"
+                data-hiking-place-link
+              >Mount Pirongia</a>
+              <p class="hiking-desc" data-hiking-desc>
+                A rewarding climb through native forest leading to panoramic views across the Waikato region. A peaceful escape with a true sense of wilderness at the summit.
+              </p>
+              <div class="hiking-ctas" data-hiking-ctas>
+                <a
+                  class="journey-pod hiking-pod-cta"
+                  href="https://purepods.com/booking/?force_site_id=16"
+                  target="_blank"
+                  rel="noopener"
+                >Stay at Matū, Waitomo →</a>
+              </div>
+            </div>
           </div>
-          <div class="media">
-            <img
-              src="../../assets/img/experiences/journeys/rakiura-national-park-beach-stewart-island-new-zealand.jpg"
-              alt="central-otago-trail-experience-mountain-valley"
-              width="800"
-              height="600"
-              loading="lazy"
-            />
-          </div>
-      
         </div>
-
       </article>
 
       <article class="journey-chapter" id="cycling">
@@ -993,7 +1167,7 @@
           ctaHref: "https://purepods.com/booking/?force_site_id=7",
         },
         {
-          image: "../../assets/img/experiences/journeys/te -ara-pPaparārangi-waipara.jpg",
+          image: "../../assets/img/experiences/journeys/te-ara-papararangi-waipara.jpg",
           alt: "Te Ara Paparārangi",
           title: "Te Ara Paparārangi",
           placeHref: "https://maps.app.goo.gl/vcLyNzBPdvoqdeKE6",
@@ -1055,6 +1229,167 @@
           dot.className = "forest-carousel__dot" + (ji === 0 ? " is-active" : "");
           dot.setAttribute("role", "tab");
           dot.setAttribute("aria-label", "Show slide " + (ji + 1) + " of " + n);
+          dot.setAttribute("aria-selected", ji === 0 ? "true" : "false");
+          dot.tabIndex = ji === 0 ? 0 : -1;
+          dot.addEventListener("click", function () {
+            goTo(ji);
+            root.focus();
+          });
+          dotsHost.appendChild(dot);
+          dots.push(dot);
+        })(j);
+      }
+
+      prevBtn.addEventListener("click", function () {
+        step(-1);
+      });
+      nextBtn.addEventListener("click", function () {
+        step(1);
+      });
+
+      root.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          step(-1);
+        } else if (e.key === "ArrowRight") {
+          e.preventDefault();
+          step(1);
+        }
+      });
+
+      goTo(0);
+    })();
+
+    (function () {
+      var root = document.querySelector("[data-hiking-carousel]");
+      if (!root) return;
+
+      var slides = root.querySelectorAll("[data-hiking-slide]");
+      var prevBtn = root.querySelector("[data-hiking-prev]");
+      var nextBtn = root.querySelector("[data-hiking-next]");
+      var dotsHost = root.querySelector("[data-hiking-dots]");
+      var placeLink = root.parentElement.querySelector("[data-hiking-place-link]");
+      var descEl = root.parentElement.querySelector("[data-hiking-desc]");
+      var ctasHost = root.parentElement.querySelector("[data-hiking-ctas]");
+
+      if (!placeLink || !descEl || !ctasHost) return;
+
+      var data = [
+        {
+          image: "../../assets/img/experiences/journeys/mount-pirongia-waitomo.jpg",
+          alt: "Mount Pirongia — native forest and summit views, Waikato",
+          title: "Mount Pirongia",
+          placeHref: "https://www.waikatonz.com/walking-and-hiking-trails/mt-pirongia-forest-park/",
+          description:
+            "A rewarding climb through native forest leading to panoramic views across the Waikato region. A peaceful escape with a true sense of wilderness at the summit.",
+          ctas: [{ label: "Stay at Matū, Waitomo →", href: "https://purepods.com/booking/?force_site_id=16" }],
+        },
+        {
+          image: "../../assets/img/experiences/journeys/table-top-kapiti-coast.jpg",
+          alt: "Table Top — Tararua Range ridgeline walk with views toward the Kapiti Coast",
+          title: "Table Top (Tararua Range)",
+          placeHref:
+            "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/field-hut-and-table-top/",
+          description:
+            "A stunning ridgeline walk offering sweeping views over the Tararua Range and Kapiti Coast. Dramatic skies and open landscapes make it an unforgettable hike.",
+          ctas: [{ label: "Stay at Kokomea, Kapiti Coast →", href: "https://purepods.com/booking/?force_site_id=10" }],
+        },
+        {
+          image: "../../assets/img/experiences/journeys/te-au-track-kapiti-coast.jpg",
+          alt: "Te Au Track — Tararua Forest Park trail through native bush",
+          title: "Te Au Track (Tararua Forest Park)",
+          placeHref: "https://maps.app.goo.gl/AE8yYzVvYBooYqxW9",
+          description:
+            "A peaceful track through native bush and rolling ridgelines, offering a quieter way to experience the natural beauty of Tararua Forest Park. Ideal for those seeking immersion, stillness and expansive views.",
+          ctas: [{ label: "Stay at Kokomea, Kapiti Coast →", href: "https://purepods.com/booking/?force_site_id=10" }],
+        },
+        {
+          image: "../../assets/img/experiences/journeys/bendigohistoric-reserve-central-otago.jpg",
+          alt: "Bendigo Historic Reserve — Central Otago goldfields landscape",
+          title: "Bendigo Historic Reserve",
+          placeHref: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/bendigo-area/",
+          description:
+            "A unique landscape of historic gold mining ruins set among rugged hills and wide open spaces. A blend of history and striking Central Otago scenery.",
+          ctas: [
+            { label: "Stay at Haurapa, Central Otago →", href: "https://purepods.com/booking/?force_site_id=9" },
+            { label: "Stay at Tāima, Central Otago →", href: "https://purepods.com/booking/?force_site_id=13" },
+          ],
+        },
+        {
+          image: "../../assets/img/experiences/journeys/mt-cass-walkway-waipara.jpg",
+          alt: "Mt Cass Walkway — loop track with views over the Waipara Valley",
+          title: "Mt Cass Walkway",
+          placeHref: "https://transwastecanterbury.co.nz/walkways/mt-cass-walkway-2/",
+          description:
+            "A scenic loop track climbing through farmland and limestone landscapes to panoramic views over the Waipara Valley, vineyards and coastline. A rewarding walk combining wide-open scenery and unique terrain.",
+          ctas: [{ label: "Stay at Greystone, Waipara →", href: "https://purepods.com/booking/?force_site_id=3" }],
+        },
+      ];
+
+      var n = data.length;
+      var index = 0;
+      var dots = [];
+
+      function syncSlideImages() {
+        for (var i = 0; i < n; i++) {
+          var fig = slides[i];
+          if (!fig) continue;
+          var img = fig.querySelector("img");
+          if (!img) continue;
+          img.src = data[i].image;
+          img.alt = data[i].alt;
+        }
+      }
+
+      function renderCtas(ctas) {
+        ctasHost.innerHTML = "";
+        for (var c = 0; c < ctas.length; c++) {
+          var item = ctas[c];
+          var a = document.createElement("a");
+          a.className = "journey-pod hiking-pod-cta";
+          a.href = item.href;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.textContent = item.label;
+          ctasHost.appendChild(a);
+        }
+      }
+
+      function setActiveDot(i) {
+        for (var d = 0; d < dots.length; d++) {
+          dots[d].classList.toggle("is-active", d === i);
+          dots[d].setAttribute("aria-selected", d === i ? "true" : "false");
+          dots[d].tabIndex = d === i ? 0 : -1;
+        }
+      }
+
+      function goTo(i) {
+        index = ((i % n) + n) % n;
+        for (var s = 0; s < slides.length; s++) {
+          slides[s].classList.toggle("is-active", s === index);
+        }
+        setActiveDot(index);
+        var item = data[index];
+        placeLink.textContent = item.title;
+        placeLink.href = item.placeHref;
+        descEl.textContent = item.description;
+        renderCtas(item.ctas);
+        root.setAttribute("aria-label", "Hiking: " + item.title);
+      }
+
+      function step(delta) {
+        goTo(index + delta);
+      }
+
+      syncSlideImages();
+
+      for (var j = 0; j < n; j++) {
+        (function (ji) {
+          var dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "hiking-carousel__dot" + (ji === 0 ? " is-active" : "");
+          dot.setAttribute("role", "tab");
+          dot.setAttribute("aria-label", "Show hike " + (ji + 1) + " of " + n);
           dot.setAttribute("aria-selected", ji === 0 ? "true" : "false");
           dot.tabIndex = ji === 0 ? 0 : -1;
           dot.addEventListener("click", function () {
