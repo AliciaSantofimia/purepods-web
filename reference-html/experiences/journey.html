@@ -691,6 +691,155 @@
       margin-left: 0;
       white-space: normal;
     }
+
+    /* Cycling — carousel + panel (#cycling only) */
+    #cycling .journey-title {
+      font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--brand-green);
+    }
+    #cycling .cycling-carousel {
+      position: relative;
+      display: block;
+    }
+    #cycling .cycling-carousel:focus-visible {
+      outline-offset: 4px;
+    }
+    #cycling .cycling-carousel__viewport {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: inherit;
+      overflow: hidden;
+      background: var(--brand-beige);
+    }
+    #cycling .cycling-carousel__slides {
+      position: absolute;
+      inset: 0;
+      margin: 0;
+    }
+    #cycling .cycling-carousel__slide {
+      position: absolute;
+      inset: 0;
+      margin: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+      pointer-events: none;
+    }
+    #cycling .cycling-carousel__slide.is-active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      z-index: 1;
+    }
+    #cycling .cycling-carousel__slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    #cycling .cycling-carousel__btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      color: var(--ink);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      box-shadow: var(--shadow-soft);
+      transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+    }
+    #cycling .cycling-carousel__btn:hover {
+      background: #fff;
+      border-color: rgba(92, 95, 62, 0.28);
+    }
+    #cycling .cycling-carousel__btn--prev {
+      left: 12px;
+    }
+    #cycling .cycling-carousel__btn--next {
+      right: 12px;
+    }
+    #cycling .cycling-carousel__btn svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+    #cycling .cycling-carousel__dots {
+      position: absolute;
+      left: 50%;
+      bottom: 14px;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(247, 246, 243, 0.72);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--stroke);
+    }
+    #cycling .cycling-carousel__dot {
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(92, 95, 62, 0.28);
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    #cycling .cycling-carousel__dot:hover {
+      background: rgba(92, 95, 62, 0.45);
+    }
+    #cycling .cycling-carousel__dot.is-active {
+      background: var(--brand-green);
+      transform: scale(1.15);
+    }
+    #cycling .cycling-place-link {
+      display: inline-block;
+      margin: 0 0 12px;
+      font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+    }
+    #cycling .cycling-place-link:hover {
+      border-bottom-color: var(--brand-beige);
+      opacity: 0.92;
+    }
+    #cycling .cycling-desc {
+      margin: 0 0 18px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+    #cycling .cycling-ctas {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    #cycling .cycling-ctas .journey-pod {
+      margin-left: 0;
+      white-space: normal;
+    }
   </style>
 
   <script type="application/ld+json">
@@ -975,77 +1124,109 @@
 
       <article class="journey-chapter" id="cycling">
         <div class="moment">
-          <div class="media">
-            <img
-              src="../../assets/img/experiences/journeys/waterfall-bike-adventure-new-zealand-nature-trail.jpg"
-              alt="Cycling trail through New Zealand landscape — rail trails and mountain bike journeys"
-              width="800"
-              height="600"
-              loading="lazy"
-            />
+          <div
+            class="media cycling-carousel"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Cycling and trail journeys"
+            tabindex="0"
+            data-cycling-carousel
+          >
+            <div class="cycling-carousel__viewport">
+              <div class="cycling-carousel__slides">
+                <figure class="cycling-carousel__slide is-active" data-cycling-slide="0">
+                  <img
+                    src="../../assets/img/experiences/journeys/Hauraki Rail Trail, coromandel.jpg"
+                    alt="Hauraki Rail Trail"
+                    width="800"
+                    height="600"
+                    loading="eager"
+                    fetchpriority="high"
+                  />
+                </figure>
+                <figure class="cycling-carousel__slide" data-cycling-slide="1">
+                  <img
+                    src="../../assets/img/experiences/journeys/Clyde–Alexandra River Trail,Central Otago.png"
+                    alt="Clyde–Alexandra River Trail"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure class="cycling-carousel__slide" data-cycling-slide="2">
+                  <img
+                    src="../../assets/img/experiences/journeys/Woodhill Mountain Bike Park, Muriwai coast.jpg"
+                    alt="Woodhill Mountain Bike Park"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure class="cycling-carousel__slide" data-cycling-slide="3">
+                  <img
+                    src="../../assets/img/experiences/journeys/Lake Dunstan Trail, Central Otago.jpg"
+                    alt="Lake Dunstan Trail"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure class="cycling-carousel__slide" data-cycling-slide="4">
+                  <img
+                    src="../../assets/img/experiences/journeys/Owharoa Falls, Coromandel.jpg"
+                    alt="Owharoa Falls, Coromandel"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </figure>
+              </div>
+              <button
+                type="button"
+                class="cycling-carousel__btn cycling-carousel__btn--prev"
+                aria-label="Previous route"
+                data-cycling-prev
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+              </button>
+              <button
+                type="button"
+                class="cycling-carousel__btn cycling-carousel__btn--next"
+                aria-label="Next route"
+                data-cycling-next
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" /></svg>
+              </button>
+              <div class="cycling-carousel__dots" role="tablist" aria-label="Choose a route" data-cycling-dots></div>
+            </div>
           </div>
           <div class="copy">
-            <h2 class="journey-title">Cycling &amp; trail journeys</h2>
-          
+            <h2 class="journey-title" id="cycling-heading">Cycling &amp; trail journeys</h2>
             <p class="journey-intro">
               Wheels on gravel or smooth trail — the land opens at a rider’s pace.
             </p>
-          
-            <ul class="journey-list">
-          
-              <li>
-                <a href="https://haurakirailtrail.co.nz/" target="_blank" rel="noopener">
-                  Hauraki Rail Trail
-                </a>
-                <a class="journey-pod" href="https://purepods.com/booking/?force_site_id=7" target="_blank" rel="noopener">
-                  Stay at Ruru, Coromandel →
-                </a>
-              </li>
-          
-              <li>
-                <a href="https://www.centralotagonz.com/explore/listing/alexandra-river-track/" target="_blank" rel="noopener">
-                  Clyde–Alexandra River Trail
-                </a>
-                <div class="journey-pods">
-                  <span class="journey-pod-label">Stay at</span>
-                  <a class="journey-pod-link" href="https://purepods.com/booking/?force_site_id=9" target="_blank" rel="noopener">Haurapa</a>
-                  <span class="journey-pod-separator">or</span>
-                  <a class="journey-pod-link" href="https://purepods.com/booking/?force_site_id=13" target="_blank" rel="noopener">Tāima →</a>
-                </div>
-              </li>
-          
-              <li>
-                <a href="https://www.bikeparks.co.nz/es" target="_blank" rel="noopener">
-                  Woodhill Mountain Bike Park
-                </a>
-                <a class="journey-pod" href="https://purepods.com/booking/?force_site_id=15" target="_blank" rel="noopener">
-                  Stay at Rewarewa, Muriwai coast →
-                </a>
-              </li>
-          
-              <li>
-                <a href="https://www.centralotagonz.com/tracks-and-trails/lake-dunstan-trail/map-and-sections/" target="_blank" rel="noopener">
-                  Lake Dunstan Trail
-                </a>
-                <div class="journey-pods">
-                  <span class="journey-pod-label">Stay at</span>
-                  <a class="journey-pod-link" href="https://purepods.com/booking/?force_site_id=9" target="_blank" rel="noopener">Haurapa</a>
-                  <span class="journey-pod-separator">or</span>
-                  <a class="journey-pod-link" href="https://purepods.com/booking/?force_site_id=13" target="_blank" rel="noopener">Tāima →</a>
-                </div>
-              </li>
-          
-              <li>
-                <a href="https://share.google/4ihlG4uLjK3q43Syt" target="_blank" rel="noopener">
-                  Rakahuri &amp; Pegasus Bay Trails
-                </a>
-                <a class="journey-pod" href="https://purepods.com/booking/?force_site_id=3" target="_blank" rel="noopener">
-                  Stay at Greystone, Waipara →
-                </a>
-              </li>
-          
-            </ul>
+            <div class="cycling-panel" aria-live="polite" aria-atomic="true" aria-labelledby="cycling-heading">
+              <a
+                class="cycling-place-link"
+                href="https://haurakirailtrail.co.nz/"
+                target="_blank"
+                rel="noopener"
+                data-cycling-place-link
+              >Hauraki Rail Trail</a>
+              <p class="cycling-desc" data-cycling-desc>
+                A scenic and relaxed cycling journey following historic railway lines through lush countryside, rivers and charming towns. Perfect for all levels, with plenty of stops to enjoy the landscape along the way.
+              </p>
+              <div class="cycling-ctas" data-cycling-ctas>
+                <a
+                  class="journey-pod cycling-pod-cta"
+                  href="https://purepods.com/booking/?force_site_id=7"
+                  target="_blank"
+                  rel="noopener"
+                >Stay at Ruru, Coromandel →</a>
+              </div>
+            </div>
           </div>
+        </div>
       </article>
     </section>
 
@@ -1390,6 +1571,171 @@
           dot.className = "hiking-carousel__dot" + (ji === 0 ? " is-active" : "");
           dot.setAttribute("role", "tab");
           dot.setAttribute("aria-label", "Show hike " + (ji + 1) + " of " + n);
+          dot.setAttribute("aria-selected", ji === 0 ? "true" : "false");
+          dot.tabIndex = ji === 0 ? 0 : -1;
+          dot.addEventListener("click", function () {
+            goTo(ji);
+            root.focus();
+          });
+          dotsHost.appendChild(dot);
+          dots.push(dot);
+        })(j);
+      }
+
+      prevBtn.addEventListener("click", function () {
+        step(-1);
+      });
+      nextBtn.addEventListener("click", function () {
+        step(1);
+      });
+
+      root.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          step(-1);
+        } else if (e.key === "ArrowRight") {
+          e.preventDefault();
+          step(1);
+        }
+      });
+
+      goTo(0);
+    })();
+
+    (function () {
+      var root = document.querySelector("[data-cycling-carousel]");
+      if (!root) return;
+
+      var slides = root.querySelectorAll("[data-cycling-slide]");
+      var prevBtn = root.querySelector("[data-cycling-prev]");
+      var nextBtn = root.querySelector("[data-cycling-next]");
+      var dotsHost = root.querySelector("[data-cycling-dots]");
+      var placeLink = root.parentElement.querySelector("[data-cycling-place-link]");
+      var descEl = root.parentElement.querySelector("[data-cycling-desc]");
+      var ctasHost = root.parentElement.querySelector("[data-cycling-ctas]");
+
+      if (!placeLink || !descEl || !ctasHost) return;
+
+      var base = "../../assets/img/experiences/journeys/";
+      var data = [
+        {
+          image: base + "Hauraki Rail Trail, coromandel.jpg",
+          alt: "Hauraki Rail Trail",
+          title: "Hauraki Rail Trail",
+          placeHref: "https://haurakirailtrail.co.nz/",
+          description:
+            "A scenic and relaxed cycling journey following historic railway lines through lush countryside, rivers and charming towns. Perfect for all levels, with plenty of stops to enjoy the landscape along the way.",
+          ctas: [{ label: "Stay at Ruru, Coromandel →", href: "https://purepods.com/booking/?force_site_id=7" }],
+        },
+        {
+          image: base + "Clyde–Alexandra River Trail,Central Otago.png",
+          alt: "Clyde–Alexandra River Trail",
+          title: "Clyde–Alexandra River Trail",
+          placeHref: "https://www.centralotagonz.com/explore/listing/alexandra-river-track/",
+          description:
+            "A gentle riverside ride through Central Otago’s dramatic landscapes, weaving between vineyards, orchards and rugged cliffs. A peaceful and picturesque trail rich in local character.",
+          ctas: [
+            { label: "Stay at Haurapa, Central Otago →", href: "https://purepods.com/booking/?force_site_id=9" },
+            { label: "Stay at Tāima, Central Otago →", href: "https://purepods.com/booking/?force_site_id=13" },
+          ],
+        },
+        {
+          image: base + "Woodhill Mountain Bike Park, Muriwai coast.jpg",
+          alt: "Woodhill Mountain Bike Park",
+          title: "Woodhill Mountain Bike Park",
+          placeHref: "https://www.bikeparks.co.nz/es",
+          description:
+            "A purpose-built riding destination set within a vast pine forest, offering trails for every level from flowing beginner tracks to technical downhill lines. A must-visit for mountain biking enthusiasts near Auckland.",
+          ctas: [{ label: "Stay at Rewarewa, Muriwai coast →", href: "https://purepods.com/booking/?force_site_id=15" }],
+        },
+        {
+          image: base + "Lake Dunstan Trail, Central Otago.jpg",
+          alt: "Lake Dunstan Trail",
+          title: "Lake Dunstan Trail",
+          placeHref: "https://www.centralotagonz.com/tracks-and-trails/lake-dunstan-trail/map-and-sections/",
+          description:
+            "An iconic ride carved into cliffs above turquoise waters, featuring suspended boardwalks and breathtaking views. A unique blend of engineering and natural beauty in Central Otago.",
+          ctas: [
+            { label: "Stay at Haurapa, Central Otago →", href: "https://purepods.com/booking/?force_site_id=9" },
+            { label: "Stay at Tāima, Central Otago →", href: "https://purepods.com/booking/?force_site_id=13" },
+          ],
+        },
+        {
+          image: base + "Owharoa Falls, Coromandel.jpg",
+          alt: "Owharoa Falls, Coromandel",
+          title: "Owharoa Falls, Coromandel",
+          placeHref:
+            "https://waterfalls.co.nz/waterfalls-by-region/87-new-zealand-waterfalls/north-island/waikato/108-owharoa-falls",
+          description:
+            "A beautiful multi-tiered waterfall surrounded by lush native bush, easily accessible and perfect for a refreshing stop. A serene spot to relax, swim, and enjoy the peaceful sounds of nature.",
+          ctas: [{ label: "Stay at Ruru, Coromandel →", href: "https://purepods.com/booking/?force_site_id=7" }],
+        },
+      ];
+
+      var n = data.length;
+      var index = 0;
+      var dots = [];
+
+      function syncSlideImages() {
+        for (var i = 0; i < n; i++) {
+          var fig = slides[i];
+          if (!fig) continue;
+          var img = fig.querySelector("img");
+          if (!img) continue;
+          img.src = data[i].image;
+          img.alt = data[i].alt;
+        }
+      }
+
+      function renderCtas(ctas) {
+        ctasHost.innerHTML = "";
+        for (var c = 0; c < ctas.length; c++) {
+          var item = ctas[c];
+          var a = document.createElement("a");
+          a.className = "journey-pod cycling-pod-cta";
+          a.href = item.href;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.textContent = item.label;
+          ctasHost.appendChild(a);
+        }
+      }
+
+      function setActiveDot(i) {
+        for (var d = 0; d < dots.length; d++) {
+          dots[d].classList.toggle("is-active", d === i);
+          dots[d].setAttribute("aria-selected", d === i ? "true" : "false");
+          dots[d].tabIndex = d === i ? 0 : -1;
+        }
+      }
+
+      function goTo(i) {
+        index = ((i % n) + n) % n;
+        for (var s = 0; s < slides.length; s++) {
+          slides[s].classList.toggle("is-active", s === index);
+        }
+        setActiveDot(index);
+        var item = data[index];
+        placeLink.textContent = item.title;
+        placeLink.href = item.placeHref;
+        descEl.textContent = item.description;
+        renderCtas(item.ctas);
+        root.setAttribute("aria-label", "Cycling: " + item.title);
+      }
+
+      function step(delta) {
+        goTo(index + delta);
+      }
+
+      syncSlideImages();
+
+      for (var j = 0; j < n; j++) {
+        (function (ji) {
+          var dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "cycling-carousel__dot" + (ji === 0 ? " is-active" : "");
+          dot.setAttribute("role", "tab");
+          dot.setAttribute("aria-label", "Show route " + (ji + 1) + " of " + n);
           dot.setAttribute("aria-selected", ji === 0 ? "true" : "false");
           dot.tabIndex = ji === 0 ? 0 : -1;
           dot.addEventListener("click", function () {
