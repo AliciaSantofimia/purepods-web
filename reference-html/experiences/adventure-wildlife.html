@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adventure & Wildlife | PurePods — Outdoor Nature Experiences in New Zealand</title>
+  <meta name="description" content="Explore adventure and wildlife inspiration across New Zealand with PurePods. Draft experience blocks include outdoor and nature placeholders, practical links, and booking pathways to nearby glass eco-cabin stays." />
+  <link rel="canonical" href="https://purepods.com/experiences/adventure-wildlife/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PurePods" />
+  <meta property="og:title" content="Adventure &amp; Wildlife | PurePods — Outdoor Nature Experiences in New Zealand" />
+  <meta property="og:description" content="Outdoor and wildlife-focused experience drafts across New Zealand, with clear external reference links and PurePods booking pathways." />
+  <meta property="og:url" content="https://purepods.com/experiences/adventure-wildlife/" />
+  <meta property="og:image" content="https://purepods.com/assets/img/experiences/adventure-wildlife/og-adventure-wildlife.jpg" />
+  <meta property="og:locale" content="en_NZ" />
+  <meta property="og:image:alt" content="Hiker observing native landscape during a New Zealand outdoor experience" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Adventure &amp; Wildlife | PurePods — Outdoor Nature Experiences in New Zealand" />
+  <meta name="twitter:description" content="Draft outdoor and wildlife experience structure with practical links and nearby PurePods booking pathways." />
+  <meta name="twitter:image" content="https://purepods.com/assets/img/experiences/adventure-wildlife/og-adventure-wildlife.jpg" />
+  <meta name="twitter:site" content="@PUREPODS" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Serif+Display:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="../../assets/img/experiences/placeholders/adventure-hero-placeholder.jpg" />
+  <style>
+    :root { --bg:#F7F6F3; --ink:#5C5F3E; --muted:rgba(92,95,62,.72); --card:rgba(255,255,255,.85); --stroke:rgba(92,95,62,.18); --brand-green:#5C5F3E; --brand-beige:#C2B59E; --radius:24px; --shadow:0 18px 40px rgba(92,95,62,.16); --shadow-soft:0 10px 24px rgba(92,95,62,.10); --max:1120px; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--ink); background:var(--bg); line-height:1.45; }
+    a { color:inherit; text-decoration:none; }
+    img { max-width:100%; display:block; }
+    .wrap { width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+    .nav { position:sticky; top:0; z-index:30; background:rgba(247,246,243,.78); backdrop-filter:blur(10px); border-bottom:1px solid var(--stroke); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:16px; flex-wrap:wrap; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .brand img { width:42px; height:42px; border-radius:999px; }
+    .brand b { letter-spacing:.08em; font-weight:600; font-size:14px; }
+    .links { display:flex; gap:18px; align-items:center; flex-wrap:wrap; }
+    .links a { font-size:13px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); }
+    .links a:hover { color:var(--ink); }
+    .btn-primary { background:#45482f; color:#fff; padding:12px 24px; border-radius:999px; font-weight:700; font-size:14px; border:1px solid #2f3222; }
+    .hero { position:relative; min-height:72vh; display:grid; align-items:end; overflow:hidden; border-bottom:1px solid var(--stroke); }
+    .hero img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+    .hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(17,18,23,.06),rgba(17,18,23,.46)); z-index:1; }
+    .heroInner { position:relative; z-index:2; width:100%; max-width:980px; margin:0 auto; padding:56px 14px 44px; color:#fff; }
+    .hero h1 { margin:0; font-family:"Noto Serif Display",Georgia,serif; font-weight:500; font-size:clamp(32px,5vw,42px); letter-spacing:-.02em; line-height:1.06; max-width:16ch; text-shadow:0 2px 18px rgba(0,0,0,.35); }
+    .impact-summary { margin:12px 0 0; max-width:min(62ch, calc(100% - 8px)); line-height:1.55; font-size:15px; color:rgba(255,255,255,.92); text-shadow:0 2px 14px rgba(0,0,0,.25); }
+    .btnGhost { display:inline-block; margin-top:16px; font-size:13px; font-weight:800; border:1px solid rgba(255,255,255,.22); background:rgba(255,255,255,.12); color:#fff; padding:10px 14px; border-radius:999px; }
+    section { padding:56px 0; }
+    .surface { padding:22px; border-radius:26px; border:1px solid var(--stroke); background:var(--card); box-shadow:var(--shadow-soft); }
+    .lead { margin:0 auto; max-width:70ch; color:var(--muted); line-height:1.65; font-size:16px; text-align:center; }
+    .chapter { margin-top:56px; padding-top:48px; border-top:1px solid var(--stroke); }
+    .chapter:first-of-type { margin-top:0; padding-top:0; border-top:0; }
+    .moment { display:grid; grid-template-columns:1.05fr .95fr; gap:28px; align-items:center; }
+    .media { border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--stroke); aspect-ratio:4/3; background:var(--brand-beige); }
+    .media img { width:100%; height:100%; object-fit:cover; }
+    .copy h2 { margin:0 0 10px; font-size:clamp(22px,2.4vw,28px); font-weight:600; letter-spacing:-.02em; color:var(--brand-green); }
+    .copy p { margin:0 0 16px; color:var(--muted); font-size:15px; line-height:1.6; }
+    .links-row { display:flex; flex-direction:column; align-items:flex-start; gap:10px; }
+    .external-link { font-weight:600; border-bottom:1px solid transparent; }
+    .external-link:hover { border-bottom-color:var(--brand-beige); }
+    .journey-pod { font-weight:500; color:var(--brand-green); }
+    .journey-pod .journey-pod-name { font-weight:700; color:var(--ink); }
+    .pod-bridge { background:linear-gradient(135deg, rgba(92,95,62,.08), rgba(194,181,158,.14)); border-top:1px solid var(--stroke); border-bottom:1px solid var(--stroke); }
+    .pod-bridge h2 { margin:0 0 14px; font-size:clamp(22px,2.3vw,28px); font-weight:600; letter-spacing:-.02em; text-align:center; }
+    .pod-bridge p { margin:0; color:var(--muted); font-size:16px; line-height:1.65; text-align:center; max-width:70ch; margin-inline:auto; }
+    .pod-bridge p + p { margin-top:12px; }
+    .faq { border-top:1px solid var(--stroke); }
+    .faq h2 { margin:0 0 22px; text-align:center; font-size:clamp(22px,2.2vw,26px); font-weight:600; letter-spacing:-.02em; }
+    .faq ul { list-style:none; margin:0; padding:0; }
+    .faq li { padding:18px 0; border-bottom:1px solid var(--stroke); }
+    .faq li:last-child { border-bottom:0; }
+    .faq h3 { margin:0 0 8px; font-size:16px; font-weight:600; line-height:1.35; }
+    .faq p { margin:0; font-size:15px; line-height:1.6; color:var(--muted); }
+    .cta { background:linear-gradient(135deg, rgba(92,95,62,.12), rgba(194,181,158,.2)); border-top:1px solid var(--stroke); }
+    .cta-panel { width:min(720px, 100%); margin:0 auto; padding:40px 28px; border-radius:26px; border:1px solid var(--stroke); background:var(--card); box-shadow:var(--shadow-soft); text-align:center; }
+    .eyebrow { margin:0 0 12px; font-size:12px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
+    .cta-support { margin:16px 0 0; font-size:14px; color:var(--muted); line-height:1.55; }
+    footer { padding:28px 0; color:var(--muted); font-size:13px; border-top:1px solid var(--stroke); }
+    .foot { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; }
+    @media (max-width:900px) { .moment { grid-template-columns:1fr; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://purepods.com/experiences/adventure-wildlife/#webpage",
+        "name": "Adventure & Wildlife | PurePods",
+        "description": "Exploratory adventure and wildlife experiences in New Zealand, paired with PurePods glass eco-cabin stays.",
+        "url": "https://purepods.com/experiences/adventure-wildlife/",
+        "inLanguage": "en-NZ"
+      },
+      {
+        "@type": "TouristAttraction",
+        "@id": "https://purepods.com/experiences/adventure-wildlife/#experience",
+        "name": "Adventure & Wildlife — Exploratory Experience",
+        "description": "Draft exploratory structure for outdoor and wildlife-focused experiences linked to nearby PurePods booking pathways.",
+        "url": "https://purepods.com/experiences/adventure-wildlife/"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://purepods.com/experiences/adventure-wildlife/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does this Adventure & Wildlife page include?",
+            "acceptedAnswer": { "@type": "Answer", "text": "This draft page groups outdoor and wildlife-oriented experience blocks with a visual placeholder, a short practical description, an external reference link and a PurePods booking pathway." }
+          },
+          {
+            "@type": "Question",
+            "name": "Are these final destinations and wildlife operators?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. This version uses replaceable placeholders so final routes, operators and regional pairings can be added once they are confirmed." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I continue to booking from this page?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Each block includes a direct PurePods booking pathway, and the main call to action also leads to booking to check live availability and site details." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="wrap nav-inner">
+      <a class="brand" href="../home/index.html" aria-label="PurePods Home">
+        <img src="../../assets/img/purepods-logo-new-zealand.jpg" width="42" height="42" alt="PurePods logo" />
+        <b>PurePods</b>
+      </a>
+      <div class="links">
+        <a href="experiences.html">Experiences</a>
+        <a href="#blocks">Highlights</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn-primary" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <img src="../../assets/img/experiences/placeholders/adventure-hero-placeholder.jpg" alt="Outdoor New Zealand landscape placeholder for Adventure and Wildlife hero image" width="1920" height="1080" fetchpriority="high" />
+    <div class="heroInner">
+      <h1>Adventure &amp; Wildlife</h1>
+      <p class="impact-summary">Adventure &amp; Wildlife brings together draft outdoor experience blocks for New Zealand travel planning with PurePods. The page is structured for route, nature and wildlife examples, each paired with a practical external reference link and a direct booking pathway to a nearby glass eco-cabin stay.</p>
+      <a class="btnGhost" href="#about">Read on</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="about" aria-labelledby="about-heading">
+      <div class="wrap">
+        <div class="surface">
+          <h2 id="about-heading" style="position:absolute;left:-9999px;">About this page</h2>
+          <p class="lead">This draft page uses a consistent Experience structure: hero, short orientation, themed content blocks, pod bridge, FAQ and final booking CTA. Each block is intentionally replaceable with verified final content. See all themes on <a href="experiences.html">Experiences</a> and quick answers in the <a href="#faq">FAQ</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="blocks" aria-label="Adventure and wildlife content blocks">
+      <section class="journey-chapter chapter" id="marine-wildlife" aria-labelledby="marine-wildlife-heading">
+        <style>
+          #marine-wildlife .journey-title {
+            font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--brand-green);
+          }
+          #marine-wildlife .journey-carousel.hiking-carousel {
+            position: relative;
+            display: block;
+          }
+          #marine-wildlife .journey-carousel.hiking-carousel:focus-visible {
+            outline-offset: 4px;
+          }
+          #marine-wildlife .journey-carousel .hiking-carousel__viewport {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            border-radius: inherit;
+            overflow: hidden;
+            background: var(--brand-beige);
+          }
+          #marine-wildlife .journey-carousel .hiking-carousel__slides {
+            position: absolute;
+            inset: 0;
+            margin: 0;
+          }
+          #marine-wildlife .journey-item.hiking-carousel__slide {
+            position: absolute;
+            inset: 0;
+            margin: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            pointer-events: none;
+          }
+          #marine-wildlife .journey-item.hiking-carousel__slide.is-active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            z-index: 1;
+          }
+          #marine-wildlife .journey-item.hiking-carousel__slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
+          #marine-wildlife .hiking-carousel__btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+            border: 1px solid var(--stroke);
+            background: var(--card);
+            color: var(--ink);
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            padding: 0;
+            box-shadow: var(--shadow-soft);
+            transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+          }
+          #marine-wildlife .hiking-carousel__btn:hover {
+            background: #fff;
+            border-color: rgba(92, 95, 62, 0.28);
+          }
+          #marine-wildlife .hiking-carousel__btn--prev {
+            left: 12px;
+          }
+          #marine-wildlife .hiking-carousel__btn--next {
+            right: 12px;
+          }
+          #marine-wildlife .hiking-carousel__btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+          }
+          #marine-wildlife .hiking-carousel__dots {
+            position: absolute;
+            left: 50%;
+            bottom: 14px;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(247, 246, 243, 0.26);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(92, 95, 62, 0.14);
+          }
+          #marine-wildlife .hiking-carousel__dot {
+            width: 8px;
+            height: 8px;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            background: rgba(92, 95, 62, 0.18);
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+          }
+          #marine-wildlife .hiking-carousel__dot:hover {
+            background: rgba(92, 95, 62, 0.34);
+          }
+          #marine-wildlife .hiking-carousel__dot.is-active {
+            background: var(--brand-green);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.55);
+            transform: scale(1.15);
+          }
+          #marine-wildlife .hiking-place-link {
+            display: inline-block;
+            margin: 0 0 12px;
+            font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            font-size: clamp(17px, 1.9vw, 20px);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+          }
+          #marine-wildlife .hiking-place-link:hover {
+            border-bottom-color: var(--brand-beige);
+            opacity: 0.92;
+          }
+          #marine-wildlife .hiking-desc {
+            margin: 0 0 18px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--muted);
+          }
+          #marine-wildlife .hiking-ctas {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+          }
+          #marine-wildlife .hiking-ctas .journey-pod {
+            margin-left: 0;
+            white-space: normal;
+          }
+        </style>
+        <div class="moment">
+          <div
+            class="media journey-carousel hiking-carousel"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Marine and iconic wildlife experiences"
+            tabindex="0"
+            data-marine-carousel
+          >
+            <div class="hiking-carousel__viewport">
+              <div class="hiking-carousel__slides">
+                <figure class="journey-item hiking-carousel__slide is-active" data-marine-slide="0">
+                  <img
+                    src=../assets/img/experiences/adventure-wildlife/kaikoura-whale-watch-sperm-whale-coast-new-zealand.jpg
+                    alt="Sperm whale surfacing off the Kaikōura coast with mountains in New Zealand"
+                    width="800"
+                    height="600"
+                    loading="eager"
+                    fetchpriority="high"
+                  />
+                </figure>
+                <figure class="journey-item hiking-carousel__slide" data-marine-slide="1">
+                  <img
+                    src="../../assets/img/experiences/experiences/kaikoura-seal-swim-underwater-marine-wildlife-new-zealand.jpg"
+                    alt="Seal swimming underwater during a Kaikōura marine wildlife experience in New Zealand"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure class="journey-item hiking-carousel__slide" data-marine-slide="2">
+                  <img
+                    src="../../assets/img/experiences/adventure-wildlife/akaroa-dolphin-swim-hectors-dolphins-ocean-new-zealand.jpg"
+                    alt="Hector's dolphins swimming in the ocean in Akaroa, New Zealand"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure class="journey-item hiking-carousel__slide" data-marine-slide="3">
+                  <img
+                    src="../../assets/img/experiences/adventure-wildlife/pohatu-penguins-akaroa-wildlife-sanctuary-new-zealand.jpg"
+                    alt="Little blue penguins at Pohatu wildlife sanctuary in Akaroa, New Zealand"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure class="journey-item hiking-carousel__slide" data-marine-slide="4">
+                  <img
+                    src="../../assets/img/experiences/adventure-wildlife/auckland-whale-dolphin-safari-boat-marine-wildlife-new-zealand.jpg"
+                    alt="Auckland Whale and Dolphin Safari boat observing marine wildlife in the Hauraki Gulf, New Zealand"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </figure>
+              </div>
+              <button
+                type="button"
+                class="hiking-carousel__btn hiking-carousel__btn--prev"
+                aria-label="Previous experience"
+                data-marine-prev
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+              </button>
+              <button
+                type="button"
+                class="hiking-carousel__btn hiking-carousel__btn--next"
+                aria-label="Next experience"
+                data-marine-next
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" /></svg>
+              </button>
+              <div class="hiking-carousel__dots" role="tablist" aria-label="Choose an experience" data-marine-dots></div>
+            </div>
+          </div>
+          <div class="copy">
+            <h2 class="journey-title" id="marine-wildlife-heading">Marine &amp; iconic wildlife</h2>
+            <div class="hiking-panel" aria-live="polite" aria-atomic="true" aria-labelledby="marine-wildlife-heading">
+              <a
+                class="hiking-place-link"
+                href="https://whalewatch.co.nz/kia-ora/"
+                target="_blank"
+                rel="noopener"
+                data-marine-place-link
+              >Whale Watch Kaikōura</a>
+              <p class="hiking-desc" data-marine-desc>
+                A boat-based whale watching experience in Kaikōura, known for reliable year-round sightings of sperm whales along with dolphins and seabirds. The tours depart from the coast and provide close-up views of marine wildlife in a unique deep-water environment.
+              </p>
+              <div class="hiking-ctas" data-marine-ctas>
+                <a
+                  class="journey-pod hiking-pod-cta"
+                  href="https://purepods.com/booking/?force_site_id=1"
+                  target="_blank"
+                  rel="noopener"
+                >Stay at <strong class="journey-pod-name">Kahutara</strong> →</a>
+                <a
+                  class="journey-pod hiking-pod-cta"
+                  href="https://purepods.com/booking/?force_site_id=2"
+                  target="_blank"
+                  rel="noopener"
+                >Stay at <strong class="journey-pod-name">Manakau</strong> →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          (function () {
+            function journeyFillStayAtCta(anchorEl, label) {
+              if (!anchorEl || !label) return;
+              var prefix = "Stay at ";
+              var suffix = " →";
+              anchorEl.textContent = "";
+              if (
+                label.length >= prefix.length + suffix.length &&
+                label.indexOf(prefix) === 0 &&
+                label.slice(-suffix.length) === suffix
+              ) {
+                var pod = label.slice(prefix.length, label.length - suffix.length);
+                anchorEl.appendChild(document.createTextNode(prefix));
+                var strongEl = document.createElement("strong");
+                strongEl.className = "journey-pod-name";
+                strongEl.textContent = pod;
+                anchorEl.appendChild(strongEl);
+                anchorEl.appendChild(document.createTextNode(suffix));
+              } else {
+                anchorEl.textContent = label;
+              }
+            }
+
+            var root = document.querySelector("#marine-wildlife [data-marine-carousel]");
+            if (!root) return;
+
+            var slides = root.querySelectorAll("[data-marine-slide]");
+            var prevBtn = root.querySelector("[data-marine-prev]");
+            var nextBtn = root.querySelector("[data-marine-next]");
+            var dotsHost = root.querySelector("[data-marine-dots]");
+            var placeLink = root.parentElement.querySelector("[data-marine-place-link]");
+            var descEl = root.parentElement.querySelector("[data-marine-desc]");
+            var ctasHost = root.parentElement.querySelector("[data-marine-ctas]");
+
+            if (!placeLink || !descEl || !ctasHost) return;
+
+            var data = [
+              {
+                image: "../../assets/img/experiences/adventure-wildlife/kaikoura-whale-watch-sperm-whale-coast-new-zealand.jpg",
+                alt: "Sperm whale surfacing off the Kaikōura coast with mountains in New Zealand",
+                title: "Whale Watch Kaikōura",
+                placeHref: "https://whalewatch.co.nz/kia-ora/",
+                description:
+                  "A boat-based whale watching experience in Kaikōura, known for reliable year-round sightings of sperm whales along with dolphins and seabirds. The tours depart from the coast and provide close-up views of marine wildlife in a unique deep-water environment.",
+                ctas: [
+                  { label: "Stay at Kahutara →", href: "https://purepods.com/booking/?force_site_id=1" },
+                  { label: "Stay at Manakau →", href: "https://purepods.com/booking/?force_site_id=2" },
+                ],
+              },
+              {
+                image: "../../assets/img/experiences/adventure-wildlife/kaikoura-seal-swim-underwater-marine-wildlife-new-zealand.jpg",
+                alt: "Seal swimming underwater during a Kaikōura marine wildlife experience in New Zealand",
+                title: "Seal Swim Kaikōura",
+                placeHref: "https://www.sealswimkaikoura.co.nz/",
+                description:
+                  "A guided in-water experience swimming with wild New Zealand fur seals along the Kaikōura coastline. Small groups enter the ocean with experienced guides to observe and interact respectfully with seals in their natural marine environment.",
+                ctas: [
+                  { label: "Stay at Kahutara →", href: "https://purepods.com/booking/?force_site_id=1" },
+                  { label: "Stay at Manakau →", href: "https://purepods.com/booking/?force_site_id=2" },
+                ],
+              },
+              {
+                image: "../../assets/img/experiences/adventure-wildlife/akaroa-dolphin-swim-hectors-dolphins-ocean-new-zealand.jpg",
+                alt: "Hector's dolphins swimming in the ocean in Akaroa, New Zealand",
+                title: "Swimming with Dolphins",
+                placeHref: "https://www.akaroaadventurecentre.co.nz/activities",
+                description:
+                  "A guided boat experience in Akaroa Harbour where you can observe or swim alongside Hector's dolphins, one of the world's smallest and rarest dolphin species. The tour focuses on respectful wildlife interaction within a protected coastal environment.",
+                ctas: [{ label: "Stay at Pōhue →", href: "https://purepods.com/booking/?force_site_id=4" }],
+              },
+              {
+                image: "../../assets/img/experiences/adventure-wildlife/pohatu-penguins-akaroa-wildlife-sanctuary-new-zealand.jpg",
+                alt: "Little blue penguins at Pohatu wildlife sanctuary in Akaroa, New Zealand",
+                title: "Pōhatu Penguins / Plunge NZ",
+                placeHref: "https://www.pohatu.co.nz/",
+                description:
+                  "A guided wildlife experience focused on the conservation of little blue penguins in the Pōhatu Marine Reserve, near Akaroa. Tours include access to private farmland and coastal habitats, with opportunities to observe penguins, seabirds and native landscape in a protected environment.",
+                ctas: [{ label: "Stay at Pōhue →", href: "https://purepods.com/booking/?force_site_id=4" }],
+              },
+              {
+                image: "../../assets/img/experiences/adventure-wildlife/auckland-whale-dolphin-safari-boat-marine-wildlife-new-zealand.jpg",
+                alt: "Auckland Whale and Dolphin Safari boat observing marine wildlife in the Hauraki Gulf, New Zealand",
+                title: "Auckland Whale & Dolphin Safari",
+                placeHref: "https://www.aucklandwhaleanddolphinsafari.co.nz/",
+                description:
+                  "A marine wildlife cruise departing from central Auckland, offering the chance to spot dolphins, whales and seabirds in the Hauraki Gulf Marine Park. The experience combines coastal scenery with expert-led interpretation of the region's diverse marine ecosystem.",
+                ctas: [{ label: "Stay at Rewarewa →", href: "https://purepods.com/booking/?force_site_id=15" }],
+              },
+            ];
+
+            var n = data.length;
+            var index = 0;
+            var dots = [];
+
+            function syncSlideImages() {
+              for (var i = 0; i < n; i++) {
+                var fig = slides[i];
+                if (!fig) continue;
+                var img = fig.querySelector("img");
+                if (!img) continue;
+                img.src = data[i].image;
+                img.alt = data[i].alt;
+              }
+            }
+
+            function renderCtas(ctas) {
+              ctasHost.innerHTML = "";
+              for (var c = 0; c < ctas.length; c++) {
+                var item = ctas[c];
+                var a = document.createElement("a");
+                a.className = "journey-pod hiking-pod-cta";
+                a.href = item.href;
+                a.target = "_blank";
+                a.rel = "noopener";
+                journeyFillStayAtCta(a, item.label);
+                ctasHost.appendChild(a);
+              }
+            }
+
+            function setActiveDot(i) {
+              for (var d = 0; d < dots.length; d++) {
+                dots[d].classList.toggle("is-active", d === i);
+                dots[d].setAttribute("aria-selected", d === i ? "true" : "false");
+                dots[d].tabIndex = d === i ? 0 : -1;
+              }
+            }
+
+            function goTo(i) {
+              index = ((i % n) + n) % n;
+              for (var s = 0; s < slides.length; s++) {
+                slides[s].classList.toggle("is-active", s === index);
+              }
+              setActiveDot(index);
+              var item = data[index];
+              placeLink.textContent = item.title;
+              placeLink.href = item.placeHref;
+              descEl.textContent = item.description;
+              renderCtas(item.ctas);
+              root.setAttribute("aria-label", "Marine and iconic wildlife: " + item.title);
+            }
+
+            function step(delta) {
+              goTo(index + delta);
+            }
+
+            syncSlideImages();
+
+            for (var j = 0; j < n; j++) {
+              (function (ji) {
+                var dot = document.createElement("button");
+                dot.type = "button";
+                dot.className = "hiking-carousel__dot" + (ji === 0 ? " is-active" : "");
+                dot.setAttribute("role", "tab");
+                dot.setAttribute("aria-label", "Show experience " + (ji + 1) + " of " + n);
+                dot.setAttribute("aria-selected", ji === 0 ? "true" : "false");
+                dot.tabIndex = ji === 0 ? 0 : -1;
+                dot.addEventListener("click", function () {
+                  goTo(ji);
+                  root.focus();
+                });
+                dotsHost.appendChild(dot);
+                dots.push(dot);
+              })(j);
+            }
+
+            prevBtn.addEventListener("click", function () {
+              step(-1);
+            });
+            nextBtn.addEventListener("click", function () {
+              step(1);
+            });
+
+            root.addEventListener("keydown", function (e) {
+              if (e.key === "ArrowLeft") {
+                e.preventDefault();
+                step(-1);
+              } else if (e.key === "ArrowRight") {
+                e.preventDefault();
+                step(1);
+              }
+            });
+
+            goTo(0);
+          })();
+        </script>
+      </section>
+      <article class="chapter">
+        <div class="moment">
+          <div class="media"><img src="../../assets/img/experiences/placeholders/adventure-block-02.jpg" alt="Placeholder image for a native wildlife observation experience" width="800" height="600" loading="lazy" /></div>
+          <div class="copy">
+            <h2>Wildlife observation placeholder</h2>
+            <p>Use this block for a verified wildlife-focused stop, observation area or guided nature activity. Keep details factual and clear, and include only confirmed information about species context, timing or access where available.</p>
+            <div class="links-row">
+              <a class="external-link" href="https://example.com/replace-with-wildlife-reference" target="_blank" rel="noopener">View wildlife reference (placeholder) →</a>
+              <a class="journey-pod" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Stay at <strong class="journey-pod-name">Nearby PurePod (placeholder)</strong> →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="chapter">
+        <div class="moment">
+          <div class="media"><img src="../../assets/img/experiences/placeholders/adventure-block-03.jpg" alt="Placeholder image for a nature immersion and trail viewpoint experience" width="800" height="600" loading="lazy" /></div>
+          <div class="copy">
+            <h2>Nature immersion placeholder</h2>
+            <p>Use this block for a verified nature immersion highlight such as a lookout, reserve walk or conservation landscape. Keep the copy practical and replaceable so future final curation can add precise names and regional mapping.</p>
+            <div class="links-row">
+              <a class="external-link" href="https://example.com/replace-with-nature-site" target="_blank" rel="noopener">View nature reference (placeholder) →</a>
+              <a class="journey-pod" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Stay at <strong class="journey-pod-name">Nearby PurePod (placeholder)</strong> →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="pod-bridge" aria-labelledby="pod-bridge-heading">
+      <div class="wrap">
+        <h2 id="pod-bridge-heading">From active exploration to quiet overnight stay</h2>
+        <p>After a day focused on landscapes and wildlife, this experience transitions naturally into a PurePods stay. PurePods are glass eco-cabins in remote natural settings, designed for calm immersion in surrounding light, weather and views.</p>
+        <p>Use this section to connect verified activity content with the booking pathway while keeping tone practical, minimal and premium.</p>
+      </div>
+    </section>
+
+    <section class="faq" id="faq" aria-labelledby="faq-heading">
+      <div class="wrap">
+        <div class="surface">
+          <h2 id="faq-heading">Frequently asked questions</h2>
+          <ul>
+            <li><h3>What does this Adventure &amp; Wildlife page include?</h3><p>This draft page groups outdoor and wildlife-oriented experience blocks with a visual placeholder, a short practical description, an external reference link and a PurePods booking pathway.</p></li>
+            <li><h3>Are these final destinations and wildlife operators?</h3><p>No. This version uses replaceable placeholders so final routes, operators and regional pairings can be added once they are confirmed.</p></li>
+            <li><h3>How do I continue to booking from this page?</h3><p>Each block includes a direct PurePods booking pathway, and the main call to action also leads to booking to check live availability and site details.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-heading">
+      <div class="wrap">
+        <div class="cta-panel">
+          <h2 id="cta-heading" class="eyebrow">Adventure &amp; Wildlife</h2>
+          <a class="btn-primary" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Find your PurePod</a>
+          <p class="cta-support">Check booking availability, then align your preferred outdoor experience with a nearby PurePod stay.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <img src="../../assets/img/purepods-logo-new-zealand.jpg" alt="PurePods" width="28" height="28" />
+        <span>Reference · Adventure &amp; Wildlife · PurePods</span>
+      </div>
+      <span>&copy; PurePods</span>
+    </div>
+  </footer>
+</body>
+</html>
