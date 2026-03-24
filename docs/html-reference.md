@@ -519,3 +519,168 @@ generate the correct metadata
 add it properly to the <head> section
 
 A page must not be considered finished until all mandatory SEO elements are implemented.
+
+
+# Advanced SEO: AI & Generative Search Optimization
+
+## 8. Generative Engine Optimization (GEO)
+
+To improve eligibility for AI-generated summaries (Google AI Overviews, ChatGPT, Perplexity) and conversational search results, all pages must follow these AI-ready content principles.
+
+These are **best practices**, not rigid rules, and should always be applied with natural language and editorial judgment.
+
+---
+
+### 8.1 Impact Summary (AI Snippet Optimization)
+
+Each page must include a concise, high-value summary immediately after the `<h1>`.
+
+**Guidelines:**
+- Length: **40–60 words**
+- Must clearly answer:
+  - What the experience is
+  - Where it is located
+  - Why it is unique or valuable
+- Write in a **factual, descriptive tone**, not poetic or vague
+- Avoid generic phrases (e.g., “a place to relax and disconnect”)
+
+**Goal:**
+Create a paragraph that can be directly reused or adapted by AI systems as a summary.
+
+---
+
+### 8.2 Informational Density & Structured Content
+
+Content should prioritize **clear, factual, and specific information** over purely emotional or marketing language.
+
+**Include whenever relevant:**
+- Distances or access details (e.g., “20-minute walk from the secure car park”)
+- Technical or sustainability features (e.g., “100% solar-powered”, “triple-glazed glass”)
+- Location-specific references (e.g., mountain ranges, coastline names, regions)
+
+**Structure guidelines:**
+- Use `<ul>` lists for:
+  - Amenities
+  - Features
+  - Inclusions
+- Do NOT force bullet points where narrative text is more appropriate
+
+**Goal:**
+Make content easy to extract, scan, and interpret by both users and AI systems.
+
+---
+
+### 8.3 Page-Specific Structured Data (JSON-LD)
+
+Each page should include structured data relevant to its content type.
+
+**Pod / Location Pages:**
+Use:
+- `LodgingBusiness` or `Hotel`
+
+**Journey / Experience Pages:**
+Use:
+- `TouristAttraction`
+
+Only use `TravelAgency` if the page clearly represents a booking/service provider context.
+
+**Recommended properties (when accurate and available):**
+- `amenityFeature` (e.g., glass walls, private deck, eco-friendly systems)
+- `address` (region, area, country)
+- `geo` (latitude and longitude) → **ONLY if verified**
+  
+**Important:**
+- Never invent or assume structured data
+- Only include data that is factually correct
+
+---
+
+### 8.4 FAQ Section (Conversational Search Optimization)
+
+Pages should include a short FAQ section at the end when it adds real user value.
+
+**Guidelines:**
+- 3 to 5 questions maximum
+- Questions must reflect **real user intent** (e.g., “How do I get to the PurePod?”)
+- Answers must be:
+  - Clear
+  - Direct
+  - Factual
+- Avoid generic or redundant questions
+
+**Structured Data:**
+- Use `FAQPage` schema markup when a FAQ section is included
+
+**Goal:**
+Capture long-tail and conversational queries while improving AI extractability.
+
+---
+
+### 8.5 General GEO Principles
+
+When generating or editing content:
+
+- Prioritize **clarity over creativity**
+- Prefer **specific details over vague descriptions**
+- Write content that can be easily:
+  - Extracted
+  - Quoted
+  - Summarized
+
+Always balance:
+- SEO performance
+- AI readability
+- Natural human tone
+
+
+---
+
+## 8.6 Impact Summary Validation & Auto-Correction
+
+The agent must validate and, if necessary, automatically rewrite the first paragraph after the `<h1>` to ensure it meets AI-ready summary standards.
+
+### Detection Rules
+
+The agent must check the first paragraph after the `<h1>` and detect if it fails any of the following:
+
+- is missing entirely
+- is shorter than 30 words or longer than 80 words
+- does not clearly explain:
+  - what the experience is
+  - where it is located
+- contains vague or generic language (e.g., “a place to relax”, “disconnect from the world”)
+- lacks concrete or descriptive elements (e.g., glass cabin, off-grid, location reference)
+
+If any of these conditions are met, the paragraph must be rewritten.
+
+---
+
+### Rewrite Rules
+
+When rewriting the Impact Summary, the agent must:
+
+- produce a paragraph between **40–60 words**
+- explicitly include:
+  - the type of experience (e.g., glass cabin, nature retreat, off-grid stay)
+  - the location (region + country)
+  - a clear differentiating value (e.g., 360-degree views, total seclusion, sustainability)
+- use **clear, factual, and descriptive language**
+- avoid poetic, vague, or overly emotional phrasing
+- ensure the text can function as a standalone summary
+
+---
+
+### Output Constraints
+
+- The rewritten paragraph must remain directly after the `<h1>`
+- Do not modify surrounding sections unless necessary
+- Do not duplicate content from other sections
+- Do not introduce unverified or invented information
+
+---
+
+### Priority Rule
+
+Impact Summary optimization has **higher priority than stylistic preservation**.
+
+If a conflict exists between keeping the original text and meeting GEO standards, the agent must prioritize GEO compliance.
