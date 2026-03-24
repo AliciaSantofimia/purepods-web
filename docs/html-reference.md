@@ -684,3 +684,230 @@ When rewriting the Impact Summary, the agent must:
 Impact Summary optimization has **higher priority than stylistic preservation**.
 
 If a conflict exists between keeping the original text and meeting GEO standards, the agent must prioritize GEO compliance.
+
+---
+
+## Experience Landing Page Structure (Experiences Section)
+
+This section applies ONLY to the following Experience landing pages:
+- adventure-wildlife.html
+- wine-dine.html
+- relax-coastal.html
+- culture.html
+- journey.html
+
+It does NOT apply to:
+- journey.html
+- night-falls.html
+- romantic.html
+- pod pages
+- location pages
+- home page
+- any other page types
+
+These other pages follow their own structure rules.
+
+This section defines the required structure for all Experience landing pages inside the Experiences area.
+
+Applies to:
+- adventure-wildlife.html
+- wine-dine.html
+- relax-coastal.html
+- culture.html
+- journey.html
+
+All these pages MUST follow the same structure, logic, and content flow.
+
+---
+
+### Core Principle
+
+All Experience landing pages must feel like a cohesive system.
+
+They must share:
+- identical structural order
+- consistent visual hierarchy
+- the same SEO and GEO implementation
+- the same typography and color system
+- the same brand tone
+
+Variation is allowed ONLY in content, not in structure.
+
+---
+
+## Experience Landing Page Structure (Experiences Section)
+
+This section applies ONLY to the following Experience landing pages:
+- journey.html
+- adventure-wildlife.html
+- wine-dine.html
+- relax-coastal.html
+- culture.html
+
+It does NOT apply to:
+- night-falls.html
+- romantic.html
+- pod pages
+- location pages
+- home page
+- any other page types
+
+These other pages follow their own structure rules.
+
+This section defines the required structure for all exploratory Experience landing pages inside the Experiences area.
+
+All these pages MUST follow the same structure, logic, and content flow.
+
+---
+
+### Core Principle
+
+All Experience landing pages must feel like a cohesive system.
+
+They must share:
+- identical structural order
+- consistent visual hierarchy
+- the same SEO and GEO implementation
+- the same typography and color system
+- the same brand tone
+
+Variation is allowed ONLY in content, not in structure.
+
+---
+
+### Mandatory Page Structure
+
+Each Experience landing page must follow this exact order:
+
+---
+
+#### 1. Hero Section
+
+Must include:
+- one `<h1>`
+- one Impact Summary immediately after the H1
+- one hero image
+- optional anchor CTA
+
+Rules:
+- Impact Summary must follow GEO rules (40–60 words, factual, clear)
+- image must be high-quality, calm, premium
+- H1 must clearly define the experience
+
+---
+
+#### 2. Intro / About Section
+
+A short introductory block explaining:
+- what the experience includes
+- how the page is structured
+- what the user will find
+
+Rules:
+- clear, structured, non-poetic
+- may include internal links (e.g. Experiences, FAQ)
+
+---
+
+#### 3. Experience Content Blocks (MANDATORY)
+
+Each page must include structured content sections representing the experience.
+
+Each block MUST include:
+- a visual element (image or carousel)
+- a place or route name
+- a descriptive paragraph
+- an external link to the place/route
+- an internal link to a related PurePod (booking link)
+
+Rules:
+- both links are mandatory:
+  - external (destination / route)
+  - internal (PurePod booking)
+- content must be factual and descriptive
+- no invented data
+- structure must remain consistent across all blocks
+
+---
+
+#### 4. Pod Bridge Section
+
+Must include:
+- one `<h2>` visible heading
+- one or two paragraphs
+
+Purpose:
+- connect the experience with staying in a PurePod
+
+Rules:
+- must adapt wording to the specific experience (e.g. food, culture, nature)
+- must not invent amenities or features
+- must reflect real PurePods positioning (glass cabins, nature immersion, off-grid)
+
+---
+
+#### 5. FAQ Section (MANDATORY)
+
+Must include:
+- 3 to 5 questions
+- clear, direct answers
+
+Rules:
+- must match FAQPage schema
+- must reflect real user intent
+- no generic or filler questions
+
+---
+
+#### 6. Final CTA Section
+
+Must include:
+- one clear CTA button (e.g. "Find your PurePod")
+- optional supporting text
+
+Rules:
+- CTA must lead to booking
+- tone must remain calm, not aggressive
+
+---
+
+### SEO & GEO Requirements
+
+All Experience landing pages must:
+- include full SEO metadata (title, description, canonical, OG, Twitter)
+- include structured data (WebPage + TouristAttraction + FAQPage)
+- include Impact Summary after H1
+- maintain correct heading hierarchy
+- include descriptive alt text for images
+
+---
+
+### Link Strategy (MANDATORY)
+
+Each experience block must include:
+- one external link → destination / activity
+- one internal link → PurePod booking
+
+This is required for:
+- user flow
+- SEO
+- content structure consistency
+
+---
+
+### Restrictions
+
+The agent MUST NOT:
+- change the structure order
+- remove required sections
+- invent data (locations, distances, amenities)
+- introduce new design styles outside brand guidelines
+- break typography or color system rules
+
+---
+
+### Priority
+
+Structure consistency across Experience landing pages is critical.
+
+If content conflicts with structure rules, structure must be preserved.
