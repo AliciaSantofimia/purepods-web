@@ -10,7 +10,49 @@
 
 .intro {
   color: var(--muted);
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.podList {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+  max-width: 28rem;
+}
+
+.podItem {
+  margin: 0;
+}
+
+.podLink {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--stroke, rgba(92, 95, 62, 0.18));
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--ink, #5c5f3e);
+  background: rgba(255, 255, 255, 0.65);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.podLink:hover {
+  border-color: var(--brand-green, #5c5f3e);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.podName {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.podRegion {
+  font-size: 0.8125rem;
+  color: var(--muted);
 }
 
 .back {

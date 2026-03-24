@@ -21,6 +21,16 @@
   margin-bottom: 0;
 }
 
+.card a {
+  color: var(--brand-green);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: 1fr 1fr;

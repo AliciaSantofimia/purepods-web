@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import { useLightbox } from "@/components/ui/LightboxContext";
@@ -21,6 +22,8 @@ interface ExperiencesSectionProps {
   experiences: ExperienceItem[];
   extraTitle?: string;
   extraParagraphs?: string[];
+  /** Rich extra block (e.g. inline links). When set, used instead of extraParagraphs. */
+  extraBody?: ReactNode;
 }
 
 export function ExperiencesSection({
@@ -30,6 +33,7 @@ export function ExperiencesSection({
   experiences,
   extraTitle,
   extraParagraphs,
+  extraBody,
 }: ExperiencesSectionProps) {
   const lightbox = useLightbox();
 
@@ -82,12 +86,14 @@ export function ExperiencesSection({
             </article>
           ))}
         </div>
-        {extraTitle && extraParagraphs && extraParagraphs.length > 0 && (
+        {extraTitle &&
+          (extraBody != null ||
+            (extraParagraphs && extraParagraphs.length > 0)) && (
           <div className={styles.extra}>
             <h3 className={styles.extraTitle}>{extraTitle}</h3>
-            {extraParagraphs.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
+            {extraBody != null
+              ? extraBody
+              : extraParagraphs!.map((p, i) => <p key={i}>{p}</p>)}
           </div>
         )}
       </div>

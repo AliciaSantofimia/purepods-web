@@ -1,10 +1,12 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import styles from "./LocationHero.module.css";
 
 interface LocationHeroProps {
   title: string;
-  subtitle: string;
+  /** Single line or rich content (e.g. impact summary + poetic lead). */
+  subtitle: string | ReactNode;
   imageSrc: string | StaticImageData;
   imageAlt: string;
   imagePosition?: string;
@@ -17,9 +19,6 @@ export function LocationHero({
   imageAlt,
   imagePosition = "70% 85%",
 }: LocationHeroProps) {
-  const src =
-    typeof imageSrc === "string" ? imageSrc : (imageSrc as StaticImageData).src;
-
   return (
     <section className={styles.hero} aria-labelledby="location-title">
       <div className={styles.media}>
@@ -38,7 +37,11 @@ export function LocationHero({
             <h1 id="location-title" className={styles.title}>
               {title}
             </h1>
-            <p className={styles.subtitle}>{subtitle}</p>
+            {typeof subtitle === "string" ? (
+              <p className={styles.subtitle}>{subtitle}</p>
+            ) : (
+              <div className={styles.subtitleWrap}>{subtitle}</div>
+            )}
           </div>
         </div>
       </div>

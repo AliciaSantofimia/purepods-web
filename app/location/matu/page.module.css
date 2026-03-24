@@ -1,0 +1,10 @@
+/* Extra bottom padding so sticky CTA doesn’t cover content on mobile */
+.locationContent {
+  padding-bottom: 88px;
+}
+
+@media (min-width: 920px) {
+  .locationContent {
+    padding-bottom: 40px;
+  }
+}

@@ -6,3 +6,5 @@ export { ExperiencesSection } from "./ExperiencesSection";
 export type { ExperienceItem } from "./ExperiencesSection";
 export { TravelSection } from "./TravelSection";
 export { LocationCta } from "./LocationCta";
+export { LocationFaqSection } from "./LocationFaqSection";
+export type { LocationFaqItem } from "./LocationFaqSection";

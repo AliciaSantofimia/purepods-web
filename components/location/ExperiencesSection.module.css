@@ -112,6 +112,16 @@
   margin-bottom: 0;
 }
 
+.extra a {
+  color: var(--brand-green);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.extra a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;

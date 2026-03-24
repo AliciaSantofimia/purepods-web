@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import { useLightbox } from "@/components/ui/LightboxContext";
@@ -17,6 +18,8 @@ export interface GalleryImage {
 interface PodSectionProps {
   title: string;
   hint: string;
+  /** Optional rich intro (e.g. inline links) rendered before `paragraphs`. */
+  lead?: ReactNode;
   paragraphs: string[];
   /** Order: [big, fillGap, img, img]. Caption is rendered between big and fillGap in the grid. */
   gallery: GalleryImage[];
@@ -27,6 +30,7 @@ interface PodSectionProps {
 export function PodSection({
   title,
   hint,
+  lead,
   paragraphs,
   gallery,
   galleryCaption,
@@ -43,6 +47,7 @@ export function PodSection({
     <section className={styles.section} aria-labelledby="pod-heading">
       <SectionHeader title={title} hint={hint} />
       <div className={styles.card}>
+        {lead}
         {paragraphs.map((p, i) => (
           <p key={i}>{p}</p>
         ))}
