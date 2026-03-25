@@ -604,6 +604,442 @@
           })();
         </script>
       </section>
+      <section class="journey-chapter chapter" id="adventure-adrenaline" aria-labelledby="adventure-adrenaline-heading">
+        <style>
+          #adventure-adrenaline .journey-title {
+            font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--brand-green);
+          }
+          #adventure-adrenaline .journey-carousel.hiking-carousel {
+            position: relative;
+            display: block;
+          }
+          #adventure-adrenaline .journey-carousel.hiking-carousel:focus-visible {
+            outline-offset: 4px;
+          }
+          #adventure-adrenaline .journey-carousel .hiking-carousel__viewport {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            border-radius: inherit;
+            overflow: hidden;
+            background: var(--brand-beige);
+          }
+          #adventure-adrenaline .journey-carousel .hiking-carousel__slides {
+            position: absolute;
+            inset: 0;
+            margin: 0;
+          }
+          #adventure-adrenaline .journey-item.hiking-carousel__slide {
+            position: absolute;
+            inset: 0;
+            margin: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            pointer-events: none;
+          }
+          #adventure-adrenaline .journey-item.hiking-carousel__slide.is-active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            z-index: 1;
+          }
+          #adventure-adrenaline .journey-item.hiking-carousel__slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
+          #adventure-adrenaline .hiking-carousel__btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+            border: 1px solid var(--stroke);
+            background: var(--card);
+            color: var(--ink);
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            padding: 0;
+            box-shadow: var(--shadow-soft);
+            transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+          }
+          #adventure-adrenaline .hiking-carousel__btn:hover {
+            background: #fff;
+            border-color: rgba(92, 95, 62, 0.28);
+          }
+          #adventure-adrenaline .hiking-carousel__btn--prev {
+            left: 12px;
+          }
+          #adventure-adrenaline .hiking-carousel__btn--next {
+            right: 12px;
+          }
+          #adventure-adrenaline .hiking-carousel__btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+          }
+          #adventure-adrenaline .hiking-carousel__dots {
+            position: absolute;
+            left: 50%;
+            bottom: 14px;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(247, 246, 243, 0.26);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(92, 95, 62, 0.14);
+          }
+          #adventure-adrenaline .hiking-carousel__dot {
+            width: 8px;
+            height: 8px;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            background: rgba(92, 95, 62, 0.18);
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+          }
+          #adventure-adrenaline .hiking-carousel__dot:hover {
+            background: rgba(92, 95, 62, 0.34);
+          }
+          #adventure-adrenaline .hiking-carousel__dot.is-active {
+            background: var(--brand-green);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.55);
+            transform: scale(1.15);
+          }
+          #adventure-adrenaline .hiking-place-link {
+            display: inline-block;
+            margin: 0 0 12px;
+            font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            font-size: clamp(17px, 1.9vw, 20px);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+          }
+          #adventure-adrenaline .hiking-place-link:hover {
+            border-bottom-color: var(--brand-beige);
+            opacity: 0.92;
+          }
+          #adventure-adrenaline .hiking-desc {
+            margin: 0 0 18px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--muted);
+          }
+          #adventure-adrenaline .hiking-ctas {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+          }
+          #adventure-adrenaline .hiking-ctas .journey-pod {
+            margin-left: 0;
+            white-space: normal;
+          }
+        </style>
+        <div class="moment">
+          <div
+            class="media journey-carousel hiking-carousel"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Adventure and adrenaline experiences"
+            tabindex="0"
+            data-adventure-carousel
+          >
+            <div class="hiking-carousel__viewport">
+              <div class="hiking-carousel__slides">
+                <figure class="journey-item hiking-carousel__slide is-active" data-adventure-slide="0">
+                  <img
+                    src="/assets/img/experiences/adventure-wildlife/kaituna-cascades-rafting-rotorua-new-zealand-waterfall-rafting.jpg"
+                    alt="White water rafting at Kaituna Cascades in Rotorua New Zealand going over the highest commercially rafted waterfall surrounded by native forest"
+                    width="800"
+                    height="600"
+                    loading="eager"
+                    fetchpriority="high"
+                  />
+                </figure>
+                <figure class="journey-item hiking-carousel__slide" data-adventure-slide="1">
+                  <img
+                    src="/assets/img/experiences/adventure-wildlife/okere-zipline-rotorua-new-zealand-kaituna-river-forest-zipline.jpg"
+                    alt="Zipline experience over the Kaituna River in Okere Falls Rotorua New Zealand surrounded by native forest"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure class="journey-item hiking-carousel__slide" data-adventure-slide="2">
+                  <img
+                    src="/assets/img/experiences/adventure-wildlife/off-road-4x4-adventure-rotorua-new-zealand-forest-trail-jeep.jpg"
+                    alt="Guided 4x4 off road experience in Rotorua New Zealand driving through native forest terrain"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure class="journey-item hiking-carousel__slide" data-adventure-slide="3">
+                  <img
+                    src="/assets/img/experiences/adventure-wildlife/skydive-auckland-tandem-skydiving-new-zealand-coastal-rural-views.jpg"
+                    alt="Tandem skydive with Skydive Auckland over coastal and rural landscapes in New Zealand with panoramic views"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure class="journey-item hiking-carousel__slide" data-adventure-slide="4">
+                  <img
+                    src="/assets/img/experiences/adventure-wildlife/kaikoura-scenic-flight-whale-view-air-kaikoura-new-zealand-aerial.jpg"
+                    alt="Scenic flight experience with Air Kaikōura viewing a whale from above along the Kaikōura coastline New Zealand"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </figure>
+              </div>
+              <button
+                type="button"
+                class="hiking-carousel__btn hiking-carousel__btn--prev"
+                aria-label="Previous experience"
+                data-adventure-prev
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+              </button>
+              <button
+                type="button"
+                class="hiking-carousel__btn hiking-carousel__btn--next"
+                aria-label="Next experience"
+                data-adventure-next
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" /></svg>
+              </button>
+              <div class="hiking-carousel__dots" role="tablist" aria-label="Choose an experience" data-adventure-dots></div>
+            </div>
+          </div>
+          <div class="copy">
+            <h2 class="journey-title" id="adventure-adrenaline-heading">Adventure &amp; adrenaline</h2>
+            <div class="hiking-panel" aria-live="polite" aria-atomic="true" aria-labelledby="adventure-adrenaline-heading">
+              <a
+                class="hiking-place-link"
+                href="https://kaitunacascades.co.nz/"
+                target="_blank"
+                rel="noopener"
+                data-adventure-place-link
+              >Kaituna Cascades - Rafting</a>
+              <p class="hiking-desc" data-adventure-desc>
+                A guided white water rafting experience on the Kaituna River near Rotorua, known for the Tutea Falls, the highest commercially rafted waterfall in the world. The route combines fast-moving rapids with native forest scenery and expert-led navigation.
+              </p>
+              <div class="hiking-ctas" data-adventure-ctas>
+                <a
+                  class="journey-pod hiking-pod-cta"
+                  href="https://purepods.com/booking/?force_site_id=8"
+                  target="_blank"
+                  rel="noopener"
+                >Stay at <strong class="journey-pod-name">Pāmu</strong> →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          (function () {
+            function journeyFillStayAtCta(anchorEl, label) {
+              if (!anchorEl || !label) return;
+              var prefix = "Stay at ";
+              var suffix = " →";
+              anchorEl.textContent = "";
+              if (
+                label.length >= prefix.length + suffix.length &&
+                label.indexOf(prefix) === 0 &&
+                label.slice(-suffix.length) === suffix
+              ) {
+                var pod = label.slice(prefix.length, label.length - suffix.length);
+                anchorEl.appendChild(document.createTextNode(prefix));
+                var strongEl = document.createElement("strong");
+                strongEl.className = "journey-pod-name";
+                strongEl.textContent = pod;
+                anchorEl.appendChild(strongEl);
+                anchorEl.appendChild(document.createTextNode(suffix));
+              } else {
+                anchorEl.textContent = label;
+              }
+            }
+
+            var root = document.querySelector("#adventure-adrenaline [data-adventure-carousel]");
+            if (!root) return;
+
+            var slides = root.querySelectorAll("[data-adventure-slide]");
+            var prevBtn = root.querySelector("[data-adventure-prev]");
+            var nextBtn = root.querySelector("[data-adventure-next]");
+            var dotsHost = root.querySelector("[data-adventure-dots]");
+            var placeLink = root.parentElement.querySelector("[data-adventure-place-link]");
+            var descEl = root.parentElement.querySelector("[data-adventure-desc]");
+            var ctasHost = root.parentElement.querySelector("[data-adventure-ctas]");
+
+            if (!placeLink || !descEl || !ctasHost) return;
+
+            var data = [
+              {
+                image: "/assets/img/experiences/adventure-wildlife/kaituna-cascades-rafting-rotorua-new-zealand-waterfall-rafting.jpg",
+                alt: "White water rafting at Kaituna Cascades in Rotorua New Zealand going over the highest commercially rafted waterfall surrounded by native forest",
+                title: "Kaituna Cascades - Rafting",
+                placeHref: "https://kaitunacascades.co.nz/",
+                description:
+                  "A guided white water rafting experience on the Kaituna River near Rotorua, known for the Tutea Falls, the highest commercially rafted waterfall in the world. The route combines fast-moving rapids with native forest scenery and expert-led navigation.",
+                ctas: [{ label: "Stay at Pāmu →", href: "https://purepods.com/booking/?force_site_id=8" }],
+              },
+              {
+                image: "/assets/img/experiences/adventure-wildlife/okere-zipline-rotorua-new-zealand-kaituna-river-forest-zipline.jpg",
+                alt: "Zipline experience over the Kaituna River in Okere Falls Rotorua New Zealand surrounded by native forest",
+                title: "Rotorua Ziplines",
+                placeHref: "https://www.rotoruaziplines.nz/",
+                description:
+                  "A guided zipline experience through native forest near Rotorua, combining suspended lines, elevated platforms and ecological restoration insights. The tour moves above and through the canopy, offering a fast-paced but controlled way to experience the landscape.",
+                ctas: [{ label: "Stay at Pāmu →", href: "https://purepods.com/booking/?force_site_id=8" }],
+              },
+              {
+                image: "/assets/img/experiences/adventure-wildlife/off-road-4x4-adventure-rotorua-new-zealand-forest-trail-jeep.jpg",
+                alt: "Guided 4x4 off road experience in Rotorua New Zealand driving through native forest terrain",
+                title: "Off Road NZ (4x4 / motor adventures)",
+                placeHref: "https://offroadnz.co.nz/",
+                description:
+                  "A motor-based adventure experience in Rotorua featuring guided 4x4 tracks, off-road driving and high-adrenaline activities. The courses are designed to navigate steep terrain, mud and obstacles, offering a controlled but intense outdoor driving experience.",
+                ctas: [{ label: "Stay at Pāmu →", href: "https://purepods.com/booking/?force_site_id=8" }],
+              },
+              {
+                image: "/assets/img/experiences/adventure-wildlife/skydive-auckland-tandem-skydiving-new-zealand-coastal-rural-views.jpg",
+                alt: "Tandem skydive with Skydive Auckland over coastal and rural landscapes in New Zealand with panoramic views",
+                title: "Skydive Auckland",
+                placeHref: "https://skydiveauckland.com/",
+                description:
+                  "A tandem skydiving experience departing from Auckland, offering freefall over coastal and rural landscapes before a parachute descent with wide views across the region. The jump is guided by experienced instructors and designed for first-time and returning participants.",
+                ctas: [{ label: "Stay at Rewarewa →", href: "https://purepods.com/booking/?force_site_id=15" }],
+              },
+              {
+                image: "/assets/img/experiences/adventure-wildlife/kaikoura-scenic-flight-whale-view-air-kaikoura-new-zealand-aerial.jpg",
+                alt: "Scenic flight experience with Air Kaikōura viewing a whale from above along the Kaikōura coastline New Zealand",
+                title: "Air Kaikōura (Scenic flights)",
+                placeHref: "https://www.airkaikoura.co.nz/",
+                description:
+                  "A scenic flight experience over Kaikōura, offering aerial views of the coastline, mountain ranges and marine environment. Flights provide a different perspective on the region's geography, with opportunities to observe whales and coastal features from above.",
+                ctas: [
+                  { label: "Stay at Kahutara →", href: "https://purepods.com/booking/?force_site_id=1" },
+                  { label: "Stay at Manakau →", href: "https://purepods.com/booking/?force_site_id=2" },
+                ],
+              },
+            ];
+
+            var n = data.length;
+            var index = 0;
+            var dots = [];
+
+            function syncSlideImages() {
+              for (var i = 0; i < n; i++) {
+                var fig = slides[i];
+                if (!fig) continue;
+                var img = fig.querySelector("img");
+                if (!img) continue;
+                img.src = data[i].image;
+                img.alt = data[i].alt;
+              }
+            }
+
+            function renderCtas(ctas) {
+              ctasHost.innerHTML = "";
+              for (var c = 0; c < ctas.length; c++) {
+                var item = ctas[c];
+                var a = document.createElement("a");
+                a.className = "journey-pod hiking-pod-cta";
+                a.href = item.href;
+                a.target = "_blank";
+                a.rel = "noopener";
+                journeyFillStayAtCta(a, item.label);
+                ctasHost.appendChild(a);
+              }
+            }
+
+            function setActiveDot(i) {
+              for (var d = 0; d < dots.length; d++) {
+                dots[d].classList.toggle("is-active", d === i);
+                dots[d].setAttribute("aria-selected", d === i ? "true" : "false");
+                dots[d].tabIndex = d === i ? 0 : -1;
+              }
+            }
+
+            function goTo(i) {
+              index = ((i % n) + n) % n;
+              for (var s = 0; s < slides.length; s++) {
+                slides[s].classList.toggle("is-active", s === index);
+              }
+              setActiveDot(index);
+              var item = data[index];
+              placeLink.textContent = item.title;
+              placeLink.href = item.placeHref;
+              descEl.textContent = item.description;
+              renderCtas(item.ctas);
+              root.setAttribute("aria-label", "Adventure and adrenaline: " + item.title);
+            }
+
+            function step(delta) {
+              goTo(index + delta);
+            }
+
+            syncSlideImages();
+
+            for (var j = 0; j < n; j++) {
+              (function (ji) {
+                var dot = document.createElement("button");
+                dot.type = "button";
+                dot.className = "hiking-carousel__dot" + (ji === 0 ? " is-active" : "");
+                dot.setAttribute("role", "tab");
+                dot.setAttribute("aria-label", "Show experience " + (ji + 1) + " of " + n);
+                dot.setAttribute("aria-selected", ji === 0 ? "true" : "false");
+                dot.tabIndex = ji === 0 ? 0 : -1;
+                dot.addEventListener("click", function () {
+                  goTo(ji);
+                  root.focus();
+                });
+                dotsHost.appendChild(dot);
+                dots.push(dot);
+              })(j);
+            }
+
+            prevBtn.addEventListener("click", function () {
+              step(-1);
+            });
+            nextBtn.addEventListener("click", function () {
+              step(1);
+            });
+
+            root.addEventListener("keydown", function (e) {
+              if (e.key === "ArrowLeft") {
+                e.preventDefault();
+                step(-1);
+              } else if (e.key === "ArrowRight") {
+                e.preventDefault();
+                step(1);
+              }
+            });
+
+            goTo(0);
+          })();
+        </script>
+      </section>
       <article class="chapter">
         <div class="moment">
           <div class="media"><img src="../../assets/img/experiences/placeholders/adventure-block-02.jpg" alt="Placeholder image for a native wildlife observation experience" width="800" height="600" loading="lazy" /></div>
