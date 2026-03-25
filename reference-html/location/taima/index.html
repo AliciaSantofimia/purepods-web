@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PurePod Tāima: private glass cabin for two above the Kawarau Gorge near Cromwell, Central Otago. Final walk: about 300 metres across gold-mining ground. Wide views, no shared spaces." />
+<link rel="canonical" href="https://purepods.com/location/taima/" />
+<title>Tāima | PurePods</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#F7F6F3;
+    --ink:#5C5F3E;
+    --muted:rgba(92,95,62,.72);
+    --card:rgba(255,255,255,.85);
+    --stroke:rgba(92,95,62,.18);
+    --shadow:0 18px 44px rgba(0,0,0,.08);
+    --r:24px;
+    --r2:18px;
+    --brand-green:#5C5F3E;
+    --brand-beige:#C2B59E;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+  }
+
+  .wrap{max-width:980px;margin:0 auto;padding:18px 14px 88px;}
+
+  .top{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px;}
+  .back{
+    font-size:13px;color:var(--muted);text-decoration:none;
+    border:1px solid var(--stroke);background:rgba(255,255,255,.55);
+    padding:8px 12px;border-radius:999px;
+  }
+  .chips{display:flex;gap:8px;flex-wrap:wrap;}
+  .chip{
+    font-size:12px;color:var(--muted);
+    border:1px solid var(--stroke);
+    background:rgba(255,255,255,.55);
+    padding:7px 10px;border-radius:999px;
+  }
+
+  .hero--full{border:0;border-radius:0;box-shadow:none;background:transparent;}
+  .heroMedia{
+    height: 420px;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+  }
+  .heroMedia img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 55%;
+    display:block;
+  }
+  @media (min-width: 1200px){
+    .heroMedia img{ object-position: 50% 55%; }
+  }
+  @media (min-width: 1600px){
+    .heroMedia{ height: clamp(520px, 75vh, 900px); }
+    .heroMedia img{ object-position: 50% 55%; }
+  }
+  .heroMedia::after{
+    display:none;
+  }
+  .heroOverlay{
+    position:absolute; inset:0; z-index:1;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    padding: 18px 0 16px;
+  }
+  .heroInner{max-width:980px;margin:0 auto;padding: 0 14px;}
+  .heroTitle{
+    margin:0;
+    font-size:34px;
+    letter-spacing:-.02em;
+    line-height:1.05;
+    color:#fff;
+    text-shadow:0 3px 18px rgba(0,0,0,.45);
+    font-family: "Noto Serif Display", Georgia, "Times New Roman", serif;
+    font-weight: 600;
+  }
+  .heroSub{
+    margin:8px 0 0;
+    color:rgba(255,255,255,.95);
+    line-height:1.55;
+    font-size:14px;
+    text-shadow:0 2px 14px rgba(0,0,0,.45);
+    max-width:60ch;
+  }
+  .heroSubWrap{
+    margin-top: 8px;
+    max-width: 60ch;
+  }
+  .heroSubWrap p{
+    margin: 0 0 0.65em;
+    color: rgba(255,255,255,.95);
+    line-height: 1.55;
+    font-size: 14px;
+    text-shadow: 0 2px 14px rgba(0,0,0,.45);
+  }
+  .heroSubWrap p:last-child{
+    margin-bottom: 0;
+  }
+  .metaRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+  .pill{
+    font-size:12px;
+    border:1px solid rgba(255,255,255,.22);
+    background: rgba(255,255,255,.18);
+    padding:7px 10px;
+    border-radius:999px;
+    color: rgba(255,255,255,.92);
+    backdrop-filter: blur(8px);
+  }
+
+  .section{margin-top:14px;}
+  .sectionHeader{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    gap:6px;
+    margin: 14px 2px 16px;
+  }
+  .sectionHeader h2{margin:0;font-size:22px;letter-spacing:-.01em;color:var(--brand-green);font-weight:600;font-family:"Inter",sans-serif;}
+  .hint{margin:0;color:var(--muted);font-size:12px;}
+
+  .card{
+    border:1px solid var(--stroke);
+    background: var(--card);
+    border-radius: var(--r);
+    box-shadow: var(--shadow);
+    padding: 14px;
+  }
+  .card p{margin:0 0 10px;color:var(--muted);line-height:1.6;font-size:14px;}
+  .card p:last-child{margin-bottom:0;}
+
+  /* Galería POD */
+.imgRow{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto 1fr;
+  gap:14px;
+  margin-top:12px;
+  align-items:start;
+}
+
+.imgPh{
+  border-radius: var(--r2);
+  border:1px solid var(--stroke);
+  background:#ddd;
+  overflow:hidden;
+  padding:0;
+  cursor: zoom-in;
+  appearance:none;
+  display:block;
+  width:100%;
+}
+
+.imgPh img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.imgPh.big{
+  height: 330px;
+  grid-column: 1 / -1;
+}
+
+.imgPh.tallRight{
+  grid-column: 2;
+  grid-row: 2 / span 2;
+  height: 500px;
+}
+
+.imgPh.bottomLeft{
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.imgPh.fill{
+  height: 260px;
+}
+
+.imgPh:hover{
+  transform: translateY(-1px);
+  transition: transform .15s ease;
+}
+
+/* TEXTO */
+.podText{
+  grid-column: 1;
+  grid-row: 2;
+  max-width: 88%;
+}
+
+.podText p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.55;
+  font-size:14px;
+}
+
+/* MOBILE */
+@media (max-width: 640px){
+  .imgRow{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .imgPh.big,
+  .imgPh.tallRight,
+  .imgPh.bottomLeft{
+    grid-column:auto;
+    grid-row:auto;
+  }
+
+  .imgPh.big,
+  .imgPh.tallRight,
+  .imgPh.fill{
+    height:220px;
+  }
+
+  .podText{
+    max-width:100%;
+  }
+}
+
+  /* ===== ANTES DE VIAJAR ===== */
+  .travelGrid{ display:grid; gap:18px; }
+
+  .travelCard{
+    border:1px solid var(--stroke);
+    background: rgba(255,255,255,.62);
+    border-radius: var(--r);
+    overflow:hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .travelCollage2{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+    padding:12px;
+    background: rgba(255,255,255,.38);
+  }
+
+  .travelCollage2 .shot{
+    height: 230px;
+    border-radius: 18px;
+    overflow:hidden;
+    border:1px solid var(--stroke);
+    cursor: zoom-in;
+    background:#ddd;
+  }
+
+  .travelCollage2 img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    display:block;
+  }
+
+  .travelBody{padding:14px;}
+  .travelBody h3{margin:0 0 6px;font-size:16px;color:var(--brand-green);font-weight:600;font-family:"Inter",sans-serif;}
+  .travelBody p{margin:0;color:var(--muted);line-height:1.55;font-size:14px;}
+
+  .plainCard{padding:18px;}
+  .plainCard h3{margin:0 0 6px;font-size:16px;color:var(--brand-green);font-weight:600;font-family:"Inter",sans-serif;}
+  .plainCard p{margin:0;color:var(--muted);line-height:1.55;font-size:14px;}
+
+  /* Sticky CTA */
+  .stickyCta{
+    position:fixed;
+    left:0; right:0; bottom:0;
+    padding:10px 14px;
+    background: rgba(245,243,238,.86);
+    backdrop-filter: blur(8px);
+    border-top:1px solid rgba(80,76,68,.18);
+  }
+  .ctaInner{max-width:980px;margin:0 auto;display:flex;gap:10px;align-items:center;}
+  .price{font-family:"Inter",sans-serif;font-weight:600;font-size:15px;letter-spacing:.3px;color:var(--brand-green);white-space:nowrap;}
+  .btn{
+    flex:1;
+    border:2px solid var(--brand-beige);
+    background: var(--brand-beige);
+    color: var(--brand-green);
+    padding: 12px 14px;
+    border-radius: 999px;
+    font-weight: 800;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .btn.secondary{
+    flex:0 0 auto;
+    background: transparent;
+    color: var(--brand-green);
+    border: 2px solid rgba(92,95,62,.35);
+  }
+
+  @media (min-width: 920px){
+    .wrap{padding-bottom:40px;}
+    .stickyCta{position:static;background:transparent;border:0;padding:0;margin-top:12px;}
+    .ctaInner{justify-content:flex-end;}
+    .btn{flex:0 0 auto;min-width:220px;}
+  }
+  @media (max-width: 760px){
+    .travelCollage2{ grid-template-columns: 1fr; }
+    .travelCollage2 .shot{ height: 220px; }
+  }
+  @media (max-width: 560px){
+    .heroMedia{ height: 320px; }
+    .heroTitle{font-size:30px;}
+  }
+
+  /* LIGHTBOX */
+  .lightbox{position:fixed;inset:0;display:none;z-index:999;}
+  .lightbox[aria-hidden="false"]{ display:block; }
+  .lightboxBackdrop{position:absolute; inset:0;background: rgba(0,0,0,.75);}
+  .lightboxPanel{
+    position:relative;
+    width:min(980px, 92vw);
+    height:min(82vh, 700px);
+    margin: 6vh auto 0;
+    border-radius: 18px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.18);
+    box-shadow: 0 30px 90px rgba(0,0,0,.35);
+    background: rgba(0,0,0,.2);
+  }
+  .lightboxPanel img{
+    width:100%;
+    height:100%;
+    object-fit: contain;
+    background: rgba(0,0,0,.15);
+  }
+  .lightboxClose{
+    position:absolute;
+    top:10px; right:10px;
+    width:38px; height:38px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.22);
+    background: rgba(0,0,0,.35);
+    color:#fff;
+    cursor:pointer;
+  }
+
+  .pp-acts{ margin-top: 0; }
+
+  .pp-actsCard{
+    border:1px solid var(--stroke);
+    background: var(--card);
+    border-radius: var(--r);
+    box-shadow: var(--shadow);
+    padding: 14px;
+  }
+
+  .pp-actsIntro{
+    margin: 0 0 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  .pp-actsGrid{
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 12px;
+  }
+
+  .pp-act{
+    border:1px solid var(--stroke);
+    background: rgba(255,255,255,.62);
+    border-radius: var(--r);
+    overflow:hidden;
+  }
+
+  .pp-actMedia{
+    height: 160px;
+    background:#ddd;
+    overflow:hidden;
+    cursor: zoom-in;
+  }
+
+  .pp-actMedia img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:50% 50%;
+    display:block;
+  }
+
+  .pp-actBody{ padding: 12px 12px 14px; }
+
+  .pp-actTitle{
+    margin: 0 0 8px;
+    font-size: 15px;
+    letter-spacing: -.01em;
+  }
+
+  .pp-actBody p{
+    margin: 0 0 10px;
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  .pp-actBody p:last-of-type{ margin-bottom: 12px; }
+
+  .pp-actLink{
+    display:inline-flex;
+    gap:8px;
+    align-items:center;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--brand-green);
+    text-decoration:none;
+    border-bottom: 1px solid rgba(23,24,27,.18);
+    padding-bottom: 2px;
+  }
+
+  @media (max-width: 900px){
+    .pp-actsGrid{ grid-template-columns: 1fr; }
+    .pp-actMedia{ height: 220px; }
+  }
+
+  .pp-actsExtra{
+    margin-top: 14px;
+    border-top: 1px solid var(--stroke);
+    padding-top: 14px;
+  }
+  .pp-actsExtra h3{
+    margin: 0 0 8px;
+    font-size: 15px;
+    letter-spacing: -.01em;
+  }
+  .pp-actsExtra p{
+    margin: 0 0 10px;
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: 14px;
+  }
+  .pp-actsExtra p:last-child{ margin-bottom: 0; }
+  .pp-actTitle,
+  .travelBody h3,
+  .plainCard h3,
+  .pp-actsExtra h3 {
+    color: var(--brand-green);
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+  }
+
+  .topnav{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    padding: 14px 18px;
+    transition: background .22s ease, border-color .22s ease, backdrop-filter .22s ease;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+  }
+
+  .topnav__inner{
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .topnav__left{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+  }
+
+  .topnav__brand{
+    font-weight: 700;
+    letter-spacing: .2px;
+    text-decoration: none;
+    color: rgba(244,244,234,.96);
+    white-space: nowrap;
+  }
+
+  .topnav__back{
+    text-decoration: none;
+    color: rgba(244,244,234,.85);
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(244,244,234,.18);
+    background: rgba(17,18,23,.14);
+    backdrop-filter: blur(6px);
+    transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  }
+
+  .topnav__back:hover{
+    transform: translateY(-1px);
+    background: rgba(17,18,23,.22);
+    border-color: rgba(244,244,234,.26);
+  }
+
+  .topnav__links{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .topnav__links a{
+    text-decoration: none;
+    color: rgba(244,244,234,.88);
+    font-size: 14px;
+    letter-spacing: .2px;
+  }
+
+  .topnav__links a:hover{
+    color: rgba(244,244,234,1);
+  }
+
+  .topnav__cta{
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(244,244,234,.22);
+    background: rgba(244,244,234,.10);
+  }
+
+  .topnav.is-solid{
+    background: var(--brand-green);
+    border-bottom-color: rgba(244,244,234,.14);
+    backdrop-filter: blur(10px);
+  }
+
+  @media (max-width: 720px){
+    .topnav__links a:not(.topnav__cta){
+      display: none;
+    }
+    .topnav__inner{
+      gap: 10px;
+    }
+  }
+
+  .el-pod{
+    padding-top: 72px;
+  }
+
+  .pp-actsExtra a{
+    color: inherit;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .pp-actsExtra a:hover{
+    text-decoration: underline;
+  }
+
+  .imgPh.tallRight{
+    height: 340px;
+    grid-column: 2;
+    grid-row: 2 / span 2;
+  }
+
+  @media (max-width: 640px){
+    .imgPh.tallRight{
+      grid-column: 1;
+      grid-row: auto;
+      height: 220px;
+    }
+  }
+
+  .card a{
+    color: inherit;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .card a:hover{
+    text-decoration: underline;
+  }
+
+  .imgPh.tall{
+    height: 240px;
+  }
+</style>
+</head>
+
+<body>
+
+  <header class="topnav" id="topnav">
+    <div class="topnav__inner">
+      <div class="topnav__left">
+        <a class="topnav__back" href="../../explore.html" aria-label="Back to all pods">
+          ← All Pods
+        </a>
+        <a class="topnav__brand" href="../../home/index.html" aria-label="PurePods Home">
+          PurePods
+        </a>
+      </div>
+      <nav class="topnav__links" aria-label="Main navigation">
+        <a href="../../explore.html">Pods</a>
+        <a href="../../experiences/experiences.html">Experiences</a>
+        <a class="topnav__cta" href="https://purepods.com/booking/?force_site_id=13">Book</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero--full">
+    <div class="heroMedia">
+      <img src="../../../assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg" alt="Tāima PurePod glass cabin with vineyard views and Central Otago hills near Cromwell, New Zealand">
+
+      <div class="heroOverlay">
+        <div class="heroInner">
+          <h1 class="heroTitle">Tāima</h1>
+          <div class="heroSubWrap">
+            <p>A relaxed retreat above Central Otago&apos;s rugged landscapes</p>
+            <p>PurePod Tāima is defined by open space and dramatic landscapes above the Kawarau Gorge near Cromwell, with wide views across rocky valleys, rivers and mountain ranges. Golden sunsets and clear southern skies shape slow days and quiet nights in the heart of Central Otago.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <!-- THE POD -->
+    <div class="section">
+      <div class="sectionHeader">
+        <h2>The experience of the Pod — Tāima</h2>
+        <p class="hint">The essentials, no fluff</p>
+      </div>
+
+      <div class="card">
+        <p>
+          Set at around 350 metres above sea level, the pod feels suspended above the landscape, with wide views and a strong sense of isolation.
+        </p>
+        <p>
+          With no neighbours or shared spaces, the experience is shaped by silence, space and changing light — a retreat to slow down and take in Central Otago.
+        </p>
+        <p>
+          Inside, everything is designed for two: a quiet, comfortable base from which to watch the shifting light and the wide horizon.
+        </p>
+
+        <div class="imgRow">
+
+          <button class="imgPh big js-lightbox"
+            data-full="../../../assets/img/taima/taima-purepod-exterior-landscape-central-otago.png"
+            type="button"
+            aria-label="View Tāima PurePod exterior">
+            <img
+              src="../../../assets/img/taima/taima-purepod-exterior-landscape-central-otago.png"
+              alt="Tāima PurePod glass cabin exterior set in the Central Otago high country near Cromwell, New Zealand"
+              style="object-position:50% 50%;">
+          </button>
+
+          <div class="podText">
+            <p>
+              PurePod Tāima is not a typical place to stay. It is a full immersion in Central Otago above the Kawarau Gorge — open space, dramatic landforms and clear southern skies. With no neighbours and no shared spaces, the pod is shaped by silence and changing light. Inside, everything is designed for two: a private retreat from which to take in rocky valleys, rivers and distant ranges at an unhurried pace.
+            </p>
+          </div>
+
+          <button class="imgPh tallRight js-lightbox"
+            data-full="../../../assets/img/taima/taima-purepod-bedroom-mountain-view-central-otago.jpg"
+            type="button"
+            aria-label="View Tāima bedroom">
+            <img
+              src="../../../assets/img/taima/taima-purepod-bedroom-mountain-view-central-otago.jpg"
+              alt="Bedroom in Tāima PurePod with panoramic mountain and valley views in Central Otago, New Zealand"
+              style="object-position:50% 58%;">
+          </button>
+
+          <button class="imgPh bottomLeft fill js-lightbox"
+            data-full="../../../assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg"
+            type="button"
+            aria-label="View Tāima glass living space">
+            <img
+              src="../../../assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg"
+              alt="Tāima PurePod glass living space overlooking vines and rugged hills in Central Otago, New Zealand"
+              style="object-position:50% 50%;">
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCES -->
+    <div class="section pp-acts">
+      <div class="sectionHeader">
+        <h2>The experiences that define Tāima</h2>
+        <p class="hint">Central Otago · active landscapes, scenic drives &amp; wine country · South Island</p>
+      </div>
+
+      <div class="pp-actsCard">
+        <p class="pp-actsIntro">
+          A small selection of experiences that reflect Central Otago&apos;s landscapes, movement and relaxed pace.
+        </p>
+
+        <div class="pp-actsGrid">
+
+          <article class="pp-act">
+            <div class="pp-actMedia js-lightbox" data-full="../../../assets/img/taima/central-otago-rocky-canyon-hiking-trail.jpg" role="button" aria-label="View Bannockburn Sluicings landscape">
+              <img src="../../../assets/img/taima/central-otago-rocky-canyon-hiking-trail.jpg" alt="Rocky canyon and eroded landforms in Central Otago, echoing gold-era sculpted landscapes near Bannockburn, New Zealand">
+            </div>
+            <div class="pp-actBody">
+              <h3 class="pp-actTitle">Bannockburn Sluicings — Gold-Mining Landscapes</h3>
+              <p>
+                This historic reserve reveals landscapes sculpted by Central Otago&apos;s gold-mining past. Eroded cliffs and exposed earth create a striking setting that connects directly with the region&apos;s geology and history.
+              </p>
+              <p>
+                Why it&apos;s special: gold-mining heritage + sculpted landscapes + geology + history in the land.
+              </p>
+              <a class="pp-actLink" href="https://doc.govt.nz/parks-and-recreation/places-to-go/otago/places/bannockburn-area/things-to-do/bannockburn-sluicings-track" target="_blank" rel="noopener noreferrer">
+                → Explore Bannockburn Sluicings Historic Reserve
+              </a>
+            </div>
+          </article>
+
+          <article class="pp-act">
+            <div class="pp-actMedia js-lightbox" data-full="../../../assets/img/taima/central-otago-lake-dunstan-cycling-trail.jpg" role="button" aria-label="View Lake Dunstan Trail">
+              <img src="../../../assets/img/taima/central-otago-lake-dunstan-cycling-trail.jpg" alt="Lake Dunstan Trail along the lakeshore with cliffs and open water in Central Otago, New Zealand">
+            </div>
+            <div class="pp-actBody">
+              <h3 class="pp-actTitle">Lake Dunstan Trail — Bannockburn Bridge</h3>
+              <p>
+                One of Central Otago&apos;s most scenic routes, following the lakeshore between rugged cliffs and open water. Starting near Bannockburn Bridge, the trail offers wide valley views and a strong sense of space, ideal for cycling or walking.
+              </p>
+              <p>
+                Why it&apos;s special: lakeside trail + dramatic geology + cycling &amp; walking + open landscapes.
+              </p>
+              <a class="pp-actLink" href="https://www.southernlakestrails.nz/lake-dunstan-trail" target="_blank" rel="noopener noreferrer">
+                → Explore Lake Dunstan Trail
+              </a>
+            </div>
+          </article>
+
+          <article class="pp-act">
+            <div class="pp-actMedia js-lightbox" data-full="../../../assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg" role="button" aria-label="View vineyard and pod">
+              <img src="../../../assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg" alt="Tāima PurePod with vineyard rows and rugged Central Otago hills near Bannockburn wine country, New Zealand">
+            </div>
+            <div class="pp-actBody">
+              <h3 class="pp-actTitle">Wine Tasting — Te Kano Estate or Mt Difficulty</h3>
+              <p>
+                Bannockburn sits at the heart of one of the world&apos;s great cool-climate wine regions. A tasting at Te Kano Estate or Mt Difficulty offers the chance to experience Central Otago&apos;s celebrated Pinot Noir among vines and rugged hills.
+              </p>
+              <p>
+                Why it&apos;s special: Central Otago wines + Pinot Noir + vineyard views + local flavour.
+              </p>
+              <a class="pp-actLink" href="https://www.tekanoestate.com/" target="_blank" rel="noopener noreferrer">
+                → Explore Te Kano Estate
+              </a>
+              <a class="pp-actLink" href="https://www.mtdifficulty.nz/" target="_blank" rel="noopener noreferrer">
+                → Explore Mt Difficulty
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="pp-actsExtra">
+          <h3>More ways to explore Central Otago</h3>
+          <p>
+            Beyond the pod, the region offers cycling trails, vineyard visits and dramatic landscapes shaped by gold and geology. Cromwell and Bannockburn are gateways to wine tasting, historic sites and the vast, open character of Central Otago.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- KNOW BEFORE YOU GO -->
+    <div class="section">
+      <div class="sectionHeader">
+        <h2>Know before you go</h2>
+        <p class="hint">Practical details, without losing the mood</p>
+      </div>
+
+      <div class="travelGrid">
+
+        <div class="travelCard">
+          <div class="travelCollage2">
+            <div class="shot js-lightbox" data-full="../../../assets/img/taima/taima-clutha-river-autumn-landscape-central-otago-new-zealand.jpg" role="button" aria-label="View Clutha River landscape">
+              <img src="../../../assets/img/taima/taima-clutha-river-autumn-landscape-central-otago-new-zealand.jpg" alt="Clutha River and autumn tones in the Central Otago landscape near Cromwell, New Zealand" style="object-position: 50% 50%;">
+            </div>
+            <div class="shot js-lightbox" data-full="../../../assets/img/taima/taima-purepod-exterior-landscape-central-otago.png" role="button" aria-label="View Tāima pod in landscape">
+              <img src="../../../assets/img/taima/taima-purepod-exterior-landscape-central-otago.png" alt="Tāima PurePod in the Central Otago landscape, approached along the Kawarau Gorge near Cromwell, New Zealand" style="object-position: 50% 50%;">
+            </div>
+          </div>
+          <div class="travelBody">
+            <h3>The Journey</h3>
+            <p>
+              PurePod Tāima is located near Cromwell, around one hour from Queenstown, following the Kawarau Gorge. The final section includes a short 300-metre walk (5–10 minutes) across historic gold-mining ground, where views begin to open.
+            </p>
+          </div>
+        </div>
+
+        <div class="travelCard plainCard">
+          <h3>The Weather</h3>
+          <p>
+            Central Otago experiences hot, dry summers and cold winters. Layers are recommended year-round.
+          </p>
+        </div>
+
+        <div class="travelCard">
+          <div class="travelCollage2">
+            <div class="shot js-lightbox" data-full="../../../assets/img/taima/taima-local-food-platter-central-otago.jpg" role="button" aria-label="View food platter">
+              <img src="../../../assets/img/taima/taima-local-food-platter-central-otago.jpg" alt="Local food platter ready to enjoy at Tāima PurePod in Central Otago, New Zealand">
+            </div>
+            <div class="shot js-lightbox" data-full="../../../assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg" role="button" aria-label="View pod dining outlook">
+              <img src="../../../assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg" alt="Tāima PurePod glass cabin with vineyard outlook — a setting for simple meals with wide views, Central Otago, New Zealand">
+            </div>
+          </div>
+          <div class="travelBody">
+            <h3>The Food</h3>
+            <p>
+              You may bring your own food or pre-order a breakfast and dinner hamper when booking. Meals are designed to be simple and enjoyed at the pod with wide open views.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="stickyCta" id="reserve">
+      <div class="ctaInner">
+        <div class="price">From $890.00 — / night</div>
+        <a class="btn secondary" href="../../explore.html">View other pods</a>
+        <a class="btn" href="https://purepods.com/booking/?force_site_id=13">Book now</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightboxBackdrop" data-close></div>
+    <div class="lightboxPanel">
+      <button class="lightboxClose" type="button" data-close aria-label="Close">✕</button>
+      <img id="lightboxImg" alt="">
+    </div>
+  </div>
+
+  <script>
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+
+    function openLightbox(src, alt){
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(){
+      lb.setAttribute('aria-hidden', 'true');
+      lbImg.src = '';
+      lbImg.alt = '';
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.js-lightbox');
+      if(btn){
+        const src = btn.dataset.full || btn.querySelector('img')?.src;
+        const alt = btn.querySelector('img')?.alt || '';
+        openLightbox(src, alt);
+        return;
+      }
+      if(e.target.matches('[data-close]')) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+  <script>
+    (function(){
+      const nav = document.getElementById('topnav');
+      const solidAt = 40;
+
+      function onScroll(){
+        if(window.scrollY > solidAt) nav.classList.add('is-solid');
+        else nav.classList.remove('is-solid');
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+
+</body>
+</html>

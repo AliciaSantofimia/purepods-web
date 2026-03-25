@@ -15,6 +15,7 @@ const PODS: { href: string; label: string; region: string }[] = [
     label: "Haurapa",
     region: "Central Otago",
   },
+  { href: "/location/taima", label: "Tāima", region: "Central Otago" },
   { href: "/location/kahutara", label: "Kahutara", region: "Kaikōura" },
   { href: "/location/manakau", label: "Manakau", region: "Kaikōura" },
   { href: "/location/kokomea", label: "Kokomea", region: "Kāpiti Coast" },
