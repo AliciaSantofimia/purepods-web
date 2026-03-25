@@ -26,6 +26,8 @@ const PODS: { href: string; label: string; region: string }[] = [
   { href: "/location/pohue", label: "Pōhue", region: "Banks Peninsula" },
   { href: "/location/rewarewa", label: "Rewarewa", region: "Muriwai Coast" },
   { href: "/location/ruru", label: "Ruru", region: "Coromandel" },
+  { href: "/location/tokoeka", label: "Tokoeka", region: "Stewart Island" },
+  { href: "/location/hananui", label: "Hananui", region: "Stewart Island" },
 ];
 
 export default function PodsPage() {
