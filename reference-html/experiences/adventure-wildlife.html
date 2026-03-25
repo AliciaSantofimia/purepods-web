@@ -140,7 +140,7 @@
   </nav>
 
   <header class="hero" id="top">
-    <img src="../../assets/img/experiences/placeholders/adventure-hero-placeholder.jpg" alt="Outdoor New Zealand landscape placeholder for Adventure and Wildlife hero image" width="1920" height="1080" fetchpriority="high" />
+    <img src="../../assets/img/experiences/adventure-wildlife/new-zealand-dolphin-kayak-wildlife-experience-coastal-adventure.png" alt="Dolphin jumping near a kayak during a wildlife sea kayaking experience in New Zealand" width="1920" height="1080" fetchpriority="high" />
     <div class="heroInner">
       <h1>Adventure &amp; Wildlife</h1>
       <p class="impact-summary">Adventure &amp; Wildlife brings together draft outdoor experience blocks for New Zealand travel planning with PurePods. The page is structured for route, nature and wildlife examples, each paired with a practical external reference link and a direct booking pathway to a nearby glass eco-cabin stay.</p>
@@ -557,6 +557,403 @@
               descEl.textContent = item.description;
               renderCtas(item.ctas);
               root.setAttribute("aria-label", "Marine and iconic wildlife: " + item.title);
+            }
+
+            function step(delta) {
+              goTo(index + delta);
+            }
+
+            syncSlideImages();
+
+            for (var j = 0; j < n; j++) {
+              (function (ji) {
+                var dot = document.createElement("button");
+                dot.type = "button";
+                dot.className = "hiking-carousel__dot" + (ji === 0 ? " is-active" : "");
+                dot.setAttribute("role", "tab");
+                dot.setAttribute("aria-label", "Show experience " + (ji + 1) + " of " + n);
+                dot.setAttribute("aria-selected", ji === 0 ? "true" : "false");
+                dot.tabIndex = ji === 0 ? 0 : -1;
+                dot.addEventListener("click", function () {
+                  goTo(ji);
+                  root.focus();
+                });
+                dotsHost.appendChild(dot);
+                dots.push(dot);
+              })(j);
+            }
+
+            prevBtn.addEventListener("click", function () {
+              step(-1);
+            });
+            nextBtn.addEventListener("click", function () {
+              step(1);
+            });
+
+            root.addEventListener("keydown", function (e) {
+              if (e.key === "ArrowLeft") {
+                e.preventDefault();
+                step(-1);
+              } else if (e.key === "ArrowRight") {
+                e.preventDefault();
+                step(1);
+              }
+            });
+
+            goTo(0);
+          })();
+        </script>
+      </section>
+      <section class="journey-chapter chapter" id="nature-exploration" aria-labelledby="nature-exploration-heading">
+        <style>
+          #nature-exploration .journey-title {
+            font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--brand-green);
+          }
+          #nature-exploration .journey-carousel.hiking-carousel {
+            position: relative;
+            display: block;
+          }
+          #nature-exploration .journey-carousel.hiking-carousel:focus-visible {
+            outline-offset: 4px;
+          }
+          #nature-exploration .journey-carousel .hiking-carousel__viewport {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            border-radius: inherit;
+            overflow: hidden;
+            background: var(--brand-beige);
+          }
+          #nature-exploration .journey-carousel .hiking-carousel__slides {
+            position: absolute;
+            inset: 0;
+            margin: 0;
+          }
+          #nature-exploration .journey-item.hiking-carousel__slide {
+            position: absolute;
+            inset: 0;
+            margin: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            pointer-events: none;
+          }
+          #nature-exploration .journey-item.hiking-carousel__slide.is-active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            z-index: 1;
+          }
+          #nature-exploration .journey-item.hiking-carousel__slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
+          #nature-exploration .hiking-carousel__btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+            border: 1px solid var(--stroke);
+            background: var(--card);
+            color: var(--ink);
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            padding: 0;
+            box-shadow: var(--shadow-soft);
+            transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+          }
+          #nature-exploration .hiking-carousel__btn:hover {
+            background: #fff;
+            border-color: rgba(92, 95, 62, 0.28);
+          }
+          #nature-exploration .hiking-carousel__btn--prev {
+            left: 12px;
+          }
+          #nature-exploration .hiking-carousel__btn--next {
+            right: 12px;
+          }
+          #nature-exploration .hiking-carousel__btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+          }
+          #nature-exploration .hiking-carousel__dots {
+            position: absolute;
+            left: 50%;
+            bottom: 14px;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(247, 246, 243, 0.26);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(92, 95, 62, 0.14);
+          }
+          #nature-exploration .hiking-carousel__dot {
+            width: 8px;
+            height: 8px;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            background: rgba(92, 95, 62, 0.18);
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+          }
+          #nature-exploration .hiking-carousel__dot:hover {
+            background: rgba(92, 95, 62, 0.34);
+          }
+          #nature-exploration .hiking-carousel__dot.is-active {
+            background: var(--brand-green);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.55);
+            transform: scale(1.15);
+          }
+          #nature-exploration .hiking-place-link {
+            display: inline-block;
+            margin: 0 0 12px;
+            font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            font-size: clamp(17px, 1.9vw, 20px);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+          }
+          #nature-exploration .hiking-place-link:hover {
+            border-bottom-color: var(--brand-beige);
+            opacity: 0.92;
+          }
+          #nature-exploration .hiking-desc {
+            margin: 0 0 18px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--muted);
+          }
+          #nature-exploration .hiking-ctas {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+          }
+          #nature-exploration .hiking-ctas .journey-pod {
+            margin-left: 0;
+            white-space: normal;
+          }
+        </style>
+        <div class="moment">
+          <div
+            class="media journey-carousel hiking-carousel"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Nature exploration and outdoor discovery experiences"
+            tabindex="0"
+            data-nature-carousel
+          >
+            <div class="hiking-carousel__viewport">
+              <div class="hiking-carousel__slides">
+                <figure class="journey-item hiking-carousel__slide is-active" data-nature-slide="0">
+                  <img
+                    src="../../assets/img/experiences/adventure-wildlife/bay-of-islands-sea-kayaking-moana-kayaks-coastal-new-zealand.jpg"
+                    alt="Colorful kayaks on the beach in the Bay of Islands before a sea kayaking experience in New Zealand"
+                    width="800"
+                    height="600"
+                    loading="eager"
+                    fetchpriority="high"
+                  />
+                </figure>
+                <figure class="journey-item hiking-carousel__slide" data-nature-slide="1">
+                  <img
+                    src="../../assets/img/experiences/adventure-wildlife/kapiti-island-day-trip-new-zealand-boat-transfer-nature-reserve.jpg"
+                    alt="Boat transfer to Kapiti Island nature reserve in New Zealand for a guided day trip experience"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure class="journey-item hiking-carousel__slide" data-nature-slide="2">
+                  <img
+                    src="../../assets/img/experiences/adventure-wildlife/wingspan-national-bird-of-prey-centre-karearea-falcon-new-zealand.jpg"
+                    alt="Girl holding a kārearea New Zealand falcon at Wingspan National Bird of Prey Centre in Rotorua New Zealand"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </figure>
+              </div>
+              <button
+                type="button"
+                class="hiking-carousel__btn hiking-carousel__btn--prev"
+                aria-label="Previous experience"
+                data-nature-prev
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+              </button>
+              <button
+                type="button"
+                class="hiking-carousel__btn hiking-carousel__btn--next"
+                aria-label="Next experience"
+                data-nature-next
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" /></svg>
+              </button>
+              <div class="hiking-carousel__dots" role="tablist" aria-label="Choose an experience" data-nature-dots></div>
+            </div>
+          </div>
+          <div class="copy">
+            <h2 class="journey-title" id="nature-exploration-heading">Nature exploration &amp; outdoor discovery</h2>
+            <div class="hiking-panel" aria-live="polite" aria-atomic="true" aria-labelledby="nature-exploration-heading">
+              <a
+                class="hiking-place-link"
+                href="https://www.moanakayaks.nz"
+                target="_blank"
+                rel="noopener"
+                data-nature-place-link
+              >Moana Kayaks – Bay of Islands</a>
+              <p class="hiking-desc" data-nature-desc>
+                A guided sea kayaking experience in the Bay of Islands, exploring sheltered waters, coastal inlets and small islands. The tours combine paddling with local knowledge of the marine environment, offering a slower way to experience the coastline.
+              </p>
+              <div class="hiking-ctas" data-nature-ctas>
+                <a
+                  class="journey-pod hiking-pod-cta"
+                  href="https://purepods.com/booking/?force_site_id=14"
+                  target="_blank"
+                  rel="noopener"
+                >Stay at <strong class="journey-pod-name">Mākoha</strong> →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          (function () {
+            function journeyFillStayAtCta(anchorEl, label) {
+              if (!anchorEl || !label) return;
+              var prefix = "Stay at ";
+              var suffix = " →";
+              anchorEl.textContent = "";
+              if (
+                label.length >= prefix.length + suffix.length &&
+                label.indexOf(prefix) === 0 &&
+                label.slice(-suffix.length) === suffix
+              ) {
+                var pod = label.slice(prefix.length, label.length - suffix.length);
+                anchorEl.appendChild(document.createTextNode(prefix));
+                var strongEl = document.createElement("strong");
+                strongEl.className = "journey-pod-name";
+                strongEl.textContent = pod;
+                anchorEl.appendChild(strongEl);
+                anchorEl.appendChild(document.createTextNode(suffix));
+              } else {
+                anchorEl.textContent = label;
+              }
+            }
+
+            var root = document.querySelector("#nature-exploration [data-nature-carousel]");
+            if (!root) return;
+
+            var slides = root.querySelectorAll("[data-nature-slide]");
+            var prevBtn = root.querySelector("[data-nature-prev]");
+            var nextBtn = root.querySelector("[data-nature-next]");
+            var dotsHost = root.querySelector("[data-nature-dots]");
+            var placeLink = root.parentElement.querySelector("[data-nature-place-link]");
+            var descEl = root.parentElement.querySelector("[data-nature-desc]");
+            var ctasHost = root.parentElement.querySelector("[data-nature-ctas]");
+
+            if (!placeLink || !descEl || !ctasHost) return;
+
+            var data = [
+              {
+                image: "../../assets/img/experiences/adventure-wildlife/bay-of-islands-sea-kayaking-moana-kayaks-coastal-new-zealand.jpg",
+                alt: "Colorful kayaks on the beach in the Bay of Islands before a sea kayaking experience in New Zealand",
+                title: "Moana Kayaks – Bay of Islands",
+                placeHref: "https://www.moanakayaks.nz",
+                description:
+                  "A guided sea kayaking experience in the Bay of Islands, exploring sheltered waters, coastal inlets and small islands. The tours combine paddling with local knowledge of the marine environment, offering a slower way to experience the coastline.",
+                ctas: [{ label: "Stay at Mākoha →", href: "https://purepods.com/booking/?force_site_id=14" }],
+              },
+              {
+                image: "../../assets/img/experiences/adventure-wildlife/kapiti-island-day-trip-new-zealand-boat-transfer-nature-reserve.jpg",
+                alt: "Boat transfer to Kapiti Island nature reserve in New Zealand for a guided day trip experience",
+                title: "Kapiti Island – Day trip",
+                placeHref: "https://www.kapitiisland.com/",
+                description:
+                  "A guided day trip to Kapiti Island, a protected nature reserve known for native birdlife and conservation. Access is managed and visitor numbers are limited, allowing close encounters with species such as kākā, tīeke and kererū in a predator-free environment.",
+                ctas: [{ label: "Stay at Kokomea →", href: "https://purepods.com/booking/?force_site_id=10" }],
+              },
+              {
+                image: "../../assets/img/experiences/adventure-wildlife/wingspan-national-bird-of-prey-centre-karearea-falcon-new-zealand.jpg",
+                alt: "Girl holding a kārearea New Zealand falcon at Wingspan National Bird of Prey Centre in Rotorua New Zealand",
+                title: "Wingspan National Bird of Prey Centre",
+                placeHref: "https://www.wingspan.co.nz/",
+                description:
+                  "A conservation-focused experience dedicated to New Zealand’s birds of prey, including the kārearea (native falcon). Visits include guided encounters and educational insights into rehabilitation and breeding programmes within a natural forest setting.",
+                ctas: [{ label: "Stay at Pāmu →", href: "https://purepods.com/booking/?force_site_id=8" }],
+              },
+            ];
+
+            var n = data.length;
+            var index = 0;
+            var dots = [];
+
+            function syncSlideImages() {
+              for (var i = 0; i < n; i++) {
+                var fig = slides[i];
+                if (!fig) continue;
+                var img = fig.querySelector("img");
+                if (!img) continue;
+                img.src = data[i].image;
+                img.alt = data[i].alt;
+              }
+            }
+
+            function renderCtas(ctas) {
+              ctasHost.innerHTML = "";
+              for (var c = 0; c < ctas.length; c++) {
+                var item = ctas[c];
+                var a = document.createElement("a");
+                a.className = "journey-pod hiking-pod-cta";
+                a.href = item.href;
+                a.target = "_blank";
+                a.rel = "noopener";
+                journeyFillStayAtCta(a, item.label);
+                ctasHost.appendChild(a);
+              }
+            }
+
+            function setActiveDot(i) {
+              for (var d = 0; d < dots.length; d++) {
+                dots[d].classList.toggle("is-active", d === i);
+                dots[d].setAttribute("aria-selected", d === i ? "true" : "false");
+                dots[d].tabIndex = d === i ? 0 : -1;
+              }
+            }
+
+            function goTo(i) {
+              index = ((i % n) + n) % n;
+              for (var s = 0; s < slides.length; s++) {
+                slides[s].classList.toggle("is-active", s === index);
+              }
+              setActiveDot(index);
+              var item = data[index];
+              placeLink.textContent = item.title;
+              placeLink.href = item.placeHref;
+              descEl.textContent = item.description;
+              renderCtas(item.ctas);
+              root.setAttribute("aria-label", "Nature exploration and outdoor discovery experiences: " + item.title);
             }
 
             function step(delta) {
@@ -1040,33 +1437,7 @@
           })();
         </script>
       </section>
-      <article class="chapter">
-        <div class="moment">
-          <div class="media"><img src="../../assets/img/experiences/placeholders/adventure-block-02.jpg" alt="Placeholder image for a native wildlife observation experience" width="800" height="600" loading="lazy" /></div>
-          <div class="copy">
-            <h2>Wildlife observation placeholder</h2>
-            <p>Use this block for a verified wildlife-focused stop, observation area or guided nature activity. Keep details factual and clear, and include only confirmed information about species context, timing or access where available.</p>
-            <div class="links-row">
-              <a class="external-link" href="https://example.com/replace-with-wildlife-reference" target="_blank" rel="noopener">View wildlife reference (placeholder) →</a>
-              <a class="journey-pod" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Stay at <strong class="journey-pod-name">Nearby PurePod (placeholder)</strong> →</a>
-            </div>
-          </div>
-        </div>
-      </article>
-      <article class="chapter">
-        <div class="moment">
-          <div class="media"><img src="../../assets/img/experiences/placeholders/adventure-block-03.jpg" alt="Placeholder image for a nature immersion and trail viewpoint experience" width="800" height="600" loading="lazy" /></div>
-          <div class="copy">
-            <h2>Nature immersion placeholder</h2>
-            <p>Use this block for a verified nature immersion highlight such as a lookout, reserve walk or conservation landscape. Keep the copy practical and replaceable so future final curation can add precise names and regional mapping.</p>
-            <div class="links-row">
-              <a class="external-link" href="https://example.com/replace-with-nature-site" target="_blank" rel="noopener">View nature reference (placeholder) →</a>
-              <a class="journey-pod" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Stay at <strong class="journey-pod-name">Nearby PurePod (placeholder)</strong> →</a>
-            </div>
-          </div>
-        </div>
-      </article>
-    </section>
+     
 
     <section class="pod-bridge" aria-labelledby="pod-bridge-heading">
       <div class="wrap">
