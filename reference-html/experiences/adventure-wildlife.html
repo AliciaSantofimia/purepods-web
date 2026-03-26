@@ -82,7 +82,12 @@
     .external-link:hover { border-bottom-color:var(--brand-beige); }
     .journey-pod { font-weight:500; color:var(--brand-green); }
     .journey-pod .journey-pod-name { font-weight:700; color:var(--ink); }
-    .pod-bridge { background:linear-gradient(135deg, rgba(92,95,62,.08), rgba(194,181,158,.14)); border-top:1px solid var(--stroke); border-bottom:1px solid var(--stroke); }
+    .pod-bridge {
+      border-top: 1px solid var(--stroke);
+      border-bottom: 1px solid var(--stroke);
+      padding: 56px 0;
+    }
+  
     .pod-bridge .inner { max-width:62ch; margin:0 auto; text-align:center; }
     .pod-bridge__title {
       margin:0 0 16px;
@@ -1492,21 +1497,22 @@
           })();
         </script>
       </section>
-     
+    </section>
 
-    <section class="pod-bridge" aria-labelledby="pod-bridge-heading">
-      <div class="wrap" style="padding:56px 0;">
-        <div class="inner" style="max-width:920px; margin:0 auto;">
-          <div style="border-radius:28px; overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--stroke); aspect-ratio:16/9; margin-bottom:28px;">
+      <section class="pod-bridge" aria-labelledby="pod-bridge-heading" style="background:#EDEBE6;">
+        <div style="padding:56px 0;">
+            <div class="inner" style="max-width:920px; margin:0 auto; padding:0 20px;">
+            <div style="position:relative; border-radius:28px; overflow:hidden; box-shadow:var(--shadow); aspect-ratio:16/9; margin-bottom:28px;">
+                
             <img
-              src="../../assets/img/experiences/adventure-wildlife/purepods-new-zealand-glass-cabin-starry-night-remote-nature-stay.jpg"
-              alt="PurePods glass cabin in New Zealand under a starry night sky in a remote natural setting"
-              loading="lazy"
-              style="width:100%; height:100%; display:block; object-fit:cover;"
+               src="../../assets/img/experiences/adventure-wildlife/purepods-new-zealand-glass-cabin-starry-night-remote-nature-stay.jpg"
+               alt="PurePods glass cabin in New Zealand under a starry night sky in a remote natural setting"
+               loading="lazy"
+               style="width:100%; height:100%; display:block; object-fit:cover; object-position:center 90%;"
             />
           </div>
 
-          <div style="max-width:680px; margin:0 auto; text-align:center;">
+          <div style="max-width:720px; margin:0 auto; text-align:center;">
             <h2 id="pod-bridge-heading" class="pod-bridge__title">From active exploration to quiet overnight stay</h2>
 
             <p>After a day focused on landscapes and wildlife, this experience transitions naturally into a PurePods stay. PurePods are glass eco-cabins in remote natural settings, designed for calm immersion in surrounding light, weather and views.</p>
