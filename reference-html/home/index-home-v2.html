@@ -1,3 +1,4 @@
+<!-- VERSION 2 - Top nav sin barra visible: logo + enlaces + Book sobre el hero -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -31,6 +32,7 @@
     background: var(--bg);
     color: var(--ink);
     line-height: 1.5;
+    overflow-x: hidden;
   }
 
   a{ color:inherit; text-decoration:none; }
@@ -48,50 +50,126 @@
     backdrop-filter: none;
   }
 
-  .nav-inner{
+  .nav .wrap.nav-inner{
     display:flex;
     align-items:center;
     justify-content:center;
-    padding: 18px 0;
-    gap: 16px;
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 20px 18px 16px;
+    box-sizing: border-box;
   }
 
-  .nav .brand{ display:none; }
-
+  /* Sin pastilla visible: solo alineación; logo + enlaces + Book flotan sobre el hero */
   .links{
     display:flex;
-    gap:18px;
+    flex-wrap:nowrap;
+    align-items:center;
+    justify-content:space-between;
+    gap: 22px 32px;
+    font-size:13px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    padding: 10px 16px 10px 22px;
+    border-radius:0;
+    border:none;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    width: 100%;
+    max-width: min(1120px, calc(100vw - 32px));
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .nav-core{
+    display:flex;
     align-items:center;
     justify-content:center;
-    font-size:13px;
-    letter-spacing:.10em;
-    text-transform:uppercase;
-    padding:10px 16px;
-    border-radius:999px;
-    border:1px solid rgba(255,255,255,.18);
-    background: rgba(17,18,23,.18);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,.18);
+    gap: 26px;
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
-  .links a{ color: rgba(255,255,255,.86); }
+  .nav .nav-brand{
+    display:inline-flex;
+    align-items:center;
+    align-self:center;
+    flex-shrink:0;
+    margin-inline-end: 2px;
+    line-height:0;
+    text-transform:none;
+    letter-spacing:normal;
+    margin:0;
+    padding:0;
+    border:0;
+    background:transparent;
+    box-shadow:none;
+  }
+
+  .nav .nav-brand img{
+    display:block;
+    height: clamp(56px, 7.05vw, 78px);
+    width: auto;
+    max-width: min(268px, 46vw);
+    object-fit:contain;
+    opacity:1;
+    transform: translateY(-3px);
+    filter: drop-shadow(0 1px 4px rgba(0,0,0,.28));
+  }
+
+  .links a{ color: rgba(255,255,255,.88); }
   .links a:hover{ color:#fff; }
 
-  .links .btn-primary{
-    background: var(--brand-beige);
-    color: var(--brand-green);
-    border: 2px solid rgba(255,255,255,.18);
-    font-weight: 800;
-    box-shadow: 0 14px 26px rgba(92,95,60,.2);
+  .nav-core a{
+    font-weight: 500;
+    text-shadow: 0 1px 10px rgba(0,0,0,.4);
   }
 
-  @media (max-width: 760px){
+  .links .btn-primary{
+    flex-shrink:0;
+    background: var(--brand-beige);
+    color: var(--brand-green);
+    border: 2px solid rgba(255,255,255,.2);
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: .08em;
+    padding: 14px 26px;
+    min-height: 46px;
+    box-shadow: 0 14px 28px rgba(92,95,60,.26), 0 3px 10px rgba(0,0,0,.1);
+  }
+
+  @media (max-width: 900px){
     .links{
-      width: calc(100% - 24px);
       flex-wrap:wrap;
       justify-content:center;
-      gap:12px;
-      padding:10px 12px;
+      width: 100%;
+      max-width: calc(100vw - 24px);
+      padding: 12px 14px;
+      gap: 16px 20px;
+    }
+
+    .nav-core{
+      flex: 1 1 auto;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap: 16px 22px;
+    }
+
+    .nav .nav-brand{
+      order: -1;
+      flex: 1 1 100%;
+      justify-content:center;
+      margin-inline-end: 0;
+    }
+
+    .nav .nav-brand img{
+      height: clamp(52px, 12vw, 69px);
+      max-width: min(278px, 84vw);
+      transform: translateY(-3px);
     }
   }
 
@@ -158,7 +236,7 @@
   }
 
   /* =========================
-     HERO (full-width image + logo)
+     HERO (full-width image)
      ========================= */
   .hero{
     position: relative;
@@ -198,46 +276,12 @@
   }
   .hero-actions .btn:hover{ background: rgba(247,246,243,.28); }
 
-  .heroLogo{
-    position:absolute;
-    top:110px;
-    left:50%;
-    transform:translateX(-50%);
-    width:160px;
-    height:160px;
-    border-radius:50%;
-    display:grid;
-    place-items:center;
-    background: rgba(247,246,243,.06);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    text-decoration:none;
-    z-index:70;
-  }
-
-  .heroLogo img{
-    width:65%;
-    height:65%;
-    max-width:100%;
-    object-fit:contain;
-    display:block;
-    filter: drop-shadow(0 1px 7px rgba(0,0,0,.14));
-  }
-
   .hero-content{
-    padding-top:190px;
-  }
-
-  @media (max-width:560px){
-  .heroLogo{
-    width:120px;
-    height:120px;
-    top:150px;
-  }
-
-  .hero-content{
-    padding-top:192px;
-  }
+    position:relative;
+    z-index:1;
+    width:100%;
+    max-width:min(920px, 100%);
+    padding: 0 8px;
   }
 
   /* =========================
@@ -362,14 +406,15 @@
   <!-- NAV -->
   <div class="nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="index.html">
-  <img src="../../assets/img/purepods-logo-new-zealand.jpg" alt="PurePods New Zealand">
-</a>
-
       <div class="links">
-        <a href="../explore.html">Pods</a>
-        <a href="../experiences/experiences.html">Experiences</a>
-        <a href="../my-journey.html">My journey</a>
+        <a class="nav-brand" href="index.html" aria-label="PurePods — Home">
+          <img src="../../assets/img/logoblanco.png" alt="PurePods" decoding="async">
+        </a>
+        <div class="nav-core">
+          <a href="../explore.html">Pods</a>
+          <a href="../experiences/experiences.html">Experiences</a>
+          <a href="../my-journey.html">My journey</a>
+        </div>
         <a class="btn btn-primary" href="https://purepods.com/booking/">Book</a>
       </div>
     </div>
@@ -377,10 +422,6 @@
 
   <!-- HERO -->
   <section class="hero">
-    <a class="heroLogo" href="index.html" aria-label="PurePods — Home">
-  <img src="../../assets/img/purepods-logo-new-zealand.jpg" alt="PurePods">
-</a>
-
   <div class="hero-content">
     <h1>Sleep different.<br>Wake in silence.</h1>
     <p class="lead">
