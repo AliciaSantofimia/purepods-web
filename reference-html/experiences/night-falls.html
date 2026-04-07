@@ -40,6 +40,7 @@
   /* brand */
   --brand-green:#5C5F3E;
   --brand-beige:#C2B59E;
+  --shadow-soft:0 10px 24px rgba(92,95,62,.10);
 }
     
 
@@ -90,6 +91,30 @@
     footer a:focus-visible {
       text-decoration: none;
     }
+
+    .surface{
+      padding:22px;
+      border-radius:26px;
+      border:1px solid var(--stroke);
+      background:var(--card);
+      box-shadow:var(--shadow-soft);
+    }
+    .faq{
+      border-top:1px solid var(--stroke);
+    }
+    .faq h2{
+      margin:0 0 22px;
+      text-align:center;
+      font-size:clamp(22px,2.2vw,26px);
+      font-weight:600;
+      letter-spacing:-.02em;
+      color:var(--ink);
+    }
+    .faq ul{ list-style:none; margin:0; padding:0; }
+    .faq li{ padding:18px 0; border-bottom:1px solid var(--stroke); }
+    .faq li:last-child{ border-bottom:0; }
+    .faq h3{ margin:0 0 8px; font-size:16px; font-weight:600; line-height:1.35; color:var(--ink); }
+    .faq p{ margin:0; font-size:15px; line-height:1.6; color:var(--muted); }
 
     /* Top nav (coherente con tu demo) */
     
@@ -223,6 +248,9 @@
       backdrop-filter: blur(10px);
     }
     .btnGhost:hover{background: rgba(255,255,255,.16);}
+
+    /* Section rhythm (FAQ matches culture.html: section padding + .faq border) */
+    section { padding: 56px 0; }
 
     /* Section header */
     .section{padding:18px 0;}
@@ -865,7 +893,7 @@
  "@context": "https://schema.org",
  "@type": "WebPage",
  "name": "Night Falls by PurePods",
- "description": "description": "Plan your perfect stargazing night with Night Falls by PurePods. Follow the moon, find the darkest skies, and book a glass cabin stay under unforgettable New Zealand skies."
+ "description": "Plan your perfect stargazing night with Night Falls by PurePods. Follow the moon, find the darkest skies, and book a glass cabin stay under unforgettable New Zealand skies.",
  "url": "https://purepods.com/night-falls/",
  "inLanguage": "en-NZ",
  "isPartOf": {
@@ -894,34 +922,34 @@
 {
  "@context": "https://schema.org",
  "@type": "FAQPage",
+ "@id": "https://purepods.com/night-falls/#faq",
  "mainEntity": [
    {
      "@type": "Question",
-     "name": "When is the best time to see the Milky Way in New Zealand?",
+     "name": "What is Night Falls at PurePods?",
      "acceptedAnswer": {
        "@type": "Answer",
-       "text": "The Milky Way is most visible during dark-sky nights when the moon is absent. In New Zealand this is typically best between autumn and early spring."
+       "text": "Night Falls is PurePods' dark-sky experience, designed for guests who want to enjoy remote New Zealand landscapes after sunset, with minimal light pollution and exceptional stargazing conditions."
      }
    },
    {
      "@type": "Question",
-     "name": "Are PurePods good for stargazing?",
+     "name": "Do I need astronomy knowledge to enjoy Night Falls?",
      "acceptedAnswer": {
        "@type": "Answer",
-       "text": "Yes. PurePods are located in remote landscapes with very low light pollution. Their glass design allows guests to observe the night sky directly from inside the cabin."
+       "text": "No. Night Falls is designed to be simple and immersive, whether you already know the night sky or simply want to slow down and experience it in silence."
      }
    },
    {
      "@type": "Question",
-     "name": "What makes a dark-sky location special?",
+     "name": "When is the best time to experience Night Falls?",
      "acceptedAnswer": {
        "@type": "Answer",
-       "text": "Dark-sky locations have minimal artificial light pollution, allowing thousands of stars, the Milky Way and meteor showers to be visible to the naked eye."
+       "text": "The best nights are usually around the new moon, when the sky is darkest and stars, planets and the Milky Way can be seen more clearly."
      }
    }
  ]
 }
-
 </script>
 </head>
 
@@ -940,6 +968,7 @@
       <a class="topnav__pill" href="experiences.html">Experiences</a>
       <a class="topnav__pill" href="#calendario">Follow the Moon</a>
       <a class="topnav__pill" href="#vivir">How to live the night</a>
+      <a class="topnav__pill" href="#faq">FAQ</a>
       <a class="topnav__pill topnav__book" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Book</a>
     </nav>
 
@@ -1269,25 +1298,18 @@
 
     </section>
 
-    <section class="section">
-  <div class="sectionHeader">
-    <h2>Stargazing questions</h2>
-    <p class="hint">Things guests often ask before their Night Falls stay</p>
-  </div>
-
-  <div class="card">
-    <p><strong>When is the best time to see the Milky Way in New Zealand?</strong><br>
-    The Milky Way is visible most clearly during dark-sky nights when the moon is absent. In New Zealand this is often best between autumn and early spring, when the nights are longer and the sky is darker.</p>
-
-    <p><strong>Are PurePods good for stargazing?</strong><br>
-    Yes. PurePods are located in remote natural landscapes with very low light pollution. Their glass architecture allows guests to watch the night sky directly from the bed, making them ideal for stargazing.</p>
-
-    <p><strong>What makes a dark-sky location special?</strong><br>
-    A dark-sky location has very little artificial light. This allows thousands of stars, the Milky Way, and meteor showers to become visible to the naked eye — something rarely seen near cities.</p>
-  </div>
-
-</section>
-
+    <section class="faq" id="faq" aria-labelledby="faq-heading">
+      <div class="wrap">
+        <div class="surface">
+          <h2 id="faq-heading">Frequently asked questions</h2>
+          <ul>
+            <li><h3>What is Night Falls at PurePods?</h3><p>Night Falls is PurePods’ dark-sky experience, designed for guests who want to enjoy remote New Zealand landscapes after sunset, with minimal light pollution and exceptional stargazing conditions.</p></li>
+            <li><h3>Do I need astronomy knowledge to enjoy Night Falls?</h3><p>No. Night Falls is designed to be simple and immersive, whether you already know the night sky or simply want to slow down and experience it in silence.</p></li>
+            <li><h3>When is the best time to experience Night Falls?</h3><p>The best nights are usually around the new moon, when the sky is darkest and stars, planets and the Milky Way can be seen more clearly.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
     <!-- CTA -->
     <div class="stickyCta">

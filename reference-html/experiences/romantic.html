@@ -925,20 +925,77 @@
   .pods-cards{ grid-template-columns: 1fr; }
 }
 
+    .surface {
+      padding: 22px;
+      border-radius: 26px;
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      box-shadow: var(--shadow-soft);
+    }
+    .faq { border-top: 1px solid var(--stroke); }
+    .faq h2 {
+      margin: 0 0 22px;
+      text-align: center;
+      font-size: clamp(22px, 2.2vw, 26px);
+      font-weight: 600;
+      letter-spacing: -.02em;
+      color: var(--ink);
+    }
+    .faq ul { list-style: none; margin: 0; padding: 0; }
+    .faq li { padding: 18px 0; border-bottom: 1px solid var(--stroke); }
+    .faq li:last-child { border-bottom: 0; }
+    .faq h3 { margin: 0 0 8px; font-size: 16px; font-weight: 600; line-height: 1.35; color: var(--ink); }
+    .faq p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--muted); }
 
 </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Romantic Getaway | PurePods Glass Cabin Experience in New Zealand",
-  "description": "Romantic getaway in New Zealand: escape to a private PurePods glass cabin for two. Starry skies, complete privacy and an intimate connection with nature.",
-  "url": "https://purepods.com/experiences/romantic/",
-  "publisher": {
-    "@type": "Organization",
-    "name": "PurePods",
-    "url": "https://purepods.com"
-  }
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://purepods.com/experiences/romantic/#webpage",
+      "name": "Romantic Getaway | PurePods Glass Cabin Experience in New Zealand",
+      "description": "Romantic getaway in New Zealand: escape to a private PurePods glass cabin for two. Starry skies, complete privacy and an intimate connection with nature.",
+      "url": "https://purepods.com/experiences/romantic/",
+      "inLanguage": "en-NZ",
+      "publisher": {
+        "@type": "Organization",
+        "name": "PurePods",
+        "url": "https://purepods.com"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://purepods.com/experiences/romantic/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What makes a PurePods romantic getaway different?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A PurePods romantic stay combines complete privacy, remote New Zealand landscapes and uninterrupted time together. The experience is designed for calm, connection and memorable moments in nature."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is PurePods suitable for proposals, anniversaries or special occasions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Many guests choose PurePods for proposals, anniversaries, birthdays and meaningful celebrations. The setting is quiet, private and naturally suited to intimate moments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we book a PurePods stay even without a special occasion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. Many romantic stays are simply about stepping away from routine, slowing down together and enjoying time in nature without distractions."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -953,6 +1010,7 @@
 <a href="#moments">Moments</a>
 <a href="#gallery">Gallery</a>
 <a href="#night">Night</a>
+<a href="#faq">FAQ</a>
 <a class="btn btn-primary" href="https://purepods.com/booking/?cart=Checkout">Book</a>
 </div>
 </div>
@@ -1147,6 +1205,20 @@ At PurePods, connection deepens and every moment invites you to stay a little cl
 </div>
 </div>
 </section>
+
+<section class="faq" id="faq" aria-labelledby="faq-heading">
+<div class="wrap">
+<div class="surface">
+<h2 id="faq-heading">Frequently asked questions</h2>
+<ul>
+<li><h3>What makes a PurePods romantic getaway different?</h3><p>A PurePods romantic stay combines complete privacy, remote New Zealand landscapes and uninterrupted time together. The experience is designed for calm, connection and memorable moments in nature.</p></li>
+<li><h3>Is PurePods suitable for proposals, anniversaries or special occasions?</h3><p>Yes. Many guests choose PurePods for proposals, anniversaries, birthdays and meaningful celebrations. The setting is quiet, private and naturally suited to intimate moments.</p></li>
+<li><h3>Can we book a PurePods stay even without a special occasion?</h3><p>Absolutely. Many romantic stays are simply about stepping away from routine, slowing down together and enjoying time in nature without distractions.</p></li>
+</ul>
+</div>
+</div>
+</section>
+
 <section class="cta" id="cta">
 <div class="wrap cta-inner">
 <div class="cta-panel">
