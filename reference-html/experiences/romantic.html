@@ -1187,14 +1187,28 @@ At PurePods, connection deepens and every moment invites you to stay a little cl
 
 
 <script>
-  const trigger = document.getElementById('toggleGallery');
-  const gallery = document.getElementById('galleryHidden');
+  (function () {
+    const trigger = document.getElementById('toggleGallery');
+    const gallery = document.getElementById('galleryHidden');
+    const gallerySection = document.getElementById('gallery');
 
-  if (trigger && gallery) {
-    trigger.addEventListener('click', () => {
-      gallery.classList.toggle('is-open');
+    if (trigger && gallery) {
+      trigger.addEventListener('click', () => {
+        gallery.classList.toggle('is-open');
+      });
+    }
+
+    document.querySelectorAll('a[href="#gallery"]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (gallery) gallery.classList.add('is-open');
+        if (gallerySection) {
+          gallerySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        history.replaceState(null, '', '#gallery');
+      });
     });
-  }
+  })();
 </script>
 
 <script>
