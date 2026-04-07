@@ -49,7 +49,12 @@
     section { padding:56px 0; }
     .surface { padding:22px; border-radius:26px; border:1px solid var(--stroke); background:var(--card); box-shadow:var(--shadow-soft); }
     .lead { margin:0 auto; max-width:70ch; color:var(--muted); line-height:1.65; font-size:16px; text-align:center; }
-    #about .lead { max-width:min(720px, 100%); }
+    #about .lead {
+      max-width:none;
+      width:100%;
+      margin:0;
+      text-align:left;
+    }
     .journey-chapter { margin-top:56px; padding-top:48px; border-top:1px solid var(--stroke); }
     .journey-chapter:first-of-type { margin-top:0; padding-top:0; border-top:0; }
     .moment { display:grid; grid-template-columns:1.05fr .95fr; gap:28px; align-items:center; }
