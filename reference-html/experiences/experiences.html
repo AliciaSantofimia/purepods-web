@@ -235,8 +235,7 @@
       box-shadow: 0 22px 55px rgba(0,0,0,.1);
     }
     /* --media-pos: encuadre por tarjeta (ej. center top, center 30%, 50% 20%). Por defecto: center */
-    .card .media,
-.editorial-block .media{
+    .card .media{
   height: 180px;
   background-size: cover;
   background-position: var(--media-pos, center);
@@ -244,8 +243,7 @@
   overflow: hidden;
 }
 
-.card .media::after,
-.editorial-block .media::after{
+.card .media::after{
   content: "";
   position: absolute;
   inset: 0;
@@ -253,8 +251,7 @@
   pointer-events: none;
 }
 
-.card .body,
-.editorial-block .body{
+.card .body{
   padding: 20px 22px 22px;
   display: flex;
   flex-direction: column;
@@ -262,8 +259,7 @@
   flex: 1;
 }
 
-.card .tag,
-.editorial-block .tag{
+.card .tag{
   display: inline-flex;
   padding: 6px 10px;
   border-radius: 999px;
@@ -276,8 +272,7 @@
   width: fit-content;
 }
 
-.card h3,
-.editorial-block h3{
+.card h3{
   margin: 0;
   font-family: "Inter", system-ui, sans-serif;
   font-size: 18px;
@@ -286,8 +281,7 @@
   color: var(--brand-green);
 }
 
-.card p,
-.editorial-block p{
+.card p{
   margin: 0;
   color: var(--muted);
   font-size: 14px;
@@ -295,8 +289,7 @@
   flex: 1;
 }
 
-.card .go,
-.editorial-block .go{
+.card .go{
   display: inline-flex;
   width: fit-content;
   padding: 9px 12px;
@@ -308,76 +301,9 @@
   font-size: 13px;
 }
 
-    /* EDITORIAL BLOCKS */
-    .editorial{
-      padding: 48px 0 56px;
-    }
-    .editorial-head{
-      text-align: center;
-      margin-bottom: 28px;
-    }
-    .editorial-head h2{
-      font-family: "Inter", system-ui, sans-serif;
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--brand-green);
-      margin: 0 0 6px;
-      letter-spacing: -0.01em;
-    }
-    .editorial-head p{
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.6;
-      max-width: 55ch;
-    }
-    .editorial-grid{
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .editorial-block{
-      border-radius: 24px;
-      border: 1px solid var(--stroke);
-      overflow: hidden;
-      background: var(--card);
-      box-shadow: var(--shadow);
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-    .editorial-block:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 22px 55px rgba(0,0,0,.1);
-    }
-    .editorial-block .media{
-    height: 160px;
-    background-size: cover;
-    background-position: var(--media-pos, center);
-    }
-    .editorial-block .body{
-      padding: 18px 20px;
-    }
-    .editorial-block h3{
-      margin: 0 0 6px;
-      font-family: "Inter", system-ui, sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--brand-green);
-    }
-    .editorial-block p{
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.55;
-    }
-    .editorial-block a.whole {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-    }
-
     /* MORE EXPERIENCES */
     .soon-section{
-      padding: 32px 0 64px;
+      padding: 48px 0 64px;
     }
     .soon-section h2{
       font-family: "Inter", system-ui, sans-serif;
@@ -403,7 +329,6 @@
 
     @media (max-width: 900px){
       .grid{ grid-template-columns: 1fr; }
-      .editorial-grid{ grid-template-columns: 1fr; }
       .soon-grid{ grid-template-columns: 1fr; }
     }
     @media (max-width: 640px){
@@ -486,37 +411,6 @@
             <h3>Scenic routes</h3>
             <p>Scenic routes and plans that fit before or after your PurePod stay.</p>
             <span class="go">View more →</span>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- EDITORIAL: THEMES -->
-    <section class="editorial">
-      <div class="editorial-head">
-        <h2>Ways to explore</h2>
-        <p>Nature, stillness and local flavour — each pod region offers something different.</p>
-      </div>
-      <div class="editorial-grid">
-        <a class="editorial-block whole" href="night-falls.html">
-          <div class="media" style="background-image: url('../../assets/img/experiences/night-falls/purepod-full-moon.jpg');"></div>
-          <div class="body">
-            <h3>Stargazing & dark skies</h3>
-            <p>Clear nights, minimal light. Experience the sky from your pod.</p>
-          </div>
-        </a>
-        <a class="editorial-block whole" href="journeys.html">
-          <div class="media" style="background-image: url('../../assets/img/experiences/journeys/te-wairere-waterfall-north-island-new-zealand.jpg');"></div>
-          <div class="body">
-            <h3>Nature & walks</h3>
-            <p>Forest tracks, coastlines and quiet trails near your stay.</p>
-          </div>
-        </a>
-        <a class="editorial-block whole" href="../explore.html">
-          <div class="media" style="background-image: url('../../assets/img/experiences/romantic/purepods-romantic-getaway-couple-sunset-view-new-zealand.jpg'); --media-pos: center 65%;"></div>
-          <div class="body">
-            <h3>Slow travel</h3>
-            <p>Choose your pod. Each place has its own rhythm and landscape.</p>
           </div>
         </a>
       </div>
