@@ -175,51 +175,6 @@
       color: var(--ink);
       text-align: left;
     }
-    .journey-faq {
-      border-top: 1px solid var(--stroke);
-    }
-    .journey-faq__inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    .journey-faq__title {
-      margin: 0 0 22px;
-      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-size: clamp(22px, 2.2vw, 26px);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-      text-align: center;
-    }
-    .journey-faq__list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .journey-faq__list > li {
-      padding: 18px 0;
-      border-bottom: 1px solid var(--stroke);
-    }
-    .journey-faq__list > li:first-child {
-      padding-top: 0;
-    }
-    .journey-faq__list > li:last-child {
-      border-bottom: 0;
-      padding-bottom: 0;
-    }
-    .journey-faq__q {
-      margin: 0 0 8px;
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.35;
-    }
-    .journey-faq__a {
-      margin: 0;
-      font-size: 15px;
-      line-height: 1.6;
-      color: var(--muted);
-    }
     .btnGhost {
       display: inline-block;
       margin-top: 16px;
@@ -238,12 +193,47 @@
       padding: 48px 0 24px;
       overflow: hidden;
     }
-    .experience-surface {
+    .experience-surface,
+    .surface {
       padding: 22px 22px 20px;
       border-radius: 26px;
       border: 1px solid var(--stroke);
       background: var(--card);
       box-shadow: var(--shadow-soft);
+    }
+    .faq {
+      border-top: 1px solid var(--stroke);
+    }
+    .faq h2 {
+      margin: 0 0 22px;
+      text-align: center;
+      font-size: clamp(22px, 2.2vw, 26px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .faq ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .faq li {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--stroke);
+    }
+    .faq li:last-child {
+      border-bottom: 0;
+    }
+    .faq h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+    .faq p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--muted);
     }
     .eyebrow {
       font-size: 12px;
@@ -947,16 +937,6 @@
       color: var(--ink);
     }
 
-    .journey-faq__a {
-  color: var(--ink);
-  opacity: .82;
-}
-.journey-faq__a {
-  color: var(--ink);
-}
-
-
-
   </style>
 
   <script type="application/ld+json">
@@ -1065,7 +1045,7 @@
           The sections below organise examples into forest walks and nature trails, day and multi-day hikes, and cycle routes.
           Each slide links to a public route or place resource where one is listed, and to a suggested PurePod booking link for a nearby site.
           For the full set of experience themes, see <a href="experiences.html">Experiences</a>.
-          Short answers to common questions appear in the <a href="#faqs">FAQ</a> below.
+          Short answers to common questions appear in the <a href="#faq">FAQ</a> below.
         </p>
       </div>
     </section>
@@ -1425,23 +1405,14 @@
       </div>
     </section>
 
-    <section class="experience-block journey-faq" id="faqs" aria-labelledby="journey-faq-heading">
+    <section class="faq" id="faq" aria-labelledby="faq-heading">
       <div class="wrap">
-        <div class="experience-surface journey-faq__inner">
-          <h2 id="journey-faq-heading" class="journey-faq__title">Frequently asked questions</h2>
-          <ul class="journey-faq__list">
-            <li>
-              <p class="journey-faq__q">What is the Journey experience on PurePods?</p>
-              <p class="journey-faq__a">Journey is a PurePods experience page that groups walking, hiking and cycling ideas with suggested PurePod stays. It presents example forest walks, hikes and cycle routes in selected New Zealand regions, with external links to route information and internal booking links to nearby pods.</p>
-            </li>
-            <li>
-              <p class="journey-faq__q">Which regions appear in the examples on this page?</p>
-              <p class="journey-faq__a">The carousels highlight examples in Rotorua, Waikato, the Kāpiti Coast, Central Otago, the Coromandel, Waipara and Auckland’s west coast. These are illustrative routes only; availability and access are set by land managers and operators linked from each entry.</p>
-            </li>
-            <li>
-              <p class="journey-faq__q">How do I book a PurePod from this page?</p>
-              <p class="journey-faq__a">Use the main Book control in the navigation, the “Find your PurePod” call to action, or each section’s “Stay at [pod name]” link. Those booking links open the PurePods booking flow, often with a suggested site pre-selected where shown.</p>
-            </li>
+        <div class="surface">
+          <h2 id="faq-heading">Frequently asked questions</h2>
+          <ul>
+            <li><h3>What is the Journey experience on PurePods?</h3><p>Journey is a PurePods experience page that groups walking, hiking and cycling ideas with suggested PurePod stays. It presents example forest walks, hikes and cycle routes in selected New Zealand regions, with external links to route information and internal booking links to nearby pods.</p></li>
+            <li><h3>Which regions appear in the examples on this page?</h3><p>The carousels highlight examples in Rotorua, Waikato, the Kāpiti Coast, Central Otago, the Coromandel, Waipara and Auckland’s west coast. These are illustrative routes only; availability and access are set by land managers and operators linked from each entry.</p></li>
+            <li><h3>How do I book a PurePod from this page?</h3><p>Use the main Book control in the navigation, the “Find your PurePod” call to action, or each section’s “Stay at [pod name]” link. Those booking links open the PurePods booking flow, often with a suggested site pre-selected where shown.</p></li>
           </ul>
         </div>
       </div>
