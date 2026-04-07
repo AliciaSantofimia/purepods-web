@@ -75,8 +75,10 @@
     .cta-panel { width:min(720px, 100%); margin:0 auto; padding:40px 28px; border-radius:26px; border:1px solid var(--stroke); background:var(--card); box-shadow:var(--shadow-soft); text-align:center; }
     .eyebrow { margin:0 0 12px; font-size:12px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
     .cta-support { margin:16px 0 0; font-size:14px; color:var(--muted); line-height:1.55; }
-    footer { padding:28px 0; color:var(--muted); font-size:13px; border-top:1px solid var(--stroke); }
-    .foot { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; }
+    footer { padding:34px 0; color:var(--muted); font-size:13px; }
+    footer .foot { display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+    footer .foot-brand { display:flex; align-items:center; gap:10px; }
+    footer img { width:28px; height:28px; border-radius:999px; opacity:.9; }
     @media (max-width:900px) { .moment { grid-template-columns:1fr; } }
   </style>
   <script type="application/ld+json">
@@ -233,13 +235,13 @@
   </main>
 
   <footer>
-    <div class="wrap foot">
-      <div style="display:flex;align-items:center;gap:10px;">
-        <img src="../../assets/img/purepods-logo-new-zealand.jpg" alt="PurePods" width="28" height="28" />
-        <span>Reference · Relax &amp; Coastal · PurePods</span>
-      </div>
-      <span>&copy; PurePods</span>
-    </div>
-  </footer>
+<div class="wrap foot">
+<div class="foot-brand">
+<img alt="PurePods New Zealand" src="../../assets/img/purepods-logo-new-zealand.jpg" width="28" height="28">
+<div>PurePods · <a href="../home/index.html">Home</a> · <a href="../explore.html">Pods</a> · <a href="../experiences/experiences.html">Experiences</a> · <a href="../my-journey.html">My journey</a></div>
+</div>
+<div>© PurePods</div>
+</div>
+</footer>
 </body>
 </html>
