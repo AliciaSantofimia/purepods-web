@@ -418,25 +418,12 @@
       border-bottom: 1px solid var(--stroke);
     }
     .cta-inner {
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       gap: 18px;
       flex-wrap: wrap;
     }
-    .cta h2 {
-      margin:0;
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--ink);
-      letter-spacing: -0.02em;
-    }
-    .cta p {
-      margin: 8px 0 0;
-      color: var(--muted);
-      max-width: 60ch;
-    }
-
     footer {
       padding: 34px 0;
       color: var(--muted);
@@ -667,11 +654,10 @@
     .gallery-grid2 .gitem:nth-child(9){ grid-column: span 4; }
     .gallery-grid2 .gitem:nth-child(10){ grid-column: span 4; }
 
-    .cta .wrap {
-      display: flex;
-      justify-content: center;
-    }
     .cta-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: min(720px, 100%);
       margin: 0 auto;
       padding: 40px 28px;
@@ -697,6 +683,8 @@
     }
     .cta-kicker {
       margin: 0 0 10px;
+      width: 100%;
+      max-width: min(62ch, 100%);
       font-size: 12px;
       font-weight: 500;
       letter-spacing: .14em;
@@ -704,24 +692,42 @@
       color: var(--muted);
     }
     .cta-text {
-      margin: 0 auto 18px;
-      max-width: min(62ch, calc(100% - 8px));
+      margin: 0 0 18px;
+      width: 100%;
+      max-width: min(62ch, 100%);
       line-height: 1.65;
       color: var(--muted);
       font-size: 16px;
     }
     .cta-actions {
       display: flex;
+      width: 100%;
+      max-width: min(62ch, 100%);
       gap: 12px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-top: 6px;
+      margin-top: 0;
     }
     .cta-note {
       margin: 18px 0 0;
+      width: 100%;
+      max-width: min(62ch, 100%);
       font-size: 14px;
       line-height: 1.55;
       color: var(--muted);
+      text-align: center;
+    }
+    .cta-panel .booking-panel {
+      width: 100%;
+      max-width: min(62ch, 100%);
+      margin-top: 24px;
+      text-align: center;
+    }
+    .cta-panel .booking-fields {
+      justify-content: center;
+    }
+    .cta-panel .booking-results {
+      text-align: center;
     }
 
     @media (max-width: 900px){
@@ -1155,6 +1161,7 @@ At PurePods, connection deepens and every moment invites you to stay a little cl
 <div class="cta-actions">
 <button class="btn btn-primary" id="openBooking" type="button">See available PurePods →</button>
 </div>
+<p class="cta-note">Every moment counts. Don't wait to make yours.</p>
 <div class="booking-panel" id="bookingPanel">
   <div class="booking-fields">
     <div class="field">
@@ -1169,7 +1176,6 @@ At PurePods, connection deepens and every moment invites you to stay a little cl
   </div>
   <div class="booking-results" id="bookingResults"></div>
 </div>
-<p class="cta-note">Every moment counts. Don't wait to make yours.</p>
 </div>
 </div>
 </section>
