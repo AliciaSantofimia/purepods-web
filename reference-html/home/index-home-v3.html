@@ -1,0 +1,1318 @@
+<!-- VERSION 3 — Premium boutique-home concept (reference only; does not replace v2) -->
+<!doctype html>
+<html lang="en-NZ">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="PurePods are private glass eco-cabins in New Zealand’s wild and gentle places. Slow down, connect with the landscape, and let the night arrive without hurry." />
+  <title>PurePods — Arrive slowly. Stay present.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+  :root{
+    --bg:#F7F6F3;
+    --ink:#5C5F3E;
+    --muted:rgba(92,95,62,.72);
+    --card:rgba(255,255,255,.85);
+    --stroke:rgba(92,95,62,.18);
+    --brand-green:#5C5F3E;
+    --brand-beige:#C2B59E;
+    --radius: 22px;
+    --shadow: 0 18px 44px rgba(0,0,0,.08);
+    --max: 1120px;
+    --cinema:#12140f;
+    --cinema-soft:rgba(247,246,243,.06);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.55;
+    overflow-x:hidden;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ width:min(var(--max),calc(100% - 40px)); margin:0 auto; }
+
+  /* ——— NAV (overlay, aligned with v2) ——— */
+  .nav{
+    position:absolute;
+    top:0; left:0; right:0;
+    z-index:60;
+    background:transparent;
+  }
+
+  .nav .wrap.nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100vw;
+    max-width:none;
+    margin-left:calc(50% - 50vw);
+    margin-right:calc(50% - 50vw);
+    padding:20px 18px 16px;
+    box-sizing:border-box;
+  }
+
+  .links{
+    display:flex;
+    flex-wrap:nowrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:22px 32px;
+    font-size:13px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    padding:10px 16px 10px 22px;
+    border:none;
+    background:transparent;
+    width:100%;
+    max-width:min(1120px,calc(100vw - 32px));
+    margin:0 auto;
+    box-sizing:border-box;
+  }
+
+  .nav-core{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:26px;
+    flex:1 1 auto;
+    min-width:0;
+  }
+
+  .nav-item{ position:relative; display:inline-flex; flex-direction:column; align-items:center; }
+
+  .nav-item > .nav-top{
+    font-weight:500;
+    text-shadow:0 1px 10px rgba(0,0,0,.4);
+    color:rgba(255,255,255,.88);
+    background:none;
+    border:none;
+    cursor:pointer;
+    font:inherit;
+    letter-spacing:inherit;
+    text-transform:inherit;
+    padding:6px 2px;
+    margin:0;
+  }
+
+  .nav-item > a.nav-top{ cursor:pointer; }
+
+  .nav-item > .nav-top:hover,
+  .nav-item > .nav-top:focus-visible{
+    color:#fff;
+    outline:none;
+  }
+
+  .nav-item > .nav-top:focus-visible{
+    text-decoration:underline;
+    text-underline-offset:4px;
+    text-decoration-color:rgba(255,255,255,.35);
+  }
+
+  .nav-dropdown{
+    position:absolute;
+    top:100%;
+    left:50%;
+    z-index:80;
+    padding-top:10px;
+    min-width:100%;
+    width:max-content;
+    max-width:min(392px,calc(100vw - 36px));
+    pointer-events:none;
+    opacity:0;
+    visibility:hidden;
+    transform:translateX(-50%) translateY(4px);
+    transition:opacity .2s ease, transform .2s ease, visibility 0s linear .2s;
+  }
+
+  .nav-item:hover .nav-dropdown,
+  .nav-item:focus-within .nav-dropdown{
+    pointer-events:auto;
+    opacity:1;
+    visibility:visible;
+    transform:translateX(-50%) translateY(0);
+    transition-delay:0s;
+  }
+
+  .nav-dropdown__panel{
+    text-transform:none;
+    letter-spacing:normal;
+    font-weight:400;
+    border:none;
+    border-radius:34px;
+    padding:10px 12px;
+    background:
+      radial-gradient(ellipse 118% 140% at 50% 42%, rgba(78,84,60,.1) 0%, transparent 52%),
+      radial-gradient(ellipse 140% 108% at 50% 54%, rgba(88,92,72,.065) 0%, transparent 70%);
+    backdrop-filter:blur(18px) saturate(1.02);
+    -webkit-backdrop-filter:blur(18px) saturate(1.02);
+  }
+
+  .nav-dropdown__eyebrow{
+    margin:0 0 8px;
+    padding:0 3px 6px;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:rgba(247,246,243,.7);
+    font-weight:500;
+  }
+
+  .nav-dropdown__grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2px 14px;
+    align-items:start;
+  }
+
+  .nav-dropdown__list{ display:flex; flex-direction:column; gap:2px; }
+
+  .nav-dropdown a{
+    display:block;
+    padding:7px 8px;
+    border-radius:12px;
+    font-size:13px;
+    font-weight:500;
+    letter-spacing:.02em;
+    text-transform:none;
+    color:rgba(255,253,248,.97);
+    text-shadow:
+      0 0 24px rgba(34,38,26,.55),
+      0 1px 14px rgba(28,32,22,.48),
+      0 0 1px rgba(17,18,15,.42);
+    transition:color .24s ease, background-color .24s ease, text-shadow .24s ease, text-decoration-color .24s ease;
+  }
+
+  .nav-dropdown a:hover,
+  .nav-dropdown a:focus-visible{
+    color:rgba(255,251,244,1);
+    background:rgba(242,236,224,.07);
+    text-decoration:underline;
+    text-decoration-thickness:1px;
+    text-underline-offset:5px;
+    text-decoration-color:rgba(194,181,158,.42);
+    outline:none;
+  }
+
+  .nav-dropdown a:focus-visible{ box-shadow:0 0 0 2px rgba(247,246,243,.18); }
+
+  .nav-dropdown--pods .nav-dropdown__panel{
+    min-width:min(352px,calc(100vw - 36px));
+    padding:12px 14px;
+  }
+
+  .nav-dropdown--pods .nav-dropdown__grid{ gap:2px 16px; }
+
+  .nav-dropdown--experiences .nav-dropdown__panel,
+  .nav-dropdown--journey .nav-dropdown__panel{
+    min-width:min(238px,calc(100vw - 36px));
+  }
+
+  @media (max-width:520px){
+    .nav-dropdown--pods .nav-dropdown__grid{ grid-template-columns:1fr; }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .nav-dropdown{ transition:none; }
+    .nav-dropdown a{ transition:none; }
+  }
+
+  .nav .nav-brand{
+    display:inline-flex;
+    align-items:center;
+    align-self:center;
+    flex-shrink:0;
+    line-height:0;
+    text-transform:none;
+    letter-spacing:normal;
+    margin:0;
+    padding:0;
+    border:0;
+    background:transparent;
+    box-shadow:none;
+  }
+
+  .nav .nav-brand img{
+    display:block;
+    height:clamp(56px,7.05vw,78px);
+    width:auto;
+    max-width:min(268px,46vw);
+    object-fit:contain;
+    transform:translateY(-3px);
+    filter:drop-shadow(0 1px 4px rgba(0,0,0,.28));
+  }
+
+  .links a{ color:rgba(255,255,255,.88); }
+  .links a:hover{ color:#fff; }
+
+  .nav-core a{
+    font-weight:500;
+    text-shadow:0 1px 10px rgba(0,0,0,.4);
+  }
+
+  .links .btn-primary{
+    flex-shrink:0;
+    background:var(--brand-beige);
+    color:var(--brand-green);
+    border:2px solid rgba(255,255,255,.2);
+    font-weight:800;
+    font-size:14px;
+    letter-spacing:.08em;
+    padding:14px 26px;
+    min-height:46px;
+    box-shadow:0 14px 28px rgba(92,95,60,.26), 0 3px 10px rgba(0,0,0,.1);
+  }
+
+  @media (max-width:900px){
+    .links{
+      flex-wrap:wrap;
+      justify-content:center;
+      max-width:calc(100vw - 24px);
+      padding:12px 14px;
+      gap:16px 20px;
+    }
+    .nav-core{
+      flex:1 1 auto;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:16px 22px;
+    }
+    .nav .nav-brand{
+      order:-1;
+      flex:1 1 100%;
+      justify-content:center;
+    }
+    .nav .nav-brand img{
+      height:clamp(52px,12vw,69px);
+      max-width:min(278px,84vw);
+    }
+  }
+
+  /* ——— Shared UI ——— */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 18px;
+    border-radius:999px;
+    border:2px solid var(--stroke);
+    background:rgba(255,255,255,.55);
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:.02em;
+  }
+
+  .btn-primary{
+    background:var(--brand-beige);
+    border:2px solid var(--brand-beige);
+    color:var(--brand-green);
+    font-weight:800;
+    letter-spacing:.06em;
+    box-shadow:0 16px 30px rgba(92,95,60,.2);
+  }
+
+  .eyebrow{
+    font-size:11px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:600;
+    margin:0 0 14px;
+  }
+
+  .eyebrow--on-dark{ color:rgba(247,246,243,.55); }
+
+  /* ——— HERO (cinematic carousel) ——— */
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    padding:0 0 clamp(48px,8vh,96px);
+    color:#F7F6F3;
+    isolation:isolate;
+  }
+
+  .hero__visual{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    overflow:hidden;
+    background:var(--cinema);
+  }
+
+  .hero__slide{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    transition:opacity 1.35s ease;
+    pointer-events:none;
+  }
+
+  .hero__slide.is-active{
+    opacity:1;
+    z-index:1;
+  }
+
+  .hero__slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    transform:scale(1);
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .hero__slide.is-active img{
+      animation:heroKen 22s ease-out forwards;
+    }
+  }
+
+  @keyframes heroKen{
+    from{ transform:scale(1); }
+    to{ transform:scale(1.07); }
+  }
+
+  .hero__veil{
+    position:absolute;
+    inset:0;
+    z-index:2;
+    background:
+      linear-gradient(to top, rgba(10,11,8,.88) 0%, rgba(10,11,8,.35) 42%, rgba(10,11,8,.5) 100%),
+      linear-gradient(to bottom, rgba(0,0,0,.5) 0%, transparent 38%);
+    pointer-events:none;
+  }
+
+  .hero__grain{
+    position:absolute;
+    inset:0;
+    z-index:3;
+    opacity:.045;
+    pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .hero__content{
+    position:relative;
+    z-index:4;
+    width:100%;
+    max-width:min(1040px,calc(100% - 32px));
+    text-align:center;
+    padding-top:clamp(100px,18vh,200px);
+  }
+
+  h1.heroTitle{
+    margin:0 auto 18px;
+    font-family:"Noto Serif Display",Georgia,"Times New Roman",serif;
+    font-weight:500;
+    font-size:clamp(38px,5.6vw,68px);
+    letter-spacing:-0.025em;
+    line-height:1.08;
+    max-width:14ch;
+    text-wrap:balance;
+  }
+
+  .hero__lead{
+    margin:0 auto 32px;
+    max-width:42ch;
+    font-size:clamp(15px,1.35vw,18px);
+    line-height:1.65;
+    color:rgba(247,246,243,.78);
+    font-weight:400;
+  }
+
+  .hero__actions{
+    display:flex;
+    gap:14px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:28px;
+  }
+
+  .hero__actions .btn{
+    border-color:rgba(255,255,255,.28);
+    background:rgba(247,246,243,.1);
+    color:#F7F6F3;
+    backdrop-filter:blur(10px);
+  }
+
+  .hero__actions .btn:hover{ background:rgba(247,246,243,.2); }
+
+  .hero__actions .btn-primary{
+    background:var(--brand-beige);
+    border-color:var(--brand-beige);
+    color:var(--brand-green);
+    backdrop-filter:none;
+  }
+
+  .hero__dots{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+
+  .hero__dots button{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.35);
+    background:transparent;
+    padding:0;
+    cursor:pointer;
+    transition:background .25s ease, transform .25s ease;
+  }
+
+  .hero__dots button[aria-current="true"]{
+    background:var(--brand-beige);
+    border-color:var(--brand-beige);
+    transform:scale(1.15);
+  }
+
+  .hero__dots button:focus-visible{
+    outline:2px solid rgba(247,246,243,.5);
+    outline-offset:3px;
+  }
+
+  /* ——— Editorial band ——— */
+  .editorial{
+    padding:clamp(72px,10vw,120px) 0;
+    background:var(--bg);
+  }
+
+  .editorial__inner{
+    max-width:min(720px,calc(100% - 40px));
+    margin:0 auto;
+    text-align:center;
+  }
+
+  .editorial__inner h2{
+    margin:0 0 20px;
+    font-family:"Inter",system-ui,sans-serif;
+    font-size:clamp(22px,2.4vw,30px);
+    font-weight:600;
+    letter-spacing:-0.02em;
+    color:var(--brand-green);
+    line-height:1.25;
+  }
+
+  .editorial__inner p{
+    margin:0;
+    color:var(--muted);
+    font-size:17px;
+    line-height:1.75;
+  }
+
+  /* ——— Landscapes carousel (dark) ——— */
+  .landscapes{
+    background:var(--cinema);
+    color:rgba(247,246,243,.92);
+    padding:clamp(64px,9vw,104px) 0 clamp(72px,10vw,112px);
+  }
+
+  .landscapes__head{
+    width:min(var(--max),calc(100% - 40px));
+    margin:0 auto 36px;
+    display:grid;
+    gap:16px;
+    grid-template-columns:1fr auto;
+    align-items:end;
+  }
+
+  @media (max-width:720px){
+    .landscapes__head{ grid-template-columns:1fr; }
+  }
+
+  .landscapes__head h2{
+    margin:0;
+    font-size:clamp(26px,3.2vw,40px);
+    font-weight:600;
+    letter-spacing:-0.02em;
+    font-family:"Inter",system-ui,sans-serif;
+    color:#F7F6F3;
+    max-width:18ch;
+    line-height:1.15;
+  }
+
+  .landscapes__head p{
+    margin:0;
+    max-width:36ch;
+    color:rgba(247,246,243,.58);
+    font-size:15px;
+    line-height:1.65;
+    justify-self:end;
+    text-align:right;
+  }
+
+  @media (max-width:720px){
+    .landscapes__head p{
+      justify-self:start;
+      text-align:left;
+      max-width:52ch;
+    }
+  }
+
+  .landscapes__stage{
+    position:relative;
+    width:min(calc(100vw - 24px),min(1180px,100%));
+    margin:0 auto;
+    border-radius:clamp(18px,2vw,28px);
+    overflow:hidden;
+    border:1px solid rgba(247,246,243,.1);
+    box-shadow:0 40px 100px rgba(0,0,0,.45);
+  }
+
+  .landscapes__slides{
+    position:relative;
+    aspect-ratio:16/9;
+    background:#0a0b08;
+  }
+
+  @media (max-width:600px){
+    .landscapes__slides{ aspect-ratio:4/5; }
+  }
+
+  .landscapes__slide{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    transition:opacity .85s ease;
+  }
+
+  .landscapes__slide.is-active{ opacity:1; z-index:1; }
+
+  .landscapes__slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+  }
+
+  .landscapes__caption{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    z-index:2;
+    padding:clamp(18px,3vw,32px) clamp(20px,3vw,36px);
+    background:linear-gradient(to top, rgba(8,9,7,.92), transparent);
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+
+  .landscapes__caption strong{
+    font-size:clamp(15px,1.2vw,17px);
+    font-weight:600;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    color:rgba(247,246,243,.95);
+  }
+
+  .landscapes__caption span{
+    font-size:14px;
+    color:rgba(247,246,243,.62);
+    max-width:48ch;
+    line-height:1.5;
+  }
+
+  .landscapes__controls{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    width:min(var(--max),calc(100% - 40px));
+    margin:22px auto 0;
+  }
+
+  .landscapes__counter{
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:rgba(247,246,243,.45);
+    font-weight:600;
+  }
+
+  .carousel-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    border:1px solid rgba(247,246,243,.22);
+    background:rgba(247,246,243,.06);
+    color:#F7F6F3;
+    cursor:pointer;
+    transition:background .2s ease, border-color .2s ease;
+  }
+
+  .carousel-btn:hover{ background:rgba(247,246,243,.12); border-color:rgba(247,246,243,.35); }
+  .carousel-btn:focus-visible{ outline:2px solid var(--brand-beige); outline-offset:3px; }
+
+  .carousel-btn svg{ width:20px; height:20px; display:block; }
+
+  .landscapes__nav-group{ display:flex; gap:10px; }
+
+  /* ——— Experiences rail ——— */
+  .experiences{
+    padding:clamp(72px,10vw,116px) 0 clamp(80px,11vw,128px);
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(194,181,158,.2), transparent 55%),
+      var(--bg);
+  }
+
+  .experiences__head{
+    width:min(var(--max),calc(100% - 40px));
+    margin:0 auto 36px;
+  }
+
+  .experiences__head h2{
+    margin:0 0 12px;
+    font-size:clamp(26px,3.2vw,40px);
+    font-weight:600;
+    letter-spacing:-0.02em;
+    color:var(--brand-green);
+    font-family:"Inter",system-ui,sans-serif;
+    line-height:1.15;
+  }
+
+  .experiences__head p{
+    margin:0;
+    max-width:52ch;
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.7;
+  }
+
+  .experiences__rail{
+    position:relative;
+    margin-top:8px;
+  }
+
+  .experiences__track-wrap{
+    width:100vw;
+    margin-left:calc(50% - 50vw);
+    padding:12px 0 8px;
+    overflow:hidden;
+  }
+
+  .experiences__track{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scroll-padding-inline:max(20px,calc((100vw - min(var(--max),100% - 40px)) / 2));
+    padding-inline:max(20px,calc((100vw - min(var(--max),100% - 40px)) / 2));
+    scrollbar-width:none;
+  }
+
+  .experiences__track::-webkit-scrollbar{ display:none; }
+
+  .exp-card{
+    flex:0 0 min(380px,calc(100vw - 56px));
+    scroll-snap-align:start;
+    border-radius:22px;
+    overflow:hidden;
+    border:1px solid var(--stroke);
+    background:var(--card);
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+    min-height:420px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+
+  .exp-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 28px 70px rgba(0,0,0,.12);
+  }
+
+  .exp-card__media{
+    position:relative;
+    aspect-ratio:4/3;
+    overflow:hidden;
+    background:var(--stroke);
+  }
+
+  .exp-card__media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .6s ease;
+  }
+
+  .exp-card:hover .exp-card__media img{ transform:scale(1.04); }
+
+  @media (prefers-reduced-motion:reduce){
+    .exp-card:hover .exp-card__media img{ transform:none; }
+  }
+
+  .exp-card__body{
+    padding:22px 22px 24px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    flex:1;
+  }
+
+  .exp-card__tag{
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:600;
+  }
+
+  .exp-card__body h3{
+    margin:0;
+    font-size:20px;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    color:var(--brand-green);
+    font-family:"Inter",system-ui,sans-serif;
+  }
+
+  .exp-card__body p{
+    margin:0;
+    font-size:14px;
+    line-height:1.65;
+    color:var(--muted);
+    flex:1;
+  }
+
+  .exp-card__cta{
+    margin-top:4px;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--brand-green);
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+
+  .exp-card__cta::after{
+    content:"";
+    width:28px;
+    height:1px;
+    background:var(--brand-beige);
+    opacity:.9;
+  }
+
+  .experiences__arrows{
+    width:min(var(--max),calc(100% - 40px));
+    margin:18px auto 0;
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+  }
+
+  .carousel-btn--light{
+    border-color:var(--stroke);
+    background:rgba(255,255,255,.65);
+    color:var(--brand-green);
+  }
+
+  .carousel-btn--light:hover{
+    background:var(--card);
+    border-color:rgba(92,95,62,.28);
+  }
+
+  /* ——— Closing invitation ——— */
+  .invitation{
+    padding:clamp(56px,8vw,88px) 0;
+    border-top:1px solid var(--stroke);
+    background:var(--bg);
+  }
+
+  .invitation .wrap{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px 32px;
+  }
+
+  .invitation h2{
+    margin:0;
+    font-size:clamp(22px,2.6vw,32px);
+    font-weight:600;
+    letter-spacing:-0.02em;
+    color:var(--brand-green);
+    max-width:20ch;
+    line-height:1.2;
+    font-family:"Inter",system-ui,sans-serif;
+  }
+
+  .invitation__actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+
+  footer{
+    padding:32px 0 44px;
+    border-top:1px solid var(--stroke);
+    color:var(--muted);
+    font-size:13px;
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+    .hero__slide{ transition:opacity .01s; }
+    .landscapes__slide{ transition:opacity .01s; }
+    .hero__slide.is-active img{ animation:none; }
+  }
+  </style>
+</head>
+<body>
+
+  <div class="nav">
+    <div class="wrap nav-inner">
+      <div class="links">
+        <a class="nav-brand" href="index.html" aria-label="PurePods — Home">
+          <img src="../../assets/img/LogoPCblancosinfondo.png" alt="PurePods" decoding="async">
+        </a>
+        <div class="nav-core">
+          <div class="nav-item">
+            <a class="nav-top" href="../explore.html" id="nav-pods-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="nav-pods-panel">Pods</a>
+            <div class="nav-dropdown nav-dropdown--pods" id="nav-pods-panel" role="region" aria-labelledby="nav-pods-trigger">
+              <div class="nav-dropdown__panel">
+                <div class="nav-dropdown__grid">
+                  <a href="../location/atatu/index.html">Atatū</a>
+                  <a href="../location/greystone/index.html">Greystone</a>
+                  <a href="../location/hananui/index.html">Hananui</a>
+                  <a href="../location/kahutara/index.html">Kahutara</a>
+                  <a href="../location/kokomea/index.html">Kokomea</a>
+                  <a href="../location/korimako/index.html">Korimako</a>
+                  <a href="../location/makoha/index.html">Mākōha</a>
+                  <a href="../location/manakau/index.html">Manakau</a>
+                  <a href="../location/matu/index.html">Matū</a>
+                  <a href="../location/pamu/index.html">Pāmu</a>
+                  <a href="../location/pohue/index.html">Pōhue</a>
+                  <a href="../location/rewarewa/index.html">Rewarewa</a>
+                  <a href="../location/ruru/index.html">Ruru</a>
+                  <a href="../location/taima/index.html">Tāima</a>
+                  <a href="../location/tokoeka/index.html">Tokoeka</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a class="nav-top" href="../experiences/experiences.html" id="nav-exp-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="nav-exp-panel">Experiences</a>
+            <div class="nav-dropdown nav-dropdown--experiences" id="nav-exp-panel" role="region" aria-labelledby="nav-exp-trigger">
+              <div class="nav-dropdown__panel">
+                <div class="nav-dropdown__list">
+                  <a href="../experiences/adventure-wildlife.html">Adventure &amp; Wildlife</a>
+                  <a href="../experiences/culture.html">Culture</a>
+                  <a href="../experiences/journey.html">Journey</a>
+                  <a href="../experiences/night-falls.html">Night Falls</a>
+                  <a href="../experiences/relax-coastal.html">Relax Coastal</a>
+                  <a href="../experiences/romantic.html">Romantic</a>
+                  <a href="../experiences/wine-dine.html">Wine &amp; Dine</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a class="nav-top" href="../my-journey.html" id="nav-journey-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="nav-journey-panel">My journey</a>
+            <div class="nav-dropdown nav-dropdown--journey" id="nav-journey-panel" role="region" aria-labelledby="nav-journey-trigger">
+              <div class="nav-dropdown__panel">
+                <p class="nav-dropdown__eyebrow">Plan your stay</p>
+                <div class="nav-dropdown__list">
+                  <a href="https://purepods.com/booking/">Booking</a>
+                  <a href="../experiences/journey.html#faqs">FAQs</a>
+                  <a href="../experiences/journey.html#about">How it works</a>
+                  <a href="../location/greystone/index.html#faqs">What to pack</a>
+                  <a href="https://purepods.com/gift-vouchers/">Gift vouchers</a>
+                  <a href="https://purepods.com/contact/">Contact</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="btn btn-primary" href="https://purepods.com/booking/">Book</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero" aria-label="PurePods — hero">
+    <div class="hero__visual" aria-hidden="true">
+      <div class="hero__slide is-active" data-hero-slide>
+        <img src="../../assets/img/purepods-glass-eco-cabin-new-zealand-nature-stay-hero-home.jpg" alt="" decoding="async">
+      </div>
+      <div class="hero__slide" data-hero-slide>
+        <img src="../../assets/img/manakau/manakau-purepod-glass-cabin-hills-landscape-kaikoura.jpg" alt="" decoding="async">
+      </div>
+      <div class="hero__slide" data-hero-slide>
+        <img src="../../assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg" alt="" decoding="async">
+      </div>
+      <div class="hero__slide" data-hero-slide>
+        <img src="../../assets/img/ruru/ruru-purepod-glass-cabin-night-sky-coromandel.jpg" alt="" decoding="async">
+      </div>
+      <div class="hero__slide" data-hero-slide>
+        <img src="../../assets/img/pamu/pamu-purepod-aerial-glass-cabin-landscape-rotorua.jpg" alt="" decoding="async">
+      </div>
+      <div class="hero__slide" data-hero-slide>
+        <img src="../../assets/img/atatu/atatu-purepod-glass-cabin-night-stars-new-zealand.jpg" alt="" decoding="async">
+      </div>
+      <div class="hero__veil"></div>
+      <div class="hero__grain"></div>
+    </div>
+
+    <div class="hero__content">
+      <p class="eyebrow eyebrow--on-dark">New Zealand · Private glass eco-cabins</p>
+      <h1 class="heroTitle">Arrive slowly.<br>Stay present.</h1>
+      <p class="hero__lead">
+        PurePods are secluded glass cabins set in real landscapes — calm, minimal, and designed for two. Let the day lengthen. Let the sky do the talking.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn-primary" href="https://purepods.com/booking/">Check availability</a>
+        <a class="btn" href="../explore.html">Explore pods</a>
+        <a class="btn" href="../experiences/experiences.html">Explore experiences</a>
+      </div>
+      <ul class="hero__dots" id="hero-dots" aria-label="Hero image slides"></ul>
+    </div>
+  </section>
+
+  <section class="editorial" aria-labelledby="editorial-heading">
+    <div class="editorial__inner">
+      <h2 id="editorial-heading">A small footprint. A wide horizon.</h2>
+      <p>
+        This is not a hotel corridor or a busy lodge. Each PurePod sits in partnership with its land — private, unhurried, and tuned to weather, birdsong, and night light. You come for the stillness; the landscape supplies the rest.
+      </p>
+    </div>
+  </section>
+
+  <section class="landscapes" aria-labelledby="landscapes-heading">
+    <div class="landscapes__head">
+      <div>
+        <p class="eyebrow eyebrow--on-dark">Immersion</p>
+        <h2 id="landscapes-heading">Fifteen private stages. One quiet brief.</h2>
+      </div>
+      <p>Scroll the filmstrip — each pod is a different climate, geology, and mood. The architecture stays minimal; the view carries the drama.</p>
+    </div>
+
+    <div class="landscapes__stage">
+      <div class="landscapes__slides" id="landscapes-slides" aria-live="polite">
+        <div class="landscapes__slide is-active" data-land-slide>
+          <img src="../../assets/img/purepods-glass-eco-cabin-new-zealand-nature-stay-hero-home.jpg" alt="PurePod glass cabin in New Zealand nature" decoding="async">
+          <div class="landscapes__caption">
+            <strong>PurePods</strong>
+            <span>Glass eco-cabins immersed in the living landscape.</span>
+          </div>
+        </div>
+        <div class="landscapes__slide" data-land-slide>
+          <img src="../../assets/img/manakau/manakau-purepod-glass-cabin-hills-landscape-kaikoura.jpg" alt="Manakau PurePod above Kaikōura hills" decoding="async">
+          <div class="landscapes__caption">
+            <strong>Manakau</strong>
+            <span>Coastal ranges and wide sky above Kaikōura country.</span>
+          </div>
+        </div>
+        <div class="landscapes__slide" data-land-slide>
+          <img src="../../assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg" alt="Greystone PurePod exterior in Waipara" decoding="async">
+          <div class="landscapes__caption">
+            <strong>Greystone</strong>
+            <span>Waipara light, vines, and limestone calm.</span>
+          </div>
+        </div>
+        <div class="landscapes__slide" data-land-slide>
+          <img src="../../assets/img/ruru/ruru-purepod-glass-cabin-night-sky-coromandel.jpg" alt="Ruru PurePod under night sky" decoding="async">
+          <div class="landscapes__caption">
+            <strong>Ruru</strong>
+            <span>Coromandel dark skies from a glass-quiet room.</span>
+          </div>
+        </div>
+        <div class="landscapes__slide" data-land-slide>
+          <img src="../../assets/img/pamu/pamu-purepod-aerial-glass-cabin-landscape-rotorua.jpg" alt="Pāmu PurePod and Rotorua landscape from above" decoding="async">
+          <div class="landscapes__caption">
+            <strong>Pāmu</strong>
+            <span>Geothermal haze and forest scale near Rotorua.</span>
+          </div>
+        </div>
+        <div class="landscapes__slide" data-land-slide>
+          <img src="../../assets/img/atatu/atatu-purepod-glass-cabin-night-stars-new-zealand.jpg" alt="Atatū PurePod under stars" decoding="async">
+          <div class="landscapes__caption">
+            <strong>Atatū</strong>
+            <span>Night opens overhead — slow, clear, and close.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="landscapes__controls">
+      <span class="landscapes__counter" id="landscapes-counter" aria-hidden="true">01 / 06</span>
+      <div class="landscapes__nav-group">
+        <button type="button" class="carousel-btn" id="land-prev" aria-label="Previous landscape">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <button type="button" class="carousel-btn" id="land-next" aria-label="Next landscape">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="experiences" aria-labelledby="experiences-heading">
+    <div class="experiences__head">
+      <p class="eyebrow">Beyond the glass</p>
+      <h2 id="experiences-heading">Curated ways to read the land</h2>
+      <p>
+        A PurePod stay is the centrepiece — then the region offers its own rhythm: night skies, wildlife, heritage walks, coastal ease, and slow tables. Wander wide, then return to quiet.
+      </p>
+    </div>
+
+    <div class="experiences__rail">
+      <div class="experiences__track-wrap">
+        <div class="experiences__track" id="exp-track" tabindex="0" aria-label="Experience categories — horizontal list">
+          <a class="exp-card" href="../experiences/night-falls.html">
+            <div class="exp-card__media">
+              <img src="../../assets/img/experiences/night-falls/dark-sky-purepod.jpg" alt="Dark sky above a PurePod" loading="lazy" decoding="async">
+            </div>
+            <div class="exp-card__body">
+              <span class="exp-card__tag">Night falls</span>
+              <h3>Stars without stage lights</h3>
+              <p>Deep dark, slow minutes, and the night sky as the main event.</p>
+              <span class="exp-card__cta">Discover</span>
+            </div>
+          </a>
+          <a class="exp-card" href="../experiences/romantic.html">
+            <div class="exp-card__media">
+              <img src="../../assets/img/experiences/romantic/purepods-romantic-getaway-stargazing-bed-glass-roof.jpg" alt="Couple stargazing from bed inside a PurePod" loading="lazy" decoding="async">
+            </div>
+            <div class="exp-card__body">
+              <span class="exp-card__tag">Romantic</span>
+              <h3>Time, unshared</h3>
+              <p>Space for two — unhurried mornings, long views, soft light.</p>
+              <span class="exp-card__cta">Discover</span>
+            </div>
+          </a>
+          <a class="exp-card" href="../experiences/adventure-wildlife.html">
+            <div class="exp-card__media">
+              <img src="../../assets/img/experiences/adventure-wildlife/kaikoura-whale-watch-sperm-whale-coast-new-zealand.jpg" alt="Whale watching off the Kaikōura coast" loading="lazy" decoding="async">
+            </div>
+            <div class="exp-card__body">
+              <span class="exp-card__tag">Adventure &amp; wildlife</span>
+              <h3>Wildlife on its own clock</h3>
+              <p>From ocean giants to quiet trails — encounter, don’t perform.</p>
+              <span class="exp-card__cta">Discover</span>
+            </div>
+          </a>
+          <a class="exp-card" href="../experiences/culture.html">
+            <div class="exp-card__media">
+              <img src="../../assets/img/experiences/culture/ohinetahi-gardens-lyttelton-harbour-christchurch-new-zealand-historic-estate.jpg" alt="Ōhinetahi gardens above Lyttelton Harbour" loading="lazy" decoding="async">
+            </div>
+            <div class="exp-card__body">
+              <span class="exp-card__tag">Culture</span>
+              <h3>Stories in the stone</h3>
+              <p>Gardens, heritage, and living culture — close to the land’s memory.</p>
+              <span class="exp-card__cta">Discover</span>
+            </div>
+          </a>
+          <a class="exp-card" href="../experiences/journey.html">
+            <div class="exp-card__media">
+              <img src="../../assets/img/experiences/journeys/redwoods-treewalk-rotorua.jpg" alt="Redwoods Treewalk in Rotorua" loading="lazy" decoding="async">
+            </div>
+            <div class="exp-card__body">
+              <span class="exp-card__tag">Journey</span>
+              <h3>Paths that reward slowness</h3>
+              <p>Forest boards, river trails, and journeys measured in breaths.</p>
+              <span class="exp-card__cta">Discover</span>
+            </div>
+          </a>
+          <a class="exp-card" href="../experiences/relax-coastal.html">
+            <div class="exp-card__media">
+              <img src="../../assets/img/ruru/whiritoa-beach-coastal-landscape-coromandel.jpg" alt="Whiritoa Beach coastal landscape on the Coromandel" loading="lazy" decoding="async">
+            </div>
+            <div class="exp-card__body">
+              <span class="exp-card__tag">Relax coastal</span>
+              <h3>Salt air, soft agenda</h3>
+              <p>Beaches, bays, and the simple luxury of nowhere to be.</p>
+              <span class="exp-card__cta">Discover</span>
+            </div>
+          </a>
+          <a class="exp-card" href="../experiences/wine-dine.html">
+            <div class="exp-card__media">
+              <img src="../../assets/img/experiences/journeys/romantic-picnic-wine-cheese-board-nature-experience.jpg" alt="Wine and local produce picnic in nature" loading="lazy" decoding="async">
+            </div>
+            <div class="exp-card__body">
+              <span class="exp-card__tag">Wine &amp; dine</span>
+              <h3>Tables with a view</h3>
+              <p>Local flavour, open air, and the kind of meal that lingers.</p>
+              <span class="exp-card__cta">Discover</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="experiences__arrows">
+        <button type="button" class="carousel-btn carousel-btn--light" id="exp-prev" aria-label="Scroll experiences left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <button type="button" class="carousel-btn carousel-btn--light" id="exp-next" aria-label="Scroll experiences right">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="invitation" aria-labelledby="invite-heading">
+    <div class="wrap">
+      <h2 id="invite-heading">When you are ready, the landscape keeps its appointment.</h2>
+      <div class="invitation__actions">
+        <a class="btn btn-primary" href="https://purepods.com/booking/">Book</a>
+        <a class="btn" href="../explore.html">Choose a pod</a>
+        <a class="btn" href="../experiences/experiences.html">Browse experiences</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      PurePods · Home · Pods · Experiences · My journey
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      document.querySelectorAll('.nav-item').forEach(function (item) {
+        var t = item.querySelector('.nav-top');
+        if (!t) return;
+        function open() { t.setAttribute('aria-expanded', 'true'); }
+        function close() { t.setAttribute('aria-expanded', 'false'); }
+        item.addEventListener('mouseenter', open);
+        item.addEventListener('mouseleave', close);
+        item.addEventListener('focusin', open);
+        item.addEventListener('focusout', function (e) {
+          if (!item.contains(e.relatedTarget)) close();
+        });
+      });
+
+      var heroSlides = Array.prototype.slice.call(document.querySelectorAll('[data-hero-slide]'));
+      var heroDots = document.getElementById('hero-dots');
+      var heroIndex = 0;
+      var heroTimer = null;
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function pad2(n) { return n < 10 ? '0' + n : String(n); }
+
+      if (heroSlides.length && heroDots) {
+        heroSlides.forEach(function (_, i) {
+          var li = document.createElement('li');
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.setAttribute('aria-label', 'Show hero slide ' + (i + 1));
+          if (i === 0) b.setAttribute('aria-current', 'true');
+          b.addEventListener('click', function () {
+            goHero(i);
+            restartHero();
+          });
+          li.appendChild(b);
+          heroDots.appendChild(li);
+        });
+      }
+
+      function goHero(i) {
+        heroIndex = (i + heroSlides.length) % heroSlides.length;
+        heroSlides.forEach(function (el, j) {
+          el.classList.toggle('is-active', j === heroIndex);
+          var img = el.querySelector('img');
+          if (img && !reduceMotion) {
+            img.style.animation = 'none';
+            void img.offsetWidth;
+            if (j === heroIndex) img.style.animation = '';
+          }
+        });
+        var buttons = heroDots ? heroDots.querySelectorAll('button') : [];
+        buttons.forEach(function (btn, j) {
+          if (j === heroIndex) btn.setAttribute('aria-current', 'true');
+          else btn.removeAttribute('aria-current');
+        });
+      }
+
+      function tickHero() {
+        goHero(heroIndex + 1);
+      }
+
+      function restartHero() {
+        if (reduceMotion || !heroSlides.length) return;
+        clearInterval(heroTimer);
+        heroTimer = setInterval(tickHero, 7000);
+      }
+
+      if (heroSlides.length > 1 && !reduceMotion) {
+        restartHero();
+        document.addEventListener('visibilitychange', function () {
+          if (document.hidden) clearInterval(heroTimer);
+          else restartHero();
+        });
+      }
+
+      var landSlides = Array.prototype.slice.call(document.querySelectorAll('[data-land-slide]'));
+      var landIdx = 0;
+      var landCounter = document.getElementById('landscapes-counter');
+      var landPrev = document.getElementById('land-prev');
+      var landNext = document.getElementById('land-next');
+      var landAuto = null;
+
+      function renderLand() {
+        landSlides.forEach(function (el, j) {
+          el.classList.toggle('is-active', j === landIdx);
+        });
+        if (landCounter) {
+          landCounter.textContent = pad2(landIdx + 1) + ' / ' + pad2(landSlides.length);
+        }
+      }
+
+      function goLand(delta) {
+        landIdx = (landIdx + delta + landSlides.length) % landSlides.length;
+        renderLand();
+      }
+
+      if (landSlides.length) {
+        renderLand();
+        if (landPrev) landPrev.addEventListener('click', function () { goLand(-1); restartLand(); });
+        if (landNext) landNext.addEventListener('click', function () { goLand(1); restartLand(); });
+        function restartLand() {
+          if (reduceMotion) return;
+          clearInterval(landAuto);
+          landAuto = setInterval(function () { goLand(1); }, 9000);
+        }
+        if (!reduceMotion && landSlides.length > 1) {
+          restartLand();
+          document.addEventListener('visibilitychange', function () {
+            if (document.hidden) clearInterval(landAuto);
+            else restartLand();
+          });
+        }
+      }
+
+      var expTrack = document.getElementById('exp-track');
+      var expPrev = document.getElementById('exp-prev');
+      var expNext = document.getElementById('exp-next');
+      var expStep = 400;
+
+      function scrollExp(dir) {
+        if (!expTrack) return;
+        expTrack.scrollBy({ left: dir * expStep, behavior: reduceMotion ? 'auto' : 'smooth' });
+      }
+
+      if (expPrev) expPrev.addEventListener('click', function () { scrollExp(-1); });
+      if (expNext) expNext.addEventListener('click', function () { scrollExp(1); });
+    })();
+  </script>
+</body>
+</html>
