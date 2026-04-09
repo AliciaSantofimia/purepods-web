@@ -141,6 +141,40 @@
     footer .foot-brand { display:flex; align-items:center; gap:10px; }
     footer img { width:28px; height:28px; border-radius:999px; opacity:.9; }
     .foot { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; }
+    .hiking-carousel__viewport .carousel-slide-overlay {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 56px;
+      width: min(calc(100% - 48px), 40rem);
+      max-width: 92%;
+      z-index: 2;
+      text-align: center;
+      pointer-events: none;
+      box-sizing: border-box;
+      padding: 0 8px;
+    }
+    .carousel-slide-overlay__title {
+      display: block;
+      font-family: "Noto Serif Display", Georgia, serif;
+      font-size: clamp(20px, 2.8vw, 32px);
+      line-height: 1.1;
+      color: #F7F6F3;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+      margin: 0 0 0.28em;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+    .carousel-slide-overlay__location {
+      display: block;
+      font-family: "Noto Serif Display", Georgia, serif;
+      font-size: clamp(14px, 1.6vw, 18px);
+      line-height: 1.1;
+      color: #F7F6F3;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+      margin: 0;
+      font-weight: 400;
+    }
     @media (max-width:900px) { .moment { grid-template-columns:1fr; } }
   </style>
   <script type="application/ld+json">
@@ -439,6 +473,10 @@
                     loading="eager"
                     fetchpriority="high"
                   />
+                  <div class="carousel-slide-overlay" aria-hidden="true">
+                    <span class="carousel-slide-overlay__title">Whale Watch Kaikōura</span>
+                    <span class="carousel-slide-overlay__location">Kaikōura, New Zealand</span>
+                  </div>
                 </figure>
                 <figure class="journey-item hiking-carousel__slide" data-marine-slide="1">
                   <img
@@ -448,6 +486,10 @@
                     height="600"
                     loading="lazy"
                   />
+                  <div class="carousel-slide-overlay" aria-hidden="true">
+                    <span class="carousel-slide-overlay__title">Seal Swim Kaikōura</span>
+                    <span class="carousel-slide-overlay__location">Kaikōura, New Zealand</span>
+                  </div>
                 </figure>
                 <figure class="journey-item hiking-carousel__slide" data-marine-slide="2">
                   <img
@@ -457,6 +499,10 @@
                     height="600"
                     loading="lazy"
                   />
+                  <div class="carousel-slide-overlay" aria-hidden="true">
+                    <span class="carousel-slide-overlay__title">Swimming with Dolphins</span>
+                    <span class="carousel-slide-overlay__location">Akaroa, New Zealand</span>
+                  </div>
                 </figure>
                 <figure class="journey-item hiking-carousel__slide" data-marine-slide="3">
                   <img
@@ -466,6 +512,10 @@
                     height="600"
                     loading="lazy"
                   />
+                  <div class="carousel-slide-overlay" aria-hidden="true">
+                    <span class="carousel-slide-overlay__title">Pōhatu Penguins / Plunge NZ</span>
+                    <span class="carousel-slide-overlay__location">Akaroa, New Zealand</span>
+                  </div>
                 </figure>
                 <figure class="journey-item hiking-carousel__slide" data-marine-slide="4">
                   <img
@@ -475,6 +525,10 @@
                     height="600"
                     loading="lazy"
                   />
+                  <div class="carousel-slide-overlay" aria-hidden="true">
+                    <span class="carousel-slide-overlay__title">Auckland Whale &amp; Dolphin Safari</span>
+                    <span class="carousel-slide-overlay__location">Auckland, New Zealand</span>
+                  </div>
                 </figure>
               </div>
               <button
@@ -926,6 +980,10 @@
                     loading="eager"
                     fetchpriority="high"
                   />
+                  <div class="carousel-slide-overlay" aria-hidden="true">
+                    <span class="carousel-slide-overlay__title">Moana Kayaks – Bay of Islands</span>
+                    <span class="carousel-slide-overlay__location">Bay of Islands, New Zealand</span>
+                  </div>
                 </figure>
                 <figure class="journey-item hiking-carousel__slide" data-nature-slide="1">
                   <img
@@ -935,6 +993,10 @@
                     height="600"
                     loading="lazy"
                   />
+                  <div class="carousel-slide-overlay" aria-hidden="true">
+                    <span class="carousel-slide-overlay__title">Kapiti Island – Day trip</span>
+                    <span class="carousel-slide-overlay__location">Kāpiti Island, New Zealand</span>
+                  </div>
                 </figure>
                 <figure class="journey-item hiking-carousel__slide" data-nature-slide="2">
                   <img
@@ -944,6 +1006,10 @@
                     height="600"
                     loading="lazy"
                   />
+                  <div class="carousel-slide-overlay" aria-hidden="true">
+                    <span class="carousel-slide-overlay__title">Wingspan National Bird of Prey Centre</span>
+                    <span class="carousel-slide-overlay__location">Rotorua, New Zealand</span>
+                  </div>
                 </figure>
               </div>
               <button
@@ -1330,6 +1396,10 @@
                     loading="eager"
                     fetchpriority="high"
                   />
+                  <div class="carousel-slide-overlay" aria-hidden="true">
+                    <span class="carousel-slide-overlay__title">Kaituna Cascades - Rafting</span>
+                    <span class="carousel-slide-overlay__location">Rotorua, New Zealand</span>
+                  </div>
                 </figure>
                 <figure class="journey-item hiking-carousel__slide" data-adventure-slide="1">
                   <img
@@ -1339,6 +1409,10 @@
                     height="600"
                     loading="lazy"
                   />
+                  <div class="carousel-slide-overlay" aria-hidden="true">
+                    <span class="carousel-slide-overlay__title">Rotorua Ziplines</span>
+                    <span class="carousel-slide-overlay__location">Rotorua, New Zealand</span>
+                  </div>
                 </figure>
                 <figure class="journey-item hiking-carousel__slide" data-adventure-slide="2">
                   <img
@@ -1348,6 +1422,10 @@
                     height="600"
                     loading="lazy"
                   />
+                  <div class="carousel-slide-overlay" aria-hidden="true">
+                    <span class="carousel-slide-overlay__title">Off Road NZ (4x4 / motor adventures)</span>
+                    <span class="carousel-slide-overlay__location">Rotorua, New Zealand</span>
+                  </div>
                 </figure>
                 <figure class="journey-item hiking-carousel__slide" data-adventure-slide="3">
                   <img
@@ -1357,6 +1435,10 @@
                     height="600"
                     loading="lazy"
                   />
+                  <div class="carousel-slide-overlay" aria-hidden="true">
+                    <span class="carousel-slide-overlay__title">Skydive Auckland</span>
+                    <span class="carousel-slide-overlay__location">Auckland, New Zealand</span>
+                  </div>
                 </figure>
                 <figure class="journey-item hiking-carousel__slide" data-adventure-slide="4">
                   <img
@@ -1366,6 +1448,10 @@
                     height="600"
                     loading="lazy"
                   />
+                  <div class="carousel-slide-overlay" aria-hidden="true">
+                    <span class="carousel-slide-overlay__title">Air Kaikōura (Scenic flights)</span>
+                    <span class="carousel-slide-overlay__location">Kaikōura, New Zealand</span>
+                  </div>
                 </figure>
               </div>
               <button
