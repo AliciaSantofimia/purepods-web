@@ -401,56 +401,15 @@
             line-height: 1.6;
             color: var(--muted);
           }
-          #marine-wildlife .stay-cards {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 18px;
-            width: 100%;
+          #marine-wildlife .hiking-ctas {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
           }
-          #marine-wildlife .stay-card {
-            display: block;
-            border-radius: var(--radius);
-            overflow: hidden;
-            border: 1px solid var(--stroke);
-            background: rgba(255, 255, 255, 0.72);
-            box-shadow: var(--shadow-soft);
-            text-decoration: none;
-            color: var(--ink);
-            transition: transform 0.22s ease, box-shadow 0.22s ease;
-          }
-          #marine-wildlife .stay-card:hover {
-            transform: scale(1.02);
-            box-shadow: var(--shadow);
-          }
-          #marine-wildlife .stay-card__image {
-            width: 100%;
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
-            display: block;
-          }
-          #marine-wildlife .stay-card__content {
-            padding: 12px 14px 14px;
-          }
-          #marine-wildlife .stay-card__title {
-            margin: 0;
-            font-size: 16px;
-            line-height: 1.35;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            color: var(--ink);
-          }
-          #marine-wildlife .stay-card__cta {
-            display: inline-block;
-            margin-top: 6px;
-            font-size: 14px;
-            line-height: 1.35;
-            color: var(--muted);
-            font-weight: 500;
-          }
-          @media (max-width: 700px) {
-            #marine-wildlife .stay-cards {
-              grid-template-columns: 1fr;
-            }
+          #marine-wildlife .hiking-ctas .journey-pod {
+            margin-left: 0;
+            white-space: normal;
           }
         </style>
         <div class="moment">
@@ -564,59 +523,45 @@
               <p class="hiking-desc" data-marine-desc>
                 A boat-based whale watching experience in Kaikōura, known for reliable year-round sightings of sperm whales along with dolphins and seabirds. The tours depart from the coast and provide close-up views of marine wildlife in a unique deep-water environment.
               </p>
-              <div class="hiking-ctas stay-cards" data-marine-ctas>
+              <div class="hiking-ctas" data-marine-ctas>
                 <a
-                  class="stay-card"
+                  class="journey-pod hiking-pod-cta"
                   href="https://purepods.com/booking/?force_site_id=1"
                   target="_blank"
                   rel="noopener"
-                >
-                  <img
-                    class="stay-card__image"
-                    src="/assets/img/stay/kahutara-purepod-glass-cabin-new-zealand-remote-nature-stay.jpg"
-                    alt="Kahutara PurePod stay in New Zealand"
-                    loading="lazy"
-                  />
-                  <div class="stay-card__content">
-                    <h3 class="stay-card__title">Kahutara</h3>
-                    <span class="stay-card__cta">View stay →</span>
-                  </div>
-                </a>
+                >Stay at <strong class="journey-pod-name">Kahutara</strong> →</a>
                 <a
-                  class="stay-card"
+                  class="journey-pod hiking-pod-cta"
                   href="https://purepods.com/booking/?force_site_id=2"
                   target="_blank"
                   rel="noopener"
-                >
-                  <img
-                    class="stay-card__image"
-                    src="/assets/img/stay/manakau-purepod-glass-cabin-sunrise-new-zealand-nature-stay.jpg"
-                    alt="Manakau PurePod stay in New Zealand"
-                    loading="lazy"
-                  />
-                  <div class="stay-card__content">
-                    <h3 class="stay-card__title">Manakau</h3>
-                    <span class="stay-card__cta">View stay →</span>
-                  </div>
-                </a>
+                >Stay at <strong class="journey-pod-name">Manakau</strong> →</a>
               </div>
             </div>
           </div>
         </div>
         <script>
           (function () {
-            function getPodNameFromLabel(label) {
+            function journeyFillStayAtCta(anchorEl, label) {
+              if (!anchorEl || !label) return;
               var prefix = "Stay at ";
               var suffix = " →";
-              if (!label || label.indexOf(prefix) !== 0 || label.slice(-suffix.length) !== suffix) return label || "";
-              return label.slice(prefix.length, label.length - suffix.length);
-            }
-
-            function getStayImageByPod(podName, fallbackImage) {
-              var key = (podName || "").toLowerCase();
-              if (key === "kahutara") return "/assets/img/stay/kahutara-purepod-glass-cabin-new-zealand-remote-nature-stay.jpg";
-              if (key === "manakau") return "/assets/img/stay/manakau-purepod-glass-cabin-sunrise-new-zealand-nature-stay.jpg";
-              return fallbackImage || "/assets/img/stay/kahutara-purepod-glass-cabin-new-zealand-remote-nature-stay.jpg";
+              anchorEl.textContent = "";
+              if (
+                label.length >= prefix.length + suffix.length &&
+                label.indexOf(prefix) === 0 &&
+                label.slice(-suffix.length) === suffix
+              ) {
+                var pod = label.slice(prefix.length, label.length - suffix.length);
+                anchorEl.appendChild(document.createTextNode(prefix));
+                var strongEl = document.createElement("strong");
+                strongEl.className = "journey-pod-name";
+                strongEl.textContent = pod;
+                anchorEl.appendChild(strongEl);
+                anchorEl.appendChild(document.createTextNode(suffix));
+              } else {
+                anchorEl.textContent = label;
+              }
             }
 
             var root = document.querySelector("#marine-wildlife [data-marine-carousel]");
@@ -701,37 +646,16 @@
               }
             }
 
-            function renderCtas(ctas, fallbackImage) {
+            function renderCtas(ctas) {
               ctasHost.innerHTML = "";
               for (var c = 0; c < ctas.length; c++) {
                 var item = ctas[c];
-                var podName = getPodNameFromLabel(item.label);
                 var a = document.createElement("a");
-                a.className = "stay-card";
+                a.className = "journey-pod hiking-pod-cta";
                 a.href = item.href;
                 a.target = "_blank";
                 a.rel = "noopener";
-                var img = document.createElement("img");
-                img.className = "stay-card__image";
-                img.src = getStayImageByPod(podName, fallbackImage);
-                img.alt = podName ? podName + " PurePod stay in New Zealand" : "PurePod stay in New Zealand";
-                img.loading = "lazy";
-
-                var content = document.createElement("div");
-                content.className = "stay-card__content";
-
-                var title = document.createElement("h3");
-                title.className = "stay-card__title";
-                title.textContent = podName || "PurePod";
-
-                var cta = document.createElement("span");
-                cta.className = "stay-card__cta";
-                cta.textContent = "View stay →";
-
-                content.appendChild(title);
-                content.appendChild(cta);
-                a.appendChild(img);
-                a.appendChild(content);
+                journeyFillStayAtCta(a, item.label);
                 ctasHost.appendChild(a);
               }
             }
@@ -754,7 +678,7 @@
               placeLink.textContent = item.title;
               placeLink.href = item.placeHref;
               descEl.textContent = item.description;
-              renderCtas(item.ctas, item.image);
+              renderCtas(item.ctas);
               root.setAttribute("aria-label", "Marine and iconic wildlife: " + item.title);
             }
 
