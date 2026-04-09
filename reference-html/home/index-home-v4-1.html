@@ -1,4 +1,4 @@
-<!-- VERSION 3 — Premium boutique-home concept (reference only; does not replace v2) -->
+<!-- VERSION 4.1 — V4 art-direction refinement (organic darks, calmer hero; does not replace V4) -->
 <!doctype html>
 <html lang="en-NZ">
 <head>
@@ -21,10 +21,17 @@
     --brand-green:#5C5F3E;
     --brand-beige:#C2B59E;
     --radius: 22px;
-    --shadow: 0 18px 44px rgba(0,0,0,.08);
+    --shadow: 0 18px 44px rgba(22,24,18,.07);
     --max: 1120px;
-    --cinema:#12140f;
-    --cinema-soft:rgba(247,246,243,.06);
+    /* Organic night-in-nature darks (warm olive / forest charcoal — not pure black) */
+    --cinema:#1e221a;
+    --cinema-rich:#252a20;
+    --cinema-deep:#171914;
+    --cinema-soft:rgba(247,246,243,.055);
+    --night-top:rgba(22,24,18,.76);
+    --night-mid:rgba(34,38,28,.22);
+    --night-crest:rgba(40,44,32,.36);
+    --night-vignette:rgba(20,22,16,.48);
   }
 
   *{ box-sizing:border-box; }
@@ -41,195 +48,31 @@
   a{ color:inherit; text-decoration:none; }
   .wrap{ width:min(var(--max),calc(100% - 40px)); margin:0 auto; }
 
-  /* ——— NAV (overlay, aligned with v2) ——— */
+  /* ——— NAV (V4 — minimal overlay, no hero dropdowns) ——— */
   .nav{
     position:absolute;
     top:0; left:0; right:0;
     z-index:60;
     background:transparent;
+    pointer-events:none;
   }
 
-  .nav .wrap.nav-inner{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:100vw;
-    max-width:none;
-    margin-left:calc(50% - 50vw);
-    margin-right:calc(50% - 50vw);
-    padding:20px 18px 16px;
-    box-sizing:border-box;
-  }
+  .nav *{ pointer-events:auto; }
 
-  .links{
+  .nav__bar{
     display:flex;
-    flex-wrap:nowrap;
     align-items:center;
     justify-content:space-between;
-    gap:22px 32px;
-    font-size:13px;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    padding:10px 16px 10px 22px;
-    border:none;
-    background:transparent;
-    width:100%;
-    max-width:min(1120px,calc(100vw - 32px));
+    gap:20px 28px;
+    width:min(1200px,calc(100% - 48px));
     margin:0 auto;
-    box-sizing:border-box;
-  }
-
-  .nav-core{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:26px;
-    flex:1 1 auto;
-    min-width:0;
-  }
-
-  .nav-item{ position:relative; display:inline-flex; flex-direction:column; align-items:center; }
-
-  .nav-item > .nav-top{
-    font-weight:500;
-    text-shadow:0 1px 10px rgba(0,0,0,.4);
-    color:rgba(255,255,255,.88);
-    background:none;
-    border:none;
-    cursor:pointer;
-    font:inherit;
-    letter-spacing:inherit;
-    text-transform:inherit;
-    padding:6px 2px;
-    margin:0;
-  }
-
-  .nav-item > a.nav-top{ cursor:pointer; }
-
-  .nav-item > .nav-top:hover,
-  .nav-item > .nav-top:focus-visible{
-    color:#fff;
-    outline:none;
-  }
-
-  .nav-item > .nav-top:focus-visible{
-    text-decoration:underline;
-    text-underline-offset:4px;
-    text-decoration-color:rgba(255,255,255,.35);
-  }
-
-  .nav-dropdown{
-    position:absolute;
-    top:100%;
-    left:50%;
-    z-index:80;
-    padding-top:10px;
-    min-width:100%;
-    width:max-content;
-    max-width:min(392px,calc(100vw - 36px));
-    pointer-events:none;
-    opacity:0;
-    visibility:hidden;
-    transform:translateX(-50%) translateY(4px);
-    transition:opacity .2s ease, transform .2s ease, visibility 0s linear .2s;
-  }
-
-  .nav-item:hover .nav-dropdown,
-  .nav-item:focus-within .nav-dropdown{
-    pointer-events:auto;
-    opacity:1;
-    visibility:visible;
-    transform:translateX(-50%) translateY(0);
-    transition-delay:0s;
-  }
-
-  .nav-dropdown__panel{
-    text-transform:none;
-    letter-spacing:normal;
-    font-weight:400;
-    border:none;
-    border-radius:34px;
-    padding:10px 12px;
-    background:
-      radial-gradient(ellipse 118% 140% at 50% 42%, rgba(78,84,60,.1) 0%, transparent 52%),
-      radial-gradient(ellipse 140% 108% at 50% 54%, rgba(88,92,72,.065) 0%, transparent 70%);
-    backdrop-filter:blur(18px) saturate(1.02);
-    -webkit-backdrop-filter:blur(18px) saturate(1.02);
-  }
-
-  .nav-dropdown__eyebrow{
-    margin:0 0 8px;
-    padding:0 3px 6px;
-    font-size:11px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:rgba(247,246,243,.7);
-    font-weight:500;
-  }
-
-  .nav-dropdown__grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:2px 14px;
-    align-items:start;
-  }
-
-  .nav-dropdown__list{ display:flex; flex-direction:column; gap:2px; }
-
-  .nav-dropdown a{
-    display:block;
-    padding:7px 8px;
-    border-radius:12px;
-    font-size:13px;
-    font-weight:500;
-    letter-spacing:.02em;
-    text-transform:none;
-    color:rgba(255,253,248,.97);
-    text-shadow:
-      0 0 24px rgba(34,38,26,.55),
-      0 1px 14px rgba(28,32,22,.48),
-      0 0 1px rgba(17,18,15,.42);
-    transition:color .24s ease, background-color .24s ease, text-shadow .24s ease, text-decoration-color .24s ease;
-  }
-
-  .nav-dropdown a:hover,
-  .nav-dropdown a:focus-visible{
-    color:rgba(255,251,244,1);
-    background:rgba(242,236,224,.07);
-    text-decoration:underline;
-    text-decoration-thickness:1px;
-    text-underline-offset:5px;
-    text-decoration-color:rgba(194,181,158,.42);
-    outline:none;
-  }
-
-  .nav-dropdown a:focus-visible{ box-shadow:0 0 0 2px rgba(247,246,243,.18); }
-
-  .nav-dropdown--pods .nav-dropdown__panel{
-    min-width:min(352px,calc(100vw - 36px));
-    padding:12px 14px;
-  }
-
-  .nav-dropdown--pods .nav-dropdown__grid{ gap:2px 16px; }
-
-  .nav-dropdown--experiences .nav-dropdown__panel,
-  .nav-dropdown--journey .nav-dropdown__panel{
-    min-width:min(238px,calc(100vw - 36px));
-  }
-
-  @media (max-width:520px){
-    .nav-dropdown--pods .nav-dropdown__grid{ grid-template-columns:1fr; }
-  }
-
-  @media (prefers-reduced-motion:reduce){
-    .nav-dropdown{ transition:none; }
-    .nav-dropdown a{ transition:none; }
+    padding:clamp(22px,4.2vw,36px) 0 clamp(12px,2vh,18px);
+    box-sizing:content-box;
   }
 
   .nav .nav-brand{
     display:inline-flex;
     align-items:center;
-    align-self:center;
     flex-shrink:0;
     line-height:0;
     text-transform:none;
@@ -238,62 +81,91 @@
     padding:0;
     border:0;
     background:transparent;
-    box-shadow:none;
   }
 
   .nav .nav-brand img{
     display:block;
-    height:clamp(56px,7.05vw,78px);
+    height:clamp(48px,5.8vw,68px);
     width:auto;
-    max-width:min(268px,46vw);
+    max-width:min(240px,42vw);
     object-fit:contain;
-    transform:translateY(-3px);
-    filter:drop-shadow(0 1px 4px rgba(0,0,0,.28));
+    filter:drop-shadow(0 2px 16px rgba(22,24,18,.38));
   }
 
-  .links a{ color:rgba(255,255,255,.88); }
-  .links a:hover{ color:#fff; }
+  .nav__links{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:clamp(26px,4.5vw,48px);
+    flex:1;
+    min-width:0;
+  }
 
-  .nav-core a{
+  .nav__links a{
+    font-size:11px;
     font-weight:500;
-    text-shadow:0 1px 10px rgba(0,0,0,.4);
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:rgba(247,246,243,.78);
+    text-shadow:0 1px 16px rgba(18,20,14,.42);
+    padding:8px 0;
+    border-bottom:1px solid transparent;
+    transition:color .35s ease, border-color .35s ease;
   }
 
-  .links .btn-primary{
+  .nav__links a:hover,
+  .nav__links a:focus-visible{
+    color:rgba(255,255,255,.96);
+    border-bottom-color:rgba(194,181,158,.42);
+    outline:none;
+  }
+
+  .nav__book{
     flex-shrink:0;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:11px 22px;
+    min-height:42px;
+    border-radius:999px;
     background:var(--brand-beige);
+    border:1px solid rgba(255,255,255,.22);
     color:var(--brand-green);
-    border:2px solid rgba(255,255,255,.2);
-    font-weight:800;
-    font-size:14px;
-    letter-spacing:.08em;
-    padding:14px 26px;
-    min-height:46px;
-    box-shadow:0 14px 28px rgba(92,95,60,.26), 0 3px 10px rgba(0,0,0,.1);
+    font-weight:700;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    box-shadow:0 14px 32px rgba(22,26,18,.22);
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
   }
 
-  @media (max-width:900px){
-    .links{
+  .nav__book:hover{
+    background:rgba(247,240,228,.98);
+    box-shadow:0 18px 40px rgba(26,30,22,.26);
+  }
+
+  .nav__book:focus-visible{
+    outline:2px solid rgba(247,246,243,.45);
+    outline-offset:4px;
+  }
+
+  @media (max-width:720px){
+    .nav__bar{
       flex-wrap:wrap;
       justify-content:center;
-      max-width:calc(100vw - 24px);
-      padding:12px 14px;
-      gap:16px 20px;
+      width:calc(100% - 32px);
+      padding-top:18px;
     }
-    .nav-core{
+    .nav .nav-brand{ order:0; flex:1 1 100%; justify-content:center; }
+    .nav__links{
+      order:1;
       flex:1 1 auto;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:16px 22px;
+      gap:22px 32px;
     }
-    .nav .nav-brand{
-      order:-1;
-      flex:1 1 100%;
-      justify-content:center;
-    }
+    .nav__book{ order:2; }
     .nav .nav-brand img{
-      height:clamp(52px,12vw,69px);
-      max-width:min(278px,84vw);
+      height:clamp(44px,11vw,60px);
+      max-width:min(260px,78vw);
     }
   }
 
@@ -317,7 +189,7 @@
     color:var(--brand-green);
     font-weight:800;
     letter-spacing:.06em;
-    box-shadow:0 16px 30px rgba(92,95,60,.2);
+    box-shadow:0 14px 36px rgba(92,95,60,.16), 0 4px 14px rgba(22,24,18,.08);
   }
 
   .eyebrow{
@@ -329,16 +201,17 @@
     margin:0 0 14px;
   }
 
-  .eyebrow--on-dark{ color:rgba(247,246,243,.55); }
+  .eyebrow--on-dark{ color:rgba(247,246,243,.44); }
 
-  /* ——— HERO (cinematic carousel) ——— */
+  /* ——— HERO (V4.1 — calmer rhythm, softer veil, slower cinema) ——— */
   .hero{
     position:relative;
-    min-height:92vh;
+    min-height:100vh;
+    min-height:100dvh;
     display:flex;
     align-items:flex-end;
     justify-content:center;
-    padding:0 0 clamp(48px,8vh,96px);
+    padding:0 0 clamp(56px,10vh,112px);
     color:#F7F6F3;
     isolation:isolate;
   }
@@ -348,15 +221,16 @@
     inset:0;
     z-index:0;
     overflow:hidden;
-    background:var(--cinema);
+    background:var(--cinema-deep);
   }
 
   .hero__slide{
     position:absolute;
     inset:0;
     opacity:0;
-    transition:opacity 1.35s ease;
+    transition:opacity 1.28s cubic-bezier(.42,0,.58,1);
     pointer-events:none;
+    z-index:0;
   }
 
   .hero__slide.is-active{
@@ -370,17 +244,19 @@
     object-fit:cover;
     object-position:center;
     transform:scale(1);
+    will-change:transform;
+    filter:saturate(.94) contrast(.98);
   }
 
   @media (prefers-reduced-motion:no-preference){
     .hero__slide.is-active img{
-      animation:heroKen 22s ease-out forwards;
+      animation:heroKen 38s cubic-bezier(.2,.06,.2,1) forwards;
     }
   }
 
   @keyframes heroKen{
     from{ transform:scale(1); }
-    to{ transform:scale(1.07); }
+    to{ transform:scale(1.038); }
   }
 
   .hero__veil{
@@ -388,8 +264,9 @@
     inset:0;
     z-index:2;
     background:
-      linear-gradient(to top, rgba(10,11,8,.88) 0%, rgba(10,11,8,.35) 42%, rgba(10,11,8,.5) 100%),
-      linear-gradient(to bottom, rgba(0,0,0,.5) 0%, transparent 38%);
+      linear-gradient(to top, var(--night-top) 0%, var(--night-mid) 50%, var(--night-crest) 100%),
+      linear-gradient(to bottom, var(--night-vignette) 0%, transparent 44%),
+      radial-gradient(ellipse 95% 55% at 50% 100%, rgba(52,56,42,.14), transparent 58%);
     pointer-events:none;
   }
 
@@ -397,7 +274,7 @@
     position:absolute;
     inset:0;
     z-index:3;
-    opacity:.045;
+    opacity:.032;
     pointer-events:none;
     background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
@@ -406,89 +283,123 @@
     position:relative;
     z-index:4;
     width:100%;
-    max-width:min(1040px,calc(100% - 32px));
+    max-width:min(920px,calc(100% - 40px));
     text-align:center;
-    padding-top:clamp(100px,18vh,200px);
+    padding-top:clamp(120px,21vh,232px);
+  }
+
+  .hero__eyebrow{
+    margin:0 auto clamp(32px,5.2vh,48px);
+    max-width:40ch;
   }
 
   h1.heroTitle{
-    margin:0 auto 18px;
+    margin:0 auto clamp(28px,4.2vh,44px);
     font-family:"Noto Serif Display",Georgia,"Times New Roman",serif;
     font-weight:500;
-    font-size:clamp(38px,5.6vw,68px);
-    letter-spacing:-0.025em;
-    line-height:1.08;
-    max-width:14ch;
+    font-size:clamp(40px,5.9vw,72px);
+    letter-spacing:-0.028em;
+    line-height:1.06;
+    max-width:15ch;
     text-wrap:balance;
   }
 
   .hero__lead{
-    margin:0 auto 32px;
-    max-width:42ch;
-    font-size:clamp(15px,1.35vw,18px);
-    line-height:1.65;
-    color:rgba(247,246,243,.78);
+    margin:0 auto clamp(44px,6.5vh,60px);
+    max-width:34ch;
+    font-size:clamp(14px,1.22vw,16.5px);
+    line-height:1.82;
+    color:rgba(247,246,243,.64);
     font-weight:400;
+    letter-spacing:.02em;
   }
 
   .hero__actions{
     display:flex;
-    gap:14px;
+    gap:clamp(14px,2.2vw,20px);
     justify-content:center;
     flex-wrap:wrap;
-    margin-bottom:28px;
+    align-items:center;
+    margin-bottom:clamp(26px,4.6vh,38px);
   }
 
   .hero__actions .btn{
-    border-color:rgba(255,255,255,.28);
-    background:rgba(247,246,243,.1);
-    color:#F7F6F3;
-    backdrop-filter:blur(10px);
+    min-height:48px;
+    padding:14px 28px;
+    font-size:13px;
+    font-weight:500;
+    letter-spacing:.055em;
+    text-transform:none;
+    border-color:rgba(247,246,243,.18);
+    background:rgba(247,246,243,.065);
+    color:rgba(255,253,248,.9);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    box-shadow:0 10px 32px rgba(22,24,18,.14);
   }
 
-  .hero__actions .btn:hover{ background:rgba(247,246,243,.2); }
+  .hero__actions .btn:hover{
+    background:rgba(247,246,243,.11);
+    border-color:rgba(247,246,243,.26);
+  }
 
   .hero__actions .btn-primary{
     background:var(--brand-beige);
     border-color:var(--brand-beige);
     color:var(--brand-green);
+    font-weight:800;
+    letter-spacing:.065em;
+    text-transform:none;
     backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+    box-shadow:0 20px 48px rgba(22,26,18,.18), 0 6px 18px rgba(92,95,60,.1);
+  }
+
+  .hero__actions .btn-primary:hover{
+    background:rgba(247,240,228,.98);
+    border-color:rgba(247,240,228,.98);
   }
 
   .hero__dots{
     display:flex;
     justify-content:center;
-    gap:10px;
+    align-items:center;
+    gap:18px;
     list-style:none;
     margin:0;
     padding:0;
+    opacity:.52;
   }
 
   .hero__dots button{
-    width:9px;
-    height:9px;
+    width:4px;
+    height:4px;
     border-radius:50%;
-    border:1px solid rgba(255,255,255,.35);
+    border:1px solid rgba(247,246,243,.2);
     background:transparent;
     padding:0;
     cursor:pointer;
-    transition:background .25s ease, transform .25s ease;
+    transition:background .55s ease, border-color .55s ease, transform .55s ease, opacity .55s ease;
+    opacity:.38;
   }
 
+  .hero__dots button:hover{ opacity:.62; }
+
   .hero__dots button[aria-current="true"]{
-    background:var(--brand-beige);
-    border-color:var(--brand-beige);
-    transform:scale(1.15);
+    background:rgba(194,181,158,.65);
+    border-color:rgba(194,181,158,.4);
+    transform:scale(1.22);
+    opacity:.88;
   }
 
   .hero__dots button:focus-visible{
-    outline:2px solid rgba(247,246,243,.5);
-    outline-offset:3px;
+    outline:1px solid rgba(247,246,243,.32);
+    outline-offset:5px;
   }
 
   /* ——— Editorial band ——— */
   .editorial{
-    padding:clamp(72px,10vw,120px) 0;
+    padding:clamp(76px,10.5vw,124px) 0 clamp(74px,10vw,122px);
     background:var(--bg);
   }
 
@@ -515,18 +426,26 @@
     line-height:1.75;
   }
 
-  /* ——— Landscapes carousel (dark) ——— */
+  /* ——— Landscapes carousel (V4.1 — organic night field, not black UI) ——— */
   .landscapes{
-    background:var(--cinema);
-    color:rgba(247,246,243,.92);
-    padding:clamp(64px,9vw,104px) 0 clamp(72px,10vw,112px);
+    background:
+      radial-gradient(ellipse 115% 85% at 50% -18%, rgba(92,95,62,.11), transparent 58%),
+      radial-gradient(ellipse 70% 55% at 92% 55%, rgba(48,52,38,.32), transparent 52%),
+      radial-gradient(ellipse 65% 50% at 6% 75%, rgba(38,42,32,.28), transparent 48%),
+      linear-gradient(185deg, var(--cinema-deep) 0%, var(--cinema) 38%, var(--cinema-rich) 100%);
+    color:rgba(247,246,243,.9);
+    padding:clamp(68px,9.5vw,108px) 0 clamp(76px,10.5vw,116px);
+  }
+
+  .landscapes .eyebrow--on-dark{
+    color:rgba(232,228,216,.5);
   }
 
   .landscapes__head{
     width:min(var(--max),calc(100% - 40px));
-    margin:0 auto 36px;
+    margin:0 auto clamp(32px,4.5vw,42px);
     display:grid;
-    gap:16px;
+    gap:18px;
     grid-template-columns:1fr auto;
     align-items:end;
   }
@@ -541,7 +460,7 @@
     font-weight:600;
     letter-spacing:-0.02em;
     font-family:"Inter",system-ui,sans-serif;
-    color:#F7F6F3;
+    color:rgba(247,244,236,.96);
     max-width:18ch;
     line-height:1.15;
   }
@@ -549,9 +468,10 @@
   .landscapes__head p{
     margin:0;
     max-width:36ch;
-    color:rgba(247,246,243,.58);
+    color:rgba(232,228,216,.55);
     font-size:15px;
-    line-height:1.65;
+    line-height:1.68;
+    font-weight:400;
     justify-self:end;
     text-align:right;
   }
@@ -568,16 +488,18 @@
     position:relative;
     width:min(calc(100vw - 24px),min(1180px,100%));
     margin:0 auto;
-    border-radius:clamp(18px,2vw,28px);
+    border-radius:clamp(20px,2.1vw,30px);
     overflow:hidden;
-    border:1px solid rgba(247,246,243,.1);
-    box-shadow:0 40px 100px rgba(0,0,0,.45);
+    border:1px solid rgba(194,181,158,.14);
+    box-shadow:
+      0 48px 110px rgba(18,22,14,.35),
+      0 0 0 1px rgba(247,246,243,.04) inset;
   }
 
   .landscapes__slides{
     position:relative;
     aspect-ratio:16/9;
-    background:#0a0b08;
+    background:var(--cinema-deep);
   }
 
   @media (max-width:600px){
@@ -588,7 +510,7 @@
     position:absolute;
     inset:0;
     opacity:0;
-    transition:opacity .85s ease;
+    transition:opacity 1.35s cubic-bezier(.4,0,.15,1);
   }
 
   .landscapes__slide.is-active{ opacity:1; z-index:1; }
@@ -598,14 +520,20 @@
     height:100%;
     object-fit:cover;
     object-position:center;
+    filter:saturate(.94) contrast(.98);
   }
 
   .landscapes__caption{
     position:absolute;
     left:0; right:0; bottom:0;
     z-index:2;
-    padding:clamp(18px,3vw,32px) clamp(20px,3vw,36px);
-    background:linear-gradient(to top, rgba(8,9,7,.92), transparent);
+    padding:clamp(20px,3.2vw,34px) clamp(22px,3.2vw,38px);
+    background:linear-gradient(
+      to top,
+      rgba(28,32,24,.82) 0%,
+      rgba(28,32,24,.38) 42%,
+      transparent 100%
+    );
     display:flex;
     justify-content:space-between;
     align-items:flex-end;
@@ -616,16 +544,16 @@
   .landscapes__caption strong{
     font-size:clamp(15px,1.2vw,17px);
     font-weight:600;
-    letter-spacing:.04em;
+    letter-spacing:.045em;
     text-transform:uppercase;
-    color:rgba(247,246,243,.95);
+    color:rgba(247,244,236,.94);
   }
 
   .landscapes__caption span{
     font-size:14px;
-    color:rgba(247,246,243,.62);
+    color:rgba(232,228,216,.58);
     max-width:48ch;
-    line-height:1.5;
+    line-height:1.55;
   }
 
   .landscapes__controls{
@@ -634,14 +562,14 @@
     justify-content:space-between;
     gap:16px;
     width:min(var(--max),calc(100% - 40px));
-    margin:22px auto 0;
+    margin:26px auto 0;
   }
 
   .landscapes__counter{
-    font-size:12px;
-    letter-spacing:.18em;
+    font-size:11px;
+    letter-spacing:.2em;
     text-transform:uppercase;
-    color:rgba(247,246,243,.45);
+    color:rgba(232,228,216,.4);
     font-weight:600;
   }
 
@@ -652,14 +580,17 @@
     width:48px;
     height:48px;
     border-radius:50%;
-    border:1px solid rgba(247,246,243,.22);
-    background:rgba(247,246,243,.06);
-    color:#F7F6F3;
+    border:1px solid rgba(247,246,243,.16);
+    background:rgba(247,246,243,.05);
+    color:rgba(247,244,236,.95);
     cursor:pointer;
-    transition:background .2s ease, border-color .2s ease;
+    transition:background .35s ease, border-color .35s ease, transform .35s ease;
   }
 
-  .carousel-btn:hover{ background:rgba(247,246,243,.12); border-color:rgba(247,246,243,.35); }
+  .carousel-btn:hover{
+    background:rgba(247,246,243,.09);
+    border-color:rgba(194,181,158,.28);
+  }
   .carousel-btn:focus-visible{ outline:2px solid var(--brand-beige); outline-offset:3px; }
 
   .carousel-btn svg{ width:20px; height:20px; display:block; }
@@ -668,7 +599,7 @@
 
   /* ——— Experiences rail ——— */
   .experiences{
-    padding:clamp(72px,10vw,116px) 0 clamp(80px,11vw,128px);
+    padding:clamp(76px,10.5vw,118px) 0 clamp(82px,11.2vw,130px);
     background:
       radial-gradient(ellipse 80% 50% at 50% 0%, rgba(194,181,158,.2), transparent 55%),
       var(--bg);
@@ -676,7 +607,7 @@
 
   .experiences__head{
     width:min(var(--max),calc(100% - 40px));
-    margin:0 auto 36px;
+    margin:0 auto clamp(34px,4.8vw,40px);
   }
 
   .experiences__head h2{
@@ -737,7 +668,7 @@
 
   .exp-card:hover{
     transform:translateY(-4px);
-    box-shadow:0 28px 70px rgba(0,0,0,.12);
+    box-shadow:0 28px 70px rgba(28,32,24,.1);
   }
 
   .exp-card__media{
@@ -834,7 +765,7 @@
 
   /* ——— Closing invitation ——— */
   .invitation{
-    padding:clamp(56px,8vw,88px) 0;
+    padding:clamp(58px,8.2vw,90px) 0;
     border-top:1px solid var(--stroke);
     background:var(--bg);
   }
@@ -844,7 +775,7 @@
     flex-wrap:wrap;
     align-items:center;
     justify-content:space-between;
-    gap:24px 32px;
+    gap:26px 34px;
   }
 
   .invitation h2{
@@ -873,117 +804,63 @@
 
   @media (prefers-reduced-motion:reduce){
     html{ scroll-behavior:auto; }
-    .hero__slide{ transition:opacity .01s; }
-    .landscapes__slide{ transition:opacity .01s; }
+    .hero__slide{ transition:opacity .12s linear; }
+    .landscapes__slide{ transition:opacity .12s linear; }
     .hero__slide.is-active img{ animation:none; }
+    .hero__slide img,
+    .landscapes__slide img{ filter:none; }
   }
   </style>
 </head>
 <body>
 
-  <div class="nav">
-    <div class="wrap nav-inner">
-      <div class="links">
-        <a class="nav-brand" href="index.html" aria-label="PurePods — Home">
-          <img src="../../assets/img/LogoPCblancosinfondo.png" alt="PurePods" decoding="async">
-        </a>
-        <div class="nav-core">
-          <div class="nav-item">
-            <a class="nav-top" href="../explore.html" id="nav-pods-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="nav-pods-panel">Pods</a>
-            <div class="nav-dropdown nav-dropdown--pods" id="nav-pods-panel" role="region" aria-labelledby="nav-pods-trigger">
-              <div class="nav-dropdown__panel">
-                <div class="nav-dropdown__grid">
-                  <a href="../location/atatu/index.html">Atatū</a>
-                  <a href="../location/greystone/index.html">Greystone</a>
-                  <a href="../location/hananui/index.html">Hananui</a>
-                  <a href="../location/kahutara/index.html">Kahutara</a>
-                  <a href="../location/kokomea/index.html">Kokomea</a>
-                  <a href="../location/korimako/index.html">Korimako</a>
-                  <a href="../location/makoha/index.html">Mākōha</a>
-                  <a href="../location/manakau/index.html">Manakau</a>
-                  <a href="../location/matu/index.html">Matū</a>
-                  <a href="../location/pamu/index.html">Pāmu</a>
-                  <a href="../location/pohue/index.html">Pōhue</a>
-                  <a href="../location/rewarewa/index.html">Rewarewa</a>
-                  <a href="../location/ruru/index.html">Ruru</a>
-                  <a href="../location/taima/index.html">Tāima</a>
-                  <a href="../location/tokoeka/index.html">Tokoeka</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="nav-item">
-            <a class="nav-top" href="../experiences/experiences.html" id="nav-exp-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="nav-exp-panel">Experiences</a>
-            <div class="nav-dropdown nav-dropdown--experiences" id="nav-exp-panel" role="region" aria-labelledby="nav-exp-trigger">
-              <div class="nav-dropdown__panel">
-                <div class="nav-dropdown__list">
-                  <a href="../experiences/adventure-wildlife.html">Adventure &amp; Wildlife</a>
-                  <a href="../experiences/culture.html">Culture</a>
-                  <a href="../experiences/journey.html">Journey</a>
-                  <a href="../experiences/night-falls.html">Night Falls</a>
-                  <a href="../experiences/relax-coastal.html">Relax Coastal</a>
-                  <a href="../experiences/romantic.html">Romantic</a>
-                  <a href="../experiences/wine-dine.html">Wine &amp; Dine</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="nav-item">
-            <a class="nav-top" href="../my-journey.html" id="nav-journey-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="nav-journey-panel">My journey</a>
-            <div class="nav-dropdown nav-dropdown--journey" id="nav-journey-panel" role="region" aria-labelledby="nav-journey-trigger">
-              <div class="nav-dropdown__panel">
-                <p class="nav-dropdown__eyebrow">Plan your stay</p>
-                <div class="nav-dropdown__list">
-                  <a href="https://purepods.com/booking/">Booking</a>
-                  <a href="../experiences/journey.html#faqs">FAQs</a>
-                  <a href="../experiences/journey.html#about">How it works</a>
-                  <a href="../location/greystone/index.html#faqs">What to pack</a>
-                  <a href="https://purepods.com/gift-vouchers/">Gift vouchers</a>
-                  <a href="https://purepods.com/contact/">Contact</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a class="btn btn-primary" href="https://purepods.com/booking/">Book</a>
-      </div>
+  <header class="nav" role="banner">
+    <div class="nav__bar">
+      <a class="nav-brand" href="index.html" aria-label="PurePods — Home">
+        <img src="../../assets/img/LogoPCblancosinfondo.png" alt="PurePods" decoding="async">
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="../explore.html">Pods</a>
+        <a href="../experiences/experiences.html">Experiences</a>
+      </nav>
+      <a class="nav__book" href="https://purepods.com/booking/">Book</a>
     </div>
-  </div>
+  </header>
 
   <section class="hero" aria-label="PurePods — hero">
     <div class="hero__visual" aria-hidden="true">
+      <!-- Narrative: horizon → shelter → night → interior stillness → scale → return to icon -->
       <div class="hero__slide is-active" data-hero-slide>
-        <img src="../../assets/img/purepods-glass-eco-cabin-new-zealand-nature-stay-hero-home.jpg" alt="" decoding="async">
-      </div>
-      <div class="hero__slide" data-hero-slide>
-        <img src="../../assets/img/manakau/manakau-purepod-glass-cabin-hills-landscape-kaikoura.jpg" alt="" decoding="async">
+        <img src="../../assets/img/atatu/atatu-purepod-glass-cabin-hilltop-landscape-new-zealand.jpg" alt="" decoding="async">
       </div>
       <div class="hero__slide" data-hero-slide>
         <img src="../../assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg" alt="" decoding="async">
       </div>
       <div class="hero__slide" data-hero-slide>
-        <img src="../../assets/img/ruru/ruru-purepod-glass-cabin-night-sky-coromandel.jpg" alt="" decoding="async">
+        <img src="../../assets/img/atatu/atatu-purepod-glass-cabin-night-stars-new-zealand.jpg" alt="" decoding="async">
+      </div>
+      <div class="hero__slide" data-hero-slide>
+        <img src="../../assets/img/atatu/atatu-purepod-glass-cabin-bedroom-ocean-view-new-zealand.jpg" alt="" decoding="async">
       </div>
       <div class="hero__slide" data-hero-slide>
         <img src="../../assets/img/pamu/pamu-purepod-aerial-glass-cabin-landscape-rotorua.jpg" alt="" decoding="async">
       </div>
       <div class="hero__slide" data-hero-slide>
-        <img src="../../assets/img/atatu/atatu-purepod-glass-cabin-night-stars-new-zealand.jpg" alt="" decoding="async">
+        <img src="../../assets/img/purepods-glass-eco-cabin-new-zealand-nature-stay-hero-home.jpg" alt="" decoding="async">
       </div>
       <div class="hero__veil"></div>
       <div class="hero__grain"></div>
     </div>
 
     <div class="hero__content">
-      <p class="eyebrow eyebrow--on-dark">New Zealand · Private glass eco-cabins</p>
+      <p class="eyebrow eyebrow--on-dark hero__eyebrow">New Zealand · Private glass eco-cabins</p>
       <h1 class="heroTitle">Arrive slowly.<br>Stay present.</h1>
       <p class="hero__lead">
         PurePods are secluded glass cabins set in real landscapes — calm, minimal, and designed for two. Let the day lengthen. Let the sky do the talking.
       </p>
       <div class="hero__actions">
         <a class="btn btn-primary" href="https://purepods.com/booking/">Check availability</a>
-        <a class="btn" href="../explore.html">Explore pods</a>
-        <a class="btn" href="../experiences/experiences.html">Explore experiences</a>
+        <a class="btn" href="../explore.html">Discover pods</a>
       </div>
       <ul class="hero__dots" id="hero-dots" aria-label="Hero image slides"></ul>
     </div>
@@ -1252,25 +1129,12 @@
 
   <footer>
     <div class="wrap">
-      PurePods · Home · Pods · Experiences · My journey
+      PurePods · Home · Pods · Experiences · Book
     </div>
   </footer>
 
   <script>
     (function () {
-      document.querySelectorAll('.nav-item').forEach(function (item) {
-        var t = item.querySelector('.nav-top');
-        if (!t) return;
-        function open() { t.setAttribute('aria-expanded', 'true'); }
-        function close() { t.setAttribute('aria-expanded', 'false'); }
-        item.addEventListener('mouseenter', open);
-        item.addEventListener('mouseleave', close);
-        item.addEventListener('focusin', open);
-        item.addEventListener('focusout', function (e) {
-          if (!item.contains(e.relatedTarget)) close();
-        });
-      });
-
       var heroSlides = Array.prototype.slice.call(document.querySelectorAll('[data-hero-slide]'));
       var heroDots = document.getElementById('hero-dots');
       var heroIndex = 0;
@@ -1320,7 +1184,7 @@
       function restartHero() {
         if (reduceMotion || !heroSlides.length) return;
         clearInterval(heroTimer);
-        heroTimer = setInterval(tickHero, 7000);
+        heroTimer = setInterval(tickHero, 6200);
       }
 
       if (heroSlides.length > 1 && !reduceMotion) {
@@ -1359,7 +1223,7 @@
         function restartLand() {
           if (reduceMotion) return;
           clearInterval(landAuto);
-          landAuto = setInterval(function () { goLand(1); }, 9000);
+          landAuto = setInterval(function () { goLand(1); }, 10400);
         }
         if (!reduceMotion && landSlides.length > 1) {
           restartLand();
