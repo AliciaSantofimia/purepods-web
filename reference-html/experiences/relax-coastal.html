@@ -330,16 +330,16 @@
             <div class="forest-carousel__viewport">
               <div class="forest-carousel__slides">
                 <figure class="forest-carousel__slide is-active" data-relax-thermal-slide="0">
-                  <img src="../../assets/img/experiences/experiences/rotorua-relax-coastal-geothermal-lake.jpg" alt="Calm geothermal lake and misty shoreline near Rotorua, New Zealand, mineral water and native vegetation" width="800" height="600" loading="eager" fetchpriority="high" />
+                  <img src="../../assets/img/experiences/relax-coastal/polynesian-spa-rotorua-lake-view-geothermal-pool-new-zealand.png" alt="Geothermal pool at Polynesian Spa Rotorua by the lake, surrounded by natural greenery in New Zealand" width="800" height="600" loading="eager" fetchpriority="high" />
                 </figure>
                 <figure class="forest-carousel__slide" data-relax-thermal-slide="1">
-                  <img src="../../assets/img/experiences/culture/te-puia-rotorua-geothermal-geyser-maori-cultural-centre-new-zealand.jpg" alt="Geothermal steam and Pōhutu geyser valley at Te Puia, Rotorua, New Zealand" width="800" height="600" loading="lazy" />
+                  <img src="../../assets/img/experiences/relax-coastal/wai-ariki-hot-springs-spa-rotorua-geothermal-luxury-new-zealand.png" alt="Wai Ariki Hot Springs &amp; Spa in Rotorua with luxury geothermal pools and modern architecture at sunset, New Zealand" width="800" height="600" loading="lazy" />
                 </figure>
                 <figure class="forest-carousel__slide" data-relax-thermal-slide="2">
-                  <img src="../../assets/img/experiences/culture/whakarewarewa-living-maori-village-rotorua-geothermal-cultural-new-zealand.jpg" alt="Geothermal pools and steam at Whakarewarewa, Rotorua, New Zealand" width="800" height="600" loading="lazy" />
+                  <img src="../../assets/img/experiences/relax-coastal/hells-gate-rotorua-mud-bath-geothermal-spa-new-zealand.png" alt="Geothermal mud bath at Hell’s Gate Rotorua spa in New Zealand with natural outdoor pools" width="800" height="600" loading="lazy" />
                 </figure>
                 <figure class="forest-carousel__slide" data-relax-thermal-slide="3">
-                  <img src="../../assets/img/experiences/culture/te-pa-tu-maori-cultural-experience-rotorua-night-performance-new-zealand.jpg" alt="Forest evening light at Te Pā Tū, Rotorua, New Zealand, calm native bush setting" width="800" height="600" loading="lazy" />
+                  <img src="../../assets/img/experiences/relax-coastal/waikite-valley-hotpools-rotorua-geothermal-spa-new-zealand.png" alt="Waikite Valley Hot Pools in Rotorua surrounded by native forest and geothermal steam, New Zealand" width="800" height="600" loading="lazy" />
                 </figure>
               </div>
               <button type="button" class="forest-carousel__btn forest-carousel__btn--prev" aria-label="Previous place" data-relax-thermal-prev>
@@ -355,8 +355,8 @@
             <h2 class="journey-title">Thermal waters &amp; geothermal relaxation</h2>
             <p class="journey-intro">Natural heat, mineral water and slow time. In Rotorua, geothermal landscapes offer one of New Zealand’s most distinctive ways to unwind — where bathing becomes part of the setting, not just an activity.</p>
             <div class="forest-walks-panel" aria-live="polite" aria-atomic="true">
-              <a class="forest-place-link" href="https://www.polynesianspa.co.nz/" target="_blank" rel="noopener" data-relax-thermal-place-link>Polynesian Spa</a>
-              <p class="forest-desc" data-relax-thermal-desc>Lakefront mineral pools with views across Rotorua’s geothermal caldera — a classic, restorative soak that pairs easily with a slow afternoon.</p>
+              <a class="forest-place-link" href="https://www.polynesianspa.co.nz/" target="_blank" rel="noopener" data-relax-thermal-place-link>Polynesian Spa Rotorua</a>
+              <p class="forest-desc" data-relax-thermal-desc>Set on the shores of Lake Rotorua, Polynesian Spa is a world-renowned geothermal spa in Rotorua, New Zealand, featuring mineral-rich hot pools fed by natural springs, luxury spa treatments, and stunning lake views; it is widely considered one of the best hot pools in Rotorua for relaxation, wellness, and a premium lakeside experience in the Bay of Plenty.</p>
               <a class="journey-pod forest-cta" href="https://purepods.com/booking/?force_site_id=8" target="_blank" rel="noopener" data-relax-thermal-cta>Stay at <strong class="journey-pod-name">Pāmu, Rotorua</strong> →</a>
             </div>
           </div>
@@ -597,46 +597,45 @@
       var descEl = document.querySelector("[data-relax-thermal-desc]");
       var ctaEl = document.querySelector("[data-relax-thermal-cta]");
 
-      var expBase = "../../assets/img/experiences/experiences/";
-      var cbase = "../../assets/img/experiences/culture/";
+      var rbase = "../../assets/img/experiences/relax-coastal/";
       var data = [
         {
-          image: expBase + "rotorua-relax-coastal-geothermal-lake.jpg",
-          alt: "Calm geothermal lake and misty shoreline near Rotorua, New Zealand, mineral water and native vegetation",
-          title: "Polynesian Spa",
+          image: rbase + "polynesian-spa-rotorua-lake-view-geothermal-pool-new-zealand.png",
+          alt: "Geothermal pool at Polynesian Spa Rotorua by the lake, surrounded by natural greenery in New Zealand",
+          title: "Polynesian Spa Rotorua",
           placeHref: "https://www.polynesianspa.co.nz/",
           description:
-            "Lakefront mineral pools overlooking Rotorua’s geothermal caldera — a restorative soak where the landscape itself sets the pace.",
+            "Set on the shores of Lake Rotorua, Polynesian Spa is a world-renowned geothermal spa in Rotorua, New Zealand, featuring mineral-rich hot pools fed by natural springs, luxury spa treatments, and stunning lake views; it is widely considered one of the best hot pools in Rotorua for relaxation, wellness, and a premium lakeside experience in the Bay of Plenty.",
           ctaLabel: "Stay at Pāmu, Rotorua →",
           ctaHref: "https://purepods.com/booking/?force_site_id=8",
         },
         {
-          image: cbase + "te-puia-rotorua-geothermal-geyser-maori-cultural-centre-new-zealand.jpg",
-          alt: "Geothermal steam and Pōhutu geyser valley at Te Puia, Rotorua, New Zealand",
+          image: rbase + "wai-ariki-hot-springs-spa-rotorua-geothermal-luxury-new-zealand.png",
+          alt: "Wai Ariki Hot Springs & Spa in Rotorua with luxury geothermal pools and modern architecture at sunset, New Zealand",
           title: "Wai Ariki Hot Springs & Spa",
-          placeHref: "https://www.waiariki.co.nz/",
+          placeHref: "https://www.wai-ariki.co.nz/",
           description:
-            "A contemporary spa and bathing experience rooted in geothermal waters and Māori narratives — designed for slow, immersive relaxation.",
+            "Blending Māori culture with modern wellness, Wai Ariki Hot Springs & Spa is a luxury geothermal spa in Rotorua, New Zealand, located on the edge of Lake Rotorua and offering mineral hot pools, traditional healing rituals, and high-end treatments; as one of the newest and most exclusive spa experiences in the Bay of Plenty, it stands out for its cultural depth and premium design.",
           ctaLabel: "Stay at Pāmu, Rotorua →",
           ctaHref: "https://purepods.com/booking/?force_site_id=8",
         },
         {
-          image: cbase + "whakarewarewa-living-maori-village-rotorua-geothermal-cultural-new-zealand.jpg",
-          alt: "Geothermal pools and steam at Whakarewarewa, Rotorua, New Zealand",
-          title: "Hell's Gate Geothermal Reserve & Mud Spa",
-          placeHref: "https://hellsgate.co.nz/",
+          image: rbase + "hells-gate-rotorua-mud-bath-geothermal-spa-new-zealand.png",
+          alt: "Geothermal mud bath at Hell’s Gate Rotorua spa in New Zealand with natural outdoor pools",
+          title: "Hell’s Gate Geothermal Reserve",
+          placeHref: "https://www.hellsgate.co.nz/",
           description:
-            "Mud pools, sulphur streams and forest boardwalks — a raw, sensory geothermal landscape that feels far from everyday life.",
+            "Located in Tikitere near Rotorua, Hell’s Gate Geothermal Reserve & Mud Spa is one of the most active geothermal attractions in New Zealand, known for its bubbling mud pools, steaming vents, and sulphur lakes; visitors can enjoy traditional Māori mud baths and sulphur spa treatments, making it one of the most unique geothermal experiences in the Bay of Plenty.",
           ctaLabel: "Stay at Pāmu, Rotorua →",
           ctaHref: "https://purepods.com/booking/?force_site_id=8",
         },
         {
-          image: cbase + "te-pa-tu-maori-cultural-experience-rotorua-night-performance-new-zealand.jpg",
-          alt: "Forest evening light at Te Pā Tū, Rotorua, New Zealand, calm native bush setting",
-          title: "Secret Spot Hot Tubs Rotorua",
-          placeHref: "https://www.secretspot.co.nz/",
+          image: rbase + "waikite-valley-hotpools-rotorua-geothermal-spa-new-zealand.png",
+          alt: "Waikite Valley Hot Pools in Rotorua surrounded by native forest and geothermal steam, New Zealand",
+          title: "Waikite Valley Hot Pools",
+          placeHref: "https://www.hotpools.co.nz/",
           description:
-            "Private cedar hot tubs tucked into native bush — warm water, birdsong and a deliberately unhurried rhythm.",
+            "Set in the scenic Waikite Valley near Rotorua, these natural geothermal hot pools are fed by Te Manaroa Spring, the largest single source of boiling water in New Zealand, and offer mineral-rich bathing surrounded by native bush, walking tracks, and peaceful countryside views; they are among the best natural hot springs in Rotorua for a quiet and authentic wellness experience.",
           ctaLabel: "Stay at Pāmu, Rotorua →",
           ctaHref: "https://purepods.com/booking/?force_site_id=8",
         },
