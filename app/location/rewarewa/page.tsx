@@ -13,17 +13,17 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui";
 import styles from "./page.module.css";
 
-import heroImage from "@/assets/img/rewarewa/rewarewa-purepod-aerial-landscape-muriwai-coast.jpg";
-import podStairs from "@/assets/img/rewarewa/rewarewa-purepod-glass-cabin-exterior-stairs-muriwai-coast.jpg";
-import podBedroom from "@/assets/img/rewarewa/rewarewa-purepod-bedroom-interior-muriwai-coast.jpg";
-import podStars from "@/assets/img/rewarewa/rewarewa-purepod-glass-cabin-night-stars-muriwai-coast.jpg";
-import expBeach from "@/assets/img/rewarewa/muriwai-black-sand-beach-coastline.jpg";
-import expRanges from "@/assets/img/rewarewa/waitakere-ranges-coastal-landscape-auckland.jpg";
-import expTeHenga from "@/assets/img/rewarewa/te-henga-coastal-landscape-muriwai.jpg";
-import travelRoad from "@/assets/img/rewarewa/muriwai-countryside-access-road.jpg";
-import travelExterior from "@/assets/img/rewarewa/rewarewa-purepod-glass-cabin-exterior-muriwai-coast..jpg";
-import travelPlatter from "@/assets/img/rewarewa/rewarewa-local-food-platter-muriwai-coast.JPG";
-import travelBreakfast from "@/assets/img/rewarewa/rewarewa-breakfast-basket-muriwai-coast.JPG";
+const heroImage = "/assets/img/rewarewa/rewarewa-purepod-aerial-landscape-muriwai-coast.jpg";
+const podStairs = "/assets/img/rewarewa/rewarewa-purepod-glass-cabin-exterior-stairs-muriwai-coast.jpg";
+const podBedroom = "/assets/img/rewarewa/rewarewa-purepod-bedroom-interior-muriwai-coast.jpg";
+const podStars = "/assets/img/rewarewa/rewarewa-purepod-glass-cabin-night-stars-muriwai-coast.jpg";
+const expBeach = "/assets/img/rewarewa/muriwai-black-sand-beach-coastline.jpg";
+const expRanges = "/assets/img/rewarewa/waitakere-ranges-coastal-landscape-auckland.jpg";
+const expTeHenga = "/assets/img/rewarewa/te-henga-coastal-landscape-muriwai.jpg";
+const travelRoad = "/assets/img/rewarewa/muriwai-countryside-access-road.jpg";
+const travelExterior = "/assets/img/rewarewa/rewarewa-purepod-glass-cabin-exterior-muriwai-coast..jpg";
+const travelPlatter = "/assets/img/rewarewa/rewarewa-local-food-platter-muriwai-coast.JPG";
+const travelBreakfast = "/assets/img/rewarewa/rewarewa-breakfast-basket-muriwai-coast.JPG";
 
 const CANONICAL_URL = "https://purepods.com/location/rewarewa/";
 const OG_IMAGE_URL =

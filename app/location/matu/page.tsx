@@ -13,17 +13,17 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui";
 import styles from "./page.module.css";
 
-import heroImage from "@/assets/img/matu/matu-purepod-aerial-landscape-waitomo.jpg";
-import podExterior from "@/assets/img/matu/matu-purepod-glass-cabin-exterior-waitomo.jpg";
-import podBedroom from "@/assets/img/matu/matu-purepod-bedroom-sunset-view-waitomo.jpg";
-import podSunset from "@/assets/img/matu/matu-purepod-glass-cabin-sunset-exterior-waitomo.jpg";
-import expGlowworm from "@/assets/img/matu/waitomo-glowworm-cave-boat-ride.jpg";
-import expRuakuri from "@/assets/img/matu/waitomo-ruakuri-cave-spiral.jpg";
-import expMarokopa from "@/assets/img/matu/waitomo-marokopa-waterfall.jpg";
-import travelRoad from "@/assets/img/matu/waitomo-countryside-access-road.jpg";
-import travelForest from "@/assets/img/matu/waitomo-native-forest-walking-track.jpg";
-import travelPlatter from "@/assets/img/matu/matu-local-food-platter-waitomo.jpg";
-import travelBreakfast from "@/assets/img/matu/matu-breakfast-board-waitomo.jpg";
+const heroImage = "/assets/img/matu/matu-purepod-aerial-landscape-waitomo.jpg";
+const podExterior = "/assets/img/matu/matu-purepod-glass-cabin-exterior-waitomo.jpg";
+const podBedroom = "/assets/img/matu/matu-purepod-bedroom-sunset-view-waitomo.jpg";
+const podSunset = "/assets/img/matu/matu-purepod-glass-cabin-sunset-exterior-waitomo.jpg";
+const expGlowworm = "/assets/img/matu/waitomo-glowworm-cave-boat-ride.jpg";
+const expRuakuri = "/assets/img/matu/waitomo-ruakuri-cave-spiral.jpg";
+const expMarokopa = "/assets/img/matu/waitomo-marokopa-waterfall.jpg";
+const travelRoad = "/assets/img/matu/waitomo-countryside-access-road.jpg";
+const travelForest = "/assets/img/matu/waitomo-native-forest-walking-track.jpg";
+const travelPlatter = "/assets/img/matu/matu-local-food-platter-waitomo.jpg";
+const travelBreakfast = "/assets/img/matu/matu-breakfast-board-waitomo.jpg";
 
 const CANONICAL_URL = "https://purepods.com/location/matu/";
 const OG_IMAGE_URL =

@@ -13,17 +13,17 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui";
 import styles from "./page.module.css";
 
-import heroImage from "@/assets/img/kiromako/kiromako-purepod-remote-glass-cabin-nature-new-zealand.jpg";
-import podAerial from "@/assets/img/kiromako/kiromako-purepod-aerial-coastal-landscape-new-zealand.jpg";
-import podShower from "@/assets/img/kiromako/kiromako-purepod-shower-sunset-view-new-zealand.jpg";
-import podBed from "@/assets/img/kiromako/kiromako-purepod-glass-cabin-interior-bed-new-zealand.jpg";
-import expGully from "@/assets/img/kiromako/kiromako-experience-cathedral-gully-coastal-landscape-new-zealand.jpg";
-import expWine from "@/assets/img/kiromako/kiromako-experience-waipara-valley-wine-tasting-new-zealand.jpg";
-import expCoast from "@/assets/img/kiromako/kiromako-experience-waipara-coast-cliffs-beach-new-zealand.jpg";
-import travelPath from "@/assets/img/kiromako/kiromako-purepod-walking-path-arrival-new-zealand.jpg";
-import travelForest from "@/assets/img/kiromako/kiromako-purepod-forest-path-walking-trail-new-zealand.jpg";
-import travelDining from "@/assets/img/kiromako/kiromako-purepod-local-produce-dining-experience-new-zealand.jpg";
-import travelDinner from "@/assets/img/kiromako/kiromako-purepod-local-dinner-meal-new-zealand.jpg";
+const heroImage = "/assets/img/kiromako/kiromako-purepod-remote-glass-cabin-nature-new-zealand.jpg";
+const podAerial = "/assets/img/kiromako/kiromako-purepod-aerial-coastal-landscape-new-zealand.jpg";
+const podShower = "/assets/img/kiromako/kiromako-purepod-shower-sunset-view-new-zealand.jpg";
+const podBed = "/assets/img/kiromako/kiromako-purepod-glass-cabin-interior-bed-new-zealand.jpg";
+const expGully = "/assets/img/kiromako/kiromako-experience-cathedral-gully-coastal-landscape-new-zealand.jpg";
+const expWine = "/assets/img/kiromako/kiromako-experience-waipara-valley-wine-tasting-new-zealand.jpg";
+const expCoast = "/assets/img/kiromako/kiromako-experience-waipara-coast-cliffs-beach-new-zealand.jpg";
+const travelPath = "/assets/img/kiromako/kiromako-purepod-walking-path-arrival-new-zealand.jpg";
+const travelForest = "/assets/img/kiromako/kiromako-purepod-forest-path-walking-trail-new-zealand.jpg";
+const travelDining = "/assets/img/kiromako/kiromako-purepod-local-produce-dining-experience-new-zealand.jpg";
+const travelDinner = "/assets/img/kiromako/kiromako-purepod-local-dinner-meal-new-zealand.jpg";
 
 const CANONICAL_URL = "https://purepods.com/location/korimako/";
 const OG_IMAGE_URL =

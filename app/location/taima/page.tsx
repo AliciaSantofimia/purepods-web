@@ -14,17 +14,17 @@ import { Container } from "@/components/ui";
 import styles from "./page.module.css";
 
 /* Tāima images — from assets/img/taima only */
-import heroImage from "@/assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg";
-import podExterior from "@/assets/img/taima/taima-purepod-exterior-landscape-central-otago.png";
-import podBedroom from "@/assets/img/taima/taima-purepod-bedroom-mountain-view-central-otago.jpg";
-import podGlassVineyard from "@/assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg";
-import expSluicings from "@/assets/img/taima/central-otago-rocky-canyon-hiking-trail.jpg";
-import expLakeDunstan from "@/assets/img/taima/central-otago-lake-dunstan-cycling-trail.jpg";
-import expWine from "@/assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg";
-import travelClutha from "@/assets/img/taima/taima-clutha-river-autumn-landscape-central-otago-new-zealand.jpg";
-import travelExterior from "@/assets/img/taima/taima-purepod-exterior-landscape-central-otago.png";
-import travelFood from "@/assets/img/taima/taima-local-food-platter-central-otago.jpg";
-import travelVineyard from "@/assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg";
+const heroImage = "/assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg";
+const podExterior = "/assets/img/taima/taima-purepod-exterior-landscape-central-otago.png";
+const podBedroom = "/assets/img/taima/taima-purepod-bedroom-mountain-view-central-otago.jpg";
+const podGlassVineyard = "/assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg";
+const expSluicings = "/assets/img/taima/central-otago-rocky-canyon-hiking-trail.jpg";
+const expLakeDunstan = "/assets/img/taima/central-otago-lake-dunstan-cycling-trail.jpg";
+const expWine = "/assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg";
+const travelClutha = "/assets/img/taima/taima-clutha-river-autumn-landscape-central-otago-new-zealand.jpg";
+const travelExterior = "/assets/img/taima/taima-purepod-exterior-landscape-central-otago.png";
+const travelFood = "/assets/img/taima/taima-local-food-platter-central-otago.jpg";
+const travelVineyard = "/assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg";
 
 const CANONICAL_URL = "https://purepods.com/location/taima/";
 const OG_IMAGE_URL =

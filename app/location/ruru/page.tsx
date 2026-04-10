@@ -13,17 +13,17 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui";
 import styles from "./page.module.css";
 
-import heroImage from "@/assets/img/ruru/ruru-purepod-glass-cabin-aerial-view-coromandel.jpg";
-import podSunset from "@/assets/img/ruru/ruru-purepod-glass-cabin-exterior-sunset-coromandel.jpg";
-import podDeck from "@/assets/img/ruru/ruru-purepod-interior-view-deck-coromandel.jpg";
-import podNight from "@/assets/img/ruru/ruru-purepod-glass-cabin-night-sky-coromandel.jpg";
-import expKarangahake from "@/assets/img/ruru/karangahake-gorge-hiking-suspension-bridge.jpg";
-import expOrokawa from "@/assets/img/ruru/orokawa-bay-coastal-walk-coromandel.jpg";
-import expWhiritoa from "@/assets/img/ruru/whiritoa-beach-coastal-landscape-coromandel.jpg";
-import travelForestPath from "@/assets/img/ruru/coromandel-forest-path-to-ruru-purepod.jpg";
-import travelHillside from "@/assets/img/ruru/ruru-purepod-hillside-access-road-coromandel.jpg";
-import travelPicnic from "@/assets/img/ruru/ruru-purepod-picnic-local-food-coromandel.jpg";
-import travelBreakfast from "@/assets/img/ruru/ruru-purepod-breakfast-coromandel.jpg";
+const heroImage = "/assets/img/ruru/ruru-purepod-glass-cabin-aerial-view-coromandel.jpg";
+const podSunset = "/assets/img/ruru/ruru-purepod-glass-cabin-exterior-sunset-coromandel.jpg";
+const podDeck = "/assets/img/ruru/ruru-purepod-interior-view-deck-coromandel.jpg";
+const podNight = "/assets/img/ruru/ruru-purepod-glass-cabin-night-sky-coromandel.jpg";
+const expKarangahake = "/assets/img/ruru/karangahake-gorge-hiking-suspension-bridge.jpg";
+const expOrokawa = "/assets/img/ruru/orokawa-bay-coastal-walk-coromandel.jpg";
+const expWhiritoa = "/assets/img/ruru/whiritoa-beach-coastal-landscape-coromandel.jpg";
+const travelForestPath = "/assets/img/ruru/coromandel-forest-path-to-ruru-purepod.jpg";
+const travelHillside = "/assets/img/ruru/ruru-purepod-hillside-access-road-coromandel.jpg";
+const travelPicnic = "/assets/img/ruru/ruru-purepod-picnic-local-food-coromandel.jpg";
+const travelBreakfast = "/assets/img/ruru/ruru-purepod-breakfast-coromandel.jpg";
 
 const CANONICAL_URL = "https://purepods.com/location/ruru/";
 const OG_IMAGE_URL =

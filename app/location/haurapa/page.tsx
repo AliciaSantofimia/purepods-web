@@ -11,17 +11,17 @@ import { Container } from "@/components/ui";
 import styles from "./page.module.css";
 
 /* Haurapa images — from assets/img/haurapa */
-import heroImage from "@/assets/img/haurapa/haurapa-purepod-bedroom-view-mountains-central-otago-new-zealand.jpg";
-import podGlassRoof from "@/assets/img/haurapa/haurapa-purepod-glass-roof-sunset-central-otago.jpg";
-import podGlassCabin from "@/assets/img/haurapa/haurapa-purepod-glass-cabin-central-otago-landscape-new-zealand.jpg";
-import podFoodHamper from "@/assets/img/haurapa/haurapa-purepod-food-hamper-lunch-central-otago.jpg";
-import expHiking from "@/assets/img/haurapa/haurapa-hiking-trail-central-otago-landscape-new-zealand.jpg";
-import expOliveGrove from "@/assets/img/haurapa/haurapa-olive-grove-central-otago-landscape-new-zealand.jpg";
-import expVineyard from "@/assets/img/haurapa/tekano-estate-vineyard-central-otago-wine-region-new-zealand.jpg";
-import journeyWalking from "@/assets/img/haurapa/haurapa-purepod-walking-track-arrival-central-otago-new-zealand.jpg";
-import journeyTrack from "@/assets/img/haurapa/haurapa-purepod-access-track-central-otago-new-zealand.jpg";
-import foodDining from "@/assets/img/haurapa/haurapa-outdoor-dining-local-produce-central-otago-new-zealand.jpg";
-import foodHamper from "@/assets/img/haurapa/haurapa-purepod-food-hamper-lunch-central-otago.jpg";
+const heroImage = "/assets/img/haurapa/haurapa-purepod-bedroom-view-mountains-central-otago-new-zealand.jpg";
+const podGlassRoof = "/assets/img/haurapa/haurapa-purepod-glass-roof-sunset-central-otago.jpg";
+const podGlassCabin = "/assets/img/haurapa/haurapa-purepod-glass-cabin-central-otago-landscape-new-zealand.jpg";
+const podFoodHamper = "/assets/img/haurapa/haurapa-purepod-food-hamper-lunch-central-otago.jpg";
+const expHiking = "/assets/img/haurapa/haurapa-hiking-trail-central-otago-landscape-new-zealand.jpg";
+const expOliveGrove = "/assets/img/haurapa/haurapa-olive-grove-central-otago-landscape-new-zealand.jpg";
+const expVineyard = "/assets/img/haurapa/tekano-estate-vineyard-central-otago-wine-region-new-zealand.jpg";
+const journeyWalking = "/assets/img/haurapa/haurapa-purepod-walking-track-arrival-central-otago-new-zealand.jpg";
+const journeyTrack = "/assets/img/haurapa/haurapa-purepod-access-track-central-otago-new-zealand.jpg";
+const foodDining = "/assets/img/haurapa/haurapa-outdoor-dining-local-produce-central-otago-new-zealand.jpg";
+const foodHamper = "/assets/img/haurapa/haurapa-purepod-food-hamper-lunch-central-otago.jpg";
 
 const CANONICAL_URL = "https://purepods.com/location/haurapa/";
 const OG_IMAGE_URL = "https://purepods.com/assets/img/haurapa/haurapa-purepod-bedroom-view-mountains-central-otago-new-zealand.jpg";

@@ -14,18 +14,18 @@ import { Container } from "@/components/ui";
 import styles from "./page.module.css";
 
 /* Kahutara images — from assets/img/kahutara */
-import heroImage from "@/assets/img/kahutara/kahutara-purepod-glass-cabin-kaikoura-new-zealand.jpg";
-import podRiverValley from "@/assets/img/kahutara/kahutara-purepod-river-valley-view-kaikoura.jpg";
-import podBedroom from "@/assets/img/kahutara/kahutara-purepod-bedroom-view-kaikoura-mountain.jpg";
-import podMountain from "@/assets/img/kahutara/kahutara-purepod-glass-cabin-mountain-landscape-kaikoura.jpg";
-import podKitchen from "@/assets/img/kahutara/kahutara-purepod-kitchen-view-kaikoura-mountains.jpg";
-import expWhale from "@/assets/img/kahutara/kaikoura-whale-watching-new-zealand.jpg";
-import expPeninsula from "@/assets/img/kahutara/kaikoura-peninsula-walkway-coastal-track.jpg";
-import expSeal from "@/assets/img/kahutara/kaikoura-seal-colony-new-zealand.jpg";
-import travelValley from "@/assets/img/kahutara/kaikoura-river-valley-landscape.jpg";
-import travelFarm from "@/assets/img/kahutara/kaikoura-countryside-farm-entrance.jpg";
-import travelFood from "@/assets/img/kahutara/kahutara-local-food-platter-kaikoura.jpg";
-import travelWine from "@/assets/img/kahutara/kahutara-wine-and-cheese-board-kaikoura.jpg";
+const heroImage = "/assets/img/kahutara/kahutara-purepod-glass-cabin-kaikoura-new-zealand.jpg";
+const podRiverValley = "/assets/img/kahutara/kahutara-purepod-river-valley-view-kaikoura.jpg";
+const podBedroom = "/assets/img/kahutara/kahutara-purepod-bedroom-view-kaikoura-mountain.jpg";
+const podMountain = "/assets/img/kahutara/kahutara-purepod-glass-cabin-mountain-landscape-kaikoura.jpg";
+const podKitchen = "/assets/img/kahutara/kahutara-purepod-kitchen-view-kaikoura-mountains.jpg";
+const expWhale = "/assets/img/kahutara/kaikoura-whale-watching-new-zealand.jpg";
+const expPeninsula = "/assets/img/kahutara/kaikoura-peninsula-walkway-coastal-track.jpg";
+const expSeal = "/assets/img/kahutara/kaikoura-seal-colony-new-zealand.jpg";
+const travelValley = "/assets/img/kahutara/kaikoura-river-valley-landscape.jpg";
+const travelFarm = "/assets/img/kahutara/kaikoura-countryside-farm-entrance.jpg";
+const travelFood = "/assets/img/kahutara/kahutara-local-food-platter-kaikoura.jpg";
+const travelWine = "/assets/img/kahutara/kahutara-wine-and-cheese-board-kaikoura.jpg";
 
 const CANONICAL_URL = "https://purepods.com/location/kahutara/";
 const OG_IMAGE_URL =

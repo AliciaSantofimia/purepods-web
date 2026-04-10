@@ -27,8 +27,9 @@ type GridCard = {
   title: string;
   description: string;
   image: string;
-  imageAlt: string;
   mediaPos?: string;
+  /** Debug: render media with <img> instead of background-image (one card only). */
+  mediaAsImg?: boolean;
 };
 
 const experiencesPrimary: GridCard[] = [
@@ -40,7 +41,7 @@ const experiencesPrimary: GridCard[] = [
       "Romantic stays in nature — slow down, switch off and reconnect in a private eco-cabin.",
     image:
       "/assets/img/experiences/romantic/purepods-romantic-getaway-bedroom-fireplace-night.jpg",
-    imageAlt: "Romantic PurePod bedroom with fireplace at night",
+    mediaAsImg: true,
   },
   {
     href: "/experiences/journey",
@@ -50,7 +51,6 @@ const experiencesPrimary: GridCard[] = [
       "Scenic routes across New Zealand — discover landscapes, stops and journeys around your stay.",
     image:
       "/assets/img/experiences/journeys/new-zealand-native-forest-sunrise-landscape.jpg",
-    imageAlt: "Native forest at sunrise, New Zealand",
   },
 ];
 
@@ -63,7 +63,6 @@ const experiencesMore: GridCard[] = [
       "Wildlife and outdoor experiences in New Zealand — explore, walk and observe nature up close.",
     image:
       "/assets/img/experiences/experiences/new-zealand-adventure-wildlife-kayaking.jpg",
-    imageAlt: "Kayaking adventure in New Zealand",
     mediaPos: "center 90%",
   },
   {
@@ -74,7 +73,6 @@ const experiencesMore: GridCard[] = [
       "Food and wine experiences in New Zealand — local flavours, small producers and slow dining.",
     image:
       "/assets/img/experiences/experiences/new-zealand-wine-dine-local-food-experience.jpg",
-    imageAlt: "Local food and wine experience in New Zealand",
   },
   {
     href: "/experiences/relax-coastal",
@@ -84,7 +82,6 @@ const experiencesMore: GridCard[] = [
       "Coastal and relaxation experiences — sea air, open space and quiet places to unwind.",
     image:
       "/assets/img/experiences/experiences/rotorua-relax-coastal-geothermal-lake.jpg",
-    imageAlt: "Geothermal lake and coastal relaxation near Rotorua",
   },
   {
     href: "/experiences/culture",
@@ -94,7 +91,6 @@ const experiencesMore: GridCard[] = [
       "Cultural experiences in New Zealand — stories of place, heritage and living traditions.",
     image:
       "/assets/img/experiences/experiences/rotorua-culture-maori-ceremony.jpg",
-    imageAlt: "Māori cultural ceremony in Rotorua",
   },
 ];
 
@@ -170,11 +166,29 @@ export default function ExperiencesPage() {
           <div className="grid">
             {experiencesPrimary.map((item) => (
               <a key={item.href} className="card" href={item.href}>
-                <div
-                  className="media"
-                  style={mediaStyle(item.image, item.mediaPos)}
-                  aria-hidden="true"
-                />
+                {item.mediaAsImg ? (
+                  <div
+                    className="media"
+                    style={
+                      item.mediaPos
+                        ? ({ ["--media-pos" as string]: item.mediaPos } as CSSProperties)
+                        : undefined
+                    }
+                  >
+                    <img
+                      src={item.image}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className="media"
+                    style={mediaStyle(item.image, item.mediaPos)}
+                    aria-hidden="true"
+                  />
+                )}
                 <div className="body">
                   <span className="tag">{item.tag}</span>
                   <h3>{item.title}</h3>

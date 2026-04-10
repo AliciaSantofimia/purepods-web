@@ -13,17 +13,17 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui";
 import styles from "./page.module.css";
 
-import heroImage from "@/assets/img/makoha/makoha-purepod-aerial-glass-cabin-forest-kerikeri.jpg";
-import podNight from "@/assets/img/makoha/makoha-purepod-glass-cabin-exterior-night-kerikeri.jpg";
-import podBedroom from "@/assets/img/makoha/makoha-purepod-bedroom-interior-glass-cabin-kerikeri.jpg";
-import podLandscape from "@/assets/img/makoha/makoha-purepod-native-forest-landscape-kerikeri.jpg";
-import expBoat from "@/assets/img/makoha/bay-of-islands-boat-cruise-aerial.jpg";
-import expWaitangi from "@/assets/img/makoha/waitangi-treaty-grounds-maori-meeting-hous.jpg";
-import expMahinepua from "@/assets/img/makoha/mahinepua-peninsula-coastal-walk-bay-of-islands.jpg";
-import travelForest from "@/assets/img/makoha/kerikeri-native-forest-walking-track.jpg";
-import travelBridge from "@/assets/img/makoha/kerikeri-native-forest-bridge-walking-track.jpg";
-import travelPlatter from "@/assets/img/makoha/makoha-local-food-platter-kerikeri.jpg";
-import travelDinner from "@/assets/img/makoha/makoha-dinner-outdoor-dining-kerikeri.jpg";
+const heroImage = "/assets/img/makoha/makoha-purepod-aerial-glass-cabin-forest-kerikeri.jpg";
+const podNight = "/assets/img/makoha/makoha-purepod-glass-cabin-exterior-night-kerikeri.jpg";
+const podBedroom = "/assets/img/makoha/makoha-purepod-bedroom-interior-glass-cabin-kerikeri.jpg";
+const podLandscape = "/assets/img/makoha/makoha-purepod-native-forest-landscape-kerikeri.jpg";
+const expBoat = "/assets/img/makoha/bay-of-islands-boat-cruise-aerial.jpg";
+const expWaitangi = "/assets/img/makoha/waitangi-treaty-grounds-maori-meeting-hous.jpg";
+const expMahinepua = "/assets/img/makoha/mahinepua-peninsula-coastal-walk-bay-of-islands.jpg";
+const travelForest = "/assets/img/makoha/kerikeri-native-forest-walking-track.jpg";
+const travelBridge = "/assets/img/makoha/kerikeri-native-forest-bridge-walking-track.jpg";
+const travelPlatter = "/assets/img/makoha/makoha-local-food-platter-kerikeri.jpg";
+const travelDinner = "/assets/img/makoha/makoha-dinner-outdoor-dining-kerikeri.jpg";
 
 const CANONICAL_URL = "https://purepods.com/location/makoha/";
 const OG_IMAGE_URL =

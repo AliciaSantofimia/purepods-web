@@ -13,17 +13,17 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui";
 import styles from "./page.module.css";
 
-import heroImage from "@/assets/img/greystone/greystone-purepod-aerial-vineyard-landscape-waipara.jpg";
-import podAerial from "@/assets/img/greystone/greystone-purepod-aerial-view-waipara.jpg";
-import podExterior from "@/assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg";
-import podBedroom from "@/assets/img/greystone/greystone-purepod-bedroom-interior-waipara.jpg";
-import expWine from "@/assets/img/greystone/greystone-wine-dinner-experience-waipara.jpg";
-import expSculpture from "@/assets/img/greystone/waipara-iron-ridge-sculpture-park-landscape.jpg";
-import expTrail from "@/assets/img/greystone/waipara-vineyard-walking-trail.jpg";
-import travelValley from "@/assets/img/greystone/waipara-valley-countryside-landscape.jpg";
-import travelFarm from "@/assets/img/greystone/kaikoura-sheep-farm-track-countryside-landscape-new-zealand.jpg";
-import travelFood from "@/assets/img/greystone/greystone-local-food-basket-new-zealand.jpg";
-import travelDining from "@/assets/img/greystone/greystone-outdoor-dinner-wine-view-new-zealand.jpg";
+const heroImage = "/assets/img/greystone/greystone-purepod-aerial-vineyard-landscape-waipara.jpg";
+const podAerial = "/assets/img/greystone/greystone-purepod-aerial-view-waipara.jpg";
+const podExterior = "/assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg";
+const podBedroom = "/assets/img/greystone/greystone-purepod-bedroom-interior-waipara.jpg";
+const expWine = "/assets/img/greystone/greystone-wine-dinner-experience-waipara.jpg";
+const expSculpture = "/assets/img/greystone/waipara-iron-ridge-sculpture-park-landscape.jpg";
+const expTrail = "/assets/img/greystone/waipara-vineyard-walking-trail.jpg";
+const travelValley = "/assets/img/greystone/waipara-valley-countryside-landscape.jpg";
+const travelFarm = "/assets/img/greystone/kaikoura-sheep-farm-track-countryside-landscape-new-zealand.jpg";
+const travelFood = "/assets/img/greystone/greystone-local-food-basket-new-zealand.jpg";
+const travelDining = "/assets/img/greystone/greystone-outdoor-dinner-wine-view-new-zealand.jpg";
 
 const CANONICAL_URL = "https://purepods.com/location/greystone/";
 const OG_IMAGE_URL =

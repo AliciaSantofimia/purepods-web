@@ -14,17 +14,17 @@ import { Container } from "@/components/ui";
 import styles from "./page.module.css";
 
 /* Tokoeka images — assets/img/tokoeka */
-import heroImage from "@/assets/img/tokoeka/tokoeka-purepod-exterior-sunset-view-stewart-island.jpg";
-import podAerial from "@/assets/img/tokoeka/tokoeka-purepod-aerial-forest-location-stewart-island.jpg";
-import podBedroom from "@/assets/img/tokoeka/tokoeka-purepod-bedroom-ocean-view-stewart-island..jpg";
-import podKiwi from "@/assets/img/tokoeka/stewart-island-tokoeka-kiwi-wildlife..jpg";
-import expUlva from "@/assets/img/tokoeka/stewart-island-native-bird-wildlife.jpg";
-import expMason from "@/assets/img/tokoeka/stewart-island-coastal-forest-landscape.jpg";
-import expPaterson from "@/assets/img/tokoeka/stewart-island-yellow-eyed-penguin-wildlife.jpg";
-import travelAerial from "@/assets/img/tokoeka/tokoeka-purepod-aerial-forest-location-stewart-island.jpg";
-import travelForest from "@/assets/img/tokoeka/stewart-island-coastal-forest-landscape.jpg";
-import travelFood from "@/assets/img/tokoeka/tokoeka-local-food-platter-stewart-island..jpg";
-import travelBedroom from "@/assets/img/tokoeka/tokoeka-purepod-bedroom-ocean-view-stewart-island..jpg";
+const heroImage = "/assets/img/tokoeka/tokoeka-purepod-exterior-sunset-view-stewart-island.jpg";
+const podAerial = "/assets/img/tokoeka/tokoeka-purepod-aerial-forest-location-stewart-island.jpg";
+const podBedroom = "/assets/img/tokoeka/tokoeka-purepod-bedroom-ocean-view-stewart-island..jpg";
+const podKiwi = "/assets/img/tokoeka/stewart-island-tokoeka-kiwi-wildlife..jpg";
+const expUlva = "/assets/img/tokoeka/stewart-island-native-bird-wildlife.jpg";
+const expMason = "/assets/img/tokoeka/stewart-island-coastal-forest-landscape.jpg";
+const expPaterson = "/assets/img/tokoeka/stewart-island-yellow-eyed-penguin-wildlife.jpg";
+const travelAerial = "/assets/img/tokoeka/tokoeka-purepod-aerial-forest-location-stewart-island.jpg";
+const travelForest = "/assets/img/tokoeka/stewart-island-coastal-forest-landscape.jpg";
+const travelFood = "/assets/img/tokoeka/tokoeka-local-food-platter-stewart-island..jpg";
+const travelBedroom = "/assets/img/tokoeka/tokoeka-purepod-bedroom-ocean-view-stewart-island..jpg";
 
 const CANONICAL_URL = "https://purepods.com/location/tokoeka/";
 const OG_IMAGE_URL =

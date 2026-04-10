@@ -14,16 +14,16 @@ import { Container } from "@/components/ui";
 import styles from "./page.module.css";
 
 /* Hananui images — assets/img/hananui */
-import heroImage from "@/assets/img/hananui/hananui-purepod-exterior-forest-view-stewart-island.jpg";
-import podAerial from "@/assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg";
-import podExterior from "@/assets/img/hananui/hananui-purepod-exterior-forest-view-stewart-island.jpg";
-import podKiwi from "@/assets/img/hananui/stewart-island-tokoeka-kiwi-wildlife.jpg";
-import expUlva from "@/assets/img/hananui/stewart-island-native-bird-wildlife.jpg";
-import expMason from "@/assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg";
-import expPaterson from "@/assets/img/hananui/stewart-island-yellow-eyed-penguin-wildlife.jpg";
-import travelAerial from "@/assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg";
-import travelExterior from "@/assets/img/hananui/hananui-purepod-exterior-forest-view-stewart-island.jpg";
-import travelFood from "@/assets/img/hananui/hananui-local-food-platter-stewart-island.jpg";
+const heroImage = "/assets/img/hananui/hananui-purepod-exterior-forest-view-stewart-island.jpg";
+const podAerial = "/assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg";
+const podExterior = "/assets/img/hananui/hananui-purepod-exterior-forest-view-stewart-island.jpg";
+const podKiwi = "/assets/img/hananui/stewart-island-tokoeka-kiwi-wildlife.jpg";
+const expUlva = "/assets/img/hananui/stewart-island-native-bird-wildlife.jpg";
+const expMason = "/assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg";
+const expPaterson = "/assets/img/hananui/stewart-island-yellow-eyed-penguin-wildlife.jpg";
+const travelAerial = "/assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg";
+const travelExterior = "/assets/img/hananui/hananui-purepod-exterior-forest-view-stewart-island.jpg";
+const travelFood = "/assets/img/hananui/hananui-local-food-platter-stewart-island.jpg";
 
 const CANONICAL_URL = "https://purepods.com/location/hananui/";
 const OG_IMAGE_URL =

@@ -13,17 +13,17 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui";
 import styles from "./page.module.css";
 
-import heroImage from "@/assets/img/pamu/pamu-purepod-aerial-glass-cabin-landscape-rotorua.jpg";
-import podExterior from "@/assets/img/pamu/pamu-purepod-glass-cabin-exterior-landscape-rotorua.jpg";
-import podBedroom from "@/assets/img/pamu/pamu-purepod-bedroom-view-landscape-rotorua.jpg";
-import podBathroom from "@/assets/img/pamu/pamu-purepod-bathroom-shower-view-rotorua.jpg";
-import expGeothermal from "@/assets/img/pamu/rotorua-geothermal-hot-springs-lake-new-zealand.jpg";
-import expMaori from "@/assets/img/pamu/rotorua-maori-cultural-experience-village-new-zealand.jpg";
-import expValley from "@/assets/img/pamu/rotorua-volcanic-geothermal-valley-landscape-new-zealand..jpg";
-import travelFence from "@/assets/img/pamu/pamu-purepod-farm-fence-landscape-rotorua.jpg";
-import travelAerial from "@/assets/img/pamu/pamu-purepod-aerial-landscape-valley-rotorua.jpg";
-import travelCheese from "@/assets/img/pamu/pamu-purepod-local-cheese-platter-food-rotorua.jpg";
-import travelBbq from "@/assets/img/pamu/pamu-purepod-outdoor-bbq-cooking-view-rotorua.jpg";
+const heroImage = "/assets/img/pamu/pamu-purepod-aerial-glass-cabin-landscape-rotorua.jpg";
+const podExterior = "/assets/img/pamu/pamu-purepod-glass-cabin-exterior-landscape-rotorua.jpg";
+const podBedroom = "/assets/img/pamu/pamu-purepod-bedroom-view-landscape-rotorua.jpg";
+const podBathroom = "/assets/img/pamu/pamu-purepod-bathroom-shower-view-rotorua.jpg";
+const expGeothermal = "/assets/img/pamu/rotorua-geothermal-hot-springs-lake-new-zealand.jpg";
+const expMaori = "/assets/img/pamu/rotorua-maori-cultural-experience-village-new-zealand.jpg";
+const expValley = "/assets/img/pamu/rotorua-volcanic-geothermal-valley-landscape-new-zealand..jpg";
+const travelFence = "/assets/img/pamu/pamu-purepod-farm-fence-landscape-rotorua.jpg";
+const travelAerial = "/assets/img/pamu/pamu-purepod-aerial-landscape-valley-rotorua.jpg";
+const travelCheese = "/assets/img/pamu/pamu-purepod-local-cheese-platter-food-rotorua.jpg";
+const travelBbq = "/assets/img/pamu/pamu-purepod-outdoor-bbq-cooking-view-rotorua.jpg";
 
 const CANONICAL_URL = "https://purepods.com/location/pamu/";
 const OG_IMAGE_URL =

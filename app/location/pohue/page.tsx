@@ -14,18 +14,18 @@ import { Container } from "@/components/ui";
 import styles from "./page.module.css";
 
 /* Pōhue images — from assets/img/pohue */
-import heroImage from "@/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg";
-import podCoastalHills from "@/assets/img/pohue/pohue-coastal-hills-cabin-view-new-zealand.jpg";
-import podBedroom from "@/assets/img/pohue/pohue-purepod-bedroom-view-coastal-landscape-new-zealand.png";
-import podGlassCabin from "@/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg";
-import podHistoricCottage from "@/assets/img/pohue/pohue-historic-cottage-wisteria-north-canterbury-new-zealand.jpg";
-import expPenguins from "@/assets/img/pohue/pohue-blue-penguins-wildlife-new-zealand.jpg";
-import expVolcanicHills from "@/assets/img/pohue/pohue-coastal-hills-cabin-view-new-zealand.jpg";
-import expOhinetahi from "@/assets/img/pohue/pohue-greystone-gardens-north-canterbury-new-zealand.jpg";
-import travelAccess from "@/assets/img/pohue/pohue-purepod-access-gate-coastal-track-new-zealand.jpeg";
-import travelGlassCabin from "@/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg";
-import travelFood from "@/assets/img/pohue/pohue-local-produce-food-basket-new-zealand.jpg";
-import travelView from "@/assets/img/pohue/pohue-coastal-hills-cabin-view-new-zealand.jpg";
+const heroImage = "/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg";
+const podCoastalHills = "/assets/img/pohue/pohue-coastal-hills-cabin-view-new-zealand.jpg";
+const podBedroom = "/assets/img/pohue/pohue-purepod-bedroom-view-coastal-landscape-new-zealand.png";
+const podGlassCabin = "/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg";
+const podHistoricCottage = "/assets/img/pohue/pohue-historic-cottage-wisteria-north-canterbury-new-zealand.jpg";
+const expPenguins = "/assets/img/pohue/pohue-blue-penguins-wildlife-new-zealand.jpg";
+const expVolcanicHills = "/assets/img/pohue/pohue-coastal-hills-cabin-view-new-zealand.jpg";
+const expOhinetahi = "/assets/img/pohue/pohue-greystone-gardens-north-canterbury-new-zealand.jpg";
+const travelAccess = "/assets/img/pohue/pohue-purepod-access-gate-coastal-track-new-zealand.jpeg";
+const travelGlassCabin = "/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg";
+const travelFood = "/assets/img/pohue/pohue-local-produce-food-basket-new-zealand.jpg";
+const travelView = "/assets/img/pohue/pohue-coastal-hills-cabin-view-new-zealand.jpg";
 
 const CANONICAL_URL = "https://purepods.com/location/pohue/";
 const OG_IMAGE_URL =

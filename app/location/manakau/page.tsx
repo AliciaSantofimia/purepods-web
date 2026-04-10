@@ -13,17 +13,17 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui";
 import styles from "./page.module.css";
 
-import heroImage from "@/assets/img/manakau/manakau-purepod-glass-cabin-seaward-kaikoura-mountains.jpg";
-import podHills from "@/assets/img/manakau/manakau-purepod-glass-cabin-hills-landscape-kaikoura.jpg";
-import podBedroom from "@/assets/img/manakau/manakau-purepod-bedroom-view-kaikoura.jpg";
-import podStars from "@/assets/img/manakau/manakau-purepod-milky-way-stargazing-kaikoura.jpg";
-import expWhale from "@/assets/img/manakau/kaikoura-whale-watching-sperm-whale.jpg";
-import expWalkway from "@/assets/img/manakau/kaikoura-peninsula-walkway-coastal-view.jpg";
-import expSeals from "@/assets/img/manakau/kaikoura-seal-colony-new-zealand.jpg";
-import travelFarm from "@/assets/img/manakau/kaikoura-countryside-farm-entrance.jpg";
-import travelValley from "@/assets/img/manakau/kaikoura-river-valley-landscape.jpg";
-import travelPlatter from "@/assets/img/manakau/manakau-local-food-platter-kaikoura.jpg";
-import travelBreakfast from "@/assets/img/manakau/manakau-breakfast-outdoor-kaikoura.jpg";
+const heroImage = "/assets/img/manakau/manakau-purepod-glass-cabin-seaward-kaikoura-mountains.jpg";
+const podHills = "/assets/img/manakau/manakau-purepod-glass-cabin-hills-landscape-kaikoura.jpg";
+const podBedroom = "/assets/img/manakau/manakau-purepod-bedroom-view-kaikoura.jpg";
+const podStars = "/assets/img/manakau/manakau-purepod-milky-way-stargazing-kaikoura.jpg";
+const expWhale = "/assets/img/manakau/kaikoura-whale-watching-sperm-whale.jpg";
+const expWalkway = "/assets/img/manakau/kaikoura-peninsula-walkway-coastal-view.jpg";
+const expSeals = "/assets/img/manakau/kaikoura-seal-colony-new-zealand.jpg";
+const travelFarm = "/assets/img/manakau/kaikoura-countryside-farm-entrance.jpg";
+const travelValley = "/assets/img/manakau/kaikoura-river-valley-landscape.jpg";
+const travelPlatter = "/assets/img/manakau/manakau-local-food-platter-kaikoura.jpg";
+const travelBreakfast = "/assets/img/manakau/manakau-breakfast-outdoor-kaikoura.jpg";
 
 const CANONICAL_URL = "https://purepods.com/location/manakau/";
 const OG_IMAGE_URL =

@@ -13,17 +13,17 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui";
 import styles from "./page.module.css";
 
-import heroImage from "@/assets/img/kokomea/kokomea-purepod-glass-cabin-sunset-view-kapiti-coast.jpg";
-import podSunrise from "@/assets/img/kokomea/kokomea-purepod-exterior-sunrise-landscape-kapiti-coast.jpg";
-import podNight from "@/assets/img/kokomea/kokomea-purepod-glass-cabin-night-exterior-kapiti-coast.jpg";
-import podBedroom from "@/assets/img/kokomea/kokomea-purepod-bedroom-interior-sunset-kapiti-coast.jpg";
-import expIsland from "@/assets/img/kokomea/kapiti-island-aerial-landscape-kapiti-coast.jpg";
-import expEscarpment from "@/assets/img/kokomea/paekākāriki-escarpment-track.jpg";
-import expLagoon from "@/assets/img/kokomea/kapiti-coast-river-lagoon-landscape.jpg";
-import travelRoad from "@/assets/img/kokomea/kokomea-countryside-access-road-kapiti-coast.jpg";
-import travelSunrise from "@/assets/img/kokomea/kokomea-purepod-exterior-sunrise-landscape-kapiti-coast.jpg";
-import travelDinner from "@/assets/img/kokomea/kokomea-local-food-dinner-platter-kapiti-coast.jpg";
-import travelBreakfast from "@/assets/img/kokomea/kokomea-breakfast-outdoor-table-kapiti-coast.jpg";
+const heroImage = "/assets/img/kokomea/kokomea-purepod-glass-cabin-sunset-view-kapiti-coast.jpg";
+const podSunrise = "/assets/img/kokomea/kokomea-purepod-exterior-sunrise-landscape-kapiti-coast.jpg";
+const podNight = "/assets/img/kokomea/kokomea-purepod-glass-cabin-night-exterior-kapiti-coast.jpg";
+const podBedroom = "/assets/img/kokomea/kokomea-purepod-bedroom-interior-sunset-kapiti-coast.jpg";
+const expIsland = "/assets/img/kokomea/kapiti-island-aerial-landscape-kapiti-coast.jpg";
+const expEscarpment = "/assets/img/kokomea/paekākāriki-escarpment-track.jpg";
+const expLagoon = "/assets/img/kokomea/kapiti-coast-river-lagoon-landscape.jpg";
+const travelRoad = "/assets/img/kokomea/kokomea-countryside-access-road-kapiti-coast.jpg";
+const travelSunrise = "/assets/img/kokomea/kokomea-purepod-exterior-sunrise-landscape-kapiti-coast.jpg";
+const travelDinner = "/assets/img/kokomea/kokomea-local-food-dinner-platter-kapiti-coast.jpg";
+const travelBreakfast = "/assets/img/kokomea/kokomea-breakfast-outdoor-table-kapiti-coast.jpg";
 
 const CANONICAL_URL = "https://purepods.com/location/kokomea/";
 const OG_IMAGE_URL =
