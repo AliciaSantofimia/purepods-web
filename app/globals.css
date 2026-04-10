@@ -794,6 +794,305 @@ footer{
   font-size:13px;
 }
 
+/* ——— Interior nav (experiences list, etc.) ——— */
+.nav.nav--solid{
+  position:sticky;
+  top:0;
+  background:rgba(247,246,243,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--stroke);
+  pointer-events:auto;
+}
+
+.nav.nav--solid .nav-brand img{
+  height:clamp(34px,4.2vw,44px);
+  max-width:min(200px,52vw);
+  filter:none;
+  box-shadow:none;
+}
+
+.nav.nav--solid .nav__links a{
+  color:var(--muted);
+  text-shadow:none;
+}
+
+.nav.nav--solid .nav__links a:hover,
+.nav.nav--solid .nav__links a:focus-visible{
+  color:var(--ink);
+  border-bottom-color:rgba(92,95,62,.35);
+}
+
+/* ——— Experiences index (reference: experiences/experiences.html) ——— */
+main.experiences-index{
+  padding-bottom:8px;
+}
+
+main.experiences-index .hero{
+  position:static;
+  min-height:0;
+  display:block;
+  padding:48px 0 32px;
+  text-align:center;
+  color:var(--ink);
+  isolation:auto;
+}
+
+main.experiences-index .kicker{
+  display:inline-block;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid var(--stroke);
+  background:var(--card);
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+main.experiences-index .hero h1{
+  margin:14px auto 10px;
+  font-family:"Noto Serif Display",Georgia,"Times New Roman",serif;
+  font-weight:600;
+  font-size:clamp(28px,4vw,44px);
+  letter-spacing:-0.02em;
+  max-width:22ch;
+  color:var(--brand-green);
+}
+
+main.experiences-index .lead{
+  margin:0 auto;
+  max-width:65ch;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.7;
+}
+
+main.experiences-index .intro{
+  text-align:center;
+  max-width:60ch;
+  margin:0 auto 36px;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.7;
+}
+
+main.experiences-index .featured{
+  border-radius:24px;
+  border:1px solid var(--stroke);
+  overflow:hidden;
+  margin-bottom:24px;
+  min-height:280px;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  background-size:cover;
+  background-position:center 40%;
+  box-shadow:var(--shadow);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+
+main.experiences-index .featured:hover{
+  transform:translateY(-2px);
+  box-shadow:0 22px 55px rgba(0,0,0,.12);
+}
+
+main.experiences-index .featured::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(17,18,23,.75) 0%,rgba(17,18,23,.2) 50%,transparent 100%);
+  pointer-events:none;
+}
+
+main.experiences-index .featured-inner{
+  position:relative;
+  z-index:1;
+  padding:28px 24px;
+}
+
+main.experiences-index .featured .tag{
+  display:inline-flex;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.3);
+  background:rgba(255,255,255,.12);
+  color:rgba(255,255,255,.95);
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+main.experiences-index .featured h2{
+  margin:0 0 8px;
+  font-family:"Inter",system-ui,sans-serif;
+  font-size:22px;
+  font-weight:600;
+  color:#fff;
+  letter-spacing:-0.01em;
+}
+
+main.experiences-index .featured p{
+  margin:0 0 14px;
+  color:rgba(255,255,255,.9);
+  font-size:15px;
+  line-height:1.6;
+  max-width:50ch;
+}
+
+main.experiences-index .featured .go{
+  display:inline-flex;
+  padding:9px 14px;
+  border-radius:999px;
+  border:2px solid rgba(255,255,255,.4);
+  background:rgba(255,255,255,.1);
+  color:#fff;
+  font-weight:600;
+  font-size:13px;
+}
+
+main.experiences-index .featured:hover .go{
+  background:rgba(255,255,255,.18);
+}
+
+main.experiences-index .section{
+  padding:20px 0 48px;
+}
+
+main.experiences-index .section-title{
+  font-family:"Inter",system-ui,sans-serif;
+  font-size:18px;
+  font-weight:600;
+  color:var(--brand-green);
+  margin:0 0 18px;
+  letter-spacing:-0.01em;
+}
+
+main.experiences-index .grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+
+main.experiences-index .card{
+  border-radius:24px;
+  border:1px solid var(--stroke);
+  background:var(--card);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  min-height:300px;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+
+main.experiences-index .card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 22px 55px rgba(0,0,0,.1);
+}
+
+main.experiences-index .card .media{
+  height:180px;
+  background-size:cover;
+  background-position:var(--media-pos,center);
+  position:relative;
+  overflow:hidden;
+}
+
+main.experiences-index .card .media::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom,rgba(17,18,23,.03),rgba(247,246,243,.2));
+  pointer-events:none;
+}
+
+main.experiences-index .card .body{
+  padding:20px 22px 22px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  flex:1;
+}
+
+main.experiences-index .card .tag{
+  display:inline-flex;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--stroke);
+  background:rgba(92,95,62,.08);
+  color:var(--muted);
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  width:fit-content;
+}
+
+main.experiences-index .card h3{
+  margin:0;
+  font-family:"Inter",system-ui,sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:-0.01em;
+  color:var(--brand-green);
+}
+
+main.experiences-index .card p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.6;
+  flex:1;
+}
+
+main.experiences-index .card .go{
+  display:inline-flex;
+  width:fit-content;
+  padding:9px 12px;
+  border-radius:999px;
+  border:2px solid rgba(92,95,62,.35);
+  background:rgba(92,95,62,.08);
+  color:var(--brand-green);
+  font-weight:600;
+  font-size:13px;
+}
+
+main.experiences-index .soon-section{
+  padding:48px 0 64px;
+}
+
+main.experiences-index .soon-section h2{
+  font-family:"Inter",system-ui,sans-serif;
+  font-size:18px;
+  font-weight:600;
+  color:var(--brand-green);
+  margin:0 0 16px;
+  letter-spacing:-0.01em;
+}
+
+main.experiences-index .soon-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+@media (max-width:900px){
+  main.experiences-index .grid,
+  main.experiences-index .soon-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:640px){
+  main.experiences-index .card .media{
+    height:160px;
+  }
+  main.experiences-index .featured{
+    min-height:240px;
+  }
+}
+
 @media (prefers-reduced-motion:reduce){
   html{ scroll-behavior:auto; }
   .hero__slide{ transition:opacity .12s linear; }

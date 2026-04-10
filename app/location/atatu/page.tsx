@@ -13,17 +13,17 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui";
 import styles from "./page.module.css";
 
-import heroImage from "@/assets/img/atatu/atatu-purepod-glass-cabin-night-stars-new-zealand.jpg";
-import podHilltop from "@/assets/img/atatu/atatu-purepod-glass-cabin-hilltop-landscape-new-zealand.jpg";
-import podKitchen from "@/assets/img/atatu/atatu-purepod-glass-cabin-kitchen-ocean-view-new-zealand.jpg";
-import podBedroom from "@/assets/img/atatu/atatu-purepod-glass-cabin-bedroom-ocean-view-new-zealand.jpg";
-import expCathedral from "@/assets/img/atatu/atatu-experience-cathedral-gully-coastal-landscape-new-zealand.jpg";
-import expWine from "@/assets/img/atatu/atatu-experience-waipara-valley-wine-tasting-new-zealand.jpg";
-import expCoast from "@/assets/img/atatu/atatu-experience-waipara-coast-cliffs-beach-new-zealand.jpg";
-import travelRoad from "@/assets/img/atatu/atatu-journey-countryside-road-landscape-new-zealand.jpg";
-import travelAerial from "@/assets/img/atatu/atatu-purepod-hilltop-landscape-aerial-new-zealand.jpg";
-import travelDining from "@/assets/img/atatu/atatu-purepod-outdoor-dining-experience-new-zealand.jpg";
-import travelProduce from "@/assets/img/atatu/atatu-purepod-local-produce-dining-experience-new-zealand.jpg";
+import heroImage from "/assets/img/atatu/atatu-purepod-glass-cabin-night-stars-new-zealand.jpg";
+import podHilltop from "/assets/img/atatu/atatu-purepod-glass-cabin-hilltop-landscape-new-zealand.jpg";
+import podKitchen from "/assets/img/atatu/atatu-purepod-glass-cabin-kitchen-ocean-view-new-zealand.jpg";
+import podBedroom from "/assets/img/atatu/atatu-purepod-glass-cabin-bedroom-ocean-view-new-zealand.jpg";
+import expCathedral from "/assets/img/atatu/atatu-experience-cathedral-gully-coastal-landscape-new-zealand.jpg";
+import expWine from "/assets/img/atatu/atatu-experience-waipara-valley-wine-tasting-new-zealand.jpg";
+import expCoast from "/assets/img/atatu/atatu-experience-waipara-coast-cliffs-beach-new-zealand.jpg";
+import travelRoad from "/assets/img/atatu/atatu-journey-countryside-road-landscape-new-zealand.jpg";
+import travelAerial from "/assets/img/atatu/atatu-purepod-hilltop-landscape-aerial-new-zealand.jpg";
+import travelDining from "/assets/img/atatu/atatu-purepod-outdoor-dining-experience-new-zealand.jpg";
+import travelProduce from "/assets/img/atatu/atatu-purepod-local-produce-dining-experience-new-zealand.jpg";
 
 const CANONICAL_URL = "https://purepods.com/location/atatu/";
 const OG_IMAGE_URL =
