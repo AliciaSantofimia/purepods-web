@@ -91,4 +91,14 @@
   background: rgba(244, 244, 234, 0.2);
 }
 
+@media (max-width: 720px) {
+  .links a:not(.cta) {
+    display: none;
+  }
+
+  .inner {
+    gap: 10px;
+  }
+}
+
 /* When nav is transparent, ensure contrast on light hero (optional: add .topnavSolid only when scrolled) */

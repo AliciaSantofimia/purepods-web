@@ -47,7 +47,7 @@ export function RomanticBookingClient() {
                   <strong>PurePods available for your dates:</strong>
                 </p>
                 <div className="pods-cards">
-                  <Link className="pod-card" href="https://purepods.com/booking/?force_site_id=3">
+                  <Link className="pod-card" href="/location/greystone">
                     <div className="pod-thumb">
                       <Image
                         src="/assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg"
@@ -63,7 +63,7 @@ export function RomanticBookingClient() {
                       <span className="pod-cta">Book now →</span>
                     </div>
                   </Link>
-                  <Link className="pod-card" href="https://purepods.com/booking/?force_site_id=2">
+                  <Link className="pod-card" href="/location/manakau">
                     <div className="pod-thumb">
                       <Image
                         src="/assets/img/manakau/kaikoura-river-valley-landscape.jpg"

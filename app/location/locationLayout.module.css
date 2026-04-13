@@ -1,0 +1,21 @@
+/* Location segment: tokens from reference-html location index (wrap, cards, gallery) */
+.locationShell {
+  min-height: 100vh;
+  --font-heading: "Noto Serif Display", Georgia, "Times New Roman", serif;
+  --content-max: 980px;
+  --content-padding: 18px 14px 88px;
+  --radius: 24px;
+  --radius-sm: 18px;
+  --shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 920px) {
+  .locationShell {
+    --content-padding: 18px 14px 40px;
+  }
+}
+
+/* Bottom padding lives in Container via --content-padding; avoid doubling */
+.locationContent {
+  padding-bottom: 0;
+}

@@ -1,58 +1,76 @@
+import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { Container } from "@/components/ui";
-import styles from "./page.module.css";
+import { ExplorePageClient } from "@/components/pods/ExplorePageClient";
+import { EXPLORE_POD_CARDS } from "@/lib/podsExploreData";
+import styles from "./explore.module.css";
 
-export const metadata = {
-  title: "Pods",
-  description: "Explore PurePods locations across New Zealand.",
-};
+const CANONICAL = "https://purepods.com/pods";
 
-const PODS: { href: string; label: string; region: string }[] = [
-  { href: "/location/atatu", label: "Atatū", region: "Canterbury" },
-  { href: "/location/greystone", label: "Greystone", region: "Canterbury" },
-  {
-    href: "/location/haurapa",
-    label: "Haurapa",
-    region: "Central Otago",
+export const metadata: Metadata = {
+  title: { absolute: "Pods — PurePods" },
+  description:
+    "Explore PurePods — glass eco-cabins across New Zealand. Each pod has its own rhythm. Choose where you want to spend the night.",
+  alternates: { canonical: CANONICAL },
+  openGraph: {
+    title: "Pods — PurePods",
+    description:
+      "Explore PurePods — glass eco-cabins across New Zealand. Each pod has its own rhythm. Choose where you want to spend the night.",
+    url: CANONICAL,
+    siteName: "PurePods",
+    locale: "en_NZ",
+    type: "website",
   },
-  { href: "/location/taima", label: "Tāima", region: "Central Otago" },
-  { href: "/location/kahutara", label: "Kahutara", region: "Kaikōura" },
-  { href: "/location/manakau", label: "Manakau", region: "Kaikōura" },
-  { href: "/location/kokomea", label: "Kokomea", region: "Kāpiti Coast" },
-  { href: "/location/korimako", label: "Korimako", region: "Hurunui" },
-  { href: "/location/makoha", label: "Mākōha", region: "Northland" },
-  { href: "/location/matu", label: "Matū", region: "Waitomo" },
-  { href: "/location/pamu", label: "Pāmu", region: "Rotorua" },
-  { href: "/location/pohue", label: "Pōhue", region: "Banks Peninsula" },
-  { href: "/location/rewarewa", label: "Rewarewa", region: "Muriwai Coast" },
-  { href: "/location/ruru", label: "Ruru", region: "Coromandel" },
-  { href: "/location/tokoeka", label: "Tokoeka", region: "Stewart Island" },
-  { href: "/location/hananui", label: "Hananui", region: "Stewart Island" },
-];
+};
 
 export default function PodsPage() {
   return (
     <div className={styles.page}>
-      <Container>
-        <h1 className={styles.title}>Pods</h1>
-        <p className={styles.intro}>
-          Each pod is a private glass cabin for two. Choose a location to see
-          details, practical notes and booking.
-        </p>
-        <ul className={styles.podList}>
-          {PODS.map((pod) => (
-            <li key={pod.href} className={styles.podItem}>
-              <Link href={pod.href} className={styles.podLink}>
-                <span className={styles.podName}>{pod.label}</span>
-                <span className={styles.podRegion}>{pod.region}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <Link href="/" className={styles.back}>
-          ← Back to home
-        </Link>
-      </Container>
+      <header className={styles.nav}>
+        <div className={`wrap ${styles.navInner}`}>
+          <Link className={styles.brand} href="/" aria-label="PurePods — Home">
+            <Image
+              src="/assets/img/purepods-logo-new-zealand.jpg"
+              alt="PurePods"
+              width={120}
+              height={30}
+              className={styles.brandImg}
+              priority
+            />
+          </Link>
+          <nav className={styles.links} aria-label="Main">
+            <Link href="/pods">Pods</Link>
+            <Link href="/experiences">Experiences</Link>
+            <Link href="/my-journey">My journey</Link>
+            <a
+              className={`${styles.btn} ${styles.btnPrimary}`}
+              href="https://purepods.com/booking/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <main className={`wrap ${styles.main}`}>
+        <section className={styles.hero}>
+          <h1>Choose your place</h1>
+          <p className={styles.lead}>
+            Not every silence sounds the same. Discover where you want to spend
+            the night.
+          </p>
+        </section>
+
+        <ExplorePageClient pods={EXPLORE_POD_CARDS} />
+      </main>
+
+      <footer className={styles.footer}>
+        <div className="wrap">
+          PurePods · Home · Pods · Experiences · My journey
+        </div>
+      </footer>
     </div>
   );
 }

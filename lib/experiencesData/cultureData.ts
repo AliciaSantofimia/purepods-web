@@ -19,7 +19,7 @@ export const cultureMaoriSlides: ForestSlide[] = [
     description:
       "The birthplace of modern New Zealand, where the Treaty of Waitangi was signed. Walk through beautifully preserved grounds, explore interactive museums, and experience powerful Māori cultural performances that bring history to life.",
     ctaLabel: "Stay at Mākoha, Kerikeri →",
-    ctaHref: "https://purepods.com/booking/?force_site_id=14",
+    ctaHref: "/location/makoha",
   },
   {
     image: `${C}te-puia-rotorua-geothermal-geyser-maori-cultural-centre-new-zealand.jpg`,
@@ -29,7 +29,7 @@ export const cultureMaoriSlides: ForestSlide[] = [
     description:
       "A unique place where geothermal wonders and Māori culture come together. Witness the powerful Pōhutu Geyser, visit traditional carving and weaving schools, and learn about living traditions passed down through generations.",
     ctaLabel: "Stay at Pāmu, Rotorua →",
-    ctaHref: "https://purepods.com/booking/?force_site_id=8",
+    ctaHref: "/location/pamu",
   },
   {
     image: `${C}whakarewarewa-living-maori-village-rotorua-geothermal-cultural-new-zealand.jpg`,
@@ -39,7 +39,7 @@ export const cultureMaoriSlides: ForestSlide[] = [
     description:
       "Step into a living Māori village where families have lived for generations, using geothermal energy for cooking, bathing, and daily life. A rare opportunity to experience culture not as a show, but as everyday reality.",
     ctaLabel: "Stay at Pāmu, Rotorua →",
-    ctaHref: "https://purepods.com/booking/?force_site_id=8",
+    ctaHref: "/location/pamu",
   },
   {
     image: `${C}te-pa-tu-maori-cultural-experience-rotorua-night-performance-new-zealand.jpg`,
@@ -49,7 +49,7 @@ export const cultureMaoriSlides: ForestSlide[] = [
     description:
       "An immersive evening experience combining storytelling, performance, and seasonal cuisine. Set within a forest setting, this is a deeply sensory journey into Māori traditions, identity, and connection to the land.",
     ctaLabel: "Stay at Pāmu, Rotorua →",
-    ctaHref: "https://purepods.com/booking/?force_site_id=8",
+    ctaHref: "/location/pamu",
   },
   {
     image: `${C}koukourarata-marae-banks-peninsula-maori-meeting-house-cultural-new-zealand.jpg`,
@@ -59,7 +59,7 @@ export const cultureMaoriSlides: ForestSlide[] = [
     description:
       "A more intimate and authentic cultural connection on Banks Peninsula. Engage with local iwi, learn about traditions, and experience the significance of the marae as a place of community, identity, and storytelling.",
     ctaLabel: "Stay at Pōhue, Banks Peninsula →",
-    ctaHref: "https://purepods.com/booking/?force_site_id=4",
+    ctaHref: "/location/pohue",
   },
 ];
 
@@ -71,7 +71,7 @@ export const cultureHeritageSlides: HikingSlide[] = [
     placeHref: "https://maps.app.goo.gl/5BocPVTijT6WZvsQ8",
     description:
       "A charming seaside village with a distinct French heritage, where colonial cottages, waterfront cafés and quiet streets create a relaxed, old-world atmosphere. A place to slow down and soak in history by the sea.",
-    ctas: [{ label: "Stay at Pōhue, Banks Peninsula →", href: "https://purepods.com/booking/?force_site_id=4" }],
+    ctas: [{ label: "Stay at Pōhue, Banks Peninsula →", href: "/location/pohue" }],
   },
   {
     image: `${C}cromwell-heritage-precinct-historic-town-central-otago-new-zealand.jpg`,
@@ -81,8 +81,8 @@ export const cultureHeritageSlides: HikingSlide[] = [
     description:
       "A beautifully restored gold rush town where stone buildings, artisan shops and quiet laneways recreate the spirit of early Central Otago. History feels tangible at every corner.",
     ctas: [
-      { label: "Stay at Haurapa, Central Otago →", href: "https://purepods.com/booking/?force_site_id=9" },
-      { label: "Stay at Tāima, Central Otago →", href: "https://purepods.com/booking/?force_site_id=13" },
+      { label: "Stay at Haurapa, Central Otago →", href: "/location/haurapa" },
+      { label: "Stay at Tāima, Central Otago →", href: "/location/taima" },
     ],
   },
   {
@@ -93,7 +93,7 @@ export const cultureHeritageSlides: HikingSlide[] = [
       "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/kerikeri-area/kororipo-heritage-park/",
     description:
       "One of New Zealand’s earliest settlement areas, home to the country’s oldest stone building and rich Māori and European history. Set beside the river, it’s a peaceful place layered with stories.",
-    ctas: [{ label: "Stay at Mākoha, Kerikeri →", href: "https://purepods.com/booking/?force_site_id=14" }],
+    ctas: [{ label: "Stay at Mākoha, Kerikeri →", href: "/location/makoha" }],
   },
   {
     image: `${C}ohinetahi-gardens-lyttelton-harbour-christchurch-new-zealand-historic-estate.jpg`,
@@ -102,7 +102,7 @@ export const cultureHeritageSlides: HikingSlide[] = [
     placeHref: "https://ohinetahi.co.nz/",
     description:
       "A hidden cultural gem combining heritage architecture, sculpture gardens and sweeping coastal views. Thoughtful, artistic and deeply atmospheric.",
-    ctas: [{ label: "Stay at Pōhue, Banks Peninsula →", href: "https://purepods.com/booking/?force_site_id=4" }],
+    ctas: [{ label: "Stay at Pōhue, Banks Peninsula →", href: "/location/pohue" }],
   },
   {
     image: `${C}athenree-homestead-hauraki-plains-bay-of-plenty-new-zealand-historic-house.jpg`,
@@ -111,7 +111,7 @@ export const cultureHeritageSlides: HikingSlide[] = [
     placeHref: "https://www.athenreehomestead.org.nz/",
     description:
       "A beautifully preserved colonial homestead offering a glimpse into early settler life. Surrounded by gardens and coastal calm, it feels quietly removed from modern time.",
-    ctas: [{ label: "Stay at Ruru, Coromandel →", href: "https://purepods.com/booking/?force_site_id=7" }],
+    ctas: [{ label: "Stay at Ruru, Coromandel →", href: "/location/ruru" }],
   },
 ];
 
@@ -123,7 +123,7 @@ export const cultureMuseumsSlides: HikingSlide[] = [
     placeHref: "http://www.iceberg.co.nz/",
     description:
       "An immersive journey into the world of Antarctica, where you can experience icy storms, meet rescued penguins, and explore the extreme environment of the southern continent. Engaging, unexpected and unforgettable.",
-    ctas: [{ label: "Stay at Greystone, Waipara →", href: "https://purepods.com/booking/?force_site_id=3" }],
+    ctas: [{ label: "Stay at Greystone, Waipara →", href: "/location/greystone" }],
   },
   {
     image: `${C}new-zealand-maritime-museum-auckland-viaduct-harbour-exterior-waterfront.png`,
@@ -132,7 +132,7 @@ export const cultureMuseumsSlides: HikingSlide[] = [
     placeHref: "https://www.maritimemuseum.co.nz/",
     description:
       "Discover the deep connection between New Zealand and the sea, from Polynesian navigation to modern exploration. Located on the waterfront, it blends storytelling, history and ocean heritage.",
-    ctas: [{ label: "Stay at Rewarewa, Muriwai Coast →", href: "https://purepods.com/booking/?force_site_id=15" }],
+    ctas: [{ label: "Stay at Rewarewa, Muriwai Coast →", href: "/location/rewarewa" }],
   },
   {
     image: `${C}kaikoura-museum-interior-maritime-whaling-exhibits-new-zealand.png`,
@@ -142,8 +142,8 @@ export const cultureMuseumsSlides: HikingSlide[] = [
     description:
       "A small but rich museum telling the story of Kaikōura’s relationship with the ocean, from whaling history to modern conservation. Personal, local and deeply connected to place.",
     ctas: [
-      { label: "Stay at Kahutara →", href: "https://purepods.com/booking/?force_site_id=1" },
-      { label: "Stay at Manakau →", href: "https://purepods.com/booking/?force_site_id=2" },
+      { label: "Stay at Kahutara →", href: "/location/kahutara" },
+      { label: "Stay at Manakau →", href: "/location/manakau" },
     ],
   },
   {
@@ -154,8 +154,8 @@ export const cultureMuseumsSlides: HikingSlide[] = [
     description:
       "Set right on the coastline, this historic house built on whale bone foundations offers a unique glimpse into early life in Kaikōura. Raw, coastal and full of character.",
     ctas: [
-      { label: "Stay at Kahutara →", href: "https://purepods.com/booking/?force_site_id=1" },
-      { label: "Stay at Manakau →", href: "https://purepods.com/booking/?force_site_id=2" },
+      { label: "Stay at Kahutara →", href: "/location/kahutara" },
+      { label: "Stay at Manakau →", href: "/location/manakau" },
     ],
   },
 ];
@@ -169,8 +169,8 @@ export const cultureIndustrySlides: HikingSlide[] = [
     description:
       "Step into the gold rush era and try your hand at gold panning in a rugged Central Otago landscape. A hands-on experience that brings history to life in a raw and authentic way.",
     ctas: [
-      { label: "Stay at Haurapa, Central Otago →", href: "https://purepods.com/booking/?force_site_id=9" },
-      { label: "Stay at Tāima, Central Otago →", href: "https://purepods.com/booking/?force_site_id=13" },
+      { label: "Stay at Haurapa, Central Otago →", href: "/location/haurapa" },
+      { label: "Stay at Tāima, Central Otago →", href: "/location/taima" },
     ],
   },
   {
@@ -180,7 +180,7 @@ export const cultureIndustrySlides: HikingSlide[] = [
     placeHref: "https://www.waihirail.co.nz/",
     description:
       "A scenic journey aboard a vintage train following historic gold mining routes through lush countryside and river gorges. Slow travel with a strong sense of place and history.",
-    ctas: [{ label: "Stay at Ruru, Coromandel →", href: "https://purepods.com/booking/?force_site_id=7" }],
+    ctas: [{ label: "Stay at Ruru, Coromandel →", href: "/location/ruru" }],
   },
   {
     image: `${C}mountain-jade-hokitika-pounamu-carving-workshop-west-coast-new-zealand.png`,
@@ -190,7 +190,7 @@ export const cultureIndustrySlides: HikingSlide[] = [
       "https://www.mountainjade.co.nz/tours/mountain-jade-highlights-tour?srsltid=AfmBOorU-vdiYM8DlUuJFAldqm1Qh5WyRRqRFJ20IYQE3y7ooYnx2b9L",
     description:
       "Discover the art of carving pounamu (greenstone), a material deeply connected to Māori culture and identity. Watch skilled artisans at work and learn the meaning behind each piece.",
-    ctas: [{ label: "Stay at Pāmu, Rotorua →", href: "https://purepods.com/booking/?force_site_id=8" }],
+    ctas: [{ label: "Stay at Pāmu, Rotorua →", href: "/location/pamu" }],
   },
   {
     image: null,
@@ -199,7 +199,7 @@ export const cultureIndustrySlides: HikingSlide[] = [
     placeHref: "https://www.golddiscoverycentre.co.nz/",
     description:
       "An engaging introduction to the gold mining heritage of Waihi, explaining how the industry shaped both the landscape and local communities. Best paired with a visit to the nearby mine.",
-    ctas: [{ label: "Stay at Ruru, Coromandel →", href: "https://purepods.com/booking/?force_site_id=7" }],
+    ctas: [{ label: "Stay at Ruru, Coromandel →", href: "/location/ruru" }],
     noVisual: true,
   },
   {
@@ -209,7 +209,7 @@ export const cultureIndustrySlides: HikingSlide[] = [
     placeHref: "https://www.vbts.org.nz/",
     description:
       "Explore the atmospheric remains of one of the largest gold processing plants in the Southern Hemisphere. Industrial ruins set within nature create a powerful contrast between past and present.",
-    ctas: [{ label: "Stay at Ruru, Coromandel →", href: "https://purepods.com/booking/?force_site_id=7" }],
+    ctas: [{ label: "Stay at Ruru, Coromandel →", href: "/location/ruru" }],
   },
 ];
 
@@ -224,6 +224,6 @@ export const cultureFaq: { q: string; a: string }[] = [
   },
   {
     q: "How do I continue to booking from this page?",
-    a: "Each slide includes a booking pathway to a suggested PurePods site where available, and the final call to action opens PurePods booking to check availability and complete your stay.",
+    a: "Each slide includes a link to the suggested pod’s detail page on this site where available (`/location/...`), and the final call to action opens PurePods booking to check availability and complete your stay.",
   },
 ];

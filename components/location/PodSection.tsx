@@ -7,12 +7,16 @@ import { useLightbox } from "@/components/ui/LightboxContext";
 import { SectionHeader } from "./SectionHeader";
 import styles from "./PodSection.module.css";
 
+export type PodGalleryVariant = "tallRight" | "fillGapSpan" | "podTextBottom";
+
 export interface GalleryImage {
   src: string | StaticImageData;
   alt: string;
   position?: string;
   big?: boolean;
   fillGap?: boolean;
+  /** Greystone-style bedroom tile (240px vs 170px). */
+  tall?: boolean;
 }
 
 interface PodSectionProps {
@@ -21,10 +25,12 @@ interface PodSectionProps {
   /** Optional rich intro (e.g. inline links) rendered before `paragraphs`. */
   lead?: ReactNode;
   paragraphs: string[];
-  /** Order: [big, fillGap, img, img]. Caption is rendered between big and fillGap in the grid. */
+  /** Order: [big, fillGap, …rest]. Caption is rendered between big and fillGap in the grid. */
   gallery: GalleryImage[];
   /** Paragraph shown in grid next to fillGap image */
   galleryCaption?: string;
+  /** Matches reference-html/location per-pod gallery rules. */
+  galleryVariant?: PodGalleryVariant;
 }
 
 export function PodSection({
@@ -34,6 +40,7 @@ export function PodSection({
   paragraphs,
   gallery,
   galleryCaption,
+  galleryVariant = "tallRight",
 }: PodSectionProps) {
   const lightbox = useLightbox();
 
@@ -43,6 +50,16 @@ export function PodSection({
 
   const [big, fillGap, ...rest] = gallery;
 
+  const captionClass =
+    galleryVariant === "podTextBottom"
+      ? `${styles.caption} ${styles.captionPodText}`
+      : styles.caption;
+
+  const sideSizes =
+    galleryVariant === "podTextBottom"
+      ? "(max-width: 640px) 100vw, 50vw"
+      : "(max-width: 640px) 100vw, 50vw";
+
   return (
     <section className={styles.section} aria-labelledby="pod-heading">
       <SectionHeader title={title} hint={hint} />
@@ -51,7 +68,7 @@ export function PodSection({
         {paragraphs.map((p, i) => (
           <p key={i}>{p}</p>
         ))}
-        <div className={styles.gallery}>
+        <div className={styles.gallery} data-gallery={galleryVariant}>
           {big && (
             <figure className={`${styles.thumb} ${styles.big}`}>
               <button
@@ -70,7 +87,7 @@ export function PodSection({
               </button>
             </figure>
           )}
-          {galleryCaption && <p className={styles.caption}>{galleryCaption}</p>}
+          {galleryCaption && <p className={captionClass}>{galleryCaption}</p>}
           {fillGap && (
             <figure className={`${styles.thumb} ${styles.fillGap}`}>
               <button
@@ -83,30 +100,41 @@ export function PodSection({
                   src={fillGap.src}
                   alt={fillGap.alt}
                   fill
-                  sizes="(max-width: 560px) 100vw, 50vw"
+                  sizes={sideSizes}
                   style={fillGap.position ? { objectPosition: fillGap.position } : undefined}
                 />
               </button>
             </figure>
           )}
-          {rest.map((img, i) => (
-            <figure key={i} className={styles.thumb}>
-              <button
-                type="button"
-                className={styles.thumbBtn}
-                onClick={() => handleImageClick(img)}
-                aria-label={`View ${img.alt}`}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  sizes="(max-width: 560px) 100vw, 50vw"
-                  style={img.position ? { objectPosition: img.position } : undefined}
-                />
-              </button>
-            </figure>
-          ))}
+          {rest.map((img, i) => {
+            const isBottomLeft =
+              galleryVariant === "podTextBottom" && i === rest.length - 1;
+            const thumbClass = [
+              styles.thumb,
+              img.tall ? styles.tall : "",
+              isBottomLeft ? styles.bottomLeft : "",
+            ]
+              .filter(Boolean)
+              .join(" ");
+            return (
+              <figure key={i} className={thumbClass}>
+                <button
+                  type="button"
+                  className={styles.thumbBtn}
+                  onClick={() => handleImageClick(img)}
+                  aria-label={`View ${img.alt}`}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes={sideSizes}
+                    style={img.position ? { objectPosition: img.position } : undefined}
+                  />
+                </button>
+              </figure>
+            );
+          })}
         </div>
       </div>
     </section>

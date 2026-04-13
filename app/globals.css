@@ -15,6 +15,9 @@
   --radius: 22px;
   --shadow: 0 18px 44px rgba(22,24,18,.07);
   --max: 1120px;
+  /* Shared by Container (booking, location, etc.) — inner wrap width from reference pod HTML */
+  --content-max: 980px;
+  --content-padding: 18px 14px 3rem;
   /* Organic night-in-nature darks (warm olive / forest charcoal — not pure black) */
   --cinema:#1e221a;
   --cinema-rich:#252a20;

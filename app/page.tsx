@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   useCallback,
   useEffect,
@@ -107,6 +108,26 @@ const LANDSCAPE_SLIDES = [
     src: "/assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg",
     alt: "Hananui PurePod aerial coastal view on Stewart Island",
   },
+] as const;
+
+/** Same order as `LANDSCAPE_SLIDES` — links to Next.js pod detail routes. */
+const LANDSCAPE_POD_HREFS = [
+  "/location/matu",
+  "/location/makoha",
+  "/location/rewarewa",
+  "/location/pamu",
+  "/location/ruru",
+  "/location/kokomea",
+  "/location/manakau",
+  "/location/kahutara",
+  "/location/atatu",
+  "/location/korimako",
+  "/location/greystone",
+  "/location/pohue",
+  "/location/haurapa",
+  "/location/taima",
+  "/location/tokoeka",
+  "/location/hananui",
 ] as const;
 
 const experiences = [
@@ -420,7 +441,31 @@ export default function HomePage() {
                     onLoadingComplete={() => preloadLandNeighbor(j)}
                   />
                 ) : null}
-                <div className="landscapes__caption">
+                <Link
+                  className="landscapes__caption"
+                  href={LANDSCAPE_POD_HREFS[j]}
+                  prefetch={false}
+                  aria-label={`View ${
+                    [
+                      "Matū",
+                      "Mākōha",
+                      "Rewarewa",
+                      "Pāmu",
+                      "Ruru",
+                      "Kokomea",
+                      "Manakau",
+                      "Kahutara",
+                      "Atatū",
+                      "Korimako",
+                      "Greystone",
+                      "Pōhue",
+                      "Haurapa",
+                      "Tāima",
+                      "Tokoeka",
+                      "Hananui",
+                    ][j]
+                  } pod`}
+                >
                   <strong>
                     {
                       [
@@ -465,7 +510,7 @@ export default function HomePage() {
                       ][j]
                     }
                   </span>
-                </div>
+                </Link>
               </div>
             ))}
           </div>
@@ -622,7 +667,11 @@ export default function HomePage() {
       </section>
 
       <footer>
-        <div className="wrap">PurePods · Home · Pods · Experiences · Book</div>
+        <div className="wrap">
+          PurePods · <a href="/">Home</a> · <a href="/pods">Pods</a> ·{" "}
+          <a href="/experiences">Experiences</a> ·{" "}
+          <a href="https://purepods.com/booking/">Book</a>
+        </div>
       </footer>
     </>
   );

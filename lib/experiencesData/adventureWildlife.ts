@@ -19,8 +19,8 @@ export const marineSlides: HikingSlide[] = [
     description:
       "A boat-based whale watching experience in Kaikōura, known for reliable year-round sightings of sperm whales along with dolphins and seabirds. The tours depart from the coast and provide close-up views of marine wildlife in a unique deep-water environment.",
     ctas: [
-      { label: "Stay at Kahutara →", href: "https://purepods.com/booking/?force_site_id=1" },
-      { label: "Stay at Manakau →", href: "https://purepods.com/booking/?force_site_id=2" },
+      { label: "Stay at Kahutara →", href: "/location/kahutara" },
+      { label: "Stay at Manakau →", href: "/location/manakau" },
     ],
     overlayTitle: "Whale Watch Kaikōura",
     overlayLocation: "Kaikōura, New Zealand",
@@ -33,8 +33,8 @@ export const marineSlides: HikingSlide[] = [
     description:
       "A guided in-water experience swimming with wild New Zealand fur seals along the Kaikōura coastline. Small groups enter the ocean with experienced guides to observe and interact respectfully with seals in their natural marine environment.",
     ctas: [
-      { label: "Stay at Kahutara →", href: "https://purepods.com/booking/?force_site_id=1" },
-      { label: "Stay at Manakau →", href: "https://purepods.com/booking/?force_site_id=2" },
+      { label: "Stay at Kahutara →", href: "/location/kahutara" },
+      { label: "Stay at Manakau →", href: "/location/manakau" },
     ],
     overlayTitle: "Seal Swim Kaikōura",
     overlayLocation: "Kaikōura, New Zealand",
@@ -46,7 +46,7 @@ export const marineSlides: HikingSlide[] = [
     placeHref: "https://www.akaroaadventurecentre.co.nz/activities",
     description:
       "A guided boat experience in Akaroa Harbour where you can observe or swim alongside Hector's dolphins, one of the world's smallest and rarest dolphin species. The tour focuses on respectful wildlife interaction within a protected coastal environment.",
-    ctas: [{ label: "Stay at Pōhue →", href: "https://purepods.com/booking/?force_site_id=4" }],
+    ctas: [{ label: "Stay at Pōhue →", href: "/location/pohue" }],
     overlayTitle: "Swimming with Dolphins",
     overlayLocation: "Akaroa, New Zealand",
   },
@@ -57,7 +57,7 @@ export const marineSlides: HikingSlide[] = [
     placeHref: "https://www.pohatu.co.nz/",
     description:
       "A guided wildlife experience focused on the conservation of little blue penguins in the Pōhatu Marine Reserve, near Akaroa. Tours include access to private farmland and coastal habitats, with opportunities to observe penguins, seabirds and native landscape in a protected environment.",
-    ctas: [{ label: "Stay at Pōhue →", href: "https://purepods.com/booking/?force_site_id=4" }],
+    ctas: [{ label: "Stay at Pōhue →", href: "/location/pohue" }],
     overlayTitle: "Pōhatu Penguins / Plunge NZ",
     overlayLocation: "Akaroa, New Zealand",
   },
@@ -68,7 +68,7 @@ export const marineSlides: HikingSlide[] = [
     placeHref: "https://www.aucklandwhaleanddolphinsafari.co.nz/",
     description:
       "A marine wildlife cruise departing from central Auckland, offering the chance to spot dolphins, whales and seabirds in the Hauraki Gulf Marine Park. The experience combines coastal scenery with expert-led interpretation of the region's diverse marine ecosystem.",
-    ctas: [{ label: "Stay at Rewarewa →", href: "https://purepods.com/booking/?force_site_id=15" }],
+    ctas: [{ label: "Stay at Rewarewa →", href: "/location/rewarewa" }],
     overlayTitle: "Auckland Whale & Dolphin Safari",
     overlayLocation: "Auckland, New Zealand",
   },
@@ -82,7 +82,7 @@ export const natureSlides: HikingSlide[] = [
     placeHref: "https://www.moanakayaks.nz",
     description:
       "A guided sea kayaking experience in the Bay of Islands, exploring sheltered waters, coastal inlets and small islands. The tours combine paddling with local knowledge of the marine environment, offering a slower way to experience the coastline.",
-    ctas: [{ label: "Stay at Mākoha →", href: "https://purepods.com/booking/?force_site_id=14" }],
+    ctas: [{ label: "Stay at Mākoha →", href: "/location/makoha" }],
     overlayTitle: "Moana Kayaks – Bay of Islands",
     overlayLocation: "Bay of Islands, New Zealand",
   },
@@ -93,7 +93,7 @@ export const natureSlides: HikingSlide[] = [
     placeHref: "https://www.kapitiisland.com/",
     description:
       "A guided day trip to Kapiti Island, a protected nature reserve known for native birdlife and conservation. Access is managed and visitor numbers are limited, allowing close encounters with species such as kākā, tīeke and kererū in a predator-free environment.",
-    ctas: [{ label: "Stay at Kokomea →", href: "https://purepods.com/booking/?force_site_id=10" }],
+    ctas: [{ label: "Stay at Kokomea →", href: "/location/kokomea" }],
     overlayTitle: "Kapiti Island – Day trip",
     overlayLocation: "Kāpiti Island, New Zealand",
   },
@@ -104,7 +104,7 @@ export const natureSlides: HikingSlide[] = [
     placeHref: "https://www.wingspan.co.nz/",
     description:
       "A conservation-focused experience dedicated to New Zealand’s birds of prey, including the kārearea (native falcon). Visits include guided encounters and educational insights into rehabilitation and breeding programmes within a natural forest setting.",
-    ctas: [{ label: "Stay at Pāmu →", href: "https://purepods.com/booking/?force_site_id=8" }],
+    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
     overlayTitle: "Wingspan National Bird of Prey Centre",
     overlayLocation: "Rotorua, New Zealand",
   },
@@ -118,7 +118,7 @@ export const adrenalineSlides: HikingSlide[] = [
     placeHref: "https://kaitunacascades.co.nz/",
     description:
       "A guided white water rafting experience on the Kaituna River near Rotorua, known for the Tutea Falls, the highest commercially rafted waterfall in the world. The route combines fast-moving rapids with native forest scenery and expert-led navigation.",
-    ctas: [{ label: "Stay at Pāmu →", href: "https://purepods.com/booking/?force_site_id=8" }],
+    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
     overlayTitle: "Kaituna Cascades - Rafting",
     overlayLocation: "Rotorua, New Zealand",
   },
@@ -129,7 +129,7 @@ export const adrenalineSlides: HikingSlide[] = [
     placeHref: "https://www.rotoruaziplines.nz/",
     description:
       "A guided zipline experience through native forest near Rotorua, combining suspended lines, elevated platforms and ecological restoration insights. The tour moves above and through the canopy, offering a fast-paced but controlled way to experience the landscape.",
-    ctas: [{ label: "Stay at Pāmu →", href: "https://purepods.com/booking/?force_site_id=8" }],
+    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
     overlayTitle: "Rotorua Ziplines",
     overlayLocation: "Rotorua, New Zealand",
   },
@@ -140,7 +140,7 @@ export const adrenalineSlides: HikingSlide[] = [
     placeHref: "https://offroadnz.co.nz/",
     description:
       "A motor-based adventure experience in Rotorua featuring guided 4x4 tracks, off-road driving and high-adrenaline activities. The courses are designed to navigate steep terrain, mud and obstacles, offering a controlled but intense outdoor driving experience.",
-    ctas: [{ label: "Stay at Pāmu →", href: "https://purepods.com/booking/?force_site_id=8" }],
+    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
     overlayTitle: "Off Road NZ (4x4 / motor adventures)",
     overlayLocation: "Rotorua, New Zealand",
   },
@@ -151,7 +151,7 @@ export const adrenalineSlides: HikingSlide[] = [
     placeHref: "https://skydiveauckland.com/",
     description:
       "A tandem skydiving experience departing from Auckland, offering freefall over coastal and rural landscapes before a parachute descent with wide views across the region. The jump is guided by experienced instructors and designed for first-time and returning participants.",
-    ctas: [{ label: "Stay at Rewarewa →", href: "https://purepods.com/booking/?force_site_id=15" }],
+    ctas: [{ label: "Stay at Rewarewa →", href: "/location/rewarewa" }],
     overlayTitle: "Skydive Auckland",
     overlayLocation: "Auckland, New Zealand",
   },
@@ -163,8 +163,8 @@ export const adrenalineSlides: HikingSlide[] = [
     description:
       "A scenic flight experience over Kaikōura, offering aerial views of the coastline, mountain ranges and marine environment. Flights provide a different perspective on the region's geography, with opportunities to observe whales and coastal features from above.",
     ctas: [
-      { label: "Stay at Kahutara →", href: "https://purepods.com/booking/?force_site_id=1" },
-      { label: "Stay at Manakau →", href: "https://purepods.com/booking/?force_site_id=2" },
+      { label: "Stay at Kahutara →", href: "/location/kahutara" },
+      { label: "Stay at Manakau →", href: "/location/manakau" },
     ],
     overlayTitle: "Air Kaikōura (Scenic flights)",
     overlayLocation: "Kaikōura, New Zealand",
@@ -182,6 +182,6 @@ export const adventureFaq: { q: string; a: string }[] = [
   },
   {
     q: "How do I continue to booking from this page?",
-    a: "Each block includes a direct PurePods booking pathway, and the main call to action also leads to booking to check live availability and site details.",
+    a: "Each block links to the suggested pod’s detail page on this site (`/location/...`), and the main call to action opens PurePods booking to check live availability and site details.",
   },
 ];

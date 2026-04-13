@@ -1,7 +1,8 @@
 export { LocationHero } from "./LocationHero";
+export type { LocationHeroProps } from "./LocationHero";
 export { SectionHeader } from "./SectionHeader";
 export { PodSection } from "./PodSection";
-export type { GalleryImage } from "./PodSection";
+export type { GalleryImage, PodGalleryVariant } from "./PodSection";
 export { ExperiencesSection } from "./ExperiencesSection";
 export type { ExperienceItem } from "./ExperiencesSection";
 export { TravelSection } from "./TravelSection";
