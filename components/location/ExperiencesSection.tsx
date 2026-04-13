@@ -62,6 +62,9 @@ export function ExperiencesSection({
                   fill
                   sizes="(max-width: 900px) 100vw, 33vw"
                   style={{ objectFit: "cover", objectPosition: "50% 50%" }}
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                 />
               </div>
               <div className={styles.body}>

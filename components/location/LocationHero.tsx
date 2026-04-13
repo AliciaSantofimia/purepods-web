@@ -50,6 +50,7 @@ export function LocationHero({
           className={styles.img}
           sizes="100vw"
           priority
+          decoding="async"
           style={imgStyle}
         />
         <div

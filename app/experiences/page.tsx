@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { CSSProperties } from "react";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: {
@@ -27,9 +27,8 @@ type GridCard = {
   title: string;
   description: string;
   image: string;
+  /** `object-position` for the photo (matches previous background-position). */
   mediaPos?: string;
-  /** Debug: render media with <img> instead of background-image (one card only). */
-  mediaAsImg?: boolean;
 };
 
 const experiencesPrimary: GridCard[] = [
@@ -41,7 +40,6 @@ const experiencesPrimary: GridCard[] = [
       "Romantic stays in nature — slow down, switch off and reconnect in a private eco-cabin.",
     image:
       "/assets/img/experiences/romantic/purepods-romantic-getaway-bedroom-fireplace-night.jpg",
-    mediaAsImg: true,
   },
   {
     href: "/experiences/journey",
@@ -94,12 +92,11 @@ const experiencesMore: GridCard[] = [
   },
 ];
 
-function mediaStyle(image: string, mediaPos?: string): CSSProperties {
-  return {
-    backgroundImage: `url("${image}")`,
-    ...(mediaPos ? { ["--media-pos" as string]: mediaPos } : {}),
-  };
-}
+const CARD_MEDIA_SIZES =
+  "(max-width: 640px) calc(100vw - 32px), (max-width: 900px) calc(100vw - 32px), min(50vw, 520px)";
+
+const FEATURED_SIZES =
+  "(max-width: 640px) calc(100vw - 32px), min(920px, calc(100vw - 32px))";
 
 export default function ExperiencesPage() {
   return (
@@ -107,9 +104,12 @@ export default function ExperiencesPage() {
       <header className="nav nav--solid" role="banner">
         <div className="nav__bar">
           <a className="nav-brand" href="/" aria-label="PurePods — Home">
-            <img
+            <Image
               src="/assets/img/purepods-logo-new-zealand.jpg"
               alt="PurePods"
+              width={1000}
+              height={1000}
+              sizes="(max-width: 720px) min(260px, 78vw), min(240px, 42vw)"
               decoding="async"
             />
           </a>
@@ -146,11 +146,21 @@ export default function ExperiencesPage() {
           your stay — before, during and after your night.
         </p>
 
-        <a
-          className="featured"
-          href={featured.href}
-          style={mediaStyle(featured.image)}
-        >
+        <a className="featured" href={featured.href}>
+          <span className="featured__media" aria-hidden>
+            <Image
+              src={featured.image}
+              alt=""
+              fill
+              sizes={FEATURED_SIZES}
+              style={{
+                objectFit: "cover",
+                objectPosition: "center 40%",
+              }}
+              priority
+              decoding="async"
+            />
+          </span>
           <div className="featured-inner">
             <span className="tag">{featured.tag}</span>
             <h2>{featured.title}</h2>
@@ -166,29 +176,20 @@ export default function ExperiencesPage() {
           <div className="grid">
             {experiencesPrimary.map((item) => (
               <a key={item.href} className="card" href={item.href}>
-                {item.mediaAsImg ? (
-                  <div
-                    className="media"
-                    style={
-                      item.mediaPos
-                        ? ({ ["--media-pos" as string]: item.mediaPos } as CSSProperties)
-                        : undefined
-                    }
-                  >
-                    <img
-                      src={item.image}
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                ) : (
-                  <div
-                    className="media"
-                    style={mediaStyle(item.image, item.mediaPos)}
-                    aria-hidden="true"
+                <div className="media">
+                  <Image
+                    src={item.image}
+                    alt=""
+                    fill
+                    sizes={CARD_MEDIA_SIZES}
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: item.mediaPos ?? "center",
+                    }}
+                    loading="lazy"
+                    decoding="async"
                   />
-                )}
+                </div>
                 <div className="body">
                   <span className="tag">{item.tag}</span>
                   <h3>{item.title}</h3>
@@ -205,11 +206,20 @@ export default function ExperiencesPage() {
           <div className="soon-grid">
             {experiencesMore.map((item) => (
               <a key={item.href} className="card" href={item.href}>
-                <div
-                  className="media"
-                  style={mediaStyle(item.image, item.mediaPos)}
-                  aria-hidden="true"
-                />
+                <div className="media">
+                  <Image
+                    src={item.image}
+                    alt=""
+                    fill
+                    sizes={CARD_MEDIA_SIZES}
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: item.mediaPos ?? "center",
+                    }}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
                 <div className="body">
                   <span className="tag">{item.tag}</span>
                   <h3>{item.title}</h3>

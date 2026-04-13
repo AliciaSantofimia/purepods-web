@@ -59,6 +59,9 @@ export function TravelSection({ title, hint, cards }: TravelSectionProps) {
                       fill
                       sizes="(max-width: 760px) 100vw, 50vw"
                       style={{ objectFit: "cover", objectPosition: "50% 50%" }}
+                      loading="lazy"
+                      decoding="async"
+                      fetchPriority="low"
                     />
                   </div>
                 ))}

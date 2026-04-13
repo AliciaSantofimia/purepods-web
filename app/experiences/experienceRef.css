@@ -314,6 +314,13 @@
   object-fit: cover;
   display: block;
 }
+.experience-ref .forest-carousel__slide .forest-carousel__img--pending {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
 .experience-ref .forest-carousel__btn {
   position: absolute;
   top: 50%;
@@ -430,6 +437,13 @@
   height: 100%;
   object-fit: cover;
   display: block;
+}
+.experience-ref .hiking-carousel__slide .hiking-carousel__img--pending {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 .experience-ref .hiking-carousel__slide--no-visual .hiking-carousel__no-img {
   width: 100%;

@@ -81,8 +81,11 @@ export function PodSection({
                   src={big.src}
                   alt={big.alt}
                   fill
-                  sizes="(max-width: 980px) 100vw, 980px"
+                  sizes="(max-width: 980px) 100vw, min(980px, 92vw)"
                   style={big.position ? { objectPosition: big.position } : undefined}
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
                 />
               </button>
             </figure>
@@ -102,6 +105,9 @@ export function PodSection({
                   fill
                   sizes={sideSizes}
                   style={fillGap.position ? { objectPosition: fillGap.position } : undefined}
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                 />
               </button>
             </figure>
@@ -130,6 +136,9 @@ export function PodSection({
                     fill
                     sizes={sideSizes}
                     style={img.position ? { objectPosition: img.position } : undefined}
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
                   />
                 </button>
               </figure>

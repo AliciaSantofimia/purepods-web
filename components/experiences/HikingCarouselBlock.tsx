@@ -7,6 +7,7 @@ import {
   type KeyboardEvent,
   type ReactNode,
 } from "react";
+import { shouldMountCarouselImage } from "./carouselImageMount";
 import { ExpRefImage } from "./ExpRefImage";
 import { StayAtLink } from "./stayAtLink";
 
@@ -58,6 +59,9 @@ export function HikingCarouselBlock({
 
   if (!item) return null;
 
+  const len = slides.length;
+  const mountImg = (idx: number) => shouldMountCarouselImage(i, idx, len);
+
   return (
     <div className="moment">
       <div
@@ -79,14 +83,14 @@ export function HikingCarouselBlock({
               >
                 {s.noVisual || !s.image ? (
                   <div className="hiking-carousel__no-img" aria-hidden={s.noVisual ? undefined : true} />
-                ) : (
+                ) : mountImg(idx) ? (
                   <>
                     <ExpRefImage
                       src={s.image}
                       alt={s.alt ?? ""}
                       fill
                       sizes="(max-width: 900px) 100vw, 45vw"
-                      priority={idx === 0}
+                      priority={idx === i && idx === 0}
                       className="hiking-carousel__img"
                     />
                     {s.overlayTitle || s.overlayLocation ? (
@@ -100,6 +104,11 @@ export function HikingCarouselBlock({
                       </div>
                     ) : null}
                   </>
+                ) : (
+                  <div
+                    className="hiking-carousel__img hiking-carousel__img--pending"
+                    aria-hidden
+                  />
                 )}
               </figure>
             ))}

@@ -15,15 +15,15 @@ const TABS: { filter: ExploreIslandFilter; label: string }[] = [
 export function ExplorePageClient({ pods }: { pods: ExplorePodCard[] }) {
   const [filter, setFilter] = useState<ExploreIslandFilter>("north");
 
-  const visibleCount = useMemo(
-    () => pods.filter((p) => p.filter === filter).length,
+  const visiblePods = useMemo(
+    () => pods.filter((p) => p.filter === filter),
     [pods, filter],
   );
 
   const countLabel = useMemo(() => {
-    const n = visibleCount;
+    const n = visiblePods.length;
     return `${n} ${n === 1 ? "pod" : "pods"}`;
-  }, [visibleCount]);
+  }, [visiblePods.length]);
 
   return (
     <>
@@ -59,11 +59,11 @@ export function ExplorePageClient({ pods }: { pods: ExplorePodCard[] }) {
         </div>
 
         <div className={styles.grid}>
-          {pods.map((pod) => (
+          {visiblePods.map((pod, index) => (
             <Link
               key={pod.slug}
               href={pod.href}
-              className={`${styles.pod} ${pod.filter === filter ? "" : styles.hidden}`}
+              className={styles.pod}
               data-island={pod.filter}
               prefetch={false}
             >
@@ -77,7 +77,9 @@ export function ExplorePageClient({ pods }: { pods: ExplorePodCard[] }) {
                     objectFit: "cover",
                     objectPosition: pod.imagePosition ?? "center 35%",
                   }}
-                  loading="lazy"
+                  priority={index === 0}
+                  loading={index === 0 ? undefined : "lazy"}
+                  decoding="async"
                 />
               </div>
               <div className={styles.body}>
