@@ -1,0 +1,369 @@
+/* Romantic page additions (reference romantic.html) */
+.romantic-ref .experience-block {
+  padding: 48px 0 24px;
+  overflow: hidden;
+}
+.romantic-ref .experience-text {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  text-align: left;
+}
+.romantic-ref .experience-text p {
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+.romantic-ref #moments .section-title {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+}
+.romantic-ref #moments .section-kicker {
+  font-size: clamp(20px, 2.6vw, 30px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  margin: 0;
+  color: var(--ink);
+}
+.romantic-ref .moment {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 28px;
+  align-items: center;
+}
+.romantic-ref .moment + .moment {
+  margin-top: 32px;
+}
+.romantic-ref .moment.reverse {
+  grid-template-columns: 0.95fr 1.05fr;
+}
+.romantic-ref .moment .media {
+  border-radius: var(--exp-radius);
+  overflow: hidden;
+  box-shadow: var(--exp-shadow);
+  border: 1px solid var(--stroke);
+  height: 360px;
+  position: relative;
+  background: var(--brand-beige);
+}
+.romantic-ref .moment .copy {
+  padding: 8px 2px;
+}
+.romantic-ref .moment h3 {
+  margin: 10px 0 10px;
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 600;
+  color: var(--brand-green);
+  letter-spacing: -0.02em;
+}
+.romantic-ref .moment p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 15px;
+}
+.romantic-ref .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  box-shadow: var(--exp-shadow-soft);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  font-size: 14px;
+}
+.romantic-ref .btn-primary {
+  background: var(--brand-green);
+  border-color: var(--brand-green);
+  color: #fff;
+}
+
+.romantic-ref .gallery-grid2 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+}
+.romantic-ref .gallery-grid2 .gitem {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  box-shadow: 0 16px 40px rgba(92, 95, 62, 0.08);
+  position: relative;
+  min-height: 200px;
+}
+.romantic-ref .gallery-grid2 .gitem:nth-child(1) {
+  grid-column: span 6;
+  grid-row: span 2;
+}
+.romantic-ref .gallery-grid2 .gitem:nth-child(2) {
+  grid-column: span 6;
+  grid-row: span 2;
+}
+.romantic-ref .gallery-grid2 .gitem:nth-child(3) {
+  grid-column: span 4;
+}
+.romantic-ref .gallery-grid2 .gitem:nth-child(4) {
+  grid-column: span 4;
+}
+.romantic-ref .gallery-grid2 .gitem:nth-child(5) {
+  grid-column: span 4;
+}
+.romantic-ref .gallery-grid2 .gitem:nth-child(6) {
+  grid-column: span 6;
+}
+.romantic-ref .gallery-hidden {
+  display: none;
+  margin-top: 20px;
+}
+.romantic-ref .gallery-hidden.is-open {
+  display: grid;
+}
+.romantic-ref .gallery-trigger {
+  cursor: pointer;
+  width: 100%;
+  justify-content: center;
+}
+.romantic-ref #gallery .section-title {
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.romantic-ref .night-soft {
+  background: linear-gradient(135deg, rgba(92, 95, 62, 0.1), rgba(194, 181, 158, 0.16));
+  color: var(--ink);
+  border-top: 1px solid var(--stroke);
+  border-bottom: 1px solid var(--stroke);
+}
+.romantic-ref .night-soft .section-title p {
+  color: var(--muted);
+}
+.romantic-ref .quote-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 22px;
+}
+.romantic-ref .night-soft .quote {
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: var(--exp-radius);
+  padding: 18px;
+}
+.romantic-ref .night-soft .quote p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.romantic-ref .night-soft .quote b {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.romantic-ref .night-soft .quote span {
+  display: block;
+  font-size: 12px;
+  color: rgba(92, 95, 62, 0.62);
+}
+
+.romantic-ref .cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.romantic-ref .cta-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(720px, 100%);
+  margin: 0 auto;
+  padding: 40px 28px;
+  border-radius: 26px;
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  box-shadow: var(--exp-shadow-soft);
+  text-align: center;
+  color: var(--ink);
+}
+.romantic-ref .cta-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(92, 95, 62, 0.12);
+  border: 1px solid var(--stroke);
+  color: var(--brand-green);
+  font-size: 18px;
+}
+.romantic-ref .cta-kicker {
+  margin: 0 0 10px;
+  max-width: min(62ch, 100%);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.romantic-ref .cta-text {
+  margin: 0 0 18px;
+  max-width: min(62ch, 100%);
+  line-height: 1.65;
+  color: var(--muted);
+  font-size: 16px;
+}
+.romantic-ref .cta-actions {
+  display: flex;
+  width: 100%;
+  max-width: min(62ch, 100%);
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.romantic-ref .cta-note {
+  margin: 18px 0 0;
+  max-width: min(62ch, 100%);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.romantic-ref .booking-panel {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--stroke);
+  width: 100%;
+  max-width: min(62ch, 100%);
+}
+.romantic-ref .booking-fields {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.romantic-ref .field {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+.romantic-ref .field label {
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.romantic-ref .field input {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--stroke);
+  font-family: inherit;
+  background: var(--bg);
+  color: var(--ink);
+}
+.romantic-ref .booking-results {
+  margin-top: 20px;
+  font-size: 15px;
+  text-align: center;
+}
+.romantic-ref .pods-cards {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.romantic-ref .pod-card {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 18px;
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  box-shadow: 0 10px 24px rgba(92, 95, 62, 0.08);
+  text-align: left;
+}
+.romantic-ref .pod-thumb {
+  width: 92px;
+  height: 92px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--stroke);
+  position: relative;
+}
+.romantic-ref .pod-meta {
+  display: grid;
+  gap: 4px;
+}
+.romantic-ref .pod-name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink);
+}
+.romantic-ref .pod-location {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.romantic-ref .pod-desc {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+.romantic-ref .pod-cta {
+  margin-top: 8px;
+  display: inline-flex;
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@media (max-width: 980px) {
+  .romantic-ref .moment,
+  .romantic-ref .moment.reverse {
+    grid-template-columns: 1fr;
+  }
+  .romantic-ref .quote-grid {
+    grid-template-columns: 1fr;
+  }
+  .romantic-ref .gallery-grid2 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .romantic-ref .gallery-grid2 .gitem:nth-child(1),
+  .romantic-ref .gallery-grid2 .gitem:nth-child(2) {
+    grid-column: span 6;
+  }
+  .romantic-ref .gallery-grid2 .gitem:nth-child(n + 3) {
+    grid-column: span 3;
+  }
+}
+@media (max-width: 560px) {
+  .romantic-ref .gallery-grid2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .romantic-ref .gallery-grid2 .gitem {
+    grid-column: span 2 !important;
+  }
+  .romantic-ref .pods-cards {
+    grid-template-columns: 1fr;
+  }
+}

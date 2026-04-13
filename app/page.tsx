@@ -1,6 +1,113 @@
 "use client";
 
-import { useEffect } from "react";
+import Image from "next/image";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+
+const LOGO = {
+  src: "/assets/img/LogoPCblancosinfondo.png",
+  width: 603,
+  height: 414,
+} as const;
+
+const HERO_SLIDES = [
+  {
+    src: "/assets/img/atatu/atatu-purepod-glass-cabin-hilltop-landscape-new-zealand.jpg",
+    alt: "",
+  },
+  {
+    src: "/assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg",
+    alt: "",
+  },
+  {
+    src: "/assets/img/atatu/atatu-purepod-glass-cabin-night-stars-new-zealand.jpg",
+    alt: "",
+  },
+  {
+    src: "/assets/img/atatu/atatu-purepod-glass-cabin-bedroom-ocean-view-new-zealand.jpg",
+    alt: "",
+  },
+  {
+    src: "/assets/img/pamu/pamu-purepod-aerial-glass-cabin-landscape-rotorua.jpg",
+    alt: "",
+  },
+  {
+    src: "/assets/img/purepods-glass-eco-cabin-new-zealand-nature-stay-hero-home.jpg",
+    alt: "",
+  },
+] as const;
+
+const LANDSCAPE_SLIDES = [
+  {
+    src: "/assets/img/matu/matu-purepod-aerial-landscape-waitomo.jpg",
+    alt: "Matū PurePod and Waitomo countryside from above",
+  },
+  {
+    src: "/assets/img/makoha/makoha-purepod-aerial-glass-cabin-forest-kerikeri.jpg",
+    alt: "Mākōha PurePod above Northland forest near Kerikeri",
+  },
+  {
+    src: "/assets/img/rewarewa/rewarewa-purepod-aerial-landscape-muriwai-coast.jpg",
+    alt: "Rewarewa PurePod aerial view over Muriwai coast",
+  },
+  {
+    src: "/assets/img/pamu/pamu-purepod-aerial-glass-cabin-landscape-rotorua.jpg",
+    alt: "Pāmu PurePod and Rotorua landscape from above",
+  },
+  {
+    src: "/assets/img/ruru/ruru-purepod-glass-cabin-aerial-view-coromandel.jpg",
+    alt: "Ruru PurePod aerial view on the Coromandel",
+  },
+  {
+    src: "/assets/img/kokomea/kokomea-purepod-aerial-countryside-landscape-kapiti-coast.jpg",
+    alt: "Kokomea PurePod aerial view over Kāpiti countryside",
+  },
+  {
+    src: "/assets/img/manakau/manakau-purepod-glass-cabin-hills-landscape-kaikoura.jpg",
+    alt: "Manakau PurePod above Kaikōura hills",
+  },
+  {
+    src: "/assets/img/kahutara/kahutara-purepod-glass-cabin-mountain-landscape-kaikoura.jpg",
+    alt: "Kahutara PurePod with Kaikōura mountain landscape",
+  },
+  {
+    src: "/assets/img/atatu/atatu-purepod-glass-cabin-hilltop-landscape-new-zealand.jpg",
+    alt: "Atatū PurePod on a Hurunui hilltop",
+  },
+  {
+    src: "/assets/img/kiromako/kiromako-purepod-aerial-coastal-landscape-new-zealand.jpg",
+    alt: "Korimako PurePod aerial coastal view near Hurunui",
+  },
+  {
+    src: "/assets/img/greystone/greystone-purepod-aerial-vineyard-landscape-waipara.jpg",
+    alt: "Greystone PurePod aerial view over Waipara vineyards",
+  },
+  {
+    src: "/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg",
+    alt: "Pōhue PurePod among coastal hills on Banks Peninsula",
+  },
+  {
+    src: "/assets/img/haurapa/haurapa-purepod-glass-cabin-central-otago-landscape-new-zealand.jpg",
+    alt: "Haurapa PurePod in Central Otago landscape",
+  },
+  {
+    src: "/assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg",
+    alt: "Tāima PurePod vineyard view in Central Otago",
+  },
+  {
+    src: "/assets/img/tokoeka/tokoeka-purepod-aerial-forest-location-stewart-island.jpg",
+    alt: "Tokoeka PurePod aerial view over Stewart Island forest",
+  },
+  {
+    src: "/assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg",
+    alt: "Hananui PurePod aerial coastal view on Stewart Island",
+  },
+] as const;
 
 const experiences = [
   {
@@ -11,6 +118,8 @@ const experiences = [
     image: "/assets/img/experiences/night-falls/dark-sky-purepod.jpg",
     alt: "Dark sky above a PurePod",
     link: "/experiences/night-falls",
+    width: 1104,
+    height: 1104,
   },
   {
     tag: "Romantic",
@@ -21,6 +130,8 @@ const experiences = [
       "/assets/img/experiences/romantic/purepods-romantic-getaway-stargazing-bed-glass-roof.jpg",
     alt: "Couple stargazing from bed inside a PurePod",
     link: "/experiences/romantic",
+    width: 1024,
+    height: 1536,
   },
   {
     tag: "Adventure & wildlife",
@@ -31,6 +142,8 @@ const experiences = [
       "/assets/img/experiences/adventure-wildlife/kaikoura-whale-watch-sperm-whale-coast-new-zealand.jpg",
     alt: "Whale watching off the Kaikōura coast",
     link: "/experiences/adventure-wildlife",
+    width: 892,
+    height: 587,
   },
   {
     tag: "Culture",
@@ -41,6 +154,8 @@ const experiences = [
       "/assets/img/experiences/culture/ohinetahi-gardens-lyttelton-harbour-christchurch-new-zealand-historic-estate.jpg",
     alt: "Ōhinetahi gardens above Lyttelton Harbour",
     link: "/experiences/culture",
+    width: 743,
+    height: 559,
   },
   {
     tag: "Journey",
@@ -50,6 +165,8 @@ const experiences = [
     image: "/assets/img/experiences/journeys/redwoods-treewalk-rotorua.jpg",
     alt: "Redwoods Treewalk in Rotorua",
     link: "/experiences/journey",
+    width: 1536,
+    height: 1024,
   },
   {
     tag: "Relax coastal",
@@ -58,6 +175,8 @@ const experiences = [
     image: "/assets/img/ruru/whiritoa-beach-coastal-landscape-coromandel.jpg",
     alt: "Whiritoa Beach coastal landscape on the Coromandel",
     link: "/experiences/relax-coastal",
+    width: 1080,
+    height: 680,
   },
   {
     tag: "Wine & dine",
@@ -68,129 +187,116 @@ const experiences = [
       "/assets/img/experiences/journeys/romantic-picnic-wine-cheese-board-nature-experience.jpg",
     alt: "Wine and local produce picnic in nature",
     link: "/experiences/wine-dine",
+    width: 1536,
+    height: 1024,
   },
 ];
 
+const pad2 = (n: number) => (n < 10 ? `0${n}` : `${n}`);
+
 export default function HomePage() {
+  const [heroIndex, setHeroIndex] = useState(0);
+  const [heroLoaded, setHeroLoaded] = useState<Record<number, boolean>>({
+    0: true,
+  });
+
+  const [landIndex, setLandIndex] = useState(0);
+  const [landSeen, setLandSeen] = useState(false);
+  const [landLoaded, setLandLoaded] = useState<Record<number, boolean>>({});
+
+  const landStageRef = useRef<HTMLDivElement | null>(null);
+  const expTrackRef = useRef<HTMLDivElement | null>(null);
+
+  const heroCount = HERO_SLIDES.length;
+  const landCount = LANDSCAPE_SLIDES.length;
+
   useEffect(() => {
-    const heroSlides = Array.from(
-      document.querySelectorAll("[data-hero-slide]")
-    ) as HTMLElement[];
+    setHeroLoaded((prev) => ({ ...prev, [heroIndex]: true }));
+  }, [heroIndex]);
 
-    let heroIndex = 0;
-    let heroTimer: ReturnType<typeof setInterval> | null = null;
+  useEffect(() => {
+    if (!landSeen) return;
+    setLandLoaded((prev) => ({ ...prev, [landIndex]: true }));
+  }, [landSeen, landIndex]);
 
-    const goHero = (i: number) => {
-      if (!heroSlides.length) return;
-      heroIndex = (i + heroSlides.length) % heroSlides.length;
-      heroSlides.forEach((el, j) => {
-        el.classList.toggle("is-active", j === heroIndex);
-      });
-    };
-
-    if (heroSlides.length > 1) {
-      heroTimer = setInterval(() => {
-        goHero(heroIndex + 1);
-      }, 6200);
+  useEffect(() => {
+    const el = landStageRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setLandSeen(true);
+      return;
     }
-
-    const landSlides = Array.from(
-      document.querySelectorAll("[data-land-slide]")
-    ) as HTMLElement[];
-
-    const landCounter = document.getElementById("landscapes-counter");
-    const landPrev = document.getElementById("land-prev");
-    const landNext = document.getElementById("land-next");
-
-    let landIndex = 0;
-    let landTimer: ReturnType<typeof setInterval> | null = null;
-
-    const pad2 = (n: number) => (n < 10 ? `0${n}` : `${n}`);
-
-    const renderLand = () => {
-      if (!landSlides.length) return;
-
-      landSlides.forEach((el, j) => {
-        el.classList.toggle("is-active", j === landIndex);
-      });
-
-      if (landCounter) {
-        landCounter.textContent = `${pad2(landIndex + 1)} / ${pad2(
-          landSlides.length
-        )}`;
-      }
-    };
-
-    const goLand = (delta: number) => {
-      if (!landSlides.length) return;
-      landIndex = (landIndex + delta + landSlides.length) % landSlides.length;
-      renderLand();
-    };
-
-    function handlePrev() {
-      goLand(-1);
-    }
-
-    function handleNext() {
-      goLand(1);
-    }
-
-    if (landSlides.length) {
-      renderLand();
-
-      landPrev?.addEventListener("click", handlePrev);
-      landNext?.addEventListener("click", handleNext);
-
-      if (landSlides.length > 1) {
-        landTimer = setInterval(() => {
-          goLand(1);
-        }, 10400);
-      }
-    }
-
-    const expTrack = document.getElementById("exp-track");
-    const expPrev = document.getElementById("exp-prev");
-    const expNext = document.getElementById("exp-next");
-
-    const scrollExp = (dir: number) => {
-      if (!expTrack) return;
-      expTrack.scrollBy({
-        left: dir * 400,
-        behavior: "smooth",
-      });
-    };
-
-    function handleExpPrev() {
-      scrollExp(-1);
-    }
-
-    function handleExpNext() {
-      scrollExp(1);
-    }
-
-    expPrev?.addEventListener("click", handleExpPrev);
-    expNext?.addEventListener("click", handleExpNext);
-
-    return () => {
-      if (heroTimer) clearInterval(heroTimer);
-      if (landTimer) clearInterval(landTimer);
-
-      landPrev?.removeEventListener("click", handlePrev);
-      landNext?.removeEventListener("click", handleNext);
-
-      expPrev?.removeEventListener("click", handleExpPrev);
-      expNext?.removeEventListener("click", handleExpNext);
-    };
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e?.isIntersecting) setLandSeen(true);
+      },
+      { rootMargin: "140px 0px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (heroCount <= 1) return;
+    const id = window.setInterval(() => {
+      setHeroIndex((i) => (i + 1) % heroCount);
+    }, 6200);
+    return () => window.clearInterval(id);
+  }, [heroCount]);
+
+  useEffect(() => {
+    if (landCount <= 1) return;
+    const id = window.setInterval(() => {
+      setLandIndex((i) => (i + 1) % landCount);
+    }, 10400);
+    return () => window.clearInterval(id);
+  }, [landCount]);
+
+  const preloadHeroNeighbor = useCallback((completedIndex: number) => {
+    setHeroLoaded((prev) => ({
+      ...prev,
+      [(completedIndex + 1) % heroCount]: true,
+    }));
+  }, [heroCount]);
+
+  const preloadLandNeighbor = useCallback((completedIndex: number) => {
+    setLandLoaded((prev) => ({
+      ...prev,
+      [(completedIndex + 1) % landCount]: true,
+    }));
+  }, [landCount]);
+
+  const goLand = useCallback(
+    (delta: number) => {
+      setLandIndex((i) => (i + delta + landCount) % landCount);
+    },
+    [landCount]
+  );
+
+  const scrollExp = useCallback((dir: number) => {
+    expTrackRef.current?.scrollBy({ left: dir * 400, behavior: "smooth" });
+  }, []);
+
+  const heroSizes = "100vw";
+  const landSizes =
+    "(max-width: 600px) calc(100vw - 24px), min(1180px, calc(100vw - 24px))";
+  const expSizes = "(max-width: 480px) calc(100vw - 56px), 380px";
+
+  const landCounterText = useMemo(
+    () => `${pad2(landIndex + 1)} / ${pad2(landCount)}`,
+    [landIndex, landCount]
+  );
 
   return (
     <>
       <header className="nav" role="banner">
         <div className="nav__bar">
           <a className="nav-brand" href="/" aria-label="PurePods — Home">
-            <img
-              src="/assets/img/LogoPCblancosinfondo.png"
+            <Image
+              src={LOGO.src}
               alt="PurePods"
+              width={LOGO.width}
+              height={LOGO.height}
+              sizes="(max-width: 720px) min(260px, 78vw), min(240px, 42vw)"
               decoding="async"
             />
           </a>
@@ -208,48 +314,27 @@ export default function HomePage() {
 
       <section className="hero" aria-label="PurePods — hero">
         <div className="hero__visual" aria-hidden="true">
-          <div className="hero__slide is-active" data-hero-slide>
-            <img
-              src="/assets/img/atatu/atatu-purepod-glass-cabin-hilltop-landscape-new-zealand.jpg"
-              alt=""
-              decoding="async"
-            />
-          </div>
-          <div className="hero__slide" data-hero-slide>
-            <img
-              src="/assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg"
-              alt=""
-              decoding="async"
-            />
-          </div>
-          <div className="hero__slide" data-hero-slide>
-            <img
-              src="/assets/img/atatu/atatu-purepod-glass-cabin-night-stars-new-zealand.jpg"
-              alt=""
-              decoding="async"
-            />
-          </div>
-          <div className="hero__slide" data-hero-slide>
-            <img
-              src="/assets/img/atatu/atatu-purepod-glass-cabin-bedroom-ocean-view-new-zealand.jpg"
-              alt=""
-              decoding="async"
-            />
-          </div>
-          <div className="hero__slide" data-hero-slide>
-            <img
-              src="/assets/img/pamu/pamu-purepod-aerial-glass-cabin-landscape-rotorua.jpg"
-              alt=""
-              decoding="async"
-            />
-          </div>
-          <div className="hero__slide" data-hero-slide>
-            <img
-              src="/assets/img/purepods-glass-eco-cabin-new-zealand-nature-stay-hero-home.jpg"
-              alt=""
-              decoding="async"
-            />
-          </div>
+          {HERO_SLIDES.map((slide, j) => (
+            <div
+              key={slide.src}
+              className={`hero__slide${j === heroIndex ? " is-active" : ""}`}
+            >
+              {heroLoaded[j] ? (
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  fill
+                  sizes={heroSizes}
+                  style={{ objectFit: "cover", objectPosition: "center" }}
+                  priority={j === 0}
+                  loading={j === 0 ? "eager" : "lazy"}
+                  fetchPriority={j === 0 ? "high" : "low"}
+                  decoding="async"
+                  onLoadingComplete={() => preloadHeroNeighbor(j)}
+                />
+              ) : null}
+            </div>
+          ))}
           <div className="hero__veil"></div>
           <div className="hero__grain"></div>
         </div>
@@ -310,223 +395,79 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="landscapes__stage">
+        <div className="landscapes__stage" ref={landStageRef}>
           <div
             className="landscapes__slides"
             id="landscapes-slides"
             aria-live="polite"
           >
-            <div className="landscapes__slide is-active" data-land-slide>
-              <img
-                src="/assets/img/matu/matu-purepod-aerial-landscape-waitomo.jpg"
-                alt="Matū PurePod and Waitomo countryside from above"
-                decoding="async"
-              />
-              <div className="landscapes__caption">
-                <strong>Matū</strong>
-                <span>
-                  Limestone country and green distance — Waitomo from the air.
-                </span>
+            {LANDSCAPE_SLIDES.map((slide, j) => (
+              <div
+                key={slide.src + String(j)}
+                className={`landscapes__slide${
+                  j === landIndex ? " is-active" : ""
+                }`}
+              >
+                {landSeen && landLoaded[j] ? (
+                  <Image
+                    src={slide.src}
+                    alt={slide.alt}
+                    fill
+                    sizes={landSizes}
+                    style={{ objectFit: "cover", objectPosition: "center" }}
+                    loading="lazy"
+                    decoding="async"
+                    onLoadingComplete={() => preloadLandNeighbor(j)}
+                  />
+                ) : null}
+                <div className="landscapes__caption">
+                  <strong>
+                    {
+                      [
+                        "Matū",
+                        "Mākōha",
+                        "Rewarewa",
+                        "Pāmu",
+                        "Ruru",
+                        "Kokomea",
+                        "Manakau",
+                        "Kahutara",
+                        "Atatū",
+                        "Korimako",
+                        "Greystone",
+                        "Pōhue",
+                        "Haurapa",
+                        "Tāima",
+                        "Tokoeka",
+                        "Hananui",
+                      ][j]
+                    }
+                  </strong>
+                  <span>
+                    {
+                      [
+                        "Limestone country and green distance — Waitomo from the air.",
+                        "Glass above deep forest — calm canopy light near Kerikeri.",
+                        "Coastline and hinterland scale above the Muriwai shore.",
+                        "Geothermal haze, forest, and glass — Rotorua from above.",
+                        "Hills, bush, and sea air — the Coromandel in one wide frame.",
+                        "Rolling country and open sky above the Kāpiti coast.",
+                        "Coastal ranges and wide sky above Kaikōura country.",
+                        "Mountain scale and river valley calm beside Kaikōura.",
+                        "Hilltop glass and long horizons above Hurunui country.",
+                        "Coast cliffs and quiet distance — Hurunui from the air.",
+                        "Waipara vines, terraces, and soft evening light from above.",
+                        "Banks Peninsula folds — glass set in coastal hills.",
+                        "Central Otago clarity — dry air, big sky, minimal form.",
+                        "Vine rows and mountain backdrop — slow Central Otago light.",
+                        "Forest edge and Rakiura quiet — Stewart Island from above.",
+                        "Native bush meeting sea — a coastal stage on Stewart Island.",
+                      ][j]
+                    }
+                  </span>
+                </div>
               </div>
-            </div>
-
-            <div className="landscapes__slide" data-land-slide>
-              <img
-                src="/assets/img/makoha/makoha-purepod-aerial-glass-cabin-forest-kerikeri.jpg"
-                alt="Mākōha PurePod above Northland forest near Kerikeri"
-                decoding="async"
-              />
-              <div className="landscapes__caption">
-                <strong>Mākōha</strong>
-                <span>
-                  Glass above deep forest — calm canopy light near Kerikeri.
-                </span>
-              </div>
-            </div>
-
-            <div className="landscapes__slide" data-land-slide>
-              <img
-                src="/assets/img/rewarewa/rewarewa-purepod-aerial-landscape-muriwai-coast.jpg"
-                alt="Rewarewa PurePod aerial view over Muriwai coast"
-                decoding="async"
-              />
-              <div className="landscapes__caption">
-                <strong>Rewarewa</strong>
-                <span>
-                  Coastline and hinterland scale above the Muriwai shore.
-                </span>
-              </div>
-            </div>
-
-            <div className="landscapes__slide" data-land-slide>
-              <img
-                src="/assets/img/pamu/pamu-purepod-aerial-glass-cabin-landscape-rotorua.jpg"
-                alt="Pāmu PurePod and Rotorua landscape from above"
-                decoding="async"
-              />
-              <div className="landscapes__caption">
-                <strong>Pāmu</strong>
-                <span>
-                  Geothermal haze, forest, and glass — Rotorua from above.
-                </span>
-              </div>
-            </div>
-
-            <div className="landscapes__slide" data-land-slide>
-              <img
-                src="/assets/img/ruru/ruru-purepod-glass-cabin-aerial-view-coromandel.jpg"
-                alt="Ruru PurePod aerial view on the Coromandel"
-                decoding="async"
-              />
-              <div className="landscapes__caption">
-                <strong>Ruru</strong>
-                <span>
-                  Hills, bush, and sea air — the Coromandel in one wide frame.
-                </span>
-              </div>
-            </div>
-
-            <div className="landscapes__slide" data-land-slide>
-              <img
-                src="/assets/img/kokomea/kokomea-purepod-aerial-countryside-landscape-kapiti-coast.jpg"
-                alt="Kokomea PurePod aerial view over Kāpiti countryside"
-                decoding="async"
-              />
-              <div className="landscapes__caption">
-                <strong>Kokomea</strong>
-                <span>Rolling country and open sky above the Kāpiti coast.</span>
-              </div>
-            </div>
-
-            <div className="landscapes__slide" data-land-slide>
-              <img
-                src="/assets/img/manakau/manakau-purepod-glass-cabin-hills-landscape-kaikoura.jpg"
-                alt="Manakau PurePod above Kaikōura hills"
-                decoding="async"
-              />
-              <div className="landscapes__caption">
-                <strong>Manakau</strong>
-                <span>
-                  Coastal ranges and wide sky above Kaikōura country.
-                </span>
-              </div>
-            </div>
-
-            <div className="landscapes__slide" data-land-slide>
-              <img
-                src="/assets/img/kahutara/kahutara-purepod-glass-cabin-mountain-landscape-kaikoura.jpg"
-                alt="Kahutara PurePod with Kaikōura mountain landscape"
-                decoding="async"
-              />
-              <div className="landscapes__caption">
-                <strong>Kahutara</strong>
-                <span>Mountain scale and river valley calm beside Kaikōura.</span>
-              </div>
-            </div>
-
-            <div className="landscapes__slide" data-land-slide>
-              <img
-                src="/assets/img/atatu/atatu-purepod-glass-cabin-hilltop-landscape-new-zealand.jpg"
-                alt="Atatū PurePod on a Hurunui hilltop"
-                decoding="async"
-              />
-              <div className="landscapes__caption">
-                <strong>Atatū</strong>
-                <span>Hilltop glass and long horizons above Hurunui country.</span>
-              </div>
-            </div>
-
-            <div className="landscapes__slide" data-land-slide>
-              <img
-                src="/assets/img/kiromako/kiromako-purepod-aerial-coastal-landscape-new-zealand.jpg"
-                alt="Korimako PurePod aerial coastal view near Hurunui"
-                decoding="async"
-              />
-              <div className="landscapes__caption">
-                <strong>Korimako</strong>
-                <span>Coast cliffs and quiet distance — Hurunui from the air.</span>
-              </div>
-            </div>
-
-            <div className="landscapes__slide" data-land-slide>
-              <img
-                src="/assets/img/greystone/greystone-purepod-aerial-vineyard-landscape-waipara.jpg"
-                alt="Greystone PurePod aerial view over Waipara vineyards"
-                decoding="async"
-              />
-              <div className="landscapes__caption">
-                <strong>Greystone</strong>
-                <span>
-                  Waipara vines, terraces, and soft evening light from above.
-                </span>
-              </div>
-            </div>
-
-            <div className="landscapes__slide" data-land-slide>
-              <img
-                src="/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg"
-                alt="Pōhue PurePod among coastal hills on Banks Peninsula"
-                decoding="async"
-              />
-              <div className="landscapes__caption">
-                <strong>Pōhue</strong>
-                <span>Banks Peninsula folds — glass set in coastal hills.</span>
-              </div>
-            </div>
-
-            <div className="landscapes__slide" data-land-slide>
-              <img
-                src="/assets/img/haurapa/haurapa-purepod-glass-cabin-central-otago-landscape-new-zealand.jpg"
-                alt="Haurapa PurePod in Central Otago landscape"
-                decoding="async"
-              />
-              <div className="landscapes__caption">
-                <strong>Haurapa</strong>
-                <span>Central Otago clarity — dry air, big sky, minimal form.</span>
-              </div>
-            </div>
-
-            <div className="landscapes__slide" data-land-slide>
-              <img
-                src="/assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg"
-                alt="Tāima PurePod vineyard view in Central Otago"
-                decoding="async"
-              />
-              <div className="landscapes__caption">
-                <strong>Tāima</strong>
-                <span>
-                  Vine rows and mountain backdrop — slow Central Otago light.
-                </span>
-              </div>
-            </div>
-
-            <div className="landscapes__slide" data-land-slide>
-              <img
-                src="/assets/img/tokoeka/tokoeka-purepod-aerial-forest-location-stewart-island.jpg"
-                alt="Tokoeka PurePod aerial view over Stewart Island forest"
-                decoding="async"
-              />
-              <div className="landscapes__caption">
-                <strong>Tokoeka</strong>
-                <span>
-                  Forest edge and Rakiura quiet — Stewart Island from above.
-                </span>
-              </div>
-            </div>
-
-            <div className="landscapes__slide" data-land-slide>
-              <img
-                src="/assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg"
-                alt="Hananui PurePod aerial coastal view on Stewart Island"
-                decoding="async"
-              />
-              <div className="landscapes__caption">
-                <strong>Hananui</strong>
-                <span>
-                  Native bush meeting sea — a coastal stage on Stewart Island.
-                </span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
@@ -536,7 +477,7 @@ export default function HomePage() {
             id="landscapes-counter"
             aria-hidden="true"
           >
-            01 / 16
+            {landCounterText}
           </span>
           <div className="landscapes__nav-group">
             <button
@@ -544,6 +485,7 @@ export default function HomePage() {
               className="carousel-btn"
               id="land-prev"
               aria-label="Previous landscape"
+              onClick={() => goLand(-1)}
             >
               <svg
                 viewBox="0 0 24 24"
@@ -560,6 +502,7 @@ export default function HomePage() {
               className="carousel-btn"
               id="land-next"
               aria-label="Next landscape"
+              onClick={() => goLand(1)}
             >
               <svg
                 viewBox="0 0 24 24"
@@ -591,15 +534,19 @@ export default function HomePage() {
             <div
               className="experiences__track"
               id="exp-track"
+              ref={expTrackRef}
               tabIndex={0}
               aria-label="Experience categories — horizontal list"
             >
               {experiences.map((exp) => (
                 <a key={exp.title} className="exp-card" href={exp.link}>
                   <div className="exp-card__media">
-                    <img
+                    <Image
                       src={exp.image}
                       alt={exp.alt}
+                      width={exp.width}
+                      height={exp.height}
+                      sizes={expSizes}
                       loading="lazy"
                       decoding="async"
                     />
@@ -621,6 +568,7 @@ export default function HomePage() {
               className="carousel-btn carousel-btn--light"
               id="exp-prev"
               aria-label="Scroll experiences left"
+              onClick={() => scrollExp(-1)}
             >
               <svg
                 viewBox="0 0 24 24"
@@ -638,6 +586,7 @@ export default function HomePage() {
               className="carousel-btn carousel-btn--light"
               id="exp-next"
               aria-label="Scroll experiences right"
+              onClick={() => scrollExp(1)}
             >
               <svg
                 viewBox="0 0 24 24"

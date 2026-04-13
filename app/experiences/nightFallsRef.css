@@ -1,0 +1,610 @@
+/* Night Falls — scoped (reference night-falls.html) */
+.night-falls-ref {
+  --r: 24px;
+  --r2: 18px;
+}
+
+.night-falls-ref .wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 18px 14px;
+}
+
+.night-falls-ref .topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  padding: 14px 14px;
+  background: transparent;
+  transition: background 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease;
+}
+.night-falls-ref .topnav__inner {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.night-falls-ref .topnav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(17, 18, 23, 0.22);
+  backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.96);
+}
+.night-falls-ref .topnav__brand img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.25));
+}
+.night-falls-ref .topnav__nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.night-falls-ref .topnav__pill {
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(17, 18, 23, 0.22);
+  backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.92);
+  white-space: nowrap;
+}
+.night-falls-ref .topnav__pill:hover {
+  background: rgba(17, 18, 23, 0.3);
+}
+.night-falls-ref .topnav.is-scrolled {
+  background: var(--brand-green);
+  padding: 10px 14px;
+  box-shadow: 0 10px 30px rgba(17, 18, 23, 0.12);
+}
+.night-falls-ref .topnav.is-scrolled .topnav__brand,
+.night-falls-ref .topnav.is-scrolled .topnav__pill {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.night-falls-ref .hero {
+  position: relative;
+  min-height: 78vh;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  border-bottom: 1px solid var(--stroke);
+  background: #111217;
+}
+.night-falls-ref .heroImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 30% 55%;
+  filter: saturate(1.05) contrast(1.05);
+  z-index: 0;
+}
+.night-falls-ref .heroStars {
+  position: absolute;
+  inset: 0;
+  opacity: 0.7;
+  z-index: 1;
+  background-image: radial-gradient(circle at 10% 30%, rgba(255, 255, 255, 0.9) 0 1px, transparent 2px),
+    radial-gradient(circle at 25% 60%, rgba(255, 255, 255, 0.7) 0 1px, transparent 2px),
+    radial-gradient(circle at 40% 15%, rgba(255, 255, 255, 0.8) 0 1px, transparent 2px),
+    radial-gradient(circle at 60% 45%, rgba(255, 255, 255, 0.65) 0 1px, transparent 2px),
+    radial-gradient(circle at 75% 20%, rgba(255, 255, 255, 0.85) 0 1px, transparent 2px),
+    radial-gradient(circle at 90% 55%, rgba(255, 255, 255, 0.7) 0 1px, transparent 2px);
+  background-size: 520px 420px;
+  mix-blend-mode: screen;
+}
+.night-falls-ref .heroInner {
+  position: relative;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 160px 14px 40px;
+  color: #fff;
+  z-index: 2;
+}
+.night-falls-ref .heroInner h1 {
+  margin: 0;
+  font-family: "Noto Serif Display", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(28px, 4vw, 38px);
+  letter-spacing: -0.02em;
+  line-height: 1.06;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+  max-width: 18ch;
+}
+.night-falls-ref .heroInner > p {
+  margin: 10px 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.55;
+  font-size: 14.5px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.25);
+  max-width: 62ch;
+}
+.night-falls-ref .heroCtas {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.night-falls-ref .btnGhost {
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+}
+
+.night-falls-ref .padBottom {
+  padding-bottom: 88px;
+}
+.night-falls-ref section {
+  padding: 56px 0;
+}
+.night-falls-ref .section {
+  padding: 18px 0;
+}
+.night-falls-ref #essentials.section {
+  padding: 18px 0 48px;
+}
+.night-falls-ref .sectionHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 2px 10px;
+}
+.night-falls-ref .sectionHeader h2 {
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+.night-falls-ref .hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.night-falls-ref .nightSection {
+  margin-top: 18px;
+  display: grid;
+  gap: 18px;
+}
+.night-falls-ref .nightBlock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: center;
+}
+.night-falls-ref .nightBlock.reverse {
+  direction: rtl;
+}
+.night-falls-ref .nightBlock.reverse > * {
+  direction: ltr;
+}
+.night-falls-ref .nightImg {
+  border-radius: var(--r);
+  overflow: hidden;
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+  aspect-ratio: 4/3;
+  position: relative;
+}
+.night-falls-ref .nightText h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+.night-falls-ref .nightText p {
+  margin: 0 0 12px;
+  color: rgba(92, 95, 62, 0.72);
+  line-height: 1.6;
+  font-size: 14px;
+}
+.night-falls-ref .nightBtn {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, 0.62);
+  font-weight: 800;
+  font-size: 13px;
+  text-decoration: none;
+}
+.night-falls-ref .nightBtn.primary {
+  background: var(--brand-green);
+  color: #fff;
+}
+.night-falls-ref .nightNote {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  padding-left: 14px;
+  border-left: 3px solid rgba(92, 95, 62, 0.25);
+}
+
+.night-falls-ref .moonBox {
+  border: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, 0.62);
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.night-falls-ref .moonHead {
+  padding: 14px 14px 10px;
+  border-bottom: 1px solid var(--stroke);
+}
+.night-falls-ref .moonHead h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.night-falls-ref .moonHead p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+.night-falls-ref .moonTabs {
+  display: flex;
+  gap: 8px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--stroke);
+  flex-wrap: wrap;
+}
+.night-falls-ref .moonTab {
+  appearance: none;
+  border: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, 0.82);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--brand-green);
+  cursor: pointer;
+}
+.night-falls-ref .moonTab.is-active {
+  background: var(--brand-green);
+  color: #fff;
+  border-color: var(--brand-green);
+}
+.night-falls-ref .moonPanel {
+  display: none;
+  padding: 14px;
+}
+.night-falls-ref .moonPanel.is-active {
+  display: block;
+}
+.night-falls-ref .moonPanel h4 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--brand-green);
+}
+.night-falls-ref .moonSub {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.night-falls-ref .moonTable {
+  display: grid;
+  gap: 10px;
+}
+.night-falls-ref .moonRow {
+  position: relative;
+  display: grid;
+  grid-template-columns: 170px 110px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 18px 16px;
+  border-radius: 18px;
+  border: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 8px 22px rgba(17, 18, 23, 0.05);
+}
+.night-falls-ref .moonRow > div:nth-child(1),
+.night-falls-ref .moonRow > div:nth-child(2) {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--brand-green);
+}
+.night-falls-ref .moonRow > div:nth-child(3) {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 15px;
+}
+.night-falls-ref .moonBook {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 12.5px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  background: var(--brand-green);
+  color: #fff;
+  white-space: nowrap;
+}
+
+.night-falls-ref .momentsGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 12px;
+}
+.night-falls-ref .momentsGrid .moment {
+  border: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, 0.62);
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
+  padding: 14px;
+}
+.night-falls-ref .momentsGrid .moment h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+.night-falls-ref .momentsGrid .moment p {
+  margin: 0;
+  color: rgba(23, 24, 27, 0.74);
+  line-height: 1.6;
+  font-size: 14px;
+}
+.night-falls-ref .momentsGrid .moment small {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.night-falls-ref .booking {
+  margin-top: 12px;
+  border: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, 0.62);
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.night-falls-ref .bookingTop {
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.night-falls-ref .bookingBtn {
+  border: 1px solid var(--stroke);
+  background: var(--brand-green);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 900;
+  cursor: pointer;
+  font-size: 13px;
+}
+.night-falls-ref .bookingPanel {
+  padding: 14px;
+  border-top: 1px solid var(--stroke);
+}
+.night-falls-ref .fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.night-falls-ref .field label {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.night-falls-ref .field input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(80, 76, 68, 0.18);
+  background: rgba(255, 255, 255, 0.78);
+  outline: none;
+}
+.night-falls-ref .bookingResults {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(80, 76, 68, 0.22);
+  color: rgba(23, 24, 27, 0.76);
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.night-falls-ref .surface {
+  padding: 22px;
+  border-radius: 26px;
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  box-shadow: var(--shadow-soft);
+}
+.night-falls-ref .faq h2 {
+  margin: 0 0 22px;
+  text-align: center;
+  font-size: clamp(22px, 2.2vw, 26px);
+  font-weight: 600;
+}
+.night-falls-ref .faq ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.night-falls-ref .faq li {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--stroke);
+}
+.night-falls-ref .faq li:last-child {
+  border-bottom: 0;
+}
+.night-falls-ref .faq h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.night-falls-ref .faq p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.night-falls-ref .stickyCta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 14px;
+  background: rgba(245, 243, 238, 0.86);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(80, 76, 68, 0.18);
+  z-index: 30;
+}
+.night-falls-ref .ctaInner {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.night-falls-ref .ctaInner .price {
+  font-weight: 900;
+  font-size: 13px;
+  color: rgba(23, 24, 27, 0.78);
+  white-space: nowrap;
+}
+.night-falls-ref .ctaBtn,
+.night-falls-ref a.ctaBtn {
+  border: 1px solid var(--stroke);
+  background: var(--brand-green);
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 999px;
+  font-weight: 900;
+  cursor: pointer;
+  font-size: 13px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+.night-falls-ref .ctaGhost,
+.night-falls-ref a.ctaGhost {
+  border: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, 0.62);
+  color: var(--ink);
+  padding: 12px 14px;
+  border-radius: 999px;
+  font-weight: 900;
+  cursor: pointer;
+  font-size: 13px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.night-falls-ref footer {
+  padding: 34px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.night-falls-ref .foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.night-falls-ref .foot-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.night-falls-ref .eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(92, 95, 62, 0.72);
+  margin: 0 0 10px;
+  text-align: center;
+}
+.night-falls-ref #essentials .eyebrow {
+  text-align: left;
+  margin: 0 0 12px;
+}
+.night-falls-ref #essentials > p:not(.eyebrow) {
+  margin: 0 0 12px;
+  color: rgba(92, 95, 62, 0.72);
+  line-height: 1.6;
+  font-size: 14px;
+  text-align: left;
+}
+
+@media (max-width: 860px) {
+  .night-falls-ref .nightBlock {
+    grid-template-columns: 1fr;
+  }
+  .night-falls-ref .moonRow {
+    grid-template-columns: 1fr;
+  }
+  .night-falls-ref .momentsGrid {
+    grid-template-columns: 1fr;
+  }
+  .night-falls-ref .fields {
+    grid-template-columns: 1fr;
+  }
+  .night-falls-ref .hero {
+    min-height: 380px;
+  }
+  .night-falls-ref .topnav__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .night-falls-ref .topnav__nav {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 920px) {
+  .night-falls-ref .stickyCta {
+    position: static;
+    border-top: 0;
+    background: transparent;
+    padding: 0;
+  }
+  .night-falls-ref .ctaInner {
+    justify-content: flex-end;
+  }
+  .night-falls-ref .ctaInner .price {
+    display: none;
+  }
+}
