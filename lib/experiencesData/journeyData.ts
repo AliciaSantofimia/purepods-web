@@ -176,7 +176,7 @@ export const journeyCyclingSlides: HikingSlide[] = [
 export const journeyFaq: { q: string; a: string }[] = [
   {
     q: "What is the Journey experience on PurePods?",
-    a: "Journey is a PurePods experience page that groups walking, hiking and cycling ideas with suggested PurePod stays. It presents example forest walks, hikes and cycle routes in selected New Zealand regions, with external links to route information and internal links to nearby pod detail pages (`/location/...`).",
+    a: "Journey is a PurePods experience page that groups walking, hiking and cycling ideas with suggested PurePod stays. It presents example forest walks, hikes and cycle routes in selected New Zealand regions, with external links to route information and internal links to each suggested pod’s page on this site.",
   },
   {
     q: "Which regions appear in the examples on this page?",
@@ -184,6 +184,6 @@ export const journeyFaq: { q: string; a: string }[] = [
   },
   {
     q: "How do I book a PurePod from this page?",
-    a: "Use the main Book control in the navigation, the “Find your PurePod” call to action, or each section’s “Stay at [pod name]” link. Those links open the matching pod detail page on this site (`/location/...`), where you can read the stay and continue to booking.",
+    a: "Use the main Book control in the navigation, the “Find your PurePod” call to action, or each section’s “Stay at [pod name]” link. Those links open the matching pod page on this site, where you can read about the stay and continue to booking.",
   },
 ];

@@ -34,9 +34,9 @@ export function AdventureWildlifeView() {
           <div className="heroInner">
             <h1>Adventure &amp; Wildlife</h1>
             <p className="impact-summary">
-              Adventure &amp; Wildlife brings together draft outdoor experience blocks for New Zealand travel planning
-              with PurePods. The page is structured for route, nature and wildlife examples, each paired with a practical
-              external reference link and a direct booking pathway to a nearby glass eco-cabin stay.
+              From marine wildlife encounters to forest trails and high-energy activities, explore curated outdoor
+              experiences across New Zealand—each with a link to the operator or place, and a suggested nearby PurePods
+              glass eco-cabin stay when the region lines up.
             </p>
             <Link className="btnGhost" href="#about">
               Read on

@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Visual prototype — explore PurePods with an editorial map of New Zealand. For internal review only." />
+  <title>Pods (map prototype) — PurePods</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#F7F6F3;
+      --ink:#5C5F3E;
+      --muted:rgba(92,95,62,.72);
+      --card:rgba(255,255,255,.85);
+      --stroke:rgba(92,95,62,.18);
+      --brand-green:#5C5F3E;
+      --brand-beige:#C2B59E;
+      --shadow: 0 18px 44px rgba(0,0,0,.08);
+      --max: 1120px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+
+    /* NAV */
+    .nav{
+      position: sticky; top:0; z-index:60;
+      background: rgba(247,246,243,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--stroke);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0; gap:16px;
+    }
+    .brand{ display:flex; align-items:center; gap:10px; }
+    .brand img{ height: 30px; width:auto; display:block; }
+
+    .links{
+      display:flex; gap:18px; align-items:center;
+      font-size:13px; letter-spacing:.06em; text-transform:uppercase;
+    }
+    .links a{ color: var(--muted); }
+    .links a:hover{ color: var(--ink); }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 12px 14px; border-radius:999px;
+      border: 2px solid var(--stroke);
+      background: var(--card);
+      font-weight: 600;
+      white-space:nowrap;
+    }
+    .btn-primary{
+      background: var(--brand-beige);
+      border-color: var(--brand-beige);
+      color: var(--brand-green) !important;
+      font-weight: 800;
+      box-shadow: 0 16px 30px rgba(92,95,60,.2);
+    }
+
+    /* HERO */
+    .hero{ padding: 44px 0 24px; }
+    .hero h1{
+      margin: 0 0 10px;
+      font-family: "Noto Serif Display", Georgia, "Times New Roman", serif;
+      font-weight: 600;
+      font-size: clamp(30px, 4.2vw, 46px);
+      letter-spacing: -0.02em;
+      color: var(--brand-green);
+    }
+    .lead{
+      margin:0;
+      max-width: 72ch;
+      color: var(--muted);
+      font-size: 16px;
+      line-height:1.7;
+    }
+    .hero-meta{
+      margin-top: 14px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items:center;
+    }
+    .proto-pill{
+      display:inline-flex;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(92,95,62,.06);
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .hero-meta a{
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--brand-green);
+      border-bottom: 1px solid rgba(92,95,62,.35);
+      padding-bottom: 1px;
+    }
+    .hero-meta a:hover{ border-bottom-color: var(--brand-green); }
+
+    /* MAP SECTION (editorial, no tile map) */
+    .map-section{
+      padding: 8px 0 36px;
+    }
+    .map-section-head{
+      margin-bottom: 16px;
+      max-width: 52ch;
+    }
+    .map-section-head h2{
+      margin: 0 0 8px;
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .map-section-head p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .map-frame{
+      border-radius: 28px;
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .map-frame::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(120% 80% at 50% 0%, rgba(194,181,158,.12), transparent 55%);
+      z-index: 1;
+    }
+    .map-svg-wrap{
+      position: relative;
+      z-index: 2;
+      padding: 22px 20px 26px;
+    }
+    .map-svg-wrap svg{
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: min(420px, 52vh);
+    }
+
+    .nz-land{
+      fill: rgba(255,255,255,.92);
+      stroke: rgba(92,95,62,.22);
+      stroke-width: 1.1;
+      vector-effect: non-scaling-stroke;
+    }
+    .nz-region-fill{
+      fill: rgba(92,95,62,.045);
+      stroke: none;
+    }
+    .nz-coast-soft{
+      fill: none;
+      stroke: rgba(92,95,62,.12);
+      stroke-width: 0.9;
+      vector-effect: non-scaling-stroke;
+    }
+    .region-label{
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      fill: rgba(92,95,62,.42);
+    }
+    .map-footnote{
+      padding: 0 22px 18px;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: .01em;
+      position: relative;
+      z-index: 2;
+    }
+
+    .pod-pin{
+      cursor: pointer;
+    }
+    .pod-pin:focus{ outline: none; }
+    .pod-pin:focus-visible .pin-core{
+      stroke: var(--brand-green);
+      stroke-width: 2.2;
+    }
+    .pin-ring{
+      fill: none;
+      stroke: rgba(92,95,62,.35);
+      stroke-width: 1.2;
+    }
+    .pin-core{
+      fill: var(--brand-beige);
+      stroke: rgba(92,95,62,.45);
+      stroke-width: 1.1;
+      transform-box: fill-box;
+      transform-origin: center;
+      transition: transform .18s ease, filter .18s ease;
+    }
+    .pod-pin:hover .pin-core,
+    .pod-pin:focus-visible .pin-core{
+      transform: scale(1.08);
+      filter: drop-shadow(0 4px 10px rgba(92,95,62,.25));
+    }
+    .pin-label{
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      fill: var(--brand-green);
+      opacity: 0;
+      transition: opacity .15s ease;
+      pointer-events: none;
+    }
+    .pod-pin:hover .pin-label,
+    .pod-pin:focus-visible .pin-label{
+      opacity: 1;
+    }
+
+    /* TABS */
+    .tabs-wrap{
+      position: sticky;
+      top: 58px;
+      z-index:55;
+      background: linear-gradient(to bottom, rgba(247,246,243,.96), rgba(247,246,243,.88));
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--stroke);
+    }
+    .tabs{
+      display:flex;
+      gap:10px;
+      padding: 14px 0;
+      overflow:auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .tab{
+      flex:0 0 auto;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor:pointer;
+      transition: background .12s ease, border-color .12s ease, color .12s ease;
+      user-select:none;
+    }
+    .tab:hover{ color: var(--ink); }
+    .tab.active{
+      background: rgba(92,95,62,.1);
+      border-color: rgba(92,95,62,.28);
+      color: var(--brand-green);
+    }
+
+    /* GRID */
+    .section{
+      padding: 24px 0 70px;
+    }
+    .section-head{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:12px;
+      margin: 0 0 18px;
+    }
+    .count{
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .pod{
+      border-radius: 24px;
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height: 320px;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .pod:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 22px 55px rgba(0,0,0,.1);
+    }
+
+    .media{
+      height: 220px;
+      background-size: cover;
+      background-position: center 35%;
+      position: relative;
+      overflow: hidden;
+    }
+    .media::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(
+        to bottom,
+        rgba(17,18,23,.02),
+        rgba(247,246,243,.25)
+      );
+      pointer-events:none;
+    }
+
+    .body{
+      padding: 18px 20px 22px;
+      display:flex;
+      flex-direction:column;
+      gap: 8px;
+      flex:1;
+    }
+
+    .pill{
+      display:inline-flex;
+      padding: 6px 10px;
+      border-radius:999px;
+      border: 1px solid var(--stroke);
+      background: rgba(92,95,62,.08);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      width: fit-content;
+    }
+
+    .pod h3{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+      color: var(--brand-green);
+      font-weight: 600;
+    }
+
+    .meta{
+      color: var(--muted);
+      font-size: 14px;
+      line-height:1.6;
+    }
+
+    .spacer{ flex:1; }
+
+    .cta{
+      display:inline-flex;
+      width: fit-content;
+      padding: 9px 12px;
+      border-radius:999px;
+      border: 2px solid rgba(92,95,62,.35);
+      background: rgba(92,95,62,.08);
+      color: var(--brand-green);
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .hidden{ display:none !important; }
+
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+      .tabs-wrap{ top: 56px; }
+    }
+    @media (max-width: 640px){
+      .grid{ grid-template-columns: 1fr; }
+      .brand img{ height: 28px; }
+      .tabs-wrap{ top: 54px; }
+      .pod{ min-height: 280px; }
+      .media{ height: 200px; }
+    }
+
+    /* FOOTER */
+    footer{
+      padding: 32px 0 40px;
+      border-top: 1px solid var(--stroke);
+      color: var(--muted);
+      font-size:13px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="home/index.html">
+        <img src="../assets/img/purepods-logo-new-zealand.png" alt="PurePods">
+      </a>
+
+      <div class="links">
+        <a href="explore.html">Pods</a>
+        <a href="experiences/experiences.html">Experiences</a>
+        <a href="my-journey.html">My journey</a>
+        <a class="btn btn-primary" href="https://purepods.com/booking/">Book</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Choose your place</h1>
+      <p class="lead">
+        Not every silence sounds the same. Discover where you want to spend the night.
+      </p>
+      <div class="hero-meta">
+        <span class="proto-pill">Map view · visual prototype</span>
+        <a href="explore.html">Standard pods view</a>
+      </div>
+    </section>
+
+    <!-- EDITORIAL MAP -->
+    <section class="map-section" aria-labelledby="map-heading">
+      <div class="map-section-head">
+        <h2 id="map-heading">Across Aotearoa</h2>
+        <p>
+          An approximate sense of where each PurePod sits within the country — calm, not cartographic.
+          Tap a point to jump to that pod below.
+        </p>
+      </div>
+
+      <div class="map-frame">
+        <div class="map-svg-wrap">
+          <svg viewBox="0 0 400 520" role="img" aria-label="Stylised map of New Zealand with PurePod locations">
+            <defs>
+              <filter id="mapSoftShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="rgb(92,95,62)" flood-opacity="0.12"/>
+              </filter>
+            </defs>
+
+            <!-- Stylised landmasses (approximate silhouette for mood, not survey-grade) -->
+            <g filter="url(#mapSoftShadow)">
+              <path class="nz-land" d="M 118 28 C 210 22 298 78 292 138 C 288 188 268 228 248 262 C 232 288 198 302 168 296 C 128 288 98 248 88 202 C 78 152 88 98 108 58 C 112 42 114 32 118 28 Z" />
+              <path class="nz-land" d="M 158 308 C 198 300 242 328 252 372 C 262 418 248 478 208 498 C 172 512 128 498 108 462 C 92 422 108 368 132 330 C 142 316 150 310 158 308 Z" />
+              <path class="nz-land" d="M 98 494 C 118 488 132 502 124 518 C 116 528 92 520 98 494 Z" />
+            </g>
+
+            <!-- Soft regional washes (major zones only) -->
+            <path class="nz-region-fill" d="M 118 28 C 210 22 298 78 292 138 C 288 188 268 228 248 262 C 232 288 198 302 168 296 C 128 288 98 248 88 202 C 78 152 88 98 108 58 C 112 42 114 32 118 28 Z" opacity="0.85" />
+            <path class="nz-region-fill" d="M 158 308 C 198 300 242 328 252 372 C 262 418 248 478 208 498 C 172 512 128 498 108 462 C 92 422 108 368 132 330 C 142 316 150 310 158 308 Z" opacity="0.55" />
+            <path class="nz-region-fill" d="M 98 494 C 118 488 132 502 124 518 C 116 528 92 520 98 494 Z" opacity="0.7" />
+
+            <path class="nz-coast-soft" d="M 118 28 C 210 22 298 78 292 138 C 288 188 268 228 248 262 C 232 288 198 302 168 296 C 128 288 98 248 88 202 C 78 152 88 98 108 58 C 112 42 114 32 118 28 Z" />
+            <path class="nz-coast-soft" d="M 158 308 C 198 300 242 328 252 372 C 262 418 248 478 208 498 C 172 512 128 498 108 462 C 92 422 108 368 132 330 C 142 316 150 310 158 308 Z" />
+            <path class="nz-coast-soft" d="M 98 494 C 118 488 132 502 124 518 C 116 528 92 520 98 494 Z" />
+
+            <text class="region-label" x="195" y="168" text-anchor="middle">North Island</text>
+            <text class="region-label" x="188" y="408" text-anchor="middle">South Island</text>
+            <text class="region-label" x="112" y="512" text-anchor="middle">Stewart Island</text>
+
+            <!-- Pins: positions tuned to stylised map (approximate geography for demo) -->
+            <g class="pod-pin" role="button" tabindex="0" data-island="north" data-href="location/makoha/" aria-label="Mākōha, Kerikeri">
+              <title>Mākōha · Kerikeri</title>
+              <circle class="pin-ring" cx="200" cy="62" r="14"/>
+              <circle class="pin-core" cx="200" cy="62" r="5"/>
+              <text class="pin-label" x="200" y="84" text-anchor="middle">Mākōha</text>
+            </g>
+            <g class="pod-pin" role="button" tabindex="0" data-island="north" data-href="location/rewarewa/" aria-label="Rewarewa, Muriwai Coast">
+              <title>Rewarewa · Muriwai Coast</title>
+              <circle class="pin-ring" cx="152" cy="92" r="14"/>
+              <circle class="pin-core" cx="152" cy="92" r="5"/>
+              <text class="pin-label" x="152" y="114" text-anchor="middle">Rewarewa</text>
+            </g>
+            <g class="pod-pin" role="button" tabindex="0" data-island="north" data-href="location/ruru/" aria-label="Ruru, Coromandel">
+              <title>Ruru · Coromandel</title>
+              <circle class="pin-ring" cx="248" cy="118" r="14"/>
+              <circle class="pin-core" cx="248" cy="118" r="5"/>
+              <text class="pin-label" x="248" y="140" text-anchor="middle">Ruru</text>
+            </g>
+            <g class="pod-pin" role="button" tabindex="0" data-island="north" data-href="location/pamu/" aria-label="Pāmu, Rotorua">
+              <title>Pāmu · Rotorua</title>
+              <circle class="pin-ring" cx="222" cy="158" r="14"/>
+              <circle class="pin-core" cx="222" cy="158" r="5"/>
+              <text class="pin-label" x="222" y="180" text-anchor="middle">Pāmu</text>
+            </g>
+            <g class="pod-pin" role="button" tabindex="0" data-island="north" data-href="location/matu/" aria-label="Matū, Waitomo">
+              <title>Matū · Waitomo</title>
+              <circle class="pin-ring" cx="172" cy="182" r="14"/>
+              <circle class="pin-core" cx="172" cy="182" r="5"/>
+              <text class="pin-label" x="172" y="204" text-anchor="middle">Matū</text>
+            </g>
+            <g class="pod-pin" role="button" tabindex="0" data-island="north" data-href="location/kokomea/" aria-label="Kokomea, Kapiti Coast">
+              <title>Kokomea · Kapiti Coast</title>
+              <circle class="pin-ring" cx="158" cy="268" r="14"/>
+              <circle class="pin-core" cx="158" cy="268" r="5"/>
+              <text class="pin-label" x="158" y="290" text-anchor="middle">Kokomea</text>
+            </g>
+
+            <g class="pod-pin" role="button" tabindex="0" data-island="south" data-href="location/manakau/" aria-label="Manakau, Kaikōura">
+              <title>Manakau · Kaikōura</title>
+              <circle class="pin-ring" cx="212" cy="332" r="14"/>
+              <circle class="pin-core" cx="212" cy="332" r="5"/>
+              <text class="pin-label" x="212" y="354" text-anchor="middle">Manakau</text>
+            </g>
+            <g class="pod-pin" role="button" tabindex="0" data-island="south" data-href="location/kahutara/" aria-label="Kahutara, Kaikōura">
+              <title>Kahutara · Kaikōura</title>
+              <circle class="pin-ring" cx="228" cy="348" r="14"/>
+              <circle class="pin-core" cx="228" cy="348" r="5"/>
+              <text class="pin-label" x="228" y="370" text-anchor="middle">Kahutara</text>
+            </g>
+            <g class="pod-pin" role="button" tabindex="0" data-island="south" data-href="location/atatu/" aria-label="Atatū, Hurunui">
+              <title>Atatū · Hurunui</title>
+              <circle class="pin-ring" cx="188" cy="342" r="14"/>
+              <circle class="pin-core" cx="188" cy="342" r="5"/>
+              <text class="pin-label" x="188" y="364" text-anchor="middle">Atatū</text>
+            </g>
+            <g class="pod-pin" role="button" tabindex="0" data-island="south" data-href="location/korimako/" aria-label="Korimako, Hurunui">
+              <title>Korimako · Hurunui</title>
+              <circle class="pin-ring" cx="176" cy="358" r="14"/>
+              <circle class="pin-core" cx="176" cy="358" r="5"/>
+              <text class="pin-label" x="176" y="380" text-anchor="middle">Korimako</text>
+            </g>
+            <g class="pod-pin" role="button" tabindex="0" data-island="south" data-href="location/greystone/" aria-label="Greystone, Waipara">
+              <title>Greystone · Waipara</title>
+              <circle class="pin-ring" cx="166" cy="372" r="14"/>
+              <circle class="pin-core" cx="166" cy="372" r="5"/>
+              <text class="pin-label" x="166" y="394" text-anchor="middle">Greystone</text>
+            </g>
+            <g class="pod-pin" role="button" tabindex="0" data-island="south" data-href="location/pohue/" aria-label="Pōhue, Banks Peninsula">
+              <title>Pōhue · Banks Peninsula</title>
+              <circle class="pin-ring" cx="232" cy="392" r="14"/>
+              <circle class="pin-core" cx="232" cy="392" r="5"/>
+              <text class="pin-label" x="232" y="414" text-anchor="middle">Pōhue</text>
+            </g>
+            <g class="pod-pin" role="button" tabindex="0" data-island="south" data-href="location/haurapa/" aria-label="Haurapa, Central Otago">
+              <title>Haurapa · Central Otago</title>
+              <circle class="pin-ring" cx="142" cy="432" r="14"/>
+              <circle class="pin-core" cx="142" cy="432" r="5"/>
+              <text class="pin-label" x="142" y="454" text-anchor="middle">Haurapa</text>
+            </g>
+            <g class="pod-pin" role="button" tabindex="0" data-island="south" data-href="location/taima/" aria-label="Tāima, Central Otago">
+              <title>Tāima · Central Otago</title>
+              <circle class="pin-ring" cx="162" cy="448" r="14"/>
+              <circle class="pin-core" cx="162" cy="448" r="5"/>
+              <text class="pin-label" x="162" y="470" text-anchor="middle">Tāima</text>
+            </g>
+
+            <g class="pod-pin" role="button" tabindex="0" data-island="stewart" data-href="location/tokoeka/" aria-label="Tokoeka, Stewart Island">
+              <title>Tokoeka · Stewart Island</title>
+              <circle class="pin-ring" cx="108" cy="506" r="12"/>
+              <circle class="pin-core" cx="108" cy="506" r="4.5"/>
+              <text class="pin-label" x="108" y="524" text-anchor="middle">Tokoeka</text>
+            </g>
+            <g class="pod-pin" role="button" tabindex="0" data-island="stewart" data-href="location/hananui/" aria-label="Hananui, Stewart Island">
+              <title>Hananui · Stewart Island</title>
+              <circle class="pin-ring" cx="124" cy="512" r="12"/>
+              <circle class="pin-core" cx="124" cy="512" r="4.5"/>
+              <text class="pin-label" x="124" y="530" text-anchor="middle">Hananui</text>
+            </g>
+          </svg>
+        </div>
+        <p class="map-footnote">
+          Illustrative layout for review — not for navigation. Pod positions are approximate.
+        </p>
+      </div>
+    </section>
+
+    <!-- TABS -->
+    <div class="tabs-wrap">
+      <div class="wrap">
+        <div class="tabs" role="tablist" aria-label="Filter by island">
+          <button class="tab active" data-filter="north" role="tab" aria-selected="true">North Island</button>
+          <button class="tab" data-filter="south" role="tab" aria-selected="false">South Island</button>
+          <button class="tab" data-filter="stewart" role="tab" aria-selected="false">Stewart Island</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- POD GRID -->
+    <section class="section">
+      <div class="section-head">
+        <div class="count" id="countLabel"></div>
+      </div>
+
+      <div class="grid" id="podsGrid">
+        <!-- North Island -->
+        <a class="pod" data-island="north" href="location/makoha/">
+          <div class="media" style="background-image: url('../assets/img/makoha/makoha-purepod-native-forest-landscape-kerikeri.jpg');"></div>
+          <div class="body">
+            <span class="pill">Kerikeri</span>
+            <h3>Mākōha</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="north" href="location/rewarewa/">
+          <div class="media" style="background-image: url('../assets/img/rewarewa/rewarewa-purepod-glass-cabin-exterior-stairs-muriwai-coast.jpg');"></div>
+          <div class="body">
+            <span class="pill">Muriwai Coast</span>
+            <h3>Rewarewa</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="north" href="location/ruru/">
+          <div class="media" style="background-image: url('../assets/img/ruru/ruru-purepod-glass-cabin-aerial-view-coromandel.jpg'); background-position: center 25%;"></div>
+          <div class="body">
+            <span class="pill">Coromandel</span>
+            <h3>Ruru</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="north" href="location/pamu/">
+          <div class="media" style="background-image: url('../assets/img/pamu/pamu-purepod-glass-cabin-exterior-landscape-rotorua.jpg');"></div>
+          <div class="body">
+            <span class="pill">Rotorua</span>
+            <h3>Pāmu</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="north" href="location/matu/">
+          <div class="media" style="background-image: url('../assets/img/matu/matu-purepod-glass-cabin-sunset-exterior-waitomo.jpg');"></div>
+          <div class="body">
+            <span class="pill">Waitomo</span>
+            <h3>Matū</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="north" href="location/kokomea/">
+          <div class="media" style="background-image: url('../assets/img/kokomea/kokomea-purepod-exterior-sunrise-landscape-kapiti-coast.jpg');"></div>
+          <div class="body">
+            <span class="pill">Kapiti Coast</span>
+            <h3>Kokomea</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <!-- South Island -->
+        <a class="pod" data-island="south" href="location/manakau/">
+          <div class="media" style="background-image: url('../assets/img/manakau/manakau-purepod-glass-cabin-hills-landscape-kaikoura.jpg');"></div>
+          <div class="body">
+            <span class="pill">Kaikōura</span>
+            <h3>Manakau</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" href="location/kahutara/">
+          <div class="media" style="background-image: url('../assets/img/kahutara/kahutara-purepod-glass-cabin-kaikoura-new-zealand.jpg'); background-position: center 80%;"></div>
+          <div class="body">
+            <span class="pill">Kaikōura</span>
+            <h3>Kahutara</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" href="location/atatu/">
+          <div class="media" style="background-image: url('../assets/img/atatu/atatu-purepod-glass-cabin-bedroom-ocean-view-new-zealand.jpg');"></div>
+          <div class="body">
+            <span class="pill">Hurunui</span>
+            <h3>Atatū</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" href="location/korimako/">
+          <div class="media" style="background-image: url('../assets/img/kiromako/kiromako-purepod-forest-path-walking-trail-new-zealand.jpg');"></div>
+          <div class="body">
+            <span class="pill">Hurunui</span>
+            <h3>Korimako</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" href="location/greystone/">
+          <div class="media" style="background-image: url('../assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg');"></div>
+          <div class="body">
+            <span class="pill">Waipara</span>
+            <h3>Greystone</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" href="location/pohue/">
+          <div class="media" style="background-image: url('../assets/img/pohue/pohue-coastal-hills-cabin-view-new-zealand.jpg');"></div>
+          <div class="body">
+            <span class="pill">Banks Peninsula</span>
+            <h3>Pōhue</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" href="location/haurapa/">
+          <div class="media" style="background-image: url('../assets/img/haurapa/haurapa-purepod-glass-cabin-central-otago-landscape-new-zealand.jpg');"></div>
+          <div class="body">
+            <span class="pill">Central Otago</span>
+            <h3>Haurapa</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" href="location/taima/">
+          <div class="media" style="background-image: url('../assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg');"></div>
+          <div class="body">
+            <span class="pill">Central Otago</span>
+            <h3>Tāima</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <!-- Stewart Island -->
+        <a class="pod" data-island="stewart" href="location/tokoeka/">
+          <div class="media" style="background-image: url('../assets/img/tokoeka/tokoeka-purepod-exterior-sunset-view-stewart-island.jpg');"></div>
+          <div class="body">
+            <span class="pill">Stewart Island</span>
+            <h3>Tokoeka</h3>
+            <div class="meta">Stewart Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="stewart" href="location/hananui/">
+          <div class="media" style="background-image: url('../assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg');"></div>
+          <div class="body">
+            <span class="pill">Stewart Island</span>
+            <h3>Hananui</h3>
+            <div class="meta">Stewart Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      PurePods · Home · Pods · Experiences · My journey
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var tabs = document.querySelectorAll(".tab");
+      var cards = document.querySelectorAll(".pod");
+      var countEl = document.getElementById("countLabel");
+      var pins = document.querySelectorAll(".pod-pin");
+
+      function applyFilter(filter){
+        tabs.forEach(function(t){
+          var isActive = t.getAttribute("data-filter") === filter;
+          t.classList.toggle("active", isActive);
+          t.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+
+        var visible = 0;
+        cards.forEach(function(c){
+          var show = c.getAttribute("data-island") === filter;
+          c.classList.toggle("hidden", !show);
+          if(show) visible++;
+        });
+
+        var label = filter === "north" ? "North Island" : filter === "south" ? "South Island" : "Stewart Island";
+        if(countEl) countEl.textContent = visible + " " + (visible === 1 ? "pod" : "pods");
+      }
+
+      function scrollToPod(href){
+        var sel = '.pod[href="' + href + '"]';
+        var card = document.querySelector(sel);
+        if(card){
+          card.scrollIntoView({ behavior: "smooth", block: "center" });
+          try {
+            card.focus({ preventScroll: true });
+          } catch (e) {}
+        }
+      }
+
+      function onPinActivate(pin){
+        var island = pin.getAttribute("data-island");
+        var href = pin.getAttribute("data-href");
+        if(island) applyFilter(island);
+        if(href) setTimeout(function(){ scrollToPod(href); }, 80);
+      }
+
+      tabs.forEach(function(t){
+        t.addEventListener("click", function(){ applyFilter(t.getAttribute("data-filter")); });
+      });
+
+      pins.forEach(function(pin){
+        pin.addEventListener("click", function(){ onPinActivate(pin); });
+        pin.addEventListener("keydown", function(ev){
+          if(ev.key === "Enter" || ev.key === " "){
+            ev.preventDefault();
+            onPinActivate(pin);
+          }
+        });
+      });
+
+      applyFilter("north");
+    })();
+  </script>
+</body>
+</html>

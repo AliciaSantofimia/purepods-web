@@ -51,7 +51,7 @@ export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
     metaTitle:
       "Adventure & Wildlife | PurePods — Outdoor Nature Experiences in New Zealand",
     description:
-      "Explore adventure and wildlife inspiration across New Zealand with PurePods. Outdoor and nature experiences, practical links, and booking pathways to nearby glass eco-cabin stays.",
+      "Curated marine wildlife, nature and adventure experiences across New Zealand—each with official visitor links and suggested nearby PurePods glass eco-cabin stays.",
     heroSrc:
       "/assets/img/experiences/adventure-wildlife/new-zealand-dolphin-kayak-wildlife-experience-coastal-adventure.png",
     heroAlt: "Kayakers near a waterfall in New Zealand",
@@ -61,9 +61,10 @@ export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
     heading: "Wine & dine",
     metaTitle: "Wine & Dine | PurePods — Food and Wine Experiences in New Zealand",
     description:
-      "Explore food and wine inspiration across New Zealand with PurePods. Local producers, dining experiences, and booking pathways to nearby glass eco-cabin stays.",
-    heroSrc: "/assets/img/experiences/placeholders/wine-dine-hero-placeholder.jpg",
-    heroAlt: "Vineyard and table landscape placeholder for Wine and Dine hero image",
+      "Curated wine and dining experiences across New Zealand — vineyard tastings, winery restaurants, views and local favourites — each paired with a nearby PurePods glass eco-cabin stay.",
+    heroSrc: "/assets/img/experiences/experiences/new-zealand-wine-dine-local-food-experience.jpg",
+    heroAlt:
+      "Local food and wine spread in a scenic New Zealand landscape, slow dining and regional flavours",
   },
   "relax-coastal": {
     kicker: "Relax & coastal",

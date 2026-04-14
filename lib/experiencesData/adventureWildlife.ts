@@ -174,14 +174,14 @@ export const adrenalineSlides: HikingSlide[] = [
 export const adventureFaq: { q: string; a: string }[] = [
   {
     q: "What does this Adventure & Wildlife page include?",
-    a: "This draft page groups outdoor and wildlife-oriented experience blocks with a visual placeholder, a short practical description, an external reference link and a PurePods booking pathway.",
+    a: "Editorial highlights in three themes: marine and iconic wildlife, nature exploration and outdoor discovery, and adventure and adrenaline. Each slide links to the official operator or route resource and suggests one or more nearby PurePod stays where we have a site in the region.",
   },
   {
-    q: "Are these final destinations and wildlife operators?",
-    a: "No. This version uses replaceable placeholders so final routes, operators and regional pairings can be added once they are confirmed.",
+    q: "Should I confirm details with each operator before I travel?",
+    a: "Yes. Timetables, seasons, weather and access can change. Use the links on each slide to check the latest information, bookings and requirements directly with the operator or land manager.",
   },
   {
     q: "How do I continue to booking from this page?",
-    a: "Each block links to the suggested pod’s detail page on this site (`/location/...`), and the main call to action opens PurePods booking to check live availability and site details.",
+    a: "Use each slide’s Stay at link to open that pod’s page on this PurePods site, then continue to booking when you are ready. The Book control in the navigation and the closing call to action also link to PurePods booking to check live availability.",
   },
 ];

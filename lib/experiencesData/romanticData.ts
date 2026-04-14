@@ -16,19 +16,19 @@ export const romanticFaq = [
 export const romanticGallery = [
   {
     src: "/assets/img/experiences/romantic/purepods-romantic-getaway-dinner-wine-view-new-zealand.jpg",
-    alt: "Romantic PurePods glass cabin bedroom with fireplace in New Zealand",
+    alt: "Romantic dinner and wine with a wide landscape view inside a PurePods glass cabin in New Zealand",
   },
   {
     src: "/assets/img/experiences/romantic/purepods-romantic-getaway-outdoor-shower-sunset-new-zealand.jpg",
-    alt: "Outdoor shower with sunset views at a PurePods glass cabin in New Zealand",
+    alt: "Outdoor shower with golden sunset light and distant hills at a PurePods glass cabin in New Zealand",
   },
   {
     src: "/assets/img/experiences/romantic/purepods-romantic-getaway-glass-cabin-bedroom-fireplace.jpg",
-    alt: "Romantic wine and dinner experience at a PurePods glass cabin in New Zealand",
+    alt: "PurePods glass cabin bedroom with fireplace, soft lighting and nature visible through the glass in New Zealand",
   },
   {
     src: "/assets/img/experiences/romantic/purepods-romantic-getaway-bedroom-sunrise-view.jpg",
-    alt: "Romantic glass cabin bedroom at PurePods with nature views in New Zealand",
+    alt: "Sunrise light across the bed in a PurePods glass cabin bedroom with panoramic nature views in New Zealand",
   },
   {
     src: "/assets/img/experiences/romantic/purepods-romantic-getaway-couple-shower-sunset.jpg",

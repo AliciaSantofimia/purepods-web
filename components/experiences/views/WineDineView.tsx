@@ -1,50 +1,16 @@
 import Link from "next/link";
 import { ExpRefImage } from "@/components/experiences/ExpRefImage";
 import { ExpStandardChrome } from "@/components/experiences/ExpStandardChrome";
-
-const P = "/assets/img/experiences/placeholders/";
-
-const blocks = [
-  {
-    img: `${P}wine-dine-block-01.jpg`,
-    alt: "Placeholder image for a vineyard tasting experience in New Zealand",
-    h: "Vineyard tasting placeholder",
-    p: "Use this block for a verified tasting room, vineyard visit or cellar-door style experience. Replace with confirmed details only, including opening context, regional reference and why it fits this Wine & Dine theme.",
-    ext: "https://example.com/replace-with-vineyard-reference",
-    extLabel: "View wine reference (placeholder) →",
-  },
-  {
-    img: `${P}wine-dine-block-02.jpg`,
-    alt: "Placeholder image for a regional producer and local food experience",
-    h: "Regional producer placeholder",
-    p: "Use this block for a verified producer-led visit such as artisan food, farm gate or craft beverage context. Keep the description practical and factual, with clear replacement fields for final names and confirmed visitor information.",
-    ext: "https://example.com/replace-with-producer-reference",
-    extLabel: "View producer reference (placeholder) →",
-  },
-  {
-    img: `${P}wine-dine-block-03.jpg`,
-    alt: "Placeholder image for a destination dining and seasonal menu experience",
-    h: "Destination dining placeholder",
-    p: "Use this block for a verified destination dining or seasonal menu experience. Preserve a calm editorial tone and keep all claims replaceable until final venue details, service model and regional pairing are validated.",
-    ext: "https://example.com/replace-with-dining-reference",
-    extLabel: "View dining reference (placeholder) →",
-  },
-];
-
-const faq = [
-  {
-    q: "What does this Wine & Dine page include?",
-    a: "This draft page groups food and wine-oriented experience blocks with a visual placeholder, a practical description, an external reference link and a PurePods booking pathway.",
-  },
-  {
-    q: "Are the producers and dining venues final?",
-    a: "No. The current version uses clearly replaceable placeholders so final producer names, regions and pairings can be added once confirmed.",
-  },
-  {
-    q: "How do I proceed to booking from this page?",
-    a: "Each block includes a booking pathway, and the final call to action leads to PurePods booking to review availability and choose a suitable stay.",
-  },
-];
+import { HikingCarouselBlock } from "@/components/experiences/HikingCarouselBlock";
+import {
+  wineDineAboutLeadHtml,
+  wineDineFaq,
+  wineDineHero,
+  wineDineLocalSlides,
+  wineDineRestaurantSlides,
+  wineDineViewSlides,
+  wineDineVineyardSlides,
+} from "@/lib/experiencesData/wineDineData";
 
 export function WineDineView() {
   return (
@@ -58,19 +24,19 @@ export function WineDineView() {
       >
         <header className="hero" id="top">
           <ExpRefImage
-            src={`${P}wine-dine-hero-placeholder.jpg`}
-            alt="Vineyard and table landscape placeholder for Wine and Dine hero image"
+            src={wineDineHero.src}
+            alt={wineDineHero.alt}
             fill
             sizes="100vw"
             className="heroImg"
             priority
           />
           <div className="heroInner">
-            <h1>Wine &amp; Dine</h1>
+            <h1>Wine &amp; Dine in New Zealand</h1>
             <p className="impact-summary">
-              Wine &amp; Dine brings together draft food and wine experience blocks for New Zealand planning with PurePods.
-              The page is structured for producer, tasting and dining examples, each paired with a practical external
-              reference link and a direct booking pathway to a nearby glass eco-cabin stay.
+              From world-class wineries to relaxed local favourites, discover New Zealand through its flavours. These
+              curated experiences bring together landscape, craftsmanship and atmosphere — places worth slowing down
+              for.
             </p>
             <Link className="btnGhost" href="#about">
               Read on
@@ -81,63 +47,123 @@ export function WineDineView() {
         <main id="main">
           <section id="about" aria-labelledby="about-heading">
             <div className="wrap">
-              <div className="surface">
-                <h2 id="about-heading" className="visually-hidden">
-                  About this page
-                </h2>
-                <p className="lead">
-                  This draft page follows the same Experience architecture as the page family: hero, orientation text,
-                  structured content blocks, pod bridge, FAQ and booking CTA. The block copy is intentionally replaceable
-                  so final producer, dining and regional details can be inserted after verification. Explore all themes in{" "}
-                  <Link href="/experiences">Experiences</Link>.
-                </p>
-              </div>
+              <h2 id="about-heading" className="visually-hidden">
+                About this page
+              </h2>
+              <p className="lead" dangerouslySetInnerHTML={{ __html: wineDineAboutLeadHtml }} />
             </div>
           </section>
 
           <section className="wrap" id="blocks" aria-label="Wine and dine content blocks">
-            {blocks.map((b) => (
-              <article key={b.h} className="chapter">
-                <div className="moment">
-                  <div className="media">
-                    <ExpRefImage src={b.img} alt={b.alt} fill sizes="(max-width:900px) 100vw, 45vw" />
-                  </div>
-                  <div className="copy">
-                    <h2>{b.h}</h2>
-                    <p>{b.p}</p>
-                    <div className="links-row">
-                      <a className="external-link" href={b.ext} target="_blank" rel="noopener noreferrer">
-                        {b.extLabel}
-                      </a>
-                      <a
-                        className="journey-pod"
-                        href="https://purepods.com/booking/?cart=Checkout"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Stay at <strong className="journey-pod-name">Nearby PurePod (placeholder)</strong> →
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            ))}
+            <article className="journey-chapter" id="wine-vineyard">
+              <HikingCarouselBlock
+                ariaLabel="Vineyard dining and wine tastings"
+                slides={wineDineVineyardSlides}
+                chapterTitle={<h2 className="journey-title">Vineyard dining &amp; wine tastings</h2>}
+                chapterIntro={
+                  <p className="journey-intro">
+                    Explore some of New Zealand&apos;s most celebrated wine regions, where tastings are shaped by
+                    landscape, architecture and a deep sense of place.
+                  </p>
+                }
+              />
+            </article>
+
+            <article className="journey-chapter" id="wine-restaurants">
+              <HikingCarouselBlock
+                ariaLabel="Winery restaurants and full experiences"
+                slides={wineDineRestaurantSlides}
+                chapterTitle={<h2 className="journey-title">Winery restaurants &amp; full experiences</h2>}
+                chapterIntro={
+                  <p className="journey-intro">
+                    More than tastings — these places combine food, wine and setting into a complete, immersive
+                    experience.
+                  </p>
+                }
+              />
+            </article>
+
+            <article className="journey-chapter" id="wine-view">
+              <HikingCarouselBlock
+                ariaLabel="Dining with a view"
+                slides={wineDineViewSlides}
+                chapterTitle={<h2 className="journey-title">Dining with a view</h2>}
+                chapterIntro={
+                  <p className="journey-intro">
+                    Memorable meals shaped by their surroundings — from lakeside settings to elevated viewpoints.
+                  </p>
+                }
+              />
+            </article>
+
+            <article className="journey-chapter" id="wine-local">
+              <HikingCarouselBlock
+                ariaLabel="Relaxed local favourites"
+                slides={wineDineLocalSlides}
+                chapterTitle={<h2 className="journey-title">Relaxed local favourites</h2>}
+                chapterIntro={
+                  <p className="journey-intro">
+                    Casual, authentic and full of character — these are the places that locals love.
+                  </p>
+                }
+              />
+            </article>
           </section>
 
-          <section className="pod-bridge" aria-labelledby="pod-bridge-heading">
-            <div className="wrap">
-              <h2 id="pod-bridge-heading" className="pod-bridge__title">
-                From regional food moments to a slower overnight rhythm
-              </h2>
-              <p>
-                Wine and dining experiences pair naturally with a PurePods stay before or after your outing. PurePods are
-                glass eco-cabins in remote natural settings, creating a quiet base for conversation, rest and time in the
-                landscape.
-              </p>
-              <p>
-                This bridge section is designed to connect verified producer and dining content with a clear booking
-                pathway, without overstatement or unverified claims.
-              </p>
+          <section className="pod-bridge" id="the-pod" aria-labelledby="pod-bridge-heading">
+            <div className="wrap" style={{ padding: "56px 0" }}>
+              <div>
+                <div
+                  style={{
+                    borderRadius: 28,
+                    overflow: "hidden",
+                    boxShadow: "var(--shadow)",
+                    border: "1px solid var(--stroke)",
+                    aspectRatio: "16/9",
+                    marginBottom: 28,
+                    position: "relative",
+                  }}
+                >
+                  <ExpRefImage
+                    src="/assets/img/experiences/culture/purepod-glass-cabin-lake-view-new-zealand-remote-nature-stay.jpg"
+                    alt="PurePod glass cabin overlooking a remote lake and rolling hills in New Zealand, peaceful nature stay experience"
+                    fill
+                    sizes="(max-width:900px) 100vw, min(1120px, 90vw)"
+                    className="pod-bridge__img"
+                  />
+                </div>
+                <h2 id="pod-bridge-heading" className="pod-bridge__title">
+                  From wine-country days to quiet immersion in nature
+                </h2>
+                <p>
+                  After tastings, long lunches and tables with a view, a PurePods stay offers space to slow down and let
+                  the flavours settle.
+                </p>
+                <p style={{ marginTop: 12 }}>
+                  Set in remote natural landscapes, these glass eco-cabins invite you to reconnect — through stillness,
+                  light and the environment beyond the glass.
+                </p>
+                <p style={{ marginTop: 12 }}>
+                  This rhythm is part of the journey: from savouring a place, to quietly being in it.
+                </p>
+                <p style={{ marginTop: 12, fontSize: 15, color: "var(--muted)" }}>
+                  Site-specific details and inclusions are confirmed when you book; this page pairs dining visits with a
+                  suggested nearby pod.
+                </p>
+                <Link
+                  href="/pods"
+                  className="btnGhost"
+                  style={{
+                    marginTop: 18,
+                    display: "inline-block",
+                    borderColor: "rgba(92,95,62,.18)",
+                    background: "rgba(255,255,255,.42)",
+                    color: "var(--ink)",
+                  }}
+                >
+                  Discover slow travel
+                </Link>
+              </div>
             </div>
           </section>
 
@@ -146,7 +172,7 @@ export function WineDineView() {
               <div className="surface">
                 <h2 id="faq-heading">Frequently asked questions</h2>
                 <ul>
-                  {faq.map((f) => (
+                  {wineDineFaq.map((f) => (
                     <li key={f.q}>
                       <h3>{f.q}</h3>
                       <p>{f.a}</p>
@@ -172,7 +198,8 @@ export function WineDineView() {
                   Find your PurePod
                 </a>
                 <p className="cta-support">
-                  Check booking availability, then pair your preferred food and wine experience with a nearby PurePod stay.
+                  Check booking availability, then pair your preferred wine or dining experience with a nearby PurePod
+                  stay.
                 </p>
               </div>
             </div>

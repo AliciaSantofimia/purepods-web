@@ -224,6 +224,6 @@ export const cultureFaq: { q: string; a: string }[] = [
   },
   {
     q: "How do I continue to booking from this page?",
-    a: "Each slide includes a link to the suggested pod’s detail page on this site where available (`/location/...`), and the final call to action opens PurePods booking to check availability and complete your stay.",
+    a: "Each slide includes a link to the suggested pod’s page on this site where available, and the final call to action opens PurePods booking to check availability and complete your stay.",
   },
 ];
