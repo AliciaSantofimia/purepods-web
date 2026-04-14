@@ -66,7 +66,9 @@ export const wineDineVineyardSlides: HikingSlide[] = [
 ];
 
 export const wineDineRestaurantSlides: HikingSlide[] = [
-  nv({
+  {
+    image: "/assets/img/experiences/wine-dine/black-estate-winery-dining-wine-pairing-waipara-valley-new-zealand.jpg",
+    alt: "Winery dining and wine pairing at Black Estate in the Waipara Valley, North Canterbury, New Zealand",
     title: "Black Estate",
     placeHref: "https://blackestate.co.nz/",
     description:
@@ -75,8 +77,10 @@ export const wineDineRestaurantSlides: HikingSlide[] = [
       { label: "Stay at Atatū →", href: "/location/atatu" },
       { label: "Stay at Korimako →", href: "/location/korimako" },
     ],
-  }),
-  nv({
+  },
+  {
+    image: "/assets/img/experiences/wine-dine/stoaker-room-cromwell-wine-tasting-platter-central-otago-new-zealand.jpg",
+    alt: "Wine tasting platter at The Stoaker Room in Cromwell, Central Otago, New Zealand",
     title: "The Stoaker Room Cromwell",
     placeHref: "https://www.thestoakerroom.co.nz/",
     description:
@@ -85,14 +89,16 @@ export const wineDineRestaurantSlides: HikingSlide[] = [
       { label: "Stay at Haurapa →", href: "/location/haurapa" },
       { label: "Stay at Tāima →", href: "/location/taima" },
     ],
-  }),
-  nv({
+  },
+  {
+    image: "/assets/img/experiences/wine-dine/the-hunting-lodge-wine-pouring-tasting-experience-auckland-new-zealand.jpg",
+    alt: "Wine pouring during a tasting experience at The Hunting Lodge vineyard, Auckland, New Zealand",
     title: "The Hunting Lodge",
     placeHref: "https://www.thehuntinglodge.com/",
     description:
       "A complete vineyard experience combining wine tasting, seasonal dining and open green spaces. Ideal for a long, relaxed afternoon surrounded by vines.",
     ctas: [{ label: "Stay at Rewarewa →", href: "/location/rewarewa" }],
-  }),
+  },
 ];
 
 export const wineDineViewSlides: HikingSlide[] = [
