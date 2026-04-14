@@ -102,27 +102,33 @@ export const wineDineRestaurantSlides: HikingSlide[] = [
 ];
 
 export const wineDineViewSlides: HikingSlide[] = [
-  nv({
-    title: "Stratosfare Restaurant & Bar",
-    placeHref: "https://rotorua.skyline.co.nz/things-to-do/stratosfare-restaurant-rotorua/",
-    description:
-      "A relaxed dining experience with panoramic views over Rotorua. Ideal for enjoying local flavours while taking in the wider landscape from above.",
-    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
-  }),
-  nv({
-    title: "Lakeland Queen Cruise",
-    placeHref: "https://lakelandqueen.com/",
-    description:
-      "A unique on-water dining experience across Lake Rotorua, combining good food with geothermal scenery and ever-changing views.",
-    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
-  }),
-  nv({
+  {
+    image: "/assets/img/experiences/wine-dine/flatwhite-beachfront-cafe-interior-ocean-view-dining-new-zealand.jpg",
+    alt: "Flatwhite Café beachfront interior with ocean views for relaxed dining in New Zealand",
     title: "Flatwhite Café",
     placeHref: "https://www.flatwhite.co.nz/",
     description:
       "A beachfront restaurant offering refined yet relaxed dining with uninterrupted ocean views. A perfect stop for lunch or dinner by the sea.",
     ctas: [{ label: "Stay at Ruru →", href: "/location/ruru" }],
-  }),
+  },
+  {
+    image: "/assets/img/experiences/wine-dine/lakeland-queen-rotorua-lake-dinner-cruise-new-zealand.jpg",
+    alt: "Lakeland Queen dinner cruise on Lake Rotorua with geothermal shoreline scenery, New Zealand",
+    title: "Lakeland Queen Cruise",
+    placeHref: "https://lakelandqueen.com/",
+    description:
+      "A unique on-water dining experience across Lake Rotorua, combining good food with geothermal scenery and ever-changing views.",
+    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
+  },
+  {
+    image: "/assets/img/experiences/wine-dine/stratosfare-restaurant-rotorua-panoramic-view-dining-new-zealand.jpg",
+    alt: "Stratosfare Restaurant & Bar in Rotorua with panoramic views over the city and landscape, New Zealand",
+    title: "Stratosfare Restaurant & Bar",
+    placeHref: "https://rotorua.skyline.co.nz/things-to-do/stratosfare-restaurant-rotorua/",
+    description:
+      "A relaxed dining experience with panoramic views over Rotorua. Ideal for enjoying local flavours while taking in the wider landscape from above.",
+    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
+  },
 ];
 
 export const wineDineLocalSlides: HikingSlide[] = [
