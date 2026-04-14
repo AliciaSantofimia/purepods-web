@@ -4,24 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wine &amp; Dine | PurePods — Food and Wine Experiences in New Zealand</title>
-  <meta name="description" content="Explore food and wine inspiration across New Zealand with PurePods. Draft experience blocks include producer and dining placeholders, practical external references, and booking pathways to nearby glass eco-cabin stays." />
+  <meta name="description" content="Curated wine and dining experiences across New Zealand — vineyard tastings, winery restaurants, views and local favourites — each paired with a nearby PurePods glass eco-cabin stay." />
   <link rel="canonical" href="https://purepods.com/experiences/wine-dine/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="PurePods" />
   <meta property="og:title" content="Wine &amp; Dine | PurePods — Food and Wine Experiences in New Zealand" />
-  <meta property="og:description" content="Food and wine-focused experience drafts across New Zealand, with clear external reference links and PurePods booking pathways." />
+  <meta property="og:description" content="Winery tastings, vineyard restaurants and dining across New Zealand, with official links and PurePods booking pathways to nearby stays." />
   <meta property="og:url" content="https://purepods.com/experiences/wine-dine/" />
   <meta property="og:image" content="https://purepods.com/assets/img/experiences/wine-dine/og-wine-dine.jpg" />
   <meta property="og:locale" content="en_NZ" />
-  <meta property="og:image:alt" content="Vineyard and table setting placeholder for a New Zealand food and wine experience" />
+  <meta property="og:image:alt" content="Wine and dining experiences across New Zealand with PurePods stays" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Wine &amp; Dine | PurePods — Food and Wine Experiences in New Zealand" />
-  <meta name="twitter:description" content="Draft food and wine experience structure with practical links and nearby PurePods booking pathways." />
+  <meta name="twitter:description" content="Curated winery and dining experiences across New Zealand with official links and nearby PurePods stays." />
   <meta name="twitter:image" content="https://purepods.com/assets/img/experiences/wine-dine/og-wine-dine.jpg" />
   <meta name="twitter:site" content="@PUREPODS" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Serif+Display:wght@400;500;600&amp;display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="../../assets/img/experiences/placeholders/wine-dine-hero-placeholder.jpg" />
   <style>
     :root { --bg:#F7F6F3; --ink:#5C5F3E; --muted:rgba(92,95,62,.72); --card:rgba(255,255,255,.85); --stroke:rgba(92,95,62,.18); --brand-green:#5C5F3E; --brand-beige:#C2B59E; --radius:24px; --shadow:0 18px 40px rgba(92,95,62,.16); --shadow-soft:0 10px 24px rgba(92,95,62,.10); --max:1120px; }
     * { box-sizing:border-box; }
@@ -42,28 +41,186 @@
     .hero img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
     .hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(17,18,23,.06),rgba(17,18,23,.46)); z-index:1; }
     .heroInner { position:relative; z-index:2; width:100%; max-width:980px; margin:0 auto; padding:56px 14px 44px; color:#fff; }
-    .hero h1 { margin:0; font-family:"Noto Serif Display",Georgia,serif; font-weight:500; font-size:clamp(32px,5vw,42px); letter-spacing:-.02em; line-height:1.06; max-width:16ch; text-shadow:0 2px 18px rgba(0,0,0,.35); }
+    .hero h1 { margin:0; font-family:"Noto Serif Display",Georgia,serif; font-weight:500; font-size:clamp(32px,5vw,42px); letter-spacing:-.02em; line-height:1.06; max-width:14ch; text-shadow:0 2px 18px rgba(0,0,0,.35); }
     .impact-summary { margin:12px 0 0; max-width:min(62ch, calc(100% - 8px)); line-height:1.55; font-size:15px; color:rgba(255,255,255,.92); text-shadow:0 2px 14px rgba(0,0,0,.25); }
-    .btnGhost { display:inline-block; margin-top:16px; font-size:13px; font-weight:800; border:1px solid rgba(255,255,255,.22); background:rgba(255,255,255,.12); color:#fff; padding:10px 14px; border-radius:999px; }
+    .btnGhost { display:inline-block; margin-top:16px; font-size:13px; font-weight:800; border:1px solid rgba(255,255,255,.22); background:rgba(255,255,255,.12); color:#fff; padding:10px 14px; border-radius:999px; backdrop-filter:blur(10px); }
+    .btnGhost:hover { background:rgba(255,255,255,.18); }
     section { padding:56px 0; }
     .surface { padding:22px; border-radius:26px; border:1px solid var(--stroke); background:var(--card); box-shadow:var(--shadow-soft); }
     .lead { margin:0 auto; max-width:70ch; color:var(--muted); line-height:1.65; font-size:16px; text-align:center; }
-    .chapter { margin-top:56px; padding-top:48px; border-top:1px solid var(--stroke); }
-    .chapter:first-of-type { margin-top:0; padding-top:0; border-top:0; }
+    #about .lead {
+      max-width:none;
+      width:100%;
+      margin:0;
+      text-align:left;
+    }
+    .journey-chapter { margin-top:56px; padding-top:48px; border-top:1px solid var(--stroke); }
+    .journey-chapter:first-of-type { margin-top:0; padding-top:0; border-top:0; }
     .moment { display:grid; grid-template-columns:1.05fr .95fr; gap:28px; align-items:center; }
-    .media { border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--stroke); aspect-ratio:4/3; background:var(--brand-beige); }
-    .media img { width:100%; height:100%; object-fit:cover; }
-    .copy h2 { margin:0 0 10px; font-size:clamp(22px,2.4vw,28px); font-weight:600; letter-spacing:-.02em; color:var(--brand-green); }
-    .copy p { margin:0 0 16px; color:var(--muted); font-size:15px; line-height:1.6; }
-    .links-row { display:flex; flex-direction:column; align-items:flex-start; gap:10px; }
-    .external-link { font-weight:600; border-bottom:1px solid transparent; }
-    .external-link:hover { border-bottom-color:var(--brand-beige); }
+    .moment .media { border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--stroke); aspect-ratio:4/3; }
+    .moment .copy { padding:8px 4px; }
+    #blocks .journey-title {
+      margin:0 0 10px;
+      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-size:clamp(22px,2.4vw,28px);
+      font-weight:600;
+      letter-spacing:-.02em;
+      color:var(--brand-green);
+    }
+    #blocks .journey-intro { margin:0 0 18px; color:var(--muted); font-size:15px; line-height:1.55; }
     .journey-pod { font-weight:500; color:var(--brand-green); }
     .journey-pod .journey-pod-name { font-weight:700; color:var(--ink); }
+
+    /* Vineyard — carousel + panel (#wine-vineyard, matches journey #forest-walks) */
+    #wine-vineyard .forest-carousel { position:relative; display:block; }
+    #wine-vineyard .forest-carousel:focus-visible { outline-offset:4px; }
+    #wine-vineyard .forest-carousel__viewport {
+      position:relative; width:100%; aspect-ratio:4/3; border-radius:inherit; overflow:hidden; background:var(--brand-beige);
+    }
+    #wine-vineyard .forest-carousel__slides { position:absolute; inset:0; margin:0; }
+    #wine-vineyard .forest-carousel__slide {
+      position:absolute; inset:0; margin:0; opacity:0; visibility:hidden;
+      transition:opacity .5s ease, visibility .5s ease; pointer-events:none;
+    }
+    #wine-vineyard .forest-carousel__slide.is-active { opacity:1; visibility:visible; pointer-events:auto; z-index:1; }
+    #wine-vineyard .forest-carousel__slide img { width:100%; height:100%; object-fit:cover; display:block; }
+    #wine-vineyard .forest-carousel__btn {
+      position:absolute; top:50%; transform:translateY(-50%); z-index:3; width:40px; height:40px; border-radius:999px;
+      border:1px solid var(--stroke); background:var(--card); color:var(--ink); cursor:pointer; display:grid; place-items:center;
+      padding:0; box-shadow:var(--shadow-soft); transition:background .2s ease, border-color .2s ease, opacity .2s ease;
+    }
+    #wine-vineyard .forest-carousel__btn:hover { background:#fff; border-color:rgba(92,95,62,.28); }
+    #wine-vineyard .forest-carousel__btn--prev { left:12px; }
+    #wine-vineyard .forest-carousel__btn--next { right:12px; }
+    #wine-vineyard .forest-carousel__btn svg { width:18px; height:18px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; }
+    #wine-vineyard .forest-carousel__dots {
+      position:absolute; left:50%; bottom:14px; transform:translateX(-50%); z-index:3; display:flex; gap:8px; align-items:center;
+      padding:6px 10px; border-radius:999px; background:rgba(247,246,243,.26); backdrop-filter:blur(8px); border:1px solid rgba(92,95,62,.14);
+    }
+    #wine-vineyard .forest-carousel__dot {
+      width:8px; height:8px; padding:0; border:0; border-radius:50%; background:rgba(92,95,62,.18); cursor:pointer;
+      transition:background .2s ease, transform .2s ease;
+    }
+    #wine-vineyard .forest-carousel__dot:hover { background:rgba(92,95,62,.34); }
+    #wine-vineyard .forest-carousel__dot.is-active {
+      background:var(--brand-green); box-shadow:0 0 0 1px rgba(255,255,255,.55); transform:scale(1.15);
+    }
+    #wine-vineyard .forest-walks-panel { margin-top:4px; }
+    #wine-vineyard .forest-place-link {
+      display:inline-block; margin:0 0 12px; font-size:clamp(17px,1.9vw,19px); font-weight:600; letter-spacing:-.02em;
+      color:var(--ink); text-decoration:none; border-bottom:1px solid transparent;
+      transition:color .2s ease, border-color .2s ease, opacity .2s ease;
+    }
+    #wine-vineyard .forest-place-link:hover { border-bottom-color:var(--brand-beige); opacity:.92; }
+    #wine-vineyard .forest-desc { margin:0 0 18px; font-size:15px; line-height:1.6; color:var(--muted); }
+    #wine-vineyard .forest-cta.journey-pod { display:inline-block; margin-left:0; margin-top:2px; }
+
+    /* Restaurants, view, local — hiking carousel (matches journey #hiking) */
+    #wine-restaurants .hiking-carousel,
+    #wine-view .hiking-carousel,
+    #wine-local .hiking-carousel { position:relative; display:block; }
+    #wine-restaurants .hiking-carousel:focus-visible,
+    #wine-view .hiking-carousel:focus-visible,
+    #wine-local .hiking-carousel:focus-visible { outline-offset:4px; }
+    #wine-restaurants .hiking-carousel__viewport,
+    #wine-view .hiking-carousel__viewport,
+    #wine-local .hiking-carousel__viewport {
+      position:relative; width:100%; aspect-ratio:4/3; border-radius:inherit; overflow:hidden; background:var(--brand-beige);
+    }
+    #wine-restaurants .hiking-carousel__slides,
+    #wine-view .hiking-carousel__slides,
+    #wine-local .hiking-carousel__slides { position:absolute; inset:0; margin:0; }
+    #wine-restaurants .hiking-carousel__slide,
+    #wine-view .hiking-carousel__slide,
+    #wine-local .hiking-carousel__slide {
+      position:absolute; inset:0; margin:0; opacity:0; visibility:hidden;
+      transition:opacity .5s ease, visibility .5s ease; pointer-events:none;
+    }
+    #wine-restaurants .hiking-carousel__slide.is-active,
+    #wine-view .hiking-carousel__slide.is-active,
+    #wine-local .hiking-carousel__slide.is-active { opacity:1; visibility:visible; pointer-events:auto; z-index:1; }
+    #wine-restaurants .hiking-carousel__slide img,
+    #wine-view .hiking-carousel__slide img,
+    #wine-local .hiking-carousel__slide img { width:100%; height:100%; object-fit:cover; display:block; }
+    #wine-restaurants .hiking-carousel__slide--no-visual .hiking-carousel__no-img,
+    #wine-view .hiking-carousel__slide--no-visual .hiking-carousel__no-img,
+    #wine-local .hiking-carousel__slide--no-visual .hiking-carousel__no-img {
+      width:100%; height:100%;
+      background:linear-gradient(145deg, rgba(92,95,62,.1), rgba(194,181,158,.32));
+    }
+    #wine-restaurants .hiking-carousel__btn,
+    #wine-view .hiking-carousel__btn,
+    #wine-local .hiking-carousel__btn {
+      position:absolute; top:50%; transform:translateY(-50%); z-index:3; width:40px; height:40px; border-radius:999px;
+      border:1px solid var(--stroke); background:var(--card); color:var(--ink); cursor:pointer; display:grid; place-items:center;
+      padding:0; box-shadow:var(--shadow-soft); transition:background .2s ease, border-color .2s ease, opacity .2s ease;
+    }
+    #wine-restaurants .hiking-carousel__btn:hover,
+    #wine-view .hiking-carousel__btn:hover,
+    #wine-local .hiking-carousel__btn:hover { background:#fff; border-color:rgba(92,95,62,.28); }
+    #wine-restaurants .hiking-carousel__btn--prev,
+    #wine-view .hiking-carousel__btn--prev,
+    #wine-local .hiking-carousel__btn--prev { left:12px; }
+    #wine-restaurants .hiking-carousel__btn--next,
+    #wine-view .hiking-carousel__btn--next,
+    #wine-local .hiking-carousel__btn--next { right:12px; }
+    #wine-restaurants .hiking-carousel__btn svg,
+    #wine-view .hiking-carousel__btn svg,
+    #wine-local .hiking-carousel__btn svg { width:18px; height:18px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; }
+    #wine-restaurants .hiking-carousel__dots,
+    #wine-view .hiking-carousel__dots,
+    #wine-local .hiking-carousel__dots {
+      position:absolute; left:50%; bottom:14px; transform:translateX(-50%); z-index:3; display:flex; gap:8px; align-items:center;
+      padding:6px 10px; border-radius:999px; background:rgba(247,246,243,.26); backdrop-filter:blur(8px); border:1px solid rgba(92,95,62,.14);
+    }
+    #wine-restaurants .hiking-carousel__dot,
+    #wine-view .hiking-carousel__dot,
+    #wine-local .hiking-carousel__dot {
+      width:8px; height:8px; padding:0; border:0; border-radius:50%; background:rgba(92,95,62,.18); cursor:pointer;
+      transition:background .2s ease, transform .2s ease;
+    }
+    #wine-restaurants .hiking-carousel__dot:hover,
+    #wine-view .hiking-carousel__dot:hover,
+    #wine-local .hiking-carousel__dot:hover { background:rgba(92,95,62,.34); }
+    #wine-restaurants .hiking-carousel__dot.is-active,
+    #wine-view .hiking-carousel__dot.is-active,
+    #wine-local .hiking-carousel__dot.is-active {
+      background:var(--brand-green); box-shadow:0 0 0 1px rgba(255,255,255,.55); transform:scale(1.15);
+    }
+    #wine-restaurants .hiking-place-link,
+    #wine-view .hiking-place-link,
+    #wine-local .hiking-place-link {
+      display:inline-block; margin:0 0 12px; font-size:clamp(17px,1.9vw,20px); font-weight:600; letter-spacing:-.02em;
+      color:var(--ink); text-decoration:none; border-bottom:1px solid transparent;
+      transition:color .2s ease, border-color .2s ease, opacity .2s ease;
+    }
+    #wine-restaurants .hiking-place-link:hover,
+    #wine-view .hiking-place-link:hover,
+    #wine-local .hiking-place-link:hover { border-bottom-color:var(--brand-beige); opacity:.92; }
+    #wine-restaurants .hiking-desc,
+    #wine-view .hiking-desc,
+    #wine-local .hiking-desc { margin:0 0 18px; font-size:15px; line-height:1.6; color:var(--muted); }
+    #wine-vineyard .hiking-ctas,
+    #wine-restaurants .hiking-ctas,
+    #wine-view .hiking-ctas,
+    #wine-local .hiking-ctas { display:flex; flex-direction:column; align-items:flex-start; gap:10px; }
+    #wine-vineyard .hiking-ctas .journey-pod,
+    #wine-restaurants .hiking-ctas .journey-pod,
+    #wine-view .hiking-ctas .journey-pod,
+    #wine-local .hiking-ctas .journey-pod { margin-left:0; white-space:normal; }
+
     .pod-bridge { background:linear-gradient(135deg, rgba(92,95,62,.08), rgba(194,181,158,.14)); border-top:1px solid var(--stroke); border-bottom:1px solid var(--stroke); }
-    .pod-bridge h2 { margin:0 0 14px; font-size:clamp(22px,2.3vw,28px); font-weight:600; letter-spacing:-.02em; text-align:center; }
-    .pod-bridge p { margin:0; color:var(--muted); font-size:16px; line-height:1.65; text-align:center; max-width:70ch; margin-inline:auto; }
-    .pod-bridge p + p { margin-top:12px; }
+    .pod-bridge__title {
+      margin:0 0 16px;
+      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-size:clamp(22px,2.4vw,28px);
+      font-weight:600;
+      letter-spacing:-.02em;
+      color:var(--ink);
+      text-align:left;
+    }
+    .pod-bridge .inner { max-width:none; width:100%; margin:0; text-align:left; }
+    .pod-bridge p { margin:0; font-size:16px; line-height:1.7; color:var(--muted); }
     .faq { border-top:1px solid var(--stroke); }
     .faq h2 { margin:0 0 22px; text-align:center; font-size:clamp(22px,2.2vw,26px); font-weight:600; letter-spacing:-.02em; }
     .faq ul { list-style:none; margin:0; padding:0; }
@@ -79,6 +236,7 @@
     footer .foot { display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
     footer .foot-brand { display:flex; align-items:center; gap:10px; }
     footer img { width:28px; height:28px; border-radius:999px; opacity:.9; }
+    .foot { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; }
     @media (max-width:900px) { .moment { grid-template-columns:1fr; } }
   </style>
   <script type="application/ld+json">
@@ -89,15 +247,15 @@
         "@type": "WebPage",
         "@id": "https://purepods.com/experiences/wine-dine/#webpage",
         "name": "Wine & Dine | PurePods",
-        "description": "Exploratory food and wine experiences in New Zealand, paired with PurePods glass eco-cabin stays.",
+        "description": "Wine and dining experiences in New Zealand, paired with PurePods glass eco-cabin stays.",
         "url": "https://purepods.com/experiences/wine-dine/",
         "inLanguage": "en-NZ"
       },
       {
         "@type": "TouristAttraction",
         "@id": "https://purepods.com/experiences/wine-dine/#experience",
-        "name": "Wine & Dine — Exploratory Experience",
-        "description": "Draft exploratory structure for food, wine and dining-focused experiences linked to nearby PurePods booking pathways.",
+        "name": "Wine & Dine — PurePods experiences",
+        "description": "Curated winery, restaurant and dining experiences across New Zealand with links to official visitor resources and nearby PurePods booking.",
         "url": "https://purepods.com/experiences/wine-dine/"
       },
       {
@@ -107,17 +265,17 @@
           {
             "@type": "Question",
             "name": "What does this Wine & Dine page include?",
-            "acceptedAnswer": { "@type": "Answer", "text": "This draft page groups food and wine-oriented experience blocks with a visual placeholder, a practical description, an external reference link and a PurePods booking pathway." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Editorial highlights across vineyard dining and tastings, winery restaurants, dining with a view, and relaxed local favourites. Each carousel slide includes an official experience link plus direct PurePods booking links for nearby stays where available." }
           },
           {
             "@type": "Question",
-            "name": "Are the producers and dining venues final?",
-            "acceptedAnswer": { "@type": "Answer", "text": "No. The current version uses clearly replaceable placeholders so final producer names, regions and pairings can be added once confirmed." }
+            "name": "How should I plan my visit?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Always confirm opening hours, reservations and seasonal menus with each venue before you travel." }
           },
           {
             "@type": "Question",
-            "name": "How do I proceed to booking from this page?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Each block includes a booking pathway, and the final call to action leads to PurePods booking to review availability and choose a suitable stay." }
+            "name": "How do I continue to booking from this page?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Each slide includes booking pathways to suggested PurePods sites where available, and the final call to action opens PurePods booking to check availability and complete your stay." }
           }
         ]
       }
@@ -142,10 +300,10 @@
   </nav>
 
   <header class="hero" id="top">
-    <img src="../../assets/img/experiences/placeholders/wine-dine-hero-placeholder.jpg" alt="Vineyard and table landscape placeholder for Wine and Dine hero image" width="1920" height="1080" fetchpriority="high" />
+    <img src="" alt="" width="1920" height="1080" fetchpriority="high" />
     <div class="heroInner">
-      <h1>Wine &amp; Dine</h1>
-      <p class="impact-summary">Wine &amp; Dine brings together draft food and wine experience blocks for New Zealand planning with PurePods. The page is structured for producer, tasting and dining examples, each paired with a practical external reference link and a direct booking pathway to a nearby glass eco-cabin stay.</p>
+      <h1>Wine &amp; Dine in New Zealand</h1>
+      <p class="impact-summary">From world-class wineries to relaxed local favourites, discover New Zealand through its flavours. These curated experiences bring together landscape, craftsmanship and atmosphere — places worth slowing down for.</p>
       <a class="btnGhost" href="#about">Read on</a>
     </div>
   </header>
@@ -153,60 +311,216 @@
   <main id="main">
     <section id="about" aria-labelledby="about-heading">
       <div class="wrap">
-        <div class="surface">
-          <h2 id="about-heading" style="position:absolute;left:-9999px;">About this page</h2>
-          <p class="lead">This draft page follows the same Experience architecture as the page family: hero, orientation text, structured content blocks, pod bridge, FAQ and booking CTA. The block copy is intentionally replaceable so final producer, dining and regional details can be inserted after verification. Explore all themes in <a href="experiences.html">Experiences</a>.</p>
-        </div>
+        <h2 id="about-heading" style="position:absolute;left:-9999px;">About this page</h2>
+        <p class="lead">Below you will find a calm, editorial selection of wine and dining stops — from vineyard tastings to local favourites — each with a direct link to the venue and suggested nearby PurePods booking where the regions align. Browse the full collection on <a href="experiences.html">Experiences</a>.</p>
       </div>
     </section>
 
     <section class="wrap" id="blocks" aria-label="Wine and dine content blocks">
-      <article class="chapter">
+
+      <article class="journey-chapter" id="wine-vineyard">
         <div class="moment">
-          <div class="media"><img src="../../assets/img/experiences/placeholders/wine-dine-block-01.jpg" alt="Placeholder image for a vineyard tasting experience in New Zealand" width="800" height="600" loading="lazy" /></div>
+          <div
+            class="media forest-carousel"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Vineyard dining and wine tastings"
+            tabindex="0"
+            data-wine-vineyard-carousel
+          >
+            <div class="forest-carousel__viewport">
+              <div class="forest-carousel__slides">
+                <figure class="forest-carousel__slide is-active" data-wine-vineyard-slide="0">
+                  <img src="../../assets/img/experiences/wine-dine/greystone-wines-restaurant-waipara-valley-wine-tasting-new-zealand.jpg" alt="Friends enjoying wine tasting at Greystone Wines restaurant in Waipara Valley, New Zealand" width="800" height="600" loading="eager" fetchpriority="high" />
+                </figure>
+                <figure class="forest-carousel__slide" data-wine-vineyard-slide="1">
+                  <img src="../../assets/img/experiences/wine-dine/burn-cottage-winery-central-otago-vineyard-landscape-new-zealand.jpg" alt="Burn Cottage Winery vineyard landscape in Central Otago, New Zealand" width="800" height="600" loading="lazy" />
+                </figure>
+                <figure class="forest-carousel__slide" data-wine-vineyard-slide="2">
+                  <img src="../../assets/img/experiences/wine-dine/prophets-rock-winery-central-otago-wine-tasting-experience-new-zealand.jpg" alt="Wine tasting experience at Prophet's Rock winery in Central Otago, New Zealand" width="800" height="600" loading="lazy" />
+                </figure>
+                <figure class="forest-carousel__slide" data-wine-vineyard-slide="3">
+                  <img src="../../assets/img/experiences/wine-dine/te-kano-estate-central-otago-vineyard-architecture-lake-view-new-zealand.jpg" alt="Te Kano Estate modern winery architecture overlooking vineyards and lake in Central Otago, New Zealand" width="800" height="600" loading="lazy" />
+                </figure>
+              </div>
+              <button type="button" class="forest-carousel__btn forest-carousel__btn--prev" aria-label="Previous place" data-wine-vineyard-prev>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+              </button>
+              <button type="button" class="forest-carousel__btn forest-carousel__btn--next" aria-label="Next place" data-wine-vineyard-next>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" /></svg>
+              </button>
+              <div class="forest-carousel__dots" role="tablist" aria-label="Choose a place" data-wine-vineyard-dots></div>
+            </div>
+          </div>
           <div class="copy">
-            <h2>Vineyard tasting placeholder</h2>
-            <p>Use this block for a verified tasting room, vineyard visit or cellar-door style experience. Replace with confirmed details only, including opening context, regional reference and why it fits this Wine &amp; Dine theme.</p>
-            <div class="links-row">
-              <a class="external-link" href="https://example.com/replace-with-vineyard-reference" target="_blank" rel="noopener">View wine reference (placeholder) →</a>
-              <a class="journey-pod" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Stay at <strong class="journey-pod-name">Nearby PurePod (placeholder)</strong> →</a>
+            <h2 class="journey-title">Vineyard dining &amp; wine tastings</h2>
+            <p class="journey-intro">Explore some of New Zealand's most celebrated wine regions, where tastings are shaped by landscape, architecture and a deep sense of place.</p>
+            <div class="forest-walks-panel" aria-live="polite" aria-atomic="true">
+              <a class="forest-place-link" href="https://www.greystonewines.co.nz/?utm_source=google&amp;utm_medium=organic&amp;utm_campaign=gmb-listing" target="_blank" rel="noopener" data-wine-vineyard-place-link>Greystone Wines &amp; Restaurant</a>
+              <p class="forest-desc" data-wine-vineyard-desc>A leading organic winery offering a refined food and wine experience in a stunning vineyard setting. Seasonal menus, locally sourced ingredients and beautifully crafted wines make this one of the region's most complete and memorable stops.</p>
+              <div class="hiking-ctas" data-wine-vineyard-ctas></div>
             </div>
           </div>
         </div>
       </article>
-      <article class="chapter">
+
+      <article class="journey-chapter" id="wine-restaurants">
         <div class="moment">
-          <div class="media"><img src="../../assets/img/experiences/placeholders/wine-dine-block-02.jpg" alt="Placeholder image for a regional producer and local food experience" width="800" height="600" loading="lazy" /></div>
+          <div
+            class="media hiking-carousel"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Winery restaurants and full experiences"
+            tabindex="0"
+            data-wine-restaurants-carousel
+          >
+            <div class="hiking-carousel__viewport">
+              <div class="hiking-carousel__slides">
+                <figure class="hiking-carousel__slide is-active" data-wine-restaurants-slide="0">
+                  <img src="" alt="" width="800" height="600" loading="eager" fetchpriority="high" />
+                </figure>
+                <figure class="hiking-carousel__slide" data-wine-restaurants-slide="1">
+                  <img src="" alt="" width="800" height="600" loading="lazy" />
+                </figure>
+                <figure class="hiking-carousel__slide" data-wine-restaurants-slide="2">
+                  <img src="" alt="" width="800" height="600" loading="lazy" />
+                </figure>
+              </div>
+              <button type="button" class="hiking-carousel__btn hiking-carousel__btn--prev" aria-label="Previous place" data-wine-restaurants-prev>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+              </button>
+              <button type="button" class="hiking-carousel__btn hiking-carousel__btn--next" aria-label="Next place" data-wine-restaurants-next>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" /></svg>
+              </button>
+              <div class="hiking-carousel__dots" role="tablist" aria-label="Choose a place" data-wine-restaurants-dots></div>
+            </div>
+          </div>
           <div class="copy">
-            <h2>Regional producer placeholder</h2>
-            <p>Use this block for a verified producer-led visit such as artisan food, farm gate or craft beverage context. Keep the description practical and factual, with clear replacement fields for final names and confirmed visitor information.</p>
-            <div class="links-row">
-              <a class="external-link" href="https://example.com/replace-with-producer-reference" target="_blank" rel="noopener">View producer reference (placeholder) →</a>
-              <a class="journey-pod" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Stay at <strong class="journey-pod-name">Nearby PurePod (placeholder)</strong> →</a>
+            <h2 class="journey-title">Winery restaurants &amp; full experiences</h2>
+            <p class="journey-intro">More than tastings — these places combine food, wine and setting into a complete, immersive experience.</p>
+            <div aria-live="polite" aria-atomic="true">
+              <a class="hiking-place-link" href="http://blackestate.co.nz/" target="_blank" rel="noopener" data-wine-restaurants-place-link>Black Estate</a>
+              <p class="hiking-desc" data-wine-restaurants-desc>One of the region's standout destinations, pairing organic wines with a seasonal restaurant focused on local produce. Elegant yet relaxed, with beautiful vineyard views.</p>
+              <div class="hiking-ctas" data-wine-restaurants-ctas></div>
             </div>
           </div>
         </div>
       </article>
-      <article class="chapter">
+
+      <article class="journey-chapter" id="wine-view">
         <div class="moment">
-          <div class="media"><img src="../../assets/img/experiences/placeholders/wine-dine-block-03.jpg" alt="Placeholder image for a destination dining and seasonal menu experience" width="800" height="600" loading="lazy" /></div>
+          <div
+            class="media hiking-carousel"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Dining with a view"
+            tabindex="0"
+            data-wine-view-carousel
+          >
+            <div class="hiking-carousel__viewport">
+              <div class="hiking-carousel__slides">
+                <figure class="hiking-carousel__slide is-active" data-wine-view-slide="0">
+                  <img src="" alt="" width="800" height="600" loading="eager" fetchpriority="high" />
+                </figure>
+                <figure class="hiking-carousel__slide" data-wine-view-slide="1">
+                  <img src="" alt="" width="800" height="600" loading="lazy" />
+                </figure>
+                <figure class="hiking-carousel__slide" data-wine-view-slide="2">
+                  <img src="" alt="" width="800" height="600" loading="lazy" />
+                </figure>
+              </div>
+              <button type="button" class="hiking-carousel__btn hiking-carousel__btn--prev" aria-label="Previous place" data-wine-view-prev>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+              </button>
+              <button type="button" class="hiking-carousel__btn hiking-carousel__btn--next" aria-label="Next place" data-wine-view-next>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" /></svg>
+              </button>
+              <div class="hiking-carousel__dots" role="tablist" aria-label="Choose a place" data-wine-view-dots></div>
+            </div>
+          </div>
           <div class="copy">
-            <h2>Destination dining placeholder</h2>
-            <p>Use this block for a verified destination dining or seasonal menu experience. Preserve a calm editorial tone and keep all claims replaceable until final venue details, service model and regional pairing are validated.</p>
-            <div class="links-row">
-              <a class="external-link" href="https://example.com/replace-with-dining-reference" target="_blank" rel="noopener">View dining reference (placeholder) →</a>
-              <a class="journey-pod" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Stay at <strong class="journey-pod-name">Nearby PurePod (placeholder)</strong> →</a>
+            <h2 class="journey-title">Dining with a view</h2>
+            <p class="journey-intro">Memorable meals shaped by their surroundings — from lakeside settings to elevated viewpoints.</p>
+            <div aria-live="polite" aria-atomic="true">
+              <a class="hiking-place-link" href="https://rotorua.skyline.co.nz/things-to-do/stratosfare-restaurant-rotorua/" target="_blank" rel="noopener" data-wine-view-place-link>Stratosfare Restaurant &amp; Bar</a>
+              <p class="hiking-desc" data-wine-view-desc>A relaxed dining experience with panoramic views over Rotorua. Ideal for enjoying local flavours while taking in the wider landscape from above.</p>
+              <div class="hiking-ctas" data-wine-view-ctas></div>
             </div>
           </div>
         </div>
       </article>
+
+      <article class="journey-chapter" id="wine-local">
+        <div class="moment">
+          <div
+            class="media hiking-carousel"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Relaxed local favourites"
+            tabindex="0"
+            data-wine-local-carousel
+          >
+            <div class="hiking-carousel__viewport">
+              <div class="hiking-carousel__slides">
+                <figure class="hiking-carousel__slide is-active" data-wine-local-slide="0">
+                  <img src="" alt="" width="800" height="600" loading="eager" fetchpriority="high" />
+                </figure>
+                <figure class="hiking-carousel__slide" data-wine-local-slide="1">
+                  <img src="" alt="" width="800" height="600" loading="lazy" />
+                </figure>
+                <figure class="hiking-carousel__slide" data-wine-local-slide="2">
+                  <img src="" alt="" width="800" height="600" loading="lazy" />
+                </figure>
+              </div>
+              <button type="button" class="hiking-carousel__btn hiking-carousel__btn--prev" aria-label="Previous place" data-wine-local-prev>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+              </button>
+              <button type="button" class="hiking-carousel__btn hiking-carousel__btn--next" aria-label="Next place" data-wine-local-next>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" /></svg>
+              </button>
+              <div class="hiking-carousel__dots" role="tablist" aria-label="Choose a place" data-wine-local-dots></div>
+            </div>
+          </div>
+          <div class="copy">
+            <h2 class="journey-title">Relaxed local favourites</h2>
+            <p class="journey-intro">Casual, authentic and full of character — these are the places that locals love.</p>
+            <div aria-live="polite" aria-atomic="true">
+              <a class="hiking-place-link" href="https://atticusfinch.co.nz/" target="_blank" rel="noopener" data-wine-local-place-link>Atticus Finch</a>
+              <p class="hiking-desc" data-wine-local-desc>A lively, modern bistro known for its share-style plates and social atmosphere. A great option for a relaxed evening in the heart of Eat Street.</p>
+              <div class="hiking-ctas" data-wine-local-ctas></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </section>
 
-    <section class="pod-bridge" aria-labelledby="pod-bridge-heading">
-      <div class="wrap">
-        <h2 id="pod-bridge-heading">From regional food moments to a slower overnight rhythm</h2>
-        <p>Wine and dining experiences pair naturally with a PurePods stay before or after your outing. PurePods are glass eco-cabins in remote natural settings, creating a quiet base for conversation, rest and time in the landscape.</p>
-        <p>This bridge section is designed to connect verified producer and dining content with a clear booking pathway, without overstatement or unverified claims.</p>
+    <section class="pod-bridge" id="the-pod" aria-labelledby="pod-bridge-heading">
+      <div class="wrap" style="padding:56px 0;">
+        <div class="inner">
+          <div style="border-radius:28px; overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--stroke); aspect-ratio:16/9; margin-bottom:28px;">
+            <img
+              src=""
+              alt=""
+              loading="lazy"
+              width="1280"
+              height="720"
+              style="width:100%; height:100%; display:block; object-fit:cover;"
+            />
+          </div>
+          <h2 id="pod-bridge-heading" class="pod-bridge__title">From wine-country days to quiet immersion in nature</h2>
+          <p>
+            After tastings, long lunches and tables with a view, a PurePods stay offers space to slow down and let the flavours settle.
+
+Set in remote natural landscapes, these glass eco-cabins invite you to reconnect — through stillness, light and the environment beyond the glass.
+
+This rhythm is part of the journey: from savouring a place, to quietly being in it.
+          </p>
+          <p style="margin-top:12px; font-size:15px; color:var(--muted);">
+            Site-specific details and inclusions are confirmed when you book; this page pairs dining visits with a suggested nearby pod.
+          </p>
+          <a href="../explore.html" class="btnGhost" style="margin-top:18px; display:inline-block; border-color:rgba(92,95,62,.18); background:rgba(255,255,255,.42); color:var(--ink);">Discover slow travel</a>
+        </div>
       </div>
     </section>
 
@@ -215,9 +529,9 @@
         <div class="surface">
           <h2 id="faq-heading">Frequently asked questions</h2>
           <ul>
-            <li><h3>What does this Wine &amp; Dine page include?</h3><p>This draft page groups food and wine-oriented experience blocks with a visual placeholder, a practical description, an external reference link and a PurePods booking pathway.</p></li>
-            <li><h3>Are the producers and dining venues final?</h3><p>No. The current version uses clearly replaceable placeholders so final producer names, regions and pairings can be added once confirmed.</p></li>
-            <li><h3>How do I proceed to booking from this page?</h3><p>Each block includes a booking pathway, and the final call to action leads to PurePods booking to review availability and choose a suitable stay.</p></li>
+            <li><h3>What does this Wine &amp; Dine page include?</h3><p>Editorial highlights across vineyard dining and tastings, winery restaurants, dining with a view, and relaxed local favourites. Each carousel slide includes an official experience link plus direct PurePods booking links for nearby stays where we have a pod in the region.</p></li>
+            <li><h3>How should I plan my visit?</h3><p>Always confirm opening hours, reservations and seasonal menus with each venue before you travel.</p></li>
+            <li><h3>How do I continue to booking from this page?</h3><p>Each slide includes booking pathways to suggested PurePods sites where available, and the final call to action opens PurePods booking to check availability and complete your stay.</p></li>
           </ul>
         </div>
       </div>
@@ -228,7 +542,7 @@
         <div class="cta-panel">
           <h2 id="cta-heading" class="eyebrow">Wine &amp; Dine</h2>
           <a class="btn-primary" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener">Find your PurePod</a>
-          <p class="cta-support">Check booking availability, then pair your preferred food and wine experience with a nearby PurePod stay.</p>
+          <p class="cta-support">Check booking availability, then pair your preferred wine or dining experience with a nearby PurePod stay.</p>
         </div>
       </div>
     </section>
@@ -243,5 +557,439 @@
 <div>© PurePods</div>
 </div>
 </footer>
+
+  <script>
+    function journeyFillStayAtCta(anchorEl, label) {
+      if (!anchorEl || !label) return;
+      var prefix = "Stay at ";
+      var suffix = " →";
+      anchorEl.textContent = "";
+      if (
+        label.length >= prefix.length + suffix.length &&
+        label.indexOf(prefix) === 0 &&
+        label.slice(-suffix.length) === suffix
+      ) {
+        var pod = label.slice(prefix.length, label.length - suffix.length);
+        anchorEl.appendChild(document.createTextNode(prefix));
+        var strongEl = document.createElement("strong");
+        strongEl.className = "journey-pod-name";
+        strongEl.textContent = pod;
+        anchorEl.appendChild(strongEl);
+        anchorEl.appendChild(document.createTextNode(suffix));
+      } else {
+        anchorEl.textContent = label;
+      }
+    }
+
+    (function () {
+      var root = document.querySelector("[data-wine-vineyard-carousel]");
+      if (!root) return;
+
+      var slides = root.querySelectorAll("[data-wine-vineyard-slide]");
+      var prevBtn = root.querySelector("[data-wine-vineyard-prev]");
+      var nextBtn = root.querySelector("[data-wine-vineyard-next]");
+      var dotsHost = root.querySelector("[data-wine-vineyard-dots]");
+      var placeLink = document.querySelector("[data-wine-vineyard-place-link]");
+      var descEl = document.querySelector("[data-wine-vineyard-desc]");
+      var ctasHost = document.querySelector("[data-wine-vineyard-ctas]");
+
+      if (!placeLink || !descEl || !ctasHost) return;
+
+      var wbase = "../../assets/img/experiences/wine-dine/";
+
+      var data = [
+        {
+          image: wbase + "greystone-wines-restaurant-waipara-valley-wine-tasting-new-zealand.jpg",
+          alt: "Friends enjoying wine tasting at Greystone Wines restaurant in Waipara Valley, New Zealand",
+          title: "Greystone Wines & Restaurant",
+          placeHref: "https://www.greystonewines.co.nz/?utm_source=google&utm_medium=organic&utm_campaign=gmb-listing",
+          description:
+            "A leading organic winery offering a refined food and wine experience in a stunning vineyard setting. Seasonal menus, locally sourced ingredients and beautifully crafted wines make this one of the region's most complete and memorable stops.",
+          ctas: [
+            { label: "Stay at Atatū, Hurunui →", href: "https://purepods.com/booking/?force_site_id=5" },
+            { label: "Stay at Korimako, Hurunui →", href: "https://purepods.com/booking/?force_site_id=6" },
+          ],
+        },
+        {
+          image: wbase + "burn-cottage-winery-central-otago-vineyard-landscape-new-zealand.jpg",
+          alt: "Burn Cottage Winery vineyard landscape in Central Otago, New Zealand",
+          title: "Burn Cottage Winery",
+          placeHref: "https://burncottage.com/",
+          description:
+            "A boutique biodynamic winery producing exceptional Pinot Noir. The experience is intimate, thoughtful and set within one of New Zealand's most striking wine landscapes.",
+          ctas: [
+            { label: "Stay at Haurapa, Central Otago →", href: "https://purepods.com/booking/?force_site_id=9" },
+            { label: "Stay at Tāima, Central Otago →", href: "https://purepods.com/booking/?force_site_id=13" },
+          ],
+        },
+        {
+          image: wbase + "prophets-rock-winery-central-otago-wine-tasting-experience-new-zealand.jpg",
+          alt: "Wine tasting experience at Prophet's Rock winery in Central Otago, New Zealand",
+          title: "Prophet's Rock",
+          placeHref: "http://www.prophetsrock.co.nz/",
+          description:
+            "An internationally acclaimed winery known for its handcrafted wines and carefully curated tastings. A premium experience for those seeking depth, quality and a true sense of terroir.",
+          ctas: [
+            { label: "Stay at Haurapa, Central Otago →", href: "https://purepods.com/booking/?force_site_id=9" },
+            { label: "Stay at Tāima, Central Otago →", href: "https://purepods.com/booking/?force_site_id=13" },
+          ],
+        },
+        {
+          image: wbase + "te-kano-estate-central-otago-vineyard-architecture-lake-view-new-zealand.jpg",
+          alt: "Te Kano Estate modern winery architecture overlooking vineyards and lake in Central Otago, New Zealand",
+          title: "Te Kano Estate",
+          placeHref: "https://tekanoestate.com/?utm_source=google&utm_medium=gmb",
+          description:
+            "A modern, architecturally striking winery offering refined tastings overlooking the dramatic Central Otago landscape. A seamless blend of design, art and winemaking.",
+          ctas: [
+            { label: "Stay at Haurapa, Central Otago →", href: "https://purepods.com/booking/?force_site_id=9" },
+            { label: "Stay at Tāima, Central Otago →", href: "https://purepods.com/booking/?force_site_id=13" },
+          ],
+        },
+      ];
+
+      var n = data.length;
+      var index = 0;
+      var dots = [];
+
+      function syncSlideImages() {
+        for (var i = 0; i < n; i++) {
+          var fig = slides[i];
+          if (!fig) continue;
+          var img = fig.querySelector("img");
+          if (!img) continue;
+          if (data[i].image) {
+            img.src = data[i].image;
+            img.alt = data[i].alt || "";
+          } else {
+            img.removeAttribute("src");
+            img.alt = "";
+          }
+        }
+      }
+
+      function renderCtas(ctas) {
+        ctasHost.innerHTML = "";
+        for (var c = 0; c < ctas.length; c++) {
+          var item = ctas[c];
+          var a = document.createElement("a");
+          a.className = "journey-pod forest-cta hiking-pod-cta";
+          a.href = item.href;
+          a.target = "_blank";
+          a.rel = "noopener";
+          journeyFillStayAtCta(a, item.label);
+          ctasHost.appendChild(a);
+        }
+      }
+
+      function setActiveDot(i) {
+        for (var d = 0; d < dots.length; d++) {
+          dots[d].classList.toggle("is-active", d === i);
+          dots[d].setAttribute("aria-selected", d === i ? "true" : "false");
+          dots[d].tabIndex = d === i ? 0 : -1;
+        }
+      }
+
+      function goTo(i) {
+        index = ((i % n) + n) % n;
+        for (var s = 0; s < slides.length; s++) {
+          slides[s].classList.toggle("is-active", s === index);
+        }
+        setActiveDot(index);
+        var item = data[index];
+        placeLink.textContent = item.title;
+        placeLink.href = item.placeHref;
+        descEl.textContent = item.description;
+        renderCtas(item.ctas);
+        root.setAttribute("aria-label", "Vineyard dining and wine tastings: " + item.title);
+      }
+
+      function step(delta) {
+        goTo(index + delta);
+      }
+
+      syncSlideImages();
+
+      for (var j = 0; j < n; j++) {
+        (function (ji) {
+          var dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "forest-carousel__dot" + (ji === 0 ? " is-active" : "");
+          dot.setAttribute("role", "tab");
+          dot.setAttribute("aria-label", "Show slide " + (ji + 1) + " of " + n);
+          dot.setAttribute("aria-selected", ji === 0 ? "true" : "false");
+          dot.tabIndex = ji === 0 ? 0 : -1;
+          dot.addEventListener("click", function () {
+            goTo(ji);
+            root.focus();
+          });
+          dotsHost.appendChild(dot);
+          dots.push(dot);
+        })(j);
+      }
+
+      prevBtn.addEventListener("click", function () {
+        step(-1);
+      });
+      nextBtn.addEventListener("click", function () {
+        step(1);
+      });
+
+      root.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          step(-1);
+        } else if (e.key === "ArrowRight") {
+          e.preventDefault();
+          step(1);
+        }
+      });
+
+      goTo(0);
+    })();
+
+    function initCultureHikingCarousel(rootSel, slideSel, prevSel, nextSel, dotsSel, placeSel, descSel, ctasSel, ariaPrefix, data) {
+      var root = document.querySelector(rootSel);
+      if (!root) return;
+
+      var slides = root.querySelectorAll(slideSel);
+      var prevBtn = root.querySelector(prevSel);
+      var nextBtn = root.querySelector(nextSel);
+      var dotsHost = root.querySelector(dotsSel);
+      var placeLink = root.parentElement.querySelector(placeSel);
+      var descEl = root.parentElement.querySelector(descSel);
+      var ctasHost = root.parentElement.querySelector(ctasSel);
+
+      if (!placeLink || !descEl || !ctasHost) return;
+
+      var n = data.length;
+      var index = 0;
+      var dots = [];
+
+      function syncSlideImages() {
+        for (var i = 0; i < n; i++) {
+          var fig = slides[i];
+          if (!fig) continue;
+          var img = fig.querySelector("img");
+          if (!img) continue;
+          if (data[i].image) {
+            img.src = data[i].image;
+            img.alt = data[i].alt || "";
+          } else {
+            img.removeAttribute("src");
+            img.alt = "";
+          }
+        }
+      }
+
+      function renderCtas(ctas) {
+        ctasHost.innerHTML = "";
+        for (var c = 0; c < ctas.length; c++) {
+          var item = ctas[c];
+          var a = document.createElement("a");
+          a.className = "journey-pod hiking-pod-cta";
+          a.href = item.href;
+          a.target = "_blank";
+          a.rel = "noopener";
+          journeyFillStayAtCta(a, item.label);
+          ctasHost.appendChild(a);
+        }
+      }
+
+      function setActiveDot(i) {
+        for (var d = 0; d < dots.length; d++) {
+          dots[d].classList.toggle("is-active", d === i);
+          dots[d].setAttribute("aria-selected", d === i ? "true" : "false");
+          dots[d].tabIndex = d === i ? 0 : -1;
+        }
+      }
+
+      function goTo(i) {
+        index = ((i % n) + n) % n;
+        for (var s = 0; s < slides.length; s++) {
+          slides[s].classList.toggle("is-active", s === index);
+        }
+        setActiveDot(index);
+        var item = data[index];
+        placeLink.textContent = item.title;
+        placeLink.href = item.placeHref;
+        descEl.textContent = item.description;
+        renderCtas(item.ctas);
+        root.setAttribute("aria-label", ariaPrefix + item.title);
+      }
+
+      function step(delta) {
+        goTo(index + delta);
+      }
+
+      syncSlideImages();
+
+      for (var j = 0; j < n; j++) {
+        (function (ji) {
+          var dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "hiking-carousel__dot" + (ji === 0 ? " is-active" : "");
+          dot.setAttribute("role", "tab");
+          dot.setAttribute("aria-label", "Show place " + (ji + 1) + " of " + n);
+          dot.setAttribute("aria-selected", ji === 0 ? "true" : "false");
+          dot.tabIndex = ji === 0 ? 0 : -1;
+          dot.addEventListener("click", function () {
+            goTo(ji);
+            root.focus();
+          });
+          dotsHost.appendChild(dot);
+          dots.push(dot);
+        })(j);
+      }
+
+      prevBtn.addEventListener("click", function () {
+        step(-1);
+      });
+      nextBtn.addEventListener("click", function () {
+        step(1);
+      });
+
+      root.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          step(-1);
+        } else if (e.key === "ArrowRight") {
+          e.preventDefault();
+          step(1);
+        }
+      });
+
+      goTo(0);
+    }
+
+    initCultureHikingCarousel(
+      "[data-wine-restaurants-carousel]",
+      "[data-wine-restaurants-slide]",
+      "[data-wine-restaurants-prev]",
+      "[data-wine-restaurants-next]",
+      "[data-wine-restaurants-dots]",
+      "[data-wine-restaurants-place-link]",
+      "[data-wine-restaurants-desc]",
+      "[data-wine-restaurants-ctas]",
+      "Winery restaurants: ",
+      [
+        {
+          image: null,
+          alt: null,
+          title: "Black Estate",
+          placeHref: "http://blackestate.co.nz/",
+          description:
+            "One of the region's standout destinations, pairing organic wines with a seasonal restaurant focused on local produce. Elegant yet relaxed, with beautiful vineyard views.",
+          ctas: [
+            { label: "Stay at Atatū →", href: "https://purepods.com/booking/?force_site_id=5" },
+            { label: "Stay at Korimako →", href: "https://purepods.com/booking/?force_site_id=6" },
+          ],
+        },
+        {
+          image: null,
+          alt: null,
+          title: "The Stoaker Room Cromwell",
+          placeHref: "https://www.thestoakerroom.co.nz/",
+          description:
+            "A unique dining experience centred around slow cooking in wine barrels. Creative, flavourful and distinctly local — ideal for something different in a relaxed setting.",
+          ctas: [
+            { label: "Stay at Haurapa →", href: "https://purepods.com/booking/?force_site_id=9" },
+            { label: "Stay at Tāima →", href: "https://purepods.com/booking/?force_site_id=13" },
+          ],
+        },
+        {
+          image: null,
+          alt: null,
+          title: "The Hunting Lodge",
+          placeHref: "https://www.thehuntinglodge.com/",
+          description:
+            "A complete vineyard experience combining wine tasting, seasonal dining and open green spaces. Ideal for a long, relaxed afternoon surrounded by vines.",
+          ctas: [{ label: "Stay at Rewarewa →", href: "https://purepods.com/booking/?force_site_id=15" }],
+        },
+      ]
+    );
+
+    initCultureHikingCarousel(
+      "[data-wine-view-carousel]",
+      "[data-wine-view-slide]",
+      "[data-wine-view-prev]",
+      "[data-wine-view-next]",
+      "[data-wine-view-dots]",
+      "[data-wine-view-place-link]",
+      "[data-wine-view-desc]",
+      "[data-wine-view-ctas]",
+      "Dining with a view: ",
+      [
+        {
+          image: null,
+          alt: null,
+          title: "Stratosfare Restaurant & Bar",
+          placeHref: "https://rotorua.skyline.co.nz/things-to-do/stratosfare-restaurant-rotorua/",
+          description:
+            "A relaxed dining experience with panoramic views over Rotorua. Ideal for enjoying local flavours while taking in the wider landscape from above.",
+          ctas: [{ label: "Stay at Pāmu →", href: "https://purepods.com/booking/?force_site_id=8" }],
+        },
+        {
+          image: null,
+          alt: null,
+          title: "Lakeland Queen Cruise",
+          placeHref: "https://lakelandqueen.com/",
+          description:
+            "A unique on-water dining experience across Lake Rotorua, combining good food with geothermal scenery and ever-changing views.",
+          ctas: [{ label: "Stay at Pāmu →", href: "https://purepods.com/booking/?force_site_id=8" }],
+        },
+        {
+          image: null,
+          alt: null,
+          title: "Flatwhite Café",
+          placeHref: "https://www.flatwhite.co.nz/",
+          description:
+            "A beachfront restaurant offering refined yet relaxed dining with uninterrupted ocean views. A perfect stop for lunch or dinner by the sea.",
+          ctas: [{ label: "Stay at Ruru →", href: "https://purepods.com/booking/?force_site_id=7" }],
+        },
+      ]
+    );
+
+    initCultureHikingCarousel(
+      "[data-wine-local-carousel]",
+      "[data-wine-local-slide]",
+      "[data-wine-local-prev]",
+      "[data-wine-local-next]",
+      "[data-wine-local-dots]",
+      "[data-wine-local-place-link]",
+      "[data-wine-local-desc]",
+      "[data-wine-local-ctas]",
+      "Local favourites: ",
+      [
+        {
+          image: null,
+          alt: null,
+          title: "Atticus Finch",
+          placeHref: "https://atticusfinch.co.nz/",
+          description:
+            "A lively, modern bistro known for its share-style plates and social atmosphere. A great option for a relaxed evening in the heart of Eat Street.",
+          ctas: [{ label: "Stay at Pāmu →", href: "https://purepods.com/booking/?force_site_id=8" }],
+        },
+        {
+          image: null,
+          alt: null,
+          title: "Poco Tapas & Wine",
+          placeHref: "https://www.poco.nz/",
+          description:
+            "An intimate tapas and wine bar offering creative small plates and a curated drinks list. Ideal for a slower, more atmospheric dining experience.",
+          ctas: [{ label: "Stay at Pāmu →", href: "https://purepods.com/booking/?force_site_id=8" }],
+        },
+        {
+          image: null,
+          alt: null,
+          title: "Le Café de Paris",
+          placeHref: "https://www.cafedeparis.co.nz/",
+          description:
+            "A charming French-style café known for pastries, coffee and relaxed breakfasts. A simple, well-loved stop to start the day.",
+          ctas: [{ label: "Stay at Pāmu →", href: "https://purepods.com/booking/?force_site_id=8" }],
+        },
+      ]
+    );
+  </script>
 </body>
 </html>
