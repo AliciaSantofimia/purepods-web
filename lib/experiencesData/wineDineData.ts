@@ -16,20 +16,8 @@ const nv = (s: Omit<HikingSlide, "image" | "noVisual"> & { noVisual?: boolean })
 
 export const wineDineVineyardSlides: HikingSlide[] = [
   {
-    image: "/assets/img/greystone/greystone-wine-dinner-experience-waipara.jpg",
-    alt: "Wine and seasonal dining at Greystone in the Waipara Valley, North Canterbury, New Zealand",
-    title: "Greystone Wines & Restaurant",
-    placeHref: "https://www.greystonewines.co.nz/",
-    description:
-      "A leading organic winery offering a refined food and wine experience in a stunning vineyard setting. Seasonal menus, locally sourced ingredients and beautifully crafted wines make this one of the region's most complete and memorable stops.",
-    ctas: [
-      { label: "Stay at Atatū, Hurunui →", href: "/location/atatu" },
-      { label: "Stay at Korimako, Hurunui →", href: "/location/korimako" },
-    ],
-  },
-  {
-    image: "/assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg",
-    alt: "Vineyard rows and tussock hills in Central Otago, New Zealand wine country",
+    image: "/assets/img/experiences/wine-dine/burn-cottage-winery-central-otago-vineyard-landscape-new-zealand.jpg",
+    alt: "Burn Cottage Winery vineyard landscape and rolling Central Otago wine country, New Zealand",
     title: "Burn Cottage Winery",
     placeHref: "https://burncottage.com/",
     description:
@@ -40,24 +28,24 @@ export const wineDineVineyardSlides: HikingSlide[] = [
     ],
   },
   {
-    image: "/assets/img/experiences/romantic/purepods-romantic-getaway-picnic-wine-experience-new-zealand.jpg",
-    alt: "Picnic with wine and local produce overlooking New Zealand nature",
+    image: "/assets/img/experiences/wine-dine/greystone-wines-restaurant-waipara-valley-wine-tasting-new-zealand.jpg",
+    alt: "Greystone Wines restaurant and wine tasting in the Waipara Valley, North Canterbury, New Zealand",
+    title: "Greystone Wines & Restaurant",
+    placeHref: "https://www.greystonewines.co.nz/",
+    description:
+      "A leading organic winery offering a refined food and wine experience in a stunning vineyard setting. Seasonal menus, locally sourced ingredients and beautifully crafted wines make this one of the region's most complete and memorable stops.",
+    ctas: [
+      { label: "Stay at Atatū, Hurunui →", href: "/location/atatu" },
+      { label: "Stay at Korimako, Hurunui →", href: "/location/korimako" },
+    ],
+  },
+  {
+    image: "/assets/img/experiences/wine-dine/prophets-rock-winery-central-otago-wine-tasting-experience-new-zealand.jpg",
+    alt: "Wine tasting experience at Prophet's Rock winery in Central Otago, New Zealand",
     title: "Prophet's Rock",
     placeHref: "https://www.prophetsrock.co.nz/",
     description:
       "An internationally acclaimed winery known for its handcrafted wines and carefully curated tastings. A premium experience for those seeking depth, quality and a true sense of terroir.",
-    ctas: [
-      { label: "Stay at Haurapa, Central Otago →", href: "/location/haurapa" },
-      { label: "Stay at Tāima, Central Otago →", href: "/location/taima" },
-    ],
-  },
-  {
-    image: "/assets/img/haurapa/tekano-estate-vineyard-central-otago-wine-region-new-zealand.jpg",
-    alt: "Te Kano Estate vineyards and lake outlook in Central Otago, New Zealand",
-    title: "Te Kano Estate",
-    placeHref: "https://tekanoestate.com/",
-    description:
-      "A modern, architecturally striking winery offering refined tastings overlooking the dramatic Central Otago landscape. A seamless blend of design, art and winemaking.",
     ctas: [
       { label: "Stay at Haurapa, Central Otago →", href: "/location/haurapa" },
       { label: "Stay at Tāima, Central Otago →", href: "/location/taima" },
