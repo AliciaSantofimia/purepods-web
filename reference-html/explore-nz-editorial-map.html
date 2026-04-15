@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Internal test — Explore PurePods with an editorial map from Natural Earth geography." />
+  <title>Pods — map study (Natural Earth) — PurePods</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#F7F6F3;
+      --ink:#5C5F3E;
+      --muted:rgba(92,95,62,.72);
+      --card:rgba(255,255,255,.85);
+      --stroke:rgba(92,95,62,.18);
+      --brand-green:#5C5F3E;
+      --brand-beige:#C2B59E;
+      --shadow: 0 18px 44px rgba(0,0,0,.08);
+      --max: 1120px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+
+    .nav{
+      position: sticky; top:0; z-index:60;
+      background: rgba(247,246,243,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--stroke);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0; gap:16px;
+    }
+    .brand{ display:flex; align-items:center; gap:10px; }
+    .brand img{ height: 30px; width:auto; display:block; }
+
+    .links{
+      display:flex; gap:18px; align-items:center;
+      font-size:13px; letter-spacing:.06em; text-transform:uppercase;
+    }
+    .links a{ color: var(--muted); }
+    .links a:hover{ color: var(--ink); }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 12px 14px; border-radius:999px;
+      border: 2px solid var(--stroke);
+      background: var(--card);
+      font-weight: 600;
+      white-space:nowrap;
+    }
+    .btn-primary{
+      background: var(--brand-beige);
+      border-color: var(--brand-beige);
+      color: var(--brand-green) !important;
+      font-weight: 800;
+      box-shadow: 0 16px 30px rgba(92,95,60,.2);
+    }
+
+    .hero{ padding: 44px 0 20px; }
+    .hero h1{
+      margin: 0 0 10px;
+      font-family: "Noto Serif Display", Georgia, "Times New Roman", serif;
+      font-weight: 600;
+      font-size: clamp(30px, 4.2vw, 46px);
+      letter-spacing: -0.02em;
+      color: var(--brand-green);
+    }
+    .lead{
+      margin:0;
+      max-width: 72ch;
+      color: var(--muted);
+      font-size: 16px;
+      line-height:1.7;
+    }
+    .hero-meta{
+      margin-top: 14px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      align-items:center;
+    }
+    .proto-pill{
+      display:inline-flex;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(92,95,62,.06);
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .hero-meta a{
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--brand-green);
+      border-bottom: 1px solid rgba(92,95,62,.35);
+      padding-bottom: 1px;
+    }
+    .hero-meta a:hover{ border-bottom-color: var(--brand-green); }
+
+    /* Editorial map — full-width wash, map-forward */
+    .map-band{
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: clamp(28px, 4.5vw, 44px) 0 clamp(36px, 5.5vw, 52px);
+      background:
+        radial-gradient(125% 90% at 72% 18%, rgba(194,181,158,.14), transparent 50%),
+        radial-gradient(95% 65% at 10% 82%, rgba(92,95,62,.07), transparent 42%),
+        linear-gradient(180deg, rgba(255,255,255,.5) 0%, transparent 58%),
+        var(--bg);
+      border-top: 1px solid rgba(92,95,62,.11);
+      border-bottom: 1px solid rgba(92,95,62,.11);
+      box-sizing: border-box;
+    }
+    .map-band-inner{
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 0.76fr) minmax(0, 1.52fr);
+      gap: clamp(24px, 4.5vw, 48px);
+      align-items: center;
+    }
+    .map-copy{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: clamp(14px, 2vw, 20px);
+      padding: clamp(8px, 1.5vw, 16px) 0;
+      max-width: 34ch;
+    }
+    .map-title{
+      margin: 0;
+      font-family: "Noto Serif Display", Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      font-size: clamp(26px, 2.8vw, 36px);
+      letter-spacing: -0.025em;
+      color: var(--brand-green);
+      line-height: 1.18;
+    }
+    .map-body{
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(14px, 1.35vw, 16px);
+      line-height: 1.68;
+      font-weight: 400;
+    }
+    .map-kicker{
+      margin: 0;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: rgba(92,95,62,.58);
+    }
+
+    .map-stage{
+      position: relative;
+      border-radius: clamp(24px, 3vw, 36px);
+      border: 1px solid rgba(92,95,62,.14);
+      background: linear-gradient(165deg, rgba(255,255,255,.78) 0%, rgba(252,251,248,.92) 45%, rgba(247,246,243,.55) 100%);
+      box-shadow:
+        0 28px 56px rgba(0,0,0,.07),
+        0 12px 28px rgba(92,95,62,.06),
+        0 0 0 1px rgba(255,255,255,.65) inset;
+      overflow: hidden;
+      min-height: min(400px, 46vh);
+    }
+    .map-stage::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(78% 58% at 24% 6%, rgba(255,255,255,.72), transparent 52%),
+        radial-gradient(65% 48% at 90% 94%, rgba(194,181,158,.14), transparent 46%);
+      z-index: 0;
+    }
+    .map-svg-host{
+      position: relative;
+      z-index: 1;
+      padding: clamp(10px, 1.8vw, 18px) clamp(6px, 1.6vw, 14px) clamp(12px, 2vw, 20px);
+    }
+    .map-svg-host svg{
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: min(680px, 78vh);
+    }
+
+    .nz-coast{
+      fill: #fdfcf9;
+      stroke: rgba(92,95,62,.32);
+      stroke-width: 1.12;
+      vector-effect: non-scaling-stroke;
+      filter: url(#nzPaperShadow);
+    }
+    .nz-inner-glow{
+      fill: url(#nzInnerWash);
+      stroke: none;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+      opacity: 0.56;
+    }
+
+    .map-pin{ cursor: pointer; outline: none; }
+    .map-pin:focus-visible .map-pin-core{
+      stroke: var(--brand-green);
+      stroke-width: 2;
+    }
+    .map-pin-halo{
+      fill: rgba(247,246,243,.55);
+      stroke: rgba(92,95,62,.28);
+      stroke-width: 1.15;
+      transform-box: fill-box;
+      transform-origin: center;
+      transition: transform .22s ease, stroke .22s ease, opacity .22s ease, fill .22s ease;
+      opacity: 0.52;
+    }
+    .map-pin-core{
+      fill: #b8aa96;
+      stroke: rgba(92,95,62,.52);
+      stroke-width: 1.15;
+      transform-box: fill-box;
+      transform-origin: center;
+      transition: transform .22s ease, filter .22s ease, stroke .22s ease, fill .22s ease;
+    }
+    .map-pin:hover .map-pin-halo,
+    .map-pin:focus-visible .map-pin-halo{
+      opacity: 1;
+      transform: scale(1.1);
+      stroke: rgba(92,95,62,.4);
+      fill: rgba(255,255,255,.35);
+    }
+    .map-pin:hover .map-pin-core,
+    .map-pin:focus-visible .map-pin-core{
+      transform: scale(1.1);
+      fill: var(--brand-beige);
+      stroke: rgba(92,95,62,.58);
+      filter: drop-shadow(0 3px 10px rgba(92,95,62,.28));
+    }
+    .map-pin-name{
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      fill: rgba(92,95,62,.94);
+      opacity: 0.88;
+      transition: opacity .2s ease, fill .2s ease;
+      pointer-events: none;
+      filter: url(#mapPinLabelLegible);
+    }
+    .map-pin:hover .map-pin-name,
+    .map-pin:focus-visible .map-pin-name{
+      opacity: 1;
+      fill: var(--brand-green);
+    }
+
+    .tabs-wrap{
+      position: sticky;
+      top: 58px;
+      z-index:55;
+      background: linear-gradient(to bottom, rgba(247,246,243,.96), rgba(247,246,243,.88));
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--stroke);
+    }
+    .tabs{
+      display:flex;
+      gap:10px;
+      padding: 14px 0;
+      overflow:auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .tab{
+      flex:0 0 auto;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor:pointer;
+      transition: background .12s ease, border-color .12s ease, color .12s ease;
+      user-select:none;
+    }
+    .tab:hover{ color: var(--ink); }
+    .tab.active{
+      background: rgba(92,95,62,.1);
+      border-color: rgba(92,95,62,.28);
+      color: var(--brand-green);
+    }
+
+    .tabs-wrap.map-follow{
+      background: linear-gradient(to bottom, rgba(247,246,243,.98), rgba(247,246,243,.9));
+    }
+
+    .section{ padding: 24px 0 70px; }
+    .section.collection{
+      scroll-margin-top: 100px;
+    }
+    .section.collection::before{
+      content: "";
+      display: block;
+      height: 1px;
+      width: 48px;
+      background: linear-gradient(90deg, var(--brand-beige), transparent);
+      margin: 0 0 20px;
+      opacity: 0.85;
+    }
+    .section-head{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:12px;
+      margin: 0 0 18px;
+    }
+    .count{ color: var(--muted); font-size: 13px; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .pod{
+      border-radius: 24px;
+      border: 1px solid rgba(92,95,62,.14);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height: 320px;
+      transition: transform .15s ease, box-shadow .15s ease;
+      scroll-margin-top: 120px;
+    }
+    .pod:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 22px 55px rgba(0,0,0,.1);
+    }
+
+    .media{
+      height: 220px;
+      background-size: cover;
+      background-position: center 35%;
+      position: relative;
+      overflow: hidden;
+    }
+    .media::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(
+        to bottom,
+        rgba(17,18,23,.02),
+        rgba(247,246,243,.25)
+      );
+      pointer-events:none;
+    }
+
+    .body{
+      padding: 18px 20px 22px;
+      display:flex;
+      flex-direction:column;
+      gap: 8px;
+      flex:1;
+    }
+
+    .pill{
+      display:inline-flex;
+      padding: 6px 10px;
+      border-radius:999px;
+      border: 1px solid var(--stroke);
+      background: rgba(92,95,62,.08);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      width: fit-content;
+    }
+
+    .pod h3{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+      color: var(--brand-green);
+      font-weight: 600;
+    }
+
+    .meta{ color: var(--muted); font-size: 14px; line-height:1.6; }
+
+    .spacer{ flex:1; }
+
+    .cta{
+      display:inline-flex;
+      width: fit-content;
+      padding: 9px 12px;
+      border-radius:999px;
+      border: 2px solid rgba(92,95,62,.35);
+      background: rgba(92,95,62,.08);
+      color: var(--brand-green);
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .hidden{ display:none !important; }
+
+    @media (max-width: 900px){
+      .map-band-inner{
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .map-copy{
+        max-width: 40ch;
+        text-align: center;
+        margin: 0 auto;
+        align-items: center;
+      }
+      .map-stage{ order: -1; }
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+      .tabs-wrap{ top: 56px; }
+    }
+    @media (max-width: 640px){
+      .grid{ grid-template-columns: 1fr; }
+      .brand img{ height: 28px; }
+      .tabs-wrap{ top: 54px; }
+      .pod{ min-height: 280px; }
+      .media{ height: 200px; }
+    }
+
+    footer{
+      padding: 32px 0 40px;
+      border-top: 1px solid var(--stroke);
+      color: var(--muted);
+      font-size:13px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="home/index.html">
+        <img src="../assets/img/purepods-logo-new-zealand.png" alt="PurePods">
+      </a>
+      <div class="links">
+        <a href="explore.html">Pods</a>
+        <a href="experiences/experiences.html">Experiences</a>
+        <a href="my-journey.html">My journey</a>
+        <a class="btn btn-primary" href="https://purepods.com/booking/">Book</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Choose your place</h1>
+      <p class="lead">
+        Not every silence sounds the same. Discover where you want to spend the night.
+      </p>
+      <div class="hero-meta">
+        <span class="proto-pill">Preview layout</span>
+        <a href="explore.html">Standard pods view</a>
+      </div>
+    </section>
+
+    <section class="map-band" aria-labelledby="map-editorial-title">
+      <div class="map-band-inner">
+        <div class="map-copy">
+          <h2 class="map-title" id="map-editorial-title">The country at a glance</h2>
+          <p class="map-body">
+            Sixteen glass cabins, scattered with intention. Linger on the map, then choose the silence that calls you.
+          </p>
+          <p class="map-kicker">A light pause reveals each name — the cards below carry the rest.</p>
+        </div>
+        <div class="map-stage">
+            <div class="map-svg-host">
+            <svg viewBox="0 0 1000 1400" role="img" aria-label="New Zealand landmass with PurePod locations" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <path id="nzLandmass" d="M544.70 740.96L553.19 741.42L561.05 734.49L569.09 728.86L577.56 724.19L590.44 713.49L593.81 711.92L602.17 709.88L605.82 707.36L609.88 706.75L606.23 713.10L601.61 715.22L600.87 717.51L603.46 721.17L599.44 726.31L599.59 732.71L594.85 740.27L602.14 737.18L604.81 732.26L603.43 729.49L606.59 723.99L611.47 721.37L609.52 717.20L609.66 713.90L615.62 715.12L618.60 714.98L620.96 713.68L625.26 713.16L626.15 716.85L631.93 716.38L629.83 721.04L625.40 726.42L624.36 729.69L617.28 735.10L612.53 737.42L619.85 738.02L630.54 730.77L636.89 724.35L636.71 732.36L631.54 739.54L627.12 744.08L622.16 745.48L617.20 749.16L614.79 755.17L615.06 759.17L616.49 762.33L621.54 767.69L615.85 778.01L622.18 776.72L625.65 778.66L630.50 784.61L627.58 791.47L625.53 794.98L613.17 809.44L607.78 816.78L601.47 821.47L601.56 829.18L597.93 834.79L579.52 854.00L576.28 858.17L561.76 888.71L552.48 901.56L547.16 905.93L541.54 909.48L528.06 915.53L522.12 922.49L515.55 928.26L508.60 929.56L508.82 932.12L513.27 933.55L516.74 937.35L514.16 941.60L509.21 944.27L504.06 945.03L501.45 947.75L513.70 945.82L517.16 948.05L517.80 952.72L519.08 956.94L522.05 962.54L532.35 966.09L541.61 967.76L543.43 970.34L544.82 979.27L543.13 983.65L541.05 986.53L537.94 987.56L530.39 988.12L522.83 986.11L517.81 980.71L503.51 982.44L499.69 983.60L497.73 982.63L505.65 976.97L501.49 973.74L498.05 972.53L494.32 974.41L491.82 977.38L491.06 982.27L488.50 985.09L484.54 985.89L478.97 981.84L473.47 976.03L465.37 970.18L466.59 973.80L472.84 982.67L475.96 988.56L468.69 993.25L461.11 996.91L454.72 999.05L448.68 1002.40L441.59 1007.62L437.70 1009.49L427.32 1009.60L421.80 1011.25L419.95 1018.14L416.07 1022.52L406.97 1023.39L410.25 1024.77L412.28 1026.96L406.26 1047.71L404.94 1056.32L403.82 1071.05L400.03 1084.72L389.21 1084.64L390.96 1087.06L399.14 1090.91L397.60 1096.73L388.60 1107.35L384.85 1113.49L381.19 1128.40L375.71 1142.14L367.28 1157.76L367.22 1160.57L370.17 1164.56L373.74 1168.00L373.94 1172.86L372.84 1175.42L368.84 1176.10L365.34 1177.77L346.60 1182.06L340.45 1186.86L335.41 1195.46L329.48 1202.86L309.80 1219.28L298.23 1233.04L295.90 1236.97L292.78 1239.84L267.48 1246.35L249.58 1247.31L239.82 1245.64L230.42 1242.35L225.20 1241.22L215.26 1243.24L210.91 1245.45L203.13 1243.26L196.94 1244.92L195.11 1243.31L192.79 1239.27L194.07 1233.91L192.35 1229.95L188.42 1227.26L185.78 1224.14L182.76 1221.91L174.54 1221.03L161.54 1222.44L157.25 1222.29L148.44 1209.13L145.51 1205.90L135.02 1201.69L131.44 1202.27L125.83 1209.30L122.50 1210.49L102.76 1211.24L82.95 1208.97L75.66 1206.36L74.24 1200.29L89.27 1183.59L84.84 1185.83L75.57 1192.63L69.67 1191.58L75.33 1184.16L75.83 1180.86L74.67 1177.17L66.93 1183.42L58.15 1184.22L57.01 1178.43L57.79 1171.73L59.60 1169.82L83.34 1166.30L91.90 1164.00L95.63 1160.40L81.43 1159.16L80.52 1154.10L82.57 1150.06L94.71 1143.33L85.77 1145.05L75.84 1144.45L76.51 1137.34L79.10 1131.78L89.51 1131.61L86.25 1127.80L85.78 1122.47L88.67 1122.11L99.22 1129.28L106.83 1131.90L103.63 1126.50L104.04 1123.10L106.07 1121.58L112.29 1120.49L110.59 1119.54L104.75 1118.17L97.80 1114.07L97.05 1109.73L97.29 1104.72L104.79 1097.82L109.22 1101.92L114.45 1100.80L110.46 1097.57L108.02 1092.74L109.68 1089.56L125.57 1076.74L129.64 1089.07L130.60 1084.98L130.81 1081.09L128.91 1077.72L129.18 1074.31L131.02 1071.39L137.83 1068.49L146.68 1059.08L153.21 1054.70L158.53 1057.51L162.17 1061.30L161.63 1057.53L159.05 1054.42L158.32 1045.77L170.21 1032.35L183.28 1019.56L195.80 1006.16L202.47 1001.29L216.69 995.76L225.79 998.06L228.11 997.64L241.63 987.98L247.22 985.48L252.32 988.93L255.48 990.17L252.31 981.35L254.79 977.30L266.08 970.16L280.19 962.78L290.94 959.72L298.85 954.73L303.60 954.59L302.88 950.82L303.69 947.21L307.79 947.45L309.05 946.03L305.45 944.08L317.10 936.84L323.43 928.85L326.74 927.20L329.74 924.79L333.46 919.28L337.85 917.46L341.95 918.31L344.91 921.02L343.31 916.52L338.06 913.96L343.69 910.04L349.51 907.34L355.18 909.31L360.76 912.46L355.18 907.63L354.28 904.63L361.03 901.17L364.70 900.11L369.83 906.59L369.10 901.46L370.30 896.90L377.55 889.45L387.07 877.13L390.12 881.41L390.59 886.63L390.14 892.90L392.10 890.73L392.78 885.03L391.32 875.02L403.21 856.51L405.54 854.44L408.17 853.19L412.31 852.70L411.04 849.90L407.81 847.19L411.06 837.78L412.99 827.04L415.75 816.72L420.18 806.61L425.01 789.73L428.69 786.21L438.67 785.00L443.04 782.63L450.31 776.53L458.94 765.50L463.54 756.62L469.61 733.61L473.00 709.55L482.79 691.70L497.15 678.78L509.82 668.95L515.00 666.91L523.75 666.28L532.09 669.00L516.58 671.36L515.00 677.19L514.51 683.10L516.31 688.38L519.09 693.10L526.61 697.53L535.39 700.18L539.33 710.15L540.06 721.97L541.27 732.12L544.70 740.96Z M603.43 701.64L593.60 707.13L593.99 703.32L595.92 695.01L600.39 690.82L602.60 690.53L607.09 687.38L606.61 694.36L603.43 701.64Z M76.75 1155.08L76.36 1159.72L75.49 1162.06L72.95 1162.08L69.12 1161.56L65.39 1159.42L63.00 1160.03L61.01 1159.23L63.58 1153.99L72.29 1151.21L75.66 1153.45L76.75 1155.08Z M93.88 1110.02L97.05 1121.38L90.33 1119.21L87.50 1115.78L92.65 1110.08L93.88 1110.02Z M179.51 1269.22L179.54 1273.00L171.88 1271.64L172.03 1275.88L178.08 1278.11L180.32 1281.15L186.60 1280.27L188.01 1284.82L186.56 1288.88L182.37 1291.87L169.97 1293.37L161.92 1299.28L154.96 1298.38L153.06 1298.92L145.08 1305.25L136.16 1307.21L133.74 1306.74L134.97 1301.09L141.60 1295.72L141.75 1290.57L143.45 1286.44L149.83 1283.54L149.91 1278.17L154.22 1273.42L151.61 1263.11L152.99 1253.85L165.61 1253.35L179.51 1269.22Z M723.08 267.86L723.67 273.02L718.04 271.19L715.84 267.29L709.53 263.26L708.61 262.04L707.91 254.18L711.21 250.40L711.79 248.79L713.25 248.14L715.82 252.28L720.84 258.18L723.08 267.86Z M556.02 140.64L557.14 144.97L561.20 141.89L564.24 137.02L569.13 132.08L568.46 140.05L570.95 141.79L587.20 147.35L590.54 151.98L593.99 153.30L595.95 150.71L598.23 149.30L604.10 152.22L617.34 160.33L618.44 163.12L617.76 167.29L618.43 171.69L620.22 175.20L624.63 176.01L630.49 170.80L633.23 170.15L637.13 177.52L638.59 181.68L637.98 181.55L640.50 185.68L643.85 189.78L649.63 201.88L648.77 206.13L647.07 209.96L652.36 221.14L648.90 221.92L638.43 220.02L638.78 222.26L644.87 230.46L650.02 242.06L654.14 249.06L668.64 270.71L666.46 278.42L666.79 283.50L664.93 287.87L669.89 299.35L666.80 302.92L664.75 314.67L662.50 316.73L662.78 321.03L668.62 322.16L672.14 323.99L675.19 327.48L677.09 323.28L679.65 322.14L686.63 327.75L701.18 333.34L705.18 335.42L707.16 339.92L708.64 350.83L711.49 355.63L717.04 356.56L723.03 355.11L724.92 351.13L723.73 340.45L719.41 323.35L719.39 317.78L720.00 312.21L718.98 306.68L716.82 301.45L714.50 297.44L711.50 294.07L712.55 288.82L717.03 286.44L719.74 290.89L721.97 296.25L733.24 312.11L739.91 310.99L740.53 317.56L745.05 324.23L747.55 332.05L750.85 355.41L755.92 377.40L765.06 386.99L766.12 391.57L760.56 389.20L758.84 390.58L759.43 392.89L764.61 397.09L770.69 399.16L774.51 398.87L778.08 400.40L801.81 414.68L813.22 420.23L842.01 429.32L850.25 430.05L854.80 429.80L863.43 426.64L871.14 420.97L877.80 412.49L883.56 402.81L889.83 398.12L896.94 394.42L900.51 391.00L904.27 388.56L923.59 389.69L930.10 394.57L938.56 398.48L942.99 401.54L941.51 407.74L936.44 416.90L932.54 426.91L929.11 449.68L926.77 472.69L923.26 482.83L916.87 490.63L909.83 496.33L901.84 499.01L898.61 512.07L897.01 527.35L897.46 531.20L900.02 534.24L901.07 538.78L896.89 547.96L894.44 546.63L891.01 538.99L887.88 535.79L878.31 533.41L868.54 532.28L860.06 532.97L851.91 536.25L839.58 542.91L835.76 546.28L832.42 550.55L826.75 560.07L825.40 571.73L825.66 577.83L827.67 582.56L838.19 588.99L827.77 611.47L818.52 634.85L813.27 641.53L807.25 647.68L801.58 661.74L791.65 673.85L784.94 683.09L779.71 692.67L775.14 702.88L765.36 717.29L761.05 726.81L755.39 734.72L744.86 744.82L733.67 753.49L716.02 765.47L711.11 769.42L705.93 772.31L699.50 768.89L698.20 765.15L696.74 757.02L695.34 754.03L687.13 751.55L676.27 755.50L674.46 754.66L674.00 752.79L673.99 740.86L675.84 737.50L673.30 735.64L670.80 736.37L669.93 739.41L671.51 742.04L665.32 745.31L658.89 745.41L656.94 744.12L656.38 741.92L657.94 738.31L660.02 735.13L671.99 720.10L684.41 700.12L695.11 678.73L697.90 667.73L701.84 647.29L698.61 638.78L694.63 630.79L683.85 615.39L669.49 606.68L660.20 605.45L651.39 602.22L643.11 594.85L635.57 586.17L620.62 579.05L604.88 573.46L595.90 565.58L593.76 560.89L592.34 555.45L592.54 550.40L593.66 545.28L595.45 541.33L598.26 538.48L614.95 528.25L632.60 522.56L635.86 522.66L638.97 521.75L643.39 518.27L651.30 510.31L653.59 504.96L655.15 487.94L657.68 471.20L662.26 452.02L669.16 440.12L671.42 432.82L668.60 420.79L671.18 416.38L674.33 413.72L677.89 412.17L671.86 400.88L664.76 383.81L663.28 378.51L664.36 373.28L666.10 368.13L661.68 366.83L659.12 361.90L652.74 345.30L654.49 342.67L658.17 344.45L663.65 356.42L664.54 350.26L668.74 346.47L673.17 344.50L677.95 344.07L667.16 330.73L663.55 331.27L658.78 333.39L653.89 334.70L649.12 333.53L644.64 330.55L642.36 324.94L639.53 314.13L637.76 310.12L623.58 288.01L627.75 287.32L639.20 298.39L641.42 294.85L643.08 289.76L642.53 284.09L639.79 279.81L635.72 277.01L635.65 271.98L638.75 267.37L638.56 264.14L632.00 257.57L629.38 256.86L628.22 259.94L630.09 264.50L628.34 265.00L612.38 253.02L607.45 243.38L603.41 232.79L603.01 237.10L603.62 243.15L609.93 255.27L620.16 268.82L621.93 272.43L620.41 277.10L616.86 278.43L613.72 275.47L609.04 263.88L605.67 258.07L566.51 198.15L571.51 190.24L579.27 183.58L581.07 180.61L582.23 177.01L578.96 176.39L576.03 178.03L572.68 181.09L569.61 184.59L565.74 192.34L563.88 194.13L559.30 188.76L557.55 185.45L557.62 181.47L556.40 178.95L552.99 178.15L547.99 170.25L544.80 166.23L550.10 158.52L550.23 148.35L544.84 137.66L538.40 127.88L526.00 112.02L514.62 95.26L526.95 93.15L539.46 92.79L533.57 102.83L536.21 108.63L540.22 113.53L548.80 128.54L549.54 132.88L553.90 137.26L556.02 140.64Z" />
+                <linearGradient id="nzInnerWash" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="rgba(194,181,158,0.3)"/>
+                  <stop offset="50%" stop-color="rgba(255,255,255,0.12)"/>
+                  <stop offset="100%" stop-color="rgba(92,95,62,0.09)"/>
+                </linearGradient>
+                <filter id="nzPaperShadow" x="-10%" y="-10%" width="120%" height="120%">
+                  <feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="rgb(92,95,62)" flood-opacity="0.13"/>
+                </filter>
+                <filter id="mapPinLabelLegible" x="-45%" y="-45%" width="190%" height="190%">
+                  <feDropShadow in="SourceGraphic" dx="0" dy="0" stdDeviation="1.35" flood-color="#F7F6F3" flood-opacity="0.98" result="pinLabelHalo"/>
+                  <feDropShadow in="SourceGraphic" dx="0" dy="1.25" stdDeviation="0.85" flood-color="rgb(92,95,62)" flood-opacity="0.14" result="pinLabelDrop"/>
+                  <feMerge>
+                    <feMergeNode in="pinLabelHalo"/>
+                    <feMergeNode in="pinLabelDrop"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              <use href="#nzLandmass" class="nz-coast" />
+              <use href="#nzLandmass" class="nz-inner-glow" />
+            <a class="map-pin" href="#pod-makoha" data-island="north" data-href="location/makoha/" aria-label="Mākōha, Kerikeri">
+              <circle class="map-pin-halo" cx="606.09" cy="168.41" r="20"/>
+              <circle class="map-pin-core" cx="606.09" cy="168.41" r="6"/>
+              <text class="map-pin-name" x="606.09" y="196.41" text-anchor="middle">Mākōha</text>
+            </a>
+            <a class="map-pin" href="#pod-rewarewa" data-island="north" data-href="location/rewarewa/" aria-label="Rewarewa, Muriwai Coast">
+              <circle class="map-pin-halo" cx="646.73" cy="320.53" r="20"/>
+              <circle class="map-pin-core" cx="646.73" cy="320.53" r="6"/>
+              <text class="map-pin-name" x="646.73" y="348.53" text-anchor="middle">Rewarewa</text>
+            </a>
+            <a class="map-pin" href="#pod-ruru" data-island="north" data-href="location/ruru/" aria-label="Ruru, Coromandel">
+              <circle class="map-pin-halo" cx="720.5" cy="321.29" r="20"/>
+              <circle class="map-pin-core" cx="720.5" cy="321.29" r="6"/>
+              <text class="map-pin-name" x="720.5" y="349.29" text-anchor="middle">Ruru</text>
+            </a>
+            <a class="map-pin" href="#pod-pamu" data-island="north" data-href="location/pamu/" aria-label="Pāmu, Rotorua">
+              <circle class="map-pin-halo" cx="774.99" cy="443.62" r="20"/>
+              <circle class="map-pin-core" cx="774.99" cy="443.62" r="6"/>
+              <text class="map-pin-name" x="774.99" y="471.62" text-anchor="middle">Pāmu</text>
+            </a>
+            <a class="map-pin" href="#pod-matu" data-island="north" data-href="location/matu/" aria-label="Matū, Waitomo">
+              <circle class="map-pin-halo" cx="690.78" cy="455.36" r="20"/>
+              <circle class="map-pin-core" cx="690.78" cy="455.36" r="6"/>
+              <text class="map-pin-name" x="690.78" y="483.36" text-anchor="middle">Matū</text>
+            </a>
+            <a class="map-pin" href="#pod-kokomea" data-island="north" data-href="location/kokomea/" aria-label="Kokomea, Kapiti Coast">
+              <circle class="map-pin-halo" cx="682.29" cy="706.4" r="20"/>
+              <circle class="map-pin-core" cx="682.29" cy="706.4" r="6"/>
+              <text class="map-pin-name" x="682.29" y="734.4" text-anchor="middle">Kokomea</text>
+            </a>
+            <a class="map-pin" href="#pod-manakau" data-island="south" data-href="location/manakau/" aria-label="Manakau, Kaikōura">
+              <circle class="map-pin-halo" cx="586.19" cy="847.0" r="20"/>
+              <circle class="map-pin-core" cx="586.19" cy="847.0" r="6"/>
+              <text class="map-pin-name" x="586.19" y="875.0" text-anchor="middle">Manakau</text>
+            </a>
+            <a class="map-pin" href="#pod-kahutara" data-island="south" data-href="location/kahutara/" aria-label="Kahutara, Kaikōura">
+              <circle class="map-pin-halo" cx="589.13" cy="851.73" r="20"/>
+              <circle class="map-pin-core" cx="589.13" cy="851.73" r="6"/>
+              <text class="map-pin-name" x="589.13" y="879.73" text-anchor="middle">Kahutara</text>
+            </a>
+            <a class="map-pin" href="#pod-atatu" data-island="south" data-href="location/atatu/" aria-label="Atatū, Hurunui">
+              <circle class="map-pin-halo" cx="518.59" cy="870.66" r="20"/>
+              <circle class="map-pin-core" cx="518.59" cy="870.66" r="6"/>
+              <text class="map-pin-name" x="518.59" y="898.66" text-anchor="middle">Atatū</text>
+            </a>
+            <a class="map-pin" href="#pod-korimako" data-island="south" data-href="location/korimako/" aria-label="Korimako, Hurunui">
+              <circle class="map-pin-halo" cx="527.41" cy="864.03" r="20"/>
+              <circle class="map-pin-core" cx="527.41" cy="864.03" r="6"/>
+              <text class="map-pin-name" x="527.41" y="892.03" text-anchor="middle">Korimako</text>
+            </a>
+            <a class="map-pin" href="#pod-greystone" data-island="south" data-href="location/greystone/" aria-label="Greystone, Waipara">
+              <circle class="map-pin-halo" cx="517.86" cy="917.97" r="20"/>
+              <circle class="map-pin-core" cx="517.86" cy="917.97" r="6"/>
+              <text class="map-pin-name" x="517.86" y="945.97" text-anchor="middle">Greystone</text>
+            </a>
+            <a class="map-pin" href="#pod-pohue" data-island="south" data-href="location/pohue/" aria-label="Pōhue, Banks Peninsula">
+              <circle class="map-pin-halo" cx="533.8" cy="979.75" r="20"/>
+              <circle class="map-pin-core" cx="533.8" cy="979.75" r="6"/>
+              <text class="map-pin-name" x="533.8" y="1007.75" text-anchor="middle">Pōhue</text>
+            </a>
+            <a class="map-pin" href="#pod-haurapa" data-island="south" data-href="location/haurapa/" aria-label="Haurapa, Central Otago">
+              <circle class="map-pin-halo" cx="257.03" cy="1096.61" r="20"/>
+              <circle class="map-pin-core" cx="257.03" cy="1096.61" r="6"/>
+              <text class="map-pin-name" x="257.03" y="1124.61" text-anchor="middle">Haurapa</text>
+            </a>
+            <a class="map-pin" href="#pod-taima" data-island="south" data-href="location/taima/" aria-label="Tāima, Central Otago">
+              <circle class="map-pin-halo" cx="253.35" cy="1123.29" r="20"/>
+              <circle class="map-pin-core" cx="253.35" cy="1123.29" r="6"/>
+              <text class="map-pin-name" x="253.35" y="1151.29" text-anchor="middle">Tāima</text>
+            </a>
+            <a class="map-pin" href="#pod-tokoeka" data-island="stewart" data-href="location/tokoeka/" aria-label="Tokoeka, Stewart Island">
+              <circle class="map-pin-halo" cx="178.27" cy="1272.68" r="20"/>
+              <circle class="map-pin-core" cx="178.27" cy="1272.68" r="6"/>
+              <text class="map-pin-name" x="178.27" y="1300.68" text-anchor="middle">Tokoeka</text>
+            </a>
+            <a class="map-pin" href="#pod-hananui" data-island="stewart" data-href="location/hananui/" aria-label="Hananui, Stewart Island">
+              <circle class="map-pin-halo" cx="183.56" cy="1275.63" r="20"/>
+              <circle class="map-pin-core" cx="183.56" cy="1275.63" r="6"/>
+              <text class="map-pin-name" x="183.56" y="1303.63" text-anchor="middle">Hananui</text>
+            </a>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="tabs-wrap map-follow">
+      <div class="wrap">
+        <div class="tabs" role="tablist" aria-label="Filter by island">
+          <button class="tab active" data-filter="north" role="tab" aria-selected="true">North Island</button>
+          <button class="tab" data-filter="south" role="tab" aria-selected="false">South Island</button>
+          <button class="tab" data-filter="stewart" role="tab" aria-selected="false">Stewart Island</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="section collection" id="pod-collection">
+      <div class="section-head">
+        <div class="count" id="countLabel"></div>
+      </div>
+
+      <div class="grid" id="podsGrid">
+        <a class="pod" id="pod-makoha" data-island="north" href="location/makoha/">
+          <div class="media" style="background-image: url('../assets/img/makoha/makoha-purepod-native-forest-landscape-kerikeri.jpg');"></div>
+          <div class="body">
+            <span class="pill">Kerikeri</span>
+            <h3>Mākōha</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+        <a class="pod" id="pod-rewarewa" data-island="north" href="location/rewarewa/">
+          <div class="media" style="background-image: url('../assets/img/rewarewa/rewarewa-purepod-glass-cabin-exterior-stairs-muriwai-coast.jpg');"></div>
+          <div class="body">
+            <span class="pill">Muriwai Coast</span>
+            <h3>Rewarewa</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+        <a class="pod" id="pod-ruru" data-island="north" href="location/ruru/">
+          <div class="media" style="background-image: url('../assets/img/ruru/ruru-purepod-glass-cabin-aerial-view-coromandel.jpg'); background-position: center 25%;"></div>
+          <div class="body">
+            <span class="pill">Coromandel</span>
+            <h3>Ruru</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+        <a class="pod" id="pod-pamu" data-island="north" href="location/pamu/">
+          <div class="media" style="background-image: url('../assets/img/pamu/pamu-purepod-glass-cabin-exterior-landscape-rotorua.jpg');"></div>
+          <div class="body">
+            <span class="pill">Rotorua</span>
+            <h3>Pāmu</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+        <a class="pod" id="pod-matu" data-island="north" href="location/matu/">
+          <div class="media" style="background-image: url('../assets/img/matu/matu-purepod-glass-cabin-sunset-exterior-waitomo.jpg');"></div>
+          <div class="body">
+            <span class="pill">Waitomo</span>
+            <h3>Matū</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+        <a class="pod" id="pod-kokomea" data-island="north" href="location/kokomea/">
+          <div class="media" style="background-image: url('../assets/img/kokomea/kokomea-purepod-exterior-sunrise-landscape-kapiti-coast.jpg');"></div>
+          <div class="body">
+            <span class="pill">Kapiti Coast</span>
+            <h3>Kokomea</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+        <a class="pod" id="pod-manakau" data-island="south" href="location/manakau/">
+          <div class="media" style="background-image: url('../assets/img/manakau/manakau-purepod-glass-cabin-hills-landscape-kaikoura.jpg');"></div>
+          <div class="body">
+            <span class="pill">Kaikōura</span>
+            <h3>Manakau</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+        <a class="pod" id="pod-kahutara" data-island="south" href="location/kahutara/">
+          <div class="media" style="background-image: url('../assets/img/kahutara/kahutara-purepod-glass-cabin-kaikoura-new-zealand.jpg'); background-position: center 80%;"></div>
+          <div class="body">
+            <span class="pill">Kaikōura</span>
+            <h3>Kahutara</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+        <a class="pod" id="pod-atatu" data-island="south" href="location/atatu/">
+          <div class="media" style="background-image: url('../assets/img/atatu/atatu-purepod-glass-cabin-bedroom-ocean-view-new-zealand.jpg');"></div>
+          <div class="body">
+            <span class="pill">Hurunui</span>
+            <h3>Atatū</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+        <a class="pod" id="pod-korimako" data-island="south" href="location/korimako/">
+          <div class="media" style="background-image: url('../assets/img/kiromako/kiromako-purepod-forest-path-walking-trail-new-zealand.jpg');"></div>
+          <div class="body">
+            <span class="pill">Hurunui</span>
+            <h3>Korimako</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+        <a class="pod" id="pod-greystone" data-island="south" href="location/greystone/">
+          <div class="media" style="background-image: url('../assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg');"></div>
+          <div class="body">
+            <span class="pill">Waipara</span>
+            <h3>Greystone</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+        <a class="pod" id="pod-pohue" data-island="south" href="location/pohue/">
+          <div class="media" style="background-image: url('../assets/img/pohue/pohue-coastal-hills-cabin-view-new-zealand.jpg');"></div>
+          <div class="body">
+            <span class="pill">Banks Peninsula</span>
+            <h3>Pōhue</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+        <a class="pod" id="pod-haurapa" data-island="south" href="location/haurapa/">
+          <div class="media" style="background-image: url('../assets/img/haurapa/haurapa-purepod-glass-cabin-central-otago-landscape-new-zealand.jpg');"></div>
+          <div class="body">
+            <span class="pill">Central Otago</span>
+            <h3>Haurapa</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+        <a class="pod" id="pod-taima" data-island="south" href="location/taima/">
+          <div class="media" style="background-image: url('../assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg');"></div>
+          <div class="body">
+            <span class="pill">Central Otago</span>
+            <h3>Tāima</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+        <a class="pod" id="pod-tokoeka" data-island="stewart" href="location/tokoeka/">
+          <div class="media" style="background-image: url('../assets/img/tokoeka/tokoeka-purepod-exterior-sunset-view-stewart-island.jpg');"></div>
+          <div class="body">
+            <span class="pill">Stewart Island</span>
+            <h3>Tokoeka</h3>
+            <div class="meta">Stewart Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+        <a class="pod" id="pod-hananui" data-island="stewart" href="location/hananui/">
+          <div class="media" style="background-image: url('../assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg');"></div>
+          <div class="body">
+            <span class="pill">Stewart Island</span>
+            <h3>Hananui</h3>
+            <div class="meta">Stewart Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      PurePods · Home · Pods · Experiences · My journey
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var tabs = document.querySelectorAll(".tab");
+      var cards = document.querySelectorAll(".pod");
+      var countEl = document.getElementById("countLabel");
+      var pins = document.querySelectorAll(".map-pin");
+
+      function applyFilter(filter){
+        tabs.forEach(function(t){
+          var isActive = t.getAttribute("data-filter") === filter;
+          t.classList.toggle("active", isActive);
+          t.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+
+        var visible = 0;
+        cards.forEach(function(c){
+          var show = c.getAttribute("data-island") === filter;
+          c.classList.toggle("hidden", !show);
+          if(show) visible++;
+        });
+
+        if(countEl) countEl.textContent = visible + " " + (visible === 1 ? "pod" : "pods");
+      }
+
+      function scrollToPod(href){
+        var card = document.querySelector('.pod[href="' + href + '"]');
+        if(card){
+          card.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }
+
+      function onPinActivate(pin, ev){
+        if(ev) ev.preventDefault();
+        var island = pin.getAttribute("data-island");
+        var href = pin.getAttribute("data-href");
+        if(island) applyFilter(island);
+        if(href) setTimeout(function(){ scrollToPod(href); }, 90);
+      }
+
+      tabs.forEach(function(t){
+        t.addEventListener("click", function(){ applyFilter(t.getAttribute("data-filter")); });
+      });
+
+      pins.forEach(function(pin){
+        pin.addEventListener("click", function(ev){ onPinActivate(pin, ev); });
+        pin.addEventListener("keydown", function(ev){
+          if(ev.key === "Enter" || ev.key === " "){ onPinActivate(pin, ev); }
+        });
+      });
+
+      applyFilter("north");
+    })();
+  </script>
+</body>
+</html>
