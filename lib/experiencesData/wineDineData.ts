@@ -120,27 +120,33 @@ export const wineDineViewSlides: HikingSlide[] = [
 ];
 
 export const wineDineLocalSlides: HikingSlide[] = [
-  nv({
+  {
+    image: "/assets/img/wine-dine/atticus-finch-restaurant-rotorua-desserts-milkshakes-dining-new-zealand.jpg",
+    alt: "Desserts and milkshakes served at Atticus Finch restaurant in Rotorua, New Zealand",
     title: "Atticus Finch",
     placeHref: "https://atticusfinch.co.nz/",
     description:
       "A lively, modern bistro known for its share-style plates and social atmosphere. A great option for a relaxed evening in the heart of Eat Street.",
     ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
-  }),
-  nv({
-    title: "Poco Tapas & Wine",
-    placeHref: "https://www.poco.nz/",
-    description:
-      "An intimate tapas and wine bar offering creative small plates and a curated drinks list. Ideal for a slower, more atmospheric dining experience.",
-    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
-  }),
-  nv({
+  },
+  {
+    image: "/assets/img/wine-dine/le-cafe-de-paris-macarons-dessert-patisserie-new-zealand.jpg",
+    alt: "Colorful macarons and dessert selection at Le Café de Paris patisserie in New Zealand",
     title: "Le Café de Paris",
     placeHref: "https://www.cafedeparis.co.nz/",
     description:
       "A charming French-style café known for pastries, coffee and relaxed breakfasts. A simple, well-loved stop to start the day.",
     ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
-  }),
+  },
+  {
+    image: "/assets/img/wine-dine/poco-tapas-and-wine-rotorua-modern-dining-dish-new-zealand.jpg",
+    alt: "Modern tapas dish at Poco Tapas & Wine in Rotorua, New Zealand",
+    title: "Poco Tapas & Wine",
+    placeHref: "https://www.poco.nz/",
+    description:
+      "An intimate tapas and wine bar offering creative small plates and a curated drinks list. Ideal for a slower, more atmospheric dining experience.",
+    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
+  },
 ];
 
 export const wineDineFaq: { q: string; a: string }[] = [
