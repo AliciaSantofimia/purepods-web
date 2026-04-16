@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Explore PurePods by landscape — test layout. Same pods and locations as the main explore reference." />
+  <title>Pods — by landscape (test) — PurePods</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#F7F6F3;
+      --ink:#5C5F3E;
+      --muted:rgba(92,95,62,.72);
+      --card:rgba(255,255,255,.85);
+      --stroke:rgba(92,95,62,.18);
+      --brand-green:#5C5F3E;
+      --brand-beige:#C2B59E;
+      --shadow: 0 18px 44px rgba(0,0,0,.08);
+      --max: 1120px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+
+    .nav{
+      position: sticky; top:0; z-index:60;
+      background: rgba(247,246,243,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--stroke);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0; gap:16px;
+    }
+    .brand{ display:flex; align-items:center; gap:10px; }
+    .brand img{ height: 30px; width:auto; display:block; }
+
+    .links{
+      display:flex; gap:18px; align-items:center;
+      font-size:13px; letter-spacing:.06em; text-transform:uppercase;
+    }
+    .links a{ color: var(--muted); }
+    .links a:hover{ color: var(--ink); }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 12px 14px; border-radius:999px;
+      border: 2px solid var(--stroke);
+      background: var(--card);
+      font-weight: 600;
+      white-space:nowrap;
+    }
+    .btn-primary{
+      background: var(--brand-beige);
+      border-color: var(--brand-beige);
+      color: var(--brand-green) !important;
+      font-weight: 800;
+      box-shadow: 0 16px 30px rgba(92,95,60,.2);
+    }
+
+    /* Full-bleed hero — NZ landscape */
+    .hero-visual{
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      min-height: min(56vh, 520px);
+      position: relative;
+      background:
+        linear-gradient(105deg, rgba(247,246,243,.94) 0%, rgba(247,246,243,.45) 38%, rgba(247,246,243,.12) 55%, transparent 72%),
+        url("../assets/img/experiences/relax-coastal/matauri-bay-northland-clear-water-sandy-beach-new-zealand.jpg") center 42% / cover no-repeat;
+      border-bottom: 1px solid rgba(92,95,62,.1);
+    }
+    .hero-visual .wrap{
+      position: relative;
+      min-height: min(56vh, 520px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(28px, 5vw, 48px) 0 clamp(36px, 6vw, 56px);
+    }
+    .hero-visual h1{
+      margin: 0 0 12px;
+      font-family: "Noto Serif Display", Georgia, "Times New Roman", serif;
+      font-weight: 600;
+      font-size: clamp(32px, 4.8vw, 52px);
+      letter-spacing: -0.03em;
+      color: var(--brand-green);
+      max-width: 14ch;
+      line-height: 1.08;
+    }
+    .hero-visual .lead{
+      margin: 0;
+      max-width: 36ch;
+      color: var(--muted);
+      font-size: clamp(15px, 1.5vw, 17px);
+      line-height: 1.65;
+    }
+    .hero-meta{
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      align-items: center;
+    }
+    .proto-pill{
+      display:inline-flex;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.55);
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .hero-meta a{
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--brand-green);
+      border-bottom: 1px solid rgba(92,95,62,.35);
+      padding-bottom: 1px;
+    }
+    .hero-meta a:hover{ border-bottom-color: var(--brand-green); }
+
+    /* Experience lanes — primary navigation */
+    .picker{
+      padding: clamp(36px, 5vw, 52px) 0 clamp(28px, 4vw, 40px);
+    }
+    .picker-head{
+      margin: 0 0 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .picker-title{
+      margin: 0 0 22px;
+      font-family: "Noto Serif Display", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(22px, 2.5vw, 28px);
+      color: var(--brand-green);
+      letter-spacing: -0.02em;
+    }
+    .lane-grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
+      gap: 12px;
+    }
+    .exp-lane{
+      position: relative;
+      text-align: left;
+      border: 1px solid var(--stroke);
+      border-radius: 20px;
+      padding: 16px 16px 18px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: border-color .15s ease, background .15s ease, transform .15s ease, box-shadow .15s ease;
+      font: inherit;
+      color: inherit;
+      display: block;
+      width: 100%;
+    }
+    .exp-lane:hover{
+      border-color: rgba(92,95,62,.28);
+      transform: translateY(-1px);
+      box-shadow: 0 20px 48px rgba(0,0,0,.09);
+    }
+    .exp-lane.active{
+      border-color: rgba(92,95,62,.38);
+      background: rgba(255,255,255,.95);
+      box-shadow: 0 22px 50px rgba(92,95,62,.1);
+    }
+    .exp-lane-k{
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .exp-lane h2{
+      margin: 0 0 8px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--brand-green);
+      line-height: 1.25;
+    }
+    .exp-lane p{
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .exp-lane .n{
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(92,95,62,.55);
+      letter-spacing: .04em;
+    }
+
+    /* Secondary: compact geography */
+    .locator-band{
+      padding: 0 0 clamp(32px, 4vw, 44px);
+    }
+    .locator-inner{
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: clamp(20px, 3vw, 32px);
+      align-items: center;
+      padding: clamp(22px, 3vw, 28px);
+      border-radius: 28px;
+      border: 1px solid var(--stroke);
+      background: linear-gradient(145deg, rgba(255,255,255,.75), rgba(247,246,243,.55));
+      box-shadow: 0 16px 40px rgba(0,0,0,.05);
+    }
+    .locator-copy h3{
+      margin: 0 0 10px;
+      font-family: "Noto Serif Display", Georgia, serif;
+      font-weight: 500;
+      font-size: 20px;
+      color: var(--brand-green);
+    }
+    .locator-copy p{
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 48ch;
+    }
+    .locator-map{
+      max-width: 240px;
+      margin: 0 auto;
+      border-radius: 20px;
+      padding: 14px 12px 18px;
+      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(92,95,62,.1);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.5);
+    }
+    .locator-map object{
+      display: block;
+      width: 100%;
+      height: auto;
+      pointer-events: none;
+      opacity: 0.92;
+    }
+    .locator-caption{
+      margin: 10px 0 0;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: rgba(92,95,62,.5);
+      text-align: center;
+    }
+
+    .sticky-hint{
+      position: sticky;
+      top: 58px;
+      z-index: 55;
+      background: linear-gradient(to bottom, rgba(247,246,243,.97), rgba(247,246,243,.9));
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--stroke);
+      padding: 10px 0;
+    }
+    .sticky-hint p{
+      margin: 0;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: .04em;
+    }
+
+    .section{ padding: 8px 0 70px; }
+    .section-head{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:12px;
+      margin: 0 0 18px;
+    }
+    .count{ color: var(--muted); font-size: 13px; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .pod{
+      border-radius: 24px;
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height: 320px;
+      transition: transform .15s ease, box-shadow .15s ease;
+      scroll-margin-top: 120px;
+    }
+    .pod:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 22px 55px rgba(0,0,0,.1);
+    }
+
+    .media{
+      height: 220px;
+      background-size: cover;
+      background-position: center 35%;
+      position: relative;
+      overflow: hidden;
+    }
+    .media::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(to bottom, rgba(17,18,23,.02), rgba(247,246,243,.25));
+      pointer-events:none;
+    }
+
+    .body{
+      padding: 18px 20px 22px;
+      display:flex;
+      flex-direction:column;
+      gap: 8px;
+      flex:1;
+    }
+
+    .pill{
+      display:inline-flex;
+      padding: 6px 10px;
+      border-radius:999px;
+      border: 1px solid var(--stroke);
+      background: rgba(92,95,62,.08);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      width: fit-content;
+    }
+
+    .pod h3{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+      color: var(--brand-green);
+      font-weight: 600;
+    }
+
+    .meta{ color: var(--muted); font-size: 14px; line-height:1.6; }
+
+    .spacer{ flex:1; }
+
+    .cta{
+      display:inline-flex;
+      width: fit-content;
+      padding: 9px 12px;
+      border-radius:999px;
+      border: 2px solid rgba(92,95,62,.35);
+      background: rgba(92,95,62,.08);
+      color: var(--brand-green);
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .hidden{ display:none !important; }
+
+    @media (max-width: 900px){
+      .locator-inner{ grid-template-columns: 1fr; }
+      .locator-map{ max-width: 200px; }
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+      .nav-inner .links{ flex-wrap: wrap; }
+    }
+    @media (max-width: 640px){
+      .grid{ grid-template-columns: 1fr; }
+      .brand img{ height: 28px; }
+      .pod{ min-height: 280px; }
+      .media{ height: 200px; }
+    }
+
+    footer{
+      padding: 32px 0 40px;
+      border-top: 1px solid var(--stroke);
+      color: var(--muted);
+      font-size:13px;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    Landscape groups use only official location pills from explore.html:
+    coast — Muriwai Coast, Coromandel, Kapiti, Kaikōura (×2), Hurunui where imagery is ocean-facing (Atatū),
+            Banks Peninsula, Stewart Island (×2)
+    wonder — Rotorua, Waitomo (geothermal & limestone / glowworm region)
+    forest — Kerikeri native forest context, Hurunui forest trail (Korimako)
+    wine — Waipara, Central Otago (×2)
+  -->
+  <div class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="home/index.html">
+        <img src="../assets/img/purepods-logo-new-zealand.png" alt="PurePods">
+      </a>
+      <div class="links">
+        <a href="explore.html">Pods</a>
+        <a href="experiences/experiences.html">Experiences</a>
+        <a href="my-journey.html">My journey</a>
+        <a class="btn btn-primary" href="https://purepods.com/booking/">Book</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero-visual" role="banner">
+    <div class="wrap">
+      <h1>Choose your landscape</h1>
+      <p class="lead">
+        Start with the rhythm that pulls you in — coast, forest, volcanic calm or vine-striped hills — then open the pod that belongs there.
+      </p>
+      <div class="hero-meta">
+        <span class="proto-pill">Experience-led · test layout</span>
+        <a href="explore.html">Classic list view</a>
+        <a href="explore-nz-editorial-map.html">Geographic map study</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="picker wrap" aria-labelledby="picker-heading">
+      <p class="picker-head">Explore</p>
+      <p class="picker-title" id="picker-heading">Where do you want the day to feel?</p>
+      <div class="lane-grid" role="tablist" aria-label="Filter by landscape">
+        <button type="button" class="exp-lane active" data-filter="all" role="tab" aria-selected="true" id="tab-all">
+          <span class="exp-lane-k">Everything</span>
+          <h2>All stays</h2>
+          <p>The full collection, unchanged — sixteen pods across three islands.</p>
+          <span class="n">16 stays</span>
+        </button>
+        <button type="button" class="exp-lane" data-filter="coast" role="tab" aria-selected="false" id="tab-coast">
+          <span class="exp-lane-k">Salt &amp; horizon</span>
+          <h2>Coast &amp; ocean air</h2>
+          <p>Headlands, sea light and islands at the edge of the map.</p>
+          <span class="n">9 stays</span>
+        </button>
+        <button type="button" class="exp-lane" data-filter="wonder" role="tab" aria-selected="false" id="tab-wonder">
+          <span class="exp-lane-k">Living earth</span>
+          <h2>Geothermal &amp; glowworm country</h2>
+          <p>Rotorua’s thermal calm and Waitomo’s limestone dusk.</p>
+          <span class="n">2 stays</span>
+        </button>
+        <button type="button" class="exp-lane" data-filter="forest" role="tab" aria-selected="false" id="tab-forest">
+          <span class="exp-lane-k">Canopy &amp; path</span>
+          <h2>Native forest &amp; trails</h2>
+          <p>Northland bush and Hurunui tracks — quiet, rooted, close.</p>
+          <span class="n">2 stays</span>
+        </button>
+        <button type="button" class="exp-lane" data-filter="wine" role="tab" aria-selected="false" id="tab-wine">
+          <span class="exp-lane-k">Terraces &amp; light</span>
+          <h2>Vineyards &amp; dry ranges</h2>
+          <p>Waipara and Central Otago — wide skies over rows and ridges.</p>
+          <span class="n">3 stays</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="locator-band wrap" aria-labelledby="locator-heading">
+      <div class="locator-inner">
+        <div class="locator-copy">
+          <h3 id="locator-heading">A gentle sense of where</h3>
+          <p>
+            The map below is only a whisper of Aotearoa — enough to orient you after you’ve chosen a feeling.
+            Every pod below still links to its real location page, with the same names and regions you already trust.
+          </p>
+        </div>
+        <figure class="locator-map">
+          <object type="image/svg+xml" data="assets/nz-locator-compact.svg" aria-label="Stylised outline of New Zealand">New Zealand outline</object>
+          <figcaption class="locator-caption">Illustrative · not for navigation</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="sticky-hint">
+      <div class="wrap">
+        <p id="laneHint">Showing the full collection — tap a landscape above to narrow.</p>
+      </div>
+    </div>
+
+    <section class="section wrap">
+      <div class="section-head">
+        <div class="count" id="countLabel"></div>
+      </div>
+
+      <div class="grid" id="podsGrid">
+        <a class="pod" data-island="north" data-vibe="forest" href="location/makoha/">
+          <div class="media" style="background-image: url('../assets/img/makoha/makoha-purepod-native-forest-landscape-kerikeri.jpg');"></div>
+          <div class="body">
+            <span class="pill">Kerikeri</span>
+            <h3>Mākōha</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="north" data-vibe="coast" href="location/rewarewa/">
+          <div class="media" style="background-image: url('../assets/img/rewarewa/rewarewa-purepod-glass-cabin-exterior-stairs-muriwai-coast.jpg');"></div>
+          <div class="body">
+            <span class="pill">Muriwai Coast</span>
+            <h3>Rewarewa</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="north" data-vibe="coast" href="location/ruru/">
+          <div class="media" style="background-image: url('../assets/img/ruru/ruru-purepod-glass-cabin-aerial-view-coromandel.jpg'); background-position: center 25%;"></div>
+          <div class="body">
+            <span class="pill">Coromandel</span>
+            <h3>Ruru</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="north" data-vibe="wonder" href="location/pamu/">
+          <div class="media" style="background-image: url('../assets/img/pamu/pamu-purepod-glass-cabin-exterior-landscape-rotorua.jpg');"></div>
+          <div class="body">
+            <span class="pill">Rotorua</span>
+            <h3>Pāmu</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="north" data-vibe="wonder" href="location/matu/">
+          <div class="media" style="background-image: url('../assets/img/matu/matu-purepod-glass-cabin-sunset-exterior-waitomo.jpg');"></div>
+          <div class="body">
+            <span class="pill">Waitomo</span>
+            <h3>Matū</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="north" data-vibe="coast" href="location/kokomea/">
+          <div class="media" style="background-image: url('../assets/img/kokomea/kokomea-purepod-exterior-sunrise-landscape-kapiti-coast.jpg');"></div>
+          <div class="body">
+            <span class="pill">Kapiti Coast</span>
+            <h3>Kokomea</h3>
+            <div class="meta">North Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" data-vibe="coast" href="location/manakau/">
+          <div class="media" style="background-image: url('../assets/img/manakau/manakau-purepod-glass-cabin-hills-landscape-kaikoura.jpg');"></div>
+          <div class="body">
+            <span class="pill">Kaikōura</span>
+            <h3>Manakau</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" data-vibe="coast" href="location/kahutara/">
+          <div class="media" style="background-image: url('../assets/img/kahutara/kahutara-purepod-glass-cabin-kaikoura-new-zealand.jpg'); background-position: center 80%;"></div>
+          <div class="body">
+            <span class="pill">Kaikōura</span>
+            <h3>Kahutara</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" data-vibe="coast" href="location/atatu/">
+          <div class="media" style="background-image: url('../assets/img/atatu/atatu-purepod-glass-cabin-bedroom-ocean-view-new-zealand.jpg');"></div>
+          <div class="body">
+            <span class="pill">Hurunui</span>
+            <h3>Atatū</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" data-vibe="forest" href="location/korimako/">
+          <div class="media" style="background-image: url('../assets/img/kiromako/kiromako-purepod-forest-path-walking-trail-new-zealand.jpg');"></div>
+          <div class="body">
+            <span class="pill">Hurunui</span>
+            <h3>Korimako</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" data-vibe="wine" href="location/greystone/">
+          <div class="media" style="background-image: url('../assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg');"></div>
+          <div class="body">
+            <span class="pill">Waipara</span>
+            <h3>Greystone</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" data-vibe="coast" href="location/pohue/">
+          <div class="media" style="background-image: url('../assets/img/pohue/pohue-coastal-hills-cabin-view-new-zealand.jpg');"></div>
+          <div class="body">
+            <span class="pill">Banks Peninsula</span>
+            <h3>Pōhue</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" data-vibe="wine" href="location/haurapa/">
+          <div class="media" style="background-image: url('../assets/img/haurapa/haurapa-purepod-glass-cabin-central-otago-landscape-new-zealand.jpg');"></div>
+          <div class="body">
+            <span class="pill">Central Otago</span>
+            <h3>Haurapa</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="south" data-vibe="wine" href="location/taima/">
+          <div class="media" style="background-image: url('../assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg');"></div>
+          <div class="body">
+            <span class="pill">Central Otago</span>
+            <h3>Tāima</h3>
+            <div class="meta">South Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="stewart" data-vibe="coast" href="location/tokoeka/">
+          <div class="media" style="background-image: url('../assets/img/tokoeka/tokoeka-purepod-exterior-sunset-view-stewart-island.jpg');"></div>
+          <div class="body">
+            <span class="pill">Stewart Island</span>
+            <h3>Tokoeka</h3>
+            <div class="meta">Stewart Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+
+        <a class="pod" data-island="stewart" data-vibe="coast" href="location/hananui/">
+          <div class="media" style="background-image: url('../assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg');"></div>
+          <div class="body">
+            <span class="pill">Stewart Island</span>
+            <h3>Hananui</h3>
+            <div class="meta">Stewart Island</div>
+            <div class="spacer"></div>
+            <span class="cta">View details →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      PurePods · Home · Pods · Experiences · My journey
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var lanes = document.querySelectorAll(".exp-lane");
+      var cards = document.querySelectorAll(".pod");
+      var countEl = document.getElementById("countLabel");
+      var hint = document.getElementById("laneHint");
+
+      var hints = {
+        all: "Showing the full collection — tap a landscape above to narrow.",
+        coast: "Coast & ocean air — nine stays between surf, sounds and southern shores.",
+        wonder: "Geothermal & glowworm country — Rotorua and Waitomo.",
+        forest: "Native forest & trails — Kerikeri and Hurunui walking country.",
+        wine: "Vineyards & dry ranges — Waipara and Central Otago."
+      };
+
+      function applyFilter(filter){
+        lanes.forEach(function(l){
+          var on = l.getAttribute("data-filter") === filter;
+          l.classList.toggle("active", on);
+          l.setAttribute("aria-selected", on ? "true" : "false");
+        });
+
+        var visible = 0;
+        cards.forEach(function(c){
+          var v = c.getAttribute("data-vibe");
+          var show = filter === "all" || v === filter;
+          c.classList.toggle("hidden", !show);
+          if (show) visible++;
+        });
+
+        if (countEl) {
+          countEl.textContent = visible + " " + (visible === 1 ? "stay" : "stays");
+        }
+        if (hint && hints[filter]) {
+          hint.textContent = hints[filter];
+        }
+      }
+
+      lanes.forEach(function(l){
+        l.addEventListener("click", function(){
+          applyFilter(l.getAttribute("data-filter"));
+        });
+      });
+
+      applyFilter("all");
+    })();
+  </script>
+</body>
+</html>

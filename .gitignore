@@ -35,3 +35,8 @@ Thumbs.db
 
 # TypeScript
 next-env.d.ts
+
+# Local geo extract (Natural Earth download / path build scratch)
+.tmp_ne50.json
+.tmp_ne110.json
+.tmp_nz_path.txt
