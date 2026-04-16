@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ExploreFooter } from "@/components/pods/ExploreFooter";
 import { ExplorePageWithMapClient } from "@/components/pods/ExplorePageWithMapClient";
 import { EXPLORE_POD_CARDS } from "@/lib/podsExploreData";
 import styles from "../explore.module.css";
@@ -19,10 +20,10 @@ export default function ExploreMapExperimentalPage() {
         <div className={`wrap ${styles.navInner}`}>
           <Link className={styles.brand} href="/" aria-label="PurePods — Home">
             <Image
-              src="/assets/img/purepods-logo-new-zealand.jpg"
+              src="/assets/img/LogoPCverdesinfondo.png"
               alt="PurePods"
-              width={120}
-              height={30}
+              width={603}
+              height={414}
               className={styles.brandImg}
               priority
             />
@@ -54,9 +55,7 @@ export default function ExploreMapExperimentalPage() {
         <ExplorePageWithMapClient pods={EXPLORE_POD_CARDS} />
       </main>
 
-      <footer className={styles.footer}>
-        <div className="wrap">PurePods · Home · Pods · Experiences · My journey</div>
-      </footer>
+      <ExploreFooter />
     </div>
   );
 }
