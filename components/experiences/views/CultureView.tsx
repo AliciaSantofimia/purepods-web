@@ -17,10 +17,7 @@ export function CultureView() {
   return (
     <div className="experience-ref">
       <ExpStandardChrome
-        navItems={[
-          { href: "/pods", label: "Pods" },
-          { href: "#faq", label: "FAQ" },
-        ]}
+        navItems={[{ href: "#faq", label: "FAQ" }]}
       >
         <header className="hero" id="top">
           <ExpRefImage

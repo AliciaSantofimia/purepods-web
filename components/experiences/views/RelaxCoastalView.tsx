@@ -72,10 +72,7 @@ export function RelaxCoastalView() {
   return (
     <div className="experience-ref">
       <ExpStandardChrome
-        navItems={[
-          { href: "/pods", label: "Pods" },
-          { href: "#faq", label: "FAQ" },
-        ]}
+        navItems={[{ href: "#faq", label: "FAQ" }]}
       >
         <header className="hero relax-v1-hero" id="top">
           <ExpRefImage

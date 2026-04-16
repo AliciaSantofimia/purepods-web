@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ExpExperiencesMega } from "@/components/experiences/ExpExperiencesMega";
+import { ExpPodsMega } from "@/components/experiences/ExpPodsMega";
 
 type NavItem = { href: string; label: string };
 
@@ -27,6 +28,7 @@ export function ExpStandardChrome({
           </Link>
           <div className="links">
             <ExpExperiencesMega />
+            <ExpPodsMega />
             {navItems.map((l) => (
               <Link key={l.href + l.label} href={l.href}>
                 {l.label}
