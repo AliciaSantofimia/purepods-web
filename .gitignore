@@ -40,3 +40,4 @@ next-env.d.ts
 .tmp_ne50.json
 .tmp_ne110.json
 .tmp_nz_path.txt
+*.tsbuildinfo
