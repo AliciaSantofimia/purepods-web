@@ -7,6 +7,8 @@
   --radius: 24px;
   --radius-sm: 18px;
   --shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
+  /* Clear fixed site header (Header.tsx ~14px padding + row); keep in sync if header height changes */
+  --location-fixed-header-clearance: 56px;
 }
 
 @media (min-width: 920px) {
@@ -18,4 +20,67 @@
 /* Bottom padding lives in Container via --content-padding; avoid doubling */
 .locationContent {
   padding-bottom: 0;
+}
+
+/*
+ * Contextual return — meta navigation (mobile only; hidden at min-width 821px, see block below).
+ * Intentionally light: no “strip”, no box; flows into hero like editorial secondary nav.
+ */
+.locationFromBar {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  box-sizing: border-box;
+  /* Header clearance + mínimo respiro (evita doble cabecera visual) */
+  padding-top: calc(var(--location-fixed-header-clearance, 56px) + 3px);
+  padding-bottom: 0;
+  padding-left: 14px;
+  padding-right: 14px;
+  background: transparent;
+  border: none;
+}
+
+.locationFromBarInner {
+  max-width: var(--content-max, 980px);
+  margin: 0 auto;
+}
+
+.locationFromLink {
+  display: inline-block;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+  color: rgba(61, 64, 41, 0.56);
+  text-decoration: underline;
+  text-decoration-color: rgba(61, 64, 41, 0.18);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  /* Tap target sin aspecto de botón */
+  padding: 10px 0 10px;
+  margin: 0;
+  border: none;
+  transition: color 0.18s ease, text-decoration-color 0.18s ease;
+}
+
+.locationFromLink:hover {
+  color: rgba(61, 64, 41, 0.72);
+  text-decoration-color: rgba(61, 64, 41, 0.32);
+}
+
+@media (min-width: 720px) {
+  .locationFromBar {
+    padding-top: calc(var(--location-fixed-header-clearance, 56px) + 4px);
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+
+/* Desktop / wide: hide contextual return row (same breakpoint as experience nav — EXP_NAV_DESKTOP_MIN_PX) */
+@media (min-width: 821px) {
+  .locationFromBar {
+    display: none;
+  }
 }
