@@ -17,8 +17,7 @@ export function WineDineView() {
     <div className="experience-ref">
       <ExpStandardChrome
         navItems={[
-          { href: "/experiences", label: "Experiences" },
-          { href: "#blocks", label: "Highlights" },
+          { href: "/pods", label: "Pods" },
           { href: "#faq", label: "FAQ" },
         ]}
       >

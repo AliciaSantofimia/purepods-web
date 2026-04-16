@@ -10,7 +10,7 @@ export function RomanticView() {
     <div className="experience-ref romantic-ref">
       <ExpStandardChrome
         navItems={[
-          { href: "/experiences", label: "Experiences" },
+          { href: "/pods", label: "Pods" },
           { href: "#moments", label: "Moments" },
           { href: "#gallery", label: "Gallery" },
           { href: "#night", label: "Night" },

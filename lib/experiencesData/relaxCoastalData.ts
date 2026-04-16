@@ -8,7 +8,7 @@ export const relaxHero = {
   alt: "Serene geothermal lake at dawn near Rotorua, New Zealand, with soft mist, mineral-rich water and calm native forest shoreline",
 };
 
-export const relaxAboutLeadHtml = `Below you will find a calm editorial selection of coastal, geothermal and restorative nature experiences across New Zealand — from hot springs and hidden beaches to estuaries, reserves and quiet lookouts — each paired with a suggested nearby PurePod when the regions align. Explore the wider collection on <a href="/experiences">Experiences</a>.`;
+export const relaxAboutLeadHtml = `This is a quiet editorial map of New Zealand’s slower edges — geothermal pools, coastlines, inland water and gentle reserves — chosen for atmosphere and ease rather than spectacle. Where it makes sense, each stop sits near a suggested PurePod. Browse the full set on <a href="/experiences">Experiences</a>.`;
 
 export const relaxThermalSlides: ForestSlide[] = [
   {
@@ -17,7 +17,7 @@ export const relaxThermalSlides: ForestSlide[] = [
     title: "Polynesian Spa Rotorua",
     placeHref: "https://www.polynesianspa.co.nz/",
     description:
-      "Set on the shores of Lake Rotorua, Polynesian Spa is a world-renowned geothermal spa in Rotorua, New Zealand, featuring mineral-rich hot pools fed by natural springs, luxury spa treatments, and stunning lake views; it is widely considered one of the best hot pools in Rotorua for relaxation, wellness, and a premium lakeside experience in the Bay of Plenty.",
+      "Lakefront mineral pools in Rotorua, fed by natural springs. The setting is straightforward: water, steam and a long view across the lake — a measured, unhurried soak rather than a themed attraction.",
     ctaLabel: "Stay at Pāmu, Rotorua →",
     ctaHref: "/location/pamu",
   },
@@ -27,7 +27,7 @@ export const relaxThermalSlides: ForestSlide[] = [
     title: "Wai Ariki Hot Springs & Spa",
     placeHref: "https://www.wai-ariki.co.nz/",
     description:
-      "Blending Māori culture with modern wellness, Wai Ariki Hot Springs & Spa is a luxury geothermal spa in Rotorua, New Zealand, located on the edge of Lake Rotorua and offering mineral hot pools, traditional healing rituals, and high-end treatments; as one of the newest and most exclusive spa experiences in the Bay of Plenty, it stands out for its cultural depth and premium design.",
+      "A contemporary geothermal spa on the Rotorua lakefront, shaped around Māori narratives of healing and place. Pools, steam and architecture read as one calm sequence — still very much of this region’s heat and water.",
     ctaLabel: "Stay at Pāmu, Rotorua →",
     ctaHref: "/location/pamu",
   },
@@ -37,7 +37,7 @@ export const relaxThermalSlides: ForestSlide[] = [
     title: "Hell’s Gate Geothermal Reserve",
     placeHref: "https://www.hellsgate.co.nz/",
     description:
-      "Located in Tikitere near Rotorua, Hell’s Gate Geothermal Reserve & Mud Spa is one of the most active geothermal attractions in New Zealand, known for its bubbling mud pools, steaming vents, and sulphur lakes; visitors can enjoy traditional Māori mud baths and sulphur spa treatments, making it one of the most unique geothermal experiences in the Bay of Plenty.",
+      "Near Tikitere, an active geothermal field of mud pools, sulphur flats and steaming country. Walking tracks sit alongside optional mud and sulphur baths — raw geology first, with space to slow down beside it.",
     ctaLabel: "Stay at Pāmu, Rotorua →",
     ctaHref: "/location/pamu",
   },
@@ -47,7 +47,7 @@ export const relaxThermalSlides: ForestSlide[] = [
     title: "Waikite Valley Hot Pools",
     placeHref: "https://www.hotpools.co.nz/",
     description:
-      "Set in the scenic Waikite Valley near Rotorua, these natural geothermal hot pools are fed by Te Manaroa Spring, the largest single source of boiling water in New Zealand, and offer mineral-rich bathing surrounded by native bush, walking tracks, and peaceful countryside views; they are among the best natural hot springs in Rotorua for a quiet and authentic wellness experience.",
+      "Pools in the Waikite Valley draw from Te Manaroa Spring, with bush and walking tracks close by. The mood is rural and low-key — mineral water, native margin, and little need to rush the afternoon.",
     ctaLabel: "Stay at Pāmu, Rotorua →",
     ctaHref: "/location/pamu",
   },
@@ -65,14 +65,14 @@ export const relaxBeachesSlides: HikingSlide[] = [
     title: "Matauri Bay",
     placeHref: "https://maps.app.goo.gl/2xbeZSdrHHRXeMS98",
     description:
-      "A wide, open sweep of coast in Northland, Matauri Bay is known for its clear water, soft sand and unhurried atmosphere. It is a place to slow down by the sea — whether for a quiet walk, time on the beach or simply watching the light change across the bay.",
+      "A wide Northland sweep — clear water, soft sand and little hurry. The bay reads as open space first; everything else is optional.",
     ctas: [{ label: "Stay at Mākoha, Kerikeri →", href: "/location/makoha" }],
   }),
   nv({
     title: "Gore Bay Beach",
     placeHref: "https://maps.app.goo.gl/XvgcdWQdC2VJ5PYZ8",
     description:
-      "Set along a dramatic stretch of North Canterbury coast, Gore Bay Beach combines open sand, rolling surf and striking cliff formations. The feeling here is expansive and elemental — a coastal stop shaped by wind, sea and long horizons.",
+      "North Canterbury coast of sand, surf and pale cliffs. The horizon feels long; the wind and tide do most of the talking.",
     ctas: [
       { label: "Stay at Atatū →", href: "/location/atatu" },
       { label: "Stay at Korimako →", href: "/location/korimako" },
@@ -82,14 +82,14 @@ export const relaxBeachesSlides: HikingSlide[] = [
     title: "Purau Bay",
     placeHref: "https://maps.app.goo.gl/avmuyfQmUBcq6Dci7",
     description:
-      "Tucked into Banks Peninsula, Purau Bay offers a quieter, more intimate coastal experience. Sheltered waters, gentle shoreline views and a slower rhythm make it a place for pause rather than urgency — calm, local and quietly restorative.",
+      "Banks Peninsula shelter — quieter water, a gentler shoreline rhythm and room to slow down without staging a full day out.",
     ctas: [{ label: "Stay at Pōhue →", href: "/location/pohue" }],
   }),
   nv({
     title: "Boulder Beach",
     placeHref: "https://maps.app.goo.gl/L8E3c22r9ghxt5GH7",
     description:
-      "Remote and windswept, Boulder Beach on Stewart Island feels wild in the best possible way. Its rocky shoreline, open ocean and sense of distance create a deeply peaceful coastal setting, where the landscape feels untouched and time seems to stretch.",
+      "Stewart Island’s remote edge — rock, ocean and distance. A coastal pause that feels deliberate rather than busy.",
     ctas: [
       { label: "Stay at Tokoeka →", href: "/location/tokoeka" },
       { label: "Stay at Hananui →", href: "/location/hananui" },
@@ -102,14 +102,15 @@ export const relaxWatersSlides: HikingSlide[] = [
     title: "Boyes Beach (Lake Ōkāreka)",
     placeHref: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/lake-okareka-walking-tracks/",
     description:
-      "A gentle lakeside outlook framed by forest — ideal for a short, easy walk and a quiet pause beside clear water.",
+      "A small lakeside outlook framed by forest — short, easy walking and a clear pause beside still water.",
     ctas: [{ label: "Stay at Pāmu, Rotorua →", href: "/location/pamu" }],
   }),
   nv({
     title: "Hamurana Springs Nature Reserve",
-    placeHref: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/hamurana-springs-nature-reserve/",
+    placeHref:
+      "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/hamurana-springs-nature-reserve/",
     description:
-      "Crystal-clear spring water rising through riparian forest — a boardwalk experience that feels cool, calm and deeply local.",
+      "Spring-fed clarity under riparian trees — a boardwalk rhythm that stays cool, quiet and close to the source.",
     ctas: [{ label: "Stay at Pāmu, Rotorua →", href: "/location/pamu" }],
   }),
   nv({
@@ -117,14 +118,14 @@ export const relaxWatersSlides: HikingSlide[] = [
     placeHref:
       "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/kerikeri-area/kororipo-heritage-park/",
     description:
-      "Easy riverside walking where history and water run side by side — unhurried, green and full of small details.",
+      "Easy riverside walking where history and water run in parallel — green, unhurried and rich in small detail.",
     ctas: [{ label: "Stay at Mākoha, Kerikeri →", href: "/location/makoha" }],
   }),
   nv({
     title: "Kaikoura Recreation Reserve",
     placeHref: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/kaikoura-area/",
     description:
-      "Where mountains meet the Pacific — coastal paths and viewpoints with space to slow down and watch light on the water.",
+      "Mountains meeting the Pacific — coastal paths and viewpoints with space to watch light shift on the water.",
     ctas: [
       { label: "Stay at Kahutara →", href: "/location/kahutara" },
       { label: "Stay at Manakau →", href: "/location/manakau" },
@@ -137,7 +138,7 @@ export const relaxGentleSlides: HikingSlide[] = [
     title: "Auckland Botanic Gardens",
     placeHref: "https://www.aucklandbotanicgardens.co.nz/",
     description:
-      "Wide, curated plant collections and calm paths — an unhurried day out that still feels close to nature.",
+      "Wide plant collections and calm paths — a full, slow loop through cultivated landscape that still feels like fresh air.",
     ctas: [{ label: "Stay at Rewarewa, Muriwai Coast →", href: "/location/rewarewa" }],
   }),
   nv({
@@ -145,14 +146,15 @@ export const relaxGentleSlides: HikingSlide[] = [
     placeHref:
       "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/waikanae-estuary-scientific-reserve/",
     description:
-      "Birdlife, tidal channels and low horizons — a restorative flat walk where the sky feels generous.",
+      "Tidal channels, low horizons and bird movement — flat walking where the sky carries most of the composition.",
     ctas: [{ label: "Stay at Kokomea, Kāpiti Coast →", href: "/location/kokomea" }],
   }),
   nv({
     title: "Cathedral Gully",
-    placeHref: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/cathedral-gully-walking-track/",
+    placeHref:
+      "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/cathedral-gully-walking-track/",
     description:
-      "Limestone forms and a short walk through a quiet gully — geological, airy and easy to take at a walking pace.",
+      "Limestone forms in a short gully walk — geological, airy and easy to take at one steady pace.",
     ctas: [
       { label: "Stay at Atatū →", href: "/location/atatu" },
       { label: "Stay at Korimako →", href: "/location/korimako" },
@@ -163,7 +165,7 @@ export const relaxGentleSlides: HikingSlide[] = [
     placeHref:
       "https://www.doc.govt.nz/parks-and-recreation/places-to-go/southland/places/rakiura-national-park/things-to-do/ulva-island/",
     description:
-      "A predator-free island sanctuary where native birdsong fills the understory — slow, attentive walking at its best.",
+      "A predator-free island sanctuary — native birdsong and understory detail reward quiet, attentive walking.",
     ctas: [
       { label: "Stay at Tokoeka →", href: "/location/tokoeka" },
       { label: "Stay at Hananui →", href: "/location/hananui" },
@@ -173,15 +175,19 @@ export const relaxGentleSlides: HikingSlide[] = [
 
 export const relaxFaq: { q: string; a: string }[] = [
   {
-    q: "What kind of experiences are included on Relax & Coastal?",
-    a: "Relax & Coastal brings together geothermal bathing, beaches, quiet reserves, estuaries, gentle walks and scenic waterside stops across New Zealand — all selected for a slower, more restorative pace.",
+    q: "What does Relax & Coastal cover?",
+    a: "Geothermal bathing, coast and estuary, inland water and low-key reserves — grouped for calm pacing rather than adrenaline.",
   },
   {
-    q: "Do all of these experiences have a nearby PurePod?",
-    a: "Each featured stop is paired with a suggested nearby PurePod where the regions align, making it easier to plan a calm nature-based stay around the experience.",
+    q: "Are PurePods always beside each place?",
+    a: "Where geography allows, each stop suggests a nearby PurePod. Final distance and access depend on your chosen route and booking.",
   },
   {
-    q: "Is this page focused on active adventure?",
-    a: "No. This page is designed around slower coastal and restorative experiences — places to pause, unwind and enjoy nature without urgency.",
+    q: "Is this an adventure or activity list?",
+    a: "No. The emphasis is on atmosphere, ease and time outdoors without a performance or checklist mindset.",
+  },
+  {
+    q: "Why mix geothermal, coast and gentle walks on one page?",
+    a: "They share a similar intent: restorative time in landscape. The page is an editorial weave, not a regional catalogue.",
   },
 ];

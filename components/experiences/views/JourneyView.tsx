@@ -20,7 +20,7 @@ export function JourneyView() {
       </Link>
       <ExpStandardChrome
         navItems={[
-          { href: "/experiences", label: "Experiences" },
+          { href: "/pods", label: "Pods" },
           { href: "#forest-walks", label: "Forest walks" },
           { href: "#hiking", label: "Hiking" },
           { href: "#cycling", label: "Cycling" },

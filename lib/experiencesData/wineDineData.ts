@@ -121,7 +121,7 @@ export const wineDineViewSlides: HikingSlide[] = [
 
 export const wineDineLocalSlides: HikingSlide[] = [
   {
-    image: "/assets/img/wine-dine/atticus-finch-restaurant-rotorua-desserts-milkshakes-dining-new-zealand.jpg",
+    image: "/assets/img/experiences/wine-dine/atticus-finch-restaurant-rotorua-desserts-milkshakes-dining-new-zealand.jpg",
     alt: "Desserts and milkshakes served at Atticus Finch restaurant in Rotorua, New Zealand",
     title: "Atticus Finch",
     placeHref: "https://atticusfinch.co.nz/",
@@ -130,7 +130,7 @@ export const wineDineLocalSlides: HikingSlide[] = [
     ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
   },
   {
-    image: "/assets/img/wine-dine/le-cafe-de-paris-macarons-dessert-patisserie-new-zealand.jpg",
+    image: "/assets/img/experiences/wine-dine/le-cafe-de-paris-macarons-dessert-patisserie-new-zealand.jpg",
     alt: "Colorful macarons and dessert selection at Le Café de Paris patisserie in New Zealand",
     title: "Le Café de Paris",
     placeHref: "https://www.cafedeparis.co.nz/",
@@ -139,7 +139,7 @@ export const wineDineLocalSlides: HikingSlide[] = [
     ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
   },
   {
-    image: "/assets/img/wine-dine/poco-tapas-and-wine-rotorua-modern-dining-dish-new-zealand.jpg",
+    image: "/assets/img/experiences/wine-dine/poco-tapas-and-wine-rotorua-modern-dining-dish-new-zealand.jpg",
     alt: "Modern tapas dish at Poco Tapas & Wine in Rotorua, New Zealand",
     title: "Poco Tapas & Wine",
     placeHref: "https://www.poco.nz/",

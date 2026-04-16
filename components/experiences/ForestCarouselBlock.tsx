@@ -27,6 +27,8 @@ type Props = {
   slides: ForestSlide[];
   chapterTitle: ReactNode;
   chapterIntro: ReactNode;
+  /** When set, place title + subtle scrim sit on the image; duplicate title is omitted from the text column. */
+  editorialImageCaption?: boolean;
 };
 
 export function ForestCarouselBlock({
@@ -34,6 +36,7 @@ export function ForestCarouselBlock({
   slides,
   chapterTitle,
   chapterIntro,
+  editorialImageCaption = false,
 }: Props) {
   const [i, setI] = useState(0);
   const uid = useId().replace(/:/g, "");
@@ -98,6 +101,21 @@ export function ForestCarouselBlock({
               </figure>
             ))}
           </div>
+          {editorialImageCaption ? (
+            <>
+              <div className="forest-carousel__editorial-scrim" aria-hidden />
+              <div className="forest-carousel__editorial-caption">
+                <a
+                  className="forest-carousel__editorial-caption-title"
+                  href={item.placeHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.title}
+                </a>
+              </div>
+            </>
+          ) : null}
           <button
             type="button"
             className="forest-carousel__btn forest-carousel__btn--prev"
@@ -138,9 +156,11 @@ export function ForestCarouselBlock({
         {chapterTitle}
         {chapterIntro}
         <div className="forest-walks-panel" aria-live="polite" aria-atomic="true">
-          <a className="forest-place-link" href={item.placeHref} target="_blank" rel="noopener noreferrer">
-            {item.title}
-          </a>
+          {!editorialImageCaption ? (
+            <a className="forest-place-link" href={item.placeHref} target="_blank" rel="noopener noreferrer">
+              {item.title}
+            </a>
+          ) : null}
           <p className="forest-desc">{item.description}</p>
           <StayAtLink className="journey-pod forest-cta" href={item.ctaHref} label={item.ctaLabel} />
         </div>

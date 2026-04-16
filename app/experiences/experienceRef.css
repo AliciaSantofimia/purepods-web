@@ -21,6 +21,7 @@
   position: sticky;
   top: 0;
   z-index: 30;
+  overflow: visible;
   background: rgba(247, 246, 243, 0.78);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--stroke);
@@ -32,6 +33,7 @@
   padding: 14px 0;
   gap: 16px;
   flex-wrap: wrap;
+  overflow: visible;
 }
 .experience-ref .brand {
   display: flex;
@@ -50,9 +52,152 @@
 }
 .experience-ref .links {
   display: flex;
-  gap: 18px;
+  gap: clamp(20px, 2.4vw, 28px);
   align-items: center;
   flex-wrap: wrap;
+  overflow: visible;
+}
+
+/* Experiences — editorial mega menu (hover / focus-within, no default select UI) */
+.experience-ref .exp-nav-mega {
+  position: relative;
+}
+
+.experience-ref .exp-nav-mega__trigger {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.22s ease, opacity 0.22s ease;
+}
+
+.experience-ref .exp-nav-mega__trigger:hover,
+.experience-ref .exp-nav-mega:focus-within .exp-nav-mega__trigger {
+  color: var(--ink);
+}
+
+.experience-ref .exp-nav-mega__trigger:focus-visible {
+  outline: 2px solid rgba(92, 95, 62, 0.35);
+  outline-offset: 4px;
+}
+
+.experience-ref .exp-nav-mega__dropdown {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  padding-top: 12px;
+  min-width: min(320px, calc(100vw - 48px));
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition:
+    opacity 0.28s ease,
+    transform 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0.34s ease;
+}
+
+.experience-ref .exp-nav-mega:hover .exp-nav-mega__dropdown,
+.experience-ref .exp-nav-mega:focus-within .exp-nav-mega__dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.experience-ref .exp-nav-mega__panel {
+  padding: 22px 24px 18px;
+  border-radius: var(--exp-radius);
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid rgba(92, 95, 62, 0.1);
+  box-shadow: 0 22px 56px rgba(92, 95, 62, 0.12), 0 10px 24px rgba(17, 18, 23, 0.06);
+}
+
+.experience-ref .exp-nav-mega__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.experience-ref .exp-nav-mega__link {
+  display: block;
+  padding: 12px 10px;
+  margin: 0 -10px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.22s ease, transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.22s ease;
+}
+
+.experience-ref .exp-nav-mega__link:hover {
+  background: rgba(92, 95, 62, 0.06);
+  transform: translateX(3px);
+}
+
+.experience-ref .exp-nav-mega__link-title {
+  display: block;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.experience-ref .exp-nav-mega__link-sub {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: rgba(92, 95, 62, 0.62);
+  font-weight: 400;
+  text-transform: none;
+}
+
+.experience-ref .exp-nav-mega__all {
+  display: block;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(92, 95, 62, 0.12);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(92, 95, 62, 0.62);
+  text-decoration: none;
+  transition: color 0.22s ease, opacity 0.22s ease;
+}
+
+.experience-ref .exp-nav-mega__all:hover {
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-ref .exp-nav-mega__dropdown,
+  .experience-ref .exp-nav-mega__link {
+    transition: none;
+  }
+
+  .experience-ref .exp-nav-mega:hover .exp-nav-mega__dropdown,
+  .experience-ref .exp-nav-mega:focus-within .exp-nav-mega__dropdown {
+    transform: none;
+  }
+
+  .experience-ref .exp-nav-mega__link:hover {
+    transform: none;
+  }
 }
 .experience-ref .links a:not(.btn-primary) {
   font-size: 13px;
@@ -238,8 +383,25 @@
   color: var(--brand-green);
   font-family: "Inter", system-ui, sans-serif;
 }
+
+/* Typographic match for .night-falls-ref .nightText h3 (e.g. “The Dark Sky”) — pair with section h2; margins stay on host selectors */
+.experience-ref .copy h2.section-title-premium,
+.experience-ref h2.journey-title.section-title-premium,
+.experience-ref h2.relax-v1-gentle-outro__title.section-title-premium,
+.experience-ref h2.pod-bridge__title.section-title-premium,
+.experience-ref .faq h2.section-title-premium {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.55;
+  color: var(--ink);
+}
 .experience-ref #blocks .journey-title {
   color: var(--brand-green);
+}
+.experience-ref #blocks h2.journey-title.section-title-premium {
+  color: var(--ink);
 }
 .experience-ref .journey-intro {
   margin: 0 0 18px;
@@ -569,6 +731,23 @@
 .experience-ref .pod-bridge {
   border-top: 1px solid var(--stroke);
   border-bottom: 1px solid var(--stroke);
+}
+.experience-ref .pod-bridge--relax-landscape {
+  background:
+    radial-gradient(ellipse 115% 85% at 50% -18%, rgba(92,95,62,.11), transparent 58%),
+    radial-gradient(ellipse 70% 55% at 92% 55%, rgba(48,52,38,.32), transparent 52%),
+    radial-gradient(ellipse 65% 50% at 6% 75%, rgba(38,42,32,.28), transparent 48%),
+    linear-gradient(185deg, var(--cinema-deep) 0%, var(--cinema) 38%, var(--cinema-rich) 100%),
+    url("/assets/img/experiences/culture/purepod-glass-cabin-lake-view-new-zealand-remote-nature-stay.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.experience-ref .pod-bridge--relax-landscape .pod-bridge__title {
+  color: rgba(247, 246, 243, 0.94);
+}
+.experience-ref .pod-bridge--relax-landscape p {
+  color: rgba(247, 246, 243, 0.84);
 }
 .experience-ref .pod-bridge__title {
   margin: 0 0 16px;
