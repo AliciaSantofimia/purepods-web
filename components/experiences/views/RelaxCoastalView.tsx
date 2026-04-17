@@ -113,7 +113,7 @@ export function RelaxCoastalView() {
             <article className="journey-chapter relax-v1-thermal" id="relax-thermal">
               <ForestCarouselBlock
                 ariaLabel="Thermal waters and geothermal relaxation"
-                editorialImageCaption
+              
                 slides={relaxThermalSlides}
                 chapterTitle={
                   <h2 className="journey-title section-title-premium">Thermal waters &amp; geothermal relaxation</h2>
