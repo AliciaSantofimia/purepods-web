@@ -4,8 +4,8 @@ import type { HikingSlide } from "@/components/experiences/HikingCarouselBlock";
 const R = "/assets/img/experiences/relax-coastal/";
 
 export const relaxHero = {
-  src: "/assets/img/experiences/experiences/rotorua-relax-coastal-geothermal-lake.jpg",
-  alt: "Serene geothermal lake at dawn near Rotorua, New Zealand, with soft mist, mineral-rich water and calm native forest shoreline",
+  image: "/assets/img/experiences/relax-coastal/cathedral-cove-beach-new-zealand-rock-arch-sea-stack.jpg",
+  alt: "Cathedral Cove beach framed by a natural rock arch and sea stack, Coromandel Peninsula, New Zealand",
 };
 
 export const relaxAboutLeadHtml = `This is a quiet editorial map of New Zealand’s slower edges — geothermal pools, coastlines, inland water and gentle reserves — chosen for atmosphere and ease rather than spectacle. Where it makes sense, each stop sits near a suggested PurePod. Browse the full set on <a href="/experiences">Experiences</a>.`;

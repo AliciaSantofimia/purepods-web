@@ -76,13 +76,13 @@ export function RelaxCoastalView() {
       >
         <header className="hero relax-v1-hero" id="top">
           <ExpRefImage
-            src={relaxHero.src}
+            src={relaxHero.image}
             alt={relaxHero.alt}
             fill
             sizes="100vw"
             className="heroImg"
             priority
-            objectPosition="center 58%"
+            objectPosition="center 75%"
           />
           <div className="heroInner">
             <h1>Relax &amp; Coastal</h1>
