@@ -34,7 +34,7 @@ const HERO_SLIDES = [
     alt: "",
   },
   {
-    src: "/assets/img/pamu/pamu-purepod-aerial-glass-cabin-landscape-rotorua.jpg",
+    src: "/assets/img/pamu/pamu-purepod-glass-cabin-exterior-landscape-rotorua.jpg",
     alt: "",
   },
   {
@@ -53,15 +53,15 @@ const LANDSCAPE_SLIDES = [
     alt: "Mākōha PurePod above Northland forest near Kerikeri",
   },
   {
-    src: "/assets/img/rewarewa/rewarewa-purepod-aerial-landscape-muriwai-coast.jpg",
+    src: "/assets/img/rewarewa/rewarewa-purepod-glass-cabin-night-stars-muriwai-coast.jpg",
     alt: "Rewarewa PurePod aerial view over Muriwai coast",
   },
   {
-    src: "/assets/img/pamu/pamu-purepod-aerial-glass-cabin-landscape-rotorua.jpg",
+    src: "/assets/img/pamu/pamu-purepod-glass-cabin-exterior-landscape-rotorua.jpg",
     alt: "Pāmu PurePod and Rotorua landscape from above",
   },
   {
-    src: "/assets/img/ruru/ruru-purepod-glass-cabin-aerial-view-coromandel.jpg",
+    src: "/assets/img/ruru/ruru-purepod-glass-cabin-night-sky-coromandel.jpg",
     alt: "Ruru PurePod aerial view on the Coromandel",
   },
   {
