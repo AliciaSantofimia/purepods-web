@@ -12,7 +12,7 @@ export const relaxAboutLeadHtml = `This is a quiet editorial map of New Zealand�
 
 export const relaxThermalSlides: ForestSlide[] = [
   {
-    image: `${R}polynesian-spa-rotorua-lake-view-geothermal-pool-new-zealand.png`,
+    image: `${R}polynesian-spa-rotorua-lake-view-geothermal-pool-new-zealand.jpg`,
     alt: "Geothermal pool at Polynesian Spa Rotorua by the lake, surrounded by natural greenery in New Zealand",
     title: "Polynesian Spa Rotorua",
     placeHref: "https://www.polynesianspa.co.nz/",
@@ -22,7 +22,7 @@ export const relaxThermalSlides: ForestSlide[] = [
     ctaHref: "/location/pamu",
   },
   {
-    image: `${R}wai-ariki-hot-springs-spa-rotorua-geothermal-luxury-new-zealand.png`,
+    image: `${R}wai-ariki-hot-springs-spa-rotorua-geothermal-luxury-new-zealand.jpg`,
     alt: "Wai Ariki Hot Springs & Spa in Rotorua with luxury geothermal pools and modern architecture at sunset, New Zealand",
     title: "Wai Ariki Hot Springs & Spa",
     placeHref: "https://www.wai-ariki.co.nz/",
@@ -32,7 +32,7 @@ export const relaxThermalSlides: ForestSlide[] = [
     ctaHref: "/location/pamu",
   },
   {
-    image: `${R}hells-gate-rotorua-mud-bath-geothermal-spa-new-zealand.png`,
+    image: `${R}rotorua-geothermal-mud-bath-couple-hells-gate-new-zealand.jpg`,
     alt: "Geothermal mud bath at Hell’s Gate Rotorua spa in New Zealand with natural outdoor pools",
     title: "Hell’s Gate Geothermal Reserve",
     placeHref: "https://www.hellsgate.co.nz/",
@@ -42,7 +42,7 @@ export const relaxThermalSlides: ForestSlide[] = [
     ctaHref: "/location/pamu",
   },
   {
-    image: `${R}waikite-valley-hotpools-rotorua-geothermal-spa-new-zealand.png`,
+    image: `${R}waikite-valley-hotpools-rotorua-geothermal-spa-new-zealand.jpg`,
     alt: "Waikite Valley Hot Pools in Rotorua surrounded by native forest and geothermal steam, New Zealand",
     title: "Waikite Valley Hot Pools",
     placeHref: "https://www.hotpools.co.nz/",
