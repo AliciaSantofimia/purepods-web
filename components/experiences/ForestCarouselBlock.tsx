@@ -5,6 +5,7 @@ import {
   useEffect,
   useId,
   useState,
+  type CSSProperties,
   type KeyboardEvent,
   type ReactNode,
 } from "react";
@@ -29,6 +30,8 @@ type Props = {
   chapterIntro: ReactNode;
   /** When set, place title + subtle scrim sit on the image; duplicate title is omitted from the text column. */
   editorialImageCaption?: boolean;
+  /** Carousel full width with chapter copy stacked below (overrides split-grid page CSS via inline layout). */
+  stackedLayout?: boolean;
 };
 
 export function ForestCarouselBlock({
@@ -37,6 +40,7 @@ export function ForestCarouselBlock({
   chapterTitle,
   chapterIntro,
   editorialImageCaption = false,
+  stackedLayout = false,
 }: Props) {
   const [i, setI] = useState(0);
   const uid = useId().replace(/:/g, "");
@@ -65,8 +69,20 @@ export function ForestCarouselBlock({
   const len = slides.length;
   const mountImg = (idx: number) => shouldMountCarouselImage(i, idx, len);
 
+  const momentStyle: CSSProperties | undefined = stackedLayout
+    ? {
+        gridTemplateColumns: "1fr",
+        gap: "clamp(24px, 2.8vw, 36px)",
+        alignItems: "stretch",
+      }
+    : undefined;
+
+  const imageSizes = stackedLayout
+    ? "(max-width: 900px) 100vw, min(1120px, 92vw)"
+    : "(max-width: 900px) 100vw, 45vw";
+
   return (
-    <div className="moment">
+    <div className="moment" style={momentStyle}>
       <div
         className="media forest-carousel"
         role="region"
@@ -88,7 +104,7 @@ export function ForestCarouselBlock({
                     src={s.image}
                     alt={s.alt}
                     fill
-                    sizes="(max-width: 900px) 100vw, 45vw"
+                    sizes={imageSizes}
                     priority={idx === i && idx === 0}
                     className="forest-carousel__img"
                   />
