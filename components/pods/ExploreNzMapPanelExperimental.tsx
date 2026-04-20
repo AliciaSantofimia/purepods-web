@@ -24,6 +24,89 @@ export type ExploreMapMarkerPod = {
 
 type LeafletGlobal = any;
 
+/** Static geographic reference labels only (non-interactive; experimental map). */
+type GeoRefLabel = {
+  name: string;
+  lat: number;
+  lon: number;
+  tier: "primary" | "secondary" | "regional";
+  /** divIcon geometry override (same defaults as before when omitted). */
+  iconSize?: [number, number];
+  iconAnchor?: [number, number];
+};
+
+/** Stewart Island regional label only (North/South island regional names removed from the map). */
+const STEWART_REGIONAL_LABEL_MAP: Pick<GeoRefLabel, "tier" | "iconSize" | "iconAnchor"> = {
+  tier: "regional",
+  iconSize: [340, 43],
+  iconAnchor: [170, 22],
+};
+
+const GEO_REF_LABELS: GeoRefLabel[] = [
+  { name: "Stewart Island", lat: -46.878, lon: 168.208, ...STEWART_REGIONAL_LABEL_MAP },
+  /*
+   * Auckland — anchor = right-centre of label (iconAnchor); “AUCKLAND” sits left of the point, over water W of
+   * the isthmus (ref layout). Point ~city/coast; stays clear of Rewarewa ~(-36.836, 174.504).
+   */
+  {
+    name: "Auckland",
+    lat: -36.848,
+    lon: 174.765,
+    tier: "primary",
+    iconSize: [136, 20],
+    iconAnchor: [124, 10],
+  },
+  /*
+   * Kerikeri (town centroid ≈ -35.228611, 173.947784). Makoha pin ~(-35.22, 173.95). Nudge anchor from
+   * bottom-left [0,18] ~40% toward box center to bring the label closer to the pin; coordinates unchanged.
+   */
+  {
+    name: "Kerikeri",
+    lat: -35.234,
+    lon: 173.938,
+    tier: "secondary",
+    iconSize: [122, 18],
+    iconAnchor: [24, 15],
+  },
+  { name: "Tauranga", lat: -37.6878, lon: 176.1651, tier: "secondary" },
+  { name: "Rotorua", lat: -38.1368, lon: 176.2497, tier: "secondary" },
+  /*
+   * Wellington — iconAnchor top-centre [w/2, 0]: label hangs below the anchor (ref: text under the point).
+   */
+  {
+    name: "Wellington",
+    lat: -41.286,
+    lon: 174.776,
+    tier: "primary",
+    iconSize: [132, 20],
+    iconAnchor: [66, 0],
+  },
+  /*
+   * Christchurch — primary city (same hierarchy as Auckland / Wellington); anchor W of CBD for Canterbury cluster.
+   */
+  {
+    name: "Christchurch",
+    lat: -43.528,
+    lon: 172.505,
+    tier: "primary",
+    iconSize: [132, 18],
+    iconAnchor: [122, 9],
+  },
+  /*
+   * Kaikoura ~(-42.41, 173.68); anchor pulled ~halfway from left toward centre vs [0,9] so text stays nearer land/coast.
+   */
+  {
+    name: "Kaikoura",
+    lat: -42.397,
+    lon: 173.668,
+    tier: "secondary",
+    iconSize: [112, 18],
+    iconAnchor: [30, 9],
+  },
+  { name: "Queenstown", lat: -45.0312, lon: 168.6626, tier: "primary" },
+  { name: "Dunedin", lat: -45.8788, lon: 170.5028, tier: "secondary" },
+];
+
 function loadLeaflet(): Promise<LeafletGlobal> {
   if (typeof window === "undefined") {
     return Promise.reject(new Error("Leaflet requires a browser environment"));
@@ -72,6 +155,61 @@ function markerHtml(
   return `<div class="${classes.root}" data-slug="${slug}"><span class="${classes.ring}" aria-hidden="true"></span><span class="${classes.dot}" aria-hidden="true"></span></div>`;
 }
 
+/** Stewart tab only — both Stewart pods present and no others (map props omit island filter). */
+function isStewartIslandTabPods(podList: ExploreMapMarkerPod[]): boolean {
+  if (podList.length !== 2) return false;
+  const slugs = new Set(podList.map((p) => p.slug));
+  return slugs.has("tokoeka") && slugs.has("hananui");
+}
+
+/** True when Tokoeka and Hananui are both on the map (markers can stack at the same lat/lng). */
+function hasStewartMarkerPair(podList: ExploreMapMarkerPod[]): boolean {
+  const slugs = new Set(podList.map((p) => p.slug));
+  return slugs.has("tokoeka") && slugs.has("hananui");
+}
+
+/**
+ * Split horizontal hitboxes (same geographic anchor on the dot) so two stacked divIcons are both clickable.
+ * Visual marker unchanged; transparent regions extend west (Tokoeka) / east (Hananui) from the pin.
+ */
+function podMarkerDivIcon(
+  L: LeafletGlobal,
+  pod: ExploreMapMarkerPod,
+  podList: ExploreMapMarkerPod[],
+  classes: { root: string; ring: string; dot: string },
+) {
+  const inner = markerHtml(pod.slug, classes);
+  const stewartSplit = hasStewartMarkerPair(podList) && (pod.slug === "tokoeka" || pod.slug === "hananui");
+
+  if (stewartSplit && pod.slug === "tokoeka") {
+    return L.divIcon({
+      className: xstyles.exmapDivicon,
+      html: `<div style="width:64px;height:36px;position:relative">
+        <div style="position:absolute;right:0;top:2px">${inner}</div>
+      </div>`,
+      iconSize: [64, 36],
+      iconAnchor: [48, 18],
+    });
+  }
+  if (stewartSplit && pod.slug === "hananui") {
+    return L.divIcon({
+      className: xstyles.exmapDivicon,
+      html: `<div style="width:64px;height:36px;position:relative">
+        <div style="position:absolute;left:0;top:2px">${inner}</div>
+      </div>`,
+      iconSize: [64, 36],
+      iconAnchor: [16, 18],
+    });
+  }
+
+  return L.divIcon({
+    className: xstyles.exmapDivicon,
+    html: inner,
+    iconSize: [32, 32],
+    iconAnchor: [16, 16],
+  });
+}
+
 /** Fit map to pod markers with edge padding; single-pod fallback avoids over-zoom. */
 function fitMapToPods(map: LeafletGlobal, L: LeafletGlobal, podList: ExploreMapMarkerPod[]) {
   if (!podList.length) {
@@ -84,7 +222,31 @@ function fitMapToPods(map: LeafletGlobal, L: LeafletGlobal, podList: ExploreMapM
     return;
   }
   const latlngs = podList.map((p) => L.latLng(p.lat, p.lon));
-  const b = L.latLngBounds(latlngs);
+  let b = L.latLngBounds(latlngs);
+
+  if (isStewartIslandTabPods(podList)) {
+    b = b.pad(0.09);
+    map.fitBounds(b, {
+      padding: [34, 36],
+      maxZoom: 12,
+      animate: false,
+    });
+    return;
+  }
+
+  /** North Island pods sit north of ~-37°; farther south uses roomier South Island–tab framing. */
+  const spansSouthIslandMap = podList.some((p) => p.lat < -41.35);
+
+  if (spansSouthIslandMap) {
+    map.fitBounds(b, {
+      paddingTopLeft: L.point(72, 36),
+      paddingBottomRight: L.point(36, 36),
+      maxZoom: 10,
+      animate: false,
+    });
+    return;
+  }
+
   map.fitBounds(b, {
     padding: [28, 28],
     maxZoom: 10,
@@ -167,10 +329,11 @@ export function ExploreNzMapPanelExperimental({ pods, highlightSlug, onHighlight
           interactive: false,
           style: {
             fill: true,
-            fillColor: "#e8eae3",
+            /* Warm paper land: slightly richer than water, still soft (editorial map) */
+            fillColor: "#ebe8df",
             fillOpacity: 1,
-            color: "rgba(92, 95, 62, 0.38)",
-            weight: 0.55,
+            color: "rgba(74, 72, 68, 0.42)",
+            weight: 0.48,
             opacity: 1,
           },
         }).addTo(map);
@@ -180,8 +343,41 @@ export function ExploreNzMapPanelExperimental({ pods, highlightSlug, onHighlight
             '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
           subdomains: "abcd",
           maxZoom: 20,
-          opacity: 0.82,
+          /* Let light relief / hydrology read through while staying uncluttered */
+          opacity: 0.9,
         }).addTo(map);
+
+        map.createPane("exmapGeoLabels");
+        const geoLabelPane = map.getPane("exmapGeoLabels");
+        if (geoLabelPane) {
+          geoLabelPane.style.zIndex = "450";
+          geoLabelPane.style.pointerEvents = "none";
+        }
+
+        const defaultLabelIconSize: [number, number] = [128, 18];
+        const defaultLabelIconAnchor: [number, number] = [64, 9];
+
+        for (const lb of GEO_REF_LABELS) {
+          const tierClass =
+            lb.tier === "regional"
+              ? xstyles.exmapGeoLabel__textRegional
+              : lb.tier === "primary"
+                ? xstyles.exmapGeoLabel__textPrimary
+                : xstyles.exmapGeoLabel__textSecondary;
+          const iconSize = lb.iconSize ?? defaultLabelIconSize;
+          const iconAnchor = lb.iconAnchor ?? defaultLabelIconAnchor;
+          L.marker([lb.lat, lb.lon], {
+            pane: "exmapGeoLabels",
+            interactive: false,
+            keyboard: false,
+            icon: L.divIcon({
+              className: xstyles.exmapGeoLabel,
+              html: `<span class="${xstyles.exmapGeoLabel__text} ${tierClass}" aria-hidden="true">${lb.name}</span>`,
+              iconSize,
+              iconAnchor,
+            }),
+          }).addTo(map);
+        }
 
         mapRef.current = map;
         requestAnimationFrame(() => map.invalidateSize());
@@ -215,18 +411,25 @@ export function ExploreNzMapPanelExperimental({ pods, highlightSlug, onHighlight
     });
     markersRef.current = new Map();
 
+    const markerClasses = {
+      root: xstyles.exmapM,
+      ring: xstyles.exmapM__ring,
+      dot: xstyles.exmapM__dot,
+    };
+
     for (const pod of pods) {
-      const icon = L.divIcon({
-        className: xstyles.exmapDivicon,
-        html: markerHtml(pod.slug, {
-          root: xstyles.exmapM,
-          ring: xstyles.exmapM__ring,
-          dot: xstyles.exmapM__dot,
-        }),
-        iconSize: [32, 32],
-        iconAnchor: [16, 16],
+      const icon = podMarkerDivIcon(L, pod, pods, markerClasses);
+      const zIndexOffset =
+        hasStewartMarkerPair(pods) && pod.slug === "tokoeka"
+          ? 650
+          : hasStewartMarkerPair(pods) && pod.slug === "hananui"
+            ? 620
+            : 0;
+      const marker = L.marker([pod.lat, pod.lon], {
+        icon,
+        riseOnHover: true,
+        ...(zIndexOffset ? { zIndexOffset } : {}),
       });
-      const marker = L.marker([pod.lat, pod.lon], { icon });
       marker.bindTooltip(
         `<div class="${xstyles.exmapTip__inner}"><span class="${xstyles.exmapTip__title}">${pod.title}</span><span class="${xstyles.exmapTip__meta}">${pod.pill}</span></div>`,
         {

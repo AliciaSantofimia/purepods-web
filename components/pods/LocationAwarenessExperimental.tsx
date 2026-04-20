@@ -16,7 +16,8 @@ type PodPin = {
   lat: number;
 };
 
-const MAP_BOUNDS = { west: 166.35, east: 178.62, north: -34.42, south: -46.78 };
+/** Extend south slightly so Stewart Island POIs (~46.9° S) stay inside the projection box. */
+const MAP_BOUNDS = { west: 166.35, east: 178.62, north: -34.42, south: -47.05 };
 const VB_W = 1000;
 const VB_H = 1280;
 
@@ -38,22 +39,22 @@ const PATH_NZ_NORTH =
   "M673.35 179.82 L732.41 288.84 L734.12 218.12 L770.90 246.36 L783.09 324.70 L848.67 358.45 L903.73 366.73 L950.31 327.23 L991.61 339.20 L971.86 431.10 L947.06 491.53 L884.84 489.40 L863.08 520.88 L870.66 565.43 L858.67 584.70 L827.87 640.50 L787.48 711.42 L724.50 752.71 L710.51 725.53 L676.53 710.61 L723.52 625.42 L696.83 568.43 L609.13 527.00 L611.43 489.49 L670.32 453.35 L684.06 373.62 L680.28 306.65 L647.27 237.27 L649.47 219.01 L610.51 176.26 L546.39 84.62 L512.31 11.30 L542.55 3.18 L586.90 60.71 L650.32 87.56 L673.35 179.82 Z";
 
 const PODS: PodPin[] = [
-  { slug: "makoha", title: "Mākōha", locale: "Kerikeri", lon: 173.95, lat: -35.22 },
-  { slug: "rewarewa", title: "Rewarewa", locale: "Muriwai Coast", lon: 174.52, lat: -36.82 },
-  { slug: "ruru", title: "Ruru", locale: "Coromandel", lon: 175.5, lat: -36.76 },
-  { slug: "pamu", title: "Pāmu", locale: "Rotorua", lon: 176.25, lat: -38.14 },
-  { slug: "matu", title: "Matū", locale: "Waitomo", lon: 175.1, lat: -38.26 },
-  { slug: "kokomea", title: "Kokomea", locale: "Kāpiti Coast", lon: 175.08, lat: -40.85 },
+  { slug: "makoha", title: "Mākōha", locale: "Kerikeri", lon: 173.9509, lat: -35.2283 },
+  { slug: "rewarewa", title: "Rewarewa", locale: "Muriwai Coast", lon: 174.504, lat: -36.836 },
+  { slug: "ruru", title: "Ruru", locale: "Coromandel", lon: 175.508, lat: -36.844 },
+  { slug: "pamu", title: "Pāmu", locale: "Rotorua", lon: 176.2497, lat: -38.1368 },
+  { slug: "matu", title: "Matū", locale: "Waitomo", lon: 175.1035, lat: -38.2609 },
+  { slug: "kokomea", title: "Kokomea", locale: "Kāpiti Coast", lon: 174.988, lat: -40.914 },
   { slug: "manakau", title: "Manakau", locale: "Kaikōura", lon: 173.68, lat: -42.4 },
-  { slug: "kahutara", title: "Kahutara", locale: "Kaikōura", lon: 173.55, lat: -42.35 },
-  { slug: "atatu", title: "Atatū", locale: "Hurunui", lon: 173.35, lat: -42.88 },
-  { slug: "korimako", title: "Korimako", locale: "Hurunui", lon: 172.62, lat: -42.82 },
-  { slug: "greystone", title: "Greystone", locale: "Waipara", lon: 172.75, lat: -43.05 },
-  { slug: "pohue", title: "Pōhue", locale: "Banks Peninsula", lon: 172.65, lat: -43.75 },
-  { slug: "haurapa", title: "Haurapa", locale: "Central Otago", lon: 169.32, lat: -45.18 },
-  { slug: "taima", title: "Tāima", locale: "Central Otago", lon: 169.15, lat: -44.98 },
-  { slug: "tokoeka", title: "Tokoeka", locale: "Stewart Island", lon: 168.05, lat: -47.02 },
-  { slug: "hananui", title: "Hananui", locale: "Stewart Island", lon: 168.12, lat: -46.92 },
+  { slug: "kahutara", title: "Kahutara", locale: "Kaikōura", lon: 173.72, lat: -42.45 },
+  { slug: "atatu", title: "Atatū", locale: "Hurunui", lon: 172.76, lat: -42.65 },
+  { slug: "korimako", title: "Korimako", locale: "Hurunui", lon: 172.88, lat: -42.58 },
+  { slug: "greystone", title: "Greystone", locale: "Waipara", lon: 172.75, lat: -43.15 },
+  { slug: "pohue", title: "Pōhue", locale: "Banks Peninsula", lon: 172.967, lat: -43.803 },
+  { slug: "haurapa", title: "Haurapa", locale: "Central Otago", lon: 169.2, lat: -45.038 },
+  { slug: "taima", title: "Tāima", locale: "Central Otago", lon: 169.15, lat: -45.32 },
+  { slug: "tokoeka", title: "Tokoeka", locale: "Stewart Island", lon: 168.124813, lat: -46.866629 },
+  { slug: "hananui", title: "Hananui", locale: "Stewart Island", lon: 168.124998, lat: -46.866759 },
 ].slice()
   .sort((a, b) => b.lat - a.lat);
 

@@ -25,24 +25,24 @@ type PodLocation = {
   lon: number;
 };
 
-/** Approximate coordinates for map layout — refine with precise POIs when available. */
+/** Pod locations — aligned with `exploreMapPinsExperimental`. */
 const PODS: PodLocation[] = [
-  { slug: "makoha", title: "Mākōha", locale: "Kerikeri", lat: -35.22, lon: 173.95 },
-  { slug: "rewarewa", title: "Rewarewa", locale: "Muriwai Coast", lat: -36.82, lon: 174.52 },
-  { slug: "ruru", title: "Ruru", locale: "Coromandel", lat: -36.76, lon: 175.5 },
-  { slug: "pamu", title: "Pāmu", locale: "Rotorua", lat: -38.14, lon: 176.25 },
-  { slug: "matu", title: "Matū", locale: "Waitomo", lat: -38.26, lon: 175.1 },
-  { slug: "kokomea", title: "Kokomea", locale: "Kāpiti Coast", lat: -40.85, lon: 175.08 },
+  { slug: "makoha", title: "Mākōha", locale: "Kerikeri", lat: -35.2283, lon: 173.9509 },
+  { slug: "rewarewa", title: "Rewarewa", locale: "Muriwai Coast", lat: -36.836, lon: 174.504 },
+  { slug: "ruru", title: "Ruru", locale: "Coromandel", lat: -36.844, lon: 175.508 },
+  { slug: "pamu", title: "Pāmu", locale: "Rotorua", lat: -38.1368, lon: 176.2497 },
+  { slug: "matu", title: "Matū", locale: "Waitomo", lat: -38.2609, lon: 175.1035 },
+  { slug: "kokomea", title: "Kokomea", locale: "Kāpiti Coast", lat: -40.914, lon: 174.988 },
   { slug: "manakau", title: "Manakau", locale: "Kaikōura", lat: -42.4, lon: 173.68 },
-  { slug: "kahutara", title: "Kahutara", locale: "Kaikōura", lat: -42.35, lon: 173.55 },
-  { slug: "atatu", title: "Atatū", locale: "Hurunui", lat: -42.88, lon: 173.35 },
-  { slug: "korimako", title: "Korimako", locale: "Hurunui", lat: -42.82, lon: 172.62 },
-  { slug: "greystone", title: "Greystone", locale: "Waipara", lat: -43.05, lon: 172.75 },
-  { slug: "pohue", title: "Pōhue", locale: "Banks Peninsula", lat: -43.75, lon: 172.65 },
-  { slug: "haurapa", title: "Haurapa", locale: "Central Otago", lat: -45.18, lon: 169.32 },
-  { slug: "taima", title: "Tāima", locale: "Central Otago", lat: -44.98, lon: 169.15 },
-  { slug: "tokoeka", title: "Tokoeka", locale: "Stewart Island", lat: -47.02, lon: 168.05 },
-  { slug: "hananui", title: "Hananui", locale: "Stewart Island", lat: -46.92, lon: 168.12 },
+  { slug: "kahutara", title: "Kahutara", locale: "Kaikōura", lat: -42.45, lon: 173.72 },
+  { slug: "atatu", title: "Atatū", locale: "Hurunui", lat: -42.65, lon: 172.76 },
+  { slug: "korimako", title: "Korimako", locale: "Hurunui", lat: -42.58, lon: 172.88 },
+  { slug: "greystone", title: "Greystone", locale: "Waipara", lat: -43.15, lon: 172.75 },
+  { slug: "pohue", title: "Pōhue", locale: "Banks Peninsula", lat: -43.803, lon: 172.967 },
+  { slug: "haurapa", title: "Haurapa", locale: "Central Otago", lat: -45.038, lon: 169.2 },
+  { slug: "taima", title: "Tāima", locale: "Central Otago", lat: -45.32, lon: 169.15 },
+  { slug: "tokoeka", title: "Tokoeka", locale: "Stewart Island", lat: -46.866629, lon: 168.124813 },
+  { slug: "hananui", title: "Hananui", locale: "Stewart Island", lat: -46.866759, lon: 168.124998 },
 ].slice()
   .sort((a, b) => b.lat - a.lat);
 
@@ -475,17 +475,48 @@ export function PodGeographicMapExperimental() {
           maxZoom: 20,
         }).addTo(map);
 
-        const iconFor = (slug: string) =>
-          L.divIcon({
+        const hasStewartPair =
+          PODS.some((p) => p.slug === "tokoeka") && PODS.some((p) => p.slug === "hananui");
+
+        const iconFor = (slug: string) => {
+          const inner = markerHtml(slug);
+          if (hasStewartPair && slug === "tokoeka") {
+            return L.divIcon({
+              className: "ppm-divicon",
+              html: `<div style="width:64px;height:36px;position:relative"><div style="position:absolute;right:0;top:3px">${inner}</div></div>`,
+              iconSize: [64, 36],
+              iconAnchor: [49, 18],
+            });
+          }
+          if (hasStewartPair && slug === "hananui") {
+            return L.divIcon({
+              className: "ppm-divicon",
+              html: `<div style="width:64px;height:36px;position:relative"><div style="position:absolute;left:0;top:3px">${inner}</div></div>`,
+              iconSize: [64, 36],
+              iconAnchor: [15, 18],
+            });
+          }
+          return L.divIcon({
             className: "ppm-divicon",
-            html: markerHtml(slug),
+            html: inner,
             iconSize: [30, 30],
             iconAnchor: [15, 15],
           });
+        };
 
         markersRef.current = new Map();
         for (const pod of PODS) {
-          const marker = L.marker([pod.lat, pod.lon], { icon: iconFor(pod.slug) });
+          const zIO =
+            hasStewartPair && pod.slug === "tokoeka"
+              ? 650
+              : hasStewartPair && pod.slug === "hananui"
+                ? 620
+                : undefined;
+          const marker = L.marker([pod.lat, pod.lon], {
+            icon: iconFor(pod.slug),
+            riseOnHover: true,
+            ...(zIO !== undefined ? { zIndexOffset: zIO } : {}),
+          });
           marker.bindTooltip(
             `<div class="ppm-tip__inner"><span class="ppm-tip__title">${pod.title}</span><span class="ppm-tip__meta">${pod.locale}</span></div>`,
             {

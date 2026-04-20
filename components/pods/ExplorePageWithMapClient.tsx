@@ -28,10 +28,12 @@ export function ExplorePageWithMapClient({ pods }: { pods: ExplorePodCard[] }) {
 
   const podsWithPins = useMemo(() => attachMapPinsToExplorePods(pods), [pods]);
 
-  const visiblePods = useMemo(
-    () => podsWithPins.filter((p) => p.filter === filter),
-    [podsWithPins, filter],
-  );
+  const visiblePods = useMemo(() => {
+    if (filter === "south") {
+      return podsWithPins.filter((p) => p.filter === "south" || p.filter === "stewart");
+    }
+    return podsWithPins.filter((p) => p.filter === filter);
+  }, [podsWithPins, filter]);
 
   const mapPods = useMemo(() => visiblePods.filter(hasValidMapPin), [visiblePods]);
 
