@@ -29,9 +29,9 @@ function RelaxRcJsonLd() {
   const json = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Relax & Coastal — curated geothermal, coastal and lake experiences in New Zealand",
+    name: "Relax & Coastal — serenity, wellness and restorative landscapes in New Zealand",
     description:
-      "Editorial shortlist of restorative places across Rotorua, Northland, Canterbury, Banks Peninsula, Stewart Island and Central Otago, each paired with a suggested PurePod.",
+      "Curated geothermal relaxation in Rotorua and coastal calm from Northland to Stewart Island and Hurunui — each place with an official visitor link and a suggested PurePod glass eco-cabin stay.",
     numberOfItems: itemListElement.length,
     itemListElement,
   };
@@ -40,9 +40,10 @@ function RelaxRcJsonLd() {
 }
 
 function RelaxRcPlaceBody({ paragraphs }: { paragraphs: RelaxRcPlace["paragraphs"] }) {
+  const lines = paragraphs.filter((p) => p.trim().length > 0);
   return (
     <div className="relax-rc-place__body-stack">
-      {paragraphs.map((para, i) => (
+      {lines.map((para, i) => (
         <p key={i} className="relax-rc-place__body">
           {para}
         </p>
@@ -51,8 +52,20 @@ function RelaxRcPlaceBody({ paragraphs }: { paragraphs: RelaxRcPlace["paragraphs
   );
 }
 
+function RelaxRcOfficialLink({ name, href }: { name: string; href: string }) {
+  if (!href.trim()) return null;
+  return (
+    <p className="relax-rc-place__official">
+      <a className="relax-rc-place__official-link" href={href} target="_blank" rel="noopener noreferrer">
+        <span className="relax-rc-place__official-label">Official visitor information</span>
+        <span className="visually-hidden"> — {name}</span>
+      </a>
+    </p>
+  );
+}
+
 function RelaxRcPlaceArticle({ place }: { place: RelaxRcPlace }) {
-  const { figure, layout = "image-left", name, eyebrow, paragraphs, mapHref, ctas } = place;
+  const { figure, layout = "image-left", name, eyebrow, paragraphs, officialHref, ctas } = place;
   const titleId = `${place.id}-title`;
 
   if (!figure) {
@@ -61,10 +74,9 @@ function RelaxRcPlaceArticle({ place }: { place: RelaxRcPlace }) {
         <div className="relax-rc-place__prose-inner">
           <p className="relax-rc-place__eyebrow">{eyebrow}</p>
           <h3 id={titleId} className="relax-rc-place__name">
-            <a className="relax-rc-place__ext" href={mapHref} target="_blank" rel="noopener noreferrer">
-              {name}
-            </a>
+            {name}
           </h3>
+          <RelaxRcOfficialLink name={name} href={officialHref} />
           <RelaxRcPlaceBody paragraphs={paragraphs} />
           <div className="hiking-ctas relax-rc-place__ctas">
             {ctas.map((c) => (
@@ -93,10 +105,9 @@ function RelaxRcPlaceArticle({ place }: { place: RelaxRcPlace }) {
         <div className="relax-rc-place__bleed-copy">
           <p className="relax-rc-place__eyebrow">{eyebrow}</p>
           <h3 id={titleId} className="relax-rc-place__name relax-rc-place__name--bleed">
-            <a className="relax-rc-place__ext" href={mapHref} target="_blank" rel="noopener noreferrer">
-              {name}
-            </a>
+            {name}
           </h3>
+          <RelaxRcOfficialLink name={name} href={officialHref} />
           <RelaxRcPlaceBody paragraphs={paragraphs} />
           <div className="hiking-ctas relax-rc-place__ctas">
             {ctas.map((c) => (
@@ -130,10 +141,9 @@ function RelaxRcPlaceArticle({ place }: { place: RelaxRcPlace }) {
     <div className="relax-rc-place__split-copy">
       <p className="relax-rc-place__eyebrow">{eyebrow}</p>
       <h3 id={titleId} className="relax-rc-place__name">
-        <a className="relax-rc-place__ext" href={mapHref} target="_blank" rel="noopener noreferrer">
-          {name}
-        </a>
+        {name}
       </h3>
+      <RelaxRcOfficialLink name={name} href={officialHref} />
       <RelaxRcPlaceBody paragraphs={paragraphs} />
       <div className="hiking-ctas relax-rc-place__ctas">
         {ctas.map((c) => (
@@ -224,9 +234,8 @@ export function RelaxCoastalView() {
       <RelaxRcJsonLd />
       <ExpStandardChrome
         navItems={[
-          { href: "#relax-rc-rotorua", label: "Rotorua" },
-          { href: "#relax-rc-north", label: "North" },
-          { href: "#relax-rc-otago", label: "Otago" },
+          { href: "#relax-rc-thermal", label: "Thermal" },
+          { href: "#relax-rc-coastal", label: "Coastal" },
           { href: "#faq", label: "FAQ" },
         ]}
       >
@@ -241,13 +250,14 @@ export function RelaxCoastalView() {
             objectPosition="center 75%"
           />
           <div className="heroInner">
+            <p className="relax-rc-hero-eyebrow">Serenity &amp; wellness</p>
             <h1>Relax &amp; Coastal</h1>
             <p className="impact-summary">
-              A premium, slow-travel edit across New Zealand — geothermal Rotorua, Northland&apos;s island light,
-              Canterbury surf, Banks Peninsula harbours, Rakiura&apos;s tidal hush and Central Otago lake trails.
+              A calm, premium field note to geothermal Rotorua, open Northland coast, Rakiura skies above Paterson Inlet,
+              and Hurunui&apos;s elemental shore — each stop paired with a suggested PurePod when the geography agrees.
             </p>
             <p className="impact-summary relax-v1-hero__summary-sub">
-              Each stop paired with a suggested PurePod when the geography agrees.
+              Seven intentional places in two movements: thermal waters first, then coastal calm and hidden landscapes.
             </p>
             <Link className="btnGhost" href="#relax-rc-deck">
               Read on
@@ -288,12 +298,12 @@ export function RelaxCoastalView() {
               <h2 className="journey-title section-title-premium relax-rc-toc__title">Curated for calm pacing</h2>
               <div className="relax-rc-toc__intro-stack">
                 <p className="journey-intro relax-rc-toc__intro-lead">
-                  Thirteen places, five movements — geothermal Rotorua first, then North Island sea room, Canterbury and
-                  Banks Peninsula, Stewart Island&apos;s inlet, and Central Otago water.
+                  Seven places in two movements — thermal waters and geothermal relaxation in Rotorua, then coastal calm
+                  and hidden landscapes from Northland to Stewart Island and Hurunui.
                 </p>
                 <p className="journey-intro relax-rc-toc__intro-sub">
-                  Photographs appear only where we hold an honest file; everything else leans on typography and rhythm so
-                  the page stays trustworthy.
+                  Each listing includes an official visitor link you can update in code when final URLs are ready.
+                  Photographs appear only where we hold an honest file; the rest is typography and space.
                 </p>
               </div>
               <ol className="relax-rc-toc__list" aria-label="Chapter shortcuts">
