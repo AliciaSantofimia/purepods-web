@@ -1,5 +1,4 @@
 const RC = "/assets/img/experiences/relax-coastal/";
-const J = "/assets/img/experiences/journeys/";
 
 export const relaxHero = {
   image: `${RC}cathedral-cove-beach-new-zealand-rock-arch-sea-stack.jpg`,
@@ -120,6 +119,11 @@ export const relaxRcChapters: RelaxRcChapter[] = [
           "Bring little more than time; the shore rewards an unhurried lens.",
         ],
         officialHref: "https://maps.app.goo.gl/2xbeZSdrHHRXeMS98",
+        figure: {
+          src: `${RC}matauri-bay-purepods-northland-coastal-beach-new-zealand.jpg`,
+          alt: "Wide sandy beach and turquoise water at Matauri Bay, Northland coastline, New Zealand",
+        },
+        layout: "image-left",
         ctas: [{ label: "Stay at Mākōha →", href: "/location/makoha" }],
       },
       {
@@ -133,8 +137,8 @@ export const relaxRcChapters: RelaxRcChapter[] = [
         officialHref:
           "https://www.doc.govt.nz/parks-and-recreation/places-to-go/southland/places/stewart-island-rakiura/oban-area/things-to-do/oban-day-walks/",
         figure: {
-          src: `${J}rakiura-national-park-beach-stewart-island-new-zealand.jpg`,
-          alt: "Quiet beach and coastal bush, Rakiura National Park, Stewart Island, New Zealand — island light and inlet calm",
+          src: `${RC}observation-rock-viewpoint-purepods-paterson-inlet-stewart-island-new-zealand.jpg`,
+          alt: "Elevated coastal view over Paterson Inlet from Observation Rock Viewpoint, Stewart Island, New Zealand",
         },
         layout: "image-right",
         ctas: [
