@@ -367,3 +367,40 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* —— Romantic page only: nav + Pods mega (does not apply to other experience views) —— */
+
+/* In-page anchors: stay clear of sticky nav when using header links */
+.experience-ref.romantic-ref #moments,
+.experience-ref.romantic-ref #gallery,
+.experience-ref.romantic-ref #faq {
+  scroll-margin-top: clamp(76px, 11vw, 104px);
+}
+
+/* Pods mega: anchor to trigger right edge + cap width so panel stays inside viewport */
+.experience-ref.romantic-ref .exp-nav-pods-mega:not(.exp-nav-pods-mega--mobile) .exp-nav-pods-mega__dropdown {
+  left: auto;
+  right: 0;
+  min-width: 0;
+  width: min(880px, calc(100vw - 24px));
+  max-width: calc(100vw - 20px);
+}
+
+.experience-ref.romantic-ref .exp-nav-pods-mega:not(.exp-nav-pods-mega--mobile) .exp-nav-pods-mega__panel {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 821px) and (max-width: 1160px) {
+  .experience-ref.romantic-ref .nav-inner {
+    gap: 10px;
+  }
+
+  .experience-ref.romantic-ref .links {
+    gap: clamp(10px, 1.5vw, 18px);
+  }
+
+  .experience-ref.romantic-ref .exp-nav-pods-mega:not(.exp-nav-pods-mega--mobile) .exp-nav-pods-mega__col {
+    padding-inline: 10px;
+  }
+}

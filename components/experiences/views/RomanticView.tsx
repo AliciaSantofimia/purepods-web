@@ -12,7 +12,6 @@ export function RomanticView() {
         navItems={[
           { href: "#moments", label: "Moments" },
           { href: "#gallery", label: "Gallery" },
-          { href: "#night", label: "Night" },
           { href: "#faq", label: "FAQ" },
         ]}
       >
