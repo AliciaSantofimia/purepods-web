@@ -1401,6 +1401,27 @@
   color: var(--ink);
 }
 
+/* Relax & Coastal — anchor targets clear sticky experience nav (TOC + in-page links) */
+.experience-ref.relax-coastal-page {
+  --relax-coastal-anchor-offset: clamp(88px, 11vw, 118px);
+}
+
+@media (max-width: 720px) {
+  .experience-ref.relax-coastal-page {
+    /* Taller stacked nav (logo + wrapped links + Book) */
+    --relax-coastal-anchor-offset: clamp(140px, 36vw, 220px);
+  }
+}
+
+.experience-ref.relax-coastal-page #relax-rc-deck,
+.experience-ref.relax-coastal-page #blocks,
+.experience-ref.relax-coastal-page #the-pod,
+.experience-ref.relax-coastal-page #faq,
+.experience-ref.relax-coastal-page main .relax-rc-chapter[id],
+.experience-ref.relax-coastal-page main .relax-rc-place[id] {
+  scroll-margin-top: var(--relax-coastal-anchor-offset);
+}
+
 /* Relax & Coastal only — mobile layout (root: .experience-ref.relax-coastal-page) */
 
 @media (max-width: 720px) {
@@ -1601,19 +1622,19 @@
   }
 
   .experience-ref.relax-coastal-page .relax-coastal-hero__seq--eyebrow {
-    animation: relax-rc-hero-seq-fade 0.22s ease-out 0s both;
+    animation: relax-rc-hero-seq-fade 0.15s ease-out 0s both;
   }
 
   .experience-ref.relax-coastal-page .relax-coastal-hero__seq--title {
-    animation: relax-rc-hero-seq-fade 0.26s ease-out 0.08s both;
+    animation: relax-rc-hero-seq-fade 0.18s ease-out 0.04s both;
   }
 
   .experience-ref.relax-coastal-page .relax-coastal-hero__seq--lead {
-    animation: relax-rc-hero-seq-fade 0.28s cubic-bezier(0.33, 1, 0.68, 1) 0.16s both;
+    animation: relax-rc-hero-seq-fade 0.2s cubic-bezier(0.33, 1, 0.68, 1) 0.08s both;
   }
 
   .experience-ref.relax-coastal-page .relax-coastal-hero__seq--cta {
-    animation: relax-rc-hero-seq-fade 0.24s ease-out 0.26s both;
+    animation: relax-rc-hero-seq-fade 0.17s ease-out 0.12s both;
   }
 
   /* Scroll: fade only, shorter — no translate (chapter uses mast / cards only) */
@@ -1622,29 +1643,49 @@
     opacity: 0;
   }
 
-  .experience-ref.relax-coastal-page
-    .relax-coastal-reveal.relax-coastal--in-view:not(.relax-coastal-reveal--chapter) {
-    animation: relax-rc-reveal-fade 0.32s ease-out both;
-  }
-
   .experience-ref.relax-coastal-page .relax-coastal-reveal--editorial.relax-coastal--in-view {
-    animation: relax-rc-reveal-fade 0.28s ease-out both;
+    animation: relax-rc-reveal-fade 0.2s ease-out both;
   }
 
   .experience-ref.relax-coastal-page .relax-coastal-reveal--toc.relax-coastal--in-view {
-    animation: relax-rc-reveal-fade 0.3s ease-out 0.05s both;
+    animation: relax-rc-reveal-fade 0.21s ease-out both;
   }
 
   .experience-ref.relax-coastal-page .relax-coastal-reveal--closing.relax-coastal--in-view {
-    animation: relax-rc-reveal-fade 0.28s ease-out both;
+    animation: relax-rc-reveal-fade 0.2s ease-out both;
   }
 
   .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-visual.relax-coastal--in-view {
-    animation: relax-rc-reveal-fade 0.34s ease-out both;
+    animation: relax-rc-reveal-fade 0.24s ease-out both;
   }
 
   .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy.relax-coastal--in-view {
-    animation: relax-rc-reveal-fade 0.3s ease-out 0.1s both;
+    animation: none;
+    opacity: 1;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy:not(.relax-coastal--in-view) > .pod-bridge__title,
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy:not(.relax-coastal--in-view) > p,
+  .experience-ref.relax-coastal-page
+    .relax-coastal-reveal--finale-copy:not(.relax-coastal--in-view)
+    > .relax-rc-pod-bridge-btn {
+    opacity: 0;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy.relax-coastal--in-view > .pod-bridge__title {
+    animation: relax-rc-reveal-fade 0.2s ease-out 0.04s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy.relax-coastal--in-view > p:nth-of-type(1) {
+    animation: relax-rc-reveal-fade 0.18s ease-out 0.1s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy.relax-coastal--in-view > p:nth-of-type(2) {
+    animation: relax-rc-reveal-fade 0.18s ease-out 0.16s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy.relax-coastal--in-view > .relax-rc-pod-bridge-btn {
+    animation: relax-rc-reveal-fade 0.16s ease-out 0.24s both;
   }
 
   .experience-ref.relax-coastal-page .relax-rc-chapter.relax-coastal-reveal:not(.relax-coastal--in-view) .relax-rc-chapter__mast,
@@ -1653,35 +1694,35 @@
   }
 
   .experience-ref.relax-coastal-page .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view .relax-rc-chapter__mast {
-    animation: relax-rc-reveal-fade 0.34s ease-out both;
+    animation: relax-rc-reveal-fade 0.24s ease-out both;
   }
 
   .experience-ref.relax-coastal-page
     .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view
     .relax-rc-chapter__places
     > .relax-rc-place:nth-of-type(1) {
-    animation: relax-rc-reveal-fade 0.3s ease-out 0.05s both;
+    animation: relax-rc-reveal-fade 0.21s ease-out 0.02s both;
   }
 
   .experience-ref.relax-coastal-page
     .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view
     .relax-rc-chapter__places
     > .relax-rc-place:nth-of-type(2) {
-    animation: relax-rc-reveal-fade 0.3s ease-out 0.1s both;
+    animation: relax-rc-reveal-fade 0.21s ease-out 0.05s both;
   }
 
   .experience-ref.relax-coastal-page
     .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view
     .relax-rc-chapter__places
     > .relax-rc-place:nth-of-type(3) {
-    animation: relax-rc-reveal-fade 0.3s ease-out 0.14s both;
+    animation: relax-rc-reveal-fade 0.21s ease-out 0.08s both;
   }
 
   .experience-ref.relax-coastal-page
     .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view
     .relax-rc-chapter__places
     > .relax-rc-place:nth-of-type(4) {
-    animation: relax-rc-reveal-fade 0.3s ease-out 0.18s both;
+    animation: relax-rc-reveal-fade 0.21s ease-out 0.11s both;
   }
 
   .experience-ref.relax-coastal-page
@@ -1695,7 +1736,47 @@
     .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view
     .relax-rc-place--cinematic
     .relax-rc-place__bleed-copy {
-    animation: relax-rc-cinematic-copy-in 0.26s ease-out 0.22s both;
+    animation: relax-rc-cinematic-copy-in 0.18s ease-out 0.12s both;
+  }
+
+  /* Tap feedback — immediate, no hover-only affordances */
+  .experience-ref.relax-coastal-page .relax-v1-hero .btnGhost,
+  .experience-ref.relax-coastal-page .relax-rc-pod-bridge-btn,
+  .experience-ref.relax-coastal-page section.cta .btn-primary,
+  .experience-ref.relax-coastal-page .relax-rc-place__ctas .journey-pod {
+    transition:
+      transform 0.1s ease,
+      box-shadow 0.1s ease,
+      border-color 0.1s ease,
+      color 0.1s ease,
+      opacity 0.1s ease;
+  }
+
+  .experience-ref.relax-coastal-page .relax-v1-hero .btnGhost:active,
+  .experience-ref.relax-coastal-page .relax-rc-pod-bridge-btn:active,
+  .experience-ref.relax-coastal-page section.cta .btn-primary:active,
+  .experience-ref.relax-coastal-page .relax-rc-place__ctas .journey-pod:active {
+    transform: scale(0.98);
+    transition: transform 0.09s ease;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-text-link,
+  .experience-ref.relax-coastal-page .relax-rc-place__name-link,
+  .experience-ref.relax-coastal-page .relax-rc-toc__list a {
+    transition:
+      color 0.14s ease,
+      border-color 0.14s ease,
+      opacity 0.12s ease;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-text-link:active,
+  .experience-ref.relax-coastal-page .relax-rc-place__name-link:active,
+  .experience-ref.relax-coastal-page .relax-rc-toc__list a:active {
+    opacity: 0.88;
+    transition:
+      opacity 0.08s ease,
+      color 0.08s ease,
+      border-color 0.08s ease;
   }
 
   .experience-ref.relax-coastal-page .relax-v1-pod-bridge__stack {
