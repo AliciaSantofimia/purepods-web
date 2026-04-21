@@ -90,25 +90,27 @@
 .romantic-ref .gallery-grid2 {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 14px;
+  gap: clamp(16px, 2.2vw, 24px);
 }
 .romantic-ref .gallery-grid2 .gitem {
   margin: 0;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 20px;
   background: var(--card);
   border: 1px solid var(--stroke);
-  box-shadow: 0 16px 40px rgba(92, 95, 62, 0.08);
+  box-shadow: 0 12px 32px rgba(92, 95, 62, 0.07), 0 4px 12px rgba(17, 18, 23, 0.04);
   position: relative;
   min-height: 200px;
 }
 .romantic-ref .gallery-grid2 .gitem:nth-child(1) {
-  grid-column: span 6;
+  grid-column: span 7;
   grid-row: span 2;
+  min-height: clamp(220px, 28vw, 340px);
 }
 .romantic-ref .gallery-grid2 .gitem:nth-child(2) {
-  grid-column: span 6;
+  grid-column: span 5;
   grid-row: span 2;
+  min-height: clamp(220px, 28vw, 340px);
 }
 .romantic-ref .gallery-grid2 .gitem:nth-child(3) {
   grid-column: span 4;
@@ -120,8 +122,195 @@
   grid-column: span 4;
 }
 .romantic-ref .gallery-grid2 .gitem:nth-child(6) {
-  grid-column: span 6;
+  grid-column: span 12;
+  min-height: clamp(200px, 22vw, 280px);
 }
+
+.romantic-ref .romantic-gallery__thumb {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  cursor: zoom-in;
+  background: transparent;
+  position: relative;
+  border-radius: inherit;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.romantic-ref .romantic-gallery__thumb:hover {
+  transform: scale(1.01);
+  box-shadow: inset 0 0 0 1px rgba(92, 95, 62, 0.12);
+}
+
+.romantic-ref .romantic-gallery__thumb:focus-visible {
+  transform: scale(1.01);
+  outline: 2px solid rgba(92, 95, 62, 0.35);
+  outline-offset: 3px;
+}
+
+.romantic-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 4vw, 24px);
+  box-sizing: border-box;
+  animation: romantic-lb-fade-in 0.32s ease forwards;
+}
+
+@keyframes romantic-lb-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.romantic-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  background: color-mix(in srgb, var(--cinema-deep) 88%, transparent);
+  z-index: 0;
+}
+
+.romantic-lightbox__shell {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, 100%);
+  max-height: min(94vh, 920px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(10px, 2vw, 16px);
+  animation: romantic-lb-stage-in 0.34s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes romantic-lb-stage-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.romantic-lightbox__stage {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: min(58vh, 520px);
+  max-height: min(70vh, 620px);
+  border-radius: var(--exp-radius, 24px);
+  overflow: hidden;
+  background: var(--cinema);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.romantic-lightbox__close {
+  position: absolute;
+  top: clamp(6px, 1.5vw, 12px);
+  right: clamp(6px, 1.5vw, 12px);
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(23, 25, 20, 0.55);
+  color: rgba(247, 246, 243, 0.92);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.romantic-lightbox__close:hover,
+.romantic-lightbox__close:focus-visible {
+  background: rgba(37, 42, 32, 0.75);
+  border-color: rgba(255, 255, 255, 0.32);
+  color: #fff;
+  outline: none;
+}
+
+.romantic-lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(23, 25, 20, 0.45);
+  color: rgba(247, 246, 243, 0.95);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.romantic-lightbox__nav:hover,
+.romantic-lightbox__nav:focus-visible {
+  background: rgba(37, 42, 32, 0.65);
+  border-color: rgba(255, 255, 255, 0.28);
+  outline: none;
+}
+
+.romantic-lightbox__nav--prev {
+  left: clamp(6px, 2vw, 16px);
+}
+
+.romantic-lightbox__nav--next {
+  right: clamp(6px, 2vw, 16px);
+}
+
+.romantic-lightbox__caption {
+  margin: 0;
+  max-width: min(52ch, 100%);
+  text-align: center;
+  font-size: clamp(13px, 1.35vw, 15px);
+  line-height: 1.55;
+  color: rgba(247, 246, 243, 0.82);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .romantic-ref .romantic-gallery__thumb {
+    transition: none;
+  }
+
+  .romantic-lightbox,
+  .romantic-lightbox__shell {
+    animation: none;
+  }
+}
+
 .romantic-ref .gallery-hidden {
   display: none;
   margin-top: 20px;
@@ -354,6 +543,9 @@
   }
   .romantic-ref .gallery-grid2 .gitem:nth-child(n + 3) {
     grid-column: span 3;
+  }
+  .romantic-ref .gallery-grid2 .gitem:nth-child(6) {
+    grid-column: span 6;
   }
 }
 @media (max-width: 560px) {
