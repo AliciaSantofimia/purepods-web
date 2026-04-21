@@ -370,11 +370,18 @@
 
 /* —— Romantic page only: nav + Pods mega (does not apply to other experience views) —— */
 
+.experience-ref.romantic-ref {
+  --romantic-sticky-nav-offset: clamp(80px, 11vw, 108px);
+}
+
 /* In-page anchors: stay clear of sticky nav when using header links */
 .experience-ref.romantic-ref #moments,
-.experience-ref.romantic-ref #gallery,
 .experience-ref.romantic-ref #faq {
-  scroll-margin-top: clamp(76px, 11vw, 104px);
+  scroll-margin-top: var(--romantic-sticky-nav-offset);
+}
+
+.experience-ref.romantic-ref #gallery {
+  scroll-margin-top: calc(var(--romantic-sticky-nav-offset) + 0.65rem);
 }
 
 /* Pods mega: anchor to trigger right edge + cap width so panel stays inside viewport */

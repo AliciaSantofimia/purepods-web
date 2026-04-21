@@ -9,6 +9,7 @@ export function RomanticView() {
   return (
     <div className="experience-ref romantic-ref">
       <ExpStandardChrome
+        hashInPageAnchorsNative
         navItems={[
           { href: "#moments", label: "Moments" },
           { href: "#gallery", label: "Gallery" },
@@ -177,7 +178,9 @@ export function RomanticView() {
             </div>
           </section>
 
-          <RomanticGalleryClient items={romanticGallery} />
+          <section id="gallery" aria-label="Gallery">
+            <RomanticGalleryClient items={romanticGallery} />
+          </section>
 
           <section className="night-soft" id="night">
             <div className="wrap">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ExpRefImage } from "./ExpRefImage";
 
 export function RomanticGalleryClient({
@@ -10,8 +10,41 @@ export function RomanticGalleryClient({
 }) {
   const [open, setOpen] = useState(false);
 
+  const openGallery = useCallback(() => {
+    setOpen(true);
+  }, []);
+
+  useEffect(() => {
+    const fromHash = () => {
+      if (typeof window === "undefined") return;
+      if (window.location.hash === "#gallery") {
+        openGallery();
+      }
+    };
+
+    fromHash();
+    window.addEventListener("hashchange", fromHash);
+    return () => window.removeEventListener("hashchange", fromHash);
+  }, [openGallery]);
+
+  useEffect(() => {
+    const root = document.querySelector(".experience-ref.romantic-ref");
+    if (!root) return;
+
+    const onNavGalleryClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      const link = target?.closest?.("a[href=\"#gallery\"]");
+      if (!link || !root.contains(link)) return;
+      requestAnimationFrame(openGallery);
+      window.setTimeout(openGallery, 450);
+    };
+
+    document.addEventListener("click", onNavGalleryClick, true);
+    return () => document.removeEventListener("click", onNavGalleryClick, true);
+  }, [openGallery]);
+
   return (
-    <section id="gallery">
+    <div>
       <div className="wrap">
         <div
           className="section-title gallery-trigger"
@@ -37,6 +70,6 @@ export function RomanticGalleryClient({
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

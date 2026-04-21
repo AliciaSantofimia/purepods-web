@@ -9,9 +9,12 @@ type NavItem = { href: string; label: string };
 export function ExpStandardChrome({
   navItems,
   children,
+  hashInPageAnchorsNative = false,
 }: {
   navItems: NavItem[];
   children: ReactNode;
+  /** When true, `href` values starting with `#` render as `<a>` for reliable in-page scroll (optional per page). */
+  hashInPageAnchorsNative?: boolean;
 }) {
   return (
     <>
@@ -29,11 +32,17 @@ export function ExpStandardChrome({
           <div className="links">
             <ExpExperiencesMega />
             <ExpPodsMega />
-            {navItems.map((l) => (
-              <Link key={l.href + l.label} href={l.href}>
-                {l.label}
-              </Link>
-            ))}
+            {navItems.map((l) =>
+              hashInPageAnchorsNative && l.href.startsWith("#") ? (
+                <a key={l.href + l.label} href={l.href}>
+                  {l.label}
+                </a>
+              ) : (
+                <Link key={l.href + l.label} href={l.href}>
+                  {l.label}
+                </Link>
+              ),
+            )}
             <a
               className="btn-primary"
               href="https://purepods.com/booking/?cart=Checkout"
