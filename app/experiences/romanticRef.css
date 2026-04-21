@@ -300,6 +300,84 @@
   color: rgba(247, 246, 243, 0.82);
 }
 
+/* Romantic lightbox — mobile: immersive stage, tighter chrome, image as focus */
+@media (max-width: 640px) {
+  .romantic-lightbox {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    padding: max(2px, env(safe-area-inset-top, 0px))
+      max(4px, env(safe-area-inset-right, 0px))
+      max(2px, env(safe-area-inset-bottom, 0px))
+      max(4px, env(safe-area-inset-left, 0px));
+  }
+
+  .romantic-lightbox__shell {
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 0;
+    max-width: none;
+    max-height: none;
+    align-items: stretch;
+    gap: 4px;
+    justify-content: flex-start;
+  }
+
+  .romantic-lightbox__stage {
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    max-height: none;
+    margin: 0 auto;
+    align-self: stretch;
+    border-radius: clamp(10px, 2.5vw, 16px);
+  }
+
+  .romantic-lightbox__stage img {
+    object-fit: contain !important;
+    object-position: center center;
+  }
+
+  .romantic-lightbox__caption {
+    flex-shrink: 0;
+    max-width: 100%;
+    padding: 0 10px max(4px, env(safe-area-inset-bottom, 0px));
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.32;
+    letter-spacing: 0.01em;
+    color: rgba(247, 246, 243, 0.62);
+  }
+
+  .romantic-lightbox__close {
+    top: max(6px, env(safe-area-inset-top, 0px));
+    right: max(6px, env(safe-area-inset-right, 0px));
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    background: rgba(23, 25, 20, 0.38);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .romantic-lightbox__nav {
+    top: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 21px;
+    background: rgba(23, 25, 20, 0.28);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .romantic-lightbox__nav--prev {
+    left: max(2px, env(safe-area-inset-left, 0px));
+  }
+
+  .romantic-lightbox__nav--next {
+    right: max(2px, env(safe-area-inset-right, 0px));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .romantic-ref .romantic-gallery__thumb {
     transition: none;
