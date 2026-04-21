@@ -105,12 +105,13 @@ export default function ExperiencesPage() {
         <div className="nav__bar">
           <a className="nav-brand" href="/" aria-label="PurePods — Home">
             <Image
-              src="/assets/img/purepods-logo-new-zealand.jpg"
+              src="/assets/img/LogoPCverdesinfondo.png"
               alt="PurePods"
-              width={1000}
-              height={1000}
-              sizes="(max-width: 720px) min(260px, 78vw), min(240px, 42vw)"
+              width={603}
+              height={414}
+              sizes="(max-width: 720px) min(200px, 52vw), min(200px, 42vw)"
               decoding="async"
+              priority
             />
           </a>
 
