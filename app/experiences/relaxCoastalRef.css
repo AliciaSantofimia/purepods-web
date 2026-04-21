@@ -1403,13 +1403,13 @@
 
 /* Relax & Coastal — anchor targets clear sticky experience nav (TOC + in-page links) */
 .experience-ref.relax-coastal-page {
-  --relax-coastal-anchor-offset: clamp(88px, 11vw, 118px);
+  --relax-coastal-anchor-offset: clamp(102px, 12vw, 132px);
 }
 
 @media (max-width: 720px) {
   .experience-ref.relax-coastal-page {
     /* Taller stacked nav (logo + wrapped links + Book) */
-    --relax-coastal-anchor-offset: clamp(140px, 36vw, 220px);
+    --relax-coastal-anchor-offset: clamp(180px, 42vw, 260px);
   }
 }
 
@@ -1417,9 +1417,22 @@
 .experience-ref.relax-coastal-page #blocks,
 .experience-ref.relax-coastal-page #the-pod,
 .experience-ref.relax-coastal-page #faq,
-.experience-ref.relax-coastal-page main .relax-rc-chapter[id],
 .experience-ref.relax-coastal-page main .relax-rc-place[id] {
   scroll-margin-top: var(--relax-coastal-anchor-offset);
+}
+
+/*
+ * Chapters: `id` lives on <section.relax-rc-chapter> (correct target).
+ * Extra inset accounts for mast padding + index / eyebrow stack above the H2.
+ */
+.experience-ref.relax-coastal-page main .relax-rc-chapter[id] {
+  scroll-margin-top: calc(var(--relax-coastal-anchor-offset) + clamp(14px, 3vw, 36px));
+}
+
+@media (max-width: 720px) {
+  .experience-ref.relax-coastal-page main .relax-rc-chapter[id] {
+    scroll-margin-top: calc(var(--relax-coastal-anchor-offset) + clamp(20px, 5vw, 52px));
+  }
 }
 
 /* Relax & Coastal only — mobile layout (root: .experience-ref.relax-coastal-page) */
