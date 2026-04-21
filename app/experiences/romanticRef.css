@@ -1,4 +1,8 @@
 /* Romantic page additions (reference romantic.html) */
+.experience-ref.romantic-ref #essentials > .wrap > h2.eyebrow {
+  text-align: center;
+}
+
 .romantic-ref .experience-block {
   padding: 48px 0 24px;
   overflow: hidden;
