@@ -18,18 +18,20 @@ export function ExpStandardChrome({
 }) {
   return (
     <>
-      <nav className="nav" aria-label="Main navigation">
-        <div className="wrap nav-inner">
-          <Link className="brand" href="/" aria-label="PurePods Home">
+      <header className="nav nav--solid" role="banner" aria-label="Main navigation">
+        <div className="nav__bar">
+          <Link className="nav-brand" href="/" aria-label="PurePods — Home">
             <Image
-              src="/assets/img/purepods-logo-new-zealand.jpg"
-              width={42}
-              height={42}
-              alt="PurePods logo"
+              src="/assets/img/LogoPCverdesinfondo.png"
+              alt="PurePods"
+              width={603}
+              height={414}
+              sizes="(max-width: 720px) min(200px, 52vw), min(200px, 42vw)"
+              decoding="async"
+              priority
             />
-            <b>PurePods</b>
           </Link>
-          <div className="links">
+          <nav className="nav__links links" aria-label="Primary">
             <ExpExperiencesMega />
             <ExpPodsMega />
             {navItems.map((l) =>
@@ -43,17 +45,17 @@ export function ExpStandardChrome({
                 </Link>
               ),
             )}
-            <a
-              className="btn-primary"
-              href="https://purepods.com/booking/?cart=Checkout"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Book
-            </a>
-          </div>
+          </nav>
+          <a
+            className="nav__book"
+            href="https://purepods.com/booking/?cart=Checkout"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book
+          </a>
         </div>
-      </nav>
+      </header>
       {children}
       <footer>
         <div className="wrap foot">

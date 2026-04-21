@@ -399,7 +399,7 @@
 }
 
 @media (min-width: 821px) and (max-width: 1160px) {
-  .experience-ref.romantic-ref .nav-inner {
+  .experience-ref.romantic-ref .nav__bar {
     gap: 10px;
   }
 

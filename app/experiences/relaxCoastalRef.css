@@ -1438,7 +1438,7 @@
 /* Relax & Coastal only — mobile layout (root: .experience-ref.relax-coastal-page) */
 
 @media (max-width: 720px) {
-  .experience-ref.relax-coastal-page .nav-inner {
+  .experience-ref.relax-coastal-page .nav__bar {
     flex-direction: column;
     align-items: stretch;
     gap: 12px;

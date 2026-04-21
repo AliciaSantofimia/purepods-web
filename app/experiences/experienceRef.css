@@ -17,45 +17,24 @@
   border: 0;
 }
 
-.experience-ref .nav {
-  position: sticky;
-  top: 0;
+/* Aligns with globals `.nav.nav--solid` + `/experiences` index chrome (ExpStandardChrome) */
+.experience-ref .nav.nav--solid {
   z-index: 30;
   overflow: visible;
-  background: rgba(247, 246, 243, 0.78);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--stroke);
 }
-.experience-ref .nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 0;
-  gap: 16px;
+
+.experience-ref .nav__bar {
   flex-wrap: wrap;
   overflow: visible;
 }
-.experience-ref .brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.experience-ref .brand img {
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-}
-.experience-ref .brand b {
-  letter-spacing: 0.08em;
-  font-weight: 600;
-  font-size: 14px;
-}
+
 .experience-ref .links {
   display: flex;
   gap: clamp(20px, 2.4vw, 28px);
   align-items: center;
   flex-wrap: wrap;
   overflow: visible;
+  min-width: 0;
 }
 
 /* Experiences — editorial mega menu (hover / focus-within, no default select UI) */
