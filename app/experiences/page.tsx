@@ -121,9 +121,6 @@ export default function ExperiencesPage() {
 
           <nav className="nav__links" aria-label="Primary">
             <a href="/pods">Pods</a>
-            <a href="/experiences" aria-current="page">
-              Experiences
-            </a>
           </nav>
 
           <a className="nav__book" href="https://purepods.com/booking/">
