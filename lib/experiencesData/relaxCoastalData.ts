@@ -7,8 +7,8 @@ export const relaxHero = {
 
 /** Deck copy — curated thermal and coastal calm, aligned with serenity & wellness. */
 export const relaxAboutParagraphs: readonly [string, string] = [
-  "Relax & Coastal is an intentionally small edit: geothermal stillness in Rotorua, then coast and quiet viewpoints from Northland to Hurunui and Rakiura — chosen for atmosphere, not volume.",
-  "Official visitor pages open in a new tab so you can confirm access and hours. When the day feels right, match the mood to a nearby PurePod.",
+  "Relax & Coastal is a small, intentional edit — geothermal waters in Rotorua, followed by open coastlines and quiet inland places across Aotearoa. Chosen for atmosphere, not volume.",
+  "Follow what feels right on the day — each place is a suggestion, not a checklist. Pair it with a nearby PurePod stay, and let the pace unfold naturally.",
 ];
 
 export type RelaxRcCta = { href: string; label: string };
@@ -47,8 +47,8 @@ export const relaxRcChapters: RelaxRcChapter[] = [
     eyebrow: "Rotorua · Bay of Plenty",
     title: "Thermal waters & geothermal relaxation",
     intro: [
-      "Lake air, mineral heat and forest margin — Rotorua remains one of the clearest expressions of slow wellness in Aotearoa New Zealand.",
-      "These three stops keep the focus on water, steam and quiet presence rather than spectacle.",
+      "Mineral water, lake air, and forest edges — Rotorua is one of the clearest expressions of slow wellness in Aotearoa.",
+      "These stops focus on soaking, steam, and quiet presence.",
     ],
     places: [
       {
@@ -56,8 +56,8 @@ export const relaxRcChapters: RelaxRcChapter[] = [
         name: "Polynesian Spa",
         eyebrow: "Lakeside mineral pools · Rotorua",
         paragraphs: [
-          "Set on the shores of Lake Rotorua, this world-renowned spa draws on natural springs to fill mineral-rich hot pools — a premium lakeside rhythm of soak, steam and horizon.",
-          "Evenings here tend to lengthen on their own; the water does most of the persuading.",
+          "Set on the edge of Lake Rotorua, this long-established spa draws on natural mineral springs for a slow, lakeside soak.",
+          "Time stretches easily here — the water does most of the work.",
         ],
         officialHref: "https://www.polynesianspa.co.nz/",
         figure: {
@@ -72,8 +72,8 @@ export const relaxRcChapters: RelaxRcChapter[] = [
         name: "Secret Spot Hot Tubs",
         eyebrow: "Private cedar tubs · Waipa forest",
         paragraphs: [
-          "Indulge in a forest-bathing cadence from your own private cedar hot tub — native ferns at arm’s length, a stream’s low note beneath the canopy, and little else on the agenda.",
-          "Bookings stay intimate by design; the setting reads as restorative first, social second.",
+          "Private cedar tubs set in native forest — ferns close, water nearby, and little else competing for attention.",
+          "Designed for quiet, unhurried time.",
         ],
         officialHref: "https://secretspot.co.nz/",
         figure: {
@@ -88,8 +88,8 @@ export const relaxRcChapters: RelaxRcChapter[] = [
         name: "Hell's Gate Mud Spa",
         eyebrow: "Volcanic mud & sulphur waters · Tikitere",
         paragraphs: [
-          "A distinctive volcanic chapter: nutrient-rich mud and sulphur waters within New Zealand’s most active geothermal park — geology in the lead, spa rituals as a quiet follow-through.",
-          "Allow time to walk the reserve first; the baths land with more meaning when you have felt the ground breathing beneath you.",
+          "A more elemental experience — mineral mud and sulphur waters in one of New Zealand’s most active geothermal areas.",
+          "Come for the landscape, then settle into the ritual.",
         ],
         officialHref: "https://www.hellsgate.co.nz/",
         figure: {
@@ -106,8 +106,8 @@ export const relaxRcChapters: RelaxRcChapter[] = [
     eyebrow: "Northland · Stewart Island · Hurunui",
     title: "Coastal calm & hidden landscapes",
     intro: [
-      "Open coast, spring-fed forest and a Rakiura viewpoint above Paterson Inlet — this chapter favours horizon, clarity of water and the kind of silence you notice only after a few minutes.",
-      "Nothing here is rushed; light and tide set the pacing.",
+      "Open coastlines, clear water, and long horizons — places where the pace softens naturally.",
+      "Light, tide, and distance shape the experience.",
     ],
     places: [
       {
@@ -115,8 +115,8 @@ export const relaxRcChapters: RelaxRcChapter[] = [
         name: "Matauri Bay",
         eyebrow: "Northland coast · Cavalli Islands",
         paragraphs: [
-          "A wide, open sweep of Northland coast known for clear water and soft sand — a place to slow down and watch the light change across the bay.",
-          "Bring little more than time; the shore rewards an unhurried lens.",
+          "A wide Northland bay with clear water and soft sand — made for slowing down and watching the day shift.",
+          "Bring time, not plans.",
         ],
         officialHref: "https://maps.app.goo.gl/2xbeZSdrHHRXeMS98",
         figure: {
@@ -131,8 +131,8 @@ export const relaxRcChapters: RelaxRcChapter[] = [
         name: "Observation Rock Viewpoint",
         eyebrow: "Rakiura / Stewart Island · above Paterson Inlet",
         paragraphs: [
-          "The most iconic perch on Stewart Island for sunset — and, on the right nights, the Aurora Australis — over the still geometry of Paterson Inlet.",
-          "Dress for wind off the water; the reward is a wide, uncluttered sky.",
+          "A high vantage point over Paterson Inlet — known for sunset — and on clear nights, the southern lights.",
+          "Wide sky, minimal distraction.",
         ],
         officialHref:
           "https://www.doc.govt.nz/parks-and-recreation/places-to-go/southland/places/stewart-island-rakiura/oban-area/things-to-do/oban-day-walks/",
@@ -151,8 +151,8 @@ export const relaxRcChapters: RelaxRcChapter[] = [
         name: "Gore Bay Beach",
         eyebrow: "North Canterbury · open coast",
         paragraphs: [
-          "Set along a dramatic stretch of Hurunui coast with striking cliff formations — an expansive, elemental stop where the horizon carries most of the conversation.",
-          "Wind and tide write the script; you walk it at an easy pace.",
+          "A long, open stretch of coastline framed by striking cliffs — raw, spacious, and quietly dramatic.",
+          "Walk slowly; the place sets the pace.",
         ],
         officialHref: "https://maps.app.goo.gl/XvgcdWQdC2VJ5PYZ8",
         figure: {
@@ -170,8 +170,8 @@ export const relaxRcChapters: RelaxRcChapter[] = [
         name: "Hamurana Springs",
         eyebrow: "Spring walk · Hamurana",
         paragraphs: [
-          "Crystal-clear spring water moving through forest — including towering redwoods — for a restorative, mindful walk in a tranquil reserve.",
-          "Boardwalks and interpretation keep the focus soft; this is landscape as wellness, without the spa reception desk.",
+          "Crystal-clear water flowing through native forest — a calm, shaded walk shaped by stillness.",
+          "Simple, restorative, and quietly immersive.",
         ],
         officialHref: "https://www.hamurana.co.nz/",
         figure: {
@@ -188,18 +188,10 @@ export const relaxRcChapters: RelaxRcChapter[] = [
 export const relaxFaq: { q: string; a: string }[] = [
   {
     q: "What does Relax & Coastal cover now?",
-    a: "A compact pairing: Rotorua thermal waters, then a small coastal and landscape set spanning Northland, Stewart Island and North Canterbury — each with an official or visitor link and a suggested PurePod.",
-  },
-  {
-    q: "Can I swap the official links?",
-    a: "Yes. Each place’s URL lives in `lib/experiencesData/relaxCoastalData.ts` as `officialHref` — update there when you have the final destination pages.",
-  },
-  {
-    q: "Are PurePods always beside each place?",
-    a: "Each stop suggests a nearby pod when geography allows. Confirm driving times, ferry bookings and seasonal access on the official sites before you travel.",
+    a: "A small, intentional edit — geothermal waters first, followed by a handful of quiet coastal and inland places.",
   },
   {
     q: "Is this a complete regional guide?",
-    a: "No. It is a curated shortlist for calm pacing — serenity and wellness first, not a checklist of every attraction.",
+    a: "No. It is a curated shortlist for calm pacing — not a checklist of every place.",
   },
 ];

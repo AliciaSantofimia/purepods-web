@@ -693,7 +693,8 @@
   color: rgba(255, 255, 255, 0.96);
 }
 
-.experience-ref .relax-v1-pod-bridge.pod-bridge--relax-landscape .inner > p {
+.experience-ref .relax-v1-pod-bridge.pod-bridge--relax-landscape .inner > p,
+.experience-ref .relax-v1-pod-bridge.pod-bridge--relax-landscape .relax-v1-pod-bridge__copy p {
   color: rgba(255, 255, 255, 0.85);
 }
 
@@ -886,6 +887,25 @@
   margin-top: 10px;
   font-size: 14px;
   color: rgba(92, 95, 62, 0.65);
+}
+
+/* Relax & Coastal only: soft hero → editorial tonal shift (design tokens only) */
+.experience-ref.relax-coastal-page #relax-rc-deck.relax-rc-deck {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: clamp(36px, 5.75vw, 54px) 0 clamp(26px, 4.25vw, 42px);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg) 20%, var(--card) 100%);
+}
+
+@supports (color: color-mix(in srgb, white, black)) {
+  .experience-ref.relax-coastal-page #relax-rc-deck.relax-rc-deck {
+    background: linear-gradient(
+      180deg,
+      var(--bg) 0%,
+      var(--bg) 24%,
+      color-mix(in srgb, var(--bg) 90%, var(--brand-beige) 10%) 100%
+    );
+  }
 }
 
 .experience-ref .relax-rc-text-link {
@@ -1163,6 +1183,20 @@
   color: rgba(40, 42, 28, 0.96);
 }
 
+.experience-ref .relax-rc-place__name-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.experience-ref .relax-rc-place__name-link:hover {
+  color: var(--brand-green);
+}
+
+.experience-ref .relax-rc-place__name-link:focus-visible {
+  outline: 2px solid rgba(92, 95, 62, 0.35);
+  outline-offset: 3px;
+}
+
 .experience-ref .relax-rc-place__official {
   margin: 0 0 clamp(14px, 2vw, 18px);
 }
@@ -1251,8 +1285,10 @@
   transition: transform 0.55s ease;
 }
 
-.experience-ref .relax-rc-place__split-frame:hover .relax-rc-place__split-img {
-  transform: scale(1.03);
+@media (hover: hover) and (pointer: fine) and (min-width: 769px) {
+  .experience-ref .relax-rc-place__split-frame:hover .relax-rc-place__split-img {
+    transform: scale(1.03);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1363,4 +1399,683 @@
   border-color: rgba(92, 95, 62, 0.18);
   background: rgba(255, 255, 255, 0.42);
   color: var(--ink);
+}
+
+/* Relax & Coastal only — mobile layout (root: .experience-ref.relax-coastal-page) */
+
+@media (max-width: 720px) {
+  .experience-ref.relax-coastal-page .nav-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .experience-ref.relax-coastal-page .nav .links {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: clamp(12px, 3vw, 20px);
+  }
+}
+
+@media (max-width: 640px) {
+  .experience-ref.relax-coastal-page .relax-v1-hero {
+    min-height: min(78vh, 560px);
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-hero .heroImg {
+    transform: none;
+    animation: none;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-chapter__mast {
+    padding: clamp(26px, 7vw, 40px) 0 clamp(22px, 5.5vw, 34px);
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-chapter__index {
+    font-size: clamp(40px, 13vw, 58px);
+    line-height: 0.88;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-chapter__mast-inner {
+    gap: clamp(12px, 3.5vw, 22px);
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-chapter__sheet {
+    padding: clamp(26px, 5.5vw, 40px) 0 clamp(20px, 4.5vw, 34px);
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-toc {
+    margin-bottom: clamp(32px, 7vw, 48px);
+    padding-bottom: clamp(24px, 4.5vw, 36px);
+  }
+
+  .experience-ref.relax-coastal-page section.pod-bridge.relax-v1-pod-bridge {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .experience-ref.relax-coastal-page .relax-v1-pod-bridge__wrap {
+    padding: clamp(32px, 6vw, 48px) 0;
+  }
+}
+
+@media (max-width: 900px) {
+  /* Same breakpoint as split → single column: avoid 100vw breakout horizontal scroll. */
+  .experience-ref.relax-coastal-page .relax-rc-chapter__mast {
+    width: 100%;
+    max-width: none;
+    left: auto;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place--split > * {
+    min-width: 0;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place__split-copy,
+  .experience-ref.relax-coastal-page .relax-rc-place__split-media {
+    min-width: 0;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place__body,
+  .experience-ref.relax-coastal-page .relax-rc-place__name,
+  .experience-ref.relax-coastal-page .relax-rc-chapter__title,
+  .experience-ref.relax-coastal-page .relax-rc-toc__title {
+    overflow-wrap: anywhere;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place__official-link {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place__ctas .journey-pod {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* —— Relax & Coastal: rhythm, easing, pacing (scoped .relax-coastal-page) —— */
+/* Easing: content ease-out; cinematic cubic-bezier; interactions snappy */
+
+@keyframes relax-rc-hero-ken {
+  0% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes relax-rc-hero-seq-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes relax-rc-hero-seq-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes relax-rc-reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes relax-rc-reveal-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes relax-rc-chapter-mast-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes relax-rc-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes relax-rc-cinematic-copy-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-ref.relax-coastal-page .relax-coastal-hero .heroImg {
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-hero:not(.hero--plain)::after {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.38) 0%,
+      rgba(0, 0, 0, 0.28) 14%,
+      rgba(0, 0, 0, 0.16) 32%,
+      rgba(0, 0, 0, 0.07) 50%,
+      rgba(0, 0, 0, 0.02) 68%,
+      rgba(0, 0, 0, 0) 85%
+    );
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-hero__seq--eyebrow {
+    animation: relax-rc-hero-seq-fade 0.22s ease-out 0s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-hero__seq--title {
+    animation: relax-rc-hero-seq-fade 0.26s ease-out 0.08s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-hero__seq--lead {
+    animation: relax-rc-hero-seq-fade 0.28s cubic-bezier(0.33, 1, 0.68, 1) 0.16s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-hero__seq--cta {
+    animation: relax-rc-hero-seq-fade 0.24s ease-out 0.26s both;
+  }
+
+  /* Scroll: fade only, shorter — no translate (chapter uses mast / cards only) */
+  .experience-ref.relax-coastal-page
+    .relax-coastal-reveal:not(.relax-coastal--in-view):not(.relax-coastal-reveal--chapter) {
+    opacity: 0;
+  }
+
+  .experience-ref.relax-coastal-page
+    .relax-coastal-reveal.relax-coastal--in-view:not(.relax-coastal-reveal--chapter) {
+    animation: relax-rc-reveal-fade 0.32s ease-out both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--editorial.relax-coastal--in-view {
+    animation: relax-rc-reveal-fade 0.28s ease-out both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--toc.relax-coastal--in-view {
+    animation: relax-rc-reveal-fade 0.3s ease-out 0.05s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--closing.relax-coastal--in-view {
+    animation: relax-rc-reveal-fade 0.28s ease-out both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-visual.relax-coastal--in-view {
+    animation: relax-rc-reveal-fade 0.34s ease-out both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy.relax-coastal--in-view {
+    animation: relax-rc-reveal-fade 0.3s ease-out 0.1s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-chapter.relax-coastal-reveal:not(.relax-coastal--in-view) .relax-rc-chapter__mast,
+  .experience-ref.relax-coastal-page .relax-rc-chapter.relax-coastal-reveal:not(.relax-coastal--in-view) .relax-rc-place {
+    opacity: 0;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view .relax-rc-chapter__mast {
+    animation: relax-rc-reveal-fade 0.34s ease-out both;
+  }
+
+  .experience-ref.relax-coastal-page
+    .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view
+    .relax-rc-chapter__places
+    > .relax-rc-place:nth-of-type(1) {
+    animation: relax-rc-reveal-fade 0.3s ease-out 0.05s both;
+  }
+
+  .experience-ref.relax-coastal-page
+    .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view
+    .relax-rc-chapter__places
+    > .relax-rc-place:nth-of-type(2) {
+    animation: relax-rc-reveal-fade 0.3s ease-out 0.1s both;
+  }
+
+  .experience-ref.relax-coastal-page
+    .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view
+    .relax-rc-chapter__places
+    > .relax-rc-place:nth-of-type(3) {
+    animation: relax-rc-reveal-fade 0.3s ease-out 0.14s both;
+  }
+
+  .experience-ref.relax-coastal-page
+    .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view
+    .relax-rc-chapter__places
+    > .relax-rc-place:nth-of-type(4) {
+    animation: relax-rc-reveal-fade 0.3s ease-out 0.18s both;
+  }
+
+  .experience-ref.relax-coastal-page
+    .relax-rc-chapter.relax-coastal-reveal:not(.relax-coastal--in-view)
+    .relax-rc-place--cinematic
+    .relax-rc-place__bleed-copy {
+    opacity: 0;
+  }
+
+  .experience-ref.relax-coastal-page
+    .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view
+    .relax-rc-place--cinematic
+    .relax-rc-place__bleed-copy {
+    animation: relax-rc-cinematic-copy-in 0.26s ease-out 0.22s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-v1-pod-bridge__stack {
+    padding-inline: clamp(12px, 3.5vw, 20px);
+  }
+
+  .experience-ref.relax-coastal-page .relax-v1-pod-bridge__stage {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 4.5vw, 28px);
+  }
+
+  .experience-ref.relax-coastal-page .relax-v1-pod-bridge__visual {
+    margin-bottom: 0;
+  }
+
+  .experience-ref.relax-coastal-page .relax-v1-pod-bridge__copy {
+    position: static;
+    background: none;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .experience-ref.relax-coastal-page .relax-v1-pod-bridge__scrim {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.22));
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place--cinematic .relax-rc-place__bleed-stage {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(18px, 4vw, 24px);
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place--cinematic .relax-rc-place__bleed-copy {
+    position: static;
+    margin: 0 auto;
+    padding: 0;
+    max-width: min(42rem, 100%);
+    background: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .experience-ref.relax-coastal-page .relax-coastal-hero .heroImg {
+    transform: scale(1.05);
+    transform-origin: center 58%;
+    animation: relax-rc-hero-ken 22s ease-in-out infinite alternate;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-hero__seq--eyebrow {
+    animation: relax-rc-hero-seq-fade-up 0.3s ease-out 0s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-hero__seq--title {
+    animation: relax-rc-hero-seq-fade-up 0.48s ease-out 0.14s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-hero__seq--lead {
+    animation: relax-rc-hero-seq-fade-up 0.55s cubic-bezier(0.33, 1, 0.68, 1) 0.24s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-hero__seq--cta {
+    animation: relax-rc-hero-seq-fade-up 0.36s cubic-bezier(0.22, 1, 0.36, 1) 0.34s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--editorial:not(.relax-coastal--in-view) {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--editorial.relax-coastal--in-view {
+    animation: relax-rc-reveal-up 0.56s ease-out both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--toc:not(.relax-coastal--in-view) {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--toc.relax-coastal--in-view {
+    animation: relax-rc-reveal-up 0.66s ease-out 0.08s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--closing:not(.relax-coastal--in-view) {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--closing.relax-coastal--in-view {
+    animation: relax-rc-reveal-up 0.52s ease-out both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-visual:not(.relax-coastal--in-view) {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-visual.relax-coastal--in-view {
+    animation: relax-rc-reveal-up 1.14s cubic-bezier(0.22, 1, 0.45, 1) 0.18s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy:not(.relax-coastal--in-view) {
+    opacity: 0;
+    transform: none;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy.relax-coastal--in-view {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy:not(.relax-coastal--in-view) > .pod-bridge__title,
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy:not(.relax-coastal--in-view) > p,
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy:not(.relax-coastal--in-view) > .relax-rc-pod-bridge-btn {
+    opacity: 0;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy.relax-coastal--in-view > .pod-bridge__title {
+    animation: relax-rc-reveal-fade 0.58s ease-out 0.26s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy.relax-coastal--in-view > p:nth-of-type(1) {
+    animation: relax-rc-reveal-fade 0.52s ease-out 0.38s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy.relax-coastal--in-view > p:nth-of-type(2) {
+    animation: relax-rc-reveal-fade 0.5s ease-out 0.48s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy.relax-coastal--in-view > .relax-rc-pod-bridge-btn {
+    animation: relax-rc-reveal-fade 0.36s cubic-bezier(0.22, 1, 0.36, 1) 0.58s both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-chapter.relax-coastal-reveal:not(.relax-coastal--in-view) .relax-rc-chapter__mast {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view .relax-rc-chapter__mast {
+    animation: relax-rc-chapter-mast-in 0.84s cubic-bezier(0.22, 1, 0.45, 1) both;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-chapter.relax-coastal-reveal:not(.relax-coastal--in-view) .relax-rc-place {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  .experience-ref.relax-coastal-page
+    .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view
+    .relax-rc-chapter__places
+    > .relax-rc-place:nth-of-type(1) {
+    animation: relax-rc-card-in 0.8s ease-out 0.12s both;
+  }
+
+  .experience-ref.relax-coastal-page
+    .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view
+    .relax-rc-chapter__places
+    > .relax-rc-place:nth-of-type(2) {
+    animation: relax-rc-card-in 0.8s ease-out 0.2s both;
+  }
+
+  .experience-ref.relax-coastal-page
+    .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view
+    .relax-rc-chapter__places
+    > .relax-rc-place:nth-of-type(3) {
+    animation: relax-rc-card-in 0.8s ease-out 0.28s both;
+  }
+
+  .experience-ref.relax-coastal-page
+    .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view
+    .relax-rc-chapter__places
+    > .relax-rc-place:nth-of-type(4) {
+    animation: relax-rc-card-in 0.8s ease-out 0.36s both;
+  }
+
+  .experience-ref.relax-coastal-page
+    .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view
+    .relax-rc-place--cinematic {
+    animation: relax-rc-card-in 1.02s cubic-bezier(0.22, 1, 0.45, 1) 0.15s both;
+  }
+
+  .experience-ref.relax-coastal-page
+    .relax-rc-chapter.relax-coastal-reveal:not(.relax-coastal--in-view)
+    .relax-rc-place--cinematic
+    .relax-rc-place__bleed-copy {
+    opacity: 0;
+  }
+
+  .experience-ref.relax-coastal-page
+    .relax-rc-chapter.relax-coastal-reveal.relax-coastal--in-view
+    .relax-rc-place--cinematic
+    .relax-rc-place__bleed-copy {
+    animation: relax-rc-cinematic-copy-in 0.72s ease-out 1.08s both;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .experience-ref.relax-coastal-page .relax-v1-hero .btnGhost {
+      transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
+    }
+
+    .experience-ref.relax-coastal-page .relax-v1-hero .btnGhost:hover {
+      transform: translateY(-2px);
+    }
+
+    .experience-ref.relax-coastal-page .relax-rc-pod-bridge-btn {
+      transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
+    }
+
+    .experience-ref.relax-coastal-page .relax-rc-pod-bridge-btn:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-pod-bridge-btn:active {
+    transform: scale(0.98);
+    transition: transform 0.09s ease;
+  }
+
+  .experience-ref.relax-coastal-page .relax-v1-hero .btnGhost:active {
+    transform: scale(0.98);
+    transition: transform 0.09s ease;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-text-link {
+    transition:
+      border-color 0.22s ease,
+      color 0.22s ease;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place__name-link {
+    transition:
+      color 0.22s ease,
+      border-color 0.22s ease;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-chapter__places {
+    gap: clamp(56px, 7.5vw, 96px);
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place--bleed:not(.relax-rc-place--cinematic) .relax-rc-place__bleed-stage {
+    display: contents;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place--cinematic .relax-rc-place__bleed-stage {
+    position: relative;
+    border-radius: var(--exp-radius);
+    overflow: hidden;
+    box-shadow: 0 24px 56px rgba(92, 95, 62, 0.14), 0 10px 26px rgba(17, 18, 23, 0.07);
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place--cinematic .relax-rc-place__bleed-figure {
+    margin: 0;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place--cinematic .relax-rc-place__bleed-media {
+    aspect-ratio: 21 / 9;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place--cinematic .relax-rc-place__bleed-copy {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    margin: 0 auto;
+    max-width: none;
+    padding: clamp(32px, 4.5vw, 52px) clamp(20px, 4vw, 36px) clamp(28px, 3.5vw, 40px);
+    background: linear-gradient(to top, rgba(17, 18, 23, 0.85) 0%, rgba(17, 18, 23, 0.38) 48%, transparent 100%);
+    text-align: center;
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place--cinematic .relax-rc-place__eyebrow {
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place--cinematic .relax-rc-place__name,
+  .experience-ref.relax-coastal-page .relax-rc-place--cinematic .relax-rc-place__name-link {
+    color: rgba(255, 255, 255, 0.96);
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place--cinematic .relax-rc-place__body {
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place--cinematic .relax-rc-place__name-link:hover {
+    color: rgba(255, 255, 255, 1);
+    border-bottom-color: rgba(255, 255, 255, 0.45);
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place--cinematic .journey-pod.hiking-pod-cta {
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .experience-ref.relax-coastal-page .relax-rc-place--cinematic .relax-rc-place__bleed-img {
+    transition: transform 0.65s ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .experience-ref.relax-coastal-page .relax-rc-place--cinematic .relax-rc-place__bleed-media:hover .relax-rc-place__bleed-img {
+      transform: scale(1.03);
+    }
+  }
+
+  .experience-ref.relax-coastal-page .relax-v1-pod-bridge__stage {
+    position: relative;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    width: 100vw;
+    max-width: none;
+    border-radius: var(--exp-radius);
+    overflow: hidden;
+    box-shadow: 0 22px 52px rgba(17, 18, 23, 0.28), 0 10px 24px rgba(17, 18, 23, 0.14);
+  }
+
+  .experience-ref.relax-coastal-page .relax-v1-pod-bridge__visual {
+    margin-bottom: 0;
+  }
+
+  .experience-ref.relax-coastal-page .relax-v1-pod-bridge__main-frame {
+    aspect-ratio: 2.15 / 1;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .experience-ref.relax-coastal-page .relax-v1-pod-bridge__copy {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    margin: 0 auto;
+    max-width: min(44rem, 90%);
+    padding: clamp(36px, 5vw, 56px) clamp(24px, 4vw, 40px) clamp(32px, 4vw, 48px);
+    background: linear-gradient(to top, rgba(17, 18, 23, 0.88) 0%, rgba(17, 18, 23, 0.35) 55%, transparent 100%);
+    text-align: center;
+  }
+
+  .experience-ref.relax-coastal-page .relax-v1-pod-bridge__scrim {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.62));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-ref.relax-coastal-page .relax-coastal-hero .heroImg {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-hero__inner {
+    animation: none !important;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-hero__seq--eyebrow,
+  .experience-ref.relax-coastal-page .relax-coastal-hero__seq--title,
+  .experience-ref.relax-coastal-page .relax-coastal-hero__seq--lead,
+  .experience-ref.relax-coastal-page .relax-coastal-hero__seq--cta {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .experience-ref.relax-coastal-page .relax-coastal-reveal,
+  .experience-ref.relax-coastal-page .relax-rc-chapter__mast,
+  .experience-ref.relax-coastal-page .relax-rc-place,
+  .experience-ref.relax-coastal-page .relax-rc-place__bleed-copy,
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy > .pod-bridge__title,
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy > p,
+  .experience-ref.relax-coastal-page .relax-coastal-reveal--finale-copy > .relax-rc-pod-bridge-btn {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }

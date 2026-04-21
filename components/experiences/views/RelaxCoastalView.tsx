@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ExpRefImage } from "@/components/experiences/ExpRefImage";
 import { ExpStandardChrome } from "@/components/experiences/ExpStandardChrome";
 import { StayAtLink } from "@/components/experiences/stayAtLink";
+import { RelaxCoastalMotionRoot } from "@/components/experiences/views/RelaxCoastalMotionRoot";
 import {
   relaxAboutParagraphs,
   relaxFaq,
@@ -31,7 +32,7 @@ function RelaxRcJsonLd() {
     "@type": "ItemList",
     name: "Relax & Coastal — serenity, wellness and restorative landscapes in New Zealand",
     description:
-      "Curated geothermal relaxation in Rotorua and coastal calm from Northland to Stewart Island and Hurunui — each place with an official visitor link and a suggested PurePod glass eco-cabin stay.",
+      "Curated geothermal relaxation in Rotorua and coastal calm from Northland to Stewart Island and Hurunui — each place opens to visitor information with a suggested PurePod glass eco-cabin stay.",
     numberOfItems: itemListElement.length,
     itemListElement,
   };
@@ -52,15 +53,31 @@ function RelaxRcPlaceBody({ paragraphs }: { paragraphs: RelaxRcPlace["paragraphs
   );
 }
 
-function RelaxRcOfficialLink({ name, href }: { name: string; href: string }) {
-  if (!href.trim()) return null;
+function RelaxRcPlaceTitle({
+  id,
+  name,
+  nameClassName,
+  officialHref,
+}: {
+  id: string;
+  name: string;
+  nameClassName: string;
+  officialHref: string;
+}) {
+  const href = officialHref.trim();
+  if (href) {
+    return (
+      <h3 id={id} className={nameClassName}>
+        <a className="relax-rc-place__name-link" href={href} target="_blank" rel="noopener noreferrer">
+          {name}
+        </a>
+      </h3>
+    );
+  }
   return (
-    <p className="relax-rc-place__official">
-      <a className="relax-rc-place__official-link" href={href} target="_blank" rel="noopener noreferrer">
-        <span className="relax-rc-place__official-label">Official visitor information</span>
-        <span className="visually-hidden"> — {name}</span>
-      </a>
-    </p>
+    <h3 id={id} className={nameClassName}>
+      {name}
+    </h3>
   );
 }
 
@@ -73,10 +90,7 @@ function RelaxRcPlaceArticle({ place }: { place: RelaxRcPlace }) {
       <article className="relax-rc-place relax-rc-place--prose" aria-labelledby={titleId} id={place.id}>
         <div className="relax-rc-place__prose-inner">
           <p className="relax-rc-place__eyebrow">{eyebrow}</p>
-          <h3 id={titleId} className="relax-rc-place__name">
-            {name}
-          </h3>
-          <RelaxRcOfficialLink name={name} href={officialHref} />
+          <RelaxRcPlaceTitle id={titleId} name={name} nameClassName="relax-rc-place__name" officialHref={officialHref} />
           <RelaxRcPlaceBody paragraphs={paragraphs} />
           <div className="hiking-ctas relax-rc-place__ctas">
             {ctas.map((c) => (
@@ -89,30 +103,39 @@ function RelaxRcPlaceArticle({ place }: { place: RelaxRcPlace }) {
   }
 
   if (layout === "full-bleed") {
+    const cinematicBleed = place.id === "hells-gate-mud-spa";
     return (
-      <article className="relax-rc-place relax-rc-place--bleed" aria-labelledby={titleId} id={place.id}>
-        <figure className="relax-rc-place__bleed-figure">
-          <div className="relax-rc-place__bleed-media">
-            <ExpRefImage
-              src={figure.src}
-              alt={figure.alt}
-              fill
-              sizes="(max-width: 900px) 100vw, min(1200px, 92vw)"
-              className="relax-rc-place__bleed-img"
+      <article
+        className={`relax-rc-place relax-rc-place--bleed${cinematicBleed ? " relax-rc-place--cinematic" : ""}`}
+        aria-labelledby={titleId}
+        id={place.id}
+      >
+        <div className="relax-rc-place__bleed-stage">
+          <figure className="relax-rc-place__bleed-figure">
+            <div className="relax-rc-place__bleed-media">
+              <ExpRefImage
+                src={figure.src}
+                alt={figure.alt}
+                fill
+                sizes="(max-width: 900px) 100vw, min(1200px, 92vw)"
+                className="relax-rc-place__bleed-img"
+              />
+            </div>
+          </figure>
+          <div className="relax-rc-place__bleed-copy">
+            <p className="relax-rc-place__eyebrow">{eyebrow}</p>
+            <RelaxRcPlaceTitle
+              id={titleId}
+              name={name}
+              nameClassName="relax-rc-place__name relax-rc-place__name--bleed"
+              officialHref={officialHref}
             />
-          </div>
-        </figure>
-        <div className="relax-rc-place__bleed-copy">
-          <p className="relax-rc-place__eyebrow">{eyebrow}</p>
-          <h3 id={titleId} className="relax-rc-place__name relax-rc-place__name--bleed">
-            {name}
-          </h3>
-          <RelaxRcOfficialLink name={name} href={officialHref} />
-          <RelaxRcPlaceBody paragraphs={paragraphs} />
-          <div className="hiking-ctas relax-rc-place__ctas">
-            {ctas.map((c) => (
-              <StayAtLink key={`${c.href}-${c.label}`} href={c.href} label={c.label} className="journey-pod hiking-pod-cta" />
-            ))}
+            <RelaxRcPlaceBody paragraphs={paragraphs} />
+            <div className="hiking-ctas relax-rc-place__ctas">
+              {ctas.map((c) => (
+                <StayAtLink key={`${c.href}-${c.label}`} href={c.href} label={c.label} className="journey-pod hiking-pod-cta" />
+              ))}
+            </div>
           </div>
         </div>
       </article>
@@ -140,10 +163,7 @@ function RelaxRcPlaceArticle({ place }: { place: RelaxRcPlace }) {
   const copyBlock = (
     <div className="relax-rc-place__split-copy">
       <p className="relax-rc-place__eyebrow">{eyebrow}</p>
-      <h3 id={titleId} className="relax-rc-place__name">
-        {name}
-      </h3>
-      <RelaxRcOfficialLink name={name} href={officialHref} />
+      <RelaxRcPlaceTitle id={titleId} name={name} nameClassName="relax-rc-place__name" officialHref={officialHref} />
       <RelaxRcPlaceBody paragraphs={paragraphs} />
       <div className="hiking-ctas relax-rc-place__ctas">
         {ctas.map((c) => (
@@ -175,7 +195,11 @@ function RelaxRcChapterSection({ chapter, index }: { chapter: RelaxRcChapter; in
   const indexLabel = String(index + 1).padStart(2, "0");
 
   return (
-    <section className="relax-rc-chapter journey-chapter" id={chapter.id} aria-labelledby={headingId}>
+    <section
+      className="relax-rc-chapter journey-chapter relax-coastal-reveal relax-coastal-reveal--chapter"
+      id={chapter.id}
+      aria-labelledby={headingId}
+    >
       <div className="relax-rc-chapter__mast">
         <div className="relax-rc-chapter__mast-shade" aria-hidden />
         <div className="wrap relax-rc-chapter__mast-inner">
@@ -230,8 +254,9 @@ function RelaxRcChapterSection({ chapter, index }: { chapter: RelaxRcChapter; in
 
 export function RelaxCoastalView() {
   return (
-    <div className="experience-ref">
+    <div className="experience-ref relax-coastal-page">
       <RelaxRcJsonLd />
+      <RelaxCoastalMotionRoot>
       <ExpStandardChrome
         navItems={[
           { href: "#relax-rc-thermal", label: "Thermal" },
@@ -239,7 +264,7 @@ export function RelaxCoastalView() {
           { href: "#faq", label: "FAQ" },
         ]}
       >
-        <header className="hero relax-v1-hero" id="top">
+        <header className="hero relax-v1-hero relax-coastal-hero" id="top">
           <ExpRefImage
             src={relaxHero.image}
             alt={relaxHero.alt}
@@ -249,24 +274,26 @@ export function RelaxCoastalView() {
             priority
             objectPosition="center 75%"
           />
-          <div className="heroInner">
-            <p className="relax-rc-hero-eyebrow">Serenity &amp; wellness</p>
-            <h1>Relax &amp; Coastal</h1>
-            <p className="impact-summary">
-              A calm, premium field note to geothermal Rotorua, open Northland coast, Rakiura skies above Paterson Inlet,
-              and Hurunui&apos;s elemental shore — each stop paired with a suggested PurePod when the geography agrees.
+          <div className="heroInner relax-coastal-hero__inner">
+            <p className="relax-rc-hero-eyebrow relax-coastal-hero__seq relax-coastal-hero__seq--eyebrow">
+              Serenity &amp; wellness
             </p>
-            <p className="impact-summary relax-v1-hero__summary-sub">
-              Seven intentional places in two movements: thermal waters first, then coastal calm and hidden landscapes.
+            <h1 className="relax-coastal-hero__seq relax-coastal-hero__seq--title">Relax &amp; Coastal</h1>
+            <p className="impact-summary relax-coastal-hero__seq relax-coastal-hero__seq--lead">
+              Geothermal stillness, open coastlines, and quiet places to slow down.
             </p>
-            <Link className="btnGhost" href="#relax-rc-deck">
+            <Link className="btnGhost relax-coastal-hero__seq relax-coastal-hero__seq--cta" href="#relax-rc-deck">
               Read on
             </Link>
           </div>
         </header>
 
         <main id="main">
-          <section id="relax-rc-deck" className="relax-rc-deck" aria-labelledby="about-heading">
+          <section
+            id="relax-rc-deck"
+            className="relax-rc-deck relax-coastal-reveal relax-coastal-reveal--editorial"
+            aria-labelledby="about-heading"
+          >
             <div className="relax-rc-deck__ribbon" aria-hidden="true" />
             <div className="wrap relax-rc-deck__wrap">
               <h2 id="about-heading" className="visually-hidden">
@@ -293,17 +320,15 @@ export function RelaxCoastalView() {
 
           <section className="relax-v1-blocks relax-rc" id="blocks" aria-label="Curated Relax and Coastal places">
             <div className="wrap">
-              <header className="relax-rc-toc">
+              <header className="relax-rc-toc relax-coastal-reveal relax-coastal-reveal--toc">
               <div className="relax-rc-toc__label">Contents</div>
               <h2 className="journey-title section-title-premium relax-rc-toc__title">Curated for calm pacing</h2>
               <div className="relax-rc-toc__intro-stack">
                 <p className="journey-intro relax-rc-toc__intro-lead">
-                  Seven places in two movements — thermal waters and geothermal relaxation in Rotorua, then coastal calm
-                  and hidden landscapes from Northland to Stewart Island and Hurunui.
+                  Seven places, shaped into two slow movements — geothermal warmth first, then coast.
                 </p>
                 <p className="journey-intro relax-rc-toc__intro-sub">
-                  Each listing includes an official visitor link you can update in code when final URLs are ready.
-                  Photographs appear only where we hold an honest file; the rest is typography and space.
+                  Take them as a gentle sequence, or follow what feels right on the day.
                 </p>
               </div>
               <ol className="relax-rc-toc__list" aria-label="Chapter shortcuts">
@@ -327,39 +352,39 @@ export function RelaxCoastalView() {
             aria-labelledby="pod-bridge-heading"
           >
             <div className="wrap relax-v1-pod-bridge__wrap">
-              <div className="inner">
-                <div className="relax-v1-pod-bridge__visual">
-                  <div className="relax-v1-pod-bridge__main-frame">
-                    <ExpRefImage
-                      src={RELAX_POD_BRIDGE_MAIN.src}
-                      alt={RELAX_POD_BRIDGE_MAIN.alt}
-                      fill
-                      sizes="(max-width:900px) 100vw, min(1120px, 90vw)"
-                      className="pod-bridge__img"
-                    />
-                    <div className="relax-v1-pod-bridge__scrim" aria-hidden />
+              <div className="inner relax-v1-pod-bridge__stack">
+                <div className="relax-v1-pod-bridge__stage">
+                  <div className="relax-v1-pod-bridge__visual relax-coastal-reveal relax-coastal-reveal--finale-visual">
+                    <div className="relax-v1-pod-bridge__main-frame">
+                      <ExpRefImage
+                        src={RELAX_POD_BRIDGE_MAIN.src}
+                        alt={RELAX_POD_BRIDGE_MAIN.alt}
+                        fill
+                        sizes="(max-width:900px) 100vw, min(1120px, 90vw)"
+                        className="pod-bridge__img"
+                      />
+                      <div className="relax-v1-pod-bridge__scrim" aria-hidden />
+                    </div>
+                  </div>
+                  <div className="relax-v1-pod-bridge__copy relax-coastal-reveal relax-coastal-reveal--finale-copy">
+                    <h2 id="pod-bridge-heading" className="pod-bridge__title section-title-premium">
+                      From restorative landscapes to quiet overnight stays
+                    </h2>
+                    <p>
+                      After geothermal pools, coastal air or a long quiet walk, a PurePod stay continues the same rhythm —
+                      calm, private, and immersed in the landscape.
+                    </p>
+                    <p>A place to slow down, and stay with the feeling of the day a little longer.</p>
+                    <Link href="/pods" className="btnGhost relax-rc-pod-bridge-btn">
+                      Find your stay
+                    </Link>
                   </div>
                 </div>
-                <h2 id="pod-bridge-heading" className="pod-bridge__title section-title-premium">
-                  From restorative landscapes to quiet overnight stays
-                </h2>
-                <p>
-                  After geothermal pools, coastal air or a long quiet walk, a PurePods stay continues the same rhythm —
-                  calm, private and immersed in the landscape. These glass eco-cabins offer space to slow down and stay
-                  with the feeling of the day a little longer.
-                </p>
-                <p className="relax-rc-pod-bridge-note">
-                  Site-specific details and inclusions are confirmed when you book; this page pairs restorative stops with
-                  a suggested nearby pod.
-                </p>
-                <Link href="/pods" className="btnGhost relax-rc-pod-bridge-btn">
-                  Discover slow travel
-                </Link>
               </div>
             </div>
           </section>
 
-          <section className="faq" id="faq" aria-labelledby="faq-heading">
+          <section className="faq relax-coastal-reveal relax-coastal-reveal--closing" id="faq" aria-labelledby="faq-heading">
             <div className="wrap">
               <div className="surface">
                 <h2 id="faq-heading" className="section-title-premium">
@@ -377,7 +402,7 @@ export function RelaxCoastalView() {
             </div>
           </section>
 
-          <section className="cta" aria-labelledby="cta-heading">
+          <section className="cta relax-coastal-reveal relax-coastal-reveal--closing" aria-labelledby="cta-heading">
             <div className="wrap">
               <div className="cta-panel">
                 <h2 id="cta-heading" className="eyebrow">
@@ -400,6 +425,7 @@ export function RelaxCoastalView() {
           </section>
         </main>
       </ExpStandardChrome>
+      </RelaxCoastalMotionRoot>
     </div>
   );
 }
