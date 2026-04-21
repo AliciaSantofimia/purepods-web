@@ -29,6 +29,8 @@ type GridCard = {
   image: string;
   /** `object-position` for the photo (matches previous background-position). */
   mediaPos?: string;
+  /** Optional decorative / SEO alt for card media (defaults to empty). */
+  imageAlt?: string;
 };
 
 const experiencesPrimary: GridCard[] = [
@@ -79,7 +81,9 @@ const experiencesMore: GridCard[] = [
     description:
       "Coastal and relaxation experiences — sea air, open space and quiet places to unwind.",
     image:
-      "/assets/img/experiences/experiences/rotorua-relax-coastal-geothermal-lake.jpg",
+      "/assets/img/experiences/experiences/secret-spot-hot-tubs-forest-rotorua-new-zealand.jpg",
+    imageAlt:
+      "People relaxing in forest hot tubs at Secret Spot, Rotorua, New Zealand surrounded by native ferns",
   },
   {
     href: "/experiences/culture",
@@ -210,7 +214,7 @@ export default function ExperiencesPage() {
                 <div className="media">
                   <Image
                     src={item.image}
-                    alt=""
+                    alt={item.imageAlt ?? ""}
                     fill
                     sizes={CARD_MEDIA_SIZES}
                     style={{
