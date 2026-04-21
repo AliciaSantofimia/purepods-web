@@ -45,16 +45,15 @@ const STEWART_REGIONAL_LABEL_MAP: Pick<GeoRefLabel, "tier" | "iconSize" | "iconA
 const GEO_REF_LABELS: GeoRefLabel[] = [
   { name: "Stewart Island", lat: -46.878, lon: 168.208, ...STEWART_REGIONAL_LABEL_MAP },
   /*
-   * Auckland — anchor = right-centre of label (iconAnchor); “AUCKLAND” sits left of the point, over water W of
-   * the isthmus (ref layout). Point ~city/coast; stays clear of Rewarewa ~(-36.836, 174.504).
+   * Auckland — anchor centre so provided WGS84 sits at the middle of the label (right-edge anchor put text far west over water).
    */
   {
     name: "Auckland",
-    lat: -36.848,
-    lon: 174.765,
+    lat: -36.850692,
+    lon: 174.765736,
     tier: "primary",
     iconSize: [136, 20],
-    iconAnchor: [124, 10],
+    iconAnchor: [68, 10],
   },
   /*
    * Kerikeri (town centroid ≈ -35.228611, 173.947784). Makoha pin ~(-35.22, 173.95). Nudge anchor from
@@ -68,18 +67,38 @@ const GEO_REF_LABELS: GeoRefLabel[] = [
     iconSize: [122, 18],
     iconAnchor: [24, 15],
   },
-  { name: "Tauranga", lat: -37.6878, lon: 176.1651, tier: "secondary" },
-  { name: "Rotorua", lat: -38.1368, lon: 176.2497, tier: "secondary" },
   /*
-   * Wellington — iconAnchor top-centre [w/2, 0]: label hangs below the anchor (ref: text under the point).
+   * Tauranga — anchor bottom-centre so the label sits above the point (ref: screenshot). Geo point ≈ Bay of Plenty centroid.
+   */
+  {
+    name: "Tauranga",
+    lat: -37.686163527619385,
+    lon: 176.17560816012573,
+    tier: "secondary",
+    iconSize: [128, 18],
+    iconAnchor: [64, 18],
+  },
+  /*
+   * Rotorua — anchor near right edge (same inset as Auckland) so text sits left of pod Pāmu (-38.1368, 176.2497).
+   */
+  {
+    name: "Rotorua",
+    lat: -38.1368,
+    lon: 176.2497,
+    tier: "secondary",
+    iconSize: [128, 18],
+    iconAnchor: [116, 9],
+  },
+  /*
+   * Wellington — anchor centre so provided WGS84 sits at the middle of the label (top-centre anchor skewed placement vs land).
    */
   {
     name: "Wellington",
-    lat: -41.286,
-    lon: 174.776,
+    lat: -41.291492247632654,
+    lon: 174.7622438259359,
     tier: "primary",
     iconSize: [132, 20],
-    iconAnchor: [66, 0],
+    iconAnchor: [66, 10],
   },
   /*
    * Christchurch — primary city (same hierarchy as Auckland / Wellington); anchor W of CBD for Canterbury cluster.

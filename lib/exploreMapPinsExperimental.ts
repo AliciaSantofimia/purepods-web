@@ -2,25 +2,24 @@ import type { ExplorePodCard } from "@/lib/podsExploreData";
 
 /**
  * Experimental adapter — geographic pins for Explore map variant only.
- * Stewart Island (tokoeka, hananui): exact WGS84 from property source of truth.
  */
 const PIN_BY_SLUG: Record<string, { lat: number; lon: number }> = {
-  makoha: { lat: -35.2283, lon: 173.9509 },
-  rewarewa: { lat: -36.836, lon: 174.504 },
-  ruru: { lat: -36.844, lon: 175.508 },
-  pamu: { lat: -38.1368, lon: 176.2497 },
-  matu: { lat: -38.2609, lon: 175.1035 },
-  kokomea: { lat: -40.914, lon: 174.988 },
-  manakau: { lat: -42.4, lon: 173.68 },
-  kahutara: { lat: -42.45, lon: 173.72 },
-  atatu: { lat: -42.65, lon: 172.76 },
-  korimako: { lat: -42.58, lon: 172.88 },
-  greystone: { lat: -43.15, lon: 172.75 },
-  pohue: { lat: -43.803, lon: 172.967 },
-  haurapa: { lat: -45.038, lon: 169.2 },
-  taima: { lat: -45.32, lon: 169.15 },
-  tokoeka: { lat: -46.866629, lon: 168.124813 },
-  hananui: { lat: -46.866759, lon: 168.124998 },
+  matu: { lat: -38.2615, lon: 175.1123 },
+  makoha: { lat: -35.204, lon: 173.9485 },
+  ruru: { lat: -37.4208, lon: 175.762 },
+  pamu: { lat: -38.1825, lon: 176.252 },
+  rewarewa: { lat: -36.824, lon: 174.4195 },
+  tokoeka: { lat: -46.8975, lon: 168.129 },
+  hananui: { lat: -46.9005, lon: 168.1305 },
+  haurapa: { lat: -45.05, lon: 169.21 },
+  pohue: { lat: -43.733, lon: 172.866 },
+  greystone: { lat: -43.08, lon: 172.76 },
+  korimako: { lat: -42.85, lon: 173.2 },
+  atatu: { lat: -42.855, lon: 173.205 },
+  kahutara: { lat: -42.4, lon: 173.68 },
+  manakau: { lat: -42.45, lon: 173.55 },
+  kokomea: { lat: -40.81559036922355, lon: 175.10623434237164 },
+  taima: { lat: -45.068021549825716, lon: 169.0647641734164 },
 };
 
 export type ExplorePodWithMapPin = ExplorePodCard & { lat: number; lon: number };

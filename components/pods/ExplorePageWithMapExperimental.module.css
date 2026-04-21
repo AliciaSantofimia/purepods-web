@@ -292,6 +292,48 @@
   transform: scale(1.05);
 }
 
+/* Cluster marker — same editorial ring/dot language, shows count when pods overlap on screen */
+.exmapCluster {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.exmapCluster__ring {
+  position: absolute;
+  inset: 1px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 1.5px solid color-mix(in srgb, var(--stroke) 55%, var(--brand-beige) 45%);
+  background: color-mix(in srgb, var(--bg) 42%, transparent);
+  opacity: 0.95;
+  transition: transform 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.exmapCluster__count {
+  position: relative;
+  z-index: 1;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: color-mix(in srgb, var(--brand-green) 82%, #2a2c22);
+  text-shadow: 0 0 0 1px color-mix(in srgb, #fff 55%, transparent);
+  pointer-events: none;
+}
+
+.exmapCluster[data-active="true"] .exmapCluster__ring {
+  border-color: color-mix(in srgb, var(--brand-green) 35%, var(--stroke));
+  opacity: 1;
+  transform: scale(1.06);
+}
+
 :global(.leaflet-tooltip).exmapTip {
   padding: 0 !important;
   border: 1px solid color-mix(in srgb, var(--stroke) 45%, transparent) !important;
@@ -323,6 +365,20 @@
   color: var(--muted);
 }
 
+:global(.leaflet-tooltip).exmapTip .exmapTip__clusterInner {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+:global(.leaflet-tooltip).exmapTip .exmapTip__clusterRow {
+  display: block;
+}
+
+:global(.leaflet-tooltip).exmapTip .exmapTip__clusterRow .exmapTip__meta {
+  margin-top: 1px;
+}
+
 :global(.leaflet-tooltip).exmapTip::before {
   border-top-color: color-mix(in srgb, var(--card) 96%, var(--bg)) !important;
 }
@@ -345,6 +401,12 @@
 
   .exmapM[data-active="true"] .exmapM__ring,
   .exmapM[data-active="true"] .exmapM__dot {
+    transform: none;
+  }
+
+  .exmapCluster__ring,
+  .exmapCluster[data-active="true"] .exmapCluster__ring {
+    transition: none;
     transform: none;
   }
 }
