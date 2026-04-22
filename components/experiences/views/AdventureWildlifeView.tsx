@@ -31,7 +31,6 @@ export function AdventureWildlifeView() {
             className="heroImg"
             sizes="100vw"
             priority
-            objectPosition="center"
           />
           <div className="heroInner">
             <h1>Adventure &amp; Wildlife</h1>
