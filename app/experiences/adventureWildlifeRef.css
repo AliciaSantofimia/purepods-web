@@ -23,3 +23,46 @@
   letter-spacing: -0.01em;
   color: var(--ink);
 }
+
+/* —— Scroll reveal (Adventure & Wildlife only; IO adds `.adventure--in-view`) —— */
+
+.experience-ref.adventure-wildlife-ref .adventure-reveal:not(.adventure--in-view) {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+}
+
+@media (max-width: 768px) {
+  .experience-ref.adventure-wildlife-ref .adventure-reveal:not(.adventure--in-view) {
+    transform: none;
+  }
+}
+
+.experience-ref.adventure-wildlife-ref .adventure-reveal.adventure--in-view {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (max-width: 768px) {
+  .experience-ref.adventure-wildlife-ref .adventure-reveal.adventure--in-view {
+    transition: opacity 0.52s ease-out;
+  }
+}
+
+@media (min-width: 769px) {
+  .experience-ref.adventure-wildlife-ref .adventure-reveal:not(.adventure--in-view) {
+    transform: translate3d(0, 16px, 0);
+  }
+
+  .experience-ref.adventure-wildlife-ref .adventure-reveal.adventure--in-view {
+    transition: opacity 0.62s ease-out, transform 0.62s ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-ref.adventure-wildlife-ref .adventure-reveal,
+  .experience-ref.adventure-wildlife-ref .adventure-reveal:not(.adventure--in-view) {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

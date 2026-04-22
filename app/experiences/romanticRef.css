@@ -705,3 +705,46 @@
     padding-inline: 10px;
   }
 }
+
+/* —— Scroll reveal (Romantic only; IO adds `.romantic--in-view`) —— */
+
+.experience-ref.romantic-ref .romantic-reveal:not(.romantic--in-view) {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+}
+
+@media (max-width: 768px) {
+  .experience-ref.romantic-ref .romantic-reveal:not(.romantic--in-view) {
+    transform: none;
+  }
+}
+
+.experience-ref.romantic-ref .romantic-reveal.romantic--in-view {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (max-width: 768px) {
+  .experience-ref.romantic-ref .romantic-reveal.romantic--in-view {
+    transition: opacity 0.52s ease-out;
+  }
+}
+
+@media (min-width: 769px) {
+  .experience-ref.romantic-ref .romantic-reveal:not(.romantic--in-view) {
+    transform: translate3d(0, 16px, 0);
+  }
+
+  .experience-ref.romantic-ref .romantic-reveal.romantic--in-view {
+    transition: opacity 0.62s ease-out, transform 0.62s ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-ref.romantic-ref .romantic-reveal,
+  .experience-ref.romantic-ref .romantic-reveal:not(.romantic--in-view) {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
