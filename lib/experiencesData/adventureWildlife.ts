@@ -12,6 +12,15 @@ export const adventureAboutLeadHtml = `Explore a curated mix of adventure and wi
 
 export const marineSlides: HikingSlide[] = [
   {
+    image: `${B}auckland-whale-dolphin-safari-boat-marine-wildlife-new-zealand.jpg`,
+    alt: "Auckland Whale and Dolphin Safari boat observing marine wildlife in the Hauraki Gulf, New Zealand",
+    title: "Auckland Whale & Dolphin Safari",
+    placeHref: "https://www.aucklandwhaleanddolphinsafari.co.nz/",
+    description:
+      "A marine wildlife cruise departing from central Auckland, offering the chance to spot dolphins, whales and seabirds in the Hauraki Gulf Marine Park. The experience combines coastal scenery with expert-led interpretation of the region's diverse marine ecosystem.",
+    ctas: [{ label: "Stay at Rewarewa →", href: "/location/rewarewa" }],
+  },
+  {
     image: `${B}kaikoura-whale-watch-sperm-whale-coast-new-zealand.jpg`,
     alt: "Sperm whale surfacing off the Kaikōura coast with mountains in New Zealand",
     title: "Whale Watch Kaikōura",
@@ -53,18 +62,18 @@ export const marineSlides: HikingSlide[] = [
       "A guided wildlife experience focused on the conservation of little blue penguins in the Pōhatu Marine Reserve, near Akaroa. Tours include access to private farmland and coastal habitats, with opportunities to observe penguins, seabirds and native landscape in a protected environment.",
     ctas: [{ label: "Stay at Pōhue →", href: "/location/pohue" }],
   },
-  {
-    image: `${B}auckland-whale-dolphin-safari-boat-marine-wildlife-new-zealand.jpg`,
-    alt: "Auckland Whale and Dolphin Safari boat observing marine wildlife in the Hauraki Gulf, New Zealand",
-    title: "Auckland Whale & Dolphin Safari",
-    placeHref: "https://www.aucklandwhaleanddolphinsafari.co.nz/",
-    description:
-      "A marine wildlife cruise departing from central Auckland, offering the chance to spot dolphins, whales and seabirds in the Hauraki Gulf Marine Park. The experience combines coastal scenery with expert-led interpretation of the region's diverse marine ecosystem.",
-    ctas: [{ label: "Stay at Rewarewa →", href: "/location/rewarewa" }],
-  },
 ];
 
 export const natureSlides: HikingSlide[] = [
+  {
+    image: `${B}wingspan-national-bird-of-prey-centre-karearea-falcon-new-zealand.jpg`,
+    alt: "Girl holding a kārearea New Zealand falcon at Wingspan National Bird of Prey Centre in Rotorua New Zealand",
+    title: "Wingspan National Bird of Prey Centre",
+    placeHref: "https://www.wingspan.co.nz/",
+    description:
+      "A conservation-focused experience dedicated to New Zealand’s birds of prey, including the kārearea (native falcon). Visits include guided encounters and educational insights into rehabilitation and breeding programmes within a natural forest setting.",
+    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
+  },
   {
     image: `${B}bay-of-islands-sea-kayaking-moana-kayaks-coastal-new-zealand.jpg`,
     alt: "Colorful kayaks on the beach in the Bay of Islands before a sea kayaking experience in New Zealand",
@@ -82,15 +91,6 @@ export const natureSlides: HikingSlide[] = [
     description:
       "A guided day trip to Kapiti Island, a protected nature reserve known for native birdlife and conservation. Access is managed and visitor numbers are limited, allowing close encounters with species such as kākā, tīeke and kererū in a predator-free environment.",
     ctas: [{ label: "Stay at Kokomea →", href: "/location/kokomea" }],
-  },
-  {
-    image: `${B}wingspan-national-bird-of-prey-centre-karearea-falcon-new-zealand.jpg`,
-    alt: "Girl holding a kārearea New Zealand falcon at Wingspan National Bird of Prey Centre in Rotorua New Zealand",
-    title: "Wingspan National Bird of Prey Centre",
-    placeHref: "https://www.wingspan.co.nz/",
-    description:
-      "A conservation-focused experience dedicated to New Zealand’s birds of prey, including the kārearea (native falcon). Visits include guided encounters and educational insights into rehabilitation and breeding programmes within a natural forest setting.",
-    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
   },
 ];
 

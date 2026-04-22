@@ -6,6 +6,15 @@
   transform: scale(1);
 }
 
+/* Content imagery — light cohesion (not hero): calmer saturation/contrast */
+.experience-ref.adventure-wildlife-ref #blocks .hiking-carousel__slide .hiking-carousel__img {
+  filter: saturate(0.93) contrast(0.97);
+}
+
+.experience-ref.adventure-wildlife-ref .pod-bridge .pod-bridge__img {
+  filter: saturate(0.93) contrast(0.97);
+}
+
 .experience-ref.adventure-wildlife-ref #blocks h2.journey-title {
   margin: 0 0 10px;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
