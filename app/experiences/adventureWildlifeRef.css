@@ -1,4 +1,10 @@
-/* Adventure & Wildlife — scoped; chapter titles in #blocks only */
+/* Adventure & Wildlife — scoped */
+
+.experience-ref.adventure-wildlife-ref .hero .heroImg,
+.experience-ref.adventure-wildlife-ref .hero img {
+  object-position: 50% 28%;
+  transform: scale(1);
+}
 
 .experience-ref.adventure-wildlife-ref #blocks h2.journey-title {
   margin: 0 0 10px;
