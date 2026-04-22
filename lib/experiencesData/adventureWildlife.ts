@@ -22,8 +22,6 @@ export const marineSlides: HikingSlide[] = [
       { label: "Stay at Kahutara →", href: "/location/kahutara" },
       { label: "Stay at Manakau →", href: "/location/manakau" },
     ],
-    overlayTitle: "Whale Watch Kaikōura",
-    overlayLocation: "Kaikōura, New Zealand",
   },
   {
     image: `${B}kaikoura-seal-swim-underwater-marine-wildlife-new-zealand.jpg`,
@@ -36,8 +34,6 @@ export const marineSlides: HikingSlide[] = [
       { label: "Stay at Kahutara →", href: "/location/kahutara" },
       { label: "Stay at Manakau →", href: "/location/manakau" },
     ],
-    overlayTitle: "Seal Swim Kaikōura",
-    overlayLocation: "Kaikōura, New Zealand",
   },
   {
     image: `${B}akaroa-dolphin-swim-hectors-dolphins-ocean-new-zealand.jpg`,
@@ -47,8 +43,6 @@ export const marineSlides: HikingSlide[] = [
     description:
       "A guided boat experience in Akaroa Harbour where you can observe or swim alongside Hector's dolphins, one of the world's smallest and rarest dolphin species. The tour focuses on respectful wildlife interaction within a protected coastal environment.",
     ctas: [{ label: "Stay at Pōhue →", href: "/location/pohue" }],
-    overlayTitle: "Swimming with Dolphins",
-    overlayLocation: "Akaroa, New Zealand",
   },
   {
     image: `${B}pohatu-penguins-akaroa-wildlife-sanctuary-new-zealand.jpg`,
@@ -58,8 +52,6 @@ export const marineSlides: HikingSlide[] = [
     description:
       "A guided wildlife experience focused on the conservation of little blue penguins in the Pōhatu Marine Reserve, near Akaroa. Tours include access to private farmland and coastal habitats, with opportunities to observe penguins, seabirds and native landscape in a protected environment.",
     ctas: [{ label: "Stay at Pōhue →", href: "/location/pohue" }],
-    overlayTitle: "Pōhatu Penguins / Plunge NZ",
-    overlayLocation: "Akaroa, New Zealand",
   },
   {
     image: `${B}auckland-whale-dolphin-safari-boat-marine-wildlife-new-zealand.jpg`,
@@ -69,8 +61,6 @@ export const marineSlides: HikingSlide[] = [
     description:
       "A marine wildlife cruise departing from central Auckland, offering the chance to spot dolphins, whales and seabirds in the Hauraki Gulf Marine Park. The experience combines coastal scenery with expert-led interpretation of the region's diverse marine ecosystem.",
     ctas: [{ label: "Stay at Rewarewa →", href: "/location/rewarewa" }],
-    overlayTitle: "Auckland Whale & Dolphin Safari",
-    overlayLocation: "Auckland, New Zealand",
   },
 ];
 
@@ -83,8 +73,6 @@ export const natureSlides: HikingSlide[] = [
     description:
       "A guided sea kayaking experience in the Bay of Islands, exploring sheltered waters, coastal inlets and small islands. The tours combine paddling with local knowledge of the marine environment, offering a slower way to experience the coastline.",
     ctas: [{ label: "Stay at Mākoha →", href: "/location/makoha" }],
-    overlayTitle: "Moana Kayaks – Bay of Islands",
-    overlayLocation: "Bay of Islands, New Zealand",
   },
   {
     image: `${B}kapiti-island-day-trip-new-zealand-boat-transfer-nature-reserve.jpg`,
@@ -94,8 +82,6 @@ export const natureSlides: HikingSlide[] = [
     description:
       "A guided day trip to Kapiti Island, a protected nature reserve known for native birdlife and conservation. Access is managed and visitor numbers are limited, allowing close encounters with species such as kākā, tīeke and kererū in a predator-free environment.",
     ctas: [{ label: "Stay at Kokomea →", href: "/location/kokomea" }],
-    overlayTitle: "Kapiti Island – Day trip",
-    overlayLocation: "Kāpiti Island, New Zealand",
   },
   {
     image: `${B}wingspan-national-bird-of-prey-centre-karearea-falcon-new-zealand.jpg`,
@@ -105,8 +91,6 @@ export const natureSlides: HikingSlide[] = [
     description:
       "A conservation-focused experience dedicated to New Zealand’s birds of prey, including the kārearea (native falcon). Visits include guided encounters and educational insights into rehabilitation and breeding programmes within a natural forest setting.",
     ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
-    overlayTitle: "Wingspan National Bird of Prey Centre",
-    overlayLocation: "Rotorua, New Zealand",
   },
 ];
 
@@ -119,8 +103,6 @@ export const adrenalineSlides: HikingSlide[] = [
     description:
       "A guided white water rafting experience on the Kaituna River near Rotorua, known for the Tutea Falls, the highest commercially rafted waterfall in the world. The route combines fast-moving rapids with native forest scenery and expert-led navigation.",
     ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
-    overlayTitle: "Kaituna Cascades - Rafting",
-    overlayLocation: "Rotorua, New Zealand",
   },
   {
     image: `${B}okere-zipline-rotorua-new-zealand-kaituna-river-forest-zipline.jpg`,
@@ -130,8 +112,6 @@ export const adrenalineSlides: HikingSlide[] = [
     description:
       "A guided zipline experience through native forest near Rotorua, combining suspended lines, elevated platforms and ecological restoration insights. The tour moves above and through the canopy, offering a fast-paced but controlled way to experience the landscape.",
     ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
-    overlayTitle: "Rotorua Ziplines",
-    overlayLocation: "Rotorua, New Zealand",
   },
   {
     image: `${B}off-road-4x4-adventure-rotorua-new-zealand-forest-trail-jeep.jpg`,
@@ -141,8 +121,6 @@ export const adrenalineSlides: HikingSlide[] = [
     description:
       "A motor-based adventure experience in Rotorua featuring guided 4x4 tracks, off-road driving and high-adrenaline activities. The courses are designed to navigate steep terrain, mud and obstacles, offering a controlled but intense outdoor driving experience.",
     ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
-    overlayTitle: "Off Road NZ (4x4 / motor adventures)",
-    overlayLocation: "Rotorua, New Zealand",
   },
   {
     image: `${B}skydive-auckland-tandem-skydiving-new-zealand-coastal-rural-views.jpg`,
@@ -152,8 +130,6 @@ export const adrenalineSlides: HikingSlide[] = [
     description:
       "A tandem skydiving experience departing from Auckland, offering freefall over coastal and rural landscapes before a parachute descent with wide views across the region. The jump is guided by experienced instructors and designed for first-time and returning participants.",
     ctas: [{ label: "Stay at Rewarewa →", href: "/location/rewarewa" }],
-    overlayTitle: "Skydive Auckland",
-    overlayLocation: "Auckland, New Zealand",
   },
   {
     image: `${B}kaikoura-scenic-flight-whale-view-air-kaikoura-new-zealand-aerial.jpg`,
@@ -166,8 +142,6 @@ export const adrenalineSlides: HikingSlide[] = [
       { label: "Stay at Kahutara →", href: "/location/kahutara" },
       { label: "Stay at Manakau →", href: "/location/manakau" },
     ],
-    overlayTitle: "Air Kaikōura (Scenic flights)",
-    overlayLocation: "Kaikōura, New Zealand",
   },
 ];
 
