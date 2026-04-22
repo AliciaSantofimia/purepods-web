@@ -176,7 +176,7 @@ export function PodView() {
           title="Ruru"
           subtitle={HERO_SUBTITLE}
           imageSrc={heroImage}
-          imageAlt="Ruru PurePod glass cabin in the Coromandel landscape, New Zealand"
+          imageAlt="Ruru PurePod glass cabin in the Coromandel landscape, New Zealand"
         />
         <Container as="div" className={styles.locationContent}>
           <PodSection
@@ -202,7 +202,7 @@ export function PodView() {
               {
                 src: podNight,
                 alt: "Night sky from Ruru PurePod, Coromandel, New Zealand",
-                position: "50% 50%",
+                position: "50% 63%",
               },
             ]}
             galleryCaption="PurePod Ruru is not just a place to sleep but an immersion in the Coromandel landscape. The bush, the hills and the wide sky are part of every moment. Inside, everything is designed for two: a warm, comfortable space from which to watch the changing light, the stars and the stillness of the land. A place to disconnect, observe and simply be."

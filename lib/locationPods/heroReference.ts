@@ -25,9 +25,9 @@ const HERO_FRAMES: Record<LocationPodSlug, HeroFrameProps> = {
   kahutara: { imagePosition: "70% 85%" },
   pohue: { imagePosition: "50% 75%" },
   makoha: {
-    imagePosition: "70% 50%",
-    imagePositionMd: "60% 55%",
-    imagePositionXl: "55% 60%",
+    imagePosition: "70% 82%",
+    imagePositionMd: "60% 86%",
+    imagePositionXl: "55% 90%",
     heroTallUltra: true,
   },
   korimako: {

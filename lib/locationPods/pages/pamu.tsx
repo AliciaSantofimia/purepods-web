@@ -176,7 +176,7 @@ export function PodView() {
           title="Pāmu"
           subtitle={HERO_SUBTITLE}
           imageSrc={heroImage}
-          imageAlt="Pāmu PurePod glass cabin in the Rotorua landscape, New Zealand"
+          imageAlt="Pāmu PurePod glass cabin in the Rotorua landscape, New Zealand"
         />
         <Container as="div" className={styles.locationContent}>
           <PodSection
@@ -190,7 +190,7 @@ export function PodView() {
               {
                 src: podExterior,
                 alt: "Pāmu PurePod glass cabin exterior in the Rotorua landscape, New Zealand",
-                position: "50% 55%",
+                position: "50% 61%",
                 big: true,
               },
               {

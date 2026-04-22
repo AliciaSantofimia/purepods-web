@@ -9,7 +9,12 @@ import styles from "./TravelSection.module.css";
 interface TravelCardWithImages {
   type: "withImages";
   title: string;
-  images: { src: string | StaticImageData; alt: string }[];
+  images: {
+    src: string | StaticImageData;
+    alt: string;
+    /** Optional `object-position` for this tile (default 50% 50%). */
+    position?: string;
+  }[];
   body: string;
 }
 
@@ -58,7 +63,10 @@ export function TravelSection({ title, hint, cards }: TravelSectionProps) {
                       alt={img.alt}
                       fill
                       sizes="(max-width: 760px) 100vw, 50vw"
-                      style={{ objectFit: "cover", objectPosition: "50% 50%" }}
+                      style={{
+                        objectFit: "cover",
+                        objectPosition: img.position ?? "50% 50%",
+                      }}
                       loading="lazy"
                       decoding="async"
                       fetchPriority="low"

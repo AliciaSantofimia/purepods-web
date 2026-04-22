@@ -17,7 +17,7 @@ import styles from "@/app/location/locationLayout.module.css";
 const heroImage = "/assets/img/makoha/makoha-purepod-aerial-glass-cabin-forest-kerikeri.jpg";
 const podNight = "/assets/img/makoha/makoha-purepod-glass-cabin-exterior-night-kerikeri.jpg";
 const podBedroom = "/assets/img/makoha/makoha-purepod-bedroom-interior-glass-cabin-kerikeri.jpg";
-const podLandscape = "/assets/img/makoha/makoha-purepod-native-forest-landscape-kerikeri.jpg";
+const podLandscape = "/assets/img/makoha/makoha-purepod-aerial-glass-cabin-forest-kerikeri.jpg";
 const expBoat = "/assets/img/makoha/bay-of-islands-boat-cruise-aerial.jpg";
 const expWaitangi = "/assets/img/makoha/waitangi-treaty-grounds-maori-meeting-hous.jpg";
 const expMahinepua = "/assets/img/makoha/mahinepua-peninsula-coastal-walk-bay-of-islands.jpg";
@@ -185,7 +185,7 @@ export function PodView() {
             </>
           }
           imageSrc={heroImage}
-          imageAlt="Mākōha PurePod glass cabin in native forest near Kerikeri, Bay of Islands, New Zealand"
+          imageAlt="Mākōha PurePod glass cabin in native forest near Kerikeri, Bay of Islands, New Zealand"
         />
         <Container as="div" className={styles.locationContent}>
           <PodSection

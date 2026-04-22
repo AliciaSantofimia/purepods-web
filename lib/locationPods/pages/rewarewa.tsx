@@ -14,7 +14,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui";
 import styles from "@/app/location/locationLayout.module.css";
 
-const heroImage = "/assets/img/rewarewa/rewarewa-purepod-aerial-landscape-muriwai-coast.jpg";
+const heroImage = "/assets/img/rewarewa/rewarewa-purepod-glass-cabin-exterior-muriwai-coast..jpg";
 const podStairs = "/assets/img/rewarewa/rewarewa-purepod-glass-cabin-exterior-stairs-muriwai-coast.jpg";
 const podBedroom = "/assets/img/rewarewa/rewarewa-purepod-bedroom-interior-muriwai-coast.jpg";
 const podStars = "/assets/img/rewarewa/rewarewa-purepod-glass-cabin-night-stars-muriwai-coast.jpg";
@@ -22,7 +22,8 @@ const expBeach = "/assets/img/rewarewa/muriwai-black-sand-beach-coastline.jpg";
 const expRanges = "/assets/img/rewarewa/waitakere-ranges-coastal-landscape-auckland.jpg";
 const expTeHenga = "/assets/img/rewarewa/te-henga-coastal-landscape-muriwai.jpg";
 const travelRoad = "/assets/img/rewarewa/muriwai-countryside-access-road.jpg";
-const travelExterior = "/assets/img/rewarewa/rewarewa-purepod-glass-cabin-exterior-muriwai-coast..jpg";
+const travelAerialLandscape =
+  "/assets/img/rewarewa/rewarewa-purepod-aerial-landscape-muriwai-coast.jpg";
 const travelPlatter = "/assets/img/rewarewa/rewarewa-local-food-platter-muriwai-coast.JPG";
 const travelBreakfast = "/assets/img/rewarewa/rewarewa-breakfast-basket-muriwai-coast.JPG";
 
@@ -176,7 +177,7 @@ export function PodView() {
           title="Rewarewa"
           subtitle={HERO_SUBTITLE}
           imageSrc={heroImage}
-          imageAlt="Rewarewa PurePod glass cabin in the Muriwai Coast landscape, New Zealand"
+          imageAlt="Rewarewa PurePod glass cabin in the Muriwai Coast landscape, New Zealand"
         />
         <Container as="div" className={styles.locationContent}>
           <PodSection
@@ -190,7 +191,7 @@ export function PodView() {
               {
                 src: podStairs,
                 alt: "Rewarewa PurePod glass cabin exterior on the Muriwai Coast, New Zealand",
-                position: "50% 55%",
+                position: "62% 46%",
                 big: true,
               },
               {
@@ -289,8 +290,9 @@ export function PodView() {
                     alt: "Countryside access road on the Muriwai Coast, New Zealand",
                   },
                   {
-                    src: travelExterior,
+                    src: travelAerialLandscape,
                     alt: "Rewarewa PurePod glass cabin on the Muriwai Coast, New Zealand",
+                    position: "53% 56%",
                   },
                 ],
                 body: "Reaching PurePod Rewarewa is a drive from Auckland through the Waitākere Ranges or along the coast — about 45 minutes to an hour. The final approach is via quiet roads and a short walk to the pod. Suitable footwear is recommended. The journey is part of the experience: leaving the city behind and arriving slowly at the edge of the coast.",
