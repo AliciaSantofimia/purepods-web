@@ -62,13 +62,12 @@
   padding: 8px 2px;
 }
 .experience-ref.romantic-ref .moment .copy h3 {
-  margin: 10px 0 10px;
-  font-family: "Noto Serif Display", Georgia, "Times New Roman", serif;
-  font-size: clamp(20px, 2.05vw, 24px);
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  line-height: 1.35;
-  color: var(--brand-green);
+  margin: 0 0 10px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
 }
 .romantic-ref .moment p {
   margin: 0 0 14px;
