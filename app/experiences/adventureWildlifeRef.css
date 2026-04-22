@@ -1,0 +1,10 @@
+/* Adventure & Wildlife — scoped; chapter titles in #blocks only */
+
+.experience-ref.adventure-wildlife-ref #blocks h2.journey-title {
+  margin: 0 0 10px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}

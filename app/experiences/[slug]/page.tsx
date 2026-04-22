@@ -14,6 +14,7 @@ import { RelaxCoastalView } from "@/components/experiences/views/RelaxCoastalVie
 import { RomanticView } from "@/components/experiences/views/RomanticView";
 import { WineDineView } from "@/components/experiences/views/WineDineView";
 import "../experienceRef.css";
+import "../adventureWildlifeRef.css";
 import "../romanticRef.css";
 import "../nightFallsRef.css";
 

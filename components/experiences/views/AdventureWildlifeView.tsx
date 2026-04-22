@@ -13,9 +13,15 @@ import {
 
 export function AdventureWildlifeView() {
   return (
-    <div className="experience-ref">
+    <div className="experience-ref adventure-wildlife-ref">
       <ExpStandardChrome
-        navItems={[{ href: "#faq", label: "FAQ" }]}
+        hashInPageAnchorsNative
+        navItems={[
+          { href: "#marine", label: "Iconic wildlife" },
+          { href: "#nature", label: "Nature exploration" },
+          { href: "#adventure", label: "Adventure" },
+          { href: "#faq", label: "FAQ" },
+        ]}
       >
         <header className="hero" id="top">
           <ExpRefImage
@@ -54,7 +60,7 @@ export function AdventureWildlifeView() {
           </section>
 
           <section className="wrap" id="blocks" aria-label="Adventure and wildlife content blocks">
-            <section className="journey-chapter chapter" id="marine-wildlife" aria-labelledby="marine-wildlife-heading">
+            <section className="journey-chapter chapter" id="marine" aria-labelledby="marine-wildlife-heading">
               <HikingCarouselBlock
                 ariaLabel="Marine and iconic wildlife experiences"
                 slides={marineSlides}
@@ -74,7 +80,7 @@ export function AdventureWildlifeView() {
 
             <section
               className="journey-chapter chapter"
-              id="nature-exploration"
+              id="nature"
               aria-labelledby="nature-exploration-heading"
             >
               <HikingCarouselBlock
@@ -96,7 +102,7 @@ export function AdventureWildlifeView() {
 
             <section
               className="journey-chapter chapter"
-              id="adventure-adrenaline"
+              id="adventure"
               aria-labelledby="adventure-adrenaline-heading"
             >
               <HikingCarouselBlock
