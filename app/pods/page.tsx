@@ -40,7 +40,7 @@ export default function PodsPage() {
             />
           </Link>
           <nav className={styles.links} aria-label="Main">
-            <Link href="/pods">Pods</Link>
+            <Link href="/pods/explore-map-experimental-v2">Pods</Link>
             <Link href="/experiences">Experiences</Link>
             <Link href="/my-journey">My journey</Link>
             <a

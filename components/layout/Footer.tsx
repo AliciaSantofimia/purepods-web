@@ -10,7 +10,7 @@ export function Footer() {
           <Link href="/">PurePods</Link>
         </div>
         <nav className={styles.nav} aria-label="Footer">
-          <Link href="/pods">Pods</Link>
+          <Link href="/pods/explore-map-experimental-v2">Pods</Link>
           <Link href="/experiences">Experiences</Link>
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
             Book

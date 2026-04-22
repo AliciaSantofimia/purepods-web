@@ -18,7 +18,7 @@ export function LocationPodHeaderBack() {
   const hasExperienceReturn = !!getExperienceFromNav(from);
   if (hasExperienceReturn && !isDesktop) return null;
   return (
-    <Link className={styles.back} href="/pods">
+    <Link className={styles.back} href="/pods/explore-map-experimental-v2">
       ← All Pods
     </Link>
   );

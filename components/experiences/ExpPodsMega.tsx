@@ -69,7 +69,7 @@ function ExpPodsMegaDesktop({
               </div>
             ))}
           </div>
-          <Link className="exp-nav-pods-mega__all" href="/pods">
+          <Link className="exp-nav-pods-mega__all" href="/pods/explore-map-experimental-v2">
             View all pods
           </Link>
         </div>
@@ -186,7 +186,7 @@ function ExpPodsMegaMobile({
                 </section>
               );
             })}
-            <Link className="exp-nav-pods-mega__mobile-all" href="/pods" onClick={closeMenu}>
+            <Link className="exp-nav-pods-mega__mobile-all" href="/pods/explore-map-experimental-v2" onClick={closeMenu}>
               View all pods
             </Link>
           </div>

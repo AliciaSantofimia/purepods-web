@@ -150,7 +150,7 @@ export function AdventureWildlifeView() {
                   surrounding light, weather and views.
                 </p>
 
-                <Link className="pod-bridge__cta" href="/pods">
+                <Link className="pod-bridge__cta" href="/pods/explore-map-experimental-v2">
                   Discover Slow travel
                 </Link>
               </div>

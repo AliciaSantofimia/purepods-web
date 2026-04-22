@@ -40,7 +40,7 @@ export function Header() {
       <div className={styles.inner}>
         <div className={styles.left}>
           {showBackToPods && (
-            <Link className={styles.back} href="/pods">
+            <Link className={styles.back} href="/pods/explore-map-experimental-v2">
               ← All Pods
             </Link>
           )}
@@ -49,7 +49,7 @@ export function Header() {
           </Link>
         </div>
         <nav className={styles.links} aria-label="Main">
-          <Link href="/pods">Pods</Link>
+          <Link href="/pods/explore-map-experimental-v2">Pods</Link>
           <Link href="/experiences">Experiences</Link>
           <a
             className={styles.cta}

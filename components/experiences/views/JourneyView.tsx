@@ -149,7 +149,7 @@ export function JourneyView() {
                 </p>
 
                 <Link
-                  href="/pods"
+                  href="/pods/explore-map-experimental-v2"
                   className="btnGhost"
                   style={{
                     marginTop: 18,

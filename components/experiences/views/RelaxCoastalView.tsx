@@ -375,7 +375,7 @@ export function RelaxCoastalView() {
                       calm, private, and immersed in the landscape.
                     </p>
                     <p>A place to slow down, and stay with the feeling of the day a little longer.</p>
-                    <Link href="/pods" className="btnGhost relax-rc-pod-bridge-btn">
+                    <Link href="/pods/explore-map-experimental-v2" className="btnGhost relax-rc-pod-bridge-btn">
                       Find your stay
                     </Link>
                   </div>
