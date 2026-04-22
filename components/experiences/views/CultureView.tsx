@@ -147,7 +147,7 @@ export function CultureView() {
                   a suggested nearby pod.
                 </p>
                 <Link
-                  href="/pods/explore-map-experimental-v2"
+                  href="/pods"
                   className="btnGhost"
                   style={{
                     marginTop: 18,

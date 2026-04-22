@@ -29,7 +29,7 @@ export default function MyJourneyPage() {
             PUREPODS
           </Link>
           <div className={styles.links}>
-            <Link href="/pods/explore-map-experimental-v2">Pods</Link>
+            <Link href="/pods">Pods</Link>
             <Link href="/experiences">Experiencias</Link>
             <Link href="/my-journey" aria-current="page" className={styles.navCurrent}>
               Mi viaje
@@ -116,7 +116,7 @@ export default function MyJourneyPage() {
                   <div className={styles.title}>Explorar pods</div>
                   <div className={styles.meta}>Ver detalles por ubicación</div>
                 </div>
-                <Link className={styles.pill} href="/pods/explore-map-experimental-v2">
+                <Link className={styles.pill} href="/pods">
                   Ver pods →
                 </Link>
               </div>

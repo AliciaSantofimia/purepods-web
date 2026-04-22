@@ -323,7 +323,7 @@ export default function HomePage() {
           </a>
 
           <nav className="nav__links" aria-label="Primary">
-            <a href="/pods/explore-map-experimental-v2">Pods</a>
+            <a href="/pods">Pods</a>
             <a href="/experiences">Experiences</a>
           </nav>
 
@@ -377,7 +377,7 @@ export default function HomePage() {
             <a className="btn btn-primary" href="https://purepods.com/booking/">
               Check availability
             </a>
-            <a className="btn" href="/pods/explore-map-experimental-v2">
+            <a className="btn" href="/pods">
               Discover pods
             </a>
           </div>
@@ -656,7 +656,7 @@ export default function HomePage() {
             <a className="btn btn-primary" href="https://purepods.com/booking/">
               Book
             </a>
-            <a className="btn" href="/pods/explore-map-experimental-v2">
+            <a className="btn" href="/pods">
               Choose a pod
             </a>
             <a className="btn" href="/experiences">
@@ -668,7 +668,7 @@ export default function HomePage() {
 
       <footer>
         <div className="wrap">
-          PurePods · <a href="/">Home</a> · <a href="/pods/explore-map-experimental-v2">Pods</a> ·{" "}
+          PurePods · <a href="/">Home</a> · <a href="/pods">Pods</a> ·{" "}
           <a href="/experiences">Experiences</a> ·{" "}
           <a href="https://purepods.com/booking/">Book</a>
         </div>

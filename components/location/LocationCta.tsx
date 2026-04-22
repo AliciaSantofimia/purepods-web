@@ -17,7 +17,7 @@ export function LocationCta({
     <div className={styles.cta} id="reserve">
       <div className={styles.inner}>
         <span className={styles.price}>{priceFrom}</span>
-        <Button href="/pods/explore-map-experimental-v2" variant="secondary" className={styles.btn}>
+        <Button href="/pods" variant="secondary" className={styles.btn}>
           View other pods
         </Button>
         <Button

@@ -120,7 +120,7 @@ export default function ExperiencesPage() {
           </a>
 
           <nav className="nav__links" aria-label="Primary">
-            <a href="/pods/explore-map-experimental-v2">Pods</a>
+            <a href="/pods">Pods</a>
           </nav>
 
           <a className="nav__book" href="https://purepods.com/booking/">
@@ -236,7 +236,7 @@ export default function ExperiencesPage() {
 
       <footer>
         <div className="wrap">
-          PurePods · <a href="/">Home</a> · <a href="/pods/explore-map-experimental-v2">Pods</a> ·{" "}
+          PurePods · <a href="/">Home</a> · <a href="/pods">Pods</a> ·{" "}
           <a href="/experiences">Experiences</a> ·{" "}
           <a href="https://purepods.com/booking/">Book</a>
         </div>

@@ -1,19 +1,14 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ExploreFooter } from "@/components/pods/ExploreFooter";
-import { ExploreMapTestClient } from "@/components/pods/ExploreMapTestClient";
+import { ExplorePageWithMapClientExperimentalV2 } from "@/components/pods/ExplorePageWithMapClientExperimentalV2";
 import { EXPLORE_POD_CARDS } from "@/lib/podsExploreData";
-import styles from "../explore.module.css";
+import styles from "@/app/pods/explore.module.css";
+import xstyles from "@/components/pods/ExplorePageWithMapExperimental.module.css";
 
-export const metadata: Metadata = {
-  title: { absolute: "Pods map test — PurePods" },
-  robots: { index: false, follow: false },
-};
-
-export default function PodsMapTestPage() {
+export function ExplorePodsMapExperimentalV2Shell() {
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} ${xstyles.pageRoot}`}>
       <header className={styles.nav}>
         <div className={`wrap ${styles.navInner}`}>
           <Link className={styles.brand} href="/" aria-label="PurePods — Home">
@@ -46,12 +41,11 @@ export default function PodsMapTestPage() {
         <section className={styles.hero}>
           <h1>Choose your place</h1>
           <p className={styles.lead}>
-            Not every silence sounds the same. Discover where you want to spend
-            the night.
+            Not every silence sounds the same. Discover where you want to spend the night.
           </p>
         </section>
 
-        <ExploreMapTestClient pods={EXPLORE_POD_CARDS} />
+        <ExplorePageWithMapClientExperimentalV2 pods={EXPLORE_POD_CARDS} />
       </main>
 
       <ExploreFooter />

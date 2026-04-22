@@ -67,7 +67,7 @@ export function ExpStandardChrome({
               alt="PurePods New Zealand"
             />
             <div>
-              PurePods · <Link href="/">Home</Link> · <Link href="/pods/explore-map-experimental-v2">Pods</Link> ·{" "}
+              PurePods · <Link href="/">Home</Link> · <Link href="/pods">Pods</Link> ·{" "}
               <Link href="/experiences">Experiences</Link> ·{" "}
               <a href="https://purepods.com/booking/" target="_blank" rel="noopener noreferrer">
                 Book

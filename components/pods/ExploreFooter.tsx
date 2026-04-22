@@ -17,7 +17,7 @@ export function ExploreFooter() {
         <span className={styles.footerSep} aria-hidden="true">
           ·
         </span>
-        <Link href="/pods/explore-map-experimental-v2" className={styles.footerLink}>
+        <Link href="/pods" className={styles.footerLink}>
           Pods
         </Link>
         <span className={styles.footerSep} aria-hidden="true">
