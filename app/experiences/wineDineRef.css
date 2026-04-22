@@ -42,3 +42,40 @@
     transition: none !important;
   }
 }
+
+/* —— Content image hover (active slide + pod bridge; not hero) —— */
+
+.experience-ref.wine-dine-ref #blocks .hiking-carousel__slide.is-active .hiking-carousel__img {
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.55s ease;
+}
+
+.experience-ref.wine-dine-ref .pod-bridge .pod-bridge__img {
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.55s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .experience-ref.wine-dine-ref #blocks .hiking-carousel__slide.is-active:hover .hiking-carousel__img {
+    transform: scale(1.025);
+  }
+
+  .experience-ref.wine-dine-ref .pod-bridge .pod-bridge__img:hover {
+    transform: scale(1.025);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-ref.wine-dine-ref #blocks .hiking-carousel__slide.is-active .hiking-carousel__img,
+  .experience-ref.wine-dine-ref .pod-bridge .pod-bridge__img {
+    transition: none;
+    transform: none !important;
+  }
+
+  .experience-ref.wine-dine-ref #blocks .hiking-carousel__slide.is-active:hover .hiking-carousel__img,
+  .experience-ref.wine-dine-ref .pod-bridge .pod-bridge__img:hover {
+    transform: none !important;
+  }
+}

@@ -748,3 +748,40 @@
     transition: none !important;
   }
 }
+
+/* —— Content image hover (Romantic only; not hero) —— */
+
+.experience-ref.romantic-ref .moment .media img {
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.55s ease;
+}
+
+.experience-ref.romantic-ref #gallery .romantic-gallery__thumb img {
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.55s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .experience-ref.romantic-ref .moment .media:hover img {
+    transform: scale(1.025);
+  }
+
+  .experience-ref.romantic-ref #gallery .romantic-gallery__thumb:hover img {
+    transform: scale(1.025);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-ref.romantic-ref .moment .media img,
+  .experience-ref.romantic-ref #gallery .romantic-gallery__thumb img {
+    transition: none;
+    transform: none !important;
+  }
+
+  .experience-ref.romantic-ref .moment .media:hover img,
+  .experience-ref.romantic-ref #gallery .romantic-gallery__thumb:hover img {
+    transform: none !important;
+  }
+}

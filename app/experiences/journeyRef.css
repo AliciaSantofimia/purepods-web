@@ -42,3 +42,44 @@
     transition: none !important;
   }
 }
+
+/* —— Content image hover (active slide + pod bridge; not hero) —— */
+
+.experience-ref.journey-ref main .forest-carousel__slide.is-active .forest-carousel__img,
+.experience-ref.journey-ref main .hiking-carousel__slide.is-active .hiking-carousel__img {
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.55s ease;
+}
+
+.experience-ref.journey-ref .pod-bridge .pod-bridge__img {
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.55s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .experience-ref.journey-ref main .forest-carousel__slide.is-active:hover .forest-carousel__img,
+  .experience-ref.journey-ref main .hiking-carousel__slide.is-active:hover .hiking-carousel__img {
+    transform: scale(1.025);
+  }
+
+  .experience-ref.journey-ref .pod-bridge .pod-bridge__img:hover {
+    transform: scale(1.025);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-ref.journey-ref main .forest-carousel__slide.is-active .forest-carousel__img,
+  .experience-ref.journey-ref main .hiking-carousel__slide.is-active .hiking-carousel__img,
+  .experience-ref.journey-ref .pod-bridge .pod-bridge__img {
+    transition: none;
+    transform: none !important;
+  }
+
+  .experience-ref.journey-ref main .forest-carousel__slide.is-active:hover .forest-carousel__img,
+  .experience-ref.journey-ref main .hiking-carousel__slide.is-active:hover .hiking-carousel__img,
+  .experience-ref.journey-ref .pod-bridge .pod-bridge__img:hover {
+    transform: none !important;
+  }
+}

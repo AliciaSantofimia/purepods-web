@@ -66,3 +66,42 @@
     transition: none !important;
   }
 }
+
+/* —— Content image hover (active carousel slide + pod bridge; not hero) —— */
+
+.experience-ref.adventure-wildlife-ref #blocks .hiking-carousel__slide.is-active .hiking-carousel__img {
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.55s ease;
+}
+
+.experience-ref.adventure-wildlife-ref .pod-bridge .pod-bridge__img {
+  transition:
+    transform 0.55s ease,
+    filter 0.55s ease;
+  transform: scale(1);
+  transform-origin: center center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .experience-ref.adventure-wildlife-ref #blocks .hiking-carousel__slide.is-active:hover .hiking-carousel__img {
+    transform: scale(1.025);
+  }
+
+  .experience-ref.adventure-wildlife-ref .pod-bridge .pod-bridge__img:hover {
+    transform: scale(1.025);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-ref.adventure-wildlife-ref #blocks .hiking-carousel__slide.is-active .hiking-carousel__img,
+  .experience-ref.adventure-wildlife-ref .pod-bridge .pod-bridge__img {
+    transition: none;
+    transform: none !important;
+  }
+
+  .experience-ref.adventure-wildlife-ref #blocks .hiking-carousel__slide.is-active:hover .hiking-carousel__img,
+  .experience-ref.adventure-wildlife-ref .pod-bridge .pod-bridge__img:hover {
+    transform: none !important;
+  }
+}
