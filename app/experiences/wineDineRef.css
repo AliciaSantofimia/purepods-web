@@ -1,0 +1,44 @@
+/* Wine & Dine experience — page-scoped additions */
+
+/* —— Scroll reveal (Wine & Dine only; IO adds `.wine--in-view`) —— */
+
+.experience-ref.wine-dine-ref .wine-reveal:not(.wine--in-view) {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+}
+
+@media (max-width: 768px) {
+  .experience-ref.wine-dine-ref .wine-reveal:not(.wine--in-view) {
+    transform: none;
+  }
+}
+
+.experience-ref.wine-dine-ref .wine-reveal.wine--in-view {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (max-width: 768px) {
+  .experience-ref.wine-dine-ref .wine-reveal.wine--in-view {
+    transition: opacity 0.52s ease-out;
+  }
+}
+
+@media (min-width: 769px) {
+  .experience-ref.wine-dine-ref .wine-reveal:not(.wine--in-view) {
+    transform: translate3d(0, 16px, 0);
+  }
+
+  .experience-ref.wine-dine-ref .wine-reveal.wine--in-view {
+    transition: opacity 0.62s ease-out, transform 0.62s ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-ref.wine-dine-ref .wine-reveal,
+  .experience-ref.wine-dine-ref .wine-reveal:not(.wine--in-view) {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

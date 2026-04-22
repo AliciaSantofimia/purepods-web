@@ -1,0 +1,44 @@
+/* Culture experience — page-scoped additions */
+
+/* —— Scroll reveal (Culture only; IO adds `.culture--in-view`) —— */
+
+.experience-ref.culture-ref .culture-reveal:not(.culture--in-view) {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+}
+
+@media (max-width: 768px) {
+  .experience-ref.culture-ref .culture-reveal:not(.culture--in-view) {
+    transform: none;
+  }
+}
+
+.experience-ref.culture-ref .culture-reveal.culture--in-view {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (max-width: 768px) {
+  .experience-ref.culture-ref .culture-reveal.culture--in-view {
+    transition: opacity 0.52s ease-out;
+  }
+}
+
+@media (min-width: 769px) {
+  .experience-ref.culture-ref .culture-reveal:not(.culture--in-view) {
+    transform: translate3d(0, 16px, 0);
+  }
+
+  .experience-ref.culture-ref .culture-reveal.culture--in-view {
+    transition: opacity 0.62s ease-out, transform 0.62s ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-ref.culture-ref .culture-reveal,
+  .experience-ref.culture-ref .culture-reveal:not(.culture--in-view) {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

@@ -17,6 +17,9 @@ import "../experienceRef.css";
 import "../adventureWildlifeRef.css";
 import "../romanticRef.css";
 import "../nightFallsRef.css";
+import "../cultureRef.css";
+import "../journeyRef.css";
+import "../wineDineRef.css";
 
 type Props = { params: { slug: string } };
 
