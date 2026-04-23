@@ -858,32 +858,6 @@
 
 }
 
-.experience-ref.adventure-wildlife-ref .aw-travel-faq .aw-travel-faq__title {
-
-  margin: 0 0 18px;
-
-  text-align: left;
-
-  max-width: 42ch;
-
-  font-size: clamp(22px, 2.2vw, 26px);
-
-  font-weight: 600;
-
-  letter-spacing: -0.02em;
-
-  line-height: 1.2;
-
-  color: var(--ink);
-
-}
-
-.experience-ref.adventure-wildlife-ref .aw-travel-faq .surface {
-
-  text-align: left;
-
-}
-
 .experience-ref.adventure-wildlife-ref .aw-guest-perspective {
 
   padding: clamp(20px, 3vw, 36px) 0;
@@ -919,6 +893,210 @@
   line-height: 1.55;
 
   color: var(--muted);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences {
+
+  padding: clamp(16px, 2.5vw, 28px) 0 clamp(8px, 1.5vw, 16px);
+
+  border-top: 1px solid var(--stroke);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__title {
+
+  margin: 0 0 8px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  color: var(--muted);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__placeholder {
+
+  margin: 0;
+
+  max-width: 42ch;
+
+  font-size: 13px;
+
+  line-height: 1.55;
+
+  color: var(--muted);
+
+}
+
+/* FAQ: native details accordion (answers always in DOM; visibility only) */
+
+.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__list {
+
+  margin: 4px 0 0;
+
+  padding: 0;
+
+  list-style: none;
+
+}
+
+.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__item {
+
+  padding: 0;
+
+  border-bottom: 1px solid rgba(92, 95, 62, 0.12);
+
+}
+
+.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__item:last-child {
+
+  border-bottom: none;
+
+}
+
+.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__details {
+
+  margin: 0;
+
+}
+
+.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__summary {
+
+  list-style: none;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  padding: 14px 0 12px;
+
+  color: inherit;
+
+  transition: color 0.18s ease;
+
+}
+
+.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__summary::-webkit-details-marker {
+
+  display: none;
+
+}
+
+.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__summary::marker {
+
+  content: "";
+
+}
+
+.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__summary:hover .aw-faq-accordion__q {
+
+  color: var(--ink);
+
+}
+
+.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__summary:focus-visible {
+
+  outline: 2px solid rgba(92, 95, 62, 0.35);
+
+  outline-offset: 3px;
+
+  border-radius: 6px;
+
+}
+
+.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__q {
+
+  flex: 1;
+
+  min-width: 0;
+
+  margin: 0;
+
+  padding: 0;
+
+  font-size: clamp(15px, 1.12vw, 16px);
+
+  font-weight: 600;
+
+  line-height: 1.38;
+
+  letter-spacing: -0.015em;
+
+  text-align: left;
+
+  color: var(--ink);
+
+}
+
+.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__chevron {
+
+  flex-shrink: 0;
+
+  width: 7px;
+
+  height: 7px;
+
+  margin-top: 7px;
+
+  margin-right: 2px;
+
+  border-right: 1.5px solid rgba(92, 95, 62, 0.45);
+
+  border-bottom: 1.5px solid rgba(92, 95, 62, 0.45);
+
+  transform: rotate(45deg);
+
+  transition: transform 0.22s ease, border-color 0.18s ease;
+
+}
+
+.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__details[open] .aw-faq-accordion__chevron {
+
+  margin-top: 11px;
+
+  transform: rotate(-135deg);
+
+  border-color: rgba(92, 95, 62, 0.55);
+
+}
+
+.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__answer {
+
+  padding: 0 0 16px;
+
+  max-width: min(65ch, 100%);
+
+}
+
+.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__answer p {
+
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.62;
+
+  color: var(--muted);
+
+  letter-spacing: -0.01em;
+
+}
+
+.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__item:first-child .aw-faq-accordion__summary {
+
+  padding-top: 10px;
 
 }
 

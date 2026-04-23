@@ -16,50 +16,6 @@ export const adventureContextHeading =
 export const adventureContextBody =
   "If you're planning to experience whale watching in Kaikōura, volcanic landscapes near Rotorua, or remote wildlife encounters across New Zealand, where you stay matters as much as what you do. PurePods are placed in quiet natural settings near some of the country's most memorable experiences, making it easier to pair iconic days out with complete overnight stillness.";
 
-/** GEO- and intent-focused FAQ (schema uses this list exactly). */
-export const adventureGeoFaq: { q: string; a: string }[] = [
-  {
-    q: "What are the best wildlife experiences in New Zealand?",
-    a: "Some of New Zealand's best wildlife experiences include whale watching in Kaikōura, yellow-eyed penguin encounters in Akaroa, and remote wildlife trips around Stewart Island. These experiences stand out because they combine rare species, dramatic natural settings, and strong local guiding.",
-  },
-  {
-    q: "Where should I stay for whale watching in Kaikōura?",
-    a: "Kahutara and Manakau are two strong PurePods options for travellers planning whale watching in Kaikōura. Both offer a quieter overnight base within reach of the coast, making it easier to pair a marine wildlife experience with a more private stay in nature.",
-  },
-  {
-    q: "What is the best time of year for whale watching in Kaikōura?",
-    a: "Whale watching in Kaikōura is possible year-round, with sperm whales commonly seen in every season. Blue whales are more often spotted from November to March, while winter can bring especially dramatic conditions on the coast.",
-  },
-  {
-    q: "Are there good adventure experiences near Rotorua?",
-    a: "Yes, Rotorua is one of New Zealand's strongest regions for adventure experiences, especially rafting and volcanic scenic flights. Kaituna rafting and Mount Tarawera aerial experiences are two of the most memorable options within reach of a stay at Pāmu.",
-  },
-  {
-    q: "What makes a PurePod stay different from standard accommodation near these experiences?",
-    a: "A PurePod stay is designed to feel quiet, private and deeply connected to the landscape. Instead of staying in a busy town or generic motel, you return from the day's experience to an isolated glass cabin surrounded by nature.",
-  },
-  {
-    q: "Can you combine wildlife experiences with a remote nature stay in New Zealand?",
-    a: "Yes, that combination is exactly what makes this style of travel so memorable in New Zealand. Experiences such as whale watching, penguin encounters and scenic flights become even more distinctive when paired with a remote overnight stay in the landscape itself.",
-  },
-];
-
-/** FAQPage JSON-LD for `/experiences/adventure-wildlife` (GEO FAQ only). */
-export function adventureWildlifeFaqPageJsonLd(): Record<string, unknown> {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: adventureGeoFaq.map((item) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.a,
-      },
-    })),
-  };
-}
-
 export type AdventureExperienceSlidePod = {
   label: string;
   href: `/location/${string}`;
@@ -216,15 +172,43 @@ export const adventureRestClosingSlides: AdventureRestClosingSlide[] = [
 
 export const adventureFaq: { q: string; a: string }[] = [
   {
-    q: "What does this Adventure & Wildlife page include?",
-    a: "It brings together a single curated carousel of iconic wildlife and adventure operators across New Zealand. Each slide links to the official experience, suggests nearby PurePod stays in the region, and notes typical drive time and seasonality as a planning hint only.",
+    q: "What wildlife and adventure experiences can you do in New Zealand?",
+    a: "New Zealand spans ocean canyons, volcanic plateaux, glowworm caves and remote coastlines — so you can whale watch off Kaikōura, raft the Kaituna near Rotorua, walk penguin habitat on Banks Peninsula, fly volcanic country by helicopter or plane, and explore southern wildlife gateways toward Stewart Island. Each region has specialist operators; use the carousel above to open official sites and check what suits your dates.",
   },
   {
-    q: "Should I confirm details with each operator before I travel?",
-    a: "Yes. Timetables, seasons, weather and access can change. Use the “View experience” link on each slide to check the latest information, bookings and requirements directly with the operator.",
+    q: "Where should I stay for whale watching in Kaikōura?",
+    a: "Kahutara and Manakau are two strong PurePods options for travellers planning whale watching in Kaikōura. Both offer a quieter overnight base within reach of the coast, making it easier to pair a marine wildlife day with a more private night in nature.",
   },
   {
-    q: "How do I continue to booking from this page?",
-    a: "Use “Stay nearby” pod names to open that PurePod’s page on this site, then continue to booking when you are ready. The Book control in the navigation and the closing call to action also link to PurePods booking to check live availability.",
+    q: "What is the best time of year for wildlife experiences in New Zealand?",
+    a: "Sperm whales off Kaikōura are commonly seen year-round, while sea conditions and daylight hours still vary by season. Penguin and small-boat trips favour calmer weather, and some aerial routes need clearer skies — always confirm timing with the operator rather than assuming a single “best month” nationwide.",
+  },
+  {
+    q: "Are there good adventure experiences near Rotorua?",
+    a: "Yes — Rotorua is one of the North Island’s strongest hubs for adventure, especially white-water rafting and volcanic scenic flights. Kaituna rafting and Mount Tarawera flights or landings are among the most memorable options within easy reach of a stay at Pāmu.",
+  },
+  {
+    q: "What makes a PurePod stay different from other accommodation?",
+    a: "A PurePod is a small, isolated glass eco-cabin set in private natural land rather than on a busy strip or in a generic motel block. You keep the same regions as the experiences above, but you return to stillness, wide views and a slower overnight rhythm after the day’s activity.",
+  },
+  {
+    q: "Can you combine wildlife experiences with a remote nature stay?",
+    a: "Yes — pairing a guided wildlife or adventure day with a remote overnight stay is one of the most distinctive ways to travel here. Operators handle the activity; your PurePod handles the quiet reset, so the trip reads as both outward exploration and inward calm.",
   },
 ];
+
+/** FAQPage JSON-LD for `/experiences/adventure-wildlife` (matches `adventureFaq` only). */
+export function adventureWildlifeFaqPageJsonLd(): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: adventureFaq.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+}

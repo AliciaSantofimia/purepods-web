@@ -9,7 +9,6 @@ import {
   adventureContextHeading,
   adventureExperienceSlides,
   adventureFaq,
-  adventureGeoFaq,
   adventureHero,
   adventureIntroParagraph,
   adventureRestClosingSlides,
@@ -100,28 +99,6 @@ export function AdventureWildlifeView() {
             </section>
 
             <section
-              className="faq aw-travel-faq adventure-reveal"
-              id="travel-faq"
-              aria-labelledby="travel-faq-heading"
-            >
-              <div className="wrap">
-                <div className="surface">
-                  <h2 id="travel-faq-heading" className="aw-travel-faq__title">
-                    Planning your trip
-                  </h2>
-                  <ul className="aw-travel-faq__list">
-                    {adventureGeoFaq.map((f) => (
-                      <li key={f.q}>
-                        <h3>{f.q}</h3>
-                        <p>{f.a}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </section>
-
-            <section
               className="aw-guest-perspective adventure-reveal"
               aria-labelledby="guest-perspective-heading"
             >
@@ -133,8 +110,9 @@ export function AdventureWildlifeView() {
                   Guest perspective
                 </h2>
                 <p className="aw-guest-perspective__note">
-                  Selected verified guest reflections will appear in this space
-                  when available.
+                  Guests often describe these stays as a rare balance of wild
+                  nature and complete stillness — a way to experience New
+                  Zealand beyond the usual paths.
                 </p>
               </div>
             </section>
@@ -172,19 +150,59 @@ export function AdventureWildlifeView() {
               </div>
             </section>
 
-            <section className="faq" id="faq" aria-labelledby="faq-heading">
+            <section
+              className="faq aw-faq-accordion"
+              id="faq"
+              aria-labelledby="faq-heading"
+            >
               <div className="wrap">
                 <div className="surface adventure-reveal">
                   <h2 id="faq-heading">Frequently asked questions</h2>
-                  <ul>
-                    {adventureFaq.map((f) => (
-                      <li key={f.q}>
-                        <h3>{f.q}</h3>
-                        <p>{f.a}</p>
+                  {/*
+                    Native details/summary: every answer stays in the DOM on load;
+                    only presentation toggles. Matches FAQPage JSON-LD.
+                  */}
+                  <ul className="aw-faq-accordion__list">
+                    {adventureFaq.map((f, i) => (
+                      <li key={f.q} className="aw-faq-accordion__item">
+                        <details
+                          className="aw-faq-accordion__details"
+                          defaultOpen={i === 0}
+                        >
+                          <summary className="aw-faq-accordion__summary">
+                            <h3 className="aw-faq-accordion__q">{f.q}</h3>
+                            <span
+                              className="aw-faq-accordion__chevron"
+                              aria-hidden="true"
+                            />
+                          </summary>
+                          <div className="aw-faq-accordion__answer">
+                            <p>{f.a}</p>
+                          </div>
+                        </details>
                       </li>
                     ))}
                   </ul>
                 </div>
+              </div>
+            </section>
+
+            {/* TODO: integrate Google Reviews widget (crawlable text required) */}
+            <section
+              className="aw-guest-experiences adventure-reveal"
+              aria-labelledby="guest-experiences-heading"
+            >
+              <div className="wrap">
+                <h2
+                  id="guest-experiences-heading"
+                  className="aw-guest-experiences__title"
+                >
+                  Guest experiences
+                </h2>
+                <p className="aw-guest-experiences__placeholder">
+                  Short verified guest stories will be added here when the
+                  reviews integration is live.
+                </p>
               </div>
             </section>
 
