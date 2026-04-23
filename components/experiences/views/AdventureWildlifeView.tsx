@@ -23,7 +23,7 @@ export function AdventureWildlifeView() {
         <ExpStandardChrome
           hashInPageAnchorsNative
           navItems={[
-            { href: "#experiences-carousel", label: "Top experiences" },
+            { href: "#experiences-carousel", label: "What to do" },
             { href: "#faq", label: "FAQ" },
           ]}
         >

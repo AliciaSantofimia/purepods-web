@@ -2,6 +2,36 @@
 
 
 
+/* In-page anchor: “What to do” → #experiences-carousel clears sticky nav */
+
+.experience-ref.adventure-wildlife-ref {
+
+  --aw-sticky-anchor-offset: clamp(82px, 11vw, 110px);
+
+}
+
+
+
+@media (max-width: 720px) {
+
+  .experience-ref.adventure-wildlife-ref {
+
+    --aw-sticky-anchor-offset: clamp(96px, 19vw, 136px);
+
+  }
+
+}
+
+
+
+.experience-ref.adventure-wildlife-ref #experiences-carousel {
+
+  scroll-margin-top: calc(var(--aw-sticky-anchor-offset) + 0.5rem);
+
+}
+
+
+
 .experience-ref.adventure-wildlife-ref .hero .heroImg,
 
 .experience-ref.adventure-wildlife-ref .hero img {
@@ -12,7 +42,75 @@
 
 }
 
+/* Interior nav — mobile only: tighter bar so hero arrives sooner (this page only) */
 
+@media (max-width: 720px) {
+
+  .experience-ref.adventure-wildlife-ref .nav.nav--solid .nav__bar {
+
+    padding: 10px 0 8px;
+
+    gap: 10px 16px;
+
+    width: calc(100% - 28px);
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .nav.nav--solid .nav-brand img {
+
+    height: clamp(32px, 9vw, 42px);
+
+    max-width: min(200px, 70vw);
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .nav.nav--solid .nav__links.links {
+
+    gap: 12px 16px;
+
+    row-gap: 6px;
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .nav.nav--solid .nav__links a {
+
+    padding-block: 5px;
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .nav.nav--solid .exp-nav-mega__trigger {
+
+    font-size: 12px;
+
+    letter-spacing: 0.05em;
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .nav.nav--solid .exp-nav-pods-mega__trigger,
+
+  .experience-ref.adventure-wildlife-ref .nav.nav--solid .exp-nav-pods-mega__trigger--mobile {
+
+    font-size: 12px;
+
+    letter-spacing: 0.05em;
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .nav.nav--solid .nav__book {
+
+    padding: 9px 16px;
+
+    min-height: 44px;
+
+    min-width: 44px;
+
+    font-size: 10px;
+
+    letter-spacing: 0.1em;
+
+  }
+
+}
 
 /* Intro below hero */
 
