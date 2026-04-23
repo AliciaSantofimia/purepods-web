@@ -1,5 +1,3 @@
-import type { HikingSlide } from "@/components/experiences/HikingCarouselBlock";
-
 const B = "/assets/img/experiences/adventure-wildlife/";
 
 export const adventureHero = {
@@ -8,140 +6,114 @@ export const adventureHero = {
   objectPosition: "center" as const,
 };
 
-export const adventureAboutLeadHtml = `Explore a curated mix of adventure and wildlife experiences across New Zealand, from white water rafting and ziplining to scenic flights, off-road tours and native species encounters. Each experience is paired with a nearby PurePods stay, making it easy to plan a nature-rich escape with memorable activities and direct booking pathways. See all themes on <a href="/experiences"><strong>Experiences</strong></a> and quick answers in the <a href="#faq"><strong>FAQ</strong></a>.`;
+/** Short intro below the hero (replaces former long #about copy). */
+export const adventureIntroParagraph =
+  "From iconic wildlife encounters to remote, once-in-a-lifetime adventures, these experiences define what it means to explore New Zealand — each one paired with a nearby PurePod stay.";
 
-export const marineSlides: HikingSlide[] = [
-  {
-    image: `${B}auckland-whale-dolphin-safari-boat-marine-wildlife-new-zealand.jpg`,
-    alt: "Auckland Whale and Dolphin Safari boat observing marine wildlife in the Hauraki Gulf, New Zealand",
-    title: "Auckland Whale & Dolphin Safari",
-    placeHref: "https://www.aucklandwhaleanddolphinsafari.co.nz/",
-    description:
-      "A marine wildlife cruise departing from central Auckland, offering the chance to spot dolphins, whales and seabirds in the Hauraki Gulf Marine Park. The experience combines coastal scenery with expert-led interpretation of the region's diverse marine ecosystem.",
-    ctas: [{ label: "Stay at Rewarewa →", href: "/location/rewarewa" }],
-  },
+export type AdventureExperienceSlidePod = {
+  label: string;
+  href: `/location/${string}`;
+};
+
+export type AdventureExperienceSlide = {
+  image: string;
+  alt: string;
+  title: string;
+  description: string;
+  pods: AdventureExperienceSlidePod[];
+  distance: string;
+  timing: string;
+  url: string;
+};
+
+export const adventureExperienceSlides: AdventureExperienceSlide[] = [
   {
     image: `${B}kaikoura-whale-watch-sperm-whale-coast-new-zealand.jpg`,
-    alt: "Sperm whale surfacing off the Kaikōura coast with mountains in New Zealand",
+    alt: "Sperm whale surfacing off the Kaikōura coast with mountains behind, South Island, New Zealand",
     title: "Whale Watch Kaikōura",
-    placeHref: "https://whalewatch.co.nz/kia-ora/",
     description:
-      "A boat-based whale watching experience in Kaikōura, known for reliable year-round sightings of sperm whales along with dolphins and seabirds. The tours depart from the coast and provide close-up views of marine wildlife in a unique deep-water environment.",
-    ctas: [
-      { label: "Stay at Kahutara →", href: "/location/kahutara" },
-      { label: "Stay at Manakau →", href: "/location/manakau" },
+      "Drift above deep ocean canyons where sperm whales rise like slow islands, and the Kaikōura coast feels startlingly alive beneath you.",
+    pods: [
+      { label: "Kahutara", href: "/location/kahutara" },
+      { label: "Manakau", href: "/location/manakau" },
     ],
-  },
-  {
-    image: `${B}kaikoura-seal-swim-underwater-marine-wildlife-new-zealand.jpg`,
-    alt: "Seal swimming underwater during a Kaikōura marine wildlife experience in New Zealand",
-    title: "Seal Swim Kaikōura",
-    placeHref: "https://www.sealswimkaikoura.co.nz/",
-    description:
-      "A guided in-water experience swimming with wild New Zealand fur seals along the Kaikōura coastline. Small groups enter the ocean with experienced guides to observe and interact respectfully with seals in their natural marine environment.",
-    ctas: [
-      { label: "Stay at Kahutara →", href: "/location/kahutara" },
-      { label: "Stay at Manakau →", href: "/location/manakau" },
-    ],
-  },
-  {
-    image: `${B}akaroa-dolphin-swim-hectors-dolphins-ocean-new-zealand.jpg`,
-    alt: "Hector's dolphins swimming in the ocean in Akaroa, New Zealand",
-    title: "Swimming with Dolphins",
-    placeHref: "https://www.akaroaadventurecentre.co.nz/activities",
-    description:
-      "A guided boat experience in Akaroa Harbour where you can observe or swim alongside Hector's dolphins, one of the world's smallest and rarest dolphin species. The tour focuses on respectful wildlife interaction within a protected coastal environment.",
-    ctas: [{ label: "Stay at Pōhue →", href: "/location/pohue" }],
-  },
-  {
-    image: `${B}pohatu-penguins-akaroa-wildlife-sanctuary-new-zealand.jpg`,
-    alt: "Little blue penguins at Pohatu wildlife sanctuary in Akaroa, New Zealand",
-    title: "Pōhatu Penguins / Plunge NZ",
-    placeHref: "https://www.pohatu.co.nz/",
-    description:
-      "A guided wildlife experience focused on the conservation of little blue penguins in the Pōhatu Marine Reserve, near Akaroa. Tours include access to private farmland and coastal habitats, with opportunities to observe penguins, seabirds and native landscape in a protected environment.",
-    ctas: [{ label: "Stay at Pōhue →", href: "/location/pohue" }],
-  },
-];
-
-export const natureSlides: HikingSlide[] = [
-  {
-    image: `${B}wingspan-national-bird-of-prey-centre-karearea-falcon-new-zealand.jpg`,
-    alt: "Girl holding a kārearea New Zealand falcon at Wingspan National Bird of Prey Centre in Rotorua New Zealand",
-    title: "Wingspan National Bird of Prey Centre",
-    placeHref: "https://www.wingspan.co.nz/",
-    description:
-      "A conservation-focused experience dedicated to New Zealand’s birds of prey, including the kārearea (native falcon). Visits include guided encounters and educational insights into rehabilitation and breeding programmes within a natural forest setting.",
-    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
-  },
-  {
-    image: `${B}bay-of-islands-sea-kayaking-moana-kayaks-coastal-new-zealand.jpg`,
-    alt: "Colorful kayaks on the beach in the Bay of Islands before a sea kayaking experience in New Zealand",
-    title: "Moana Kayaks – Bay of Islands",
-    placeHref: "https://www.moanakayaks.nz",
-    description:
-      "A guided sea kayaking experience in the Bay of Islands, exploring sheltered waters, coastal inlets and small islands. The tours combine paddling with local knowledge of the marine environment, offering a slower way to experience the coastline.",
-    ctas: [{ label: "Stay at Mākoha →", href: "/location/makoha" }],
-  },
-  {
-    image: `${B}kapiti-island-day-trip-new-zealand-boat-transfer-nature-reserve.jpg`,
-    alt: "Boat transfer to Kapiti Island nature reserve in New Zealand for a guided day trip experience",
-    title: "Kapiti Island – Day trip",
-    placeHref: "https://www.kapitiisland.com/",
-    description:
-      "A guided day trip to Kapiti Island, a protected nature reserve known for native birdlife and conservation. Access is managed and visitor numbers are limited, allowing close encounters with species such as kākā, tīeke and kererū in a predator-free environment.",
-    ctas: [{ label: "Stay at Kokomea →", href: "/location/kokomea" }],
-  },
-];
-
-export const adrenalineSlides: HikingSlide[] = [
-  {
-    image: `${B}kaituna-cascades-rafting-rotorua-new-zealand-waterfall-rafting.jpg`,
-    alt: "White water rafting at Kaituna Cascades in Rotorua New Zealand going over the highest commercially rafted waterfall surrounded by native forest",
-    title: "Kaituna Cascades - Rafting",
-    placeHref: "https://kaitunacascades.co.nz/",
-    description:
-      "A guided white water rafting experience on the Kaituna River near Rotorua, known for the Tutea Falls, the highest commercially rafted waterfall in the world. The route combines fast-moving rapids with native forest scenery and expert-led navigation.",
-    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
-  },
-  {
-    image: `${B}okere-zipline-rotorua-new-zealand-kaituna-river-forest-zipline.jpg`,
-    alt: "Zipline experience over the Kaituna River in Okere Falls Rotorua New Zealand surrounded by native forest",
-    title: "Rotorua Ziplines",
-    placeHref: "https://www.rotoruaziplines.nz/",
-    description:
-      "A guided zipline experience through native forest near Rotorua, combining suspended lines, elevated platforms and ecological restoration insights. The tour moves above and through the canopy, offering a fast-paced but controlled way to experience the landscape.",
-    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
-  },
-  {
-    image: `${B}off-road-4x4-adventure-rotorua-new-zealand-forest-trail-jeep.jpg`,
-    alt: "Guided 4x4 off road experience in Rotorua New Zealand driving through native forest terrain",
-    title: "Off Road NZ (4x4 / motor adventures)",
-    placeHref: "https://offroadnz.co.nz/",
-    description:
-      "A motor-based adventure experience in Rotorua featuring guided 4x4 tracks, off-road driving and high-adrenaline activities. The courses are designed to navigate steep terrain, mud and obstacles, offering a controlled but intense outdoor driving experience.",
-    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
-  },
-  {
-    image: `${B}skydive-auckland-tandem-skydiving-new-zealand-coastal-rural-views.jpg`,
-    alt: "Tandem skydive with Skydive Auckland over coastal and rural landscapes in New Zealand with panoramic views",
-    title: "Skydive Auckland",
-    placeHref: "https://skydiveauckland.com/",
-    description:
-      "A tandem skydiving experience departing from Auckland, offering freefall over coastal and rural landscapes before a parachute descent with wide views across the region. The jump is guided by experienced instructors and designed for first-time and returning participants.",
-    ctas: [{ label: "Stay at Rewarewa →", href: "/location/rewarewa" }],
+    distance: "~20 min drive",
+    timing: "best on calm sea days",
+    url: "https://whalewatch.co.nz/kia-ora/",
   },
   {
     image: `${B}kaikoura-scenic-flight-whale-view-air-kaikoura-new-zealand-aerial.jpg`,
-    alt: "Scenic flight experience with Air Kaikōura viewing a whale from above along the Kaikōura coastline New Zealand",
-    title: "Air Kaikōura (Scenic flights)",
-    placeHref: "https://www.airkaikoura.co.nz/",
+    alt: "Aerial view of a whale and the Kaikōura coastline from a scenic flight, New Zealand",
+    title: "Wings Over Whales",
     description:
-      "A scenic flight experience over Kaikōura, offering aerial views of the coastline, mountain ranges and marine environment. Flights provide a different perspective on the region's geography, with opportunities to observe whales and coastal features from above.",
-    ctas: [
-      { label: "Stay at Kahutara →", href: "/location/kahutara" },
-      { label: "Stay at Manakau →", href: "/location/manakau" },
+      "Lift off where mountains plunge into the sea, then trace whales from above — a still, widescreen quiet you remember long after landing.",
+    pods: [
+      { label: "Kahutara", href: "/location/kahutara" },
+      { label: "Manakau", href: "/location/manakau" },
     ],
+    distance: "~20 min drive",
+    timing: "great in calm or overcast days",
+    url: "https://www.whales.co.nz/",
+  },
+  {
+    image:
+      "/assets/img/pamu/rotorua-volcanic-geothermal-valley-landscape-new-zealand..jpg",
+    alt: "Steaming volcanic and geothermal terrain near Rotorua, North Island, New Zealand",
+    title: "White Island / Mt Tarawera",
+    description:
+      "Fly over one of New Zealand’s most dramatic volcanic landscapes, before landing on the remote summit of Mount Tarawera.",
+    pods: [{ label: "Pāmu", href: "/location/pamu" }],
+    distance: "~10 min drive",
+    timing: "best on clear days",
+    url: "https://www.volcanicair.co.nz/home/helicopter-tours/white-island-flyover-and-mt-tarawera-landing/",
+  },
+  {
+    image: `${B}kaituna-cascades-rafting-rotorua-new-zealand-waterfall-rafting.jpg`,
+    alt: "White-water rafting on the Kaituna River near Rotorua, approaching a forested waterfall drop, New Zealand",
+    title: "Kaituna Cascades Rafting",
+    description:
+      "Hear the gorge before you see it, then hurtle through native forest toward the highest commercially rafted waterfall on Earth.",
+    pods: [{ label: "Pāmu", href: "/location/pamu" }],
+    distance: "~25 min drive",
+    timing: "great in fine or softly rainy days",
+    url: "https://kaitunacascades.co.nz/",
+  },
+  {
+    image: `${B}pohatu-penguins-akaroa-wildlife-sanctuary-new-zealand.jpg`,
+    alt: "Yellow-eyed penguins in coastal bush habitat at Pōhatu Marine Reserve, Banks Peninsula, New Zealand",
+    title: "Pōhatu Penguins",
+    description:
+      "Let dusk settle over Banks Peninsula as hoiho appear along quiet farmland coast — intimate, led by locals who guard this place fiercely.",
+    pods: [{ label: "Pōhue", href: "/location/pohue" }],
+    distance: "~60 min drive",
+    timing: "best on still, clear evenings",
+    url: "http://www.pohatu.co.nz/",
+  },
+  {
+    image: "/assets/img/matu/waitomo-glowworm-cave-boat-ride.jpg",
+    alt: "Glowworm-lit limestone cave river inside the Waitomo cave system, Waikato, New Zealand",
+    title: "Waitomo Black Water Rafting",
+    description:
+      "Lie back in cool river darkness until pinpricks of blue light bloom overhead — glowworms turning the cave into a drifting night sky.",
+    pods: [{ label: "Matū", href: "/location/matu" }],
+    distance: "~40–60 min drive",
+    timing: "best on dry, mild days",
+    url: "https://www.blackwaterrafting.co.nz/",
+  },
+  {
+    image:
+      "/assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg",
+    alt: "Aerial coastal view toward Stewart Island / Rakiura with bush, bays and open sea, southern New Zealand",
+    title: "Stewart Island Flights / Ulva Island",
+    description:
+      "Cross open swells toward Rakiura’s fringe of forest, then walk shorelines where kiwi call after dark and the mainland feels far away.",
+    pods: [
+      { label: "Tokoeka", href: "/location/tokoeka" },
+      { label: "Hananui", href: "/location/hananui" },
+    ],
+    distance: "~10 min drive",
+    timing: "best on clear days",
+    url: "http://www.stewartislandflights.com/",
   },
 ];
 
@@ -195,14 +167,14 @@ export const adventureRestClosingSlides: AdventureRestClosingSlide[] = [
 export const adventureFaq: { q: string; a: string }[] = [
   {
     q: "What does this Adventure & Wildlife page include?",
-    a: "Editorial highlights in three themes: marine and iconic wildlife, nature exploration and outdoor discovery, and adventure and adrenaline. Each slide links to the official operator or route resource and suggests one or more nearby PurePod stays where we have a site in the region.",
+    a: "A single curated carousel of iconic wildlife and adventure operators across New Zealand. Each slide links to the official experience, suggests nearby PurePod stays in the region, and notes typical drive time and seasonality as a planning hint only.",
   },
   {
     q: "Should I confirm details with each operator before I travel?",
-    a: "Yes. Timetables, seasons, weather and access can change. Use the links on each slide to check the latest information, bookings and requirements directly with the operator or land manager.",
+    a: "Yes. Timetables, seasons, weather and access can change. Use the “View experience” link on each slide to check the latest information, bookings and requirements directly with the operator.",
   },
   {
     q: "How do I continue to booking from this page?",
-    a: "Use each slide’s Stay at link to open that pod’s page on this PurePods site, then continue to booking when you are ready. The Book control in the navigation and the closing call to action also link to PurePods booking to check live availability.",
+    a: "Use “Stay nearby” pod names to open that PurePod’s page on this site, then continue to booking when you are ready. The Book control in the navigation and the closing call to action also link to PurePods booking to check live availability.",
   },
 ];

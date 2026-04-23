@@ -1,17 +1,15 @@
 import Link from "next/link";
 import { ExpRefImage } from "@/components/experiences/ExpRefImage";
+import { AdventureExperienceCarousel } from "@/components/experiences/AdventureExperienceCarousel";
 import { ExperienceRevealMotionRoot } from "@/components/experiences/ExperienceRevealMotionRoot";
 import { ExpStandardChrome } from "@/components/experiences/ExpStandardChrome";
-import { HikingCarouselBlock } from "@/components/experiences/HikingCarouselBlock";
 import { AdventureRestClosingCarousel } from "@/components/experiences/AdventureRestClosingCarousel";
 import {
-  adrenalineSlides,
-  adventureAboutLeadHtml,
+  adventureExperienceSlides,
   adventureFaq,
   adventureHero,
+  adventureIntroParagraph,
   adventureRestClosingSlides,
-  marineSlides,
-  natureSlides,
 } from "@/lib/experiencesData/adventureWildlife";
 
 export function AdventureWildlifeView() {
@@ -25,9 +23,7 @@ export function AdventureWildlifeView() {
         <ExpStandardChrome
           hashInPageAnchorsNative
           navItems={[
-            { href: "#marine", label: "Iconic wildlife" },
-            { href: "#nature", label: "Nature exploration" },
-            { href: "#adventure", label: "Adventure" },
+            { href: "#experiences-carousel", label: "Top experiences" },
             { href: "#faq", label: "FAQ" },
           ]}
         >
@@ -58,97 +54,27 @@ export function AdventureWildlifeView() {
           <main id="main">
             <section
               id="about"
-              className="adventure-reveal"
+              className="wrap adventure-reveal"
               aria-labelledby="about-heading"
             >
-              <div className="wrap">
-                <h2 id="about-heading" className="visually-hidden">
-                  About this page
-                </h2>
-                <p
-                  className="lead"
-                  dangerouslySetInnerHTML={{ __html: adventureAboutLeadHtml }}
-                />
-              </div>
+              <h2 id="about-heading" className="visually-hidden">
+                Introduction
+              </h2>
+              <p className="aw-xp-intro">{adventureIntroParagraph}</p>
             </section>
 
             <section
-              className="wrap"
-              id="blocks"
-              aria-label="Adventure and wildlife content blocks"
+              id="experiences-carousel"
+              className="aw-xp-band adventure-reveal"
+              aria-labelledby="experiences-carousel-heading"
             >
-              <section
-                className="journey-chapter chapter adventure-reveal"
-                id="marine"
-                aria-labelledby="marine-wildlife-heading"
+              <h2
+                id="experiences-carousel-heading"
+                className="visually-hidden"
               >
-                <HikingCarouselBlock
-                  ariaLabel="Marine and iconic wildlife experiences"
-                  slides={marineSlides}
-                  chapterTitle={
-                    <h2 className="journey-title" id="marine-wildlife-heading">
-                      Marine &amp; iconic wildlife
-                    </h2>
-                  }
-                  chapterIntro={
-                    <p className="journey-intro">
-                      Encounters along the coast and offshore — whales, seals,
-                      dolphins and seabirds — paced for wild water and quiet
-                      observation.
-                    </p>
-                  }
-                />
-              </section>
-
-              <section
-                className="journey-chapter chapter adventure-reveal"
-                id="nature"
-                aria-labelledby="nature-exploration-heading"
-              >
-                <HikingCarouselBlock
-                  ariaLabel="Nature exploration and outdoor discovery experiences"
-                  slides={natureSlides}
-                  chapterTitle={
-                    <h2
-                      className="journey-title"
-                      id="nature-exploration-heading"
-                    >
-                      Nature exploration &amp; outdoor discovery
-                    </h2>
-                  }
-                  chapterIntro={
-                    <p className="journey-intro">
-                      Slower ways into the landscape — paddles, forest trails
-                      and birds overhead — without rushing the reward.
-                    </p>
-                  }
-                />
-              </section>
-
-              <section
-                className="journey-chapter chapter adventure-reveal"
-                id="adventure"
-                aria-labelledby="adventure-adrenaline-heading"
-              >
-                <HikingCarouselBlock
-                  ariaLabel="Adventure and adrenaline experiences"
-                  slides={adrenalineSlides}
-                  chapterTitle={
-                    <h2
-                      className="journey-title"
-                      id="adventure-adrenaline-heading"
-                    >
-                      Adventure &amp; adrenaline
-                    </h2>
-                  }
-                  chapterIntro={
-                    <p className="journey-intro">
-                      River, canopy and sky — guided activities that ask
-                      something of you and repay you with unforgettable views.
-                    </p>
-                  }
-                />
-              </section>
+                Top New Zealand experiences near PurePods
+              </h2>
+              <AdventureExperienceCarousel slides={adventureExperienceSlides} />
             </section>
 
             <section
