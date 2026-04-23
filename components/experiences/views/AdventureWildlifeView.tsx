@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ExpRefImage } from "@/components/experiences/ExpRefImage";
 import { AdventureExperienceCarousel } from "@/components/experiences/AdventureExperienceCarousel";
 import { ExperienceRevealMotionRoot } from "@/components/experiences/ExperienceRevealMotionRoot";
-import { ExpStandardChrome } from "@/components/experiences/ExpStandardChrome";
+import { AdventureWildlifeChrome } from "@/components/experiences/AdventureWildlifeChrome";
 import { AdventureRestClosingCarousel } from "@/components/experiences/AdventureRestClosingCarousel";
 import {
   adventureExperienceSlides,
@@ -20,7 +20,7 @@ export function AdventureWildlifeView() {
         revealSelector=".adventure-reveal"
         inViewClass="adventure--in-view"
       >
-        <ExpStandardChrome
+        <AdventureWildlifeChrome
           hashInPageAnchorsNative
           navItems={[
             { href: "#experiences-carousel", label: "What to do" },
@@ -151,7 +151,7 @@ export function AdventureWildlifeView() {
               </div>
             </section>
           </main>
-        </ExpStandardChrome>
+        </AdventureWildlifeChrome>
       </ExperienceRevealMotionRoot>
     </div>
   );
