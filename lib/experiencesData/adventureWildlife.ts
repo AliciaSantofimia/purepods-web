@@ -145,6 +145,49 @@ export const adrenalineSlides: HikingSlide[] = [
   },
 ];
 
+/** Closing “rest after adventure” carousel — PurePods stay imagery only */
+export type AdventureRestClosingSlide = {
+  src: string;
+  alt: string;
+  label: string;
+  subline: string;
+};
+
+export const adventureRestClosingSlides: AdventureRestClosingSlide[] = [
+  {
+    src: "/assets/img/experiences/adventure-wildlife/purepods-new-zealand-glass-cabin-starry-night-remote-nature-stay.jpg",
+    alt: "PurePods glass eco-cabin under a starry night sky in a remote New Zealand landscape",
+    label: "Night falls",
+    subline: "The day’s noise drops away; the sky opens above your pod.",
+  },
+  {
+    src: "/assets/img/experiences/journeys/journey-purepod-bedroom-relax-view-new-zealand.jpg",
+    alt: "Interior of a PurePod bedroom with wide glass views across hills and valleys in New Zealand",
+    label: "Quiet views",
+    subline:
+      "Light, weather and land stay in frame — without leaving your bed.",
+  },
+  {
+    src: "/assets/img/experiences/culture/purepod-glass-cabin-lake-view-new-zealand-remote-nature-stay.jpg",
+    alt: "PurePod glass cabin overlooking a calm lake and rolling hills in New Zealand",
+    label: "Still water",
+    subline: "A private glass room set back into the landscape.",
+  },
+  {
+    src: "/assets/img/kokomea/kokomea-purepod-exterior-sunrise-landscape-kapiti-coast.jpg",
+    alt: "PurePod exterior at sunrise on the Kāpiti Coast with soft light on hills and native grasses",
+    label: "First light",
+    subline:
+      "The pod reads as a quiet object in the land — until the sun finds the glass.",
+  },
+  {
+    src: "/assets/img/haurapa/haurapa-purepod-bedroom-sunset-central-otago.jpg",
+    alt: "Warm evening light in a PurePod bedroom with mountain views in Central Otago",
+    label: "Evening settles",
+    subline: "Warm tones, long shadows — the pace of the day finally slows.",
+  },
+];
+
 export const adventureFaq: { q: string; a: string }[] = [
   {
     q: "What does this Adventure & Wildlife page include?",

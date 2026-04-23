@@ -3,11 +3,13 @@ import { ExpRefImage } from "@/components/experiences/ExpRefImage";
 import { ExperienceRevealMotionRoot } from "@/components/experiences/ExperienceRevealMotionRoot";
 import { ExpStandardChrome } from "@/components/experiences/ExpStandardChrome";
 import { HikingCarouselBlock } from "@/components/experiences/HikingCarouselBlock";
+import { AdventureRestClosingCarousel } from "@/components/experiences/AdventureRestClosingCarousel";
 import {
   adrenalineSlides,
   adventureAboutLeadHtml,
   adventureFaq,
   adventureHero,
+  adventureRestClosingSlides,
   marineSlides,
   natureSlides,
 } from "@/lib/experiencesData/adventureWildlife";
@@ -150,46 +152,33 @@ export function AdventureWildlifeView() {
             </section>
 
             <section
-              className="pod-bridge adventure-reveal"
-              aria-labelledby="pod-bridge-heading"
-              style={{ background: "#EDEBE6" }}
+              id="the-pod"
+              className="adv-rest-closing adventure-reveal"
+              aria-labelledby="adv-rest-heading"
             >
-              <div className="wrap" style={{ padding: "56px 0" }}>
-                <div className="inner">
-                  <div
-                    style={{
-                      position: "relative",
-                      borderRadius: 28,
-                      overflow: "hidden",
-                      boxShadow: "var(--shadow)",
-                      aspectRatio: "16/9",
-                      marginBottom: 28,
-                    }}
-                  >
-                    <ExpRefImage
-                      src="/assets/img/experiences/adventure-wildlife/purepods-new-zealand-glass-cabin-starry-night-remote-nature-stay.jpg"
-                      alt="PurePods glass cabin in New Zealand under a starry night sky in a remote natural setting"
-                      fill
-                      sizes="(max-width:900px) 100vw, min(1120px, 90vw)"
-                      className="pod-bridge__img"
-                      objectPosition="center 90%"
-                    />
-                  </div>
-
-                  <h2 id="pod-bridge-heading" className="pod-bridge__title">
+              <div className="wrap adv-rest-closing__inner">
+                <header className="adv-rest-closing__head">
+                  <p className="adv-rest-closing__eyebrow">
+                    When the day is done
+                  </p>
+                  <h2 id="adv-rest-heading" className="adv-rest-closing__title">
                     From active exploration to quiet overnight stay
                   </h2>
-
-                  <p>
-                    After a day focused on landscapes and wildlife, this
-                    experience transitions naturally into a PurePods stay.
-                    PurePods are glass eco-cabins in remote natural settings,
-                    designed for calm immersion in surrounding light, weather
-                    and views.
+                  <p className="adv-rest-closing__lead">
+                    After landscapes, wildlife and adrenaline, the rhythm
+                    changes. PurePods are glass eco-cabins in remote settings —
+                    built for slowing down, sleeping deeply, and waking inside
+                    the view.
                   </p>
+                </header>
 
-                  <Link className="pod-bridge__cta" href="/pods">
-                    Discover Slow travel
+                <AdventureRestClosingCarousel
+                  slides={adventureRestClosingSlides}
+                />
+
+                <div className="adv-rest-closing__footer">
+                  <Link className="adv-rest-closing__cta" href="/pods">
+                    Discover PurePods stays
                   </Link>
                 </div>
               </div>
