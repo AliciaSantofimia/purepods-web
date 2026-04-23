@@ -155,36 +155,40 @@ export type AdventureRestClosingSlide = {
 
 export const adventureRestClosingSlides: AdventureRestClosingSlide[] = [
   {
-    src: "/assets/img/experiences/adventure-wildlife/purepods-new-zealand-glass-cabin-starry-night-remote-nature-stay.jpg",
-    alt: "PurePods glass eco-cabin under a starry night sky in a remote New Zealand landscape",
-    label: "Night falls",
-    subline: "The day’s noise drops away; the sky opens above your pod.",
+    src: "/assets/img/rest-stay-carousel/hananui-purepod-deckchairs-coastal-view-northland-new-zealand.jpg",
+    alt: "Deckchairs on a Hananui PurePod deck overlooking the Northland coast, sea and distant headlands in soft daylight",
+    label: "Coast at your feet",
+    subline: "Sit with the breeze; nothing on the schedule but the tide and the light.",
   },
   {
-    src: "/assets/img/experiences/journeys/journey-purepod-bedroom-relax-view-new-zealand.jpg",
-    alt: "Interior of a PurePod bedroom with wide glass views across hills and valleys in New Zealand",
-    label: "Quiet views",
-    subline:
-      "Light, weather and land stay in frame — without leaving your bed.",
+    src: "/assets/img/rest-stay-carousel/kokomea-purepod-glass-cabin-interior-sunset-new-zealand.jpg",
+    alt: "Golden-hour sunset light inside a Kokomea PurePod glass cabin, warm tones across the living space and windows",
+    label: "Day softens",
+    subline: "The landscape turns amber; the pod holds the glow long after the sun has gone.",
   },
   {
-    src: "/assets/img/experiences/culture/purepod-glass-cabin-lake-view-new-zealand-remote-nature-stay.jpg",
-    alt: "PurePod glass cabin overlooking a calm lake and rolling hills in New Zealand",
-    label: "Still water",
-    subline: "A private glass room set back into the landscape.",
+    src: "/assets/img/rest-stay-carousel/greystone-purepod-glass-doors-open-hills-view-north-canterbury-new-zealand.jpg",
+    alt: "Greystone PurePod with full-height glass doors folded open to rolling hills and farmland in North Canterbury",
+    label: "Room to breathe",
+    subline: "Cool evening air drifts in; the hills sit quiet beyond the frame.",
   },
   {
-    src: "/assets/img/kokomea/kokomea-purepod-exterior-sunrise-landscape-kapiti-coast.jpg",
-    alt: "PurePod exterior at sunrise on the Kāpiti Coast with soft light on hills and native grasses",
-    label: "First light",
-    subline:
-      "The pod reads as a quiet object in the land — until the sun finds the glass.",
+    src: "/assets/img/rest-stay-carousel/kahutara-purepod-kitchen-mountain-views-canterbury-new-zealand.jpg",
+    alt: "Kahutara PurePod kitchen bench facing layered mountains through floor-to-ceiling glass in Canterbury",
+    label: "Simple and slow",
+    subline: "Tea, a view, no rush — the kind of evening that follows a big day outside.",
   },
   {
-    src: "/assets/img/haurapa/haurapa-purepod-bedroom-sunset-central-otago.jpg",
-    alt: "Warm evening light in a PurePod bedroom with mountain views in Central Otago",
-    label: "Evening settles",
-    subline: "Warm tones, long shadows — the pace of the day finally slows.",
+    src: "/assets/img/rest-stay-carousel/haurapa-purepod-food-hamper-outdoor-dining-new-zealand.jpg",
+    alt: "Local produce and a hamper laid out for outdoor dining on a Haurapa PurePod deck in New Zealand",
+    label: "Table outside",
+    subline: "Flavours from the region, eaten slowly as the light finally gives way.",
+  },
+  {
+    src: "/assets/img/rest-stay-carousel/hananui-purepod-outdoor-shower-ocean-view-northland-new-zealand.jpg",
+    alt: "Outdoor shower at a Hananui PurePod with open views to the ocean and sky along the Northland coastline",
+    label: "Rinse the day away",
+    subline: "Salt, dust and trail miles — gone under sky before you turn in for the night.",
   },
 ];
 

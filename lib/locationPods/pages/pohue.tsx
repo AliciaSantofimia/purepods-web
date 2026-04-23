@@ -19,14 +19,14 @@ const heroImage = "/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new
 const podCoastalHills = "/assets/img/pohue/pohue-coastal-hills-cabin-view-new-zealand.jpg";
 const podBedroom = "/assets/img/pohue/pohue-purepod-bedroom-view-coastal-landscape-new-zealand.png";
 const podGlassCabin = "/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg";
-const podHistoricCottage = "/assets/img/pohue/pohue-historic-cottage-wisteria-north-canterbury-new-zealand.jpg";
 const expPenguins = "/assets/img/pohue/pohue-blue-penguins-wildlife-new-zealand.jpg";
 const expVolcanicHills = "/assets/img/pohue/pohue-coastal-hills-cabin-view-new-zealand.jpg";
 const expOhinetahi = "/assets/img/pohue/pohue-greystone-gardens-north-canterbury-new-zealand.jpg";
 const travelAccess = "/assets/img/pohue/pohue-purepod-access-gate-coastal-track-new-zealand.jpeg";
-const travelGlassCabin = "/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg";
+const travelWalkingTrack =
+  "/assets/img/pohue/pohue-walking-track-landscape-new-zealand.jpg";
 const travelFood = "/assets/img/pohue/pohue-local-produce-food-basket-new-zealand.jpg";
-const travelView = "/assets/img/pohue/pohue-coastal-hills-cabin-view-new-zealand.jpg";
+const travelView = `/assets/img/pohue/${encodeURIComponent("Local produce breakfast hamper at PurePod Pōhue.jpg")}`;
 
 const CANONICAL_URL = "https://purepods.com/location/pohue/";
 const OG_IMAGE_URL =
@@ -187,7 +187,6 @@ export function PodView() {
         />
         <Container as="div" className={styles.locationContent}>
           <PodSection
-            galleryVariant="fillGapSpan"
             title="The experience of the Pod"
             hint="The essentials, no fluff"
             paragraphs={[
@@ -213,11 +212,6 @@ export function PodView() {
                 alt: "Pōhue PurePod glass cabin set among coastal hills and native bush on Banks Peninsula, New Zealand",
                 position: "50% 70%",
               },
-              {
-                src: podHistoricCottage,
-                alt: "Historic North Canterbury cottage with wisteria near the Pōhue PurePod approach, Banks Peninsula region, New Zealand",
-                position: "50% 55%",
-              },
             ]}
             galleryCaption="PurePod Pōhue sits high above Port Levy with no neighbours and no shared spaces — only native bush, volcanic hills and open sky. The uphill walk completes the sense of arrival; inside, everything is calm and paired back for two, with shifting light and wide horizons over land and sea."
           />
@@ -229,6 +223,7 @@ export function PodView() {
               {
                 title: "Akaroa — The Heart of Banks Peninsula",
                 image: expPenguins,
+                imagePosition: "50% 25%",
                 imageAlt:
                   "Little blue penguin wildlife along the Banks Peninsula coast near Akaroa, New Zealand",
                 paragraphs: [
@@ -303,7 +298,7 @@ export function PodView() {
                     alt: "Coastal access track and gate along the walk toward Pōhue PurePod on Banks Peninsula, New Zealand",
                   },
                   {
-                    src: travelGlassCabin,
+                    src: travelWalkingTrack,
                     alt: "Pōhue PurePod glass cabin awaiting at the end of the arrival walk above Port Levy, New Zealand",
                   },
                 ],

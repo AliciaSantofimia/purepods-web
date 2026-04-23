@@ -19,7 +19,6 @@ const heroImage = "/assets/img/kahutara/kahutara-purepod-glass-cabin-kaikoura-ne
 const podRiverValley = "/assets/img/kahutara/kahutara-purepod-river-valley-view-kaikoura.jpg";
 const podBedroom = "/assets/img/kahutara/kahutara-purepod-bedroom-view-kaikoura-mountain.jpg";
 const podMountain = "/assets/img/kahutara/kahutara-purepod-glass-cabin-mountain-landscape-kaikoura.jpg";
-const podKitchen = "/assets/img/kahutara/kahutara-purepod-kitchen-view-kaikoura-mountains.jpg";
 const expWhale = "/assets/img/kahutara/kaikoura-whale-watching-new-zealand.jpg";
 const expPeninsula = "/assets/img/kahutara/kaikoura-peninsula-walkway-coastal-track.jpg";
 const expSeal = "/assets/img/kahutara/kaikoura-seal-colony-new-zealand.jpg";
@@ -182,7 +181,6 @@ export function PodView() {
         />
         <Container as="div" className={styles.locationContent}>
           <PodSection
-            galleryVariant="fillGapSpan"
             title="The Pod"
             hint="The essentials, no fluff"
             paragraphs={[
@@ -207,11 +205,6 @@ export function PodView() {
                 src: podMountain,
                 alt: "Kahutara PurePod glass cabin surrounded by hills and Kaikōura mountains in New Zealand",
                 position: "50% 70%",
-              },
-              {
-                src: podKitchen,
-                alt: "Kitchen and living area in Kahutara PurePod with Kaikōura mountain views, New Zealand",
-                position: "50% 50%",
               },
             ]}
             galleryCaption="PurePod Kahutara is not a typical place to stay. It is a full immersion in the natural landscape of the Kaikōura coast. Surrounded by open hills and native vegetation, the pod is completely secluded — no neighbours, no shared spaces, just wind across the hills, silence, and a deep sense of being in nature. Inside, everything is designed for two: a warm and comfortable retreat from which to watch the wide sky, shifting light and open landscape, all from the privacy of your own hideaway in nature."
@@ -336,6 +329,7 @@ export function PodView() {
                   {
                     src: travelWine,
                     alt: "Wine and cheese board on the deck at Kahutara PurePod with countryside views in Kaikōura",
+                    position: "28% 64%",
                   },
                 ],
                 body: "Each PurePod is equipped with a gas cooktop, barbecue, small fridge and all the essential cookware — utensils, pots, plates and cutlery — to prepare simple meals during your stay. You will also find a selection of tea and coffee to enjoy at the pod. You are welcome to bring your own food or pre-book a PurePod locally sourced dinner and breakfast package, ready to prepare and enjoy at your own pace.",

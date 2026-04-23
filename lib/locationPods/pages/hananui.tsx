@@ -20,10 +20,13 @@ const podAerial = "/assets/img/hananui/hananui-purepod-aerial-coastal-location-s
 const podUnderStars = "/assets/img/hananui/hananui-purepod-under-stars-stewart-island-new-zealand.jpg";
 const podSeaView = "/assets/img/hananui/hananui-purepod-sea-view-glass-pod-stewart-island.jpg";
 const expUlva = "/assets/img/hananui/stewart-island-native-bird-wildlife.jpg";
-const expMason = "/assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg";
+const expMason = "/assets/img/hananui/stewart-island-tokoeka-kiwi-wildlife.jpg";
 const expPaterson = "/assets/img/hananui/stewart-island-yellow-eyed-penguin-wildlife.jpg";
 const travelAerial = "/assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg";
-const travelExterior = "/assets/img/hananui/hananui-purepod-exterior-forest-view-stewart-island.jpg";
+const travelExterior =
+  "/assets/img/hananui/hananui-purepod-dining-experience-ocean-view-stewart-island-new-zealand.jpg";
+const travelJourneyRight =
+  "/assets/img/hananui/hananui-purepod-walking-path-native-bush-stewart-island-new-zealand.jpg";
 const travelFood = "/assets/img/hananui/hananui-local-food-platter-stewart-island.jpg";
 
 const CANONICAL_URL = "https://purepods.com/location/hananui/";
@@ -260,6 +263,7 @@ export function PodView() {
               {
                 title: "Paterson Inlet — Cruise or Kayak",
                 image: expPaterson,
+                imagePosition: "40% 34%",
                 imageAlt:
                   "Yellow-eyed penguin and coastal wildlife near Paterson Inlet, Stewart Island, New Zealand",
                 paragraphs: [
@@ -288,7 +292,7 @@ export function PodView() {
                     alt: "Aerial view of Hananui PurePod at Mamaku Point Conservation Reserve, Stewart Island, New Zealand",
                   },
                   {
-                    src: travelExterior,
+                    src: travelJourneyRight,
                     alt: "Hananui PurePod exterior with forest and ocean outlook, Stewart Island, New Zealand",
                   },
                 ],

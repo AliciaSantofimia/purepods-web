@@ -30,7 +30,7 @@ export function ExplorePageWithMapClientExperimentalV2({ pods }: { pods: Explore
 
   const visiblePods = useMemo(() => {
     if (filter === "south") {
-      return podsWithPins.filter((p) => p.filter === "south" || p.filter === "stewart");
+      return podsWithPins.filter((p) => p.filter === "south");
     }
     return podsWithPins.filter((p) => p.filter === filter);
   }, [podsWithPins, filter]);
