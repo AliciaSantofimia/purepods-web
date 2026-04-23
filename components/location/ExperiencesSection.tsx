@@ -11,6 +11,8 @@ export interface ExperienceItem {
   title: string;
   image: string | StaticImageData;
   imageAlt: string;
+  /** Optional `object-position` for this card image (default 50% 50%). */
+  imagePosition?: string;
   paragraphs: string[];
   links: { label: string; href: string }[];
 }
@@ -61,7 +63,10 @@ export function ExperiencesSection({
                   alt={exp.imageAlt}
                   fill
                   sizes="(max-width: 900px) 100vw, 33vw"
-                  style={{ objectFit: "cover", objectPosition: "50% 50%" }}
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: exp.imagePosition ?? "50% 50%",
+                  }}
                   loading="lazy"
                   decoding="async"
                   fetchPriority="low"

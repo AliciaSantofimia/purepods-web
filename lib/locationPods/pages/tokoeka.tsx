@@ -20,12 +20,12 @@ const podAerial = "/assets/img/tokoeka/tokoeka-purepod-aerial-forest-location-st
 const podBedroom = "/assets/img/tokoeka/tokoeka-purepod-bedroom-ocean-view-stewart-island..jpg";
 const podAstro = "/assets/img/tokoeka/tokoeka-purepod-astro-amazing-paul-wilson.jpg";
 const expUlva = "/assets/img/tokoeka/stewart-island-native-bird-wildlife.jpg";
-const expMason = "/assets/img/tokoeka/stewart-island-coastal-forest-landscape.jpg";
+const expMason = "/assets/img/tokoeka/stewart-island-tokoeka-kiwi-wildlife..jpg";
 const expPaterson = "/assets/img/tokoeka/stewart-island-yellow-eyed-penguin-wildlife.jpg";
-const travelAerial = "/assets/img/tokoeka/tokoeka-purepod-aerial-forest-location-stewart-island.jpg";
+const travelAerial = "/assets/img/tokoeka/tokoeka-purepod-forest-walkway-sign.jpg";
 const travelForest = "/assets/img/tokoeka/stewart-island-coastal-forest-landscape.jpg";
 const travelFood = "/assets/img/tokoeka/tokoeka-local-food-platter-stewart-island..jpg";
-const travelBedroom = "/assets/img/tokoeka/tokoeka-purepod-bedroom-ocean-view-stewart-island..jpg";
+const travelBedroom = "/assets/img/tokoeka/tokoeka-purepod-gourmet-food-platter.jpg";
 
 const CANONICAL_URL = "https://purepods.com/location/tokoeka/";
 const OG_IMAGE_URL =
@@ -262,6 +262,7 @@ export function PodView() {
               {
                 title: "Paterson Inlet — Cruise or Kayak",
                 image: expPaterson,
+                imagePosition: "40% 34%",
                 imageAlt:
                   "Yellow-eyed penguin and coastal wildlife near Paterson Inlet, Stewart Island, New Zealand",
                 paragraphs: [

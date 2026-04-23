@@ -22,11 +22,13 @@ const podEveningReflections =
   "/assets/img/taima/Tāima PurePod evening reflections _ photo credit Paul Wilson.jpg";
 const expSluicings = "/assets/img/taima/central-otago-rocky-canyon-hiking-trail.jpg";
 const expLakeDunstan = "/assets/img/taima/central-otago-lake-dunstan-cycling-trail.jpg";
-const expWine = "/assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg";
-const travelClutha = "/assets/img/taima/taima-clutha-river-autumn-landscape-central-otago-new-zealand.jpg";
-const travelExterior = "/assets/img/taima/taima-purepod-exterior-landscape-central-otago.png";
+const expWine =
+  "/assets/img/haurapa/tekano-estate-vineyard-central-otago-wine-region-new-zealand.jpg";
+const travelJourneyLeft = `/assets/img/taima/${encodeURIComponent("Tāima PurePod walk to PurePod.jpg")}`;
+const travelJourneyRight =
+  "/assets/img/taima/taima-purepod-bedroom-mountain-view-central-otago.jpg";
 const travelFood = "/assets/img/taima/taima-local-food-platter-central-otago.jpg";
-const travelVineyard = "/assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg";
+const travelVineyard = `/assets/img/taima/${encodeURIComponent("Tāima PurePod BBQ views _ photo credit Paul Wilson.jpg")}`;
 
 const CANONICAL_URL = "https://purepods.com/location/taima/";
 const OG_IMAGE_URL =
@@ -291,11 +293,11 @@ export function PodView() {
                 title: "The Journey",
                 images: [
                   {
-                    src: travelClutha,
+                    src: travelJourneyLeft,
                     alt: "Clutha River and autumn tones in the Central Otago landscape near Cromwell, New Zealand",
                   },
                   {
-                    src: travelExterior,
+                    src: travelJourneyRight,
                     alt: "Tāima PurePod in the Central Otago landscape, approached along the Kawarau Gorge near Cromwell, New Zealand",
                   },
                 ],
