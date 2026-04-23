@@ -212,3 +212,41 @@ export function adventureWildlifeFaqPageJsonLd(): Record<string, unknown> {
     })),
   };
 }
+
+/** Guest experiences — editorial reviews (Adventure & Wildlife page only). */
+export const adventureGuestExperiencesIntro =
+  "Travellers often describe PurePods as more than just a place to stay — a way to slow down, reconnect with nature, and experience New Zealand differently.";
+
+export type AdventureGuestExperienceReview = {
+  quote: string;
+  body: string;
+  guestName: string;
+  podName: string;
+};
+
+export const adventureGuestExperienceReviews: AdventureGuestExperienceReview[] = [
+  {
+    quote: "“This property is a surprise — worth every penny.”",
+    body: "Guests describe a rare sense of total serenity, with no roads, buildings or noise in sight — just open views, stillness and a beautifully considered cabin experience.",
+    guestName: "Maria Schmidt",
+    podName: "Pāmu PurePod",
+  },
+  {
+    quote: "“A truly incredible experience in a secluded setting.”",
+    body: "Thoughtful design, quiet surroundings and details like dinner, breakfast and wide pastoral views made this stay feel both remote and deeply comfortable.",
+    guestName: "Thomas Michael",
+    podName: "Pāmu PurePod",
+  },
+  {
+    quote: "“Perfect for those who want to disconnect and reconnect with nature.”",
+    body: "Guests highlight the privacy, outdoor shower, roof grill and uninterrupted landscape as part of a stay that feels luxurious without losing its connection to the wild.",
+    guestName: "Joben Grimnius",
+    podName: "Kahutara PurePod",
+  },
+];
+
+export const adventureGuestExperiencesClosing =
+  "Across New Zealand, guests return to the same feeling — a rare balance of wild nature, thoughtful design and complete stillness.";
+
+/** Internal destination for the editorial “explore more” link. */
+export const adventureGuestExperiencesExploreHref = "/pods" as const;

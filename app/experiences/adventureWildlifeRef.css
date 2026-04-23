@@ -898,39 +898,265 @@
 
 .experience-ref.adventure-wildlife-ref .aw-guest-experiences {
 
-  padding: clamp(16px, 2.5vw, 28px) 0 clamp(8px, 1.5vw, 16px);
+  padding: clamp(28px, 4vw, 48px) 0 clamp(20px, 3vw, 36px);
 
   border-top: 1px solid var(--stroke);
 
 }
 
-.experience-ref.adventure-wildlife-ref .aw-guest-experiences__title {
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__header {
 
-  margin: 0 0 8px;
+  margin: 0 auto clamp(32px, 4.5vw, 48px);
 
-  font-size: 11px;
+  max-width: min(52rem, 100%);
+
+  text-align: center;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__headline {
+
+  margin: 0 0 clamp(12px, 2vw, 18px);
+
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  font-size: clamp(22px, 2.2vw, 26px);
 
   font-weight: 600;
 
-  letter-spacing: 0.16em;
+  letter-spacing: -0.02em;
 
-  text-transform: uppercase;
+  line-height: 1.2;
+
+  color: var(--ink);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__intro {
+
+  margin: 0 auto;
+
+  max-width: 62ch;
+
+  font-size: clamp(15px, 1.2vw, 17px);
+
+  line-height: 1.65;
+
+  letter-spacing: -0.01em;
 
   color: var(--muted);
 
 }
 
-.experience-ref.adventure-wildlife-ref .aw-guest-experiences__placeholder {
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__grid {
+
+  display: grid;
+
+  gap: clamp(28px, 4vw, 44px);
+
+  margin: 0 auto;
+
+  max-width: min(76rem, 100%);
+
+  padding-top: clamp(12px, 2vw, 20px);
+
+  border-top: 1px solid rgba(92, 95, 62, 0.12);
+
+}
+
+@media (min-width: 900px) {
+
+  .experience-ref.adventure-wildlife-ref .aw-guest-experiences__grid {
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: clamp(36px, 4.5vw, 52px);
+
+    column-gap: clamp(32px, 4vw, 48px);
+
+    align-items: start;
+
+  }
+
+}
+
+@media (max-width: 899px) {
+
+  .experience-ref.adventure-wildlife-ref .aw-guest-experiences__review:not(:last-child) {
+
+    padding-bottom: clamp(28px, 4vw, 36px);
+
+    border-bottom: 1px solid rgba(92, 95, 62, 0.1);
+
+  }
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__review {
 
   margin: 0;
 
-  max-width: 42ch;
+  padding: 0;
+
+  min-width: 0;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__blockquote {
+
+  margin: 0 0 clamp(18px, 2.2vw, 26px);
+
+  padding: 0;
+
+  border: 0;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__quote {
+
+  margin: 0;
+
+  font-size: clamp(17px, 1.42vw, 20px);
+
+  font-weight: 600;
+
+  line-height: 1.42;
+
+  letter-spacing: -0.022em;
+
+  color: var(--ink);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__body {
+
+  margin: 0 0 clamp(22px, 2.8vw, 32px);
+
+  font-size: 14px;
+
+  line-height: 1.68;
+
+  letter-spacing: -0.01em;
+
+  color: var(--muted);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__attribution {
+
+  margin: 0;
+
+  padding: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 5px;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__guest {
+
+  display: block;
 
   font-size: 13px;
 
-  line-height: 1.55;
+  font-weight: 500;
+
+  line-height: 1.45;
+
+  letter-spacing: -0.01em;
+
+  color: var(--ink);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__pod {
+
+  display: block;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  line-height: 1.45;
+
+  letter-spacing: 0.01em;
 
   color: var(--muted);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__footer {
+
+  margin: clamp(32px, 4vw, 48px) auto 0;
+
+  max-width: min(48rem, 100%);
+
+  padding-top: clamp(24px, 3vw, 36px);
+
+  border-top: 1px solid rgba(92, 95, 62, 0.12);
+
+  text-align: center;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__closing {
+
+  margin: 0 0 clamp(10px, 1.5vw, 16px);
+
+  font-size: clamp(14px, 1.1vw, 16px);
+
+  line-height: 1.68;
+
+  letter-spacing: -0.01em;
+
+  color: var(--muted);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__more {
+
+  margin: clamp(20px, 2.5vw, 28px) 0 0;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__link {
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.02em;
+
+  color: var(--muted);
+
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(92, 95, 62, 0.28);
+
+  transition: color 0.18s ease, border-color 0.18s ease;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__link:hover {
+
+  color: var(--ink);
+
+  border-bottom-color: rgba(92, 95, 62, 0.45);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__link:focus-visible {
+
+  outline: 2px solid rgba(92, 95, 62, 0.35);
+
+  outline-offset: 3px;
+
+  border-radius: 2px;
 
 }
 

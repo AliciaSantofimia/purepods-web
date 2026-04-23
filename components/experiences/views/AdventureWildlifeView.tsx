@@ -9,6 +9,10 @@ import {
   adventureContextHeading,
   adventureExperienceSlides,
   adventureFaq,
+  adventureGuestExperienceReviews,
+  adventureGuestExperiencesClosing,
+  adventureGuestExperiencesExploreHref,
+  adventureGuestExperiencesIntro,
   adventureHero,
   adventureIntroParagraph,
   adventureRestClosingSlides,
@@ -187,22 +191,58 @@ export function AdventureWildlifeView() {
               </div>
             </section>
 
-            {/* TODO: integrate Google Reviews widget (crawlable text required) */}
             <section
               className="aw-guest-experiences adventure-reveal"
               aria-labelledby="guest-experiences-heading"
             >
               <div className="wrap">
-                <h2
-                  id="guest-experiences-heading"
-                  className="aw-guest-experiences__title"
-                >
-                  Guest experiences
-                </h2>
-                <p className="aw-guest-experiences__placeholder">
-                  Short verified guest stories will be added here when the
-                  reviews integration is live.
-                </p>
+                <header className="aw-guest-experiences__header">
+                  <h2
+                    id="guest-experiences-heading"
+                    className="aw-guest-experiences__headline"
+                  >
+                    Guest experiences
+                  </h2>
+                  <p className="aw-guest-experiences__intro">
+                    {adventureGuestExperiencesIntro}
+                  </p>
+                </header>
+
+                <div className="aw-guest-experiences__grid">
+                  {adventureGuestExperienceReviews.map((r) => (
+                    <article
+                      key={`${r.guestName}-${r.podName}`}
+                      className="aw-guest-experiences__review"
+                    >
+                      <blockquote className="aw-guest-experiences__blockquote">
+                        <p className="aw-guest-experiences__quote">{r.quote}</p>
+                      </blockquote>
+                      <p className="aw-guest-experiences__body">{r.body}</p>
+                      <footer className="aw-guest-experiences__attribution">
+                        <span className="aw-guest-experiences__guest">
+                          {r.guestName}
+                        </span>
+                        <span className="aw-guest-experiences__pod">
+                          {r.podName}
+                        </span>
+                      </footer>
+                    </article>
+                  ))}
+                </div>
+
+                <footer className="aw-guest-experiences__footer">
+                  <p className="aw-guest-experiences__closing">
+                    {adventureGuestExperiencesClosing}
+                  </p>
+                  <p className="aw-guest-experiences__more">
+                    <Link
+                      className="aw-guest-experiences__link"
+                      href={adventureGuestExperiencesExploreHref}
+                    >
+                      Explore more guest experiences →
+                    </Link>
+                  </p>
+                </footer>
               </div>
             </section>
 
