@@ -167,7 +167,7 @@ export function AdventureWildlifeView() {
                       <li key={f.q} className="aw-faq-accordion__item">
                         <details
                           className="aw-faq-accordion__details"
-                          defaultOpen={i === 0}
+                          open={i === 0}
                         >
                           <summary className="aw-faq-accordion__summary">
                             <h3 className="aw-faq-accordion__q">{f.q}</h3>
