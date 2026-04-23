@@ -16,7 +16,7 @@ import styles from "@/app/location/locationLayout.module.css";
 
 const heroImage = "/assets/img/pamu/pamu-purepod-aerial-glass-cabin-landscape-rotorua.jpg";
 const podExterior = "/assets/img/pamu/pamu-purepod-glass-cabin-exterior-landscape-rotorua.jpg";
-const podBedroom = "/assets/img/pamu/pamu-purepod-bedroom-view-landscape-rotorua.jpg";
+const podBedroom = "/assets/img/pamu/pamu-purepod-glass-cabin-bedroom-interior-mountain-view-new-zealand.jpg";
 const podBathroom = "/assets/img/pamu/pamu-purepod-bathroom-shower-view-rotorua.jpg";
 const expGeothermal = "/assets/img/pamu/rotorua-geothermal-hot-springs-lake-new-zealand.jpg";
 const expMaori = "/assets/img/pamu/rotorua-maori-cultural-experience-village-new-zealand.jpg";

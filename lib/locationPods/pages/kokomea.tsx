@@ -15,7 +15,7 @@ import { Container } from "@/components/ui";
 import styles from "@/app/location/locationLayout.module.css";
 
 const heroImage = "/assets/img/kokomea/kokomea-purepod-glass-cabin-sunset-view-kapiti-coast.jpg";
-const podSunrise = "/assets/img/kokomea/kokomea-purepod-exterior-sunrise-landscape-kapiti-coast.jpg";
+const podSunrise = "/assets/img/kokomea/kokomea-purepod-glass-cabin-isolated-landscape-sunset-new-zealand.jpg";
 const podNight = "/assets/img/kokomea/kokomea-purepod-glass-cabin-night-exterior-kapiti-coast.jpg";
 const podBedroom = "/assets/img/kokomea/kokomea-purepod-bedroom-interior-sunset-kapiti-coast.jpg";
 const expIsland = "/assets/img/kokomea/kapiti-island-aerial-landscape-kapiti-coast.jpg";
@@ -176,7 +176,7 @@ export function PodView() {
           title="Kokomea"
           subtitle={IMPACT_SUMMARY}
           imageSrc={heroImage}
-          imageAlt="Kokomea PurePod glass cabin at sunset on the Kāpiti Coast, New Zealand"
+          imageAlt="Kokomea PurePod glass cabin at sunset on the Kāpiti Coast, New Zealand"
         />
         <Container as="div" className={styles.locationContent}>
           <PodSection
@@ -190,7 +190,7 @@ export function PodView() {
             gallery={[
               {
                 src: podSunrise,
-                alt: "Kokomea PurePod at sunrise on the Kāpiti Coast, New Zealand",
+                alt: "Kokomea PurePod glass cabin at sunset in the Kāpiti Coast landscape, New Zealand",
                 position: "50% 55%",
                 big: true,
               },

@@ -16,7 +16,7 @@ import styles from "@/app/location/locationLayout.module.css";
 
 /* Kahutara images — from assets/img/kahutara */
 const heroImage = "/assets/img/kahutara/kahutara-purepod-glass-cabin-kaikoura-new-zealand.jpg";
-const podRiverValley = "/assets/img/kahutara/kahutara-purepod-river-valley-view-kaikoura.jpg";
+const podRiverValley = "/assets/img/kahutara/kahutara-purepod-glass-cabin-mountain-valley-landscape-kaikoura-new-zealand.jpg";
 const podBedroom = "/assets/img/kahutara/kahutara-purepod-bedroom-view-kaikoura-mountain.jpg";
 const podMountain = "/assets/img/kahutara/kahutara-purepod-glass-cabin-mountain-landscape-kaikoura.jpg";
 const expWhale = "/assets/img/kahutara/kaikoura-whale-watching-new-zealand.jpg";

@@ -15,15 +15,15 @@ import { Container } from "@/components/ui";
 import styles from "@/app/location/locationLayout.module.css";
 
 const heroImage = "/assets/img/rewarewa/rewarewa-purepod-glass-cabin-exterior-muriwai-coast..jpg";
-const podStairs = "/assets/img/rewarewa/rewarewa-purepod-glass-cabin-exterior-stairs-muriwai-coast.jpg";
+const podStairs = "/assets/img/rewarewa/rewarewa-purepod-glass-cabin-exterior-sunset-lighting-new-zealand.jpg";
 const podBedroom = "/assets/img/rewarewa/rewarewa-purepod-bedroom-interior-muriwai-coast.jpg";
-const podStars = "/assets/img/rewarewa/rewarewa-purepod-glass-cabin-night-stars-muriwai-coast.jpg";
+const podStars = "/assets/img/rewarewa/rewarewa-purepod-glass-cabin-terrace-exterior-view-new-zealand.jpg";
 const expBeach = "/assets/img/rewarewa/muriwai-black-sand-beach-coastline.jpg";
 const expRanges = "/assets/img/rewarewa/waitakere-ranges-coastal-landscape-auckland.jpg";
 const expTeHenga = "/assets/img/rewarewa/te-henga-coastal-landscape-muriwai.jpg";
 const travelRoad = "/assets/img/rewarewa/muriwai-countryside-access-road.jpg";
 const travelAerialLandscape =
-  "/assets/img/rewarewa/rewarewa-purepod-aerial-landscape-muriwai-coast.jpg";
+  "/assets/img/rewarewa/rewarewa-purepod-journey-green-hills-landscape-view-new-zealand.jpg";
 const travelPlatter = "/assets/img/rewarewa/rewarewa-local-food-platter-muriwai-coast.JPG";
 const travelBreakfast = "/assets/img/rewarewa/rewarewa-breakfast-basket-muriwai-coast.JPG";
 
@@ -191,7 +191,7 @@ export function PodView() {
               {
                 src: podStairs,
                 alt: "Rewarewa PurePod glass cabin exterior on the Muriwai Coast, New Zealand",
-                position: "62% 46%",
+                position: "center 70%",
                 big: true,
               },
               {
@@ -202,7 +202,7 @@ export function PodView() {
               },
               {
                 src: podStars,
-                alt: "Stargazing from Rewarewa PurePod at night, Muriwai Coast, New Zealand",
+                alt: "Rewarewa PurePod terrace and glass cabin exterior, Muriwai Coast, New Zealand",
                 position: "50% 50%",
               },
             ]}
