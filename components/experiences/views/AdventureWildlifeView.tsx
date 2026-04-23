@@ -5,16 +5,28 @@ import { ExperienceRevealMotionRoot } from "@/components/experiences/ExperienceR
 import { AdventureWildlifeChrome } from "@/components/experiences/AdventureWildlifeChrome";
 import { AdventureRestClosingCarousel } from "@/components/experiences/AdventureRestClosingCarousel";
 import {
+  adventureContextBody,
+  adventureContextHeading,
   adventureExperienceSlides,
   adventureFaq,
+  adventureGeoFaq,
   adventureHero,
   adventureIntroParagraph,
   adventureRestClosingSlides,
+  adventureWildlifeFaqPageJsonLd,
 } from "@/lib/experiencesData/adventureWildlife";
 
 export function AdventureWildlifeView() {
+  const faqJsonLd = adventureWildlifeFaqPageJsonLd();
+
   return (
     <div className="experience-ref adventure-wildlife-ref">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqJsonLd),
+        }}
+      />
       <ExperienceRevealMotionRoot
         rootSelector=".experience-ref.adventure-wildlife-ref"
         revealSelector=".adventure-reveal"
@@ -39,11 +51,9 @@ export function AdventureWildlifeView() {
             <div className="heroInner">
               <h1>Adventure &amp; Wildlife</h1>
               <p className="impact-summary">
-                From marine wildlife encounters to forest trails and high-energy
-                activities, explore curated outdoor experiences across New
-                Zealand—each with a link to the operator or place, and a
-                suggested nearby PurePods glass eco-cabin stay when the region
-                lines up.
+                Plan whale watching, rafting, scenic flights and wildlife
+                encounters across New Zealand — then pair each day with nearby
+                PurePod stays in quiet natural settings.
               </p>
               <Link className="btnGhost" href="#about">
                 Read on
@@ -64,17 +74,69 @@ export function AdventureWildlifeView() {
             </section>
 
             <section
+              className="wrap aw-context-block adventure-reveal"
+              aria-labelledby="context-heading"
+            >
+              <h2 id="context-heading" className="aw-context-block__title">
+                {adventureContextHeading}
+              </h2>
+              <p className="aw-context-block__body">{adventureContextBody}</p>
+            </section>
+
+            <section
               id="experiences-carousel"
               className="aw-xp-band adventure-reveal"
               aria-labelledby="experiences-carousel-heading"
             >
-              <h2
-                id="experiences-carousel-heading"
-                className="visually-hidden"
-              >
-                Top New Zealand experiences near PurePods
-              </h2>
+              <div className="wrap aw-xp-section-head">
+                <h2
+                  id="experiences-carousel-heading"
+                  className="aw-xp-section-title"
+                >
+                  Curated wildlife and adventure experiences
+                </h2>
+              </div>
               <AdventureExperienceCarousel slides={adventureExperienceSlides} />
+            </section>
+
+            <section
+              className="faq aw-travel-faq adventure-reveal"
+              id="travel-faq"
+              aria-labelledby="travel-faq-heading"
+            >
+              <div className="wrap">
+                <div className="surface">
+                  <h2 id="travel-faq-heading" className="aw-travel-faq__title">
+                    Planning your trip
+                  </h2>
+                  <ul className="aw-travel-faq__list">
+                    {adventureGeoFaq.map((f) => (
+                      <li key={f.q}>
+                        <h3>{f.q}</h3>
+                        <p>{f.a}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section
+              className="aw-guest-perspective adventure-reveal"
+              aria-labelledby="guest-perspective-heading"
+            >
+              <div className="wrap">
+                <h2
+                  id="guest-perspective-heading"
+                  className="aw-guest-perspective__title"
+                >
+                  Guest perspective
+                </h2>
+                <p className="aw-guest-perspective__note">
+                  Selected verified guest reflections will appear in this space
+                  when available.
+                </p>
+              </div>
             </section>
 
             <section
@@ -144,8 +206,8 @@ export function AdventureWildlifeView() {
                     Find your PurePod
                   </a>
                   <p className="cta-support">
-                    Check booking availability, then align your preferred
-                    outdoor experience with a nearby PurePod stay.
+                    Check availability for your chosen PurePod, then match your
+                    itinerary to the experiences and regions that fit best.
                   </p>
                 </div>
               </div>

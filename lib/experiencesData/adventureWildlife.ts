@@ -7,7 +7,58 @@ export const adventureHero = {
 
 /** Short intro below the hero (replaces former long #about copy). */
 export const adventureIntroParagraph =
-  "From iconic wildlife encounters to remote, once-in-a-lifetime adventures, these experiences define what it means to explore New Zealand — each one paired with a nearby PurePod stay.";
+  "This page highlights iconic wildlife and adventure operators across New Zealand — each paired with nearby PurePod stays so you can plan bold days out and quiet nights in the landscape.";
+
+/** Editorial context above the experiences carousel (SEO / intent bridge). */
+export const adventureContextHeading =
+  "Where to stay for New Zealand wildlife and adventure experiences";
+
+export const adventureContextBody =
+  "If you're planning to experience whale watching in Kaikōura, volcanic landscapes near Rotorua, or remote wildlife encounters across New Zealand, where you stay matters as much as what you do. PurePods are placed in quiet natural settings near some of the country's most memorable experiences, making it easier to pair iconic days out with complete overnight stillness.";
+
+/** GEO- and intent-focused FAQ (schema uses this list exactly). */
+export const adventureGeoFaq: { q: string; a: string }[] = [
+  {
+    q: "What are the best wildlife experiences in New Zealand?",
+    a: "Some of New Zealand's best wildlife experiences include whale watching in Kaikōura, yellow-eyed penguin encounters in Akaroa, and remote wildlife trips around Stewart Island. These experiences stand out because they combine rare species, dramatic natural settings, and strong local guiding.",
+  },
+  {
+    q: "Where should I stay for whale watching in Kaikōura?",
+    a: "Kahutara and Manakau are two strong PurePods options for travellers planning whale watching in Kaikōura. Both offer a quieter overnight base within reach of the coast, making it easier to pair a marine wildlife experience with a more private stay in nature.",
+  },
+  {
+    q: "What is the best time of year for whale watching in Kaikōura?",
+    a: "Whale watching in Kaikōura is possible year-round, with sperm whales commonly seen in every season. Blue whales are more often spotted from November to March, while winter can bring especially dramatic conditions on the coast.",
+  },
+  {
+    q: "Are there good adventure experiences near Rotorua?",
+    a: "Yes, Rotorua is one of New Zealand's strongest regions for adventure experiences, especially rafting and volcanic scenic flights. Kaituna rafting and Mount Tarawera aerial experiences are two of the most memorable options within reach of a stay at Pāmu.",
+  },
+  {
+    q: "What makes a PurePod stay different from standard accommodation near these experiences?",
+    a: "A PurePod stay is designed to feel quiet, private and deeply connected to the landscape. Instead of staying in a busy town or generic motel, you return from the day's experience to an isolated glass cabin surrounded by nature.",
+  },
+  {
+    q: "Can you combine wildlife experiences with a remote nature stay in New Zealand?",
+    a: "Yes, that combination is exactly what makes this style of travel so memorable in New Zealand. Experiences such as whale watching, penguin encounters and scenic flights become even more distinctive when paired with a remote overnight stay in the landscape itself.",
+  },
+];
+
+/** FAQPage JSON-LD for `/experiences/adventure-wildlife` (GEO FAQ only). */
+export function adventureWildlifeFaqPageJsonLd(): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: adventureGeoFaq.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+}
 
 export type AdventureExperienceSlidePod = {
   label: string;
@@ -166,7 +217,7 @@ export const adventureRestClosingSlides: AdventureRestClosingSlide[] = [
 export const adventureFaq: { q: string; a: string }[] = [
   {
     q: "What does this Adventure & Wildlife page include?",
-    a: "A single curated carousel of iconic wildlife and adventure operators across New Zealand. Each slide links to the official experience, suggests nearby PurePod stays in the region, and notes typical drive time and seasonality as a planning hint only.",
+    a: "It brings together a single curated carousel of iconic wildlife and adventure operators across New Zealand. Each slide links to the official experience, suggests nearby PurePod stays in the region, and notes typical drive time and seasonality as a planning hint only.",
   },
   {
     q: "Should I confirm details with each operator before I travel?",

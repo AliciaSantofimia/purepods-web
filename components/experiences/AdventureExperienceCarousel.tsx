@@ -49,7 +49,12 @@ export function AdventureExperienceCarousel({ slides }: Props) {
   const metaLine = `${active.distance} · ${active.timing}`;
 
   return (
-    <div className="aw-xp-carousel">
+    <div
+      className="aw-xp-carousel"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Curated wildlife and adventure experiences"
+    >
       <div
         className="aw-xp-carousel__stage"
         onMouseEnter={() => setPaused(true)}
