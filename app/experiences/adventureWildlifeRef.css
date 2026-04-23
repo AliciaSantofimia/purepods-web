@@ -36,9 +36,63 @@
 
 .experience-ref.adventure-wildlife-ref .hero img {
 
-  object-position: 50% 28%;
+  object-position: 75% center;
 
   transform: scale(1);
+
+}
+
+/* Hero: cinematic LTR veil — strong left for copy, opens toward whale / sky */
+
+.experience-ref.adventure-wildlife-ref .hero:not(.hero--plain)::after {
+
+  background: linear-gradient(
+
+    to right,
+
+    rgba(0, 0, 0, 0.65) 0%,
+
+    rgba(0, 0, 0, 0.45) 25%,
+
+    rgba(0, 0, 0, 0.15) 50%,
+
+    rgba(0, 0, 0, 0.05) 65%,
+
+    transparent 80%
+
+  );
+
+}
+
+.experience-ref.adventure-wildlife-ref .hero .heroInner {
+
+  max-width: 1040px;
+
+  padding: 46px 26px 42px 18px;
+
+  margin: clamp(-10px, -0.85vh, -18px) auto clamp(16px, 2.4vh, 32px)
+
+    clamp(-12px, -1.35vw, -24px);
+
+}
+
+.experience-ref.adventure-wildlife-ref .hero h1 {
+
+  max-width: 18ch;
+
+  margin-bottom: 16px;
+
+  font-size: clamp(33px, 5.15vw, 44px);
+
+  line-height: 1.07;
+
+}
+
+.experience-ref.adventure-wildlife-ref .hero .impact-summary {
+
+  margin-top: 14px;
+
+  max-width: min(54ch, calc(100% - 8px));
 
 }
 

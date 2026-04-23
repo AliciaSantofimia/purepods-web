@@ -53,8 +53,9 @@ export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
     description:
       "Curated marine wildlife, nature and adventure experiences across New Zealand—each with official visitor links and suggested nearby PurePods glass eco-cabin stays.",
     heroSrc:
-      "/assets/img/experiences/adventure-wildlife/new-zealand-dolphin-kayak-wildlife-experience-coastal-adventure.png",
-    heroAlt: "Kayakers near a waterfall in New Zealand",
+      "/assets/img/experiences/adventure-wildlife/kaikoura-whale-tail-sunset-new-zealand-wildlife-experience.jpg",
+    heroAlt:
+      "Whale tail at sunset off the Kaikōura coast, New Zealand, a dramatic wildlife experience in the open ocean",
   },
   "wine-dine": {
     kicker: "Wine & dine",

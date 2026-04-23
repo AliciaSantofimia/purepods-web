@@ -1,9 +1,8 @@
 const B = "/assets/img/experiences/adventure-wildlife/";
 
 export const adventureHero = {
-  src: `${B}new-zealand-dolphin-kayak-wildlife-experience-coastal-adventure.png`,
-  alt: "Dolphin jumping near a kayak during a wildlife sea kayaking experience in New Zealand",
-  objectPosition: "center" as const,
+  src: `${B}kaikoura-whale-tail-sunset-new-zealand-wildlife-experience.jpg`,
+  alt: "Whale tail at sunset off the Kaikōura coast, New Zealand, a dramatic wildlife experience in the open ocean",
 };
 
 /** Short intro below the hero (replaces former long #about copy). */
