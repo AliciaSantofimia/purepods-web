@@ -880,6 +880,190 @@
 
 }
 
+/* Decision shortcuts — after “When the day unfolds”, before guest experiences */
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts {
+
+  max-width: min(70ch, 100%);
+
+  margin: 0 auto;
+
+  padding: clamp(14px, 2.2vw, 32px) 0 clamp(12px, 2vw, 22px);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts > .aw-context-block__title {
+
+  margin-bottom: clamp(6px, 1.2vw, 10px);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__intro {
+
+  margin-bottom: clamp(12px, 1.8vw, 20px);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__list {
+
+  list-style: none;
+
+  margin: 0;
+
+  padding: 0;
+
+  display: grid;
+
+  gap: clamp(12px, 1.8vw, 18px);
+
+}
+
+@media (min-width: 720px) {
+
+  .experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__list {
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: clamp(20px, 3vw, 36px);
+
+    row-gap: clamp(16px, 2.2vw, 22px);
+
+  }
+
+}
+
+@media (max-width: 719px) {
+
+  .experience-ref.adventure-wildlife-ref .aw-stay-shortcuts {
+
+    padding: clamp(10px, 2vw, 16px) 0 clamp(8px, 1.6vw, 14px);
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .aw-stay-shortcuts > .aw-context-block__title {
+
+    margin-bottom: clamp(4px, 1vw, 7px);
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__intro {
+
+    margin-bottom: clamp(8px, 1.4vw, 14px);
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__list {
+
+    gap: clamp(8px, 1.4vw, 12px);
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__link {
+
+    gap: 0.15rem;
+
+    padding: 0.05rem 0;
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__label {
+
+    line-height: 1.22;
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__detail {
+
+    line-height: 1.42;
+
+    font-size: clamp(13px, 1.05vw, 15px);
+
+  }
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__item {
+
+  margin: 0;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__link {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 0.25rem;
+
+  padding: 0.1rem 0;
+
+  text-decoration: none;
+
+  color: inherit;
+
+  cursor: pointer;
+
+  transition: opacity 0.15s ease;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__link:hover {
+
+  opacity: 0.8;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__link:focus-visible {
+
+  outline: 2px solid rgba(92, 95, 62, 0.3);
+
+  outline-offset: 3px;
+
+  border-radius: 2px;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__label {
+
+  font-size: clamp(15px, 1.25vw, 17px);
+
+  font-weight: 600;
+
+  letter-spacing: -0.01em;
+
+  line-height: 1.28;
+
+  color: var(--ink);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__label::after {
+
+  content: " →";
+
+  font-weight: 500;
+
+  opacity: 0.38;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__detail {
+
+  font-size: clamp(14px, 1.15vw, 16px);
+
+  font-weight: 400;
+
+  line-height: 1.52;
+
+  letter-spacing: -0.01em;
+
+  color: var(--muted);
+
+}
+
 .experience-ref.adventure-wildlife-ref .aw-guest-experiences {
 
   padding: clamp(28px, 4vw, 48px) 0 clamp(20px, 3vw, 36px);
