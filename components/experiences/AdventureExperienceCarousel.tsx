@@ -110,7 +110,7 @@ export function AdventureExperienceCarousel({ slides }: Props) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            View experience
+            Explore this experience
           </a>
         </div>
       </div>

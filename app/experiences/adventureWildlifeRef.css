@@ -1756,6 +1756,38 @@
 
   }
 
+
+
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__stage:hover .aw-xp-carousel__overlay {
+
+    background:
+
+      linear-gradient(to top, rgba(14, 16, 12, 0.72) 0%, rgba(18, 20, 14, 0.32) 48%, rgba(14, 16, 12, 0.08) 100%),
+
+      linear-gradient(to right, rgba(12, 14, 10, 0.38) 0%, transparent 52%);
+
+  }
+
+
+
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__cta:hover {
+
+    background: rgba(247, 246, 243, 0.28);
+
+    border-color: rgba(247, 246, 243, 0.58);
+
+    color: #fdfcfa;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+
+      0 3px 18px rgba(6, 8, 5, 0.28),
+
+      0 1px 0 rgba(255, 255, 255, 0.06) inset;
+
+  }
+
 }
 
 
@@ -1769,6 +1801,8 @@
   z-index: 2;
 
   pointer-events: none;
+
+  transition: background 0.5s ease;
 
   background:
 
@@ -1970,29 +2004,33 @@
 
   font-size: 13px;
 
-  font-weight: 600;
+  font-weight: 700;
 
   letter-spacing: 0.02em;
 
-  color: rgba(247, 244, 236, 0.96);
-
-  border: 1px solid rgba(247, 246, 243, 0.28);
-
-  background: rgba(247, 246, 243, 0.08);
-
-  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-
-}
-
-
-
-.experience-ref.adventure-wildlife-ref .aw-xp-carousel__cta:hover {
-
-  background: rgba(247, 246, 243, 0.14);
-
-  border-color: rgba(194, 181, 158, 0.4);
+  cursor: pointer;
 
   color: #fdfcfa;
+
+  border: 1px solid rgba(247, 246, 243, 0.42);
+
+  background: rgba(247, 246, 243, 0.19);
+
+  text-shadow: 0 1px 3px rgba(6, 8, 5, 0.45);
+
+  box-shadow: 0 2px 14px rgba(6, 8, 5, 0.22);
+
+  transition:
+
+    background 0.25s ease,
+
+    border-color 0.25s ease,
+
+    color 0.25s ease,
+
+    transform 0.25s ease,
+
+    box-shadow 0.25s ease;
 
 }
 
@@ -2197,6 +2235,22 @@
 
 
   .experience-ref.adventure-wildlife-ref .aw-xp-carousel__stage:hover .aw-xp-carousel__slide.is-active .aw-xp-carousel__img {
+
+    transform: none !important;
+
+  }
+
+
+
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__overlay {
+
+    transition: none;
+
+  }
+
+
+
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__cta:hover {
 
     transform: none !important;
 
