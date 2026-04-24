@@ -30,6 +30,12 @@
 
 }
 
+.experience-ref.adventure-wildlife-ref #context-heading {
+
+  scroll-margin-top: calc(var(--aw-sticky-anchor-offset) + 0.5rem);
+
+}
+
 
 
 .experience-ref.adventure-wildlife-ref .hero .heroImg,
@@ -760,43 +766,25 @@
 
 }
 
-/* Intro below hero */
-
-.experience-ref.adventure-wildlife-ref .aw-xp-intro {
-
-  margin: 0 auto;
-
-  max-width: 62ch;
-
-  color: var(--muted);
-
-  line-height: 1.68;
-
-  font-size: clamp(15px, 1.25vw, 17px);
-
-  letter-spacing: -0.01em;
-
-}
-
-
-
-.experience-ref.adventure-wildlife-ref #about.wrap {
-
-  padding-top: clamp(36px, 5vw, 56px);
-
-  padding-bottom: clamp(8px, 2vw, 16px);
-
-}
-
-/* Context bridge (intent + stays) — above carousel */
+/* Context bridge (intent + stays) — above carousel; first block after hero */
 
 .experience-ref.adventure-wildlife-ref .aw-context-block {
 
+  max-width: min(52rem, 100%);
+
+  margin-left: auto;
+
+  margin-right: auto;
+
   padding-top: clamp(12px, 2.5vw, 28px);
 
-  padding-bottom: clamp(8px, 2vw, 24px);
+  padding-bottom: clamp(6px, 1.4vw, 16px);
 
-  max-width: min(70ch, 100%);
+}
+
+.experience-ref.adventure-wildlife-ref main > .aw-context-block.adventure-reveal:first-of-type {
+
+  padding-top: clamp(22px, 3.5vw, 44px);
 
 }
 
@@ -836,7 +824,7 @@
 
   margin: 0 auto;
 
-  padding: 0 0 clamp(12px, 2vw, 22px);
+  padding: 0 0 clamp(4px, 0.85vw, 10px);
 
 }
 
@@ -860,7 +848,7 @@
 
 .experience-ref.adventure-wildlife-ref .aw-xp-section-head .aw-xp-section-headIntro {
 
-  margin-top: clamp(12px, 2vw, 20px);
+  margin-top: clamp(10px, 1.5vw, 16px);
 
 }
 
@@ -1588,7 +1576,7 @@
 
 .experience-ref.adventure-wildlife-ref .aw-xp-band {
 
-  padding: clamp(28px, 4vw, 48px) 0 clamp(52px, 7vw, 80px);
+  padding: clamp(20px, 2.8vw, 36px) 0 clamp(40px, 5.5vw, 64px);
 
 }
 

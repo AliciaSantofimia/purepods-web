@@ -11,7 +11,6 @@ import {
   adventureExperienceSlides,
   adventureFaq,
   adventureHero,
-  adventureIntroParagraph,
   adventureRestClosingSlides,
   adventureWildlifeFaqPageJsonLd,
 } from "@/lib/experiencesData/adventureWildlife";
@@ -77,24 +76,13 @@ export function AdventureWildlifeView() {
                 encounters across New Zealand — then pair each day with nearby
                 PurePod stays in quiet natural settings.
               </p>
-              <Link className="btnGhost" href="#about">
+              <Link className="btnGhost" href="#context-heading">
                 Read on
               </Link>
             </div>
           </header>
 
           <main id="main">
-            <section
-              id="about"
-              className="wrap adventure-reveal"
-              aria-labelledby="about-heading"
-            >
-              <h2 id="about-heading" className="visually-hidden">
-                Introduction
-              </h2>
-              <p className="aw-xp-intro">{adventureIntroParagraph}</p>
-            </section>
-
             <section
               className="wrap aw-context-block adventure-reveal"
               aria-labelledby="context-heading"

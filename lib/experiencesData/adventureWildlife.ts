@@ -5,16 +5,11 @@ export const adventureHero = {
   alt: "Whale tail at sunset off the Kaikōura coast, New Zealand, a dramatic wildlife experience in the open ocean",
 };
 
-/** Short intro below the hero (replaces former long #about copy). */
-export const adventureIntroParagraph =
-  "This page highlights iconic wildlife and adventure operators across New Zealand — each paired with nearby PurePod stays so you can plan bold days out and quiet nights in the landscape.";
-
 /** Editorial context above the experiences carousel (SEO / intent bridge). */
-export const adventureContextHeading =
-  "Where to stay for New Zealand wildlife and adventure experiences";
+export const adventureContextHeading = "Where to stay for these experiences";
 
 export const adventureContextBody =
-  "If you're planning to experience whale watching in Kaikōura, volcanic landscapes near Rotorua, or remote wildlife encounters across New Zealand, where you stay matters as much as what you do. PurePods are placed in quiet natural settings near some of the country's most memorable experiences, making it easier to pair iconic days out with complete overnight stillness.";
+  "Stay close to the experiences that matter most — each PurePod is placed in a quiet natural setting, within reach of New Zealand’s most memorable wildlife and adventure locations.";
 
 export type AdventureExperienceSlidePod = {
   label: string;
