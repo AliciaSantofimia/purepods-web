@@ -72,9 +72,9 @@ export function AdventureWildlifeView() {
             <div className="heroInner">
               <h1>Adventure &amp; Wildlife</h1>
               <p className="impact-summary">
-                Plan whale watching, rafting, scenic flights and wildlife
-                encounters across New Zealand — then pair each day with nearby
-                PurePod stays in quiet natural settings.
+                Days shaped by wildlife, water and open landscapes across New
+                Zealand — then nights in your PurePod, where remote glass cabins
+                settle you into stillness and the sound of the bush.
               </p>
               <Link className="btnGhost" href="#context-heading">
                 Read on
