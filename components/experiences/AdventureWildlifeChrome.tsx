@@ -232,7 +232,7 @@ export function AdventureWildlifeChrome({
       ),
     );
 
-  const bookHref = "https://purepods.com/booking/?cart=Checkout";
+  const bookHref = "https://purepods.com/booking/";
 
   return (
     <>
