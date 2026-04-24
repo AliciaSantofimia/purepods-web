@@ -27,6 +27,32 @@
   text-decoration: underline;
 }
 
+.brandLogoLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.brandLogoLink:hover {
+  opacity: 0.88;
+}
+
+.brandLogoLink:focus-visible {
+  outline: 2px solid rgba(92, 95, 62, 0.35);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.brandLogoImg {
+  width: auto;
+  height: clamp(22px, 5.5vw, 32px);
+  max-width: min(140px, 46vw);
+  object-fit: contain;
+}
+
 .nav {
   display: flex;
   justify-content: center;
@@ -68,6 +94,52 @@
   max-width: 22rem;
   padding-bottom: 1.1rem;
   border-bottom: 1px solid var(--stroke);
+}
+
+.social {
+  margin: 0 auto 1rem;
+}
+
+.socialLabel {
+  margin: 0 0 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  color: var(--brand-green);
+  line-height: 0;
+  opacity: 0.88;
+  transition: opacity 0.15s ease;
+}
+
+.socialLink:hover {
+  opacity: 1;
+}
+
+.socialIcon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.socialLink:focus-visible {
+  outline: 2px solid rgba(92, 95, 62, 0.35);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .subscribeHeadline {

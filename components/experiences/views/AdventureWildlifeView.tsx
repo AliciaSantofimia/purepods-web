@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Footer } from "@/components/layout/Footer";
 import { ExpRefImage } from "@/components/experiences/ExpRefImage";
 import { AdventureExperienceCarousel } from "@/components/experiences/AdventureExperienceCarousel";
 import { ExperienceRevealMotionRoot } from "@/components/experiences/ExperienceRevealMotionRoot";
@@ -20,6 +21,7 @@ export function AdventureWildlifeView() {
   const faqJsonLd = adventureWildlifeFaqPageJsonLd();
 
   return (
+    <>
     <div className="experience-ref adventure-wildlife-ref">
       <script
         type="application/ld+json"
@@ -95,6 +97,10 @@ export function AdventureWildlifeView() {
                 >
                   Curated wildlife and adventure experiences
                 </h2>
+                <p className="aw-context-block__body aw-xp-section-headIntro">
+                  A curated starting point for days shaped by wildlife,
+                  landscape and distance.
+                </p>
               </div>
               <AdventureExperienceCarousel slides={adventureExperienceSlides} />
             </section>
@@ -107,16 +113,18 @@ export function AdventureWildlifeView() {
               <div className="wrap adv-rest-closing__inner">
                 <header className="adv-rest-closing__head">
                   <p className="adv-rest-closing__eyebrow">
-                    When the day is done
+                    When the day unfolds
                   </p>
                   <h2 id="adv-rest-heading" className="adv-rest-closing__title">
-                    From active exploration to quiet overnight stay
+                    From wild encounters to complete stillness
                   </h2>
                   <p className="adv-rest-closing__lead">
-                    After landscapes, wildlife and adrenaline, the rhythm
-                    changes. PurePods are glass eco-cabins in remote settings —
-                    built for slowing down, sleeping deeply, and waking inside
-                    the view.
+                    Days here aren&apos;t packed — they&apos;re shaped.
+                    <br />
+                    <br />
+                    A morning on the ocean, an afternoon in geothermal silence,
+                    and a night where the only sound is the wind through the
+                    landscape.
                   </p>
                 </header>
 
@@ -131,6 +139,8 @@ export function AdventureWildlifeView() {
                 </div>
               </div>
             </section>
+
+            <AdventureWildlifeGuestExperiences />
 
             <section
               className="faq aw-faq-accordion"
@@ -169,7 +179,24 @@ export function AdventureWildlifeView() {
               </div>
             </section>
 
-            <AdventureWildlifeGuestExperiences />
+            <section
+              className="wrap aw-context-block aw-stay-closing adventure-reveal"
+              aria-labelledby="aw-stay-closing-heading"
+            >
+              <h2
+                id="aw-stay-closing-heading"
+                className="aw-context-block__title"
+              >
+                Stay somewhere that changes how you experience it all
+              </h2>
+              <p className="aw-context-block__body">
+                PurePods are placed to give you access to these moments — but
+                more importantly, to what comes after them.
+                <br />
+                <br />
+                Stillness. Space. And a deeper sense of place.
+              </p>
+            </section>
 
             <section
               className="cta adventure-reveal"
@@ -180,12 +207,7 @@ export function AdventureWildlifeView() {
                   <h2 id="cta-heading" className="eyebrow">
                     Adventure &amp; Wildlife
                   </h2>
-                  <a
-                    className="btn-primary"
-                    href="https://purepods.com/booking/?cart=Checkout"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a className="btn-primary" href="https://purepods.com/booking/">
                     Find your PurePod
                   </a>
                   <p className="cta-support">
@@ -199,5 +221,7 @@ export function AdventureWildlifeView() {
         </AdventureWildlifeChrome>
       </ExperienceRevealMotionRoot>
     </div>
+    <Footer brandLogo />
+    </>
   );
 }

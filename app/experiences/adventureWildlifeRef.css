@@ -858,6 +858,28 @@
 
 }
 
+.experience-ref.adventure-wildlife-ref .aw-xp-section-head .aw-xp-section-headIntro {
+
+  margin-top: clamp(12px, 2vw, 20px);
+
+}
+
+/* Closing narrative before CTA — tighter vertical rhythm */
+
+.experience-ref.adventure-wildlife-ref .aw-context-block.aw-stay-closing {
+
+  padding-top: clamp(8px, 1.2vw, 16px);
+
+  padding-bottom: clamp(4px, 0.8vw, 10px);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-closing .aw-context-block__title {
+
+  margin-bottom: clamp(6px, 1vw, 10px);
+
+}
+
 .experience-ref.adventure-wildlife-ref .aw-guest-experiences {
 
   padding: clamp(28px, 4vw, 48px) 0 clamp(20px, 3vw, 36px);

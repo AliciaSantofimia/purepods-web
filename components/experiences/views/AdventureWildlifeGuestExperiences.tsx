@@ -93,7 +93,7 @@ export function AdventureWildlifeGuestExperiences() {
                   className="aw-guest-experiences__link"
                   href={adventureGuestExperiencesExploreHref}
                 >
-                  Explore more guest experiences →
+                  Explore stays across New Zealand →
                 </Link>
               </p>
             </footer>

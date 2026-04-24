@@ -486,31 +486,6 @@ export function AdventureWildlifeChrome({
       )}
 
       {children}
-
-      <footer>
-        <div className="wrap foot">
-          <div className="foot-brand">
-            <Image
-              src="/assets/img/purepods-logo-new-zealand.jpg"
-              width={28}
-              height={28}
-              alt="PurePods New Zealand"
-            />
-            <div>
-              PurePods · <Link href="/">Home</Link> · <Link href="/pods">Pods</Link> ·{" "}
-              <Link href="/experiences">Experiences</Link> ·{" "}
-              <a
-                href="https://purepods.com/booking/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Book
-              </a>
-            </div>
-          </div>
-          <div>© PurePods</div>
-        </div>
-      </footer>
     </>
   );
 }

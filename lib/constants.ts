@@ -5,3 +5,7 @@
  */
 export const BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=16";
+
+/** Official profiles (aligned with docs/html-reference.md). */
+export const PUREPODS_INSTAGRAM_URL = "https://www.instagram.com/purepods";
+export const PUREPODS_FACEBOOK_URL = "https://www.facebook.com/purepods";
