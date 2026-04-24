@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BOOKING_URL } from "@/lib/constants";
+import { FooterSubscribe } from "@/components/layout/FooterSubscribe";
 import styles from "./Footer.module.css";
 
 export function Footer() {
@@ -16,6 +17,7 @@ export function Footer() {
             Book
           </a>
         </nav>
+        <FooterSubscribe />
         <p className={styles.copy}>
           Unique accommodation experiences in the natural landscapes of New
           Zealand.
