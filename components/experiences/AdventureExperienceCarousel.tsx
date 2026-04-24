@@ -98,6 +98,11 @@ export function AdventureExperienceCarousel({ slides }: Props) {
                 </Link>
               </Fragment>
             ))}
+            {active.nearbyRegion ? (
+              <span className="aw-xp-carousel__nearbyRegion">
+                {active.nearbyRegion}
+              </span>
+            ) : null}
           </p>
           <a
             className="aw-xp-carousel__cta"

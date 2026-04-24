@@ -27,99 +27,109 @@ export type AdventureExperienceSlide = {
   title: string;
   description: string;
   pods: AdventureExperienceSlidePod[];
+  /** First line in meta row (shown before middle dot). */
   distance: string;
+  /** Second line in meta row (shown after middle dot). */
   timing: string;
   url: string;
+  /** Plain text after pod links: " — Region, Island" (Adventure carousel only). */
+  nearbyRegion?: string;
 };
 
 export const adventureExperienceSlides: AdventureExperienceSlide[] = [
   {
-    image: `${B}kaikoura-whale-watch-sperm-whale-coast-new-zealand.jpg`,
-    alt: "Sperm whale surfacing off the Kaikōura coast with mountains behind, South Island, New Zealand",
-    title: "Whale Watch Kaikōura",
+    image: `${B}whale-watch-kaikoura-boat-whale-tail-experience-new-zealand.jpg`,
+    alt: "Whale tail from a Whale Watch Kaikōura boat trip, open ocean off the Kaikōura coast, South Island, New Zealand",
+    title: "Whale watching in Kaikōura",
     description:
-      "Drift above deep ocean canyons where sperm whales rise like slow islands, and the Kaikōura coast feels startlingly alive beneath you.",
+      "Out on the open ocean, sperm whales surface and dive against a backdrop of mountains. A rare chance to witness marine life at close range.",
     pods: [
-      { label: "Kahutara", href: "/location/kahutara" },
-      { label: "Manakau", href: "/location/manakau" },
+      { label: "Kahutara PurePod", href: "/location/kahutara" },
+      { label: "Manakau PurePod", href: "/location/manakau" },
     ],
-    distance: "~20 min drive",
-    timing: "best on calm sea days",
+    distance: "~60 min drive",
+    timing: "year-round sightings",
+    nearbyRegion: " — Kaikōura region, South Island",
     url: "https://whalewatch.co.nz/kia-ora/",
   },
   {
-    image: `${B}kaikoura-scenic-flight-whale-view-air-kaikoura-new-zealand-aerial.jpg`,
-    alt: "Aerial view of a whale and the Kaikōura coastline from a scenic flight, New Zealand",
-    title: "Wings Over Whales",
+    image: `${B}whale-watch-kaikoura-scenic-flight-whales-aerial-new-zealand.jpg`,
+    alt: "Whales and coastline seen from a scenic flight over the ocean, South Island, New Zealand",
+    title: "Aerial whale watching",
     description:
-      "Lift off where mountains plunge into the sea, then trace whales from above — a still, widescreen quiet you remember long after landing.",
+      "From above, the scale of the ocean becomes clear — whales, dolphins and shifting blues seen in complete silence.",
     pods: [
-      { label: "Kahutara", href: "/location/kahutara" },
-      { label: "Manakau", href: "/location/manakau" },
+      { label: "Kahutara PurePod", href: "/location/kahutara" },
+      { label: "Manakau PurePod", href: "/location/manakau" },
     ],
-    distance: "~20 min drive",
-    timing: "great in calm or overcast days",
+    distance: "~60 min drive",
+    timing: "best in clear weather",
+    nearbyRegion: " — Kaikōura region, South Island",
     url: "https://www.whales.co.nz/",
   },
   {
     image:
       "/assets/img/pamu/rotorua-volcanic-geothermal-valley-landscape-new-zealand..jpg",
     alt: "Steaming volcanic and geothermal terrain near Rotorua, North Island, New Zealand",
-    title: "White Island / Mt Tarawera",
+    title: "Volcanic landscapes by air",
     description:
-      "Fly over one of New Zealand’s most dramatic volcanic landscapes, before landing on the remote summit of Mount Tarawera.",
-    pods: [{ label: "Pāmu", href: "/location/pamu" }],
-    distance: "~10 min drive",
-    timing: "best on clear days",
+      "Fly over crater lakes and geothermal terrain shaped by eruption and time. Remote, dramatic and unlike anywhere else.",
+    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    distance: "~20–30 min drive",
+    timing: "weather dependent",
+    nearbyRegion: " — Rotorua region, North Island",
     url: "https://www.volcanicair.co.nz/home/helicopter-tours/white-island-flyover-and-mt-tarawera-landing/",
+  },
+  {
+    image: `${B}stewart-island-scenic-flight-aerial-view-new-zealand.jpg`,
+    alt: "Aerial view of Stewart Island / Rakiura coastline and horizon from a scenic flight, southern New Zealand",
+    title: "Stewart Island scenic flight",
+    description:
+      "Fly across remote coastline and open ocean to reach one of New Zealand’s most isolated landscapes. A quiet, expansive journey at the edge of the country.",
+    pods: [
+      { label: "Tokoeka PurePod", href: "/location/tokoeka" },
+      { label: "Hananui PurePod", href: "/location/hananui" },
+    ],
+    distance: "Weather dependent",
+    timing: "best in calm conditions",
+    nearbyRegion: " — Stewart Island / Rakiura",
+    url: "http://www.stewartislandflights.com/",
+  },
+  {
+    image: `${B}little-blue-penguin-korora-pohatu-akaroa-new-zealand.jpg`,
+    alt: "Little blue penguin (kororā) at Pōhatu Marine Reserve, Banks Peninsula, New Zealand",
+    title: "Little blue penguins at Pōhatu",
+    description:
+      "At dusk, kororā return quietly from the sea. Small groups, guided access and a strong focus on conservation make this deeply personal.",
+    pods: [{ label: "Pōhue PurePod", href: "/location/pohue" }],
+    distance: "~20 min drive",
+    timing: "best at dusk",
+    nearbyRegion: " — Banks Peninsula, South Island",
+    url: "https://www.pohatu.co.nz/",
   },
   {
     image: `${B}kaituna-cascades-rafting-rotorua-new-zealand-waterfall-rafting.jpg`,
     alt: "White-water rafting on the Kaituna River near Rotorua, approaching a forested waterfall drop, New Zealand",
-    title: "Kaituna Cascades Rafting",
+    title: "Kaituna River rafting",
     description:
-      "Hear the gorge before you see it, then hurtle through native forest toward the highest commercially rafted waterfall on Earth.",
-    pods: [{ label: "Pāmu", href: "/location/pamu" }],
-    distance: "~25 min drive",
-    timing: "great in fine or softly rainy days",
+      "A short, intense run through native forest and waterfalls, including one of the highest commercially rafted drops in the world.",
+    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    distance: "~15–20 min drive",
+    timing: "half-day experience",
+    nearbyRegion: " — Rotorua region, North Island",
     url: "https://kaitunacascades.co.nz/",
   },
   {
-    image: `${B}pohatu-penguins-akaroa-wildlife-sanctuary-new-zealand.jpg`,
-    alt: "Yellow-eyed penguins in coastal bush habitat at Pōhatu Marine Reserve, Banks Peninsula, New Zealand",
-    title: "Pōhatu Penguins",
-    description:
-      "Let dusk settle over Banks Peninsula as hoiho appear along quiet farmland coast — intimate, led by locals who guard this place fiercely.",
-    pods: [{ label: "Pōhue", href: "/location/pohue" }],
-    distance: "~60 min drive",
-    timing: "best on still, clear evenings",
-    url: "http://www.pohatu.co.nz/",
-  },
-  {
     image: "/assets/img/matu/waitomo-glowworm-cave-boat-ride.jpg",
-    alt: "Glowworm-lit limestone cave river inside the Waitomo cave system, Waikato, New Zealand",
-    title: "Waitomo Black Water Rafting",
+    alt: "Glowworm-lit limestone cavern on a Waitomo Glowworm Caves boat tour, Waikato, New Zealand",
+    title: "Waitomo Glowworm Caves",
     description:
-      "Lie back in cool river darkness until pinpricks of blue light bloom overhead — glowworms turning the cave into a drifting night sky.",
-    pods: [{ label: "Matū", href: "/location/matu" }],
-    distance: "~40–60 min drive",
-    timing: "best on dry, mild days",
-    url: "https://www.blackwaterrafting.co.nz/",
-  },
-  {
-    image:
-      "/assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg",
-    alt: "Aerial coastal view toward Stewart Island / Rakiura with bush, bays and open sea, southern New Zealand",
-    title: "Stewart Island Flights / Ulva Island",
-    description:
-      "Cross open swells toward Rakiura’s fringe of forest, then walk shorelines where kiwi call after dark and the mainland feels far away.",
-    pods: [
-      { label: "Tokoeka", href: "/location/tokoeka" },
-      { label: "Hananui", href: "/location/hananui" },
-    ],
-    distance: "~10 min drive",
-    timing: "best on clear days",
-    url: "http://www.stewartislandflights.com/",
+      "Drift through a dark cavern as thousands of glowworms light the ceiling above — a still, almost weightless experience.",
+    pods: [{ label: "Matū PurePod", href: "/location/matu" }],
+    distance: "~15 min drive",
+    timing: "guided boat experience",
+    nearbyRegion: " — Waitomo region, North Island",
+    url: "https://www.waitomo.com/glowworms-and-caves/waitomo-glowworm-caves?utm_source=google&utm_medium=GMB&utm_term=waitomoglowormcaves",
   },
 ];
 
