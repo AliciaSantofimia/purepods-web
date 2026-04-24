@@ -858,44 +858,6 @@
 
 }
 
-.experience-ref.adventure-wildlife-ref .aw-guest-perspective {
-
-  padding: clamp(20px, 3vw, 36px) 0;
-
-  border-top: 1px solid var(--stroke);
-
-}
-
-.experience-ref.adventure-wildlife-ref .aw-guest-perspective__title {
-
-  margin: 0 0 8px;
-
-  font-size: 11px;
-
-  font-weight: 600;
-
-  letter-spacing: 0.16em;
-
-  text-transform: uppercase;
-
-  color: var(--muted);
-
-}
-
-.experience-ref.adventure-wildlife-ref .aw-guest-perspective__note {
-
-  margin: 0;
-
-  max-width: 48ch;
-
-  font-size: 14px;
-
-  line-height: 1.55;
-
-  color: var(--muted);
-
-}
-
 .experience-ref.adventure-wildlife-ref .aw-guest-experiences {
 
   padding: clamp(28px, 4vw, 48px) 0 clamp(20px, 3vw, 36px);

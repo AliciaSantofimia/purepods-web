@@ -100,25 +100,6 @@ export function AdventureWildlifeView() {
             </section>
 
             <section
-              className="aw-guest-perspective adventure-reveal"
-              aria-labelledby="guest-perspective-heading"
-            >
-              <div className="wrap">
-                <h2
-                  id="guest-perspective-heading"
-                  className="aw-guest-perspective__title"
-                >
-                  Guest perspective
-                </h2>
-                <p className="aw-guest-perspective__note">
-                  Guests often describe these stays as a rare balance of wild
-                  nature and complete stillness — a way to experience New
-                  Zealand beyond the usual paths.
-                </p>
-              </div>
-            </section>
-
-            <section
               id="the-pod"
               className="adv-rest-closing adventure-reveal"
               aria-labelledby="adv-rest-heading"
