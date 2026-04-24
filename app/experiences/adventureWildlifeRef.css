@@ -1614,6 +1614,9 @@
 
   cursor: pointer;
 
+  /* Let horizontal drags reach pointer handlers; vertical scroll still works on the page. */
+  touch-action: pan-y;
+
 }
 
 

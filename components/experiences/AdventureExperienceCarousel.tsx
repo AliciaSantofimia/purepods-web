@@ -20,7 +20,7 @@ const INTERACTIVE_SELECTOR =
 
 const TAP_MOVE_PX = 12;
 
-const SWIPE_MIN_PX = 52;
+const SWIPE_MIN_PX = 40;
 
 /** Viewport breakpoint aligned with adventure-wildlife carousel CSS (mobile = swipe-first, no stage click-to-open). */
 const MOBILE_CAROUSEL_MQ = "(max-width: 720px)";
@@ -142,6 +142,16 @@ export function AdventureExperienceCarousel({ slides }: Props) {
     (e: ReactPointerEvent<HTMLDivElement>) => {
       const g = gestureRef.current;
       if (!g || g.pointerId !== e.pointerId) return;
+
+      const dx = e.clientX - g.x;
+      const dy = e.clientY - g.y;
+      const absDx = Math.abs(dx);
+      const absDy = Math.abs(dy);
+
+      /* Do not require g.moved: some touch stacks only deliver down+up on quick flicks. */
+      const isHorizontalSwipe =
+        absDx >= SWIPE_MIN_PX && absDx > absDy * 1.1;
+
       gestureRef.current = null;
       try {
         if (e.currentTarget.hasPointerCapture(e.pointerId)) {
@@ -151,18 +161,8 @@ export function AdventureExperienceCarousel({ slides }: Props) {
         /* releasePointerCapture can fail if not captured */
       }
 
-      if (isInteractiveTarget(e.target)) return;
-
-      const dx = e.clientX - g.x;
-      const dy = e.clientY - g.y;
-      const absDx = Math.abs(dx);
-      const absDy = Math.abs(dy);
-
-      if (
-        g.moved &&
-        absDx >= SWIPE_MIN_PX &&
-        absDx > absDy * 1.15
-      ) {
+      /* Swipe must not depend on pointerup target (finger often lifts over caption/CTA). */
+      if (isHorizontalSwipe) {
         scheduleUnblockStageClick();
         if (dx < 0) goNext();
         else goPrev();
