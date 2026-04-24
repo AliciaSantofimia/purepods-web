@@ -2265,6 +2265,16 @@
 
 
 
+/* Swipe hint — hidden on desktop; shown with carousel chrome on mobile */
+
+.experience-ref.adventure-wildlife-ref .aw-xp-carouselSwipeHint {
+
+  display: none;
+
+}
+
+
+
 @media (max-width: 720px) {
 
   .experience-ref.adventure-wildlife-ref .aw-xp-carousel__stage {
@@ -2279,9 +2289,11 @@
 
     flex-direction: column;
 
-    align-items: stretch;
+    align-items: center;
 
-    margin: clamp(16px, 2.2vw, 22px) auto clamp(8px, 1.4vw, 10px);
+    gap: 6px;
+
+    margin: clamp(14px, 2vw, 20px) auto clamp(4px, 1vw, 8px);
 
   }
 
@@ -2295,31 +2307,83 @@
 
 
 
-  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__dots {
-
-    display: none;
-
-  }
-
-
-
   .experience-ref.adventure-wildlife-ref .aw-xp-carousel__counter {
 
     text-align: center;
 
   }
 
-}
 
-/* Swipe hint — block below carousel nav; mobile only */
 
-.experience-ref.adventure-wildlife-ref .aw-xp-carouselSwipeHint {
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__dots {
 
-  display: none;
+    display: flex;
 
-}
+    flex-wrap: wrap;
 
-@media (max-width: 720px) {
+    justify-content: center;
+
+    flex: none;
+
+    width: 100%;
+
+    gap: 5px;
+
+    min-width: 0;
+
+    margin: 0;
+
+    padding: 0;
+
+  }
+
+
+
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__dot {
+
+    width: 5px;
+
+    height: 5px;
+
+    border-radius: 50%;
+
+    padding: 0;
+
+    border: 1px solid rgba(28, 32, 24, 0.1);
+
+    background: rgba(28, 32, 24, 0.08);
+
+    opacity: 0.38;
+
+    transform: none;
+
+    transition:
+
+      background 0.25s ease,
+
+      border-color 0.25s ease,
+
+      transform 0.25s ease,
+
+      opacity 0.25s ease;
+
+  }
+
+
+
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__dot.is-active {
+
+    background: rgba(92, 95, 62, 0.52);
+
+    border-color: rgba(92, 95, 62, 0.4);
+
+    opacity: 1;
+
+    transform: scale(1.22);
+
+  }
+
+
 
   .experience-ref.adventure-wildlife-ref .aw-xp-carouselSwipeHint {
 
@@ -2331,7 +2395,7 @@
 
     max-width: min(220px, 90vw);
 
-    margin: 8px auto 0;
+    margin: 2px auto 0;
 
     padding: 0;
 
