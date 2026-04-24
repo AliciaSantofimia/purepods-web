@@ -15,6 +15,7 @@ import {
   adventureRestClosingSlides,
   adventureWildlifeFaqPageJsonLd,
 } from "@/lib/experiencesData/adventureWildlife";
+import { AdventureWildlifeFaqAccordion } from "@/components/experiences/views/AdventureWildlifeFaqAccordion";
 import { AdventureWildlifeGuestExperiences } from "@/components/experiences/views/AdventureWildlifeGuestExperiences";
 
 export function AdventureWildlifeView() {
@@ -152,29 +153,9 @@ export function AdventureWildlifeView() {
                   <h2 id="faq-heading">Frequently asked questions</h2>
                   {/*
                     Native details/summary: every answer stays in the DOM on load;
-                    only presentation toggles. Matches FAQPage JSON-LD.
+                    only one open at a time (client accordion). Matches FAQPage JSON-LD.
                   */}
-                  <ul className="aw-faq-accordion__list">
-                    {adventureFaq.map((f, i) => (
-                      <li key={f.q} className="aw-faq-accordion__item">
-                        <details
-                          className="aw-faq-accordion__details"
-                          open={i === 0}
-                        >
-                          <summary className="aw-faq-accordion__summary">
-                            <h3 className="aw-faq-accordion__q">{f.q}</h3>
-                            <span
-                              className="aw-faq-accordion__chevron"
-                              aria-hidden="true"
-                            />
-                          </summary>
-                          <div className="aw-faq-accordion__answer">
-                            <p>{f.a}</p>
-                          </div>
-                        </details>
-                      </li>
-                    ))}
-                  </ul>
+                  <AdventureWildlifeFaqAccordion items={adventureFaq} />
                 </div>
               </div>
             </section>
