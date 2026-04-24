@@ -2226,6 +2226,8 @@
 
     align-items: stretch;
 
+    margin: clamp(16px, 2.2vw, 22px) auto clamp(8px, 1.4vw, 10px);
+
   }
 
 
@@ -2249,6 +2251,48 @@
   .experience-ref.adventure-wildlife-ref .aw-xp-carousel__counter {
 
     text-align: center;
+
+  }
+
+}
+
+/* Swipe hint — block below carousel nav; mobile only */
+
+.experience-ref.adventure-wildlife-ref .aw-xp-carouselSwipeHint {
+
+  display: none;
+
+}
+
+@media (max-width: 719px) {
+
+  .experience-ref.adventure-wildlife-ref .aw-xp-carouselSwipeHint {
+
+    display: block;
+
+    position: static;
+
+    box-sizing: border-box;
+
+    max-width: min(220px, 90vw);
+
+    margin: 8px auto 0;
+
+    padding: 0;
+
+    text-align: center;
+
+    font-size: clamp(10px, 2.6vw, 12px);
+
+    line-height: 1.35;
+
+    font-weight: 400;
+
+    letter-spacing: 0.045em;
+
+    color: var(--muted);
+
+    opacity: 0.55;
 
   }
 

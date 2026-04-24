@@ -123,6 +123,11 @@ export function AdventureWildlifeView() {
                 </p>
               </div>
               <AdventureExperienceCarousel slides={adventureExperienceSlides} />
+              <div className="wrap">
+                <p className="aw-xp-carouselSwipeHint">
+                  Swipe to explore
+                </p>
+              </div>
             </section>
 
             <section
