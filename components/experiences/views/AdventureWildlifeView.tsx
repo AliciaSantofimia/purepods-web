@@ -9,15 +9,12 @@ import {
   adventureContextHeading,
   adventureExperienceSlides,
   adventureFaq,
-  adventureGuestExperienceReviews,
-  adventureGuestExperiencesClosing,
-  adventureGuestExperiencesExploreHref,
-  adventureGuestExperiencesIntro,
   adventureHero,
   adventureIntroParagraph,
   adventureRestClosingSlides,
   adventureWildlifeFaqPageJsonLd,
 } from "@/lib/experiencesData/adventureWildlife";
+import { AdventureWildlifeGuestExperiences } from "@/components/experiences/views/AdventureWildlifeGuestExperiences";
 
 export function AdventureWildlifeView() {
   const faqJsonLd = adventureWildlifeFaqPageJsonLd();
@@ -191,58 +188,85 @@ export function AdventureWildlifeView() {
               </div>
             </section>
 
+            <AdventureWildlifeGuestExperiences />
+
             <section
-              className="aw-guest-experiences adventure-reveal"
-              aria-labelledby="guest-experiences-heading"
+              className="aw-social adventure-reveal"
+              aria-labelledby="aw-social-heading"
             >
-              <div className="wrap">
-                <header className="aw-guest-experiences__header">
-                  <h2
-                    id="guest-experiences-heading"
-                    className="aw-guest-experiences__headline"
+              <div className="wrap aw-social__inner">
+                <h2 id="aw-social-heading" className="aw-social__heading">
+                  Stay connected with PurePods
+                </h2>
+                <div className="aw-social__links">
+                  <a
+                    className="aw-social__link"
+                    href="https://www.instagram.com/purepods"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="PurePods Instagram"
                   >
-                    Guest experiences
-                  </h2>
-                  <p className="aw-guest-experiences__intro">
-                    {adventureGuestExperiencesIntro}
-                  </p>
-                </header>
-
-                <div className="aw-guest-experiences__grid">
-                  {adventureGuestExperienceReviews.map((r) => (
-                    <article
-                      key={`${r.guestName}-${r.podName}`}
-                      className="aw-guest-experiences__review"
+                    <svg
+                      className="aw-social__svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
                     >
-                      <blockquote className="aw-guest-experiences__blockquote">
-                        <p className="aw-guest-experiences__quote">{r.quote}</p>
-                      </blockquote>
-                      <p className="aw-guest-experiences__body">{r.body}</p>
-                      <footer className="aw-guest-experiences__attribution">
-                        <span className="aw-guest-experiences__guest">
-                          {r.guestName}
-                        </span>
-                        <span className="aw-guest-experiences__pod">
-                          {r.podName}
-                        </span>
-                      </footer>
-                    </article>
-                  ))}
+                      <rect
+                        fill="none"
+                        x="2.75"
+                        y="2.75"
+                        width="18.5"
+                        height="18.5"
+                        rx="5"
+                        ry="5"
+                        strokeWidth="1.35"
+                        stroke="currentColor"
+                      />
+                      <circle
+                        fill="none"
+                        cx="12"
+                        cy="12"
+                        r="4.25"
+                        strokeWidth="1.35"
+                        stroke="currentColor"
+                      />
+                      <circle
+                        fill="none"
+                        cx="17.5"
+                        cy="6.5"
+                        r="1.1"
+                        strokeWidth="1.35"
+                        stroke="currentColor"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    className="aw-social__link"
+                    href="https://www.facebook.com/purepods"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="PurePods Facebook"
+                  >
+                    <svg
+                      className="aw-social__svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill="none"
+                        d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                        strokeWidth="1.35"
+                        stroke="currentColor"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </a>
                 </div>
-
-                <footer className="aw-guest-experiences__footer">
-                  <p className="aw-guest-experiences__closing">
-                    {adventureGuestExperiencesClosing}
-                  </p>
-                  <p className="aw-guest-experiences__more">
-                    <Link
-                      className="aw-guest-experiences__link"
-                      href={adventureGuestExperiencesExploreHref}
-                    >
-                      Explore more guest experiences →
-                    </Link>
-                  </p>
-                </footer>
               </div>
             </section>
 
