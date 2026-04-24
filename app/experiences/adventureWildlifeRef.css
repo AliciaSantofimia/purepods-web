@@ -1612,6 +1612,8 @@
 
   background: #1a1c16;
 
+  cursor: pointer;
+
 }
 
 
@@ -2262,6 +2264,14 @@
 
 @media (max-width: 720px) {
 
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__stage {
+
+    cursor: default;
+
+  }
+
+
+
   .experience-ref.adventure-wildlife-ref .aw-xp-carousel__controls {
 
     flex-direction: column;
@@ -2274,17 +2284,17 @@
 
 
 
-  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__dots {
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__nav {
 
-    justify-content: center;
+    display: none;
 
   }
 
 
 
-  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__nav {
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__dots {
 
-    justify-content: center;
+    display: none;
 
   }
 
@@ -2306,7 +2316,7 @@
 
 }
 
-@media (max-width: 719px) {
+@media (max-width: 720px) {
 
   .experience-ref.adventure-wildlife-ref .aw-xp-carouselSwipeHint {
 
