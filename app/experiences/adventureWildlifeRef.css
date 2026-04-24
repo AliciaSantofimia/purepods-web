@@ -2930,3 +2930,55 @@
 
 }
 
+/* Final CTA — spacing & hierarchy (Adventure & Wildlife only) */
+
+.experience-ref.adventure-wildlife-ref .cta-panel > .eyebrow {
+
+  margin-bottom: 0;
+
+}
+
+.experience-ref.adventure-wildlife-ref .cta-panel > .eyebrow + .cta-support {
+
+  margin: clamp(8px, 1.6vw, 10px) 0 clamp(16px, 2.4vw, 20px);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  color: var(--muted);
+
+  opacity: 0.9;
+
+}
+
+.experience-ref.adventure-wildlife-ref .cta-panel > .btn-primary {
+
+  display: inline-block;
+
+  vertical-align: middle;
+
+}
+
+.experience-ref.adventure-wildlife-ref .cta-panel > .btn-primary + .cta-support {
+
+  margin: clamp(12px, 1.6vw, 14px) 0 0;
+
+}
+
+@media (max-width: 640px) {
+
+  .experience-ref.adventure-wildlife-ref .cta-panel > .eyebrow + .cta-support {
+
+    margin: clamp(8px, 2vw, 10px) 0 clamp(18px, 4.5vw, 22px);
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .cta-panel > .btn-primary + .cta-support {
+
+    margin: clamp(12px, 2.5vw, 15px) 0 0;
+
+  }
+
+}
+

@@ -242,12 +242,14 @@ export function AdventureWildlifeView() {
                   <h2 id="cta-heading" className="eyebrow">
                     Adventure &amp; Wildlife
                   </h2>
+                  <p className="cta-support">
+                    Check real-time availability across all PurePods.
+                  </p>
                   <a className="btn-primary" href="https://purepods.com/booking/">
-                    Find your PurePod
+                    Check availability
                   </a>
                   <p className="cta-support">
-                    Check availability for your chosen PurePod, then match your
-                    itinerary to the experiences and regions that fit best.
+                    Choose your PurePod and plan your stay around it.
                   </p>
                 </div>
               </div>
