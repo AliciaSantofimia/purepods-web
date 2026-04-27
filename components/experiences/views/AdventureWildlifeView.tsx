@@ -70,7 +70,7 @@ export function AdventureWildlifeView() {
               priority
             />
             <div className="heroInner">
-              <h1>Adventure &amp; Wildlife</h1>
+              <h1>Adventure &amp; Wildlife Experiences in New Zealand</h1>
               <p className="impact-summary">
                 Days shaped by wildlife, water and open landscapes across New
                 Zealand — then nights in your PurePod, where remote glass cabins

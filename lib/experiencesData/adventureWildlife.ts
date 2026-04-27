@@ -34,7 +34,7 @@ export type AdventureExperienceSlide = {
 export const adventureExperienceSlides: AdventureExperienceSlide[] = [
   {
     image: `${B}whale-watch-kaikoura-boat-whale-tail-experience-new-zealand.jpg`,
-    alt: "Whale tail from a Whale Watch Kaikōura boat trip, open ocean off the Kaikōura coast, South Island, New Zealand",
+    alt: "Whale Watch Kaikōura boat with sperm whale tail off the Kaikōura coast, New Zealand",
     title: "Whale watching in Kaikōura",
     description:
       "Out on the open ocean, sperm whales surface and dive against a backdrop of mountains. A rare chance to witness marine life at close range.",
@@ -49,7 +49,7 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
   },
   {
     image: `${B}whale-watch-kaikoura-scenic-flight-whales-aerial-new-zealand.jpg`,
-    alt: "Whales and coastline seen from a scenic flight over the ocean, South Island, New Zealand",
+    alt: "Aerial whale watching flight over whales in the ocean near Kaikōura, New Zealand",
     title: "Aerial whale watching",
     description:
       "From above, the scale of the ocean becomes clear — whales, dolphins and shifting blues seen in complete silence.",
@@ -65,7 +65,7 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
   {
     image:
       "/assets/img/pamu/rotorua-volcanic-geothermal-valley-landscape-new-zealand..jpg",
-    alt: "Steaming volcanic and geothermal terrain near Rotorua, North Island, New Zealand",
+    alt: "Volcanic landscape flyover with geothermal steam near Rotorua, New Zealand",
     title: "Volcanic landscapes by air",
     description:
       "Fly over crater lakes and geothermal terrain shaped by eruption and time. Remote, dramatic and unlike anywhere else.",
@@ -77,7 +77,7 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
   },
   {
     image: `${B}stewart-island-scenic-flight-aerial-view-new-zealand.jpg`,
-    alt: "Aerial view of Stewart Island / Rakiura coastline and horizon from a scenic flight, southern New Zealand",
+    alt: "Stewart Island scenic flight over coastline and blue bays in Rakiura, New Zealand",
     title: "Stewart Island scenic flight",
     description:
       "Fly across remote coastline and open ocean to reach one of New Zealand’s most isolated landscapes. A quiet, expansive journey at the edge of the country.",
@@ -92,7 +92,7 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
   },
   {
     image: `${B}little-blue-penguin-korora-pohatu-akaroa-new-zealand.jpg`,
-    alt: "Little blue penguin (kororā) at Pōhatu Marine Reserve, Banks Peninsula, New Zealand",
+    alt: "Little blue penguin kororā among rocks at Pōhatu, Banks Peninsula, New Zealand",
     title: "Little blue penguins at Pōhatu",
     description:
       "At dusk, kororā return quietly from the sea. Small groups, guided access and a strong focus on conservation make this deeply personal.",
@@ -104,7 +104,7 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
   },
   {
     image: `${B}kaituna-cascades-rafting-rotorua-new-zealand-waterfall-rafting.jpg`,
-    alt: "White-water rafting on the Kaituna River near Rotorua, approaching a forested waterfall drop, New Zealand",
+    alt: "Kaituna River rafting through native forest and waterfalls near Rotorua, New Zealand",
     title: "Kaituna River rafting",
     description:
       "A short, intense run through native forest and waterfalls, including one of the highest commercially rafted drops in the world.",
@@ -116,7 +116,7 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
   },
   {
     image: "/assets/img/matu/waitomo-glowworm-cave-boat-ride.jpg",
-    alt: "Glowworm-lit limestone cavern on a Waitomo Glowworm Caves boat tour, Waikato, New Zealand",
+    alt: "Boat tour under glowworms inside Waitomo Glowworm Caves, New Zealand",
     title: "Waitomo Glowworm Caves",
     description:
       "Drift through a dark cavern as thousands of glowworms light the ceiling above — a still, almost weightless experience.",
