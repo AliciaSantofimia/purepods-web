@@ -923,6 +923,61 @@
   }
 }
 
+@media (max-width: 720px) {
+  .night-falls-ref .moonPanel {
+    padding: 12px;
+  }
+
+  .night-falls-ref .moonTable {
+    gap: 8px;
+  }
+
+  .night-falls-ref .moonRow {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "month date"
+      "description description"
+      "action action";
+    align-items: start;
+    gap: 6px 12px;
+    padding: 12px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(17, 18, 23, 0.04);
+  }
+
+  .night-falls-ref .moonRow > div:nth-child(1) {
+    grid-area: month;
+    min-width: 0;
+    font-size: 14px;
+    line-height: 1.25;
+  }
+
+  .night-falls-ref .moonRow > div:nth-child(2) {
+    grid-area: date;
+    justify-self: end;
+    text-align: right;
+    font-size: 14px;
+    line-height: 1.25;
+    white-space: nowrap;
+  }
+
+  .night-falls-ref .moonRow > div:nth-child(3) {
+    grid-area: description;
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+
+  .night-falls-ref .moonRow > div:nth-child(4) {
+    grid-area: action;
+    justify-self: end;
+  }
+
+  .night-falls-ref .moonBook {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
 @media (min-width: 920px) {
   .night-falls-ref .stickyCta {
     position: static;
