@@ -15,8 +15,8 @@ import { Container } from "@/components/ui";
 import styles from "@/app/location/locationLayout.module.css";
 
 const heroImage = "/assets/img/kiromako/kiromako-purepod-remote-glass-cabin-nature-new-zealand.jpg";
-const podAerial = "/assets/img/kiromako/kiromako-purepod-aerial-coastal-landscape-new-zealand.jpg";
-const podShower = "/assets/img/kiromako/kiromako-purepod-shower-sunset-view-new-zealand.jpg";
+const podAerial = "/assets/img/kiromako/korimako-purepod-glass-cabin-exterior-coastal-view-new-zealand.jpg";
+const podShower = "/assets/img/kiromako/korimako-purepod-glass-cabin-aerial-top-view-solar-panels-new-zealand.jpg";
 const podBed = "/assets/img/kiromako/kiromako-purepod-glass-cabin-interior-bed-new-zealand.jpg";
 const expGully = "/assets/img/kiromako/kiromako-experience-cathedral-gully-coastal-landscape-new-zealand.jpg";
 const expWine = "/assets/img/kiromako/kiromako-experience-waipara-valley-wine-tasting-new-zealand.jpg";
@@ -177,7 +177,7 @@ export function PodView() {
           title="Korimako"
           subtitle={HERO_SUBTITLE}
           imageSrc={heroImage}
-          imageAlt="Korimako PurePod glass cabin in the Hurunui landscape, New Zealand"
+          imageAlt="Korimako PurePod glass cabin in the Hurunui landscape, New Zealand"
         />
         <Container as="div" className={styles.locationContent}>
           <PodSection
@@ -190,13 +190,13 @@ export function PodView() {
             gallery={[
               {
                 src: podAerial,
-                alt: "Aerial view of Korimako PurePod in the Hurunui landscape, New Zealand",
-                position: "50% 55%",
+                alt: "Korimako PurePod glass cabin exterior with coastal view, Hurunui, New Zealand",
+                position: "left 52%",
                 big: true,
               },
               {
                 src: podShower,
-                alt: "Sunset view from Korimako PurePod, Hurunui, New Zealand",
+                alt: "Aerial top view of Korimako PurePod glass cabin with solar panels, Hurunui, New Zealand",
                 position: "50% 60%",
                 fillGap: true,
               },

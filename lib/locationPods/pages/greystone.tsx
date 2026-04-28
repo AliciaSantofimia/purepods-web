@@ -14,10 +14,10 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui";
 import styles from "@/app/location/locationLayout.module.css";
 
-const heroImage = "/assets/img/greystone/greystone-purepod-aerial-vineyard-landscape-waipara.jpg";
-const podAerial = "/assets/img/greystone/greystone-purepod-aerial-view-waipara.jpg";
+const heroImage = "/assets/img/greystone/greystone-purepod-glass-cabin-exterior-mountain-landscape-daylight-new-zealand.jpg";
+const podAerial = "/assets/img/greystone/greystone-purepod-bedroom-interior-valley-view-waipara-new-zealand.jpg";
 const podExterior = "/assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg";
-const podBedroom = "/assets/img/greystone/greystone-purepod-bedroom-interior-waipara.jpg";
+const podBedroom = "/assets/img/greystone/greystone-purepod-glass-cabin-exterior-sunset-valley-view-new-zealand.jpg";
 const expWine = "/assets/img/greystone/greystone-wine-dinner-experience-waipara.jpg";
 const expSculpture = "/assets/img/greystone/waipara-iron-ridge-sculpture-park-landscape.jpg";
 const expTrail = "/assets/img/greystone/waipara-vineyard-walking-trail.jpg";
@@ -211,9 +211,9 @@ export function PodView() {
             ]}
             gallery={[
               {
-                src: podAerial,
-                alt: "Greystone PurePod aerial view surrounded by Waipara countryside",
-                position: "50% 55%",
+                src: podBedroom,
+                alt: "Greystone PurePod glass cabin exterior at sunset, Waipara Valley, New Zealand",
+                position: "50% 58%",
                 big: true,
               },
               {
@@ -223,9 +223,9 @@ export function PodView() {
                 fillGap: true,
               },
               {
-                src: podBedroom,
-                alt: "Greystone PurePod bedroom interior with glass walls in Waipara Valley, New Zealand",
-                position: "50% 45%",
+                src: podAerial,
+                alt: "Greystone PurePod bedroom interior with Waipara Valley view through glass walls, New Zealand",
+                position: "center 50%",
                 tall: true,
               },
             ]}

@@ -17,7 +17,9 @@ import styles from "@/app/location/locationLayout.module.css";
 /* Hananui images — assets/img/hananui */
 const heroImage = "/assets/img/hananui/hananui-purepod-exterior-forest-view-stewart-island.jpg";
 const podAerial = "/assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg";
-const podUnderStars = "/assets/img/hananui/hananui-purepod-under-stars-stewart-island-new-zealand.jpg";
+const podUnderStars = `/assets/img/hananui/${encodeURIComponent(
+  "PurePod Hananui outdoor deck with ocean views and private seating New Zealand.jpg",
+)}`;
 const podSeaView = "/assets/img/hananui/hananui-purepod-sea-view-glass-pod-stewart-island.jpg";
 const expUlva = "/assets/img/hananui/stewart-island-native-bird-wildlife.jpg";
 const expMason = "/assets/img/hananui/stewart-island-tokoeka-kiwi-wildlife.jpg";
@@ -207,8 +209,8 @@ export function PodView() {
               },
               {
                 src: podUnderStars,
-                alt: "PurePod Hananui illuminated at night under a star-filled sky on Stewart Island, New Zealand",
-                position: "50% 50%",
+                alt: "PurePod Hananui outdoor deck with ocean views and private seating, Stewart Island, New Zealand",
+                position: "center 52%",
                 fillGap: true,
               },
               {

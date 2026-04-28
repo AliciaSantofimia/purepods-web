@@ -17,7 +17,9 @@ import styles from "@/app/location/locationLayout.module.css";
 /* Tāima images — from assets/img/taima only */
 const heroImage = "/assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg";
 const podExterior = "/assets/img/taima/taima-purepod-exterior-landscape-central-otago.png";
-const podMilkyWay = "/assets/img/taima/pohue-purepod-milky-way-night-sky-new-zealand.jpg";
+const podMilkyWay = `/assets/img/taima/${encodeURIComponent(
+  "PurePod Tāima outdoor deck sunset with mountain views and private seating New Zealand.jpg",
+)}`;
 const podEveningReflections =
   "/assets/img/taima/Tāima PurePod evening reflections _ photo credit Paul Wilson.jpg";
 const expSluicings = "/assets/img/taima/central-otago-rocky-canyon-hiking-trail.jpg";
@@ -209,8 +211,8 @@ export function PodView() {
               },
               {
                 src: podMilkyWay,
-                alt: "Night sky over PurePod Tāima, Central Otago, New Zealand",
-                position: "50% 58%",
+                alt: "PurePod Tāima outdoor deck at sunset with mountain views and private seating, Central Otago, New Zealand",
+                position: "center 52%",
                 fillGap: true,
               },
               {

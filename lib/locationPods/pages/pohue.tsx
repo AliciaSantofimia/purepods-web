@@ -16,9 +16,15 @@ import styles from "@/app/location/locationLayout.module.css";
 
 /* Pōhue images — from assets/img/pohue */
 const heroImage = "/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg";
-const podCoastalHills = "/assets/img/pohue/pohue-coastal-hills-cabin-view-new-zealand.jpg";
-const podBedroom = "/assets/img/pohue/pohue-purepod-bedroom-view-coastal-landscape-new-zealand.png";
-const podGlassCabin = "/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg";
+const podCoastalHills = `/assets/img/pohue/${encodeURIComponent(
+  "PurePod Pōhue interior with glass floor and panoramic mountain views New Zealand.jpg",
+)}`;
+const podBedroom = `/assets/img/pohue/${encodeURIComponent(
+  "PurePod Pōhue glass cabin bedroom with mountain landscape views New Zealand.jpg",
+)}`;
+const podGlassCabin = `/assets/img/pohue/${encodeURIComponent(
+  "Mountain and lake views from PurePod Pōhue location in Banks Peninsula New Zealand.jpg",
+)}`;
 const expPenguins = "/assets/img/pohue/pohue-blue-penguins-wildlife-new-zealand.jpg";
 const expVolcanicHills = "/assets/img/pohue/pohue-coastal-hills-cabin-view-new-zealand.jpg";
 const expOhinetahi = "/assets/img/pohue/pohue-greystone-gardens-north-canterbury-new-zealand.jpg";
@@ -197,20 +203,20 @@ export function PodView() {
             gallery={[
               {
                 src: podCoastalHills,
-                alt: "Wide coastal and hillside views from Pōhue PurePod above Port Levy on Banks Peninsula, New Zealand",
-                position: "50% 60%",
+                alt: "Pōhue PurePod interior with glass floor and panoramic mountain views, Banks Peninsula, New Zealand",
+                position: "50% 48%",
                 big: true,
               },
               {
                 src: podBedroom,
-                alt: "Bedroom in Pōhue PurePod with panoramic coastal landscape and harbour outlook in North Canterbury, New Zealand",
-                position: "50% 58%",
+                alt: "Bedroom in Pōhue PurePod with mountain landscape views through glass walls, Banks Peninsula, New Zealand",
+                position: "50% 52%",
                 fillGap: true,
               },
               {
                 src: podGlassCabin,
-                alt: "Pōhue PurePod glass cabin set among coastal hills and native bush on Banks Peninsula, New Zealand",
-                position: "50% 70%",
+                alt: "Mountain and lake views from PurePod Pōhue on Banks Peninsula, New Zealand",
+                position: "50% 50%",
               },
             ]}
             galleryCaption="PurePod Pōhue sits high above Port Levy with no neighbours and no shared spaces — only native bush, volcanic hills and open sky. The uphill walk completes the sense of arrival; inside, everything is calm and paired back for two, with shifting light and wide horizons over land and sea."

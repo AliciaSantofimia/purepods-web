@@ -17,8 +17,12 @@ import styles from "@/app/location/locationLayout.module.css";
 /* Tokoeka images — assets/img/tokoeka */
 const heroImage = "/assets/img/tokoeka/tokoeka-purepod-exterior-sunset-view-stewart-island.jpg";
 const podAerial = "/assets/img/tokoeka/tokoeka-purepod-aerial-forest-location-stewart-island.jpg";
-const podBedroom = "/assets/img/tokoeka/tokoeka-purepod-bedroom-ocean-view-stewart-island..jpg";
-const podAstro = "/assets/img/tokoeka/tokoeka-purepod-astro-amazing-paul-wilson.jpg";
+const podBedroom = `/assets/img/tokoeka/${encodeURIComponent(
+  "PurePod Tokoeka glass cabin deck with ocean views and native forest New Zealand.jpg",
+)}`;
+const podAstro = `/assets/img/tokoeka/${encodeURIComponent(
+  "PurePod Tokoeka glass cabin bedroom with ocean sunset view New Zealand.jpg",
+)}`;
 const expUlva = "/assets/img/tokoeka/stewart-island-native-bird-wildlife.jpg";
 const expMason = "/assets/img/tokoeka/stewart-island-tokoeka-kiwi-wildlife..jpg";
 const expPaterson = "/assets/img/tokoeka/stewart-island-yellow-eyed-penguin-wildlife.jpg";
@@ -206,14 +210,14 @@ export function PodView() {
               },
               {
                 src: podBedroom,
-                alt: "Bedroom in Tokoeka PurePod with ocean outlook through native forest on Stewart Island, New Zealand",
-                position: "50% 50%",
+                alt: "Tokoeka PurePod glass cabin deck with ocean views and native forest, Stewart Island, New Zealand",
+                position: "50% 52%",
                 fillGap: true,
               },
               {
                 src: podAstro,
-                alt: "Night sky from Tokoeka PurePod, Stewart Island, New Zealand",
-                position: "50% 50%",
+                alt: "Tokoeka PurePod glass cabin bedroom with ocean sunset view, Stewart Island, New Zealand",
+                position: "50% 48%",
               },
             ]}
             galleryCaption="At night, special red lighting offers the rare opportunity to spot kiwi directly from the pod."

@@ -17,9 +17,9 @@ const HERO_FRAMES: Record<LocationPodSlug, HeroFrameProps> = {
     heroTallUltra: true,
   },
   greystone: {
-    imagePosition: "70% 70%",
-    imagePositionMd: "60% 75%",
-    imagePositionXl: "55% 70%",
+    imagePosition: "50% 56%",
+    imagePositionMd: "50% 54%",
+    imagePositionXl: "50% 52%",
     heroTallUltra: true,
   },
   kahutara: {
@@ -97,9 +97,9 @@ const HERO_FRAMES: Record<LocationPodSlug, HeroFrameProps> = {
     heroOverlay: "none",
   },
   haurapa: {
-    imagePosition: "50% 78%",
-    imagePositionMd: "50% 78%",
-    imagePositionXl: "50% 78%",
+    imagePosition: "52% 72%",
+    imagePositionMd: "51% 70%",
+    imagePositionXl: "50% 68%",
     heroTallUltra: true,
     heroOverlay: "none",
   },
