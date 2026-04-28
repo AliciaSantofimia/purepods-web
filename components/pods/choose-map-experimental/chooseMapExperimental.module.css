@@ -15,48 +15,44 @@
   --exmap-water: var(--inf-bg);
 }
 
-/* Papel + grano sobre el canvas Leaflet */
+/*
+ * Grano/ondas sobre .leaflet-container provocaban mapa en blanco en algunos navegadores
+ * (apilamiento + blend). El acabado infografía va solo en filtros del tile-pane + shell.
+ */
 .chooseMapLeafTune :global(.leaflet-container) {
   background: var(--inf-bg) !important;
   position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: clamp(280px, 48vh, 520px);
 }
 
-/* Debajo del pane de teselas Leaflet (200+) para no tapar el mapa */
-.chooseMapLeafTune :global(.leaflet-container)::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 100;
-  opacity: 0.42;
-  border-radius: inherit;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
-  mix-blend-mode: multiply;
-}
-
-/* Ondas marinas muy suaves */
-.chooseMapLeafTune :global(.leaflet-container)::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 99;
-  opacity: 0.11;
-  background-image: repeating-linear-gradient(
-    -12deg,
-    transparent,
-    transparent 18px,
-    rgba(90, 82, 68, 0.09) 18px,
-    rgba(90, 82, 68, 0.09) 19px
-  );
-  mask-image: radial-gradient(ellipse 85% 70% at 50% 45%, transparent 35%, black 75%);
+/* Superficie del MapContainer: Leaflet necesita altura explícita para pedir teselas */
+.chooseMapMapSurface {
+  width: 100% !important;
+  min-height: clamp(280px, 48vh, 520px) !important;
+  height: 100% !important;
 }
 
 /* Mosaico base más “ilustrado”, menos satélite */
 .chooseMapLeafTune :global(.leaflet-tile-pane) {
-  filter: sepia(0.12) saturate(0.58) brightness(1.06) contrast(0.92) hue-rotate(-6deg);
+  filter: sepia(0.1) saturate(0.62) brightness(1.04) contrast(0.94) hue-rotate(-5deg);
   opacity: 1;
 }
+
+/* Textura papel muy suave solo sobre el marco (no tapa teselas) */
+.chooseMapLeafTune::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.22;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
 
 .chooseMapLeafTune :global(.leaflet-overlay-pane path) {
   vector-effect: non-scaling-stroke;

@@ -56,7 +56,7 @@ function escapeHtml(text: string): string {
   return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
 }
 
-/** Rotación de tres tonos “cartográficos” para pins + cartelas */
+/** Rotación de tres tonos para pins */
 function pinVariantIndex(orderIdx: number): 0 | 1 | 2 {
   return (orderIdx % 3) as 0 | 1 | 2;
 }
@@ -67,37 +67,9 @@ function pinWrapClass(variant: 0 | 1 | 2): string {
   return styles.chMapPinWrap;
 }
 
-function calloutVariantClass(variant: 0 | 1 | 2): string {
-  if (variant === 1) return `${styles.chMapCallout} ${styles["chMapCallout--b"]}`;
-  if (variant === 2) return `${styles.chMapCallout} ${styles["chMapCallout--c"]}`;
-  return styles.chMapCallout;
-}
-
-function labelOffsetLatLng(
-  map: L.Map,
-  lat: number,
-  lng: number,
-  slug: string,
-  idx: number,
-  compact: boolean,
-): L.LatLng {
-  const pt = map.latLngToLayerPoint(L.latLng(lat, lng));
-  const hash = slug.split("").reduce((a, c) => a + c.charCodeAt(0), 0);
-  const eastPrefer = hash % 2 === 0;
-  const scale = compact ? 0.48 : 1;
-  const dx = (eastPrefer ? 1 : -1) * (76 + (idx % 3) * 18) * scale;
-  const dy = (((idx * 31) % 7) - 3) * 11 * scale;
-  return map.layerPointToLatLng(L.point(pt.x + dx, pt.y + dy));
-}
-
 function infographicPinHtml(slug: string, num: number, variant: 0 | 1 | 2): string {
   const wrap = pinWrapClass(variant);
   return `<div class="${wrap}" data-slug="${slug}" aria-hidden="true"><svg class="${styles.chMapPinSvg}" viewBox="0 0 28 36" width="28" height="34"><path fill="currentColor" d="M14 0C6.3 0 0 5.4 0 12.1c0 8.3 14 23.9 14 23.9S28 20.4 28 12.1C28 5.4 21.7 0 14 0z"/></svg><span class="${styles.chMapPinNum}">${num}</span></div>`;
-}
-
-function calloutLabelHtml(pod: MapPod, num: number, variant: 0 | 1 | 2): string {
-  const base = calloutVariantClass(variant);
-  return `<div class="${base}" data-slug="${pod.slug}"><div class="${styles.chMapCallout__row}"><span class="${styles.chMapCallout__num}">${num}</span><span class="${styles.chMapCallout__title}">${escapeHtml(pod.title)}</span></div><span class="${styles.chMapCallout__pill}">${escapeHtml(pod.pill)}</span></div>`;
 }
 
 function InfographicCompass() {
@@ -391,10 +363,7 @@ function PodMarkersLayer({
 
   const clusterTooltipHtml = (group: MapPod[]) => {
     const rows = group
-      .map(
-        (p) =>
-          `<div class="${styles.chMapTip__clusterRow}"><span class="${styles.chMapTip__title}">${escapeHtml(p.title)}</span><span class="${styles.chMapTip__meta}">${escapeHtml(p.pill)}</span></div>`,
-      )
+      .map((p) => `<div class="${styles.chMapTip__clusterRow}"><span class="${styles.chMapTip__title}">${escapeHtml(p.title)}</span></div>`)
       .join("");
     return `<div class="${styles.chMapTip__inner} ${styles.chMapTip__clusterInner}">${rows}</div>`;
   };
@@ -430,17 +399,6 @@ function PodMarkersLayer({
     });
   };
 
-  const calloutLabelDivIcon = (pod: MapPod, orderIdx: number) => {
-    const num = orderIdx + 1;
-    const variant = pinVariantIndex(orderIdx);
-    return L.divIcon({
-      className: styles.chMapDivicon,
-      html: calloutLabelHtml(pod, num, variant),
-      iconSize: [118, 52],
-      iconAnchor: [59, 26],
-    });
-  };
-
   const pushLayer = (layer: L.Layer) => {
     layersCleanupRef.current.push(layer);
   };
@@ -465,7 +423,6 @@ function PodMarkersLayer({
     }
 
     const orderBySlug = new Map(podList.map((p, i) => [p.slug, i]));
-    const compactCallouts = hasStewartMarkerPair(podList) || podList.length <= 3;
 
     const groups = clusterPodsByScreenProximity(m, podList, CLUSTER_PIXEL_THRESHOLD);
 
@@ -517,7 +474,7 @@ function PodMarkersLayer({
         ...(zIndexOffset ? { zIndexOffset } : {}),
       });
       marker.bindTooltip(
-        `<div class="${styles.chMapTip__inner}"><span class="${styles.chMapTip__title}">${escapeHtml(pod.title)}</span><span class="${styles.chMapTip__meta}">${escapeHtml(pod.pill)}</span></div>`,
+        `<div class="${styles.chMapTip__inner}"><span class="${styles.chMapTip__title}">${escapeHtml(pod.title)}</span></div>`,
         {
           permanent: false,
           sticky: true,
@@ -535,37 +492,6 @@ function PodMarkersLayer({
       marker.addTo(m);
       pushLayer(marker);
       markersRef.current.set(pod.slug, marker);
-
-      const labelPos = labelOffsetLatLng(m, pod.lat, pod.lng, pod.slug, orderIdx, compactCallouts);
-      const line = L.polyline(
-        [
-          [pod.lat, pod.lng],
-          [labelPos.lat, labelPos.lng],
-        ],
-        {
-          color: "#a68f6f",
-          weight: 1.25,
-          opacity: 0.72,
-          dashArray: "4 7",
-          interactive: false,
-        },
-      );
-      line.addTo(m);
-      pushLayer(line);
-
-      const callIcon = calloutLabelDivIcon(pod, orderIdx);
-      const callMarker = L.marker([labelPos.lat, labelPos.lng], {
-        icon: callIcon,
-        interactive: true,
-        keyboard: true,
-      });
-      callMarker.on("click", () => {
-        onHighlightRef.current(pod.slug);
-        routerRef.current.push(pod.href);
-      });
-      callMarker.on("mouseover", () => onHighlightRef.current(pod.slug));
-      callMarker.addTo(m);
-      pushLayer(callMarker);
     }
 
     syncMarkerClasses(highlightRef.current);
@@ -630,7 +556,7 @@ export default function ChooseMapLeafletMap({
       <p className={`${xstyles.exmapCaption} ${styles.infographicCaption}`}>New Zealand</p>
       <InfographicCompass />
       <MapContainer
-        className={xstyles.exmapMap}
+        className={`${xstyles.exmapMap} ${styles.chooseMapMapSurface}`}
         center={[-41.25, 172.75]}
         zoom={5}
         minZoom={5}
@@ -643,11 +569,10 @@ export default function ChooseMapLeafletMap({
       >
         <RegisterNzBounds nzMaxBounds={nzMaxBounds} />
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
-          url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
-          subdomains="abcd"
-          maxZoom={20}
-          opacity={0.72}
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+          maxZoom={19}
+          opacity={0.88}
         />
         <Pane name="chmapLand" style={{ zIndex: 150 }}>
           <GeoJSON
