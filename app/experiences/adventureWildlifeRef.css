@@ -30,6 +30,12 @@
 
 }
 
+.experience-ref.adventure-wildlife-ref #context-heading {
+
+  scroll-margin-top: calc(var(--aw-sticky-anchor-offset) + 0.5rem);
+
+}
+
 
 
 .experience-ref.adventure-wildlife-ref .hero .heroImg,
@@ -760,43 +766,25 @@
 
 }
 
-/* Intro below hero */
-
-.experience-ref.adventure-wildlife-ref .aw-xp-intro {
-
-  margin: 0 auto;
-
-  max-width: 62ch;
-
-  color: var(--muted);
-
-  line-height: 1.68;
-
-  font-size: clamp(15px, 1.25vw, 17px);
-
-  letter-spacing: -0.01em;
-
-}
-
-
-
-.experience-ref.adventure-wildlife-ref #about.wrap {
-
-  padding-top: clamp(36px, 5vw, 56px);
-
-  padding-bottom: clamp(8px, 2vw, 16px);
-
-}
-
-/* Context bridge (intent + stays) — above carousel */
+/* Context bridge (intent + stays) — above carousel; first block after hero */
 
 .experience-ref.adventure-wildlife-ref .aw-context-block {
 
+  max-width: min(52rem, 100%);
+
+  margin-left: auto;
+
+  margin-right: auto;
+
   padding-top: clamp(12px, 2.5vw, 28px);
 
-  padding-bottom: clamp(8px, 2vw, 24px);
+  padding-bottom: clamp(6px, 1.4vw, 16px);
 
-  max-width: min(70ch, 100%);
+}
+
+.experience-ref.adventure-wildlife-ref main > .aw-context-block.adventure-reveal:first-of-type {
+
+  padding-top: clamp(22px, 3.5vw, 44px);
 
 }
 
@@ -836,7 +824,7 @@
 
   margin: 0 auto;
 
-  padding: 0 0 clamp(12px, 2vw, 22px);
+  padding: 0 0 clamp(4px, 0.85vw, 10px);
 
 }
 
@@ -858,39 +846,207 @@
 
 }
 
-.experience-ref.adventure-wildlife-ref .aw-guest-perspective {
+.experience-ref.adventure-wildlife-ref .aw-xp-section-head .aw-xp-section-headIntro {
 
-  padding: clamp(20px, 3vw, 36px) 0;
-
-  border-top: 1px solid var(--stroke);
+  margin-top: clamp(10px, 1.5vw, 16px);
 
 }
 
-.experience-ref.adventure-wildlife-ref .aw-guest-perspective__title {
+/* Closing narrative before CTA — tighter vertical rhythm */
 
-  margin: 0 0 8px;
+.experience-ref.adventure-wildlife-ref .aw-context-block.aw-stay-closing {
 
-  font-size: 11px;
+  padding-top: clamp(8px, 1.2vw, 16px);
 
-  font-weight: 600;
-
-  letter-spacing: 0.16em;
-
-  text-transform: uppercase;
-
-  color: var(--muted);
+  padding-bottom: clamp(4px, 0.8vw, 10px);
 
 }
 
-.experience-ref.adventure-wildlife-ref .aw-guest-perspective__note {
+.experience-ref.adventure-wildlife-ref .aw-stay-closing .aw-context-block__title {
+
+  margin-bottom: clamp(6px, 1vw, 10px);
+
+}
+
+/* Decision shortcuts — after “When the day unfolds”, before guest experiences */
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts {
+
+  max-width: min(70ch, 100%);
+
+  margin: 0 auto;
+
+  padding: clamp(14px, 2.2vw, 32px) 0 clamp(12px, 2vw, 22px);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts > .aw-context-block__title {
+
+  margin-bottom: clamp(6px, 1.2vw, 10px);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__intro {
+
+  margin-bottom: clamp(12px, 1.8vw, 20px);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__list {
+
+  list-style: none;
 
   margin: 0;
 
-  max-width: 48ch;
+  padding: 0;
 
-  font-size: 14px;
+  display: grid;
 
-  line-height: 1.55;
+  gap: clamp(12px, 1.8vw, 18px);
+
+}
+
+@media (min-width: 720px) {
+
+  .experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__list {
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: clamp(20px, 3vw, 36px);
+
+    row-gap: clamp(16px, 2.2vw, 22px);
+
+  }
+
+}
+
+@media (max-width: 719px) {
+
+  .experience-ref.adventure-wildlife-ref .aw-stay-shortcuts {
+
+    padding: clamp(10px, 2vw, 16px) 0 clamp(8px, 1.6vw, 14px);
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .aw-stay-shortcuts > .aw-context-block__title {
+
+    margin-bottom: clamp(4px, 1vw, 7px);
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__intro {
+
+    margin-bottom: clamp(8px, 1.4vw, 14px);
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__list {
+
+    gap: clamp(8px, 1.4vw, 12px);
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__link {
+
+    gap: 0.15rem;
+
+    padding: 0.05rem 0;
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__label {
+
+    line-height: 1.22;
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__detail {
+
+    line-height: 1.42;
+
+    font-size: clamp(13px, 1.05vw, 15px);
+
+  }
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__item {
+
+  margin: 0;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__link {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 0.25rem;
+
+  padding: 0.1rem 0;
+
+  text-decoration: none;
+
+  color: inherit;
+
+  cursor: pointer;
+
+  transition: opacity 0.15s ease;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__link:hover {
+
+  opacity: 0.8;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__link:focus-visible {
+
+  outline: 2px solid rgba(92, 95, 62, 0.3);
+
+  outline-offset: 3px;
+
+  border-radius: 2px;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__label {
+
+  font-size: clamp(15px, 1.25vw, 17px);
+
+  font-weight: 600;
+
+  letter-spacing: -0.01em;
+
+  line-height: 1.28;
+
+  color: var(--ink);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__label::after {
+
+  content: " →";
+
+  font-weight: 500;
+
+  opacity: 0.38;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-stay-shortcuts__detail {
+
+  font-size: clamp(14px, 1.15vw, 16px);
+
+  font-weight: 400;
+
+  line-height: 1.52;
+
+  letter-spacing: -0.01em;
 
   color: var(--muted);
 
@@ -945,6 +1101,94 @@
   letter-spacing: -0.01em;
 
   color: var(--muted);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__drawer {
+
+  margin: 0;
+
+  padding: 0;
+
+  border: 0;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__toggle {
+
+  list-style: none;
+
+  margin: clamp(18px, 2.8vw, 26px) 0 0;
+
+  padding: clamp(14px, 2vw, 18px) 0 6px;
+
+  border-top: 1px solid rgba(92, 95, 62, 0.12);
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.04em;
+
+  text-transform: none;
+
+  color: var(--ink);
+
+  transition: color 0.18s ease;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__toggle::-webkit-details-marker {
+
+  display: none;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__toggle::marker {
+
+  content: "";
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__toggle:hover {
+
+  color: var(--muted);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__toggle:focus-visible {
+
+  outline: 2px solid rgba(92, 95, 62, 0.35);
+
+  outline-offset: 3px;
+
+  border-radius: 4px;
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-guest-experiences__drawer-body {
+
+  margin: 0;
+
+  padding: 0;
+
+}
+
+@media (min-width: 900px) {
+
+  .experience-ref.adventure-wildlife-ref .aw-guest-experiences__toggle {
+
+    display: none;
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .aw-guest-experiences__drawer {
+
+    display: block;
+
+  }
 
 }
 
@@ -1016,13 +1260,13 @@
 
   margin: 0;
 
-  font-size: clamp(17px, 1.42vw, 20px);
+  font-size: clamp(17px, 1.5vw, 21px);
 
   font-weight: 600;
 
-  line-height: 1.42;
+  line-height: 1.4;
 
-  letter-spacing: -0.022em;
+  letter-spacing: -0.024em;
 
   color: var(--ink);
 
@@ -1332,7 +1576,7 @@
 
 .experience-ref.adventure-wildlife-ref .aw-xp-band {
 
-  padding: clamp(28px, 4vw, 48px) 0 clamp(52px, 7vw, 80px);
+  padding: clamp(20px, 2.8vw, 36px) 0 clamp(40px, 5.5vw, 64px);
 
 }
 
@@ -1367,6 +1611,11 @@
     0 0 0 1px rgba(247, 246, 243, 0.5) inset;
 
   background: #1a1c16;
+
+  cursor: pointer;
+
+  /* Let horizontal drags reach pointer handlers; vertical scroll still works on the page. */
+  touch-action: pan-y;
 
 }
 
@@ -1430,7 +1679,63 @@
 
   object-position: center;
 
-  filter: saturate(0.94) contrast(0.98);
+  filter: saturate(0.91) contrast(0.96) brightness(1.01);
+
+}
+
+/* Per-slide tone & framing (curated imagery; editorial coherence) */
+
+.experience-ref.adventure-wildlife-ref .aw-xp-carousel__slide:nth-child(1) .aw-xp-carousel__img {
+
+  object-position: 36% 48%;
+
+  filter: saturate(0.9) contrast(0.93) brightness(1.02);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-xp-carousel__slide:nth-child(2) .aw-xp-carousel__img {
+
+  object-position: 48% 44%;
+
+  filter: saturate(0.86) contrast(0.95) brightness(1.01);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-xp-carousel__slide:nth-child(3) .aw-xp-carousel__img {
+
+  filter: saturate(0.9) contrast(0.96) brightness(1.01);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-xp-carousel__slide:nth-child(4) .aw-xp-carousel__img {
+
+  object-position: 50% 42%;
+
+  filter: saturate(0.9) contrast(0.95) brightness(1.02) sepia(0.045);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-xp-carousel__slide:nth-child(5) .aw-xp-carousel__img {
+
+  object-position: 50% 56%;
+
+  filter: saturate(0.89) contrast(0.93) brightness(0.97);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-xp-carousel__slide:nth-child(6) .aw-xp-carousel__img {
+
+  object-position: center 48%;
+
+  filter: saturate(0.9) contrast(0.96) brightness(1.01);
+
+}
+
+.experience-ref.adventure-wildlife-ref .aw-xp-carousel__slide:nth-child(7) .aw-xp-carousel__img {
+
+  object-position: center 52%;
+
+  filter: saturate(0.88) contrast(0.94) brightness(0.99);
 
 }
 
@@ -1456,6 +1761,38 @@
 
   }
 
+
+
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__stage:hover .aw-xp-carousel__overlay {
+
+    background:
+
+      linear-gradient(to top, rgba(14, 16, 12, 0.72) 0%, rgba(18, 20, 14, 0.32) 48%, rgba(14, 16, 12, 0.08) 100%),
+
+      linear-gradient(to right, rgba(12, 14, 10, 0.38) 0%, transparent 52%);
+
+  }
+
+
+
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__cta:hover {
+
+    background: rgba(247, 246, 243, 0.28);
+
+    border-color: rgba(247, 246, 243, 0.58);
+
+    color: #fdfcfa;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+
+      0 3px 18px rgba(6, 8, 5, 0.28),
+
+      0 1px 0 rgba(255, 255, 255, 0.06) inset;
+
+  }
+
 }
 
 
@@ -1470,11 +1807,13 @@
 
   pointer-events: none;
 
+  transition: background 0.5s ease;
+
   background:
 
-    linear-gradient(to top, rgba(12, 14, 10, 0.78) 0%, rgba(18, 20, 14, 0.35) 42%, rgba(12, 14, 10, 0.12) 100%),
+    linear-gradient(to top, rgba(14, 16, 12, 0.58) 0%, rgba(18, 20, 14, 0.22) 48%, rgba(14, 16, 12, 0.04) 100%),
 
-    linear-gradient(to right, rgba(10, 12, 8, 0.45) 0%, transparent 55%);
+    linear-gradient(to right, rgba(12, 14, 10, 0.28) 0%, transparent 52%);
 
 }
 
@@ -1594,6 +1933,18 @@
 
 }
 
+.experience-ref.adventure-wildlife-ref .aw-xp-carousel__nearbyRegion {
+
+  font-weight: 400;
+
+  font-size: 14px;
+
+  letter-spacing: 0.01em;
+
+  color: rgba(218, 212, 196, 0.52);
+
+}
+
 
 
 .experience-ref.adventure-wildlife-ref .aw-xp-carousel__nearbySep {
@@ -1658,29 +2009,33 @@
 
   font-size: 13px;
 
-  font-weight: 600;
+  font-weight: 700;
 
   letter-spacing: 0.02em;
 
-  color: rgba(247, 244, 236, 0.96);
-
-  border: 1px solid rgba(247, 246, 243, 0.28);
-
-  background: rgba(247, 246, 243, 0.08);
-
-  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-
-}
-
-
-
-.experience-ref.adventure-wildlife-ref .aw-xp-carousel__cta:hover {
-
-  background: rgba(247, 246, 243, 0.14);
-
-  border-color: rgba(194, 181, 158, 0.4);
+  cursor: pointer;
 
   color: #fdfcfa;
+
+  border: 1px solid rgba(247, 246, 243, 0.42);
+
+  background: rgba(247, 246, 243, 0.19);
+
+  text-shadow: 0 1px 3px rgba(6, 8, 5, 0.45);
+
+  box-shadow: 0 2px 14px rgba(6, 8, 5, 0.22);
+
+  transition:
+
+    background 0.25s ease,
+
+    border-color 0.25s ease,
+
+    color 0.25s ease,
+
+    transform 0.25s ease,
+
+    box-shadow 0.25s ease;
 
 }
 
@@ -1890,25 +2245,55 @@
 
   }
 
+
+
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__overlay {
+
+    transition: none;
+
+  }
+
+
+
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__cta:hover {
+
+    transform: none !important;
+
+  }
+
+}
+
+
+
+/* Swipe hint — hidden on desktop; shown with carousel chrome on mobile */
+
+.experience-ref.adventure-wildlife-ref .aw-xp-carouselSwipeHint {
+
+  display: none;
+
 }
 
 
 
 @media (max-width: 720px) {
 
-  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__controls {
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__stage {
 
-    flex-direction: column;
-
-    align-items: stretch;
+    cursor: default;
 
   }
 
 
 
-  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__dots {
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__controls {
 
-    justify-content: center;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin: clamp(14px, 2vw, 20px) auto clamp(4px, 1vw, 8px);
 
   }
 
@@ -1916,7 +2301,7 @@
 
   .experience-ref.adventure-wildlife-ref .aw-xp-carousel__nav {
 
-    justify-content: center;
+    display: none;
 
   }
 
@@ -1925,6 +2310,108 @@
   .experience-ref.adventure-wildlife-ref .aw-xp-carousel__counter {
 
     text-align: center;
+
+  }
+
+
+
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__dots {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    flex: none;
+
+    width: 100%;
+
+    gap: 5px;
+
+    min-width: 0;
+
+    margin: 0;
+
+    padding: 0;
+
+  }
+
+
+
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__dot {
+
+    width: 5px;
+
+    height: 5px;
+
+    border-radius: 50%;
+
+    padding: 0;
+
+    border: 1px solid rgba(28, 32, 24, 0.1);
+
+    background: rgba(28, 32, 24, 0.08);
+
+    opacity: 0.38;
+
+    transform: none;
+
+    transition:
+
+      background 0.25s ease,
+
+      border-color 0.25s ease,
+
+      transform 0.25s ease,
+
+      opacity 0.25s ease;
+
+  }
+
+
+
+  .experience-ref.adventure-wildlife-ref .aw-xp-carousel__dot.is-active {
+
+    background: rgba(92, 95, 62, 0.52);
+
+    border-color: rgba(92, 95, 62, 0.4);
+
+    opacity: 1;
+
+    transform: scale(1.22);
+
+  }
+
+
+
+  .experience-ref.adventure-wildlife-ref .aw-xp-carouselSwipeHint {
+
+    display: block;
+
+    position: static;
+
+    box-sizing: border-box;
+
+    max-width: min(220px, 90vw);
+
+    margin: 2px auto 0;
+
+    padding: 0;
+
+    text-align: center;
+
+    font-size: clamp(10px, 2.6vw, 12px);
+
+    line-height: 1.35;
+
+    font-weight: 400;
+
+    letter-spacing: 0.045em;
+
+    color: var(--muted);
+
+    opacity: 0.55;
 
   }
 
@@ -2601,6 +3088,58 @@
   .experience-ref.adventure-wildlife-ref .adv-rest-closing__counter {
 
     text-align: center;
+
+  }
+
+}
+
+/* Final CTA — spacing & hierarchy (Adventure & Wildlife only) */
+
+.experience-ref.adventure-wildlife-ref .cta-panel > .eyebrow {
+
+  margin-bottom: 0;
+
+}
+
+.experience-ref.adventure-wildlife-ref .cta-panel > .eyebrow + .cta-support {
+
+  margin: clamp(8px, 1.6vw, 10px) 0 clamp(16px, 2.4vw, 20px);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  color: var(--muted);
+
+  opacity: 0.9;
+
+}
+
+.experience-ref.adventure-wildlife-ref .cta-panel > .btn-primary {
+
+  display: inline-block;
+
+  vertical-align: middle;
+
+}
+
+.experience-ref.adventure-wildlife-ref .cta-panel > .btn-primary + .cta-support {
+
+  margin: clamp(12px, 1.6vw, 14px) 0 0;
+
+}
+
+@media (max-width: 640px) {
+
+  .experience-ref.adventure-wildlife-ref .cta-panel > .eyebrow + .cta-support {
+
+    margin: clamp(8px, 2vw, 10px) 0 clamp(18px, 4.5vw, 22px);
+
+  }
+
+  .experience-ref.adventure-wildlife-ref .cta-panel > .btn-primary + .cta-support {
+
+    margin: clamp(12px, 2.5vw, 15px) 0 0;
 
   }
 

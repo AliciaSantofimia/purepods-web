@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Footer } from "@/components/layout/Footer";
 import { ExpRefImage } from "@/components/experiences/ExpRefImage";
 import { AdventureExperienceCarousel } from "@/components/experiences/AdventureExperienceCarousel";
 import { ExperienceRevealMotionRoot } from "@/components/experiences/ExperienceRevealMotionRoot";
@@ -9,20 +10,37 @@ import {
   adventureContextHeading,
   adventureExperienceSlides,
   adventureFaq,
-  adventureGuestExperienceReviews,
-  adventureGuestExperiencesClosing,
-  adventureGuestExperiencesExploreHref,
-  adventureGuestExperiencesIntro,
   adventureHero,
-  adventureIntroParagraph,
   adventureRestClosingSlides,
   adventureWildlifeFaqPageJsonLd,
 } from "@/lib/experiencesData/adventureWildlife";
+import { AdventureWildlifeFaqAccordion } from "@/components/experiences/views/AdventureWildlifeFaqAccordion";
+import { AdventureWildlifeGuestExperiences } from "@/components/experiences/views/AdventureWildlifeGuestExperiences";
+
+const STAY_DECISION_SHORTCUTS = [
+  {
+    label: "Coastal & wildlife",
+    detail: "Kahutara · Manakau — Kaikōura",
+  },
+  {
+    label: "Geothermal & lakes",
+    detail: "Pāmu — Rotorua",
+  },
+  {
+    label: "Remote & untouched",
+    detail: "Tokoeka · Hananui — Stewart Island / Rakiura",
+  },
+  {
+    label: "Quiet countryside",
+    detail: "Pōhue · Matū — North Island countryside",
+  },
+] as const;
 
 export function AdventureWildlifeView() {
   const faqJsonLd = adventureWildlifeFaqPageJsonLd();
 
   return (
+    <>
     <div className="experience-ref adventure-wildlife-ref">
       <script
         type="application/ld+json"
@@ -52,30 +70,19 @@ export function AdventureWildlifeView() {
               priority
             />
             <div className="heroInner">
-              <h1>Adventure &amp; Wildlife</h1>
+              <h1>Adventure &amp; Wildlife Experiences in New Zealand</h1>
               <p className="impact-summary">
-                Plan whale watching, rafting, scenic flights and wildlife
-                encounters across New Zealand — then pair each day with nearby
-                PurePod stays in quiet natural settings.
+                Days shaped by wildlife, water and open landscapes across New
+                Zealand — then nights in your PurePod, where remote glass cabins
+                settle you into stillness and the sound of the bush.
               </p>
-              <Link className="btnGhost" href="#about">
+              <Link className="btnGhost" href="#context-heading">
                 Read on
               </Link>
             </div>
           </header>
 
           <main id="main">
-            <section
-              id="about"
-              className="wrap adventure-reveal"
-              aria-labelledby="about-heading"
-            >
-              <h2 id="about-heading" className="visually-hidden">
-                Introduction
-              </h2>
-              <p className="aw-xp-intro">{adventureIntroParagraph}</p>
-            </section>
-
             <section
               className="wrap aw-context-block adventure-reveal"
               aria-labelledby="context-heading"
@@ -98,25 +105,15 @@ export function AdventureWildlifeView() {
                 >
                   Curated wildlife and adventure experiences
                 </h2>
+                <p className="aw-context-block__body aw-xp-section-headIntro">
+                  A curated starting point for days shaped by wildlife,
+                  landscape and distance.
+                </p>
               </div>
               <AdventureExperienceCarousel slides={adventureExperienceSlides} />
-            </section>
-
-            <section
-              className="aw-guest-perspective adventure-reveal"
-              aria-labelledby="guest-perspective-heading"
-            >
               <div className="wrap">
-                <h2
-                  id="guest-perspective-heading"
-                  className="aw-guest-perspective__title"
-                >
-                  Guest perspective
-                </h2>
-                <p className="aw-guest-perspective__note">
-                  Guests often describe these stays as a rare balance of wild
-                  nature and complete stillness — a way to experience New
-                  Zealand beyond the usual paths.
+                <p className="aw-xp-carouselSwipeHint">
+                  Swipe to explore
                 </p>
               </div>
             </section>
@@ -129,16 +126,18 @@ export function AdventureWildlifeView() {
               <div className="wrap adv-rest-closing__inner">
                 <header className="adv-rest-closing__head">
                   <p className="adv-rest-closing__eyebrow">
-                    When the day is done
+                    When the day unfolds
                   </p>
                   <h2 id="adv-rest-heading" className="adv-rest-closing__title">
-                    From active exploration to quiet overnight stay
+                    From wild encounters to complete stillness
                   </h2>
                   <p className="adv-rest-closing__lead">
-                    After landscapes, wildlife and adrenaline, the rhythm
-                    changes. PurePods are glass eco-cabins in remote settings —
-                    built for slowing down, sleeping deeply, and waking inside
-                    the view.
+                    Days here aren&apos;t packed — they&apos;re shaped.
+                    <br />
+                    <br />
+                    A morning on the ocean, an afternoon in geothermal silence,
+                    and a night where the only sound is the wind through the
+                    landscape.
                   </p>
                 </header>
 
@@ -155,6 +154,43 @@ export function AdventureWildlifeView() {
             </section>
 
             <section
+              id="choose-stay"
+              className="wrap aw-stay-shortcuts adventure-reveal"
+              aria-labelledby="choose-stay-heading"
+            >
+              <h2
+                id="choose-stay-heading"
+                className="aw-context-block__title"
+              >
+                Choose where to stay
+              </h2>
+              <p className="aw-context-block__body aw-stay-shortcuts__intro">
+                Different parts of New Zealand offer different rhythms. Choose
+                what draws you most.
+              </p>
+              <ul className="aw-stay-shortcuts__list">
+                {STAY_DECISION_SHORTCUTS.map((row) => (
+                  <li key={row.label} className="aw-stay-shortcuts__item">
+                    <Link
+                      href="/pods"
+                      className="aw-stay-shortcuts__link"
+                      aria-label={`${row.label}: browse stays`}
+                    >
+                      <span className="aw-stay-shortcuts__label">
+                        {row.label}
+                      </span>
+                      <span className="aw-stay-shortcuts__detail">
+                        {row.detail}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <AdventureWildlifeGuestExperiences />
+
+            <section
               className="faq aw-faq-accordion"
               id="faq"
               aria-labelledby="faq-heading"
@@ -164,86 +200,30 @@ export function AdventureWildlifeView() {
                   <h2 id="faq-heading">Frequently asked questions</h2>
                   {/*
                     Native details/summary: every answer stays in the DOM on load;
-                    only presentation toggles. Matches FAQPage JSON-LD.
+                    only one open at a time (client accordion). Matches FAQPage JSON-LD.
                   */}
-                  <ul className="aw-faq-accordion__list">
-                    {adventureFaq.map((f, i) => (
-                      <li key={f.q} className="aw-faq-accordion__item">
-                        <details
-                          className="aw-faq-accordion__details"
-                          open={i === 0}
-                        >
-                          <summary className="aw-faq-accordion__summary">
-                            <h3 className="aw-faq-accordion__q">{f.q}</h3>
-                            <span
-                              className="aw-faq-accordion__chevron"
-                              aria-hidden="true"
-                            />
-                          </summary>
-                          <div className="aw-faq-accordion__answer">
-                            <p>{f.a}</p>
-                          </div>
-                        </details>
-                      </li>
-                    ))}
-                  </ul>
+                  <AdventureWildlifeFaqAccordion items={adventureFaq} />
                 </div>
               </div>
             </section>
 
             <section
-              className="aw-guest-experiences adventure-reveal"
-              aria-labelledby="guest-experiences-heading"
+              className="wrap aw-context-block aw-stay-closing adventure-reveal"
+              aria-labelledby="aw-stay-closing-heading"
             >
-              <div className="wrap">
-                <header className="aw-guest-experiences__header">
-                  <h2
-                    id="guest-experiences-heading"
-                    className="aw-guest-experiences__headline"
-                  >
-                    Guest experiences
-                  </h2>
-                  <p className="aw-guest-experiences__intro">
-                    {adventureGuestExperiencesIntro}
-                  </p>
-                </header>
-
-                <div className="aw-guest-experiences__grid">
-                  {adventureGuestExperienceReviews.map((r) => (
-                    <article
-                      key={`${r.guestName}-${r.podName}`}
-                      className="aw-guest-experiences__review"
-                    >
-                      <blockquote className="aw-guest-experiences__blockquote">
-                        <p className="aw-guest-experiences__quote">{r.quote}</p>
-                      </blockquote>
-                      <p className="aw-guest-experiences__body">{r.body}</p>
-                      <footer className="aw-guest-experiences__attribution">
-                        <span className="aw-guest-experiences__guest">
-                          {r.guestName}
-                        </span>
-                        <span className="aw-guest-experiences__pod">
-                          {r.podName}
-                        </span>
-                      </footer>
-                    </article>
-                  ))}
-                </div>
-
-                <footer className="aw-guest-experiences__footer">
-                  <p className="aw-guest-experiences__closing">
-                    {adventureGuestExperiencesClosing}
-                  </p>
-                  <p className="aw-guest-experiences__more">
-                    <Link
-                      className="aw-guest-experiences__link"
-                      href={adventureGuestExperiencesExploreHref}
-                    >
-                      Explore more guest experiences →
-                    </Link>
-                  </p>
-                </footer>
-              </div>
+              <h2
+                id="aw-stay-closing-heading"
+                className="aw-context-block__title"
+              >
+                Stay somewhere that changes how you experience it all
+              </h2>
+              <p className="aw-context-block__body">
+                PurePods are placed to give you access to these moments — but
+                more importantly, to what comes after them.
+                <br />
+                <br />
+                Stillness. Space. And a deeper sense of place.
+              </p>
             </section>
 
             <section
@@ -255,17 +235,14 @@ export function AdventureWildlifeView() {
                   <h2 id="cta-heading" className="eyebrow">
                     Adventure &amp; Wildlife
                   </h2>
-                  <a
-                    className="btn-primary"
-                    href="https://purepods.com/booking/?cart=Checkout"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Find your PurePod
+                  <p className="cta-support">
+                    Check real-time availability across all PurePods.
+                  </p>
+                  <a className="btn-primary" href="https://purepods.com/booking/">
+                    Check availability
                   </a>
                   <p className="cta-support">
-                    Check availability for your chosen PurePod, then match your
-                    itinerary to the experiences and regions that fit best.
+                    Choose your PurePod and plan your stay around it.
                   </p>
                 </div>
               </div>
@@ -274,5 +251,7 @@ export function AdventureWildlifeView() {
         </AdventureWildlifeChrome>
       </ExperienceRevealMotionRoot>
     </div>
+    <Footer brandLogo />
+    </>
   );
 }

@@ -48,10 +48,9 @@ export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
   "adventure-wildlife": {
     kicker: "Adventure & wildlife",
     heading: "Adventure & wildlife",
-    metaTitle:
-      "Adventure & Wildlife | PurePods — Outdoor Nature Experiences in New Zealand",
+    metaTitle: "Wildlife & Adventure Experiences in New Zealand | PurePods",
     description:
-      "Curated marine wildlife, nature and adventure experiences across New Zealand—each with official visitor links and suggested nearby PurePods glass eco-cabin stays.",
+      "Discover curated wildlife and adventure experiences across New Zealand — from whale watching in Kaikōura to remote scenic flights — paired with nearby PurePod stays in quiet natural settings.",
     heroSrc:
       "/assets/img/experiences/adventure-wildlife/kaikoura-whale-tail-sunset-new-zealand-wildlife-experience.jpg",
     heroAlt:

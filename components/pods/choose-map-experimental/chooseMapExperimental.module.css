@@ -1,0 +1,378 @@
+/**
+ * Infografía “travel map” — solo estética del mapa experimental.
+ * Dimensiones del shell siguen en ExplorePageWithMapExperimental.module.css.
+ */
+
+.chooseMapLeafTune {
+  --inf-bg: #f5f2e9;
+  --inf-land: #d4c9a8;
+  --inf-ink: #4a3f36;
+  --inf-muted: rgba(74, 63, 54, 0.62);
+  --inf-line: #a68f6f;
+  --inf-pin-a: #4a6767;
+  --inf-pin-b: #6b704c;
+  --inf-pin-c: #8b6b4f;
+  --exmap-water: var(--inf-bg);
+}
+
+/* Papel + grano sobre el canvas Leaflet */
+.chooseMapLeafTune :global(.leaflet-container) {
+  background: var(--inf-bg) !important;
+  position: relative;
+}
+
+/* Debajo del pane de teselas Leaflet (200+) para no tapar el mapa */
+.chooseMapLeafTune :global(.leaflet-container)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.42;
+  border-radius: inherit;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+/* Ondas marinas muy suaves */
+.chooseMapLeafTune :global(.leaflet-container)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99;
+  opacity: 0.11;
+  background-image: repeating-linear-gradient(
+    -12deg,
+    transparent,
+    transparent 18px,
+    rgba(90, 82, 68, 0.09) 18px,
+    rgba(90, 82, 68, 0.09) 19px
+  );
+  mask-image: radial-gradient(ellipse 85% 70% at 50% 45%, transparent 35%, black 75%);
+}
+
+/* Mosaico base más “ilustrado”, menos satélite */
+.chooseMapLeafTune :global(.leaflet-tile-pane) {
+  filter: sepia(0.12) saturate(0.58) brightness(1.06) contrast(0.92) hue-rotate(-6deg);
+  opacity: 1;
+}
+
+.chooseMapLeafTune :global(.leaflet-overlay-pane path) {
+  vector-effect: non-scaling-stroke;
+}
+
+/* Leyenda esquina — tipografía infografía */
+.infographicCaption {
+  font-family: "Noto Serif Display", Georgia, "Times New Roman", serif !important;
+  letter-spacing: 0.28em !important;
+  color: rgba(74, 63, 54, 0.55) !important;
+  border-color: rgba(74, 63, 54, 0.12) !important;
+  background: rgba(252, 250, 244, 0.88) !important;
+}
+
+/* Brújula decorativa (HTML hermano del mapa) */
+.infographicCompass {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 4;
+  width: 56px;
+  height: 56px;
+  pointer-events: none;
+  opacity: 0.55;
+  color: rgba(74, 63, 54, 0.45);
+}
+
+.infographicCompass svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ciudades orientación — caps refinadas */
+.chMapGeoLabel {
+  background: transparent !important;
+  border: none !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.chMapGeoLabel__text {
+  display: block;
+  font-family: "Noto Serif Display", Georgia, serif;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  text-align: center;
+  line-height: 1.2;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(74, 63, 54, 0.42);
+}
+
+.chMapDivicon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.chooseMapLeafTune :global(.leaflet-marker-icon) {
+  cursor: pointer !important;
+}
+
+.chooseMapLeafTune :global(.leaflet-chmapGeoLabels-pane .leaflet-marker-icon) {
+  cursor: default !important;
+  overflow: visible !important;
+}
+
+/* ---------- Pines tipo infografía (lágrima + número) ---------- */
+.chMapPinWrap {
+  position: relative;
+  width: 30px;
+  height: 38px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--inf-pin-a);
+}
+
+.chMapPinWrap--b {
+  color: var(--inf-pin-b);
+}
+
+.chMapPinWrap--c {
+  color: var(--inf-pin-c);
+}
+
+.chMapPinSvg {
+  display: block;
+  width: 28px;
+  height: 34px;
+  filter: drop-shadow(0 1px 1px rgba(40, 36, 30, 0.18));
+}
+
+.chMapPinNum {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #faf8f2;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 14px;
+  text-align: center;
+  color: var(--inf-ink);
+  box-shadow: 0 0 0 1px rgba(74, 63, 54, 0.12);
+  pointer-events: none;
+}
+
+.chMapPinWrap[data-active="true"] {
+  filter: drop-shadow(0 2px 4px rgba(92, 95, 60, 0.25));
+  transform: scale(1.06);
+  transition: transform 0.2s ease;
+}
+
+/* Etiqueta tipo cartela junto al mapa */
+.chMapCallout {
+  min-width: 100px;
+  max-width: 118px;
+  padding: 6px 8px 7px;
+  box-sizing: border-box;
+  background: rgba(252, 250, 244, 0.94);
+  border: 1px solid rgba(74, 63, 54, 0.14);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(46, 42, 36, 0.06);
+  cursor: pointer;
+  text-align: left;
+}
+
+.chMapCallout__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.chMapCallout[data-active="true"] {
+  border-color: rgba(92, 95, 62, 0.35);
+  box-shadow: 0 3px 12px rgba(92, 95, 60, 0.12);
+}
+
+.chMapCallout__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  margin-right: 6px;
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: 800;
+  color: #faf8f2;
+  vertical-align: middle;
+  background: var(--inf-pin-a);
+}
+
+.chMapCallout--b .chMapCallout__num {
+  background: var(--inf-pin-b);
+}
+
+.chMapCallout--c .chMapCallout__num {
+  background: var(--inf-pin-c);
+}
+
+.chMapCallout__title {
+  flex: 1;
+  display: block;
+  font-family: "Noto Serif Display", Georgia, serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--inf-ink);
+  line-height: 1.25;
+}
+
+.chMapCallout__pill {
+  display: block;
+  margin-top: 3px;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--inf-muted);
+}
+
+/* Cluster infografía */
+.chMapCluster {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.chMapCluster__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 2px solid rgba(139, 107, 79, 0.45);
+  background: rgba(252, 250, 244, 0.88);
+  box-shadow: 0 2px 6px rgba(46, 42, 36, 0.08);
+  pointer-events: none;
+}
+
+.chMapCluster__count {
+  position: relative;
+  z-index: 1;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--inf-ink);
+  pointer-events: none;
+}
+
+.chMapCluster[data-active="true"] .chMapCluster__ring {
+  border-color: rgba(74, 103, 103, 0.55);
+  transform: scale(1.05);
+}
+
+.chMapTip__inner {
+  padding: 8px 10px 9px;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.chMapTip__title {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink, #1e221a);
+}
+
+.chMapTip__meta {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.chMapTip__clusterInner {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chMapTip__clusterRow {
+  display: block;
+}
+
+:global(.leaflet-tooltip).chMapTip {
+  padding: 0 !important;
+  border: 1px solid color-mix(in srgb, var(--stroke) 40%, transparent) !important;
+  border-radius: 8px !important;
+  background: color-mix(in srgb, var(--card) 96%, var(--bg)) !important;
+  box-shadow: 0 2px 10px rgba(46, 48, 38, 0.07) !important;
+}
+
+:global(.leaflet-tooltip).chMapTip .chMapTip__inner {
+  padding: 8px 10px 9px;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+:global(.leaflet-tooltip).chMapTip .chMapTip__title {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink, #1e221a);
+}
+
+:global(.leaflet-tooltip).chMapTip .chMapTip__meta {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+:global(.leaflet-tooltip).chMapTip .chMapTip__clusterInner {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+:global(.leaflet-tooltip).chMapTip .chMapTip__clusterRow {
+  display: block;
+}
+
+:global(.leaflet-tooltip).chMapTip::before {
+  border-top-color: color-mix(in srgb, var(--card) 96%, var(--bg)) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chMapPinWrap[data-active="true"] {
+    transform: none;
+  }
+}

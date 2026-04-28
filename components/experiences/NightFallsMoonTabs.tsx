@@ -49,7 +49,12 @@ function Table({ rows }: { rows: Row[] }) {
           <div>{r[1]}</div>
           <div dangerouslySetInnerHTML={{ __html: r[2] }} />
           <div>
-            <a className="moonBook" href="https://purepods.com/booking/?cart=Checkout" target="_blank" rel="noopener noreferrer">
+            <a
+              className="moonBook"
+              href="https://purepods.com/booking/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Book
             </a>
           </div>
@@ -77,7 +82,11 @@ export function NightFallsMoonTabs() {
           </div>
         </div>
 
-        <div className="moonTabs" role="tablist" aria-label="Night Falls calendar">
+        <div
+          className="moonTabs"
+          role="tablist"
+          aria-label="Night Falls calendar"
+        >
           <button
             className={`moonTab${tab === "dark" ? " is-active" : ""}`}
             type="button"
@@ -107,27 +116,42 @@ export function NightFallsMoonTabs() {
           </button>
         </div>
 
-        <div className={`moonPanel${tab === "dark" ? " is-active" : ""}`} role="tabpanel" id="tab-dark">
+        <div
+          className={`moonPanel${tab === "dark" ? " is-active" : ""}`}
+          role="tabpanel"
+          id="tab-dark"
+        >
           <h4>Deep-sky forecast (12 months)</h4>
           <p className="moonSub">
-            When the moon disappears, the sky reaches peak darkness. This is the best time to observe the Milky Way and
-            deep-sky objects.
+            When the moon disappears, the sky reaches peak darkness. This is the
+            best time to observe the Milky Way and deep-sky objects.
           </p>
           <Table rows={darkRows} />
         </div>
 
-        <div className={`moonPanel${tab === "full" ? " is-active" : ""}`} role="tabpanel" id="tab-full">
+        <div
+          className={`moonPanel${tab === "full" ? " is-active" : ""}`}
+          role="tabpanel"
+          id="tab-full"
+        >
           <h4>Full moon forecast (12 months)</h4>
           <p className="moonSub">
-            When the moon lights the landscape, the sky changes character. Fainter stars disappear, but the land glows in
-            silver light.
+            When the moon lights the landscape, the sky changes character.
+            Fainter stars disappear, but the land glows in silver light.
           </p>
           <Table rows={fullRows} />
         </div>
 
-        <div className={`moonPanel${tab === "dust" ? " is-active" : ""}`} role="tabpanel" id="tab-dust">
+        <div
+          className={`moonPanel${tab === "dust" ? " is-active" : ""}`}
+          role="tabpanel"
+          id="tab-dust"
+        >
           <h4>Meteor showers</h4>
-          <p className="moonSub">Nights filled with brief flashes of light as meteors streak across the sky.</p>
+          <p className="moonSub">
+            Nights filled with brief flashes of light as meteors streak across
+            the sky.
+          </p>
           <Table rows={dustRows} />
         </div>
       </div>

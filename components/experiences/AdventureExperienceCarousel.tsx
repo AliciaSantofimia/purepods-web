@@ -1,11 +1,49 @@
 "use client";
 
 import Link from "next/link";
-import { Fragment, useCallback, useEffect, useId, useState } from "react";
+import {
+  Fragment,
+  useCallback,
+  useEffect,
+  useId,
+  useRef,
+  useState,
+  type PointerEvent as ReactPointerEvent,
+} from "react";
 import { ExpRefImage } from "@/components/experiences/ExpRefImage";
 import type { AdventureExperienceSlide } from "@/lib/experiencesData/adventureWildlife";
 
 const AUTO_MS = 7000;
+
+const INTERACTIVE_SELECTOR =
+  "a, button, input, textarea, select, [role=\"button\"]";
+
+const TAP_MOVE_PX = 12;
+
+const SWIPE_MIN_PX = 40;
+
+/** Viewport breakpoint aligned with adventure-wildlife carousel CSS (mobile = swipe-first, no stage click-to-open). */
+const MOBILE_CAROUSEL_MQ = "(max-width: 720px)";
+
+function elementFromEventTarget(target: EventTarget | null): Element | null {
+  if (target instanceof Element) return target;
+  if (target instanceof Text) return target.parentElement;
+  return null;
+}
+
+function isInteractiveTarget(target: EventTarget | null): boolean {
+  const el = elementFromEventTarget(target);
+  if (!el) return false;
+  return Boolean(el.closest(INTERACTIVE_SELECTOR));
+}
+
+function openExternalUrl(url: string) {
+  const a = document.createElement("a");
+  a.href = url;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  a.click();
+}
 
 type Props = {
   slides: AdventureExperienceSlide[];
@@ -16,6 +54,16 @@ export function AdventureExperienceCarousel({ slides }: Props) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
+  const [isMobileCarousel, setIsMobileCarousel] = useState(false);
+
+  const gestureRef = useRef<{
+    pointerId: number;
+    x: number;
+    y: number;
+    moved: boolean;
+  } | null>(null);
+
+  const blockStageOpenClickRef = useRef(false);
 
   const n = slides.length;
   const active = slides[index] ?? slides[0];
@@ -23,6 +71,14 @@ export function AdventureExperienceCarousel({ slides }: Props) {
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     const sync = () => setReduceMotion(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  useEffect(() => {
+    const mq = window.matchMedia(MOBILE_CAROUSEL_MQ);
+    const sync = () => setIsMobileCarousel(mq.matches);
     sync();
     mq.addEventListener("change", sync);
     return () => mq.removeEventListener("change", sync);
@@ -44,6 +100,108 @@ export function AdventureExperienceCarousel({ slides }: Props) {
     setIndex((i) => (i + 1) % n);
   }, [n]);
 
+  const scheduleUnblockStageClick = useCallback(() => {
+    blockStageOpenClickRef.current = true;
+    window.setTimeout(() => {
+      blockStageOpenClickRef.current = false;
+    }, 120);
+  }, []);
+
+  const onStagePointerDown = useCallback(
+    (e: ReactPointerEvent<HTMLDivElement>) => {
+      if (!e.isPrimary) return;
+      if (e.pointerType === "mouse" && e.button !== 0) return;
+      if (isInteractiveTarget(e.target)) {
+        gestureRef.current = null;
+        return;
+      }
+      gestureRef.current = {
+        pointerId: e.pointerId,
+        x: e.clientX,
+        y: e.clientY,
+        moved: false,
+      };
+      try {
+        e.currentTarget.setPointerCapture(e.pointerId);
+      } catch {
+        /* setPointerCapture can fail if the element is not eligible */
+      }
+    },
+    [],
+  );
+
+  const onStagePointerMove = useCallback((e: ReactPointerEvent<HTMLDivElement>) => {
+    const g = gestureRef.current;
+    if (!g || g.pointerId !== e.pointerId) return;
+    const dx = e.clientX - g.x;
+    const dy = e.clientY - g.y;
+    if (Math.hypot(dx, dy) > TAP_MOVE_PX) g.moved = true;
+  }, []);
+
+  const onStagePointerUp = useCallback(
+    (e: ReactPointerEvent<HTMLDivElement>) => {
+      const g = gestureRef.current;
+      if (!g || g.pointerId !== e.pointerId) return;
+
+      const dx = e.clientX - g.x;
+      const dy = e.clientY - g.y;
+      const absDx = Math.abs(dx);
+      const absDy = Math.abs(dy);
+
+      /* Do not require g.moved: some touch stacks only deliver down+up on quick flicks. */
+      const isHorizontalSwipe =
+        absDx >= SWIPE_MIN_PX && absDx > absDy * 1.1;
+
+      gestureRef.current = null;
+      try {
+        if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+          e.currentTarget.releasePointerCapture(e.pointerId);
+        }
+      } catch {
+        /* releasePointerCapture can fail if not captured */
+      }
+
+      /* Swipe must not depend on pointerup target (finger often lifts over caption/CTA). */
+      if (isHorizontalSwipe) {
+        scheduleUnblockStageClick();
+        if (dx < 0) goNext();
+        else goPrev();
+        return;
+      }
+
+      if (g.moved) scheduleUnblockStageClick();
+    },
+    [goNext, goPrev, scheduleUnblockStageClick],
+  );
+
+  const onStagePointerCancel = useCallback(
+    (e: ReactPointerEvent<HTMLDivElement>) => {
+      const g = gestureRef.current;
+      if (!g || g.pointerId !== e.pointerId) return;
+      gestureRef.current = null;
+      try {
+        if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+          e.currentTarget.releasePointerCapture(e.pointerId);
+        }
+      } catch {
+        /* ignore */
+      }
+    },
+    [],
+  );
+
+  const onStageClick = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (isMobileCarousel) return;
+      if (blockStageOpenClickRef.current) return;
+      if (isInteractiveTarget(e.target)) return;
+      const url = slides[index]?.url;
+      if (!url) return;
+      openExternalUrl(url);
+    },
+    [isMobileCarousel, slides, index],
+  );
+
   if (!active || n === 0) return null;
 
   const metaLine = `${active.distance} · ${active.timing}`;
@@ -57,8 +215,16 @@ export function AdventureExperienceCarousel({ slides }: Props) {
     >
       <div
         className="aw-xp-carousel__stage"
+        aria-label={
+          isMobileCarousel ? undefined : `Open experience: ${active.title}`
+        }
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
+        onPointerDown={onStagePointerDown}
+        onPointerMove={onStagePointerMove}
+        onPointerUp={onStagePointerUp}
+        onPointerCancel={onStagePointerCancel}
+        onClick={onStageClick}
       >
         <div className="aw-xp-carousel__slides">
           {slides.map((slide, i) => (
@@ -98,6 +264,11 @@ export function AdventureExperienceCarousel({ slides }: Props) {
                 </Link>
               </Fragment>
             ))}
+            {active.nearbyRegion ? (
+              <span className="aw-xp-carousel__nearbyRegion">
+                {active.nearbyRegion}
+              </span>
+            ) : null}
           </p>
           <a
             className="aw-xp-carousel__cta"
@@ -105,7 +276,7 @@ export function AdventureExperienceCarousel({ slides }: Props) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            View experience
+            Explore this experience
           </a>
         </div>
       </div>
