@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ExpRefImage } from "@/components/experiences/ExpRefImage";
 import { NightFallsChrome } from "@/components/experiences/NightFallsChrome";
-import { NightFallsBooking } from "@/components/experiences/NightFallsBooking";
 import { NightFallsEffects } from "@/components/experiences/NightFallsEffects";
 import { NightFallsMoonTabs } from "@/components/experiences/NightFallsMoonTabs";
 import { Footer } from "@/components/layout/Footer";
@@ -252,8 +251,6 @@ export function NightFallsView() {
                   </small>
                 </div>
               </div>
-
-              <NightFallsBooking />
             </section>
 
             <section className="faq" id="faq" aria-labelledby="faq-heading">
