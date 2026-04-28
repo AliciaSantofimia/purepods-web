@@ -262,6 +262,25 @@ export function NightFallsView() {
                 </div>
               </div>
             </section>
+
+            <section
+              className="section nightVideoClosing"
+              aria-labelledby="night-video-closing-heading"
+            >
+              <div className="nightVideoClosing__intro">
+                <p className="eyebrow">Night Falls</p>
+                <h2 id="night-video-closing-heading">When the night settles</h2>
+                <p>
+                  A quiet glimpse of what Night Falls feels like — glass,
+                  darkness, stars and stillness.
+                </p>
+              </div>
+              <div className="nightVideoClosing__frame">
+                <video autoPlay muted loop playsInline preload="none">
+                  <source src="/video/Pure%20Stargazing.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </section>
           </main>
         </NightFallsChrome>
       </div>
