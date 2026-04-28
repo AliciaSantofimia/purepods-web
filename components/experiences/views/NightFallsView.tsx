@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ExpRefImage } from "@/components/experiences/ExpRefImage";
 import { NightFallsChrome } from "@/components/experiences/NightFallsChrome";
+import { NightFallsFaqAccordion } from "@/components/experiences/NightFallsFaqAccordion";
 import { NightFallsEffects } from "@/components/experiences/NightFallsEffects";
 import { NightFallsMoonTabs } from "@/components/experiences/NightFallsMoonTabs";
 import { Footer } from "@/components/layout/Footer";
@@ -257,14 +258,7 @@ export function NightFallsView() {
               <div className="wrap">
                 <div className="surface">
                   <h2 id="faq-heading">Frequently asked questions</h2>
-                  <ul>
-                    {faq.map((f) => (
-                      <li key={f.q}>
-                        <h3>{f.q}</h3>
-                        <p>{f.a}</p>
-                      </li>
-                    ))}
-                  </ul>
+                  <NightFallsFaqAccordion items={faq} />
                 </div>
               </div>
             </section>
