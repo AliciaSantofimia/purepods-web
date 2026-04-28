@@ -177,6 +177,30 @@ export function NightFallsView() {
 
             <NightFallsMoonTabs />
 
+            <section
+              className="section nightCalendarCta"
+              aria-labelledby="night-calendar-cta-heading"
+            >
+              <div className="nightCalendarCta__panel">
+                <p className="eyebrow">Night Falls</p>
+                <h2 id="night-calendar-cta-heading">
+                  Choose your night under the stars
+                </h2>
+                <p>
+                  Check availability, then plan your stay around dark skies,
+                  moon phases and quiet nights in nature.
+                </p>
+                <a
+                  className="nightCalendarCta__button"
+                  href="https://purepods.com/booking/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Check availability
+                </a>
+              </div>
+            </section>
+
             <section className="section" id="vivir">
               <div className="sectionHeader">
                 <h2> How to live the night</h2>
