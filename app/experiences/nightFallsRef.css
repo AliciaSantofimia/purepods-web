@@ -543,6 +543,11 @@
   aspect-ratio: 4/3;
   position: relative;
 }
+.night-falls-ref .nightImg img {
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.55s ease;
+}
 .night-falls-ref .nightText h3 {
   margin: 0 0 10px;
   font-size: 20px;
@@ -927,6 +932,92 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Scroll reveal — Night Falls only; IO adds `.night--in-view` once. */
+.night-falls-ref .night-reveal:not(.night--in-view) {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+}
+
+.night-falls-ref .night-reveal--image:not(.night--in-view) {
+  transform: translate3d(0, 22px, 0) scale(0.985);
+}
+
+.night-falls-ref .night-reveal.night--in-view {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition:
+    opacity 0.54s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.54s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.night-falls-ref .night-reveal--image.night--in-view {
+  transform: translate3d(0, 0, 0) scale(1);
+  transition:
+    opacity 0.64s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.64s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.night-falls-ref .night-reveal--image.night--in-view,
+.night-falls-ref .night-reveal--section.night--in-view,
+.night-falls-ref .night-reveal--delay-1.night--in-view {
+  transition-delay: 0.1s;
+}
+
+.night-falls-ref .night-reveal--delay-2.night--in-view {
+  transition-delay: 0.18s;
+}
+
+.night-falls-ref .night-reveal--delay-3.night--in-view {
+  transition-delay: 0.26s;
+}
+
+.night-falls-ref .night-reveal--delay-4.night--in-view {
+  transition-delay: 0.34s;
+}
+
+@media (max-width: 720px) {
+  .night-falls-ref .night-reveal:not(.night--in-view) {
+    transform: none;
+  }
+
+  .night-falls-ref .night-reveal--image:not(.night--in-view) {
+    transform: translate3d(0, 14px, 0) scale(0.99);
+  }
+
+  .night-falls-ref .night-reveal.night--in-view {
+    transition: opacity 0.42s ease-out;
+  }
+
+  .night-falls-ref .night-reveal--image.night--in-view {
+    transition:
+      opacity 0.5s ease-out,
+      transform 0.5s ease-out;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .night-falls-ref .nightImg:hover img {
+    transform: scale(1.02);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .night-falls-ref .night-reveal,
+  .night-falls-ref .night-reveal:not(.night--in-view),
+  .night-falls-ref .night-reveal.night--in-view {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    transition-delay: 0s !important;
+  }
+
+  .night-falls-ref .nightImg img,
+  .night-falls-ref .nightImg:hover img {
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 .night-falls-ref .stickyCta {
