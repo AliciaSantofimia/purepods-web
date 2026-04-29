@@ -1,0 +1,38 @@
+/* Travel cards — chrome only (carousel lives in RuruExperimentalImageCarousel) */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  border-radius: var(--radius, 22px);
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.cardTitle {
+  margin: 0;
+  padding: clamp(16px, 3vw, 20px) clamp(18px, 3vw, 22px) 8px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.cardBody {
+  margin: 0;
+  padding: 0 clamp(18px, 3vw, 22px) clamp(18px, 3vw, 22px);
+  font-size: 14px;
+  line-height: 1.62;
+  color: var(--muted);
+}
+
+.mediaPlaceholder {
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(
+    145deg,
+    rgba(92, 95, 62, 0.08) 0%,
+    rgba(194, 181, 158, 0.15) 100%
+  );
+}
