@@ -1,5 +1,5 @@
 /**
- * Isolated pod grid + coordinates for `/pods/choose-map-experimental` only.
+ * Pod grid + coordinates for the `/pods` choose-your-place map (Leaflet).
  * Card copy/assets mirror production `EXPLORE_POD_CARDS`; lat/lng come from the experiment spec.
  */
 

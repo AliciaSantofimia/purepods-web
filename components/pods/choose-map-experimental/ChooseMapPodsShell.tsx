@@ -1,20 +1,12 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import { ExploreFooter } from "../../../components/pods/ExploreFooter";
-import xstyles from "../../../components/pods/ExplorePageWithMapExperimental.module.css";
-import { ChooseMapExperimentalClient } from "../../../components/pods/choose-map-experimental/ChooseMapExperimentalClient";
-import styles from "../explore.module.css";
+import { ExploreFooter } from "@/components/pods/ExploreFooter";
+import xstyles from "@/components/pods/ExplorePageWithMapExperimental.module.css";
+import styles from "@/app/pods/explore.module.css";
+import { ChooseMapExperimentalClient } from "./ChooseMapExperimentalClient";
 
-export const metadata: Metadata = {
-  title: { absolute: "Pods (choose map experimental) — PurePods" },
-  description:
-    "Experimental Choose your place layout with editorial Leaflet map — not indexed.",
-  robots: { index: false, follow: false },
-};
-
-export default function ChooseMapExperimentalPage() {
+/** Shell completo de la página Pods con mapa editorial e islas (tabs). */
+export function ChooseMapPodsShell() {
   return (
     <div className={`${styles.page} ${xstyles.pageRoot}`}>
       <header className={styles.nav}>

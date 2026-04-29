@@ -5,17 +5,8 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef } from "react";
-import {
-  GeoJSON,
-  MapContainer,
-  Marker,
-  Pane,
-  TileLayer,
-  useMap,
-  ZoomControl,
-} from "react-leaflet";
+import { MapContainer, Marker, Pane, TileLayer, useMap, ZoomControl } from "react-leaflet";
 import xstyles from "@/components/pods/ExplorePageWithMapExperimental.module.css";
-import nzLandGeo from "@/lib/nzOutlineSimplified.experimental.json";
 import type { ChooseMapPod, ChooseMapRegion } from "@/lib/chooseMapExperimentalData";
 import styles from "./chooseMapExperimental.module.css";
 
@@ -27,9 +18,6 @@ type MapPod = {
   lat: number;
   lng: number;
 };
-
-const CLUSTER_PIXEL_THRESHOLD = 12;
-const MAX_PODS_PER_CLUSTER = 3;
 
 const CITY_LABELS: Record<
   ChooseMapRegion,
@@ -92,57 +80,6 @@ function podsFitSignature(podList: MapPod[]): string {
     .map((p) => `${p.slug}:${p.lat}:${p.lng}`)
     .sort()
     .join("|");
-}
-
-function clusterPodsByScreenProximity(
-  map: L.Map,
-  pods: MapPod[],
-  pxThreshold: number,
-): MapPod[][] {
-  const n = pods.length;
-  if (n === 0) return [];
-  if (n === 1) return [[pods[0]]];
-
-  const parent = Array.from({ length: n }, (_, i) => i);
-  function find(i: number): number {
-    return parent[i] === i ? i : (parent[i] = find(parent[i]));
-  }
-  function union(a: number, b: number) {
-    const ra = find(a);
-    const rb = find(b);
-    if (ra !== rb) parent[ra] = rb;
-  }
-
-  const pts = pods.map((p) => map.latLngToLayerPoint(L.latLng(p.lat, p.lng)));
-  const thr2 = pxThreshold * pxThreshold;
-  for (let i = 0; i < n; i++) {
-    for (let j = i + 1; j < n; j++) {
-      const dx = pts[i].x - pts[j].x;
-      const dy = pts[i].y - pts[j].y;
-      if (dx * dx + dy * dy <= thr2) union(i, j);
-    }
-  }
-
-  const buckets = new Map<number, MapPod[]>();
-  for (let i = 0; i < n; i++) {
-    const r = find(i);
-    if (!buckets.has(r)) buckets.set(r, []);
-    buckets.get(r)!.push(pods[i]);
-  }
-  return Array.from(buckets.values()).flatMap((g) =>
-    g.length > MAX_PODS_PER_CLUSTER ? g.map((p) => [p]) : [g],
-  );
-}
-
-function clusterCentroid(group: MapPod[]): [number, number] {
-  let lat = 0;
-  let lng = 0;
-  for (const p of group) {
-    lat += p.lat;
-    lng += p.lng;
-  }
-  const n = group.length;
-  return [lat / n, lng / n];
 }
 
 function intersectLatLngBounds(a: L.LatLngBounds, b: L.LatLngBounds): L.LatLngBounds | null {
@@ -348,26 +285,6 @@ function PodMarkersLayer({
     [map],
   );
 
-  const clusterMarkerDivIcon = (group: MapPod[]) => {
-    const size = 44;
-    const members = group.map((p) => p.slug).join(",");
-    const count = String(group.length);
-    const html = `<div class="${styles.chMapCluster}" data-cluster-root="true" data-members="${members}" aria-label="${group.length} PurePod locations"><span class="${styles.chMapCluster__ring}" aria-hidden="true"></span><span class="${styles.chMapCluster__count}" aria-hidden="true">${count}</span></div>`;
-    return L.divIcon({
-      className: styles.chMapDivicon,
-      html,
-      iconSize: [size, size],
-      iconAnchor: [size / 2, size / 2],
-    });
-  };
-
-  const clusterTooltipHtml = (group: MapPod[]) => {
-    const rows = group
-      .map((p) => `<div class="${styles.chMapTip__clusterRow}"><span class="${styles.chMapTip__title}">${escapeHtml(p.title)}</span></div>`)
-      .join("");
-    return `<div class="${styles.chMapTip__inner} ${styles.chMapTip__clusterInner}">${rows}</div>`;
-  };
-
   const podPinDivIcon = (pod: MapPod, podList: MapPod[], orderIdx: number) => {
     const num = orderIdx + 1;
     const variant = pinVariantIndex(orderIdx);
@@ -424,42 +341,7 @@ function PodMarkersLayer({
 
     const orderBySlug = new Map(podList.map((p, i) => [p.slug, i]));
 
-    const groups = clusterPodsByScreenProximity(m, podList, CLUSTER_PIXEL_THRESHOLD);
-
-    for (const group of groups) {
-      if (group.length >= 2) {
-        const [lat, lng] = clusterCentroid(group);
-        const marker = L.marker([lat, lng], {
-          icon: clusterMarkerDivIcon(group),
-          riseOnHover: true,
-        });
-        marker.bindTooltip(clusterTooltipHtml(group), {
-          permanent: false,
-          sticky: true,
-          direction: "top",
-          opacity: 1,
-          className: styles.chMapTip,
-        });
-        marker.on("mouseover", () => onHighlightRef.current(null));
-        marker.on("click", () => {
-          marker.closeTooltip?.();
-          const latlngs = group.map((p) => L.latLng(p.lat, p.lng));
-          const b = L.latLngBounds(latlngs);
-          m.fitBounds(b, {
-            padding: [48, 48],
-            maxZoom: 12,
-            animate: true,
-          });
-        });
-        marker.addTo(m);
-        pushLayer(marker);
-        for (const p of group) {
-          markersRef.current.set(p.slug, marker);
-        }
-        continue;
-      }
-
-      const pod = group[0];
+    for (const pod of podList) {
       const orderIdx = orderBySlug.get(pod.slug) ?? 0;
       const icon = podPinDivIcon(pod, podList, orderIdx);
       const zIndexOffset =
@@ -572,21 +454,8 @@ export default function ChooseMapLeafletMap({
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
           maxZoom={19}
-          opacity={0.88}
+          opacity={0.9}
         />
-        <Pane name="chmapLand" style={{ zIndex: 150 }}>
-          <GeoJSON
-            data={nzLandGeo as never}
-            interactive={false}
-            style={{
-              fillColor: "#d4c9a8",
-              fillOpacity: 0.96,
-              color: "rgba(96, 88, 72, 0.42)",
-              weight: 0.55,
-              opacity: 1,
-            }}
-          />
-        </Pane>
         <CityLabels region={region} />
         <ZoomControl position="topright" />
         <MapResizeHandler />

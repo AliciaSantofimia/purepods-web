@@ -11,6 +11,7 @@ import {
   type ChooseMapPod,
   type ChooseMapRegion,
 } from "@/lib/chooseMapExperimentalData";
+import chooseMapStyles from "./chooseMapExperimental.module.css";
 
 /** Same shell as production map column while the Leaflet chunk loads (dynamic ssr: false). */
 function MapPlaceholder() {
@@ -22,10 +23,13 @@ function MapPlaceholder() {
   );
 }
 
-const ChooseMapLeafletMap = dynamic(() => import("./ChooseMapLeafletMap"), {
-  ssr: false,
-  loading: () => <MapPlaceholder />,
-});
+const ChooseMapLeafletMap = dynamic(
+  () => import(/* webpackChunkName: "choose-map-leaflet" */ "./ChooseMapLeafletMap"),
+  {
+    ssr: false,
+    loading: () => <MapPlaceholder />,
+  },
+);
 
 const TABS: { filter: ChooseMapRegion; label: string }[] = [
   { filter: "north", label: "North Island" },
@@ -174,7 +178,7 @@ export function ChooseMapExperimentalClient() {
                   <Link
                     key={pod.slug}
                     href={pod.href}
-                    className={`${styles.pod} ${isHover ? xstyles.podMapHighlight : ""} ${isScrollCue ? xstyles.podScrollCue : ""}`}
+                    className={`${styles.pod} ${isHover ? xstyles.podMapHighlight : ""} ${isHover ? chooseMapStyles.chooseMapPodLinkActive : ""} ${isScrollCue ? xstyles.podScrollCue : ""}`}
                     data-island={pod.filter}
                     data-map-card
                     data-pod-slug={pod.slug}
