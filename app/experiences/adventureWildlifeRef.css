@@ -2301,7 +2301,7 @@
 
   .experience-ref.adventure-wildlife-ref .aw-xp-carousel__nav {
 
-    display: none;
+    display: flex;
 
   }
 
