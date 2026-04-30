@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { Footer } from "@/components/layout/Footer";
 import { FaqAccordion, type FaqSection } from "./FaqAccordion";
+import { FaqHeader } from "./FaqHeader";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -156,18 +158,27 @@ function faqJsonLd() {
 
 export default function FrequentlyAskedQuestionsPage() {
   return (
-    <main className={styles.page}>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd()) }}
       />
-      <div className={styles.wrap}>
-        <header className={styles.header}>
-          <p className={styles.eyebrow}>PurePods</p>
-          <h1>Frequently Asked Questions</h1>
-        </header>
-        <FaqAccordion sections={faqSections} />
-      </div>
-    </main>
+      <FaqHeader />
+      <main id="main" className={styles.page}>
+        <div id="faq-content" className={styles.wrap}>
+          <header className={styles.header}>
+            <p className={styles.eyebrow}>PurePods</p>
+            <h1>Frequently Asked Questions</h1>
+            <p className={styles.intro}>
+              To make sure you&apos;re fully prepared for your unforgettable
+              PurePods experience, we&apos;ve put together answers to some of the
+              most common questions.
+            </p>
+          </header>
+          <FaqAccordion sections={faqSections} />
+        </div>
+      </main>
+      <Footer brandLogo simplified />
+    </>
   );
 }

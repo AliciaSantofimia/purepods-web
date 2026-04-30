@@ -23,20 +23,51 @@ type Props = {
 };
 
 export function FaqAccordion({ sections }: Props) {
+  const [activeSectionIndex, setActiveSectionIndex] = useState(0);
   const [openId, setOpenId] = useState<string | null>(null);
+  const activeSection = sections[activeSectionIndex];
+  const activePanelId = `faq-section-panel-${activeSectionIndex}`;
+
+  const selectSection = (sectionIndex: number) => {
+    setActiveSectionIndex(sectionIndex);
+    setOpenId(null);
+  };
+
+  if (!activeSection) return null;
 
   return (
-    <div className={styles.sections}>
-      {sections.map((section, sectionIndex) => (
+    <div className={styles.faqTabs}>
+      <div className={styles.tabsScroller}>
+        <div className={styles.tabs} role="group" aria-label="FAQ categories">
+          {sections.map((section, sectionIndex) => {
+            const isActive = sectionIndex === activeSectionIndex;
+
+            return (
+              <button
+                key={section.title}
+                type="button"
+                id={`faq-tab-${sectionIndex}`}
+                className={`${styles.tab}${isActive ? ` ${styles.tabActive}` : ""}`}
+                aria-pressed={isActive}
+                onClick={() => selectSection(sectionIndex)}
+              >
+                {section.title}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+      <div className={styles.sections}>
         <section
-          key={section.title}
+          key={activeSection.title}
+          id={activePanelId}
           className={styles.section}
-          aria-labelledby={`faq-section-${sectionIndex}`}
+          aria-labelledby={`faq-section-${activeSectionIndex}`}
         >
-          <h2 id={`faq-section-${sectionIndex}`}>{section.title}</h2>
+          <h2 id={`faq-section-${activeSectionIndex}`}>{activeSection.title}</h2>
           <div className={styles.accordion}>
-            {section.items.map((item, itemIndex) => {
-              const itemId = `faq-${sectionIndex}-${itemIndex}`;
+            {activeSection.items.map((item, itemIndex) => {
+              const itemId = `faq-${activeSectionIndex}-${itemIndex}`;
               const panelId = `${itemId}-panel`;
               const isOpen = openId === itemId;
 
@@ -79,7 +110,7 @@ export function FaqAccordion({ sections }: Props) {
             })}
           </div>
         </section>
-      ))}
+      </div>
     </div>
   );
 }
