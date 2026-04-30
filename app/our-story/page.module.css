@@ -1,0 +1,219 @@
+.page {
+  min-height: 100vh;
+  padding: clamp(52px, 8vw, 92px) 0 clamp(76px, 10vw, 112px);
+  background:
+    radial-gradient(circle at top left, rgba(194, 181, 158, 0.13), transparent 32rem),
+    var(--bg);
+}
+
+.wrap {
+  width: min(820px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.hero {
+  max-width: 42rem;
+  margin-bottom: clamp(3.5rem, 8vw, 6rem);
+}
+
+.eyebrow {
+  margin: 0 0 0.7rem;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(33px, 5.15vw, 44px);
+  line-height: 1.07;
+  letter-spacing: -0.04em;
+}
+
+.intro {
+  max-width: 36rem;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.8vw, 1.08rem);
+  line-height: 1.7;
+}
+
+.sections {
+  display: grid;
+  gap: clamp(4rem, 9vw, 6.5rem);
+}
+
+.section {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.section h2 {
+  max-width: 13ch;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.85rem, 4vw, 2.7rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.copy {
+  display: grid;
+  max-width: 40rem;
+  gap: 1rem;
+}
+
+.copy p,
+.softList p,
+.point p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.softList {
+  display: grid;
+  max-width: 42rem;
+  gap: 0.85rem;
+}
+
+.softList p {
+  padding-left: 1rem;
+  border-left: 1px solid var(--stroke);
+}
+
+.ctaSection {
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
+  padding: clamp(1.7rem, 4vw, 2.4rem);
+  border: 1px solid var(--stroke);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.ctaSection p {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.ctaButton {
+  display: inline-flex;
+  min-height: 2.55rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.15rem;
+  border: 1px solid rgba(92, 95, 62, 0.16);
+  border-radius: 999px;
+  background: var(--brand-beige);
+  color: var(--brand-green);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.ctaButton:hover {
+  background: rgba(247, 240, 228, 0.98);
+  transform: translateY(-1px);
+}
+
+.ctaButton:focus-visible {
+  outline: 2px solid rgba(92, 95, 62, 0.34);
+  outline-offset: 3px;
+}
+
+.pointGrid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.point {
+  display: grid;
+  gap: 0.7rem;
+  padding: 1rem;
+  border: 1px solid var(--stroke);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.36);
+}
+
+.point h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.point ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.point li {
+  margin: 0.2rem 0;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 34px 0 62px;
+  }
+
+  .wrap {
+    width: min(100% - 28px, 820px);
+  }
+
+  .hero {
+    margin-bottom: 3rem;
+  }
+
+  .eyebrow {
+    margin-bottom: 0.55rem;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 9vw, 36px);
+    line-height: 1.08;
+  }
+
+  .intro {
+    margin-top: 0.75rem;
+    font-size: 0.94rem;
+    line-height: 1.6;
+  }
+
+  .sections {
+    gap: 3.6rem;
+  }
+
+  .section h2 {
+    max-width: 15ch;
+    font-size: clamp(1.65rem, 8vw, 2.15rem);
+  }
+
+  .copy p,
+  .softList p,
+  .point p,
+  .point ul {
+    font-size: 0.94rem;
+    line-height: 1.65;
+  }
+
+  .ctaSection {
+    padding: 1.3rem;
+    border-radius: 18px;
+  }
+}
