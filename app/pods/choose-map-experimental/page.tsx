@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { ExploreFooter } from "../../../components/pods/ExploreFooter";
+import { Footer } from "@/components/layout/Footer";
 import xstyles from "../../../components/pods/ExplorePageWithMapExperimental.module.css";
 import { ChooseMapExperimentalClient } from "../../../components/pods/choose-map-experimental/ChooseMapExperimentalClient";
 import styles from "../explore.module.css";
@@ -56,7 +56,7 @@ export default function ChooseMapExperimentalPage() {
         <ChooseMapExperimentalClient />
       </main>
 
-      <ExploreFooter />
+      <Footer brandLogo simplified />
     </div>
   );
 }

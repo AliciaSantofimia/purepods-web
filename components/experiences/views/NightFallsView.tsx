@@ -302,7 +302,7 @@ export function NightFallsView() {
           </NightFallsChrome>
         </ExperienceRevealMotionRoot>
       </div>
-      <Footer brandLogo />
+      <Footer brandLogo simplified />
     </>
   );
 }

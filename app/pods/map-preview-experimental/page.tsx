@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Footer } from "@/components/layout/Footer";
 import { LocationAwarenessExperimental } from "@/components/pods/LocationAwarenessExperimental";
 
 export const metadata: Metadata = {
@@ -12,8 +13,11 @@ export const metadata: Metadata = {
  */
 export default function MapPreviewExperimentalPage() {
   return (
-    <div style={{ padding: "clamp(16px, 4vw, 32px) clamp(12px, 3vw, 24px) 48px" }}>
-      <LocationAwarenessExperimental />
-    </div>
+    <>
+      <div style={{ padding: "clamp(16px, 4vw, 32px) clamp(12px, 3vw, 24px) 48px" }}>
+        <LocationAwarenessExperimental />
+      </div>
+      <Footer brandLogo simplified />
+    </>
   );
 }

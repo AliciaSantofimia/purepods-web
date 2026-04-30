@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ExploreFooter } from "@/components/pods/ExploreFooter";
+import { Footer } from "@/components/layout/Footer";
 import { ExplorePageWithMapClient } from "@/components/pods/ExplorePageWithMapClient";
 import { EXPLORE_POD_CARDS } from "@/lib/podsExploreData";
 import styles from "../explore.module.css";
@@ -55,7 +55,7 @@ export default function ExploreMapExperimentalPage() {
         <ExplorePageWithMapClient pods={EXPLORE_POD_CARDS} />
       </main>
 
-      <ExploreFooter />
+      <Footer brandLogo simplified />
     </div>
   );
 }

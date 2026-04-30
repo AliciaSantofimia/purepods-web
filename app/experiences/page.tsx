@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: {
@@ -234,13 +235,7 @@ export default function ExperiencesPage() {
         </section>
       </main>
 
-      <footer>
-        <div className="wrap">
-          PurePods · <a href="/">Home</a> · <a href="/pods">Pods</a> ·{" "}
-          <a href="/experiences">Experiences</a> ·{" "}
-          <a href="https://purepods.com/booking/">Book</a>
-        </div>
-      </footer>
+      <Footer brandLogo simplified />
     </>
   );
 }

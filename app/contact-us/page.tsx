@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Footer } from "@/components/layout/Footer";
+import { FaqHeader } from "@/app/frequently-asked-questions/FaqHeader";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -6,12 +8,16 @@ export const metadata: Metadata = {
 
 export default function ContactUsPage() {
   return (
-    <main
-      className="wrap"
-      style={{ padding: "clamp(96px, 14vw, 140px) 0 72px" }}
-    >
-      <h1>Contact Us</h1>
-      <p style={{ color: "var(--muted)" }}>Content coming soon.</p>
-    </main>
+    <>
+      <FaqHeader />
+      <main
+        className="wrap"
+        style={{ padding: "clamp(96px, 14vw, 140px) 0 72px" }}
+      >
+        <h1>Contact Us</h1>
+        <p style={{ color: "var(--muted)" }}>Content coming soon.</p>
+      </main>
+      <Footer brandLogo simplified />
+    </>
   );
 }

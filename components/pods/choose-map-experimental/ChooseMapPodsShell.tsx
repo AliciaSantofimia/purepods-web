@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ExploreFooter } from "@/components/pods/ExploreFooter";
+import { Footer } from "@/components/layout/Footer";
 import xstyles from "@/components/pods/ExplorePageWithMapExperimental.module.css";
 import styles from "@/app/pods/explore.module.css";
 import { ChooseMapExperimentalClient } from "./ChooseMapExperimentalClient";
@@ -48,7 +48,7 @@ export function ChooseMapPodsShell() {
         <ChooseMapExperimentalClient />
       </main>
 
-      <ExploreFooter />
+      <Footer brandLogo simplified />
     </div>
   );
 }
