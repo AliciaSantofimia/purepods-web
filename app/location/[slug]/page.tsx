@@ -10,7 +10,8 @@ import {
 type Props = { params: { slug: string }; searchParams?: { from?: string | string[] } };
 
 export function generateStaticParams() {
-  return LOCATION_POD_SLUGS.map((slug) => ({ slug }));
+  /** `/location/ruru` is served by `app/location/ruru/page.tsx` — omit here to avoid duplicate static paths. */
+  return LOCATION_POD_SLUGS.filter((slug) => slug !== "ruru").map((slug) => ({ slug }));
 }
 
 export function generateMetadata({ params }: Props): Metadata {

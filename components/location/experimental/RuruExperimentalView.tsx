@@ -34,8 +34,8 @@ export function RuruExperimentalView() {
   const [podLead, podBody] = ruruPodNarrative.paragraphs;
 
   return (
-    <LightboxProvider>
-      <div className={styles.root}>
+    <div className={styles.root}>
+      <LightboxProvider>
         <header className={styles.hero} id="top">
           <div className={styles.heroMedia}>
             <Image
@@ -112,77 +112,6 @@ export function RuruExperimentalView() {
           </section>
 
           <section
-            id="experiences"
-            className={styles.xpSection}
-            aria-labelledby="experiences-heading"
-          >
-            <div className={styles.wrap}>
-              <header className={`${styles.sectionHead} ${styles.xpEdHead}`}>
-                <h2 id="experiences-heading" className={styles.sectionTitle}>
-                  {ruruExperiencesBlock.title}
-                </h2>
-                <p className={styles.sectionHint}>{ruruExperiencesBlock.hint}</p>
-                <p className={styles.xpIntro}>{ruruExperiencesBlock.intro}</p>
-              </header>
-
-              {ruruExperiencesBlock.items.map((xp, index) => {
-                const copy = (
-                  <div className={styles.xpSplitCopy}>
-                    <h3 id={`xp-${index}-title`}>{xp.title}</h3>
-                    {xp.paragraphs.map((para, pi) => (
-                      <p key={pi}>{para}</p>
-                    ))}
-                    <ul className={styles.xpLinks}>
-                      {xp.links.map((l) => (
-                        <li key={l.href}>
-                          <a
-                            href={l.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {l.label}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                );
-
-                const figure = (
-                  <RuruExperimentalLightboxImage
-                    src={xp.image}
-                    alt={xp.imageAlt}
-                    sizes="(max-width: 899px) 100vw, min(30vw, 320px)"
-                    buttonClassName={styles.xpSplitFigure}
-                    imageClassName={styles.xpEdFigureImg}
-                  />
-                );
-
-                return (
-                  <article
-                    key={xp.title}
-                    className={styles.xpSplit}
-                    aria-labelledby={`xp-${index}-title`}
-                  >
-                    {figure}
-                    {copy}
-                  </article>
-                );
-              })}
-
-              <div className={styles.moreEditorial}>
-                <h3 className={styles.moreEditorialTitle}>
-                  {ruruExperiencesBlock.moreTitle}
-                </h3>
-                <p className={styles.moreEditorialLead}>
-                  <strong>{ruruExperiencesBlock.moreLeadStrong}</strong>
-                </p>
-                <p className={styles.moreEditorialBody}>{ruruExperiencesBlock.moreBody}</p>
-              </div>
-            </div>
-          </section>
-
-          <section
             id="travel"
             className={styles.travelSection}
             aria-labelledby="travel-heading"
@@ -221,6 +150,106 @@ export function RuruExperimentalView() {
             </div>
           </section>
 
+          <details id="experiences" className={styles.xpCollapsible}>
+            <summary className={styles.xpCollapsibleSummary}>
+              <span className={styles.xpCollapsibleSummaryText}>
+                <span className={styles.xpCollapsibleTitle}>
+                  Explore around Ruru
+                </span>
+                <span className={styles.xpCollapsibleIntro}>
+                  Coastal walks, hidden beaches and quiet places nearby.
+                </span>
+              </span>
+              <span className={styles.xpCollapsibleChevron} aria-hidden />
+            </summary>
+            <div className={styles.xpCollapsiblePanel}>
+              <section
+                className={`${styles.xpSection} ${styles.xpSectionAsPanel}`}
+                aria-labelledby="experiences-heading"
+              >
+                <div className={styles.wrap}>
+                  <header className={`${styles.sectionHead} ${styles.xpEdHead}`}>
+                    <h2 id="experiences-heading" className={styles.sectionTitle}>
+                      {ruruExperiencesBlock.title}
+                    </h2>
+                    <p className={styles.sectionHint}>{ruruExperiencesBlock.hint}</p>
+                    <p className={styles.xpIntro}>{ruruExperiencesBlock.intro}</p>
+                  </header>
+
+                  {ruruExperiencesBlock.items.map((xp, index) => {
+                    const copy = (
+                      <div className={styles.xpSplitCopy}>
+                        <h3 id={`xp-${index}-title`}>{xp.title}</h3>
+                        {xp.paragraphs.map((para, pi) => (
+                          <p key={pi}>{para}</p>
+                        ))}
+                        <ul className={styles.xpLinks}>
+                          {xp.links.map((l) => (
+                            <li key={l.href}>
+                              <a
+                                href={l.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {l.label}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    );
+
+                    const figure = (
+                      <RuruExperimentalLightboxImage
+                        src={xp.image}
+                        alt={xp.imageAlt}
+                        sizes="(max-width: 899px) 100vw, min(30vw, 320px)"
+                        buttonClassName={styles.xpSplitFigure}
+                        imageClassName={styles.xpEdFigureImg}
+                      />
+                    );
+
+                    return (
+                      <article
+                        key={xp.title}
+                        className={styles.xpSplit}
+                        aria-labelledby={`xp-${index}-title`}
+                      >
+                        {figure}
+                        {copy}
+                      </article>
+                    );
+                  })}
+
+                  <div className={styles.moreEditorial}>
+                    <h3 className={styles.moreEditorialTitle}>
+                      {ruruExperiencesBlock.moreTitle}
+                    </h3>
+                    <p className={styles.moreEditorialSubtitle}>
+                      {ruruExperiencesBlock.moreSubtitle}
+                    </p>
+                    <p className={styles.moreEditorialBody}>{ruruExperiencesBlock.moreBody}</p>
+                    <ul className={styles.moreEditorialRecs}>
+                      {ruruExperiencesBlock.moreRecommendations.map((rec) => (
+                        <li key={rec.href} className={styles.moreEditorialRecItem}>
+                          <span className={styles.moreEditorialRecLabel}>{rec.label}</span>
+                          <a
+                            href={rec.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.moreEditorialRecLink}
+                          >
+                            <strong>{rec.place}</strong>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </details>
+
           <div className={`${styles.faqSlot} ${styles.wrap}`}>
             <LocationFaqSection items={RURU_FAQ_ITEMS} />
           </div>
@@ -232,7 +261,7 @@ export function RuruExperimentalView() {
             />
           </div>
         </main>
-      </div>
-    </LightboxProvider>
+      </LightboxProvider>
+    </div>
   );
 }

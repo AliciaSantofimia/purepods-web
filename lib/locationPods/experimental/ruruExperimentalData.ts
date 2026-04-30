@@ -1,8 +1,8 @@
 import type { LocationFaqItem } from "@/components/location/LocationFaqSection";
 
 /**
- * Content mirror of `lib/locationPods/pages/ruru.tsx` for the design-test route only.
- * Kept separate so the production Ruru page file stays unchanged.
+ * Editorial layout content for PurePod Ruru (`/location/ruru`).
+ * Imported by `RuruExperimentalView` and by `lib/locationPods/pages/ruru.tsx` for JSON-LD FAQ parity.
  */
 const heroImage =
   "/assets/img/ruru/ruru-purepod-glass-cabin-aerial-view-coromandel.jpg";
@@ -126,10 +126,27 @@ export const ruruExperiencesBlock = {
       ],
     },
   ],
-  moreTitle: "Elsewhere on the peninsula",
-  moreLeadStrong: "Forest, coast and slow discovery.",
+  moreTitle: "More to explore",
+  moreSubtitle: "More ways to explore the Coromandel at your own pace",
   moreBody:
-    "Hot pools, coves and bays are within reach if you want them — or you can stay close to the pod and let the bush do the talking. The Coromandel suits both.",
+    "Historic walks, small towns and easy coastal escapes, all within a short drive.",
+  moreRecommendations: [
+    {
+      label: "Gold & mining heritage",
+      place: "Martha Mine / Crown Mines",
+      href: "https://www.freewalks.nz/martha-goldmine-pit-rim-walkway/",
+    },
+    {
+      label: "Waterfalls & forest walks",
+      place: "Owharoa Falls",
+      href: "https://waterfalls.co.nz/waterfalls-by-region/87-new-zealand-waterfalls/north-island/waikato/108-owharoa-falls",
+    },
+    {
+      label: "Waterfalls & forest walks",
+      place: "Windows Walk",
+      href: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/kaimai-mamaku-conservation-park",
+    },
+  ],
 };
 
 export type RuruTravelBlockCard =

@@ -1,4 +1,5 @@
 /* Ruru location — experimental editorial layout (scoped; location shell tokens apply) */
+/* Typography: docs/brand-guidelines.md — Inter for body/UI/H2/H3; Noto Serif Display only for main hero h1. */
 
 .root {
   --ruru-exp-max: min(1040px, calc(100% - 28px));
@@ -128,7 +129,7 @@
 .heroTitle {
   margin: 0;
   max-width: min(22ch, 100%);
-  font-family: var(--font-heading, "Noto Serif Display", Georgia, serif);
+  font-family: "Noto Serif Display", Georgia, "Times New Roman", serif;
   font-size: clamp(34px, 5vw, 52px);
   font-weight: 500;
   letter-spacing: -0.028em;
@@ -277,7 +278,7 @@
 
 .podFocusTitle {
   font-size: clamp(26px, 3.6vw, 38px);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.028em;
   line-height: 1.12;
 }
@@ -338,9 +339,10 @@
 
 .podLead {
   margin: 0;
-  font-family: var(--font-heading, "Noto Serif Display", Georgia, serif);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
   font-size: clamp(18px, 1.85vw, 22px);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.016em;
   line-height: 1.56;
   color: var(--ink);
@@ -348,7 +350,10 @@
 
 .podBody {
   margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
   font-size: clamp(15px, 1.32vw, 16px);
+  font-weight: 400;
   line-height: 1.74;
   color: rgba(92, 95, 62, 0.78);
 }
@@ -368,9 +373,10 @@
 
 .sectionTitle {
   margin: 0;
-  font-family: var(--font-heading, "Noto Serif Display", Georgia, serif);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
   font-size: clamp(22px, 2.8vw, 30px);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--ink);
 }
@@ -427,9 +433,10 @@
   margin: 0;
   padding: 0 0 0 clamp(14px, 2.5vw, 18px);
   border-left: 2px solid rgba(194, 181, 158, 0.88);
-  font-family: var(--font-heading, "Noto Serif Display", Georgia, serif);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
   font-size: clamp(15px, 1.4vw, 17px);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.012em;
   line-height: 1.6;
   color: rgba(92, 95, 62, 0.9);
@@ -456,6 +463,124 @@
     transparent 28%
   );
 }
+
+/* Collapsible “Around Ruru”: gradient + scroll on wrapper; inner section only holds content padding */
+.xpCollapsible {
+  border-top: 1px solid rgba(92, 95, 62, 0.08);
+  scroll-margin-top: calc(var(--location-fixed-header-clearance, 56px) + 12px);
+  background: linear-gradient(
+    180deg,
+    rgba(92, 95, 62, 0.02) 0%,
+    transparent 28%
+  );
+}
+
+.xpCollapsibleSummary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(18px, 4vw, 32px);
+  list-style: none;
+  cursor: pointer;
+  width: var(--ruru-exp-max);
+  max-width: 100%;
+  margin: 0 auto;
+  padding: clamp(32px, 6vw, 56px) clamp(14px, 4vw, 18px) clamp(24px, 4vw, 36px);
+  box-sizing: border-box;
+  color: var(--ink);
+  transition: color 0.2s ease;
+}
+
+.xpCollapsibleSummary::-webkit-details-marker {
+  display: none;
+}
+
+.xpCollapsibleSummary::marker {
+  content: "";
+}
+
+.xpCollapsibleSummary:hover .xpCollapsibleTitle {
+  color: var(--ink);
+}
+
+.xpCollapsibleSummary:focus-visible {
+  outline: 2px solid rgba(92, 95, 62, 0.32);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.xpCollapsibleSummaryText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(8px, 1.5vw, 12px);
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.xpCollapsibleTitle {
+  display: block;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  font-size: clamp(22px, 2.65vw, 29px);
+  font-weight: 600;
+  letter-spacing: -0.024em;
+  line-height: 1.2;
+  color: var(--ink);
+  transition: color 0.2s ease;
+}
+
+.xpCollapsibleIntro {
+  display: block;
+  margin: 0;
+  max-width: min(40ch, 100%);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  font-size: clamp(14px, 1.35vw, 15px);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.55;
+  color: rgba(92, 95, 62, 0.72);
+  transition: opacity 0.2s ease;
+}
+
+.xpCollapsible[open] .xpCollapsibleIntro {
+  display: none;
+}
+
+.xpCollapsibleChevron {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  margin-top: 0.35em;
+  border-right: 1.5px solid rgba(92, 95, 62, 0.38);
+  border-bottom: 1.5px solid rgba(92, 95, 62, 0.38);
+  transform: translateY(-1px) rotate(45deg);
+  transition: transform 0.25s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.xpCollapsible[open] .xpCollapsibleChevron {
+  transform: translateY(2px) rotate(225deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xpCollapsibleChevron {
+    transition: none;
+  }
+}
+
+.xpCollapsiblePanel {
+  padding: 0;
+}
+
+.xpSection.xpSectionAsPanel {
+  padding: 0 0 clamp(48px, 10vw, 96px);
+  margin: 0;
+  scroll-margin-top: 0;
+  background: none;
+}
+
 
 .xpEdHead {
   margin-bottom: clamp(8px, 2vw, 16px);
@@ -618,18 +743,73 @@
   color: var(--ink);
 }
 
-.moreEditorialLead {
-  margin: 0 0 8px;
+.moreEditorialSubtitle {
+  margin: 0 0 10px;
   font-size: 14px;
+  font-weight: 500;
   line-height: 1.55;
-  color: rgba(92, 95, 62, 0.92);
+  letter-spacing: -0.012em;
+  color: rgba(92, 95, 62, 0.82);
 }
 
 .moreEditorialBody {
-  margin: 0;
+  margin: 0 0 clamp(14px, 2.5vw, 20px);
   font-size: 14px;
   line-height: 1.7;
   color: rgba(92, 95, 62, 0.78);
+}
+
+.moreEditorialRecs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2.2vw, 18px);
+}
+
+.moreEditorialRecItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.moreEditorialRecLabel {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
+  color: rgba(92, 95, 62, 0.62);
+}
+
+.moreEditorialRecLink {
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(92, 95, 62, 0.28);
+  padding-bottom: 2px;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.moreEditorialRecLink:hover {
+  color: var(--brand-green);
+  border-bottom-color: rgba(92, 95, 62, 0.42);
+}
+
+.moreEditorialRecLink:focus-visible {
+  outline: 2px solid rgba(92, 95, 62, 0.35);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.moreEditorialRecLink strong {
+  font-weight: 600;
 }
 
 /* —— Travel —— */
