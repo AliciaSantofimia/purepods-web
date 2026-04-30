@@ -15,26 +15,6 @@ import {
   adventureWildlifeFaqPageJsonLd,
 } from "@/lib/experiencesData/adventureWildlife";
 import { AdventureWildlifeFaqAccordion } from "@/components/experiences/views/AdventureWildlifeFaqAccordion";
-import { AdventureWildlifeGuestExperiences } from "@/components/experiences/views/AdventureWildlifeGuestExperiences";
-
-const STAY_DECISION_SHORTCUTS = [
-  {
-    label: "Coastal & wildlife",
-    detail: "Kahutara · Manakau — Kaikōura",
-  },
-  {
-    label: "Geothermal & lakes",
-    detail: "Pāmu — Rotorua",
-  },
-  {
-    label: "Remote & untouched",
-    detail: "Tokoeka · Hananui — Stewart Island / Rakiura",
-  },
-  {
-    label: "Quiet countryside",
-    detail: "Pōhue · Matū — North Island countryside",
-  },
-] as const;
 
 export function AdventureWildlifeView() {
   const faqJsonLd = adventureWildlifeFaqPageJsonLd();
@@ -152,43 +132,6 @@ export function AdventureWildlifeView() {
                 </div>
               </div>
             </section>
-
-            <section
-              id="choose-stay"
-              className="wrap aw-stay-shortcuts adventure-reveal"
-              aria-labelledby="choose-stay-heading"
-            >
-              <h2
-                id="choose-stay-heading"
-                className="aw-context-block__title"
-              >
-                Choose where to stay
-              </h2>
-              <p className="aw-context-block__body aw-stay-shortcuts__intro">
-                Different parts of New Zealand offer different rhythms. Choose
-                what draws you most.
-              </p>
-              <ul className="aw-stay-shortcuts__list">
-                {STAY_DECISION_SHORTCUTS.map((row) => (
-                  <li key={row.label} className="aw-stay-shortcuts__item">
-                    <Link
-                      href="/pods"
-                      className="aw-stay-shortcuts__link"
-                      aria-label={`${row.label}: browse stays`}
-                    >
-                      <span className="aw-stay-shortcuts__label">
-                        {row.label}
-                      </span>
-                      <span className="aw-stay-shortcuts__detail">
-                        {row.detail}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <AdventureWildlifeGuestExperiences />
 
             <section
               className="faq aw-faq-accordion"
