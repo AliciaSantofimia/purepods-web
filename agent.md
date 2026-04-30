@@ -17,6 +17,7 @@ The following documents must be treated as the source of truth for the project:
 - docs/booking-logic.md
 - docs/html-reference.md
 - docs/assets-images.md
+- docs/footer-pages-content.md
 
 ## Rule
 
