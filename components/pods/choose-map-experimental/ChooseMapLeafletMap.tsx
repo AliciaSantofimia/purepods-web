@@ -111,6 +111,28 @@ function hasStewartMarkerPair(podList: MapPod[]): boolean {
   return slugs.has("tokoeka") && slugs.has("hananui");
 }
 
+/**
+ * True when the map container is still in the document — avoid Leaflet calls after unmount
+ * (otherwise invalidateSize / fitBounds can touch torn internal state → `_leaflet_pos`).
+ */
+function isLeafletMapAttached(map: L.Map): boolean {
+  try {
+    const c = map.getContainer();
+    return Boolean(c?.isConnected);
+  } catch {
+    return false;
+  }
+}
+
+function safeInvalidateSize(map: L.Map): void {
+  if (!isLeafletMapAttached(map)) return;
+  try {
+    map.invalidateSize();
+  } catch {
+    /* map mid-teardown or panes not ready */
+  }
+}
+
 function fitMapToPods(
   map: L.Map & { _chooseMapNzMaxBounds?: L.LatLngBounds },
   podList: MapPod[],
@@ -211,14 +233,36 @@ function MapFitController({ fitKey, pods }: { fitKey: string; pods: MapPod[] }) 
 
   useEffect(() => {
     const podList = podsRef.current;
-    requestAnimationFrame(() => {
-      map.invalidateSize();
-      fitMapToPods(map as L.Map & { _chooseMapNzMaxBounds?: L.LatLngBounds }, podList);
-      requestAnimationFrame(() => {
-        map.invalidateSize();
+    let cancelled = false;
+    let rafOuter = 0;
+    let rafInner = 0;
+
+    const runFitPass = () => {
+      if (cancelled || !isLeafletMapAttached(map)) return;
+      try {
+        safeInvalidateSize(map);
         fitMapToPods(map as L.Map & { _chooseMapNzMaxBounds?: L.LatLngBounds }, podList);
+      } catch {
+        /* ignore */
+      }
+    };
+
+    rafOuter = requestAnimationFrame(() => {
+      rafOuter = 0;
+      if (cancelled) return;
+      runFitPass();
+      rafInner = requestAnimationFrame(() => {
+        rafInner = 0;
+        if (cancelled) return;
+        runFitPass();
       });
     });
+
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(rafOuter);
+      cancelAnimationFrame(rafInner);
+    };
   }, [fitKey, map]);
   return null;
 }
@@ -226,13 +270,29 @@ function MapFitController({ fitKey, pods }: { fitKey: string; pods: MapPod[] }) 
 function MapResizeHandler() {
   const map = useMap();
   useEffect(() => {
+    let cancelled = false;
+    let rafId = 0;
     const c = map.getContainer();
     const target = c.parentElement ?? c;
-    const ro = new ResizeObserver(() => {
-      requestAnimationFrame(() => map.invalidateSize());
-    });
+
+    const scheduleInvalidate = () => {
+      if (cancelled) return;
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        rafId = 0;
+        if (cancelled) return;
+        safeInvalidateSize(map);
+      });
+    };
+
+    const ro = new ResizeObserver(scheduleInvalidate);
     ro.observe(target);
-    return () => ro.disconnect();
+
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(rafId);
+      ro.disconnect();
+    };
   }, [map]);
   return null;
 }

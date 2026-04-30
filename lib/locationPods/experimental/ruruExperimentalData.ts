@@ -1,4 +1,5 @@
 import type { LocationFaqItem } from "@/components/location/LocationFaqSection";
+import type { EditorialPodLocationConfig } from "./editorialPodLocationTypes";
 
 /**
  * Editorial layout content for PurePod Ruru (`/location/ruru`).
@@ -248,4 +249,28 @@ export const RURU_FAQ_ITEMS: LocationFaqItem[] = [
 export const ruruCta = {
   priceFrom: "From $— / night",
   bookHref: RURU_BOOKING_URL,
+};
+
+/** Single source for `EditorialPodLocationView` on `/location/ruru`. */
+export const ruruEditorialConfig: EditorialPodLocationConfig = {
+  heroKicker: "PurePod · Coromandel",
+  hero: {
+    imageSrc: ruruExperimentalHero.imageSrc,
+    imageAlt: ruruExperimentalHero.imageAlt,
+    title: ruruExperimentalHero.title,
+    subtitleParagraphs: [ruruExperimentalHero.subtitle],
+    imagePosition: ruruExperimentalHero.imagePosition,
+    imagePositionMd: ruruExperimentalHero.imagePositionMd,
+    imagePositionXl: ruruExperimentalHero.imagePositionXl,
+  },
+  podCarouselAriaLabel: "PurePod Ruru — photo gallery",
+  podNarrative: ruruPodNarrative,
+  travelBlock: ruruTravelBlock,
+  experiencesCollapsible: {
+    summaryTitle: "Explore around Ruru",
+    summaryIntro: "Coastal walks, hidden beaches and quiet places nearby.",
+  },
+  experiencesBlock: ruruExperiencesBlock,
+  faqItems: RURU_FAQ_ITEMS,
+  cta: ruruCta,
 };

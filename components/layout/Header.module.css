@@ -80,6 +80,28 @@
   color: rgba(244, 244, 234, 0.96);
 }
 
+.brandWithLogo {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+/* White wordmark on Mākōha — slightly larger; soft shadow for contrast on bright hero areas */
+.brandLogoImg {
+  display: block;
+  height: clamp(32px, 5.2vw, 42px);
+  width: auto;
+  max-width: min(240px, 50vw);
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 18px rgba(0, 0, 0, 0.28));
+}
+
+.topnavGlass .brandLogoImg {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 20px rgba(0, 0, 0, 0.25));
+}
+
 .brand:hover {
   color: #fff;
   text-decoration: none;
