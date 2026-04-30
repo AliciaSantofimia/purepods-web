@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import {
-  Fragment,
   useCallback,
   useEffect,
   useId,
@@ -55,6 +54,7 @@ export function AdventureExperienceCarousel({ slides }: Props) {
   const [paused, setPaused] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
   const [isMobileCarousel, setIsMobileCarousel] = useState(false);
+  const [stayMenuOpen, setStayMenuOpen] = useState(false);
 
   const gestureRef = useRef<{
     pointerId: number;
@@ -85,12 +85,16 @@ export function AdventureExperienceCarousel({ slides }: Props) {
   }, []);
 
   useEffect(() => {
-    if (reduceMotion || n <= 1 || paused) return;
+    if (reduceMotion || n <= 1 || paused || stayMenuOpen) return;
     const id = window.setInterval(() => {
       setIndex((i) => (i + 1) % n);
     }, AUTO_MS);
     return () => window.clearInterval(id);
-  }, [reduceMotion, paused, n]);
+  }, [reduceMotion, paused, stayMenuOpen, n]);
+
+  useEffect(() => {
+    setStayMenuOpen(false);
+  }, [index]);
 
   const goPrev = useCallback(() => {
     setIndex((i) => (i - 1 + n) % n);
@@ -204,7 +208,10 @@ export function AdventureExperienceCarousel({ slides }: Props) {
 
   if (!active || n === 0) return null;
 
-  const metaLine = `${active.distance} · ${active.timing}`;
+  const firstPod = active.pods[0];
+  const hasMultiplePods = active.pods.length > 1;
+  const nearbyContext = active.nearbyRegion?.replace(/^\s*—\s*/, "") ?? "";
+  const stayMenuId = `${uid}-stay-nearby`;
 
   return (
     <div
@@ -248,36 +255,74 @@ export function AdventureExperienceCarousel({ slides }: Props) {
         <div className="aw-xp-carousel__caption" aria-live="polite">
           <h3 className="aw-xp-carousel__title">{active.title}</h3>
           <p className="aw-xp-carousel__desc">{active.description}</p>
-          <p className="aw-xp-carousel__meta">{metaLine}</p>
-          <p className="aw-xp-carousel__nearby">
-            <span className="aw-xp-carousel__nearbyLabel">Stay nearby:</span>{" "}
-            {active.pods.map((pod, i) => (
-              <Fragment key={pod.href}>
-                {i > 0 ? (
-                  <span className="aw-xp-carousel__nearbySep" aria-hidden="true">
-                    {" "}
-                    ·{" "}
-                  </span>
-                ) : null}
-                <Link href={pod.href} className="aw-xp-carousel__podLink">
-                  {pod.label}
+          <div className="aw-xp-carousel__actions">
+            <a
+              className="aw-xp-carousel__cta"
+              href={active.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore this experience
+            </a>
+            {firstPod ? (
+              hasMultiplePods ? (
+                <button
+                  type="button"
+                  className="aw-xp-carousel__cta aw-xp-carousel__cta--stay"
+                  aria-expanded={stayMenuOpen}
+                  aria-controls={stayMenuId}
+                  onClick={() => setStayMenuOpen((open) => !open)}
+                >
+                  Stay nearby
+                </button>
+              ) : (
+                <Link
+                  href={firstPod.href}
+                  className="aw-xp-carousel__cta aw-xp-carousel__cta--stay"
+                >
+                  Stay nearby
                 </Link>
-              </Fragment>
-            ))}
-            {active.nearbyRegion ? (
-              <span className="aw-xp-carousel__nearbyRegion">
-                {active.nearbyRegion}
-              </span>
+              )
             ) : null}
-          </p>
-          <a
-            className="aw-xp-carousel__cta"
-            href={active.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Explore this experience
-          </a>
+          </div>
+          {firstPod ? (
+            <div className="aw-xp-carousel__stay">
+              {!hasMultiplePods ? (
+                <p className="aw-xp-carousel__stayContext">
+                  {firstPod.label}
+                  {nearbyContext ? ` — ${nearbyContext}` : null}
+                </p>
+              ) : (
+                <div
+                  id={stayMenuId}
+                  className={`aw-xp-carousel__stayPanel${
+                    stayMenuOpen ? " is-open" : ""
+                  }`}
+                  hidden={!stayMenuOpen}
+                >
+                  <p className="aw-xp-carousel__stayPanelLabel">
+                    Choose your nearby PurePod
+                  </p>
+                  <ul className="aw-xp-carousel__stayList">
+                    {active.pods.map((pod) => (
+                      <li key={pod.href} className="aw-xp-carousel__stayItem">
+                        <Link href={pod.href} className="aw-xp-carousel__stayLink">
+                          <span className="aw-xp-carousel__stayName">
+                            {pod.label}
+                          </span>
+                          {nearbyContext ? (
+                            <span className="aw-xp-carousel__stayRegion">
+                              {nearbyContext}
+                            </span>
+                          ) : null}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          ) : null}
         </div>
       </div>
 
