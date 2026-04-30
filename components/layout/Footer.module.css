@@ -5,6 +5,10 @@
   background: var(--card);
 }
 
+.footerSimple {
+  padding: clamp(2rem, 5vw, 3rem) 1rem 2rem;
+}
+
 .wrap {
   max-width: var(--content-max);
   margin: 0 auto;
@@ -140,6 +144,98 @@
   outline: 2px solid rgba(92, 95, 62, 0.35);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+.socialFeatured {
+  margin-bottom: 1.35rem;
+}
+
+.socialFeatured .socialLabel {
+  margin-bottom: 0.7rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.socialFeatured .socialLinks {
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.socialFeatured .socialLink {
+  gap: 0.45rem;
+  min-height: 2.5rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(92, 95, 62, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 1;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.socialFeatured .socialLink:hover {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(92, 95, 62, 0.26);
+  transform: translateY(-1px);
+}
+
+.socialFeatured .socialIcon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.infoLinks,
+.legalLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem 1rem;
+}
+
+.infoLinks {
+  margin-bottom: 0.85rem;
+}
+
+.infoLinks a {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.legalLinks a {
+  font-size: 0.6875rem;
+  color: var(--muted);
+  text-decoration: none;
+  opacity: 0.76;
+}
+
+.infoLinks a:hover,
+.legalLinks a:hover {
+  text-decoration: underline;
+}
+
+.infoLinks a:focus-visible,
+.legalLinks a:focus-visible {
+  outline: 2px solid rgba(92, 95, 62, 0.35);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (max-width: 520px) {
+  .socialFeatured .socialLinks {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 14rem;
+    margin: 0 auto;
+  }
+
+  .socialFeatured .socialLink {
+    width: 100%;
+  }
 }
 
 .subscribeHeadline {

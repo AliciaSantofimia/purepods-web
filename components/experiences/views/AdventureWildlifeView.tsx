@@ -194,7 +194,7 @@ export function AdventureWildlifeView() {
         </AdventureWildlifeChrome>
       </ExperienceRevealMotionRoot>
     </div>
-    <Footer brandLogo />
+    <Footer brandLogo simplified />
     </>
   );
 }
