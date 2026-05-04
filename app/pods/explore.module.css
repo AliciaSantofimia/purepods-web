@@ -358,3 +358,64 @@
     margin: 0 0 8px;
   }
 }
+
+/* /pods — móvil y tablet: tabs táctiles, más aire al listado, mapa compacto vía chooseMapLeafTune */
+@media (max-width: 980px) {
+  .pagePodsChoose .tabsWrap {
+    z-index: 58;
+  }
+
+  .pagePodsChoose .tabs {
+    gap: 8px;
+    padding: 12px 0 14px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .pagePodsChoose .tabs::-webkit-scrollbar {
+    display: none;
+    height: 0;
+  }
+
+  .pagePodsChoose .tab {
+    scroll-snap-align: start;
+    min-height: 44px;
+    padding: 12px 17px;
+    font-size: 12px;
+    letter-spacing: 0.07em;
+  }
+
+  .pagePodsChoose .hero {
+    padding: 22px 0 14px;
+  }
+
+  .pagePodsChoose .section {
+    padding: 12px 0 56px;
+  }
+
+  .pagePodsChoose .sectionHead {
+    margin: 0 0 10px;
+  }
+
+  .pagePodsChoose .count {
+    font-size: 14px;
+    font-weight: 650;
+    color: color-mix(in srgb, var(--ink) 88%, var(--muted));
+  }
+
+  .pagePodsChoose .pod .cta {
+    min-height: 44px;
+    padding: 10px 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+  .pagePodsChoose .section {
+    padding: 16px 0 64px;
+  }
+
+  .pagePodsChoose .sectionHead {
+    margin: 0 0 12px;
+  }
+}

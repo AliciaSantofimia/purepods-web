@@ -17,7 +17,7 @@ import chooseMapStyles from "./chooseMapExperimental.module.css";
 /** Same shell as production map column while the Leaflet chunk loads (dynamic ssr: false). */
 function MapPlaceholder() {
   return (
-    <div className={xstyles.exmapShell} aria-busy="true">
+    <div className={`${xstyles.exmapShell} ${chooseMapStyles.chooseMapLeafTune}`} aria-busy="true">
       <p className={xstyles.exmapCaption}>New Zealand</p>
       <div className={xstyles.exmapMap} />
     </div>
@@ -65,6 +65,11 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
   const ratiosRef = useRef<Map<string, number>>(new Map());
   const rafId = useRef(0);
 
+  const [compactLayout, setCompactLayout] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia("(max-width: 980px)").matches;
+  });
+
   const visiblePods = useMemo(
     () => CHOOSE_MAP_EXPERIMENTAL_PODS.filter((p) => p.filter === filter),
     [filter],
@@ -87,6 +92,14 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
     setScrollSlug(null);
     ratiosRef.current.clear();
   }, [filter]);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 980px)");
+    const sync = () => setCompactLayout(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
 
   useEffect(() => {
     const scroller = cardsScrollerRef.current;
@@ -115,6 +128,9 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
       });
     };
 
+    const ioRoot: Element | null = compactLayout ? null : scroller;
+    const rootMargin = compactLayout ? "-12% 0px -18% 0px" : "-10% 0px -14% 0px";
+
     const obs = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
@@ -129,9 +145,9 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
         schedule();
       },
       {
-        root: scroller,
+        root: ioRoot,
         threshold: [0, 0.1, 0.18, 0.28, 0.42, 0.55, 0.72],
-        rootMargin: "-10% 0px -14% 0px",
+        rootMargin,
       },
     );
 
@@ -141,7 +157,7 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
       if (rafId.current) cancelAnimationFrame(rafId.current);
       rafId.current = 0;
     };
-  }, [visibleSlugsKey, filter]);
+  }, [visibleSlugsKey, filter, compactLayout]);
 
   return (
     <>
@@ -174,7 +190,7 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
 
         <div
           ref={splitRef}
-          className={xstyles.split}
+          className={`${xstyles.split} ${chooseMapStyles.chooseMapPodsLayout}`}
           onMouseLeave={() => setHoverSlug(null)}
           onBlurCapture={(e) => {
             if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setHoverSlug(null);
@@ -189,7 +205,7 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
             />
           </aside>
 
-          <div className={xstyles.splitCards}>
+          <div className={`${xstyles.splitCards} ${chooseMapStyles.chooseMapPodsCards}`}>
             <div ref={cardsScrollerRef} className={chooseMapStyles.chooseMapCardsScroll}>
               <div className={styles.grid}>
               {visiblePods.map((pod: ChooseMapPod, index: number) => {

@@ -34,6 +34,44 @@
   height: 100% !important;
 }
 
+/* /pods — móvil y tablet: mapa compacto (solo .chooseMapLeafTune, desktop intacto) */
+@media (max-width: 980px) {
+  .chooseMapLeafTune {
+    min-height: 0 !important;
+    height: clamp(168px, 30vh, 240px);
+    max-height: 240px;
+    border-radius: 18px;
+  }
+
+  .chooseMapLeafTune :global(.leaflet-container),
+  .chooseMapMapSurface {
+    min-height: 0 !important;
+  }
+
+  .chooseMapPodsLayout {
+    gap: 12px;
+  }
+
+  .chooseMapPodsCards {
+    margin-top: 2px;
+    min-height: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+  .chooseMapLeafTune {
+    height: clamp(200px, 34vh, 288px);
+    max-height: 288px;
+  }
+}
+
+@media (max-width: 420px) {
+  .chooseMapLeafTune {
+    height: clamp(156px, 26vh, 208px);
+    max-height: 208px;
+  }
+}
+
 /* Mosaico base más “ilustrado”, menos satélite.
  * Evitar contrast() agresivo: acentúa el borde tierra/mar de las teselas y parece una “línea” extra. */
 .chooseMapLeafTune :global(.leaflet-tile-pane) {
@@ -403,11 +441,8 @@
 }
 
 /*
- * Card list: own scroll so map pin hover/click can reveal cards without moving the page.
- * Heights align roughly with the sticky map column on desktop.
- */
-/*
- * Scroll wheel / trackpad unchanged; only the scrollbar chrome is hidden for a calmer frame.
+ * Card list: en desktop scroll interno alineado con columna sticky del mapa.
+ * En móvil/tablet (≤980px) el listado sigue el scroll de la página — más cómodo en pantalla pequeña.
  */
 .chooseMapCardsScroll {
   min-height: 0;
@@ -425,7 +460,6 @@
 
 @media (min-width: 981px) {
   .chooseMapCardsScroll {
-    /* Room for two grid rows + lower cards when the page shell uses .pagePodsChoose */
     max-height: calc(100dvh - clamp(26px, 3.2vw, 52px));
     overflow-y: auto;
   }
@@ -433,8 +467,9 @@
 
 @media (max-width: 980px) {
   .chooseMapCardsScroll {
-    max-height: min(48vh, 440px);
-    overflow-y: auto;
+    max-height: none;
+    overflow-y: visible;
+    overscroll-behavior: auto;
   }
 }
 
