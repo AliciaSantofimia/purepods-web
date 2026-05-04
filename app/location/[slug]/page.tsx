@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ExperienceFromBackLink } from "@/components/location/ExperienceFromBackLink";
+import { loadLocationPodPage } from "@/lib/locationPods/locationPodPageLoader";
 import {
   getLocationPodSlugsForDynamicSegmentStaticParams,
   isLocationPodSlug,
-  LOCATION_POD_REGISTRY,
-} from "@/lib/locationPods";
+} from "@/lib/locationPods/slugs";
 
 type Props = { params: { slug: string }; searchParams?: { from?: string | string[] } };
 
@@ -13,18 +13,19 @@ export function generateStaticParams() {
   return getLocationPodSlugsForDynamicSegmentStaticParams();
 }
 
-export function generateMetadata({ params }: Props): Metadata {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!isLocationPodSlug(params.slug)) {
     return {};
   }
-  return LOCATION_POD_REGISTRY[params.slug].podMetadata;
+  const mod = await loadLocationPodPage(params.slug);
+  return mod.podMetadata;
 }
 
-export default function LocationPodPage({ params, searchParams }: Props) {
+export default async function LocationPodPage({ params, searchParams }: Props) {
   if (!isLocationPodSlug(params.slug)) {
     notFound();
   }
-  const { PodView } = LOCATION_POD_REGISTRY[params.slug];
+  const { PodView } = await loadLocationPodPage(params.slug);
   return (
     <>
       <ExperienceFromBackLink from={searchParams?.from} />

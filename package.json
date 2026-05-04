@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:fresh": "node -e \"try{require('fs').rmSync('.next',{recursive:true,force:true})}catch(e){} try{require('fs').rmSync('node_modules/.cache',{recursive:true,force:true})}catch(e){}\" && next dev",
+    "dev:fresh": "rimraf .next node_modules/.cache && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -17,6 +17,7 @@
     "react-leaflet": "^4.2.1"
   },
   "devDependencies": {
+    "rimraf": "^6.0.1",
     "@types/leaflet": "^1.9.21",
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
