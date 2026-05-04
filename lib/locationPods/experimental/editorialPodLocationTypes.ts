@@ -25,6 +25,14 @@ export type EditorialExperienceItem = {
   links: { label: string; href: string }[];
 };
 
+/** Optional grouped “explore more” block (same visual language as flat `moreRecommendations`). */
+export type EditorialMoreExploreLink = { name: string; href: string };
+export type EditorialMoreExploreGroup = {
+  heading: string;
+  intro: string;
+  links: EditorialMoreExploreLink[];
+};
+
 export type EditorialPodLocationConfig = {
   heroKicker: string;
   hero: {
@@ -62,6 +70,12 @@ export type EditorialPodLocationConfig = {
     moreSubtitle: string;
     moreBody: string;
     moreRecommendations: { label: string; place: string; href: string }[];
+    /** When set, replaces subtitle/body/flat recommendations with grouped sections. */
+    moreExploreGroups?: EditorialMoreExploreGroup[];
+    /** Optional lead paragraph after `moreTitle` when `moreExploreGroups` is used. */
+    moreExploreLead?: string;
+    /** Optional closing paragraph after grouped links when `moreExploreGroups` is used. */
+    moreExploreClosing?: string;
   };
   faqItems: LocationFaqItem[];
   cta: { priceFrom: string; bookHref: string };

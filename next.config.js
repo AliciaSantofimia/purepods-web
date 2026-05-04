@@ -1,6 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  /**
+   * In development, disable Webpack’s persistent filesystem cache.
+   * Prevents intermittent `Cannot find module './<n>.js'` (stale chunk graph vs `.next`
+   * on disk), especially on Windows when the dev server is restarted or files change quickly.
+   * Production `next build` keeps default caching (dev === false).
+   */
+  webpack: (config, { dev }) => {
+    if (dev) {
+      config.cache = false;
+    }
+    return config;
+  },
   async redirects() {
     return [
       { source: "/explore", destination: "/pods", permanent: true },

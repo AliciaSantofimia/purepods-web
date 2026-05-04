@@ -1,5 +1,7 @@
 export {
   LOCATION_POD_SLUGS,
+  LOCATION_POD_SLUGS_WITH_DEDICATED_APP_ROUTE,
+  getLocationPodSlugsForDynamicSegmentStaticParams,
   type LocationPodSlug,
   isLocationPodSlug,
 } from "./slugs";

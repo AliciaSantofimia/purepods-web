@@ -812,6 +812,58 @@
   font-weight: 600;
 }
 
+.moreExploreGroups {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.moreExploreGroup {
+  margin: 0;
+  padding: 0;
+}
+
+.moreExploreGroupFollows {
+  margin-top: clamp(20px, 3.5vw, 28px);
+  padding-top: clamp(18px, 3vw, 24px);
+  border-top: 1px solid rgba(92, 95, 62, 0.1);
+}
+
+.moreExploreGroupHeading {
+  margin: 0 0 10px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: -0.012em;
+  color: rgba(92, 95, 62, 0.82);
+}
+
+.moreExploreGroupIntro {
+  margin: 0 0 clamp(14px, 2.5vw, 20px);
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(92, 95, 62, 0.78);
+}
+
+.moreExploreLead {
+  margin: 0 0 clamp(14px, 2.5vw, 20px);
+  max-width: min(62ch, 100%);
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(92, 95, 62, 0.78);
+}
+
+.moreExploreClosing {
+  margin: clamp(20px, 3.5vw, 28px) 0 0;
+  padding-top: clamp(18px, 3vw, 24px);
+  max-width: min(62ch, 100%);
+  border-top: 1px solid rgba(92, 95, 62, 0.1);
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(92, 95, 62, 0.78);
+}
+
 /* —— Travel —— */
 .travelSection {
   padding: clamp(56px, 11vw, 112px) 0 var(--ruru-exp-section-y);
