@@ -3,10 +3,13 @@ import Link from "next/link";
 import { Footer } from "@/components/layout/Footer";
 import xstyles from "@/components/pods/ExplorePageWithMapExperimental.module.css";
 import styles from "@/app/pods/explore.module.css";
+import type { ChooseMapRegion } from "@/lib/chooseMapExperimentalData";
 import { ChooseMapExperimentalClient } from "./ChooseMapExperimentalClient";
 
+type Props = { initialRegion: ChooseMapRegion };
+
 /** Shell completo de la página Pods con mapa editorial e islas (tabs). */
-export function ChooseMapPodsShell() {
+export function ChooseMapPodsShell({ initialRegion }: Props) {
   return (
     <div className={`${styles.page} ${xstyles.pageRoot}`}>
       <header className={styles.nav}>
@@ -45,7 +48,7 @@ export function ChooseMapPodsShell() {
           </p>
         </section>
 
-        <ChooseMapExperimentalClient />
+        <ChooseMapExperimentalClient initialRegion={initialRegion} />
       </main>
 
       <Footer brandLogo simplified />

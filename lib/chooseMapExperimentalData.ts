@@ -5,6 +5,16 @@
 
 export type ChooseMapRegion = "north" | "south" | "stewart";
 
+/** Normalises `?region=` from `/pods` (invalid or missing → north). */
+export function parseChooseMapRegionParam(
+  value: string | null | undefined,
+): ChooseMapRegion {
+  if (value === "north" || value === "south" || value === "stewart") {
+    return value;
+  }
+  return "north";
+}
+
 export type ChooseMapPod = {
   slug: string;
   href: string;

@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import styles from "@/app/pods/explore.module.css";
 import xstyles from "@/components/pods/ExplorePageWithMapExperimental.module.css";
@@ -37,10 +38,27 @@ const TABS: { filter: ChooseMapRegion; label: string }[] = [
   { filter: "stewart", label: "Stewart Island" },
 ];
 
-export function ChooseMapExperimentalClient() {
-  const [filter, setFilter] = useState<ChooseMapRegion>("north");
+type ClientProps = { initialRegion: ChooseMapRegion };
+
+export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const [filter, setFilter] = useState<ChooseMapRegion>(initialRegion);
   const [hoverSlug, setHoverSlug] = useState<string | null>(null);
   const [scrollSlug, setScrollSlug] = useState<string | null>(null);
+
+  useEffect(() => {
+    setFilter((prev) => (prev === initialRegion ? prev : initialRegion));
+  }, [initialRegion]);
+
+  const setIslandTab = useCallback(
+    (next: ChooseMapRegion) => {
+      setFilter(next);
+      const path = pathname || "/pods";
+      router.replace(`${path}?region=${next}`, { scroll: false });
+    },
+    [router, pathname],
+  );
 
   const splitRef = useRef<HTMLDivElement>(null);
   const ratiosRef = useRef<Map<string, number>>(new Map());
@@ -136,7 +154,7 @@ export function ChooseMapExperimentalClient() {
                 aria-selected={filter === t.filter}
                 className={`${styles.tab} ${filter === t.filter ? styles.tabActive : ""}`}
                 data-filter={t.filter}
-                onClick={() => setFilter(t.filter)}
+                onClick={() => setIslandTab(t.filter)}
               >
                 {t.label}
               </button>

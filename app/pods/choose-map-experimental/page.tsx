@@ -5,6 +5,7 @@ import React from "react";
 import { Footer } from "@/components/layout/Footer";
 import xstyles from "../../../components/pods/ExplorePageWithMapExperimental.module.css";
 import { ChooseMapExperimentalClient } from "../../../components/pods/choose-map-experimental/ChooseMapExperimentalClient";
+import { parseChooseMapRegionParam } from "@/lib/chooseMapExperimentalData";
 import styles from "../explore.module.css";
 
 export const metadata: Metadata = {
@@ -14,7 +15,15 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function ChooseMapExperimentalPage() {
+type PageProps = {
+  searchParams: Record<string, string | string[] | undefined>;
+};
+
+export default function ChooseMapExperimentalPage({ searchParams }: PageProps) {
+  const raw = searchParams.region;
+  const initialRegion = parseChooseMapRegionParam(
+    Array.isArray(raw) ? raw[0] : raw,
+  );
   return (
     <div className={`${styles.page} ${xstyles.pageRoot}`}>
       <header className={styles.nav}>
@@ -53,7 +62,7 @@ export default function ChooseMapExperimentalPage() {
           </p>
         </section>
 
-        <ChooseMapExperimentalClient />
+        <ChooseMapExperimentalClient initialRegion={initialRegion} />
       </main>
 
       <Footer brandLogo simplified />

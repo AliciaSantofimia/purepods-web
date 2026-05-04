@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { ChooseMapPodsShell } from "@/components/pods/choose-map-experimental/ChooseMapPodsShell";
+import {
+  parseChooseMapRegionParam,
+} from "@/lib/chooseMapExperimentalData";
 
 const CANONICAL = "https://purepods.com/pods";
 
@@ -19,6 +22,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PodsPage() {
-  return <ChooseMapPodsShell />;
+type PodsPageProps = {
+  searchParams: Record<string, string | string[] | undefined>;
+};
+
+export default function PodsPage({ searchParams }: PodsPageProps) {
+  const raw = searchParams.region;
+  const initialRegion = parseChooseMapRegionParam(
+    Array.isArray(raw) ? raw[0] : raw,
+  );
+  return <ChooseMapPodsShell initialRegion={initialRegion} />;
 }

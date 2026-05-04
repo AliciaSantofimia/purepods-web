@@ -20,10 +20,25 @@ function heroImageStyle(hero: EditorialPodLocationConfig["hero"]): CSSProperties
   } as CSSProperties;
 }
 
+function hasMoreEditorialContent(
+  block: EditorialPodLocationConfig["experiencesBlock"],
+): boolean {
+  return (
+    Boolean(block.moreTitle?.trim()) ||
+    Boolean(block.moreSubtitle?.trim()) ||
+    Boolean(block.moreBody?.trim()) ||
+    Boolean(block.moreExploreLead?.trim()) ||
+    Boolean(block.moreExploreClosing?.trim()) ||
+    (block.moreExploreGroups?.length ?? 0) > 0 ||
+    block.moreRecommendations.length > 0
+  );
+}
+
 export function EditorialPodLocationView({ config }: Props) {
   const hero = config.hero;
   const { podNarrative, travelBlock, experiencesBlock, experiencesCollapsible } =
     config;
+  const showMoreEditorial = hasMoreEditorialContent(experiencesBlock);
 
   return (
     <div className={styles.root}>
@@ -232,107 +247,111 @@ export function EditorialPodLocationView({ config }: Props) {
                     );
                   })}
 
-                  <div className={styles.moreEditorial}>
-                    <h3 className={styles.moreEditorialTitle}>
-                      {experiencesBlock.moreTitle}
-                    </h3>
-                    {experiencesBlock.moreExploreGroups &&
-                    experiencesBlock.moreExploreGroups.length > 0 ? (
-                      <>
-                        {experiencesBlock.moreExploreLead ? (
-                          <p className={styles.moreExploreLead}>
-                            {experiencesBlock.moreExploreLead}
-                          </p>
-                        ) : null}
-                        <div className={styles.moreExploreGroups}>
-                          {experiencesBlock.moreExploreGroups.map((group, gi) => (
-                            <section
-                              key={`${group.heading}-${gi}`}
-                              className={
-                                gi > 0
-                                  ? `${styles.moreExploreGroup} ${styles.moreExploreGroupFollows}`
-                                  : styles.moreExploreGroup
-                              }
-                              aria-labelledby={`more-explore-${gi}-heading`}
-                            >
-                              <h4
-                                id={`more-explore-${gi}-heading`}
-                                className={styles.moreExploreGroupHeading}
+                  {showMoreEditorial ? (
+                    <div className={styles.moreEditorial}>
+                      <h3 className={styles.moreEditorialTitle}>
+                        {experiencesBlock.moreTitle}
+                      </h3>
+                      {experiencesBlock.moreExploreGroups &&
+                      experiencesBlock.moreExploreGroups.length > 0 ? (
+                        <>
+                          {experiencesBlock.moreExploreLead ? (
+                            <p className={styles.moreExploreLead}>
+                              {experiencesBlock.moreExploreLead}
+                            </p>
+                          ) : null}
+                          <div className={styles.moreExploreGroups}>
+                            {experiencesBlock.moreExploreGroups.map((group, gi) => (
+                              <section
+                                key={`${group.heading}-${gi}`}
+                                className={
+                                  gi > 0
+                                    ? `${styles.moreExploreGroup} ${styles.moreExploreGroupFollows}`
+                                    : styles.moreExploreGroup
+                                }
+                                aria-labelledby={`more-explore-${gi}-heading`}
                               >
-                                {group.heading}
-                              </h4>
-                              <p className={styles.moreExploreGroupIntro}>
-                                {group.intro}
-                              </p>
-                              {group.links.length > 0 ? (
-                                <ul className={styles.moreEditorialRecs}>
-                                  {group.links.map((link) => (
-                                    <li
-                                      key={link.href}
-                                      className={styles.moreEditorialRecItem}
-                                    >
-                                      <a
-                                        href={link.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={styles.moreEditorialRecLink}
-                                      >
-                                        <strong>{link.name}</strong>
-                                      </a>
-                                    </li>
-                                  ))}
-                                </ul>
-                              ) : null}
-                            </section>
-                          ))}
-                        </div>
-                        {experiencesBlock.moreExploreClosing ? (
-                          <p className={styles.moreExploreClosing}>
-                            {experiencesBlock.moreExploreClosing}
-                          </p>
-                        ) : null}
-                      </>
-                    ) : (
-                      <>
-                        <p className={styles.moreEditorialSubtitle}>
-                          {experiencesBlock.moreSubtitle}
-                        </p>
-                        <p className={styles.moreEditorialBody}>
-                          {experiencesBlock.moreBody}
-                        </p>
-                        {experiencesBlock.moreRecommendations.length > 0 ? (
-                          <ul className={styles.moreEditorialRecs}>
-                            {experiencesBlock.moreRecommendations.map((rec) => (
-                              <li
-                                key={rec.href}
-                                className={styles.moreEditorialRecItem}
-                              >
-                                <span className={styles.moreEditorialRecLabel}>
-                                  {rec.label}
-                                </span>
-                                <a
-                                  href={rec.href}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className={styles.moreEditorialRecLink}
+                                <h4
+                                  id={`more-explore-${gi}-heading`}
+                                  className={styles.moreExploreGroupHeading}
                                 >
-                                  <strong>{rec.place}</strong>
-                                </a>
-                              </li>
+                                  {group.heading}
+                                </h4>
+                                <p className={styles.moreExploreGroupIntro}>
+                                  {group.intro}
+                                </p>
+                                {group.links.length > 0 ? (
+                                  <ul className={styles.moreEditorialRecs}>
+                                    {group.links.map((link) => (
+                                      <li
+                                        key={link.href}
+                                        className={styles.moreEditorialRecItem}
+                                      >
+                                        <a
+                                          href={link.href}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className={styles.moreEditorialRecLink}
+                                        >
+                                          <strong>{link.name}</strong>
+                                        </a>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                ) : null}
+                              </section>
                             ))}
-                          </ul>
-                        ) : null}
-                      </>
-                    )}
-                  </div>
+                          </div>
+                          {experiencesBlock.moreExploreClosing ? (
+                            <p className={styles.moreExploreClosing}>
+                              {experiencesBlock.moreExploreClosing}
+                            </p>
+                          ) : null}
+                        </>
+                      ) : (
+                        <>
+                          <p className={styles.moreEditorialSubtitle}>
+                            {experiencesBlock.moreSubtitle}
+                          </p>
+                          <p className={styles.moreEditorialBody}>
+                            {experiencesBlock.moreBody}
+                          </p>
+                          {experiencesBlock.moreRecommendations.length > 0 ? (
+                            <ul className={styles.moreEditorialRecs}>
+                              {experiencesBlock.moreRecommendations.map((rec) => (
+                                <li
+                                  key={rec.href}
+                                  className={styles.moreEditorialRecItem}
+                                >
+                                  <span className={styles.moreEditorialRecLabel}>
+                                    {rec.label}
+                                  </span>
+                                  <a
+                                    href={rec.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.moreEditorialRecLink}
+                                  >
+                                    <strong>{rec.place}</strong>
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          ) : null}
+                        </>
+                      )}
+                    </div>
+                  ) : null}
                 </div>
               </section>
             </div>
           </details>
 
-          <div className={`${styles.faqSlot} ${styles.wrap}`}>
-            <LocationFaqSection items={config.faqItems} />
-          </div>
+          {config.faqItems.length > 0 ? (
+            <div className={`${styles.faqSlot} ${styles.wrap}`}>
+              <LocationFaqSection items={config.faqItems} />
+            </div>
+          ) : null}
 
           <div className={styles.ctaSlot}>
             <LocationCta

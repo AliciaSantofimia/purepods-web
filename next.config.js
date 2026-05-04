@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  /**
+   * Dev-only: keep compiled route modules in memory longer so Webpack is less likely
+   * to evict/replace server chunks while the runtime still references old numeric chunk ids
+   * (relevant on Windows under rapid saves / multiple watchers).
+   */
+  onDemandEntries: {
+    maxInactiveAge: 5 * 60 * 1000,
+    pagesBufferLength: 24,
+  },
   async redirects() {
     return [
       { source: "/explore", destination: "/pods", permanent: true },
