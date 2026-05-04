@@ -265,8 +265,8 @@ function isCoarsePointer(): boolean {
   return typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches;
 }
 
-const HOVER_CARD_W = 248;
-const HOVER_CARD_H = 232;
+const HOVER_CARD_W = 212;
+const HOVER_CARD_H = 216;
 
 function MapStickyPreviewDismiss({ active, onDismiss }: { active: boolean; onDismiss: () => void }) {
   const map = useMap();
@@ -362,7 +362,7 @@ function MapPodHoverPreview({
           src={pod.imageSrc}
           alt={pod.imageAlt}
           fill
-          sizes="248px"
+          sizes="212px"
           style={{
             objectFit: "cover",
             objectPosition: pod.imagePosition ?? "center 35%",

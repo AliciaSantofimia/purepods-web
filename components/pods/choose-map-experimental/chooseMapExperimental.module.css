@@ -443,7 +443,7 @@
   position: absolute;
   z-index: 1100;
   box-sizing: border-box;
-  border-radius: 6px;
+  border-radius: 14px;
   overflow: hidden;
   background: rgba(252, 250, 244, 0.97);
   border: 1px solid rgba(74, 63, 54, 0.14);
@@ -474,21 +474,21 @@
 
 .chMapHoverCardClose {
   position: absolute;
-  top: 6px;
-  right: 6px;
+  top: 5px;
+  right: 5px;
   z-index: 2;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
   padding: 0;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
   font-family: Inter, system-ui, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1;
   color: rgba(74, 63, 54, 0.55);
   background: rgba(252, 250, 244, 0.92);
@@ -502,18 +502,18 @@
 .chMapHoverCardMedia {
   position: relative;
   width: 100%;
-  height: 96px;
+  height: 80px;
   background: rgba(74, 63, 54, 0.06);
 }
 
 .chMapHoverCardBody {
-  padding: 10px 12px 12px;
+  padding: 8px 10px 10px;
 }
 
 .chMapHoverCardPill {
   display: inline-block;
   font-family: "Noto Serif Display", Georgia, serif;
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 650;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -521,9 +521,9 @@
 }
 
 .chMapHoverCardTitle {
-  margin: 4px 0 0;
+  margin: 3px 0 0;
   font-family: "Noto Serif Display", Georgia, serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.01em;
@@ -531,18 +531,18 @@
 }
 
 .chMapHoverCardMeta {
-  margin: 4px 0 0;
+  margin: 3px 0 0;
   font-family: Inter, system-ui, sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.35;
   color: rgba(74, 63, 54, 0.62);
 }
 
 .chMapHoverCardCta {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 8px;
   font-family: Inter, system-ui, sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.02em;
   color: rgba(74, 63, 54, 0.88);
