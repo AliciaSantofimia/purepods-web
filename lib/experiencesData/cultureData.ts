@@ -30,7 +30,7 @@ export const cultureExperienceSlides: AdventureExperienceSlide[] = [
     url: "https://www.waitangi.org.nz/",
   },
   {
-    image: `${C}te-puia-rotorua-geothermal-geyser-maori-cultural-centre-new-zealand.jpg`,
+    image: `${C}te-puia-geothermal-valley-rotorua-new-zealand.jpg`,
     alt: "Pōhutu geyser erupting at Te Puia Rotorua geothermal valley with Māori cultural centre and traditional carving school New Zealand",
     title: "Te Puia",
     description:
@@ -54,7 +54,7 @@ export const cultureExperienceSlides: AdventureExperienceSlide[] = [
     url: "https://te-pa-tu.com/",
   },
   {
-    image: "/assets/img/matu/waitomo-countryside-access-road.jpg",
+    image: `${C}hobbiton-movie-set-hobbit-house-matamata-new-zealand.jpg`,
     alt: "Rolling Waikato countryside near Waitomo and Matū PurePod, a quiet rural landscape close to Hobbiton Movie Set",
     title: "Hobbiton™ Movie Set",
     description:
