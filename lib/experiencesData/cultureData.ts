@@ -1,5 +1,6 @@
 import type { ForestSlide } from "@/components/experiences/ForestCarouselBlock";
 import type { HikingSlide } from "@/components/experiences/HikingCarouselBlock";
+import type { AdventureExperienceSlide } from "@/lib/experiencesData/adventureWildlife";
 
 const C = "/assets/img/experiences/culture/";
 
@@ -9,6 +10,98 @@ export const cultureHero = {
 };
 
 export const cultureAboutLeadHtml = `Below you will find a calm, editorial selection of cultural stops — from marae and museums to heritage towns and craft ateliers — each with a respectful link to the host organisation and a suggested nearby PurePod when the regions align. Browse the full collection on <a href="/experiences">Experiences</a>.`;
+
+export const cultureContextHeading = "Where to stay for these experiences";
+
+export const cultureContextBody =
+  "Stay close to places shaped by living heritage, storytelling and local identity — each PurePod offers a quiet natural base within reach of memorable cultural experiences across New Zealand.";
+
+export const cultureExperienceSlides: AdventureExperienceSlide[] = [
+  {
+    image: `${C}waitangi-treaty-grounds-bay-of-islands-maori-cultural-performance-new-zealand.jpg`,
+    alt: "Māori cultural performance at Waitangi Treaty Grounds Bay of Islands with traditional haka and historic heritage setting New Zealand",
+    title: "Waitangi Treaty Grounds",
+    description:
+      "The birthplace of modern New Zealand, where the Treaty of Waitangi was signed. Walk the grounds, explore the museums and experience powerful Māori cultural performance.",
+    pods: [{ label: "Mākoha PurePod", href: "/location/makoha" }],
+    distance: "Bay of Islands cultural landmark",
+    timing: "allow a half day",
+    nearbyRegion: " — Kerikeri / Bay of Islands, North Island",
+    url: "https://www.waitangi.org.nz/",
+  },
+  {
+    image: `${C}te-puia-rotorua-geothermal-geyser-maori-cultural-centre-new-zealand.jpg`,
+    alt: "Pōhutu geyser erupting at Te Puia Rotorua geothermal valley with Māori cultural centre and traditional carving school New Zealand",
+    title: "Te Puia",
+    description:
+      "Geothermal energy and Māori culture meet at Te Puia, home to Pōhutu Geyser, carving and weaving schools, and living traditions passed through generations.",
+    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    distance: "Rotorua cultural and geothermal experience",
+    timing: "guided visits available",
+    nearbyRegion: " — Rotorua region, North Island",
+    url: "https://www.tepuia.com/",
+  },
+  {
+    image: `${C}te-pa-tu-maori-cultural-experience-rotorua-night-performance-new-zealand.jpg`,
+    alt: "Immersive Māori cultural performance at Te Pā Tū Rotorua with haka, storytelling and traditional evening experience in New Zealand",
+    title: "Te Pā Tū",
+    description:
+      "An immersive evening of storytelling, performance and seasonal kai in a forest setting, shaped around Māori traditions, identity and connection to the land.",
+    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    distance: "Rotorua evening experience",
+    timing: "book ahead",
+    nearbyRegion: " — Rotorua region, North Island",
+    url: "https://te-pa-tu.com/",
+  },
+  {
+    image: "/assets/img/matu/waitomo-countryside-access-road.jpg",
+    alt: "Rolling Waikato countryside near Waitomo and Matū PurePod, a quiet rural landscape close to Hobbiton Movie Set",
+    title: "Hobbiton™ Movie Set",
+    description:
+      "Step into the crafted landscapes of Middle-earth with a guided visit through the Hobbiton Movie Set, one of New Zealand’s most recognisable screen heritage experiences.",
+    pods: [{ label: "Matū PurePod", href: "/location/matu" }],
+    distance: "Waikato day trip",
+    timing: "guided tours",
+    nearbyRegion: " — Waikato region, North Island",
+    url: "https://www.hobbitontours.com/",
+  },
+  {
+    image: `${C}akaroa-heritage-house-garden-flowers-banks-peninsula-new-zealand.jpg`,
+    alt: "Historic heritage house with colourful garden flowers in Akaroa, Banks Peninsula, New Zealand",
+    title: "Akaroa Village",
+    description:
+      "A harbour village with French heritage, colonial cottages, waterfront cafés and a gentle pace that rewards unhurried wandering through streets layered with history.",
+    pods: [{ label: "Pōhue PurePod", href: "/location/pohue" }],
+    distance: "Banks Peninsula village",
+    timing: "best explored slowly",
+    nearbyRegion: " — Banks Peninsula, South Island",
+    url: "https://maps.app.goo.gl/5BocPVTijT6WZvsQ8",
+  },
+  {
+    image: `${C}koukourarata-marae-banks-peninsula-maori-meeting-house-cultural-new-zealand.jpg`,
+    alt: "Traditional Māori meeting house at Koukourarata Marae Banks Peninsula with carved wood architecture and cultural heritage New Zealand",
+    title: "Te Rūnanga o Koukourarata, Tūtehuarewa Marae",
+    description:
+      "A more intimate cultural connection on Banks Peninsula, centred on local iwi, community, identity and the marae as a place of storytelling and belonging.",
+    pods: [{ label: "Pōhue PurePod", href: "/location/pohue" }],
+    distance: "Banks Peninsula cultural connection",
+    timing: "confirm access before travelling",
+    nearbyRegion: " — Banks Peninsula, South Island",
+    url: "https://www.facebook.com/koukourarata/",
+  },
+  {
+    image: `${C}new-zealand-maritime-museum-auckland-viaduct-harbour-exterior-waterfront.png`,
+    alt: "New Zealand Maritime Museum Auckland Viaduct Harbour waterfront exterior with modern building and maritime heritage attraction",
+    title: "New Zealand Maritime Museum",
+    description:
+      "Discover Aotearoa New Zealand’s relationship with the sea, from Polynesian navigation to modern ocean stories, at the waterfront museum in Auckland.",
+    pods: [{ label: "Rewarewa PurePod", href: "/location/rewarewa" }],
+    distance: "Auckland waterfront museum",
+    timing: "allow 1–2 hours",
+    nearbyRegion: " — Auckland / Muriwai Coast, North Island",
+    url: "https://www.maritimemuseum.co.nz/",
+  },
+];
 
 export const cultureMaoriSlides: ForestSlide[] = [
   {
