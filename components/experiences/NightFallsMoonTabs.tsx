@@ -1,46 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import {
+  getNightFallsCalendarRows,
+  type NightFallsCalendarRow,
+} from "@/lib/experiencesData/nightFallsCalendar";
 
-type Row = [string, string, string];
-
-const darkRows: Row[] = [
-  ["February 2026", "17 Feb", "Perfect dark skies"],
-  ["March 2026", "19 Mar", "<strong>Equinox (aurora peak period)</strong>"],
-  ["April 2026", "18 Apr", "Milky Way core rising (autumn skies)"],
-  ["May 2026", "17 May", "Crisp skies and winter constellations"],
-  ["June 2026", "16 Jun", "Longest nights of the year"],
-  ["July 2026", "15 Jul", "Deep winter clarity"],
-  ["August 2026", "13 Aug", "<strong>Perseids meteor shower peak</strong>"],
-  ["September 2026", "12 Sep", "<strong>Equinox (aurora peak period)</strong>"],
-  ["October 2026", "11 Oct", "Spring constellations emerging"],
-  ["November 2026", "10 Nov", "Early summer stars"],
-  ["December 2026", "9 Dec", "<strong>Geminids meteor shower peak</strong>"],
-  ["January 2027", "8 Jan", "Summer Milky Way visibility"],
-];
-
-const fullRows: Row[] = [
-  ["February 2026", "2 Feb", "Snow Moon"],
-  ["March 2026", "4 Mar", "<strong>Blood Moon (total eclipse)</strong>"],
-  ["April 2026", "2 Apr", "Pink Moon"],
-  ["May 2026", "1 & 31 May", "<strong>Blue Moon month</strong>"],
-  ["June 2026", "29 Jun", "Strawberry Moon"],
-  ["July 2026", "29 Jul", "Buck Moon"],
-  ["August 2026", "28 Aug", "Sturgeon Moon"],
-  ["September 2026", "27 Sep", "Harvest Moon"],
-  ["October 2026", "26 Oct", "Hunter’s Moon"],
-  ["November 2026", "24 Nov", "<strong>Beaver Supermoon</strong>"],
-  ["December 2026", "24 Dec", "<strong>Christmas Eve Full Moon</strong>"],
-  ["January 2027", "23 Jan", "Wolf Moon"],
-];
-
-const dustRows: Row[] = [
-  ["Eta Aquariids", "5–6 May", "50–80 per hour"],
-  ["Perseids", "12–13 Aug", "60–100 per hour"],
-  ["Geminids", "14–15 Dec", "120–150 per hour"],
-];
-
-function Table({ rows }: { rows: Row[] }) {
+function Table({ rows }: { rows: NightFallsCalendarRow[] }) {
   return (
     <div className="moonTable">
       {rows.map((r) => (
@@ -66,6 +32,7 @@ function Table({ rows }: { rows: Row[] }) {
 
 export function NightFallsMoonTabs() {
   const [tab, setTab] = useState<"dark" | "full" | "dust">("dark");
+  const rows = useMemo(() => getNightFallsCalendarRows(), []);
 
   return (
     <section className="section" id="calendario">
@@ -121,12 +88,12 @@ export function NightFallsMoonTabs() {
           role="tabpanel"
           id="tab-dark"
         >
-          <h4>Deep-sky forecast (12 months)</h4>
+          <h4>Deep-sky forecast (11 months)</h4>
           <p className="moonSub">
             When the moon disappears, the sky reaches peak darkness. This is the
             best time to observe the Milky Way and deep-sky objects.
           </p>
-          <Table rows={darkRows} />
+          <Table rows={rows.dark} />
         </div>
 
         <div
@@ -134,12 +101,12 @@ export function NightFallsMoonTabs() {
           role="tabpanel"
           id="tab-full"
         >
-          <h4>Full moon forecast (12 months)</h4>
+          <h4>Full moon forecast (11 months)</h4>
           <p className="moonSub">
             When the moon lights the landscape, the sky changes character.
             Fainter stars disappear, but the land glows in silver light.
           </p>
-          <Table rows={fullRows} />
+          <Table rows={rows.full} />
         </div>
 
         <div
@@ -152,7 +119,7 @@ export function NightFallsMoonTabs() {
             Nights filled with brief flashes of light as meteors streak across
             the sky.
           </p>
-          <Table rows={dustRows} />
+          <Table rows={rows.dust} />
         </div>
       </div>
     </section>

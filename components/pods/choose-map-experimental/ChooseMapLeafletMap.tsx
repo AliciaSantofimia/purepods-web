@@ -3,11 +3,25 @@
 import "leaflet/dist/leaflet.css";
 
 import L from "leaflet";
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+  type MutableRefObject,
+} from "react";
 import { MapContainer, Marker, Pane, TileLayer, useMap, ZoomControl } from "react-leaflet";
 import xstyles from "@/components/pods/ExplorePageWithMapExperimental.module.css";
-import type { ChooseMapPod, ChooseMapRegion } from "@/lib/chooseMapExperimentalData";
+import {
+  chooseMapPinLatLng,
+  type ChooseMapPod,
+  type ChooseMapRegion,
+} from "@/lib/chooseMapExperimentalData";
 import styles from "./chooseMapExperimental.module.css";
 
 type MapPod = {
@@ -39,6 +53,16 @@ const CITY_LABELS: Record<
     { text: "Bluff", lat: -46.6, lng: 168.333 },
   ],
 };
+
+/**
+ * Stewart tab framing (visual): full Rakiura prominent, Foveaux Strait, and only the nearest
+ * South Island margin (Invercargill / Bluff / Catlins). North edge stays south of Dunedin/Otago;
+ * west stays tight so the West Coast / Fiordland wide shot does not appear.
+ */
+const STEWART_TAB_VIEW_BOUNDS = L.latLngBounds(
+  L.latLng(-47.44, 167.34),
+  L.latLng(-46.02, 169.22),
+);
 
 function escapeHtml(text: string): string {
   return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
@@ -106,9 +130,32 @@ function isStewartIslandTabPods(podList: MapPod[]): boolean {
   return slugs.has("tokoeka") && slugs.has("hananui");
 }
 
-function hasStewartMarkerPair(podList: MapPod[]): boolean {
-  const slugs = new Set(podList.map((p) => p.slug));
-  return slugs.has("tokoeka") && slugs.has("hananui");
+/**
+ * Stewart pair: each marker keeps its real lat/lng. The two sites are ~15 m apart — at this zoom
+ * they share almost the same screen pixel, so we lay out two full pins in a wide canvas with
+ * horizontal + vertical pixel offsets (icon only). Leaflet `overflow:visible` on marker icons
+ * avoids one pin clipping the other.
+ */
+function stewartTwinPinDivIcon(
+  slug: "tokoeka" | "hananui",
+  inner: string,
+): L.DivIcon {
+  const w = 132;
+  const h = 54;
+  if (slug === "tokoeka") {
+    return L.divIcon({
+      className: styles.chMapDivicon,
+      html: `<div style="width:${w}px;height:${h}px;position:relative;overflow:visible" aria-hidden="true"><div style="position:absolute;left:6px;bottom:2px;transform:translate(-2px,-9px)">${inner}</div></div>`,
+      iconSize: [w, h],
+      iconAnchor: [19, h],
+    });
+  }
+  return L.divIcon({
+    className: styles.chMapDivicon,
+    html: `<div style="width:${w}px;height:${h}px;position:relative;overflow:visible" aria-hidden="true"><div style="position:absolute;left:86px;bottom:0;transform:translate(4px,7px) scale(0.86);transform-origin:50% 100%">${inner}</div></div>`,
+    iconSize: [w, h],
+    iconAnchor: [101, h],
+  });
 }
 
 /**
@@ -149,19 +196,32 @@ function fitMapToPods(
     return;
   }
 
-  const latlngs = podList.map((p) => L.latLng(p.lat, p.lng));
-  let b = L.latLngBounds(latlngs);
-
   if (isStewartIslandTabPods(podList)) {
     restoreNzMapMaxBounds(map);
-    b = b.pad(0.12);
-    map.fitBounds(b, {
-      padding: [40, 44],
-      maxZoom: 12,
+    map.fitBounds(STEWART_TAB_VIEW_BOUNDS, {
+      paddingTopLeft: L.point(34, 52),
+      paddingBottomRight: L.point(42, 50),
+      maxZoom: 9,
       animate: false,
     });
+    const panIn = (map as unknown as { panInsideMaxBounds?: (o: { animate: boolean }) => void }).panInsideMaxBounds;
+    if (typeof panIn === "function") panIn.call(map, { animate: false });
+    if (isLeafletMapAttached(map)) {
+      try {
+        const c = map.getCenter();
+        const z = map.getZoom();
+        // Light nudge north-east: balance strait vs southern SI coast (reference crop), without pulling Otago in-frame.
+        map.setView([c.lat + 0.028, c.lng + 0.012], z, { animate: false });
+        if (typeof panIn === "function") panIn.call(map, { animate: false });
+      } catch {
+        /* ignore */
+      }
+    }
     return;
   }
+
+  const latlngs = podList.map((p) => L.latLng(p.lat, p.lng));
+  let b = L.latLngBounds(latlngs);
 
   const spansSouthIslandMap = podList.some((p) => p.lat < -41.35);
 
@@ -196,6 +256,130 @@ type ChooseMapLeafletMapProps = {
   highlightSlug: string | null;
   onHighlightSlug: (slug: string | null) => void;
 };
+
+type PinPreviewPayload =
+  | null
+  | { slug: string; latlng: L.LatLng; mode?: "hover" | "sticky" };
+
+function isCoarsePointer(): boolean {
+  return typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches;
+}
+
+const HOVER_CARD_W = 248;
+const HOVER_CARD_H = 232;
+
+function MapStickyPreviewDismiss({ active, onDismiss }: { active: boolean; onDismiss: () => void }) {
+  const map = useMap();
+  useEffect(() => {
+    if (!active) return;
+    const fn = (ev: L.LeafletMouseEvent) => {
+      const t = ev.originalEvent?.target as HTMLElement | undefined;
+      if (!t) return;
+      if (t.closest(".leaflet-marker-icon")) return;
+      if (t.closest("[data-ch-map-hover-preview]")) return;
+      onDismiss();
+    };
+    map.on("click", fn);
+    return () => {
+      map.off("click", fn);
+    };
+  }, [map, active, onDismiss]);
+  return null;
+}
+
+function MapPodHoverPreview({
+  pods,
+  preview,
+  previewHoverLockRef,
+  onCloseSticky,
+  onLeaveHover,
+}: {
+  pods: ChooseMapPod[];
+  preview: { slug: string; latlng: L.LatLng; mode: "hover" | "sticky" };
+  previewHoverLockRef: MutableRefObject<boolean>;
+  onCloseSticky: () => void;
+  onLeaveHover: () => void;
+}) {
+  const map = useMap();
+  const [box, setBox] = useState({ left: 12, top: 12 });
+  const pod = pods.find((p) => p.slug === preview.slug);
+
+  useLayoutEffect(() => {
+    if (!map || !preview.latlng) return;
+    const update = () => {
+      const c = map.getContainer();
+      const pt = map.latLngToContainerPoint(preview.latlng);
+      const pad = 10;
+      const w = HOVER_CARD_W;
+      const h = HOVER_CARD_H;
+      let left = pt.x - w / 2;
+      let top = pt.y - h - 14;
+      if (top < pad) top = pt.y + 16;
+      left = Math.max(pad, Math.min(left, c.clientWidth - w - pad));
+      top = Math.max(pad, Math.min(top, c.clientHeight - h - pad));
+      setBox({ left, top });
+    };
+    update();
+    map.on("moveend zoomend", update);
+    const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(update) : null;
+    if (ro) ro.observe(map.getContainer());
+    return () => {
+      map.off("moveend zoomend", update);
+      ro?.disconnect();
+    };
+  }, [map, preview.latlng, preview.slug]);
+
+  if (!pod) return null;
+
+  return (
+    <div
+      data-ch-map-hover-preview
+      className={styles.chMapHoverCard}
+      style={{ left: box.left, top: box.top, width: HOVER_CARD_W }}
+      onMouseEnter={() => {
+        previewHoverLockRef.current = true;
+      }}
+      onMouseLeave={() => {
+        previewHoverLockRef.current = false;
+        if (preview.mode === "hover") onLeaveHover();
+      }}
+    >
+      {preview.mode === "sticky" ? (
+        <button
+          type="button"
+          className={styles.chMapHoverCardClose}
+          aria-label="Close"
+          onClick={(e) => {
+            e.preventDefault();
+            onCloseSticky();
+          }}
+        >
+          ×
+        </button>
+      ) : null}
+      <div className={styles.chMapHoverCardMedia}>
+        <Image
+          src={pod.imageSrc}
+          alt={pod.imageAlt}
+          fill
+          sizes="248px"
+          style={{
+            objectFit: "cover",
+            objectPosition: pod.imagePosition ?? "center 35%",
+          }}
+        />
+      </div>
+      <div className={styles.chMapHoverCardBody}>
+        <span className={styles.chMapHoverCardPill}>{pod.pill}</span>
+        <h3 className={styles.chMapHoverCardTitle}>{pod.title}</h3>
+        <p className={styles.chMapHoverCardMeta}>{pod.islandLine}</p>
+        <Link href={pod.href} className={styles.chMapHoverCardCta} prefetch={false}>
+          View details →
+        </Link>
+      </div>
+    </div>
+  );
+}
 
 function CityLabels({ region }: { region: ChooseMapRegion }) {
   const labels = CITY_LABELS[region];
@@ -309,10 +493,16 @@ function PodMarkersLayer({
   pods,
   highlightSlug,
   onHighlightSlug,
+  onPinPreview,
+  onPinPreviewLeave,
+  onPinPreviewClear,
 }: {
   pods: MapPod[];
   highlightSlug: string | null;
   onHighlightSlug: (slug: string | null) => void;
+  onPinPreview: (payload: NonNullable<PinPreviewPayload>) => void;
+  onPinPreviewLeave: () => void;
+  onPinPreviewClear: () => void;
 }) {
   const map = useMap();
   const router = useRouter();
@@ -324,6 +514,12 @@ function PodMarkersLayer({
   highlightRef.current = highlightSlug;
   const onHighlightRef = useRef(onHighlightSlug);
   onHighlightRef.current = onHighlightSlug;
+  const onPinPreviewRef = useRef(onPinPreview);
+  onPinPreviewRef.current = onPinPreview;
+  const onPinPreviewLeaveRef = useRef(onPinPreviewLeave);
+  onPinPreviewLeaveRef.current = onPinPreviewLeave;
+  const onPinPreviewClearRef = useRef(onPinPreviewClear);
+  onPinPreviewClearRef.current = onPinPreviewClear;
   const routerRef = useRef(router);
   routerRef.current = router;
 
@@ -345,29 +541,14 @@ function PodMarkersLayer({
     [map],
   );
 
-  const podPinDivIcon = (pod: MapPod, podList: MapPod[], orderIdx: number) => {
+  const podPinDivIcon = (pod: MapPod, orderIdx: number, podList: MapPod[]) => {
     const num = orderIdx + 1;
     const variant = pinVariantIndex(orderIdx);
     const inner = infographicPinHtml(pod.slug, num, variant);
-    const stewartSplit = hasStewartMarkerPair(podList) && (pod.slug === "tokoeka" || pod.slug === "hananui");
-
-    if (stewartSplit && pod.slug === "tokoeka") {
-      return L.divIcon({
-        className: styles.chMapDivicon,
-        html: `<div style="width:64px;height:40px;position:relative"><div style="position:absolute;right:0;top:0">${inner}</div></div>`,
-        iconSize: [64, 40],
-        iconAnchor: [48, 36],
-      });
+    const stewartStack = isStewartIslandTabPods(podList);
+    if (stewartStack && (pod.slug === "tokoeka" || pod.slug === "hananui")) {
+      return stewartTwinPinDivIcon(pod.slug as "tokoeka" | "hananui", inner);
     }
-    if (stewartSplit && pod.slug === "hananui") {
-      return L.divIcon({
-        className: styles.chMapDivicon,
-        html: `<div style="width:64px;height:40px;position:relative"><div style="position:absolute;left:0;top:0">${inner}</div></div>`,
-        iconSize: [64, 40],
-        iconAnchor: [16, 36],
-      });
-    }
-
     return L.divIcon({
       className: styles.chMapDivicon,
       html: inner,
@@ -400,36 +581,60 @@ function PodMarkersLayer({
     }
 
     const orderBySlug = new Map(podList.map((p, i) => [p.slug, i]));
+    let hoverOutTimer: ReturnType<typeof setTimeout> | null = null;
 
     for (const pod of podList) {
       const orderIdx = orderBySlug.get(pod.slug) ?? 0;
-      const icon = podPinDivIcon(pod, podList, orderIdx);
+      const icon = podPinDivIcon(pod, orderIdx, podList);
+      const stewartStack = isStewartIslandTabPods(podList);
       const zIndexOffset =
-        hasStewartMarkerPair(podList) && pod.slug === "tokoeka"
-          ? 650
-          : hasStewartMarkerPair(podList) && pod.slug === "hananui"
-            ? 620
+        stewartStack && pod.slug === "tokoeka"
+          ? 620
+          : stewartStack && pod.slug === "hananui"
+            ? 740
             : 0;
       const marker = L.marker([pod.lat, pod.lng], {
         icon,
         riseOnHover: true,
         ...(zIndexOffset ? { zIndexOffset } : {}),
       });
-      marker.bindTooltip(
-        `<div class="${styles.chMapTip__inner}"><span class="${styles.chMapTip__title}">${escapeHtml(pod.title)}</span></div>`,
-        {
-          permanent: false,
-          sticky: true,
-          direction: "top",
-          opacity: 1,
-          className: styles.chMapTip,
-        },
-      );
-      marker.on("mouseover", () => onHighlightRef.current(pod.slug));
-      marker.on("click", () => {
+      marker.on("mouseover", () => {
+        if (hoverOutTimer) {
+          clearTimeout(hoverOutTimer);
+          hoverOutTimer = null;
+        }
+        onHighlightRef.current(pod.slug);
+        onPinPreviewRef.current({
+          slug: pod.slug,
+          latlng: marker.getLatLng(),
+          mode: "hover",
+        });
+      });
+      marker.on("mouseout", () => {
+        if (hoverOutTimer) clearTimeout(hoverOutTimer);
+        hoverOutTimer = setTimeout(() => {
+          hoverOutTimer = null;
+          onPinPreviewLeaveRef.current();
+        }, 110);
+      });
+      marker.on("click", (e: L.LeafletMouseEvent) => {
+        if (hoverOutTimer) {
+          clearTimeout(hoverOutTimer);
+          hoverOutTimer = null;
+        }
         onHighlightRef.current(pod.slug);
         marker.closeTooltip?.();
-        routerRef.current.push(pod.href);
+        if (isCoarsePointer()) {
+          L.DomEvent.stopPropagation(e);
+          onPinPreviewRef.current({
+            slug: pod.slug,
+            latlng: marker.getLatLng(),
+            mode: "sticky",
+          });
+        } else {
+          onPinPreviewClearRef.current();
+          routerRef.current.push(pod.href);
+        }
       });
       marker.addTo(m);
       pushLayer(marker);
@@ -467,26 +672,121 @@ function PodMarkersLayer({
   return null;
 }
 
+function newMapContainerKey(): string {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID();
+  }
+  return `leaflet-map-${Math.random().toString(36).slice(2, 12)}`;
+}
+
 export default function ChooseMapLeafletMap({
   pods,
   region,
   highlightSlug,
   onHighlightSlug,
 }: ChooseMapLeafletMapProps) {
+  /** Forces a fresh MapContainer instance after error recovery / full remount. */
+  const [mapContainerKey] = useState(newMapContainerKey);
+
+  const [pinPreview, setPinPreview] = useState<{
+    slug: string;
+    latlng: L.LatLng;
+    mode: "hover" | "sticky";
+  } | null>(null);
+  const previewHoverLockRef = useRef(false);
+  const pinLeaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pinPreviewRef = useRef(pinPreview);
+  pinPreviewRef.current = pinPreview;
+
+  const clearPinLeaveTimer = useCallback(() => {
+    if (pinLeaveTimerRef.current) {
+      clearTimeout(pinLeaveTimerRef.current);
+      pinLeaveTimerRef.current = null;
+    }
+  }, []);
+
+  const clearPinPreview = useCallback(() => {
+    clearPinLeaveTimer();
+    setPinPreview(null);
+  }, [clearPinLeaveTimer]);
+
+  const openPinPreview = useCallback((payload: NonNullable<PinPreviewPayload>) => {
+    clearPinLeaveTimer();
+    setPinPreview({
+      slug: payload.slug,
+      latlng: payload.latlng,
+      mode: payload.mode ?? "hover",
+    });
+  }, [clearPinLeaveTimer]);
+
+  const onPinPreviewLeave = useCallback(() => {
+    clearPinLeaveTimer();
+    pinLeaveTimerRef.current = setTimeout(() => {
+      pinLeaveTimerRef.current = null;
+      if (isCoarsePointer()) return;
+      if (previewHoverLockRef.current) return;
+      const prev = pinPreviewRef.current;
+      if (!prev || prev.mode === "sticky") return;
+      setPinPreview(null);
+      onHighlightSlug(null);
+    }, 110);
+  }, [clearPinLeaveTimer, onHighlightSlug]);
+
+  const closeStickyPreview = useCallback(() => {
+    clearPinLeaveTimer();
+    previewHoverLockRef.current = false;
+    setPinPreview(null);
+    onHighlightSlug(null);
+  }, [clearPinLeaveTimer, onHighlightSlug]);
+
+  const onLeaveHoverCard = useCallback(() => {
+    clearPinLeaveTimer();
+    previewHoverLockRef.current = false;
+    if (pinPreviewRef.current?.mode !== "hover") return;
+    setPinPreview(null);
+    onHighlightSlug(null);
+  }, [clearPinLeaveTimer, onHighlightSlug]);
+
+  useEffect(() => {
+    return () => clearPinLeaveTimer();
+  }, [clearPinLeaveTimer]);
+
+  /**
+   * Mount Leaflet only after layout: avoids “Map container is already initialized” when
+   * React 18 Strict Mode runs effect setup → cleanup → setup while react-leaflet’s ref
+   * path can leave `_leaflet_id` on the node before `map.remove()` runs.
+   */
+  const [mapDomReady, setMapDomReady] = useState(false);
+  useLayoutEffect(() => {
+    setMapDomReady(true);
+    return () => {
+      setMapDomReady(false);
+    };
+  }, []);
+
   const mapPods: MapPod[] = useMemo(
     () =>
-      pods.map((p) => ({
-        slug: p.slug,
-        title: p.title,
-        pill: p.pill,
-        href: p.href,
-        lat: p.lat,
-        lng: p.lng,
-      })),
+      pods.map((p) => {
+        const pin = chooseMapPinLatLng(p);
+        return {
+          slug: p.slug,
+          title: p.title,
+          pill: p.pill,
+          href: p.href,
+          lat: pin.lat,
+          lng: pin.lng,
+        };
+      }),
     [pods],
   );
 
   const fitKey = useMemo(() => `${podsFitSignature(mapPods)}|${region}`, [mapPods, region]);
+
+  useEffect(() => {
+    clearPinLeaveTimer();
+    setPinPreview(null);
+    previewHoverLockRef.current = false;
+  }, [fitKey, clearPinLeaveTimer]);
 
   const nzMaxBounds = useMemo(
     () => L.latLngBounds(L.latLng(-48.2, 165.2), L.latLng(-33.8, 179.4)).pad(0.04),
@@ -497,35 +797,59 @@ export default function ChooseMapLeafletMap({
     <div className={`${xstyles.exmapShell} ${styles.chooseMapLeafTune}`}>
       <p className={`${xstyles.exmapCaption} ${styles.infographicCaption}`}>New Zealand</p>
       <InfographicCompass />
-      <MapContainer
-        className={`${xstyles.exmapMap} ${styles.chooseMapMapSurface}`}
-        center={[-41.25, 172.75]}
-        zoom={5}
-        minZoom={5}
-        maxZoom={12}
-        maxBounds={nzMaxBounds}
-        scrollWheelZoom
-        zoomControl={false}
-        attributionControl
-        aria-label="Map of New Zealand with PurePod locations"
-      >
-        <RegisterNzBounds nzMaxBounds={nzMaxBounds} />
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
-          maxZoom={19}
-          opacity={0.9}
+      {mapDomReady ? (
+        <MapContainer
+          key={mapContainerKey}
+          className={`${xstyles.exmapMap} ${styles.chooseMapMapSurface}`}
+          center={[-41.25, 172.75]}
+          zoom={5}
+          minZoom={5}
+          maxZoom={12}
+          maxBounds={nzMaxBounds}
+          scrollWheelZoom
+          zoomControl={false}
+          attributionControl
+          aria-label="Map of New Zealand with PurePod locations"
+        >
+          <RegisterNzBounds nzMaxBounds={nzMaxBounds} />
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+            maxZoom={19}
+            opacity={0.9}
+          />
+          <CityLabels region={region} />
+          <ZoomControl position="topright" />
+          <MapResizeHandler />
+          <MapFitController fitKey={fitKey} pods={mapPods} />
+          <PodMarkersLayer
+            pods={mapPods}
+            highlightSlug={highlightSlug}
+            onHighlightSlug={onHighlightSlug}
+            onPinPreview={openPinPreview}
+            onPinPreviewLeave={onPinPreviewLeave}
+            onPinPreviewClear={clearPinPreview}
+          />
+          <MapStickyPreviewDismiss
+            active={Boolean(pinPreview && pinPreview.mode === "sticky")}
+            onDismiss={closeStickyPreview}
+          />
+          {pinPreview ? (
+            <MapPodHoverPreview
+              pods={pods}
+              preview={pinPreview}
+              previewHoverLockRef={previewHoverLockRef}
+              onCloseSticky={closeStickyPreview}
+              onLeaveHover={onLeaveHoverCard}
+            />
+          ) : null}
+        </MapContainer>
+      ) : (
+        <div
+          className={`${xstyles.exmapMap} ${styles.chooseMapMapSurface}`}
+          aria-hidden
         />
-        <CityLabels region={region} />
-        <ZoomControl position="topright" />
-        <MapResizeHandler />
-        <MapFitController fitKey={fitKey} pods={mapPods} />
-        <PodMarkersLayer
-          pods={mapPods}
-          highlightSlug={highlightSlug}
-          onHighlightSlug={onHighlightSlug}
-        />
-      </MapContainer>
+      )}
     </div>
   );
 }

@@ -61,6 +61,7 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
   );
 
   const splitRef = useRef<HTMLDivElement>(null);
+  const cardsScrollerRef = useRef<HTMLDivElement>(null);
   const ratiosRef = useRef<Map<string, number>>(new Map());
   const rafId = useRef(0);
 
@@ -78,7 +79,7 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
 
   const markerHighlightSlug = hoverSlug ?? scrollSlug;
 
-  const setHover = useCallback((slug: string | null) => {
+  const setHoverFromMapPin = useCallback((slug: string | null) => {
     setHoverSlug(slug);
   }, []);
 
@@ -88,10 +89,10 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
   }, [filter]);
 
   useEffect(() => {
-    const root = splitRef.current;
-    if (!root || typeof IntersectionObserver === "undefined") return;
+    const scroller = cardsScrollerRef.current;
+    if (!scroller || typeof IntersectionObserver === "undefined") return;
 
-    const cards = root.querySelectorAll<HTMLElement>("[data-map-card]");
+    const cards = scroller.querySelectorAll<HTMLElement>("[data-map-card]");
     if (!cards.length) return;
 
     const flush = () => {
@@ -128,8 +129,9 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
         schedule();
       },
       {
+        root: scroller,
         threshold: [0, 0.1, 0.18, 0.28, 0.42, 0.55, 0.72],
-        rootMargin: "-8% 0px -12% 0px",
+        rootMargin: "-10% 0px -14% 0px",
       },
     );
 
@@ -183,12 +185,13 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
               pods={visiblePods}
               region={filter}
               highlightSlug={markerHighlightSlug}
-              onHighlightSlug={setHover}
+              onHighlightSlug={setHoverFromMapPin}
             />
           </aside>
 
           <div className={xstyles.splitCards}>
-            <div className={styles.grid}>
+            <div ref={cardsScrollerRef} className={chooseMapStyles.chooseMapCardsScroll}>
+              <div className={styles.grid}>
               {visiblePods.map((pod: ChooseMapPod, index: number) => {
                 const isHover = hoverSlug === pod.slug;
                 const isScrollCue = scrollSlug === pod.slug && !hoverSlug;
@@ -201,8 +204,8 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
                     data-map-card
                     data-pod-slug={pod.slug}
                     prefetch={false}
-                    onMouseEnter={() => setHover(pod.slug)}
-                    onFocus={() => setHover(pod.slug)}
+                    onMouseEnter={() => setHoverSlug(pod.slug)}
+                    onFocus={() => setHoverSlug(pod.slug)}
                   >
                     <div className={styles.media}>
                       <Image
@@ -229,6 +232,7 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
                   </Link>
                 );
               })}
+              </div>
             </div>
           </div>
         </div>

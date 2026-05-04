@@ -25,12 +25,28 @@ export type ChooseMapPod = {
   imageSrc: string;
   imageAlt: string;
   imagePosition?: string;
+  /** Geographic reference (spec / real location). */
   lat: number;
   lng: number;
+  /**
+   * Pin position used only by the `/pods` Leaflet map. Omit to use `lat`/`lng`.
+   * Lets nearby pods read as two distinct markers without changing canonical coords.
+   */
+  mapLat?: number;
+  mapLng?: number;
 };
 
+/** Lat/lng for map markers and fitBounds on `/pods` (visual position when set). */
+export function chooseMapPinLatLng(pod: ChooseMapPod): { lat: number; lng: number } {
+  return {
+    lat: pod.mapLat ?? pod.lat,
+    lng: pod.mapLng ?? pod.lng,
+  };
+}
+
 /**
- * Spec coordinates (authoritative for map pins).
+ * Pod list for the choose-your-place UI. `lat`/`lng` stay canonical; `mapLat`/`mapLng`
+ * apply only on the map when pins would otherwise stack at the default South Island zoom.
  */
 export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
   {
@@ -120,6 +136,8 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     imageAlt: "Manakau PurePod glass cabin in the Kaikōura hills",
     lat: -42.45,
     lng: 173.55,
+    mapLat: -42.375,
+    mapLng: 173.485,
   },
   {
     slug: "kahutara",
@@ -133,6 +151,8 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     imagePosition: "center 80%",
     lat: -42.4,
     lng: 173.68,
+    mapLat: -42.475,
+    mapLng: 173.775,
   },
   {
     slug: "atatu",
@@ -146,6 +166,8 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     imageAlt: "Atatū PurePod bedroom with ocean view",
     lat: -42.855,
     lng: 173.205,
+    mapLat: -42.785,
+    mapLng: 173.095,
   },
   {
     slug: "korimako",
@@ -159,6 +181,8 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     imageAlt: "Korimako PurePod forest path walking trail",
     lat: -42.85,
     lng: 173.2,
+    mapLat: -42.92,
+    mapLng: 173.31,
   },
   {
     slug: "greystone",
@@ -197,6 +221,8 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     imageAlt: "Haurapa PurePod in Central Otago landscape",
     lat: -45.05,
     lng: 169.21,
+    mapLat: -45.005,
+    mapLng: 169.255,
   },
   {
     slug: "taima",
@@ -210,6 +236,8 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     imageAlt: "Tāima PurePod vineyard view in Central Otago",
     lat: -45.068021549825716,
     lng: 169.0647641734164,
+    mapLat: -45.115,
+    mapLng: 168.995,
   },
   {
     slug: "tokoeka",
@@ -221,8 +249,8 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     imageSrc:
       "/assets/img/tokoeka/tokoeka-purepod-exterior-sunset-view-stewart-island.jpg",
     imageAlt: "Tokoeka PurePod exterior at sunset on Stewart Island",
-    lat: -46.8975,
-    lng: 168.129,
+    lat: -46.866629,
+    lng: 168.124813,
   },
   {
     slug: "hananui",
@@ -234,7 +262,7 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     imageSrc:
       "/assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg",
     imageAlt: "Hananui PurePod aerial coastal location on Stewart Island",
-    lat: -46.9005,
-    lng: 168.1305,
+    lat: -46.866759,
+    lng: 168.124998,
   },
 ];

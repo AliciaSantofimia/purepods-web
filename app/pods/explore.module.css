@@ -316,3 +316,45 @@
     height: 200px;
   }
 }
+
+/*
+ * /pods (ChooseMapPodsShell) — pull hero + map/cards block higher in the first paint on desktop
+ * without changing copy, colours, or map/card components.
+ */
+@media (min-width: 981px) {
+  .pagePodsChoose .navInner {
+    padding: 8px 0;
+  }
+
+  .pagePodsChoose .brandImg {
+    height: 32px;
+  }
+
+  .pagePodsChoose .hero {
+    padding: 16px 0 10px;
+  }
+
+  .pagePodsChoose .hero h1 {
+    margin: 0 0 4px;
+  }
+
+  .pagePodsChoose .lead {
+    line-height: 1.48;
+  }
+
+  .pagePodsChoose .tabsWrap {
+    top: 51px;
+  }
+
+  .pagePodsChoose .tabs {
+    padding: 8px 0;
+  }
+
+  .pagePodsChoose .section {
+    padding: 8px 0 48px;
+  }
+
+  .pagePodsChoose .sectionHead {
+    margin: 0 0 8px;
+  }
+}

@@ -11,7 +11,7 @@ type Props = { initialRegion: ChooseMapRegion };
 /** Shell completo de la página Pods con mapa editorial e islas (tabs). */
 export function ChooseMapPodsShell({ initialRegion }: Props) {
   return (
-    <div className={`${styles.page} ${xstyles.pageRoot}`}>
+    <div className={`${styles.page} ${styles.pagePodsChoose} ${xstyles.pageRoot}`}>
       <header className={styles.nav}>
         <div className={`wrap ${styles.navInner}`}>
           <Link className={styles.brand} href="/" aria-label="PurePods — Home">

@@ -6,6 +6,15 @@ These files define the rules, structure and behaviour of the PurePods website.
 
 Always consult these files before generating or modifying code, content or layouts.
 
+## Stewart Island — canonical coordinates
+
+Real lat/lng for map pins and location-aware features (Tokoeka and Hananui are ~20 m apart):
+
+| Pod | Latitude | Longitude |
+| --- | --- | --- |
+| Tokoeka | -46.866629 | 168.124813 |
+| Hananui | -46.866759 | 168.124998 |
+
 ## Source of truth
 
 The following documents must be treated as the source of truth for the project:
