@@ -1,5 +1,6 @@
 import type { ForestSlide } from "@/components/experiences/ForestCarouselBlock";
 import type { HikingSlide } from "@/components/experiences/HikingCarouselBlock";
+import type { AdventureExperienceSlide } from "@/lib/experiencesData/adventureWildlife";
 
 const J = "/assets/img/experiences/journeys/";
 
@@ -7,6 +8,107 @@ export const journeyHero = {
   src: `${J}owharoa-falls-karangahake-gorge-waterfall-new-zealand.jpg`,
   alt: "Owharoa Falls waterfall in Karangahake Gorge surrounded by native forest in New Zealand",
 };
+
+export const journeyContextHeading = "Where to stay for these experiences";
+
+export const journeyContextBody =
+  "Stay close to routes that move through forest, coast and open landscapes — each PurePod gives you a private base before and after the journey.";
+
+export const journeyExperienceSlides: AdventureExperienceSlide[] = [
+  {
+    image: `${J}waterfall-bike-adventure-new-zealand-nature-trail-journey.jpg`,
+    alt: "Mountain biking on a forest trail in New Zealand with waterfall and native bush, adventure journey experience",
+    title: "Waitangi Mountain Bike Park",
+    description:
+      "A purpose-built network of forest trails near the Bay of Islands, with flowing rides for a range of abilities.",
+    pods: [{ label: "Mākoha PurePod", href: "/location/makoha" }],
+    distance: "Bay of Islands bike park",
+    timing: "half-day ride",
+    nearbyRegion: " — Waitangi / Kerikeri, North Island",
+    url: "https://www.wmbp.nz/",
+  },
+  {
+    image: `${J}redwoods-treewalk-rotorua.jpg`,
+    alt: "Redwoods Treewalk in Whakarewarewa Forest Rotorua, New Zealand",
+    title: "Redwoods Treewalk / Whakarewarewa Forest",
+    description:
+      "Walk among towering redwoods, forest trails and suspended bridges in one of Rotorua’s most atmospheric natural settings.",
+    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    distance: "Rotorua forest experience",
+    timing: "day or evening",
+    nearbyRegion: " — Rotorua region, North Island",
+    url: "https://www.treewalk.co.nz/",
+  },
+  {
+    image: `${J}table-top-kapiti-coast.jpg`,
+    alt: "Kapiti Coast ridgeline track with expansive views across hills and coastline, New Zealand",
+    title: "Paekākāriki Escarpment Track",
+    description:
+      "A dramatic coastal escarpment walk with stair climbs, swing bridges and big views over the Kāpiti coastline.",
+    pods: [{ label: "Kokomea PurePod", href: "/location/kokomea" }],
+    distance: "Kāpiti Coast walk",
+    timing: "day hike",
+    nearbyRegion: " — Kāpiti Coast, North Island",
+    url: "https://www.wellingtonnz.com/visit/trails/paekakariki-escarpment-track",
+  },
+  {
+    image: `${J}karangahake-gorge-coromandel.jpg`,
+    alt: "Karangahake Gorge river, bridges and native bush in the Coromandel, New Zealand",
+    title: "Karangahake Gorge (hiking)",
+    description:
+      "Historic trails, river paths, bridges and native bush make this gorge one of the North Island’s most memorable walking areas.",
+    pods: [{ label: "Ruru PurePod", href: "/location/ruru" }],
+    distance: "Coromandel gorge walk",
+    timing: "choose short or longer loops",
+    nearbyRegion: " — Coromandel, North Island",
+    url: "https://thecoromandel.nz/destinations/karangahake-gorge/",
+  },
+  {
+    image: `${J}kaikoura-coast-track-south-island-new-zealand.jpg`,
+    alt: "Kaikōura coastal walking landscape with ocean and mountain views in New Zealand",
+    title: "Kaikōura Peninsula Walkway",
+    description:
+      "A coastal walkway shaped by sea cliffs, wildlife, mountain views and the distinctive meeting point of land and ocean.",
+    pods: [
+      { label: "Kahutara PurePod", href: "/location/kahutara" },
+      { label: "Manakau PurePod", href: "/location/manakau" },
+    ],
+    distance: "Kaikōura coastal walk",
+    timing: "short sections or longer loop",
+    nearbyRegion: " — Kaikōura region, South Island",
+    url: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/kaikoura-area/things-to-do/kaikoura-peninsula-walkway/",
+  },
+  {
+    image: `${J}Lake Dunstan Trail, Central Otago.jpg`,
+    alt: "Lake Dunstan Trail in Central Otago with turquoise water, cliffs and cycling path, New Zealand",
+    title: "Lake Dunstan Trail - Bannockburn Bridge Car Park",
+    description:
+      "A scenic trail section above Lake Dunstan, with boardwalks, cliffs and wide Central Otago views.",
+    pods: [
+      { label: "Haurapa PurePod", href: "/location/haurapa" },
+      { label: "Tāima PurePod", href: "/location/taima" },
+    ],
+    distance: "Central Otago trail",
+    timing: "cycle or walk sections",
+    nearbyRegion: " — Central Otago, South Island",
+    url: "https://www.centralotagonz.com/tracks-and-trails/lake-dunstan-trail/map-and-sections/",
+  },
+  {
+    image: `${J}rakiura-national-park-beach-stewart-island-new-zealand.jpg`,
+    alt: "Rakiura National Park beach and coastal track on Stewart Island, New Zealand",
+    title: "Rakiura Track",
+    description:
+      "A Great Walk through coastal forest, beaches and sheltered bays on Stewart Island / Rakiura.",
+    pods: [
+      { label: "Tokoeka PurePod", href: "/location/tokoeka" },
+      { label: "Hananui PurePod", href: "/location/hananui" },
+    ],
+    distance: "Stewart Island / Rakiura",
+    timing: "multi-day walk",
+    nearbyRegion: " — Rakiura, South Island",
+    url: "https://www.doc.govt.nz/rakiuratrack",
+  },
+];
 
 export const journeyAboutLeadHtml = `The sections below organise examples into forest walks and nature trails, day and multi-day hikes, and cycle routes.
           Each slide links to a public route or place resource where one is listed, and to the suggested nearby pod’s detail page on this site (paths under /location/).

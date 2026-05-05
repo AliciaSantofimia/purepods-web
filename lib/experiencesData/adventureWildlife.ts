@@ -13,7 +13,7 @@ export const adventureContextBody =
 
 export type AdventureExperienceSlidePod = {
   label: string;
-  href: `/location/${string}`;
+  href: string;
 };
 
 export type AdventureExperienceSlide = {

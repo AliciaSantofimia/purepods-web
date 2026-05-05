@@ -1,9 +1,156 @@
 import type { HikingSlide } from "@/components/experiences/HikingCarouselBlock";
+import type { AdventureExperienceSlide } from "@/lib/experiencesData/adventureWildlife";
 
 export const wineDineHero = {
   src: "/assets/img/experiences/experiences/new-zealand-wine-dine-local-food-experience.jpg",
   alt: "Local food and wine spread in a scenic New Zealand landscape, slow dining and regional flavours",
 };
+
+export const wineDineContextHeading = "Where to stay for these experiences";
+
+export const wineDineContextBody =
+  "Stay close to vineyards, restaurants and local favourites — each PurePod gives you a quiet place to return after a day shaped by flavour and landscape.";
+
+export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
+  {
+    image: "/assets/img/experiences/experiences/new-zealand-wine-dine-local-food-experience.jpg",
+    alt: "Local food and wine spread in a scenic New Zealand landscape, slow dining and regional flavours",
+    title: "Te Kano Estate (Central Otago)",
+    description:
+      "A Central Otago wine experience shaped by distinctive landscapes, elegant cellar-door hospitality and carefully made wines.",
+    pods: [
+      { label: "Haurapa PurePod", href: "https://purepods.com/booking/?force_site_id=9" },
+      { label: "Tāima PurePod", href: "https://purepods.com/booking/?force_site_id=13" },
+    ],
+    distance: "Central Otago vineyard",
+    timing: "book tastings ahead",
+    nearbyRegion: " — Central Otago, South Island",
+    url: "https://tekanoestate.com/",
+  },
+  {
+    image: "/assets/img/experiences/wine-dine/black-estate-winery-dining-wine-pairing-waipara-valley-new-zealand.jpg",
+    alt: "Winery dining and wine pairing at Black Estate in the Waipara Valley, North Canterbury, New Zealand",
+    title: "Black Estate (Waipara Valley)",
+    description:
+      "Organic wines, seasonal food and vineyard views come together in one of Waipara Valley’s most distinctive wine-country settings.",
+    pods: [
+      { label: "Atatū PurePod", href: "https://purepods.com/booking/?force_site_id=5" },
+      { label: "Korimako PurePod", href: "https://purepods.com/booking/?force_site_id=6" },
+    ],
+    distance: "Waipara Valley winery",
+    timing: "lunch and tastings",
+    nearbyRegion: " — North Canterbury, South Island",
+    url: "https://blackestate.co.nz/",
+  },
+  {
+    image: "/assets/img/experiences/wine-dine/greystone-wines-restaurant-waipara-valley-wine-tasting-new-zealand.jpg",
+    alt: "Greystone Wines restaurant and wine tasting in the Waipara Valley, North Canterbury, New Zealand",
+    title: "Greystone Wines (Waipara Valley)",
+    description:
+      "An organic winery and restaurant experience where seasonal food, considered winemaking and vineyard landscapes meet.",
+    pods: [
+      { label: "Atatū PurePod", href: "https://purepods.com/booking/?force_site_id=5" },
+      { label: "Korimako PurePod", href: "https://purepods.com/booking/?force_site_id=6" },
+    ],
+    distance: "Waipara Valley winery",
+    timing: "seasonal dining",
+    nearbyRegion: " — North Canterbury, South Island",
+    url: "https://www.greystonewines.co.nz/",
+  },
+  {
+    image: "/assets/img/experiences/wine-dine/stratosfare-restaurant-rotorua-panoramic-view-dining-new-zealand.jpg",
+    alt: "Stratosfare Restaurant & Bar in Rotorua with panoramic views over the city and landscape, New Zealand",
+    title: "Stratosfare Restaurant & Bar (Rotorua)",
+    description:
+      "A panoramic Rotorua dining experience with wide views, local flavours and a memorable sense of arrival above the city.",
+    pods: [{ label: "Pāmu PurePod", href: "https://purepods.com/booking/?force_site_id=8" }],
+    distance: "Rotorua dining with views",
+    timing: "lunch or dinner",
+    nearbyRegion: " — Rotorua region, North Island",
+    url: "https://rotorua.skyline.co.nz/things-to-do/stratosfare-restaurant-rotorua/",
+  },
+  {
+    image: "/assets/img/experiences/wine-dine/burn-cottage-winery-central-otago-vineyard-landscape-new-zealand.jpg",
+    alt: "Burn Cottage Winery vineyard landscape and rolling Central Otago wine country, New Zealand",
+    title: "Burn Cottage Winery (Central Otago)",
+    description:
+      "A biodynamic Central Otago winery known for intimate tastings, thoughtful hospitality and expressive Pinot Noir.",
+    pods: [
+      { label: "Haurapa PurePod", href: "https://purepods.com/booking/?force_site_id=9" },
+      { label: "Tāima PurePod", href: "https://purepods.com/booking/?force_site_id=13" },
+    ],
+    distance: "Central Otago winery",
+    timing: "tastings by appointment",
+    nearbyRegion: " — Central Otago, South Island",
+    url: "https://burncottage.com/",
+  },
+  {
+    image: "/assets/img/experiences/wine-dine/stoaker-room-cromwell-wine-tasting-platter-central-otago-new-zealand.jpg",
+    alt: "Wine tasting platter at The Stoaker Room in Cromwell, Central Otago, New Zealand",
+    title: "The Stoaker Room (Cromwell)",
+    description:
+      "A relaxed Cromwell dining stop centred on slow cooking, wine-country flavour and a distinctly local Central Otago atmosphere.",
+    pods: [
+      { label: "Haurapa PurePod", href: "https://purepods.com/booking/?force_site_id=9" },
+      { label: "Tāima PurePod", href: "https://purepods.com/booking/?force_site_id=13" },
+    ],
+    distance: "Cromwell dining",
+    timing: "lunch or dinner",
+    nearbyRegion: " — Central Otago, South Island",
+    url: "https://www.thestoakerroom.co.nz/",
+  },
+  {
+    image: "/assets/img/experiences/wine-dine/prophets-rock-winery-central-otago-wine-tasting-experience-new-zealand.jpg",
+    alt: "Wine tasting experience at Prophet's Rock winery in Central Otago, New Zealand",
+    title: "Prophet’s Rock (Central Otago)",
+    description:
+      "A refined Central Otago tasting experience with handcrafted wines, strong terroir and a quiet sense of place.",
+    pods: [
+      { label: "Haurapa PurePod", href: "https://purepods.com/booking/?force_site_id=9" },
+      { label: "Tāima PurePod", href: "https://purepods.com/booking/?force_site_id=13" },
+    ],
+    distance: "Central Otago winery",
+    timing: "book tastings ahead",
+    nearbyRegion: " — Central Otago, South Island",
+    url: "https://www.prophetsrock.co.nz/",
+  },
+  {
+    image: "/assets/img/experiences/wine-dine/flatwhite-beachfront-cafe-interior-ocean-view-dining-new-zealand.jpg",
+    alt: "Flatwhite Café beachfront interior with ocean views for relaxed dining in New Zealand",
+    title: "Flatwhite Café (Waihi Beach)",
+    description:
+      "Beachfront dining with ocean views, relaxed service and a coastal pace that works beautifully with a Coromandel stay.",
+    pods: [{ label: "Ruru PurePod", href: "https://purepods.com/booking/?force_site_id=7" }],
+    distance: "Waihi Beach dining",
+    timing: "lunch or dinner",
+    nearbyRegion: " — Waihi Beach, North Island",
+    url: "https://www.flatwhite.co.nz/",
+  },
+  {
+    image: "/assets/img/experiences/wine-dine/the-hunting-lodge-wine-pouring-tasting-experience-auckland-new-zealand.jpg",
+    alt: "Wine pouring during a tasting experience at The Hunting Lodge vineyard, Auckland, New Zealand",
+    title: "The Hunting Lodge (Auckland)",
+    description:
+      "A vineyard and dining destination with tastings, seasonal food and open green space within reach of Auckland’s west coast.",
+    pods: [{ label: "Rewarewa PurePod", href: "https://purepods.com/booking/?force_site_id=15" }],
+    distance: "Auckland wine country",
+    timing: "long lunch or tasting",
+    nearbyRegion: " — Auckland / Muriwai Coast, North Island",
+    url: "https://www.thehuntinglodge.com/",
+  },
+  {
+    image: "/assets/img/experiences/wine-dine/lakeland-queen-rotorua-lake-dinner-cruise-new-zealand.jpg",
+    alt: "Lakeland Queen dinner cruise on Lake Rotorua with geothermal shoreline scenery, New Zealand",
+    title: "Lakeland Queen Cruise (Lake Rotorua)",
+    description:
+      "A lake dining cruise that pairs Rotorua scenery, geothermal shoreline and an easy on-water dining rhythm.",
+    pods: [{ label: "Pāmu PurePod", href: "https://purepods.com/booking/?force_site_id=8" }],
+    distance: "Lake Rotorua cruise",
+    timing: "on-water dining",
+    nearbyRegion: " — Rotorua region, North Island",
+    url: "https://lakelandqueen.com/",
+  },
+];
 
 export const wineDineAboutLeadHtml = `Below you will find a calm, editorial selection of wine and dining stops — from vineyard tastings to local favourites — each with a direct link to the venue and suggested nearby PurePods booking where the regions align. Browse the full collection on <a href="/experiences">Experiences</a>.`;
 

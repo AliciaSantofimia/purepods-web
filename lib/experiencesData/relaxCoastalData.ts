@@ -1,9 +1,104 @@
+import type { AdventureExperienceSlide } from "@/lib/experiencesData/adventureWildlife";
+
 const RC = "/assets/img/experiences/relax-coastal/";
 
 export const relaxHero = {
+  src: `${RC}cathedral-cove-beach-new-zealand-rock-arch-sea-stack.jpg`,
   image: `${RC}cathedral-cove-beach-new-zealand-rock-arch-sea-stack.jpg`,
   alt: "Cathedral Cove beach framed by a natural rock arch and sea stack, Coromandel Peninsula, New Zealand",
 };
+
+export const relaxContextHeading = "Where to stay for these experiences";
+
+export const relaxContextBody =
+  "Stay close to geothermal waters, forest springs and open coastlines — each PurePod gives you a quiet natural base for slowing down before and after the day.";
+
+export const relaxExperienceSlides: AdventureExperienceSlide[] = [
+  {
+    image: `${RC}polynesian-spa-rotorua-lake-view-geothermal-pool-new-zealand.jpg`,
+    alt: "Geothermal pool at Polynesian Spa, Rotorua, beside Lake Rotorua with native greenery, New Zealand",
+    title: "Polynesian Spa",
+    description:
+      "Lakeside mineral pools fed by natural springs, designed for an unhurried soak on the edge of Lake Rotorua.",
+    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    distance: "Rotorua lakeside spa",
+    timing: "book ahead",
+    nearbyRegion: " — Rotorua region, North Island",
+    url: "https://www.polynesianspa.co.nz/",
+  },
+  {
+    image: `${RC}wai-ariki-hot-springs-spa-rotorua-geothermal-luxury-new-zealand.jpg`,
+    alt: "Wai Ariki Hot Springs and Spa in Rotorua with geothermal bathing and luxury wellness setting, New Zealand",
+    title: "Wai Ariki Hot Springs & Spa",
+    description:
+      "A restorative Rotorua wellness experience shaped by geothermal waters, architecture and Māori cultural inspiration.",
+    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    distance: "Rotorua geothermal spa",
+    timing: "wellness experience",
+    nearbyRegion: " — Rotorua region, North Island",
+    url: "https://www.wai-ariki.co.nz/",
+  },
+  {
+    image: `${RC}secret-spot-purepods-forest-hot-tub-ferns-rotorua.jpg`,
+    alt: "Private cedar hot tub surrounded by native ferns in a tranquil forest setting in Rotorua, New Zealand",
+    title: "Secret Spot Hot Tubs Rotorua",
+    description:
+      "Private cedar hot tubs tucked into forest, with ferns close by and a pace that naturally slows everything down.",
+    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    distance: "Rotorua forest hot tubs",
+    timing: "private soaking",
+    nearbyRegion: " — Rotorua region, North Island",
+    url: "https://secretspot.co.nz/",
+  },
+  {
+    image: `${RC}rotorua-geothermal-mud-bath-couple-hells-gate-new-zealand.jpg`,
+    alt: "Outdoor geothermal mud bath at Hell's Gate, Rotorua, New Zealand, with steam and native planting",
+    title: "Hell's Gate Geothermal Reserve & Mud Spa",
+    description:
+      "Mineral mud, sulphur waters and an active geothermal landscape make this one of Rotorua’s most elemental spa experiences.",
+    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    distance: "Tikitere geothermal reserve",
+    timing: "mud spa and walk",
+    nearbyRegion: " — Rotorua region, North Island",
+    url: "https://www.hellsgate.co.nz/",
+  },
+  {
+    image: `${RC}hamurana-springs-purepods-redwood-forest-crystal-water-rotorua-new-zealand.jpg`,
+    alt: "Crystal-clear spring water surrounded by redwood forest and wooden walkway at Hamurana Springs, Rotorua, New Zealand",
+    title: "Hamurana Springs Nature Reserve",
+    description:
+      "Clear spring water, shaded paths and redwood forest combine into a gentle nature walk with a restorative feel.",
+    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    distance: "Rotorua spring walk",
+    timing: "slow nature walk",
+    nearbyRegion: " — Rotorua region, North Island",
+    url: "https://www.hamurana.co.nz/",
+  },
+  {
+    image: `${RC}cathedral-cove-beach-new-zealand-rock-arch-sea-stack.jpg`,
+    alt: "Coastal beach and calm sea in New Zealand, a relaxed shoreline experience near the Coromandel and Bay of Plenty",
+    title: "Waihi Beach",
+    description:
+      "A relaxed beach stop with long sand, open water and a classic coastal rhythm close to the Coromandel and Bay of Plenty.",
+    pods: [{ label: "Ruru PurePod", href: "/location/ruru" }],
+    distance: "Bay of Plenty coastline",
+    timing: "best in settled weather",
+    nearbyRegion: " — Waihi Beach, North Island",
+    url: "https://www.waihibeachinfo.co.nz/",
+  },
+  {
+    image: `${RC}gore-bay-purepods-coastal-beach-cliffs-new-zealand.jpg`,
+    alt: "Calm sandy beach with gentle waves and white cliffs on a quiet New Zealand coastline",
+    title: "Purau Bay Beach",
+    description:
+      "A sheltered Banks Peninsula beach with harbour views and a quieter coastal pace before returning to Pōhue.",
+    pods: [{ label: "Pōhue PurePod", href: "/location/pohue" }],
+    distance: "Banks Peninsula beach",
+    timing: "coastal day trip",
+    nearbyRegion: " — Banks Peninsula, South Island",
+    url: "https://maps.app.goo.gl/",
+  },
+];
 
 /** Deck copy — curated thermal and coastal calm, aligned with serenity & wellness. */
 export const relaxAboutParagraphs: readonly [string, string] = [
