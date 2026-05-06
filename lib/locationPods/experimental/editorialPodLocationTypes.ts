@@ -1,4 +1,5 @@
 import type { LocationFaqItem } from "@/components/location/LocationFaqSection";
+import type { LocationReviewItem } from "@/components/location/LocationReviewsSection";
 
 export type EditorialTravelCard =
   | {
@@ -77,6 +78,12 @@ export type EditorialPodLocationConfig = {
     /** Optional closing paragraph after grouped links when `moreExploreGroups` is used. */
     moreExploreClosing?: string;
   };
+  reviews?: {
+    title: string;
+    hint?: string;
+    intro?: string;
+    items: LocationReviewItem[];
+  };
   faqItems: LocationFaqItem[];
-  cta: { priceFrom: string; bookHref: string };
+  cta: { priceFrom: string | number; bookHref: string };
 };

@@ -107,9 +107,9 @@ const matuTravelBlock = {
       title: "The climate",
       editorialEyebrow: "Waitomo",
       editorialLead:
-        "Waitomo has a temperate climate — cooler in the forest and inside the caves. Layered clothing is recommended, especially for cave visits and evenings.",
+        "A temperate climate, often cooler in forest areas and inside the caves.",
       body:
-        "Rain is part of the landscape here and keeps the bush green and the atmosphere rich.",
+        "Layered clothing is recommended, especially for cave visits and evenings. Rain is part of the landscape here, keeping the bush green and the atmosphere rich.",
     },
     {
       key: "food",
@@ -223,6 +223,29 @@ const matuExperiencesBlock = {
   ],
 };
 
+const matuReviews = {
+  title: "What guests say",
+  hint: "From recent Matu stays",
+  intro: "Guest notes from the Waitomo bush-and-caves region.",
+  items: [
+    {
+      quote:
+        "After the caves, coming back to this level of quiet was exactly what we needed.",
+      author: "E. & N.",
+    },
+    {
+      quote:
+        "The short forest approach gives a real sense of privacy, and the stars from bed were beautiful.",
+      author: "Autumn guests",
+    },
+    {
+      quote:
+        "Simple, warm, and comfortable. We spent most of the evening listening to the bush after rain.",
+      author: "One-night stay",
+    },
+  ],
+};
+
 /** Single source for `EditorialPodLocationView` on `/location/matu` and FAQ JSON-LD. */
 export const matuEditorialConfig: EditorialPodLocationConfig = {
   heroKicker: "PurePod · Waitomo",
@@ -245,6 +268,7 @@ export const matuEditorialConfig: EditorialPodLocationConfig = {
       "Glowworm caves, limestone country and native forest — when you feel like a day beyond the pod.",
   },
   experiencesBlock: matuExperiencesBlock,
+  reviews: matuReviews,
   faqItems: MATU_FAQ_ITEMS,
   cta: {
     priceFrom: "From $— / night",

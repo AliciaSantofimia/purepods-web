@@ -222,6 +222,29 @@ const rewarewaExperiencesBlock = {
   ],
 };
 
+const rewarewaReviews = {
+  title: "What guests say",
+  hint: "From recent Rewarewa stays",
+  intro: "Guest impressions from the Muriwai Coast setting.",
+  items: [
+    {
+      quote:
+        "You feel the west coast immediately: wind, big sky, and that black-sand coastline close by.",
+      author: "D. & P.",
+    },
+    {
+      quote:
+        "Being so close to Auckland yet feeling completely removed from it was the standout for us.",
+      author: "Weekend stay",
+    },
+    {
+      quote:
+        "At sunset we sat outside for hours watching light move across the ranges. Very calm, very simple.",
+      author: "Coastal escape",
+    },
+  ],
+};
+
 /** Single source for `EditorialPodLocationView` on `/location/rewarewa` and FAQ JSON-LD. */
 export const rewarewaEditorialConfig: EditorialPodLocationConfig = {
   heroKicker: "PurePod · Muriwai Coast",
@@ -244,6 +267,7 @@ export const rewarewaEditorialConfig: EditorialPodLocationConfig = {
       "Black sand beaches, the Waitākere Ranges and wild coast — when you feel like leaving the pod for a day.",
   },
   experiencesBlock: rewarewaExperiencesBlock,
+  reviews: rewarewaReviews,
   faqItems: REWAREWA_FAQ_ITEMS,
   cta: {
     priceFrom: "From $— / night",

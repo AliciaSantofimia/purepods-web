@@ -107,6 +107,16 @@ const hananuiTravelBlock = {
       body: HANANUI_JOURNEY_BODY,
     },
     {
+      key: "climate",
+      variant: "editorial" as const,
+      title: "The climate",
+      editorialEyebrow: "Stewart Island",
+      editorialLead:
+        "A cool, changeable coastal climate with frequent rain and fresh winds.",
+      body:
+        "Weather can shift quickly through the day, especially near the coast and on exposed paths. Layered and waterproof clothing is recommended year-round, particularly for evenings and outdoor walks.",
+    },
+    {
       key: "food",
       variant: "photos" as const,
       title: "The Food",
@@ -189,6 +199,29 @@ const hananuiExperiencesBlock = {
   moreRecommendations: [],
 };
 
+const hananuiReviews = {
+  title: "What guests say",
+  hint: "From recent Hananui stays",
+  intro: "Guest reflections from Lee Bay and the Stewart Island wild coast.",
+  items: [
+    {
+      quote:
+        "The view above Lee Bay is lovely all day, but sunrise from the deck was the moment we kept talking about.",
+      author: "N. & C.",
+    },
+    {
+      quote:
+        "We came for quiet and got exactly that: ocean, forest, birds, and no interruptions.",
+      author: "Weekend guests",
+    },
+    {
+      quote:
+        "At night the pod felt completely immersed in nature. We stayed up listening to the wind and watching the sky.",
+      author: "South Island escape",
+    },
+  ],
+};
+
 export const hananuiEditorialConfig: EditorialPodLocationConfig = {
   heroKicker: "PurePod · Stewart Island",
   hero: {
@@ -210,6 +243,7 @@ export const hananuiEditorialConfig: EditorialPodLocationConfig = {
       "Ulva Island, Mason Bay and Paterson Inlet — when you feel like a day beyond the pod.",
   },
   experiencesBlock: hananuiExperiencesBlock,
+  reviews: hananuiReviews,
   faqItems: HANANUI_FAQ_ITEMS,
   cta: {
     priceFrom: "From $890.00 — / night",

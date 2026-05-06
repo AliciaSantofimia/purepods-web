@@ -112,11 +112,12 @@ const tokoekaTravelBlock = {
     {
       key: "climate",
       variant: "editorial" as const,
-      title: "The Weather",
+      title: "The climate",
       editorialEyebrow: "Stewart Island",
       editorialLead:
-        "Stewart Island has a cool, changeable coastal climate. Rain and cooler temperatures are common.",
-      body: "Waterproof clothing is recommended year-round.",
+        "A cool, changeable coastal climate with frequent rain and generally lower temperatures.",
+      body:
+        "Conditions can shift quickly through the day, especially near the coast and in exposed areas. Waterproof outer layers and warm clothing are recommended year-round.",
     },
     {
       key: "food",
@@ -201,6 +202,29 @@ const tokoekaExperiencesBlock = {
   moreRecommendations: [],
 };
 
+const tokoekaReviews = {
+  title: "What guests say",
+  hint: "From recent Tokoeka stays",
+  intro: "Guest impressions from the Stewart Island sanctuary setting.",
+  items: [
+    {
+      quote:
+        "The journey in made it feel truly remote. Once inside the sanctuary, silence and birdsong took over.",
+      author: "J. & S.",
+    },
+    {
+      quote:
+        "One of the few places where we fully switched off - just forest, sea views, and sky.",
+      author: "Winter guests",
+    },
+    {
+      quote:
+        "Evenings were the standout: red light, stars, and that quiet feeling you might spot kiwi nearby.",
+      author: "Sanctuary stay",
+    },
+  ],
+};
+
 export const tokoekaEditorialConfig: EditorialPodLocationConfig = {
   heroKicker: "PurePod · Stewart Island",
   hero: {
@@ -222,6 +246,7 @@ export const tokoekaEditorialConfig: EditorialPodLocationConfig = {
       "Ulva Island, Mason Bay and Paterson Inlet — when you feel like a day beyond the pod.",
   },
   experiencesBlock: tokoekaExperiencesBlock,
+  reviews: tokoekaReviews,
   faqItems: TOKOEKA_FAQ_ITEMS,
   cta: {
     priceFrom: "From $890.00 — / night",

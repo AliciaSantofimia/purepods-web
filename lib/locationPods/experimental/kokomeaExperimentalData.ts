@@ -229,6 +229,29 @@ const kokomeaExperiencesBlock = {
   ],
 };
 
+const kokomeaReviews = {
+  title: "What guests say",
+  hint: "From recent Kokomea stays",
+  intro: "Guest feedback from the Kāpiti Coast hills and coastal outlook.",
+  items: [
+    {
+      quote:
+        "Kokomea felt peaceful from the start - birdsong, wind in the hills, and no city noise at all.",
+      author: "S. & W.",
+    },
+    {
+      quote:
+        "We loved being close to escarpment and coast walks, then returning to complete privacy in the evening.",
+      author: "Weekend guests",
+    },
+    {
+      quote:
+        "Sunset over the ridgelines and cool night air made this one of our most relaxing weekends away.",
+      author: "Kāpiti escape",
+    },
+  ],
+};
+
 /** Single source for `EditorialPodLocationView` on `/location/kokomea` and FAQ JSON-LD. */
 export const kokomeaEditorialConfig: EditorialPodLocationConfig = {
   heroKicker: "PurePod · Kāpiti Coast",
@@ -251,6 +274,7 @@ export const kokomeaEditorialConfig: EditorialPodLocationConfig = {
       "Island sanctuary, escarpment walks and the coast — when you feel like a day beyond the pod.",
   },
   experiencesBlock: kokomeaExperiencesBlock,
+  reviews: kokomeaReviews,
   faqItems: KOKOMEA_FAQ_ITEMS,
   cta: {
     priceFrom: "From $— / night",

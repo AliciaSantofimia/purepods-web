@@ -112,9 +112,9 @@ const kahutaraTravelBlock = {
       title: "The climate",
       editorialEyebrow: "Kaikōura coast",
       editorialLead:
-        "Kahutara sits on the exposed Kaikōura coast, where conditions can change quickly. Expect fresh air, coastal winds and cooler evenings throughout the year.",
+        "An exposed coastal climate with fresh air, regular winds, and cooler evenings year-round.",
       body:
-        "Rain is part of the landscape and often adds even more atmosphere to the experience.",
+        "Conditions can change quickly on the Kaikōura coast, so layers are recommended. Rain is part of the landscape and often adds to the atmosphere.",
     },
     {
       key: "food",
@@ -207,6 +207,29 @@ const kahutaraExperiencesBlock = {
   moreRecommendations: [],
 };
 
+const kahutaraReviews = {
+  title: "What guests say",
+  hint: "From recent Kahutara stays",
+  intro: "Guest comments from the Kaikōura coast and mountain setting.",
+  items: [
+    {
+      quote:
+        "The open view toward the Kaikōura ranges is even better in person. We spent hours simply taking it in.",
+      author: "P. & G.",
+    },
+    {
+      quote:
+        "The walk in gave us the sense of arrival we wanted, and once there it felt completely private.",
+      author: "Coastal weekend",
+    },
+    {
+      quote:
+        "Being close to coastal wildlife experiences by day, then returning to quiet nights, made this stay memorable.",
+      author: "Recent stay",
+    },
+  ],
+};
+
 /** Single source for `EditorialPodLocationView` on `/location/kahutara` and FAQ JSON-LD. */
 export const kahutaraEditorialConfig: EditorialPodLocationConfig = {
   heroKicker: "PurePod · Kaikōura",
@@ -227,6 +250,7 @@ export const kahutaraEditorialConfig: EditorialPodLocationConfig = {
       "Whales, peninsula walks and the coast — when you feel like a day beyond the pod.",
   },
   experiencesBlock: kahutaraExperiencesBlock,
+  reviews: kahutaraReviews,
   faqItems: KAHUTARA_FAQ_ITEMS,
   cta: {
     priceFrom: "From $890.00 — / night",

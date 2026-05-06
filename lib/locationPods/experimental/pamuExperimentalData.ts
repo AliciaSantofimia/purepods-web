@@ -113,9 +113,9 @@ const pamuTravelBlock = {
       title: "The climate",
       editorialEyebrow: "Rotorua region",
       editorialLead:
-        "Rotorua has a temperate climate with warm summers and cooler winters. Geothermal areas can feel warmer and sometimes humid; the rest of the region is mild.",
+        "A mild climate with warm summers, cooler winters, and occasional geothermal warmth in the air.",
       body:
-        "Layered clothing is recommended so you can enjoy both the pod and the outdoors in comfort.",
+        "Rotorua's weather can shift through the day, especially between open farmland and geothermal pockets. Layered clothing helps you stay comfortable at the pod and while exploring outdoors.",
     },
     {
       key: "food",
@@ -222,6 +222,29 @@ const pamuExperiencesBlock = {
     "These moments bring balance — calm and stillness alongside the raw energy of the land.",
 };
 
+const pamuReviews = {
+  title: "What guests say",
+  hint: "From recent Pāmu stays",
+  intro: "Guest feedback from Rotorua's geothermal and rural landscape.",
+  items: [
+    {
+      quote:
+        "You can feel Rotorua in every direction - quiet farmland, open sky, and geothermal character nearby.",
+      author: "H. & J.",
+    },
+    {
+      quote:
+        "Cooking outside with that view was a highlight. The pace of the place is gentle from the first hour.",
+      author: "Spring stay",
+    },
+    {
+      quote:
+        "The pod felt private and comfortable, and it worked beautifully as a base for nature and culture nearby.",
+      author: "Guest note",
+    },
+  ],
+};
+
 /** Single source for `EditorialPodLocationView` on `/location/pamu` and FAQ JSON-LD. */
 export const pamuEditorialConfig: EditorialPodLocationConfig = {
   heroKicker: "PurePod · Rotorua",
@@ -244,6 +267,7 @@ export const pamuEditorialConfig: EditorialPodLocationConfig = {
       "Geothermal country, Māori culture and volcanic landscape — when you feel like a day beyond the pod.",
   },
   experiencesBlock: pamuExperiencesBlock,
+  reviews: pamuReviews,
   faqItems: PAMU_FAQ_ITEMS,
   cta: {
     priceFrom: "From $— / night",

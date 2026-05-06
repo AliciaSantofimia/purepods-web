@@ -114,9 +114,9 @@ const greystoneTravelBlock = {
       title: "The climate",
       editorialEyebrow: "Waipara",
       editorialLead:
-        "Waipara has warm, dry summers and cooler winters. Evenings can be cool year-round.",
+        "A warm, dry wine-region climate with cooler winters and fresh evenings through the year.",
       body:
-        "Layered clothing is recommended to adapt to changing temperatures.",
+        "Temperatures can shift quickly between sun and shade across the valley, especially later in the day. Layered clothing helps keep things comfortable.",
     },
     {
       key: "food",
@@ -212,6 +212,29 @@ const greystoneExperiencesBlock = {
   ],
 };
 
+const greystoneReviews = {
+  title: "What guests say",
+  hint: "From recent Greystone stays",
+  intro: "Guest notes from the Waipara vineyard hill setting.",
+  items: [
+    {
+      quote:
+        "Staying above the vines was the highlight. Morning light across the valley was beautiful.",
+      author: "L. & B.",
+    },
+    {
+      quote:
+        "The uphill walk in is short, and once you arrive it feels very private with vineyard views in every direction.",
+      author: "Harvest season stay",
+    },
+    {
+      quote:
+        "A lovely base for a slow wine-country escape - quiet evenings, open sky, and a very comfortable cabin for two.",
+      author: "Waipara weekend",
+    },
+  ],
+};
+
 /** Single source for `EditorialPodLocationView` on `/location/greystone` and FAQ JSON-LD. */
 export const greystoneEditorialConfig: EditorialPodLocationConfig = {
   heroKicker: "PurePod · Waipara Valley",
@@ -234,6 +257,7 @@ export const greystoneEditorialConfig: EditorialPodLocationConfig = {
       "Wine country, sculpture park and walks — when you feel like a day beyond the pod.",
   },
   experiencesBlock: greystoneExperiencesBlock,
+  reviews: greystoneReviews,
   faqItems: GREYSTONE_FAQ_ITEMS,
   cta: {
     priceFrom: "From $— / night",

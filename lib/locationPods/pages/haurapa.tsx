@@ -37,7 +37,7 @@ export const podMetadata: Metadata = {
 };
 
 /**
- * Editorial UI aligned with Pōhue, Pāmu and other migrated pods. Legacy page had no FAQ — `faqItems` is empty and the editorial shell hides the FAQ block.
+ * Editorial UI aligned with Pōhue, Pāmu and other migrated pods.
  * @see `@/components/location/experimental/HaurapaExperimentalView`
  */
 export function PodView() {

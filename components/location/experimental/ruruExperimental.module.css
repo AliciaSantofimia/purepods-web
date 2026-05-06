@@ -549,6 +549,72 @@
   display: none;
 }
 
+.xpCollapsiblePreview {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: clamp(8px, 1.8vw, 14px);
+  padding-top: clamp(10px, 2vw, 14px);
+  border-top: 1px solid rgba(92, 95, 62, 0.1);
+}
+
+.xpCollapsible[open] .xpCollapsiblePreview {
+  display: none;
+}
+
+.xpPreviewThumbs {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  overflow: hidden;
+  height: clamp(32px, 5.2vw, 40px);
+  -webkit-mask-image: linear-gradient(to bottom, #000 42%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 42%, transparent 100%);
+}
+
+.xpPreviewThumb {
+  position: relative;
+  flex: 0 0 clamp(76px, 11vw, 112px);
+  height: clamp(54px, 8vw, 66px);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(92, 95, 62, 0.14);
+  transform: translateY(6px);
+  box-shadow: 0 8px 20px rgba(22, 24, 18, 0.08);
+}
+
+.xpPreviewThumbImg {
+  object-fit: cover;
+}
+
+.xpPreviewMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.xpPreviewCount {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: rgba(92, 95, 62, 0.68);
+}
+
+.xpPreviewNames {
+  display: block;
+  font-size: 13px;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: rgba(92, 95, 62, 0.82);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .xpCollapsibleChevron {
   flex-shrink: 0;
   width: 10px;
@@ -955,6 +1021,14 @@
 
   .heroFadeToPage {
     height: clamp(76px, 13vh, 160px);
+  }
+
+  .xpPreviewThumb {
+    flex-basis: clamp(64px, 20vw, 88px);
+  }
+
+  .xpPreviewNames {
+    font-size: 12px;
   }
 }
 

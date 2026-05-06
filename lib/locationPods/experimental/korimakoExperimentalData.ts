@@ -113,9 +113,9 @@ const korimakoTravelBlock = {
       title: "The climate",
       editorialEyebrow: "Hurunui",
       editorialLead:
-        "Korimako enjoys a warm, dry inland climate. Days are often sunny, with cooler evenings and clear mornings.",
+        "A warm, dry inland climate with sunny days, cooler evenings, and clear mornings.",
       body:
-        "Layered clothing is recommended. The mix of open hills and distant sea keeps the air clear and the light strong.",
+        "Temperatures shift between daytime sun and evening cool, especially across exposed hills. Light layers are recommended, with clear air and strong light typical of the area.",
     },
     {
       key: "food",
@@ -227,6 +227,29 @@ const korimakoExperiencesBlock = {
   ],
 };
 
+const korimakoReviews = {
+  title: "What guests say",
+  hint: "From recent Korimako stays",
+  intro: "Guest feedback from Korimako's Hurunui high-country setting.",
+  items: [
+    {
+      quote:
+        "Korimako feels open and elevated, with big sky and farmland all around. Exactly the quiet we were after.",
+      author: "R. & E.",
+    },
+    {
+      quote:
+        "The walk in makes the transition from road to retreat very clear. Once there, it feels private and calm.",
+      author: "Autumn weekend",
+    },
+    {
+      quote:
+        "We loved the clear inland light and long views. A calm place to read, rest, and move slowly.",
+      author: "Recent stay",
+    },
+  ],
+};
+
 /** Single source for `EditorialPodLocationView` on `/location/korimako` and FAQ JSON-LD. */
 export const korimakoEditorialConfig: EditorialPodLocationConfig = {
   heroKicker: "PurePod · Hurunui",
@@ -249,6 +272,7 @@ export const korimakoEditorialConfig: EditorialPodLocationConfig = {
       "Limestone coast, Waipara wine country and Hurunui life — when you feel like a day beyond the pod.",
   },
   experiencesBlock: korimakoExperiencesBlock,
+  reviews: korimakoReviews,
   faqItems: KORIMAKO_FAQ_ITEMS,
   cta: {
     priceFrom: "From $— / night",

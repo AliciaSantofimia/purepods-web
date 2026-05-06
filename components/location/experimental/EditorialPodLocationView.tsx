@@ -2,7 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import { LightboxProvider } from "@/components/ui/LightboxContext";
-import { LocationCta, LocationFaqSection } from "@/components/location";
+import {
+  LocationCta,
+  LocationFaqSection,
+  LocationReviewsSection,
+} from "@/components/location";
 import type { EditorialPodLocationConfig } from "@/lib/locationPods/experimental/editorialPodLocationTypes";
 import { RuruExperimentalImageCarousel } from "./RuruExperimentalImageCarousel";
 import { RuruExperimentalLightboxImage } from "./RuruExperimentalLightboxImage";
@@ -11,6 +15,36 @@ import { RuruTravelEditorialCard } from "./RuruTravelEditorialCard";
 import styles from "./ruruExperimental.module.css";
 
 type Props = { config: EditorialPodLocationConfig };
+
+function fallbackReviewsForPod(
+  podName: string,
+): EditorialPodLocationConfig["reviews"] {
+  return {
+    title: "Guest reviews",
+    hint: "What guests often highlight",
+    intro: `Early review placeholders for ${podName}. Update with final approved testimonials per pod when available.`,
+    items: [
+      {
+        quote:
+          "The privacy was exactly what we were looking for. It felt easy to disconnect and settle into the landscape.",
+        author: "Guest feedback",
+        context: `${podName} stay`,
+      },
+      {
+        quote:
+          "Waking up to open views and ending the day under the night sky made the stay feel genuinely restorative.",
+        author: "Guest feedback",
+        context: `${podName} stay`,
+      },
+      {
+        quote:
+          "The pod felt comfortable and simple in the best way, with nature always present but no distractions.",
+        author: "Guest feedback",
+        context: `${podName} stay`,
+      },
+    ],
+  };
+}
 
 function heroImageStyle(hero: EditorialPodLocationConfig["hero"]): CSSProperties {
   return {
@@ -39,6 +73,14 @@ export function EditorialPodLocationView({ config }: Props) {
   const { podNarrative, travelBlock, experiencesBlock, experiencesCollapsible } =
     config;
   const showMoreEditorial = hasMoreEditorialContent(experiencesBlock);
+  const reviews = config.reviews ?? fallbackReviewsForPod(hero.title);
+  const experiencePreviewItems = experiencesBlock.items.slice(0, 3);
+  const experienceCountLabel = `${experiencesBlock.items.length} curated ${
+    experiencesBlock.items.length === 1 ? "experience" : "experiences"
+  }`;
+  const experienceNamePreview = experiencePreviewItems
+    .map((xp) => xp.title)
+    .join(" · ");
 
   return (
     <div className={styles.root}>
@@ -184,6 +226,29 @@ export function EditorialPodLocationView({ config }: Props) {
                 </span>
                 <span className={styles.xpCollapsibleIntro}>
                   {experiencesCollapsible.summaryIntro}
+                </span>
+                <span className={styles.xpCollapsiblePreview}>
+                  <span className={styles.xpPreviewThumbs} aria-hidden>
+                    {experiencePreviewItems.map((xp) => (
+                      <span key={xp.title} className={styles.xpPreviewThumb}>
+                        <Image
+                          src={xp.image}
+                          alt={xp.imageAlt}
+                          fill
+                          sizes="(max-width: 640px) 22vw, 110px"
+                          className={styles.xpPreviewThumbImg}
+                        />
+                      </span>
+                    ))}
+                  </span>
+                  <span className={styles.xpPreviewMeta}>
+                    <span className={styles.xpPreviewCount}>
+                      {experienceCountLabel}
+                    </span>
+                    <span className={styles.xpPreviewNames}>
+                      {experienceNamePreview}
+                    </span>
+                  </span>
                 </span>
               </span>
               <span className={styles.xpCollapsibleChevron} aria-hidden />
@@ -346,6 +411,13 @@ export function EditorialPodLocationView({ config }: Props) {
               </section>
             </div>
           </details>
+
+          <LocationReviewsSection
+            title={reviews.title}
+            hint={reviews.hint}
+            intro={reviews.intro}
+            reviews={reviews.items}
+          />
 
           {config.faqItems.length > 0 ? (
             <div className={`${styles.faqSlot} ${styles.wrap}`}>

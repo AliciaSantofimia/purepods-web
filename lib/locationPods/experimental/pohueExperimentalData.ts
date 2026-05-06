@@ -112,7 +112,7 @@ const pohueTravelBlock = {
     {
       key: "climate",
       variant: "editorial" as const,
-      title: "The Weather",
+      title: "The climate",
       editorialEyebrow: "Banks Peninsula",
       editorialLead:
         "Banks Peninsula conditions can change quickly.",
@@ -211,6 +211,29 @@ const pohueExperiencesBlock = {
   moreRecommendations: [],
 };
 
+const pohueReviews = {
+  title: "What guests say",
+  hint: "From recent Pōhue stays",
+  intro: "Guest comments from the Port Levy and Banks Peninsula setting.",
+  items: [
+    {
+      quote:
+        "The climb in is worth it - once at the top, the harbour views and sense of seclusion are remarkable.",
+      author: "F. & D.",
+    },
+    {
+      quote:
+        "We loved how wild and quiet it felt: bush, hills, sky, and changing weather over the peninsula.",
+      author: "Recent guests",
+    },
+    {
+      quote:
+        "A calm, simple space with beautiful outlooks. Morning light across Port Levy was unforgettable.",
+      author: "Two-night stay",
+    },
+  ],
+};
+
 /** Single source for `EditorialPodLocationView` on `/location/pohue` and FAQ JSON-LD. */
 export const pohueEditorialConfig: EditorialPodLocationConfig = {
   heroKicker: "PurePod · Banks Peninsula",
@@ -231,6 +254,7 @@ export const pohueEditorialConfig: EditorialPodLocationConfig = {
       "Akaroa, Mount Herbert and Ohinetahi — when you feel like a day beyond the pod.",
   },
   experiencesBlock: pohueExperiencesBlock,
+  reviews: pohueReviews,
   faqItems: POHUE_FAQ_ITEMS,
   cta: {
     priceFrom: "From $890.00 — / night",

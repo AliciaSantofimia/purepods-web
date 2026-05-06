@@ -1,0 +1,110 @@
+.section {
+  padding: clamp(44px, 9vw, 92px) 0 clamp(36px, 8vw, 76px);
+  border-top: 1px solid rgba(92, 95, 62, 0.08);
+}
+
+.wrap {
+  width: min(1040px, calc(100% - 28px));
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: clamp(14px, 4vw, 18px);
+  padding-right: clamp(14px, 4vw, 18px);
+}
+
+.head {
+  margin-bottom: clamp(20px, 4vw, 34px);
+  max-width: min(64ch, 100%);
+}
+
+.title {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  font-size: clamp(22px, 2.8vw, 30px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.hint {
+  margin: 8px 0 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.48;
+  color: rgba(92, 95, 62, 0.76);
+}
+
+.intro {
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 1.68;
+  color: rgba(92, 95, 62, 0.78);
+}
+
+.grid {
+  display: grid;
+  gap: clamp(14px, 2.4vw, 20px);
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.card {
+  border: 1px solid rgba(92, 95, 62, 0.12);
+  border-radius: min(18px, 3vw);
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: var(--shadow);
+  padding: clamp(14px, 2.6vw, 20px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quote {
+  margin: 0;
+}
+
+.quote p {
+  position: relative;
+  margin: 0;
+  padding-left: 12px;
+  border-left: 2px solid rgba(194, 181, 158, 0.88);
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(92, 95, 62, 0.9);
+}
+
+.quote p::before {
+  content: "\201C";
+  position: absolute;
+  left: -2px;
+  top: -10px;
+  transform: translateX(-100%);
+  font-family: "Noto Serif Display", Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  line-height: 1;
+  color: rgba(194, 181, 158, 0.72);
+  pointer-events: none;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.author {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.context {
+  font-size: 12px;
+  line-height: 1.45;
+  color: rgba(92, 95, 62, 0.72);
+}

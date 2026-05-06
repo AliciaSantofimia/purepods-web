@@ -191,6 +191,7 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
         <div
           ref={splitRef}
           className={`${xstyles.split} ${chooseMapStyles.chooseMapPodsLayout}`}
+          data-region={filter}
           onMouseLeave={() => setHoverSlug(null)}
           onBlurCapture={(e) => {
             if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setHoverSlug(null);

@@ -194,9 +194,9 @@ export const ruruTravelBlock = {
       title: "The climate",
       editorialEyebrow: "Layers, not luck",
       editorialLead:
-        "Mild and often humid — warm summers, cooler winters. Rain belongs in this landscape; it keeps the bush green.",
+        "A mild, often humid climate with warm summers and cooler winters.",
       body:
-        "The Coromandel has a mild, often humid climate — warm in summer, cooler in winter. Rain is part of the landscape and keeps the bush green. Layered clothing is recommended so you can enjoy both the pod and the outdoors in comfort.",
+        "Rain is part of the Coromandel landscape and keeps the bush green year-round. Layered clothing is recommended so you can stay comfortable at the pod and outdoors.",
     },
     {
       key: "food",
@@ -246,6 +246,29 @@ export const RURU_FAQ_ITEMS: LocationFaqItem[] = [
   },
 ];
 
+const ruruReviews = {
+  title: "What guests say",
+  hint: "From recent Ruru stays",
+  intro: "Guest reflections from Coromandel forest and coast.",
+  items: [
+    {
+      quote:
+        "Ruru felt hidden in the best way. The bush around the pod gave us complete privacy.",
+      author: "K. & T.",
+    },
+    {
+      quote:
+        "We did a coastal walk during the day, then watched stars from bed that night. Hard to top.",
+      author: "Weekend guests",
+    },
+    {
+      quote:
+        "Morning birdsong, quiet evenings, and soft light through the trees made the whole stay feel unhurried.",
+      author: "Two-night stay",
+    },
+  ],
+};
+
 export const ruruCta = {
   priceFrom: "From $— / night",
   bookHref: RURU_BOOKING_URL,
@@ -271,6 +294,7 @@ export const ruruEditorialConfig: EditorialPodLocationConfig = {
     summaryIntro: "Coastal walks, hidden beaches and quiet places nearby.",
   },
   experiencesBlock: ruruExperiencesBlock,
+  reviews: ruruReviews,
   faqItems: RURU_FAQ_ITEMS,
   cta: ruruCta,
 };

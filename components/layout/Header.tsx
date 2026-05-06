@@ -7,9 +7,6 @@ import { BOOKING_URL } from "@/lib/constants";
 import { bookingUrlForLocationSlug } from "@/lib/locationPods";
 import styles from "./Header.module.css";
 
-const RURU_LOCATION_PATH = "/location/ruru";
-const MAKOHA_LOCATION_PATH = "/location/makoha";
-
 function pathnameMatchesBase(pathname: string | null, base: string): boolean {
   if (!pathname) return false;
   return pathname === base || pathname.startsWith(`${base}/`);
@@ -20,10 +17,8 @@ export function Header() {
   const pathname = usePathname();
   const [isSolid, setIsSolid] = useState(false);
 
-  const isMakohaLocation = pathnameMatchesBase(pathname, MAKOHA_LOCATION_PATH);
-
-  const isEditorialLocationPage =
-    pathnameMatchesBase(pathname, RURU_LOCATION_PATH) || isMakohaLocation;
+  const isLocationPage = pathname?.startsWith("/location/");
+  const isEditorialLocationPage = Boolean(isLocationPage);
 
   useEffect(() => {
     const threshold = isEditorialLocationPage ? 64 : 40;
@@ -35,11 +30,8 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [isEditorialLocationPage]);
 
-  const isLocationPage = pathname?.startsWith("/location/");
-  /** Mākōha: cleaner editorial header — no back link (other locations unchanged). */
-  const showBackToPods =
-    (Boolean(isLocationPage) && !isMakohaLocation) ||
-    pathname === "/experiences";
+  /** Editorial location pages share the same clean header treatment. */
+  const showBackToPods = pathname === "/experiences";
 
   const bookingHref = useMemo(() => {
     const m = pathname?.match(/^\/location\/([^/]+)\/?$/);
@@ -70,14 +62,14 @@ export function Header() {
           )}
           <Link
             className={
-              isMakohaLocation
+              isLocationPage
                 ? `${styles.brand} ${styles.brandWithLogo}`
                 : styles.brand
             }
             href="/"
             aria-label="PurePods — Home"
           >
-            {isMakohaLocation ? (
+            {isLocationPage ? (
               // Native <img>: avoids next/image wrapper lifecycle racing with scroll-driven
               // re-renders (removeChild on null). Static public asset; CSS controls display size.
               // eslint-disable-next-line @next/next/no-img-element

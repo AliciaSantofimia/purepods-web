@@ -112,9 +112,9 @@ const manakauTravelBlock = {
       title: "The climate",
       editorialEyebrow: "Kaikōura",
       editorialLead:
-        "Kaikōura has a temperate maritime climate. Days can be warm and clear; evenings are often cooler. The weather can change quickly with the mountains and ocean nearby.",
+        "A temperate maritime climate, with warm clear days and cooler evenings.",
       body:
-        "Layered clothing and a windproof layer are recommended so you can enjoy the outdoors in comfort.",
+        "Conditions can shift quickly where mountains and ocean meet. Layered clothing and a windproof layer are recommended for comfort outdoors.",
     },
     {
       key: "food",
@@ -195,6 +195,29 @@ const manakauExperiencesBlock = {
   moreRecommendations: [],
 };
 
+const manakauReviews = {
+  title: "What guests say",
+  hint: "From recent Manakau stays",
+  intro: "Guest reflections from the Kaikōura mountain-and-coast landscape.",
+  items: [
+    {
+      quote:
+        "Seeing mountains behind us and ocean ahead from one place felt unique. The setting is genuinely special.",
+      author: "C. & H.",
+    },
+    {
+      quote:
+        "The pod was warm and simple, and the Kaikōura night sky ended up being one of our favourite memories.",
+      author: "Two-night stay",
+    },
+    {
+      quote:
+        "Great balance of access to wildlife experiences by day and complete privacy once back at the cabin.",
+      author: "Recent guests",
+    },
+  ],
+};
+
 /** Single source for `EditorialPodLocationView` on `/location/manakau` and FAQ JSON-LD. */
 export const manakauEditorialConfig: EditorialPodLocationConfig = {
   heroKicker: "PurePod · Kaikōura",
@@ -217,6 +240,7 @@ export const manakauEditorialConfig: EditorialPodLocationConfig = {
       "Whales, peninsula walks and coastal wildlife — when you feel like a day beyond the pod.",
   },
   experiencesBlock: manakauExperiencesBlock,
+  reviews: manakauReviews,
   faqItems: MANAKAU_FAQ_ITEMS,
   cta: {
     priceFrom: "From $— / night",

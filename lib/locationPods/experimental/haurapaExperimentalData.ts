@@ -30,8 +30,33 @@ export const HAURAPA_BOOKING_URL =
 const HERO_SUBTITLE =
   "A peaceful retreat in the dramatic heart of Central Otago. PurePod Haurapa offers high-country calm and wide, rugged landscapes above Cromwell, with views across rocky formations and toward the Pisa Range. Shaped by geology and extreme seasons, it's a place of expansive days, quiet nights and a deep sense of space.";
 
-/** Legacy page had no FAQ block; keep empty so the editorial shell hides the FAQ section. */
-export const HAURAPA_FAQ_ITEMS: LocationFaqItem[] = [];
+export const HAURAPA_FAQ_ITEMS: LocationFaqItem[] = [
+  {
+    question: "How do I get to PurePod Haurapa?",
+    answer:
+      "PurePod Haurapa is located near Cromwell, around one hour from Queenstown. The final part of the journey includes a 700 m uphill walk following historic gold-mining tracks.",
+  },
+  {
+    question: "How long is the walk from the car park?",
+    answer:
+      "The final walk is about 700 metres and usually takes around 15 to 20 minutes uphill.",
+  },
+  {
+    question: "What is the weather usually like?",
+    answer:
+      "Central Otago has strong seasonal contrasts, with hot dry summers and cold winters, sometimes with snow. Layered clothing is recommended year-round.",
+  },
+  {
+    question: "How does food work at the pod?",
+    answer:
+      "You can bring your own food or pre-order a breakfast and dinner hamper when booking. Hampers feature local Central Otago produce and are designed for simple meals enjoyed at the pod.",
+  },
+  {
+    question: "How many people can stay?",
+    answer:
+      "PurePod Haurapa is designed for two guests, with a private setting and no shared spaces.",
+  },
+];
 
 const haurapaPodNarrative = {
   title: "The Pod",
@@ -85,11 +110,12 @@ const haurapaTravelBlock = {
     {
       key: "climate",
       variant: "editorial" as const,
-      title: "The Weather",
+      title: "The climate",
       editorialEyebrow: "Central Otago",
       editorialLead:
-        "Central Otago experiences strong seasonal contrasts — hot, dry summers and cold winters with possible snow.",
-      body: "Layers are essential year-round.",
+        "Strong seasonal contrasts, with hot dry summers and cold winters, sometimes with snow.",
+      body:
+        "Daily temperatures can shift quickly in the high country, especially from sun to evening chill. Layered clothing is recommended year-round for comfort outdoors.",
     },
     {
       key: "food",
@@ -177,6 +203,29 @@ const haurapaExperiencesBlock = {
   moreRecommendations: [],
 };
 
+const haurapaReviews = {
+  title: "What guests say",
+  hint: "From recent Haurapa stays",
+  intro: "Guest reflections from Haurapa's high-country Central Otago location.",
+  items: [
+    {
+      quote:
+        "Haurapa feels truly elevated - rocky views, huge sky, and a strong sense of space in every direction.",
+      author: "T. & A.",
+    },
+    {
+      quote:
+        "The uphill walk in makes the arrival feel intentional, and the privacy once at the pod is excellent.",
+      author: "Recent stay",
+    },
+    {
+      quote:
+        "Cold, clear evenings and bright quiet mornings were exactly what we wanted from a short escape.",
+      author: "High-country weekend",
+    },
+  ],
+};
+
 /** Single source for `EditorialPodLocationView` on `/location/haurapa`. */
 export const haurapaEditorialConfig: EditorialPodLocationConfig = {
   heroKicker: "PurePod · Central Otago",
@@ -199,6 +248,7 @@ export const haurapaEditorialConfig: EditorialPodLocationConfig = {
       "Trails, sluicings and cellar doors — when you feel like a day beyond the pod.",
   },
   experiencesBlock: haurapaExperiencesBlock,
+  reviews: haurapaReviews,
   faqItems: HAURAPA_FAQ_ITEMS,
   cta: {
     priceFrom: "From $890.00 — / night",

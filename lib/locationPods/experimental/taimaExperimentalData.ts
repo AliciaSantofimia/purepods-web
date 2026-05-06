@@ -113,11 +113,12 @@ const taimaTravelBlock = {
     {
       key: "climate",
       variant: "editorial" as const,
-      title: "The Weather",
+      title: "The climate",
       editorialEyebrow: "Central Otago",
       editorialLead:
-        "Central Otago experiences hot, dry summers and cold winters.",
-      body: "Layers are recommended year-round.",
+        "A dry continental climate with hot summers and cold winters typical of inland Central Otago.",
+      body:
+        "Temperatures often shift quickly between daytime sun and cooler evenings, especially in exposed valley terrain. Layered clothing is recommended year-round.",
     },
     {
       key: "food",
@@ -205,6 +206,29 @@ const taimaExperiencesBlock = {
   moreRecommendations: [],
 };
 
+const taimaReviews = {
+  title: "What guests say",
+  hint: "From recent Tāima stays",
+  intro: "Guest impressions from the Central Otago high-country setting.",
+  items: [
+    {
+      quote:
+        "The landscape around Tāima is dramatic and wide open. It felt remote, yet very comfortable.",
+      author: "B. & M.",
+    },
+    {
+      quote:
+        "We liked the short walk across old gold-mining ground before arrival - it gives the stay a clear sense of place.",
+      author: "Recent guests",
+    },
+    {
+      quote:
+        "Golden evening light and clear southern skies were the highlight for us. We stayed outside until late.",
+      author: "Central Otago weekend",
+    },
+  ],
+};
+
 export const taimaEditorialConfig: EditorialPodLocationConfig = {
   heroKicker: "PurePod · Central Otago",
   hero: {
@@ -226,6 +250,7 @@ export const taimaEditorialConfig: EditorialPodLocationConfig = {
       "Sluicings, Lake Dunstan and cellar doors — when you feel like a day beyond the pod.",
   },
   experiencesBlock: taimaExperiencesBlock,
+  reviews: taimaReviews,
   faqItems: TAIMA_FAQ_ITEMS,
   cta: {
     priceFrom: "From $890.00 — / night",

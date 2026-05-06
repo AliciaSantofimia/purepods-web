@@ -114,8 +114,9 @@ const atatuTravelBlock = {
       title: "The climate",
       editorialEyebrow: "Hurunui",
       editorialLead:
-        "Atatū has a warm, dry interior climate. Days are often sunny, with cooler evenings and clear mornings.",
-      body: "Layered clothing is recommended.",
+        "A warm, dry interior climate with sunny days, cooler evenings, and clear mornings.",
+      body:
+        "Temperatures can shift between daytime sun and evening cool, especially on exposed hilltops. Light layers help you stay comfortable throughout the stay.",
     },
     {
       key: "food",
@@ -227,6 +228,29 @@ const atatuExperiencesBlock = {
   ],
 };
 
+const atatuReviews = {
+  title: "What guests say",
+  hint: "From recent Atatū stays",
+  intro: "Guest reflections from Atatū's Hurunui hilltop setting.",
+  items: [
+    {
+      quote:
+        "The elevated position gives a real sense of space. On the clearest morning we could even pick out the ocean line.",
+      author: "A. & L.",
+    },
+    {
+      quote:
+        "The walk in is short, but it marks a clean break from the day. By sunset the place felt very still.",
+      author: "Weekend guests",
+    },
+    {
+      quote:
+        "Clear evening sky, almost no sound, and a calm night from start to finish. We left feeling rested.",
+      author: "Two-night stay",
+    },
+  ],
+};
+
 /** Single source for `EditorialPodLocationView` on `/location/atatu` and FAQ JSON-LD. */
 export const atatuEditorialConfig: EditorialPodLocationConfig = {
   heroKicker: "PurePod · Hurunui",
@@ -249,6 +273,7 @@ export const atatuEditorialConfig: EditorialPodLocationConfig = {
       "Limestone coast, Waipara wine country and Hurunui life — when you feel like a day beyond the pod.",
   },
   experiencesBlock: atatuExperiencesBlock,
+  reviews: atatuReviews,
   faqItems: ATATU_FAQ_ITEMS,
   cta: {
     priceFrom: "From $— / night",

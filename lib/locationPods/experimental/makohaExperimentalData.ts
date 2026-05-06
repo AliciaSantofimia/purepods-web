@@ -216,6 +216,29 @@ const makohaExperiencesBlock = {
   ],
 };
 
+const makohaReviews = {
+  title: "What guests say",
+  hint: "From recent Mākōha stays",
+  intro: "Reflections from guests who stayed in the Kerikeri forest setting.",
+  items: [
+    {
+      quote:
+        "The native-bush walk set the tone straight away. By the time we reached the pod, everything felt quieter.",
+      author: "M. & R.",
+    },
+    {
+      quote:
+        "Night here was memorable: glowworms nearby, wind through the trees, and a very clear sky.",
+      author: "Late-summer stay",
+    },
+    {
+      quote:
+        "It felt private and calm, while still close enough for a day out on the coast. A lovely balance.",
+      author: "Returning guests",
+    },
+  ],
+};
+
 /** Single source for `EditorialPodLocationView` on `/location/makoha`. */
 export const makohaEditorialConfig: EditorialPodLocationConfig = {
   heroKicker: "PurePod · Kerikeri",
@@ -238,6 +261,7 @@ export const makohaEditorialConfig: EditorialPodLocationConfig = {
       "Bay cruises, Waitangi and wild coast — when you feel like leaving the forest for a day.",
   },
   experiencesBlock: makohaExperiencesBlock,
+  reviews: makohaReviews,
   faqItems: MAKOHA_FAQ_ITEMS,
   cta: {
     priceFrom: "From $— / night",
