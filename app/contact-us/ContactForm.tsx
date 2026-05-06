@@ -271,7 +271,6 @@ export function ContactForm() {
         >
           <option>Booking a stay</option>
           <option>Changing an existing booking</option>
-          <option>Gift vouchers</option>
           <option>Media or partnerships</option>
           <option>General enquiry</option>
         </select>
