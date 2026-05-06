@@ -9,6 +9,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { Footer } from "@/components/layout/Footer";
 
 const LOGO = {
   src: "/assets/img/LogoPCblancosinfondo.png",
@@ -666,13 +667,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer>
-        <div className="wrap">
-          PurePods · <a href="/">Home</a> · <a href="/pods">Pods</a> ·{" "}
-          <a href="/experiences">Experiences</a> ·{" "}
-          <a href="https://purepods.com/booking/">Book</a>
-        </div>
-      </footer>
+      <Footer brandLogo simplified />
     </>
   );
 }
