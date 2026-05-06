@@ -96,34 +96,35 @@
 .page {
   min-height: 100vh;
   overflow-x: hidden;
-  padding: clamp(28px, 4.5vw, 52px) 0 clamp(76px, 10vw, 112px);
+  padding: clamp(52px, 8vw, 86px) 0 clamp(72px, 10vw, 108px);
   background:
-    radial-gradient(circle at top left, rgba(194, 181, 158, 0.13), transparent 32rem),
-    var(--bg);
+    radial-gradient(circle at 12% 20%, rgba(194, 181, 158, 0.16), transparent 26rem),
+    linear-gradient(180deg, #f8f7f3 0%, var(--bg) 48%, #f0eee8 100%);
 }
 
 .wrap {
-  width: min(760px, calc(100% - 40px));
+  width: min(860px, calc(100% - 40px));
   margin: 0 auto;
   min-width: 0;
 }
 
 .header {
-  max-width: 40rem;
-  margin-bottom: clamp(2rem, 4.5vw, 3.35rem);
+  max-width: 760px;
+  margin: 0 auto clamp(24px, 4vw, 34px);
+  text-align: center;
 }
 
 .eyebrow {
-  margin: 0 0 0.7rem;
+  margin: 0 0 0.9rem;
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-weight: 800;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: rgba(92, 95, 62, 0.74);
 }
 
 .header h1 {
-  margin: 0;
+  margin: 0 auto;
   color: var(--ink);
   max-width: var(--nf-type-h1-max-width);
   font-family: var(--nf-type-h1-family);
@@ -134,8 +135,8 @@
 }
 
 .intro {
-  max-width: 36rem;
-  margin: 1rem 0 0;
+  max-width: 54ch;
+  margin: 0.85rem auto 0;
   color: var(--nf-type-body-color);
   font-family: var(--nf-type-body-family);
   font-size: var(--nf-type-body-size);
@@ -144,14 +145,16 @@
 
 .faqTabs {
   display: grid;
-  gap: clamp(1.35rem, 3.5vw, 2.1rem);
+  width: min(840px, 100%);
+  margin: 0 auto;
+  gap: clamp(18px, 3vw, 28px);
   min-width: 0;
 }
 
 .tabsScroller {
-  margin-inline: calc((100vw - min(760px, calc(100vw - 40px))) / -2);
+  margin-inline: 0;
   overflow-x: auto;
-  padding: 0.15rem 0;
+  padding: 0.1rem 0 0.2rem;
   scrollbar-width: none;
 }
 
@@ -162,29 +165,31 @@
 .tabs {
   display: flex;
   width: max-content;
-  min-width: min(760px, calc(100vw - 40px));
+  min-width: 100%;
   margin: 0 auto;
   padding: 0;
   align-items: center;
   justify-content: center;
-  gap: 0.65rem;
+  gap: 0.55rem;
 }
 
 .tab {
   appearance: none;
   display: inline-flex;
-  min-height: 2.35rem;
+  min-height: 38px;
   align-items: center;
   justify-content: center;
-  padding: 0.55rem 1.05rem;
+  padding: 0.62rem 1rem;
   border: 1px solid rgba(92, 95, 62, 0.18);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.38);
   color: var(--muted);
   font: inherit;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-family: var(--nf-type-h3-family);
+  font-size: 11px;
+  font-weight: var(--nf-type-h3-weight);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
   cursor: pointer;
   transition:
     background 0.18s ease,
@@ -196,7 +201,7 @@
 
 .tab:hover {
   border-color: rgba(92, 95, 62, 0.28);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.86);
   color: var(--ink);
 }
 
@@ -207,10 +212,10 @@
 
 .tabActive,
 .tabActive:hover {
-  border-color: rgba(92, 95, 62, 0.78);
-  background: var(--brand-green);
-  color: var(--bg);
-  box-shadow: 0 10px 22px rgba(92, 95, 62, 0.16);
+  border-color: var(--brand-green);
+  background: rgba(92, 95, 62, 0.08);
+  color: var(--brand-green);
+  box-shadow: none;
 }
 
 .sections {
@@ -221,34 +226,37 @@
 
 .section {
   display: grid;
-  gap: 0.85rem;
+  gap: clamp(14px, 2.4vw, 20px);
   min-width: 0;
 }
 
 .section h2 {
-  margin: 0 0 0.15rem;
-  color: var(--nf-type-h2-color);
-  font-family: var(--nf-type-h2-family);
-  font-size: var(--nf-type-h2-size);
-  font-weight: var(--nf-type-h2-weight);
-  letter-spacing: var(--nf-type-h2-letter-spacing);
-  line-height: var(--nf-type-h2-line-height);
+  max-width: none;
+  margin: var(--nf-type-h3-margin);
+  color: var(--nf-type-h3-color);
+  font-family: var(--nf-type-h3-family);
+  font-size: var(--nf-type-h3-size);
+  font-weight: var(--nf-type-h3-weight);
+  letter-spacing: var(--nf-type-h3-letter-spacing);
+  line-height: var(--nf-type-h3-line-height);
 }
 
 .accordion {
   display: grid;
-  gap: 0.7rem;
+  gap: 0;
   min-width: 0;
+  border-top: 1px solid rgba(92, 95, 62, 0.16);
 }
 
 .item {
   overflow: hidden;
   width: 100%;
   min-width: 0;
-  border: 1px solid var(--stroke);
-  border-radius: 13px;
-  background: rgba(255, 255, 255, 0.36);
-  box-shadow: 0 7px 18px rgba(22, 24, 18, 0.024);
+  border: 0;
+  border-bottom: 1px solid rgba(92, 95, 62, 0.16);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .questionHeading {
@@ -261,15 +269,15 @@
   min-width: 0;
   align-items: center;
   justify-content: space-between;
-  gap: 0.85rem;
-  min-height: 48px;
-  padding: 0.82rem 0.9rem;
+  gap: 0.9rem;
+  min-height: 56px;
+  padding: 17px 0;
   border: 0;
   background: transparent;
   font: inherit;
   color: var(--nf-type-h3-color);
   font-family: var(--nf-type-h3-family);
-  font-size: var(--nf-type-h3-size);
+  font-size: calc(var(--nf-type-h3-size) * 0.85);
   font-weight: var(--nf-type-h3-weight);
   letter-spacing: var(--nf-type-h3-letter-spacing);
   line-height: var(--nf-type-h3-line-height);
@@ -289,8 +297,8 @@
 
 .icon {
   position: relative;
-  width: 0.9rem;
-  height: 0.9rem;
+  width: 0.75rem;
+  height: 0.75rem;
   flex: 0 0 auto;
 }
 
@@ -299,8 +307,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 0.72rem;
-  height: 2px;
+  width: 0.68rem;
+  height: 1.5px;
   border-radius: 999px;
   background: var(--brand-green);
   content: "";
@@ -332,6 +340,7 @@
   overflow: hidden;
   overflow-wrap: break-word;
   color: var(--muted);
+  max-width: 720px;
 }
 
 .panelInner p,
@@ -340,7 +349,7 @@
 }
 
 .panelInner p {
-  padding: 0 0.9rem 0.82rem;
+  padding: 0 0 0.85rem;
   color: var(--nf-type-body-color);
   font-family: var(--nf-type-body-family);
   font-size: var(--nf-type-body-size);
@@ -348,7 +357,7 @@
 }
 
 .panelInner ul {
-  padding: 0 0.9rem 0.82rem 1.9rem;
+  padding: 0 0 0.9rem 1.25rem;
   color: var(--nf-type-body-color);
   font-family: var(--nf-type-body-family);
   font-size: var(--nf-type-body-size);
@@ -356,7 +365,7 @@
 }
 
 .panelInner li {
-  margin: 0.25rem 0;
+  margin: 0.35rem 0;
 }
 
 @media (max-width: 640px) {
@@ -460,15 +469,16 @@
   }
 
   .page {
-    padding: 24px 0 56px;
+    padding: 48px 0 58px;
   }
 
   .wrap {
-    width: min(100% - 28px, 760px);
+    width: min(100% - 28px, 860px);
   }
 
   .header {
-    margin-bottom: 1.55rem;
+    margin-bottom: 1.4rem;
+    text-align: left;
   }
 
   .eyebrow {
@@ -484,13 +494,13 @@
   }
 
   .intro {
-    margin-top: 0.75rem;
+    margin-top: 0.7rem;
     font-size: var(--nf-type-body-size);
-    line-height: 1.52;
+    line-height: var(--nf-type-body-line-height);
   }
 
   .faqTabs {
-    gap: 1.15rem;
+    gap: 1rem;
   }
 
   .sections {
@@ -498,12 +508,12 @@
   }
 
   .section {
-    gap: 0.75rem;
+    gap: 0.85rem;
   }
 
   .section h2 {
-    font-size: var(--nf-type-h2-size);
-    line-height: var(--nf-type-h2-line-height);
+    font-size: var(--nf-type-h3-size);
+    line-height: var(--nf-type-h3-line-height);
   }
 
   .tabsScroller {
@@ -520,38 +530,38 @@
   }
 
   .tab {
-    min-height: 2.75rem;
-    padding: 0.66rem 1rem;
-    font-size: 0.8rem;
+    min-height: 38px;
+    padding: 0.58rem 0.9rem;
+    font-size: 11px;
   }
 
   .question {
-    min-height: 3.5rem;
-    padding: 1rem 0.9rem;
-    font-size: var(--nf-type-h3-size);
+    min-height: 52px;
+    padding: 15px 0;
+    font-size: calc(var(--nf-type-h3-size) * 0.8);
     line-height: var(--nf-type-h3-line-height);
   }
 
   .icon {
-    width: 1rem;
-    height: 1rem;
+    width: 0.75rem;
+    height: 0.75rem;
   }
 
   .icon::before,
   .icon::after {
-    width: 0.76rem;
+    width: 0.68rem;
   }
 
   .panelInner p {
-    padding: 0 0.9rem 1rem;
+    padding: 0 0 0.85rem;
     font-size: var(--nf-type-body-size);
-    line-height: 1.52;
+    line-height: var(--nf-type-body-line-height);
   }
 
   .panelInner ul {
-    padding: 0 0.9rem 1rem 1.85rem;
+    padding: 0 0 0.9rem 1.25rem;
     font-size: var(--nf-type-body-size);
-    line-height: 1.52;
+    line-height: var(--nf-type-body-line-height);
   }
 }
 
@@ -567,7 +577,7 @@
   }
 
   .wrap {
-    width: min(100% - 24px, 760px);
+    width: min(100% - 24px, 860px);
   }
 
   .tabsScroller {

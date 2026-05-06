@@ -3,9 +3,18 @@
 import { useState } from "react";
 import styles from "./page.module.css";
 
+export type FaqAnswerBlock =
+  | {
+      type: "paragraph";
+      text: string;
+    }
+  | {
+      type: "list";
+      items: string[];
+    };
+
 export type FaqAnswer = {
-  paragraphs: string[];
-  list?: string[];
+  blocks: FaqAnswerBlock[];
 };
 
 export type FaqItem = {
@@ -93,16 +102,17 @@ export function FaqAccordion({ sections }: Props) {
                     aria-labelledby={itemId}
                   >
                     <div className={styles.panelInner}>
-                      {item.answer.paragraphs.map((paragraph) => (
-                        <p key={paragraph}>{paragraph}</p>
-                      ))}
-                      {item.answer.list ? (
-                        <ul>
-                          {item.answer.list.map((entry) => (
-                            <li key={entry}>{entry}</li>
-                          ))}
-                        </ul>
-                      ) : null}
+                      {item.answer.blocks.map((block) =>
+                        block.type === "paragraph" ? (
+                          <p key={block.text}>{block.text}</p>
+                        ) : (
+                          <ul key={block.items.join("|")}>
+                            {block.items.map((entry) => (
+                              <li key={entry}>{entry}</li>
+                            ))}
+                          </ul>
+                        ),
+                      )}
                     </div>
                   </div>
                 </article>

@@ -269,10 +269,26 @@
   max-width: 760px;
 }
 
+.sustainability .sectionHeading h2 {
+  color: var(--nf-type-h2-color);
+  opacity: 1;
+}
+
+.sustainabilityCopy p {
+  color: var(--nf-type-body-color);
+  opacity: 1;
+}
+
 .reveal {
   animation: storyFadeUp 0.78s ease-out both;
   animation-timeline: view();
   animation-range: entry 0% cover 28%;
+}
+
+.sustainability.reveal {
+  opacity: 1;
+  transform: none;
+  animation: none;
 }
 
 @keyframes storyFadeUp {
