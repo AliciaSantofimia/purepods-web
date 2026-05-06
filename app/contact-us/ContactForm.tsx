@@ -15,6 +15,11 @@ type ContactFormState = {
 
 type ContactFormErrors = Partial<Record<keyof ContactFormState | "form", string>>;
 
+type ContactApiResponse = {
+  message?: string;
+  errors?: ContactFormErrors;
+};
+
 declare global {
   interface Window {
     grecaptcha?: {
@@ -58,8 +63,10 @@ function validateForm(values: ContactFormState): ContactFormErrors {
   if (!values.email.trim()) errors.email = "Email is required.";
   else if (!validateEmail(values.email)) errors.email = "Enter a valid email address.";
   if (!values.confirmEmail.trim()) errors.confirmEmail = "Please confirm your email.";
-  else if (values.email.trim().toLowerCase() !== values.confirmEmail.trim().toLowerCase()) {
-    errors.confirmEmail = "Email addresses must match.";
+  else if (!validateEmail(values.confirmEmail)) {
+    errors.confirmEmail = "Enter a valid confirmation email address.";
+  } else if (values.email.trim().toLowerCase() !== values.confirmEmail.trim().toLowerCase()) {
+    errors.confirmEmail = "The email addresses do not match. Please check and try again.";
   }
   if (!values.enquiryType.trim()) errors.enquiryType = "Please choose an enquiry type.";
   if (!values.message.trim()) errors.message = "Message is required.";
@@ -85,7 +92,7 @@ export function ContactForm() {
 
   const recaptchaHelp = useMemo(() => {
     if (siteKey) return "Complete the verification before submitting.";
-    return "Development captcha fallback. Configure NEXT_PUBLIC_RECAPTCHA_SITE_KEY for Google reCAPTCHA.";
+    return "Complete the verification before submitting.";
   }, [siteKey]);
 
   useEffect(() => {
@@ -162,9 +169,10 @@ export function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
-      const result = (await response.json()) as { message?: string };
+      const result = (await response.json()) as ContactApiResponse;
 
       if (!response.ok) {
+        if (result.errors) setErrors((current) => ({ ...current, ...result.errors }));
         throw new Error(result.message || "We could not send your enquiry.");
       }
 
@@ -189,10 +197,13 @@ export function ContactForm() {
     <form className={styles.contactForm} onSubmit={handleSubmit} noValidate>
       <div className={styles.fieldGrid}>
         <label className={styles.field}>
-          <span>First name</span>
+          <span>
+            First Name <span className={styles.requiredMark} aria-hidden="true">*</span>
+          </span>
           <input
             type="text"
             autoComplete="given-name"
+            required
             value={values.firstName}
             onChange={(event) => updateField("firstName", event.target.value)}
             aria-invalid={Boolean(errors.firstName)}
@@ -206,10 +217,13 @@ export function ContactForm() {
         </label>
 
         <label className={styles.field}>
-          <span>Last name</span>
+          <span>
+            Last Name <span className={styles.requiredMark} aria-hidden="true">*</span>
+          </span>
           <input
             type="text"
             autoComplete="family-name"
+            required
             value={values.lastName}
             onChange={(event) => updateField("lastName", event.target.value)}
             aria-invalid={Boolean(errors.lastName)}
@@ -225,11 +239,14 @@ export function ContactForm() {
 
       <div className={styles.fieldGrid}>
         <label className={styles.field}>
-          <span>Enter Email</span>
+          <span>
+            Email Address <span className={styles.requiredMark} aria-hidden="true">*</span>
+          </span>
           <input
             type="email"
             inputMode="email"
             autoComplete="email"
+            required
             value={values.email}
             onChange={(event) => updateField("email", event.target.value)}
             aria-invalid={Boolean(errors.email)}
@@ -243,11 +260,15 @@ export function ContactForm() {
         </label>
 
         <label className={styles.field}>
-          <span>Confirm Email</span>
+          <span>
+            Confirm Email Address{" "}
+            <span className={styles.requiredMark} aria-hidden="true">*</span>
+          </span>
           <input
             type="email"
             inputMode="email"
             autoComplete="email"
+            required
             value={values.confirmEmail}
             onChange={(event) => updateField("confirmEmail", event.target.value)}
             aria-invalid={Boolean(errors.confirmEmail)}
@@ -262,9 +283,13 @@ export function ContactForm() {
       </div>
 
       <label className={styles.field}>
-        <span>What is your enquiry about?</span>
+        <span>
+          What is your inquiry about?{" "}
+          <span className={styles.requiredMark} aria-hidden="true">*</span>
+        </span>
         <select
           value={values.enquiryType}
+          required
           onChange={(event) => updateField("enquiryType", event.target.value)}
           aria-invalid={Boolean(errors.enquiryType)}
           aria-describedby={errors.enquiryType ? "enquiry-error" : undefined}
@@ -282,9 +307,12 @@ export function ContactForm() {
       </label>
 
       <label className={styles.field}>
-        <span>Message</span>
+        <span>
+          Message <span className={styles.requiredMark} aria-hidden="true">*</span>
+        </span>
         <textarea
           rows={7}
+          required
           maxLength={MAX_MESSAGE_LENGTH}
           value={values.message}
           onChange={(event) => updateField("message", event.target.value)}
@@ -301,8 +329,14 @@ export function ContactForm() {
         ) : null}
       </label>
 
-      <div className={styles.captchaField}>
-        <span className={styles.captchaLabel}>Verification</span>
+      <div
+        className={styles.captchaField}
+        aria-invalid={Boolean(errors.recaptchaToken)}
+        aria-describedby={`recaptcha-help${errors.recaptchaToken ? " recaptcha-error" : ""}`}
+      >
+        <span className={styles.captchaLabel}>
+          Verification <span className={styles.requiredMark} aria-hidden="true">*</span>
+        </span>
         {siteKey ? (
           <div className={styles.recaptchaShell}>
             <div ref={recaptchaRef} />
@@ -311,6 +345,7 @@ export function ContactForm() {
           <label className={styles.fallbackCaptcha}>
             <input
               type="checkbox"
+              required
               checked={Boolean(values.recaptchaToken)}
               onChange={(event) =>
                 updateField(
@@ -322,9 +357,13 @@ export function ContactForm() {
             <span>I&apos;m not a robot</span>
           </label>
         )}
-        <small className={styles.helpText}>{recaptchaHelp}</small>
+        <small id="recaptcha-help" className={styles.helpText}>
+          {recaptchaHelp}
+        </small>
         {errors.recaptchaToken ? (
-          <small className={styles.errorText}>{errors.recaptchaToken}</small>
+          <small id="recaptcha-error" className={styles.errorText}>
+            {errors.recaptchaToken}
+          </small>
         ) : null}
       </div>
 

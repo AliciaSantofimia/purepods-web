@@ -10,8 +10,28 @@ type ContactPayload = {
   recaptchaToken?: unknown;
 };
 
+type ContactFieldErrors = Partial<
+  Record<
+    | "firstName"
+    | "lastName"
+    | "email"
+    | "confirmEmail"
+    | "enquiryType"
+    | "message"
+    | "recaptchaToken"
+    | "form",
+    string
+  >
+>;
+
 const MAX_MESSAGE_LENGTH = 600;
 const CONTACT_TO = "reservations@purepods.com";
+const ENQUIRY_TYPES = new Set([
+  "Booking a stay",
+  "Changing an existing booking",
+  "Media or partnerships",
+  "General enquiry",
+]);
 
 function asString(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
@@ -21,8 +41,8 @@ function validEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-function jsonError(message: string, status = 400) {
-  return NextResponse.json({ message }, { status });
+function jsonError(message: string, status = 400, errors?: ContactFieldErrors) {
+  return NextResponse.json({ message, errors }, { status });
 }
 
 async function verifyRecaptcha(token: string) {
@@ -73,6 +93,48 @@ function plainTextEmail({
     "Message:",
     message,
   ].join("\n");
+}
+
+function validateContactPayload(body: ContactPayload) {
+  const firstName = asString(body.firstName);
+  const lastName = asString(body.lastName);
+  const email = asString(body.email);
+  const confirmEmail = asString(body.confirmEmail);
+  const enquiryType = asString(body.enquiryType);
+  const message = asString(body.message);
+  const recaptchaToken = asString(body.recaptchaToken);
+  const errors: ContactFieldErrors = {};
+
+  if (!firstName) errors.firstName = "First name is required.";
+  if (!lastName) errors.lastName = "Last name is required.";
+  if (!email) errors.email = "Email is required.";
+  else if (!validEmail(email)) errors.email = "Enter a valid email address.";
+  if (!confirmEmail) errors.confirmEmail = "Please confirm your email.";
+  else if (!validEmail(confirmEmail)) {
+    errors.confirmEmail = "Enter a valid confirmation email address.";
+  } else if (email && email.toLowerCase() !== confirmEmail.toLowerCase()) {
+    errors.confirmEmail = "The email addresses do not match. Please check and try again.";
+  }
+  if (!enquiryType) errors.enquiryType = "Please choose an enquiry type.";
+  else if (!ENQUIRY_TYPES.has(enquiryType)) errors.enquiryType = "Please choose a valid enquiry type.";
+  if (!message) errors.message = "Message is required.";
+  else if (message.length > MAX_MESSAGE_LENGTH) {
+    errors.message = `Message must be ${MAX_MESSAGE_LENGTH} characters or fewer.`;
+  }
+  if (!recaptchaToken) errors.recaptchaToken = "Please complete the captcha.";
+
+  return {
+    values: {
+      firstName,
+      lastName,
+      email,
+      confirmEmail,
+      enquiryType,
+      message,
+      recaptchaToken,
+    },
+    errors,
+  };
 }
 
 async function sendContactEmail(payload: {
@@ -130,32 +192,19 @@ export async function POST(request: Request) {
     return jsonError("Invalid request body.");
   }
 
-  const firstName = asString(body.firstName);
-  const lastName = asString(body.lastName);
-  const email = asString(body.email);
-  const confirmEmail = asString(body.confirmEmail);
-  const enquiryType = asString(body.enquiryType);
-  const message = asString(body.message);
-  const recaptchaToken = asString(body.recaptchaToken);
+  const { values, errors } = validateContactPayload(body);
+  const { firstName, lastName, email, enquiryType, message, recaptchaToken } = values;
 
-  if (!firstName || !lastName || !email || !confirmEmail || !enquiryType || !message) {
-    return jsonError("Please complete all required fields.");
+  if (Object.keys(errors).length > 0) {
+    return jsonError("Please check the highlighted fields.", 400, errors);
   }
-
-  if (!validEmail(email)) return jsonError("Please enter a valid email address.");
-
-  if (email.toLowerCase() !== confirmEmail.toLowerCase()) {
-    return jsonError("Email addresses must match.");
-  }
-
-  if (message.length > MAX_MESSAGE_LENGTH) {
-    return jsonError(`Message must be ${MAX_MESSAGE_LENGTH} characters or fewer.`);
-  }
-
-  if (!recaptchaToken) return jsonError("Please complete the captcha.");
 
   const recaptchaValid = await verifyRecaptcha(recaptchaToken);
-  if (!recaptchaValid) return jsonError("Captcha verification failed.", 403);
+  if (!recaptchaValid) {
+    return jsonError("Please complete the captcha again.", 403, {
+      recaptchaToken: "Captcha verification failed. Please try again.",
+    });
+  }
 
   try {
     await sendContactEmail({

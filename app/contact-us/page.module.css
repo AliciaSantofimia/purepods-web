@@ -139,6 +139,13 @@
   text-transform: uppercase;
 }
 
+.requiredMark {
+  color: var(--brand-green);
+  font-weight: 700;
+  letter-spacing: 0;
+  opacity: 0.72;
+}
+
 .field input,
 .field select,
 .field textarea {

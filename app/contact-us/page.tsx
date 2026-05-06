@@ -43,8 +43,8 @@ export default function ContactUsPage() {
             <div className={styles.formCard}>
               <h2>Send an enquiry</h2>
               <p className={styles.formIntro}>
-                All fields are required. Your message will be sent to our
-                reservations team.
+                Fields marked with * are required. Your message will be sent to
+                our reservations team.
               </p>
               <ContactForm />
             </div>
