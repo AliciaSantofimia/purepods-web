@@ -20,7 +20,8 @@ function formatPriceFrom(priceFrom: string | number): string {
     return `From $${normalized} NZD / night`;
   }
 
-  const matched = priceFrom.match(/(\d[\d,.]*)/);
+  const priceText = String(priceFrom);
+  const matched = priceText.match(/(\d[\d,.]*)/);
   if (matched) {
     const parsed = Number.parseFloat(matched[1].replaceAll(",", ""));
     if (Number.isFinite(parsed)) {

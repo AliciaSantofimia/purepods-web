@@ -412,12 +412,14 @@ export function EditorialPodLocationView({ config }: Props) {
             </div>
           </details>
 
-          <LocationReviewsSection
-            title={reviews.title}
-            hint={reviews.hint}
-            intro={reviews.intro}
-            reviews={reviews.items}
-          />
+          {reviews && (
+            <LocationReviewsSection
+              title={reviews.title}
+              hint={reviews.hint}
+              intro={reviews.intro}
+              reviews={reviews.items}
+            />
+          )}
 
           {config.faqItems.length > 0 ? (
             <div className={`${styles.faqSlot} ${styles.wrap}`}>
