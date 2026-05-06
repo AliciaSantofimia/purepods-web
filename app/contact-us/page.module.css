@@ -22,20 +22,21 @@
 
 .intro h1 {
   margin: 0;
-  max-width: 10ch;
-  font-family: "Noto Serif Display", Georgia, serif;
-  font-size: clamp(42px, 10vw, 88px);
-  font-weight: 500;
-  line-height: 0.96;
-  letter-spacing: -0.04em;
+  max-width: var(--nf-type-h1-max-width);
+  font-family: var(--nf-type-h1-family);
+  font-size: var(--nf-type-h1-size);
+  font-weight: var(--nf-type-h1-weight);
+  line-height: var(--nf-type-h1-line-height);
+  letter-spacing: var(--nf-type-h1-letter-spacing);
 }
 
 .lead {
   margin: 22px 0 0;
   max-width: 58ch;
-  color: var(--muted);
-  font-size: clamp(16px, 2.8vw, 19px);
-  line-height: 1.7;
+  color: var(--nf-type-body-color);
+  font-family: var(--nf-type-body-family);
+  font-size: var(--nf-type-body-size);
+  line-height: var(--nf-type-body-line-height);
 }
 
 .contentGrid {
@@ -57,11 +58,12 @@
 
 .formCard h2 {
   margin: 0;
-  font-family: "Noto Serif Display", Georgia, serif;
-  font-size: clamp(28px, 5vw, 42px);
-  font-weight: 500;
-  line-height: 1.08;
-  letter-spacing: -0.025em;
+  color: var(--nf-type-h2-color);
+  font-family: var(--nf-type-h2-family);
+  font-size: var(--nf-type-h2-size);
+  font-weight: var(--nf-type-h2-weight);
+  line-height: var(--nf-type-h2-line-height);
+  letter-spacing: var(--nf-type-h2-letter-spacing);
 }
 
 .formCard {
@@ -70,7 +72,10 @@
 
 .formIntro {
   margin: 12px 0 0;
-  color: var(--muted);
+  color: var(--nf-type-body-color);
+  font-family: var(--nf-type-body-family);
+  font-size: var(--nf-type-body-size);
+  line-height: var(--nf-type-body-line-height);
 }
 
 .contactForm {
@@ -248,14 +253,14 @@
   }
 
   .intro h1 {
-    font-size: clamp(38px, 11.5vw, 54px);
-    line-height: 1;
+    font-size: var(--nf-type-h1-size);
+    line-height: var(--nf-type-h1-line-height);
   }
 
   .lead,
   .formIntro {
-    font-size: 1rem;
-    line-height: 1.65;
+    font-size: var(--nf-type-body-size);
+    line-height: 1.52;
   }
 
   .formCard {
@@ -264,7 +269,7 @@
   }
 
   .formCard h2 {
-    font-size: clamp(28px, 8vw, 36px);
+    font-size: var(--nf-type-h2-size);
   }
 
   .fieldGrid {
@@ -299,12 +304,12 @@
   }
 
   .intro h1 {
-    font-size: clamp(38px, 13vw, 44px);
+    font-size: var(--nf-type-h1-size);
   }
 
   .lead {
-    font-size: 1rem;
-    line-height: 1.62;
+    font-size: var(--nf-type-body-size);
+    line-height: 1.52;
   }
 
   .field input,

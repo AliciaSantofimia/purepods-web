@@ -27,6 +27,32 @@
   --night-mid:rgba(34,38,28,.22);
   --night-crest:rgba(40,44,32,.36);
   --night-vignette:rgba(20,22,16,.48);
+  /* Night Falls typography source of truth */
+  --nf-type-h1-family:"Noto Serif Display",Georgia,serif;
+  --nf-type-h1-weight:500;
+  --nf-type-h1-size:clamp(28px,4vw,38px);
+  --nf-type-h1-letter-spacing:-.02em;
+  --nf-type-h1-line-height:1.06;
+  --nf-type-h1-shadow:0 2px 18px rgba(0,0,0,.35);
+  --nf-type-h1-max-width:18ch;
+  --nf-type-h2-family:"Noto Serif Display",Georgia,serif;
+  --nf-type-h2-weight:500;
+  --nf-type-h2-size:clamp(28px,3.6vw,44px);
+  --nf-type-h2-letter-spacing:-.025em;
+  --nf-type-h2-line-height:1.08;
+  --nf-type-h2-color:var(--brand-green);
+  --nf-type-h3-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --nf-type-h3-weight:700;
+  --nf-type-h3-size:20px;
+  --nf-type-h3-letter-spacing:-.01em;
+  --nf-type-h3-line-height:normal;
+  --nf-type-h3-color:var(--ink);
+  --nf-type-h3-margin:0 0 10px;
+  --nf-type-body-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --nf-type-body-size:14px;
+  --nf-type-body-line-height:1.6;
+  --nf-type-body-color:rgba(92,95,62,.72);
+  --nf-type-body-margin:0 0 12px;
 }
 
 *{ box-sizing:border-box; }

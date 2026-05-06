@@ -125,17 +125,21 @@
 .header h1 {
   margin: 0;
   color: var(--ink);
-  font-size: clamp(33px, 5.15vw, 44px);
-  line-height: 1.07;
-  letter-spacing: -0.04em;
+  max-width: var(--nf-type-h1-max-width);
+  font-family: var(--nf-type-h1-family);
+  font-size: var(--nf-type-h1-size);
+  font-weight: var(--nf-type-h1-weight);
+  letter-spacing: var(--nf-type-h1-letter-spacing);
+  line-height: var(--nf-type-h1-line-height);
 }
 
 .intro {
   max-width: 36rem;
   margin: 1rem 0 0;
-  color: var(--muted);
-  font-size: clamp(1rem, 1.8vw, 1.08rem);
-  line-height: 1.7;
+  color: var(--nf-type-body-color);
+  font-family: var(--nf-type-body-family);
+  font-size: var(--nf-type-body-size);
+  line-height: var(--nf-type-body-line-height);
 }
 
 .faqTabs {
@@ -223,12 +227,12 @@
 
 .section h2 {
   margin: 0 0 0.15rem;
-  color: var(--ink);
-  font-size: clamp(0.98rem, 1.8vw, 1.1rem);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  color: var(--nf-type-h2-color);
+  font-family: var(--nf-type-h2-family);
+  font-size: var(--nf-type-h2-size);
+  font-weight: var(--nf-type-h2-weight);
+  letter-spacing: var(--nf-type-h2-letter-spacing);
+  line-height: var(--nf-type-h2-line-height);
 }
 
 .accordion {
@@ -262,11 +266,13 @@
   padding: 0.82rem 0.9rem;
   border: 0;
   background: transparent;
-  color: var(--ink);
   font: inherit;
-  font-size: 0.94rem;
-  font-weight: 650;
-  line-height: 1.35;
+  color: var(--nf-type-h3-color);
+  font-family: var(--nf-type-h3-family);
+  font-size: var(--nf-type-h3-size);
+  font-weight: var(--nf-type-h3-weight);
+  letter-spacing: var(--nf-type-h3-letter-spacing);
+  line-height: var(--nf-type-h3-line-height);
   text-align: left;
   cursor: pointer;
 }
@@ -335,14 +341,18 @@
 
 .panelInner p {
   padding: 0 0.9rem 0.82rem;
-  font-size: 0.92rem;
-  line-height: 1.66;
+  color: var(--nf-type-body-color);
+  font-family: var(--nf-type-body-family);
+  font-size: var(--nf-type-body-size);
+  line-height: var(--nf-type-body-line-height);
 }
 
 .panelInner ul {
   padding: 0 0.9rem 0.82rem 1.9rem;
-  font-size: 0.92rem;
-  line-height: 1.62;
+  color: var(--nf-type-body-color);
+  font-family: var(--nf-type-body-family);
+  font-size: var(--nf-type-body-size);
+  line-height: var(--nf-type-body-line-height);
 }
 
 .panelInner li {
@@ -468,15 +478,15 @@
   }
 
   .header h1 {
-    font-size: clamp(30px, 8.8vw, 36px);
-    line-height: 1.08;
-    letter-spacing: -0.035em;
+    font-size: var(--nf-type-h1-size);
+    line-height: var(--nf-type-h1-line-height);
+    letter-spacing: var(--nf-type-h1-letter-spacing);
   }
 
   .intro {
     margin-top: 0.75rem;
-    font-size: 1rem;
-    line-height: 1.64;
+    font-size: var(--nf-type-body-size);
+    line-height: 1.52;
   }
 
   .faqTabs {
@@ -492,8 +502,8 @@
   }
 
   .section h2 {
-    font-size: 0.96rem;
-    line-height: 1.28;
+    font-size: var(--nf-type-h2-size);
+    line-height: var(--nf-type-h2-line-height);
   }
 
   .tabsScroller {
@@ -518,8 +528,8 @@
   .question {
     min-height: 3.5rem;
     padding: 1rem 0.9rem;
-    font-size: 1rem;
-    line-height: 1.42;
+    font-size: var(--nf-type-h3-size);
+    line-height: var(--nf-type-h3-line-height);
   }
 
   .icon {
@@ -534,14 +544,14 @@
 
   .panelInner p {
     padding: 0 0.9rem 1rem;
-    font-size: 1rem;
-    line-height: 1.68;
+    font-size: var(--nf-type-body-size);
+    line-height: 1.52;
   }
 
   .panelInner ul {
     padding: 0 0.9rem 1rem 1.85rem;
-    font-size: 1rem;
-    line-height: 1.66;
+    font-size: var(--nf-type-body-size);
+    line-height: 1.52;
   }
 }
 
