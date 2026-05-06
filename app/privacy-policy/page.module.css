@@ -1,0 +1,135 @@
+.page {
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: clamp(96px, 14vw, 148px) 0 clamp(72px, 10vw, 112px);
+  background:
+    radial-gradient(circle at 14% 8%, rgba(194, 181, 158, 0.16), transparent 28rem),
+    var(--bg);
+}
+
+.article {
+  width: min(700px, calc(100% - 40px));
+  margin: 0 auto;
+  overflow-wrap: break-word;
+}
+
+.hero {
+  margin-bottom: clamp(2.8rem, 7vw, 5rem);
+  padding-bottom: clamp(1.8rem, 4vw, 2.8rem);
+  border-bottom: 1px solid var(--stroke);
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(38px, 7vw, 68px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.hero p {
+  max-width: 42rem;
+  margin: 1.1rem 0 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.7;
+}
+
+.section {
+  display: grid;
+  gap: 1rem;
+  scroll-margin-top: 120px;
+}
+
+.section + .section {
+  margin-top: clamp(2.25rem, 5vw, 3.5rem);
+  padding-top: clamp(2.25rem, 5vw, 3.5rem);
+  border-top: 1px solid rgba(92, 95, 62, 0.12);
+}
+
+.section h2 {
+  max-width: 24ch;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.45rem, 3.5vw, 2.15rem);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+
+.section p,
+.section li {
+  color: var(--muted);
+  font-size: clamp(0.98rem, 1.7vw, 1.05rem);
+  line-height: 1.78;
+}
+
+.section p {
+  margin: 0;
+}
+
+.section ul {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.25rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.section a {
+  color: var(--brand-green);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 72px 0 56px;
+  }
+
+  .article {
+    width: min(100% - 32px, 700px);
+  }
+
+  .hero {
+    margin-bottom: 2.4rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 10.5vw, 44px);
+    line-height: 1.06;
+    letter-spacing: -0.045em;
+  }
+
+  .hero p,
+  .section p,
+  .section li {
+    font-size: 1rem;
+    line-height: 1.72;
+  }
+
+  .section h2 {
+    font-size: clamp(1.28rem, 6vw, 1.68rem);
+    line-height: 1.16;
+  }
+
+  .section + .section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .article {
+    width: min(100% - 28px, 700px);
+  }
+}
