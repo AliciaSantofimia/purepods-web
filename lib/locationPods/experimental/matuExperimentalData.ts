@@ -21,8 +21,11 @@ const travelBreakfast = "/assets/img/matu/matu-breakfast-board-waitomo.jpg";
 export const MATU_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=16";
 
-const HERO_SUBTITLE =
-  "In the heart of the Waitomo region, where native forest meets limestone country, PurePod Matū is a private glass cabin for two — green hills and bush above, glowworm caves below. A short walk from the road leads to a fully private site; suitable footwear helps. Slow down, listen and let the landscape take over.";
+const HERO_PARAGRAPH_1 =
+  "A private glass cabin in the Ōtorohanga countryside, set above rolling farmland with native bush and wide rural views.";
+
+const HERO_PARAGRAPH_2 =
+  "Near the Waitomo region, Matū is a quiet place for sunrise, birdsong and clear night skies — a peaceful retreat surrounded by the calm of the countryside.";
 
 export const MATU_FAQ_ITEMS: LocationFaqItem[] = [
   {
@@ -56,11 +59,12 @@ const matuPodNarrative = {
   title: "The Pod",
   hint: "The essentials, no fluff",
   paragraphs: [
-    "PurePod Matū sits in the Waitomo landscape — rolling green hills, native forest and the quiet of the countryside. The region is known for its caves and glowworms, but above ground it is equally rich: birdsong, changing light and a strong sense of seclusion. The pod is designed for two: a simple, comfortable base from which to experience the bush, the night sky and the calm of the land.",
-    "Arrival is part of the experience. A short walk from the road brings you into your own private world — no neighbours, no distractions. Inside, the glass cabin brings the outside in: you sleep, eat and rest with the forest and the sky always in view. Warm, minimal and built for slowing down.",
+    "Set within the rolling farmland of the Ōtorohanga countryside, Matū is surrounded by native bush, open paddocks and wide rural views.",
+    "Designed for two, the pod offers a quiet place to experience the slower rhythm of the landscape — birdsong in the morning, changing weather across the hills and long evenings beneath open skies.",
+    "The final approach crosses part of a working farm before a longer walk through open countryside towards the pod. Inside, floor-to-ceiling glass keeps the surrounding farmland, sky and changing light constantly in view.",
   ],
   galleryCaption:
-    "PurePod Matū is not just a place to sleep but an immersion in the Waitomo landscape. The forest, the hills and the wide sky are part of every moment. Inside, everything is designed for two: a warm, comfortable space from which to watch the changing light, the stars and the stillness of the bush. A place to disconnect, observe and simply be.",
+    "Matū is a quiet rural retreat where farmland, native bush and wide countryside skies shape the experience of staying here.",
   gallery: [
     {
       src: podExterior,
@@ -98,8 +102,11 @@ const matuTravelBlock = {
           alt: "Native forest walking track near Matū PurePod, Waitomo, New Zealand",
         },
       ],
-      body:
-        "Reaching PurePod Matū is a scenic drive through the Waitomo region, followed by a short walk through native forest. The final stretch is what makes the pod feel truly hidden and private. Suitable footwear is recommended for the track.",
+      body: `Reaching Matū feels like travelling higher into the landscape.
+
+The final approach follows quiet farm roads and rolling hills before a roughly 20-minute walk across open farmland towards the pod. Along the way, wide countryside views, birdsong and the changing weather of the King Country create a strong sense of distance from everyday life.
+
+The track includes steep and uneven sections, and the final stage crosses a farm stile, so suitable walking footwear and light luggage are recommended.`,
     },
     {
       key: "climate",
@@ -125,8 +132,11 @@ const matuTravelBlock = {
           alt: "Breakfast at Matū PurePod, Waitomo, New Zealand",
         },
       ],
-      body:
-        "Your PurePod is fully equipped for a relaxed, self-contained stay. Inside you will find a selection of meals ready to heat, breakfast provisions, snacks, tea and coffee — wherever possible from local producers. Meals are designed to be simple to prepare, so you spend less time in the kitchen and more time enjoying the forest, the light and the calm. As there are no shops or restaurants nearby, everything is provided so your stay is comfortable and worry-free.",
+      body: `At Matū, meals become part of the landscape.
+
+Evenings here are shaped by wide skies, quiet farmland and the changing light across the hills. Inside the pod you'll find breakfast provisions, tea, coffee, snacks and a selection of locally sourced dishes ready to enjoy after the walk in.
+
+The outdoor cooking area and open views make slow dinners feel naturally connected to the rhythm of the countryside — especially as the sun disappears over the King Country and the stars begin to appear.`,
     },
   ],
 };
@@ -248,13 +258,13 @@ const matuReviews = {
 
 /** Single source for `EditorialPodLocationView` on `/location/matu` and FAQ JSON-LD. */
 export const matuEditorialConfig: EditorialPodLocationConfig = {
-  heroKicker: "PurePod · Waitomo",
+  heroKicker: "PUREPOD · WAITOMO",
   hero: {
     imageSrc: heroImage,
     imageAlt:
       "Matū PurePod glass cabin in the Waitomo landscape, New Zealand",
     title: "Matū",
-    subtitleParagraphs: [HERO_SUBTITLE],
+    subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
     imagePosition: "70% 50%",
     imagePositionMd: "60% 55%",
     imagePositionXl: "55% 60%",

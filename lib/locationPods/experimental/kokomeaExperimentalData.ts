@@ -27,8 +27,11 @@ const travelBreakfast =
 export const KOKOMEA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=10";
 
-const HERO_SUBTITLE =
-  "PurePod Kokomea is a private glass cabin for two in the Kāpiti Coast hills, North Island, New Zealand. Guests reach the pod on a walk through rural hills; comfortable footwear is recommended. The stay offers forest, birdsong and coastal character with no shared spaces.";
+const HERO_PARAGRAPH_1 =
+  "A private glass cabin set within the rolling countryside of the Kāpiti Coast, surrounded by open farmland, regenerating bush and wide coastal skies.";
+
+const HERO_PARAGRAPH_2 =
+  "Kokomea is shaped by sunset light, birdsong and the quiet rhythm of the land — a peaceful retreat with views stretching towards Kāpiti Island.";
 
 export const KOKOMEA_FAQ_ITEMS: LocationFaqItem[] = [
   {
@@ -62,12 +65,13 @@ const kokomeaPodNarrative = {
   title: "The Pod",
   hint: "The essentials, no fluff",
   paragraphs: [
-    "Where the land slows down and birds set the pace. A retreat between forest and sea, made for walking slowly, listening to the surroundings and letting the landscape shape the day.",
-    "A gentle walk leads you into the hills of the Kāpiti Coast, where forest, birdsong and open skies replace the noise of the world. The pod sits in a serene rural landscape, surrounded by native vegetation, soft ridges and the distant sound of the ocean.",
-    "The pod is fully private and designed for two, offering the feeling of being alone with nature. Inside, everything is simple and welcoming: king bed, hot shower, flush toilet, essential kitchen and comfortable heating for cooler evenings.",
+    "Set within the rolling countryside of the Kāpiti Coast, Kokomea sits between open farmland, regenerating bush and distant coastal views.",
+    "Designed for two, the pod offers a quiet place to experience the slower rhythm of the landscape — morning birdsong, changing evening light and the calm of the surrounding hills.",
+    "A gentle walk leads through olive trees and regenerating bush towards the pod, where wide skies and open rural views create a strong sense of privacy and stillness.",
+    "Inside, floor-to-ceiling glass keeps the landscape constantly present throughout the day.",
   ],
   galleryCaption:
-    "Glass walls open the space completely to the landscape, so that light, mist and birds become part of the stay. Outside, the deck invites slow mornings and long evenings — coffee in hand, wind in the trees and a silence that stretches. This is a place to watch, listen, walk and do almost nothing.",
+    "Kokomea is shaped by sunset light, countryside calm and the feeling of being quietly removed from the pace of everyday life.",
   gallery: [
     {
       src: podSunrise,
@@ -105,8 +109,11 @@ const kokomeaTravelBlock = {
           alt: "Kokomea PurePod at sunrise in the Kāpiti Coast landscape",
         },
       ],
-      body:
-        "Reaching PurePod Kokomea is a gentle walk through the hills of the Kāpiti Coast. Part of the experience is leaving the everyday behind and arriving slowly, surrounded by nature and silence. Comfortable footwear is recommended for the track.",
+      body: `Reaching Kokomea feels calm from the very beginning.
+
+The final approach follows quiet country lanes through the Kāpiti Coast countryside before a gentle 10-minute walk towards the pod. Along the way, the track passes regenerating bush, a small bubbling stream and olive trees, with open views stretching towards Kāpiti Island.
+
+Parts of the path can become rocky or slippery after rain, so suitable walking footwear and light luggage are recommended.`,
     },
     {
       key: "climate",
@@ -254,13 +261,13 @@ const kokomeaReviews = {
 
 /** Single source for `EditorialPodLocationView` on `/location/kokomea` and FAQ JSON-LD. */
 export const kokomeaEditorialConfig: EditorialPodLocationConfig = {
-  heroKicker: "PurePod · Kāpiti Coast",
+  heroKicker: "PUREPOD · KĀPITI COAST",
   hero: {
     imageSrc: heroImage,
     imageAlt:
       "Kokomea PurePod glass cabin at sunset on the Kāpiti Coast, New Zealand",
     title: "Kokomea",
-    subtitleParagraphs: [HERO_SUBTITLE],
+    subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
     imagePosition: "70% 50%",
     imagePositionMd: "60% 55%",
     imagePositionXl: "55% 60%",

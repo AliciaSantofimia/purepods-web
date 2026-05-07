@@ -27,8 +27,11 @@ const travelBbq =
 export const PAMU_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=8";
 
-const HERO_SUBTITLE =
-  "In the Rotorua region — where geothermal steam meets farming country and lakes — PurePod Pāmu is a private glass cabin for two. A short approach from the road leads to a fully private site with no neighbours; suitable footwear helps. Slow down, breathe and let the land take over.";
+const HERO_PARAGRAPH_1 =
+  "A private glass cabin surrounded by green farmland in the Rotorua countryside, where geothermal landscapes, native bush and rural life meet.";
+
+const HERO_PARAGRAPH_2 =
+  "Set within the rolling hills of a working farm, Pāmu offers a quieter rhythm — open skies, grazing animals, birdsong and the calm of the valley beyond the city.";
 
 export const PAMU_FAQ_ITEMS: LocationFaqItem[] = [
   {
@@ -62,11 +65,12 @@ const pamuPodNarrative = {
   title: "The Pod",
   hint: "The essentials, no fluff",
   paragraphs: [
-    "PurePod Pāmu sits in the Rotorua region — a place defined by geothermal activity, lakes and rolling farmland. The pod is designed for two: a simple, comfortable base from which to experience the stillness of the land, the changing light and the sense of being away from the everyday. Here the earth feels close — steam, warmth and the quiet of the countryside.",
-    "Arrival is part of the experience. A short approach from the road brings you into your own private world — no neighbours, no distractions. Inside, the glass cabin brings the outside in: you sleep, eat and rest with the landscape always in view. Warm, minimal and built for slowing down.",
+    "Set among the rolling farmland of the Rotorua region, Pāmu sits within a landscape shaped by geothermal activity, native bush and open green hills.",
+    "Designed for two, the pod offers a slower rural rhythm — birdsong in the morning, changing weather across the valley and the feeling of being immersed in the quiet movement of the countryside.",
+    "The final approach crosses part of a working farm before a gentle walk through grassy hills towards the pod. Inside, floor-to-ceiling glass keeps the surrounding landscape, sky and farmland constantly in view.",
   ],
   galleryCaption:
-    "PurePod Pāmu is not just a place to sleep but an immersion in the Rotorua landscape. The hills, the sky and the quiet of the farm country are part of every moment. Inside, everything is designed for two: a warm, comfortable space from which to watch the changing light and the stillness of the land. A place to disconnect, observe and simply be.",
+    "Pāmu is shaped by open land, rural stillness and the natural rhythm of the farm — a private glass retreat where Rotorua's geothermal landscape meets the calm of the countryside.",
   gallery: [
     {
       src: podExterior,
@@ -104,8 +108,11 @@ const pamuTravelBlock = {
           alt: "Aerial view of valley landscape near Pāmu PurePod, Rotorua, New Zealand",
         },
       ],
-      body:
-        "Reaching PurePod Pāmu is a drive through the Rotorua region — past lakes, geothermal areas and farming country. The final approach is via quiet roads and a short walk to the pod. Suitable footwear is recommended. The journey is part of the experience: leaving the everyday behind and arriving slowly.",
+      body: `Reaching Pāmu feels like stepping into a quieter rural landscape.
+
+The final approach winds through a working farm before a gentle 7–10 minute walk across green grassy hills towards the pod. Along the way, you may hear the nearby stream, birdsong and the sounds of farm animals moving through the surrounding paddocks.
+
+The track is natural and uneven in places, so suitable walking footwear and light luggage are recommended.`,
     },
     {
       key: "climate",
@@ -131,8 +138,11 @@ const pamuTravelBlock = {
           alt: "Outdoor BBQ and cooking at Pāmu PurePod, Rotorua, New Zealand",
         },
       ],
-      body:
-        "Your PurePod is fully equipped for a relaxed, self-contained stay. Inside you will find a selection of meals ready to heat, breakfast provisions, snacks, tea and coffee — wherever possible from local producers. The outdoor cooking area lets you eat with the landscape in view. Meals are designed to be simple to prepare, so you spend less time in the kitchen and more time enjoying the calm. As there are no shops or restaurants nearby, everything is provided so your stay is comfortable and worry-free.",
+      body: `Meals at Pāmu are designed to feel simple, warm and deeply connected to the surrounding farmland.
+
+Inside the pod you will find breakfast provisions, snacks, tea and coffee, along with a selection of locally sourced dishes ready to heat and enjoy. The outdoor cooking area and open views across the hills make slow evenings part of the experience itself.
+
+As the pod sits away from shops and restaurants, everything is designed to encourage a quieter rhythm — relaxed, private and immersed in the landscape.`,
     },
   ],
 };
@@ -247,13 +257,13 @@ const pamuReviews = {
 
 /** Single source for `EditorialPodLocationView` on `/location/pamu` and FAQ JSON-LD. */
 export const pamuEditorialConfig: EditorialPodLocationConfig = {
-  heroKicker: "PurePod · Rotorua",
+  heroKicker: "PUREPOD · ROTORUA",
   hero: {
     imageSrc: heroImage,
     imageAlt:
       "Pāmu PurePod glass cabin in the Rotorua landscape, New Zealand",
     title: "Pāmu",
-    subtitleParagraphs: [HERO_SUBTITLE],
+    subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
     imagePosition: "70% 50%",
     imagePositionMd: "60% 55%",
     imagePositionXl: "55% 60%",
