@@ -268,6 +268,56 @@ function isCoarsePointer(): boolean {
 const HOVER_CARD_W = 212;
 const HOVER_CARD_H = 216;
 
+/**
+ * Mobile-only "tap to explore" overlay.
+ *
+ * Reason: on small screens Leaflet's default one-finger drag captures vertical swipes,
+ * which makes it hard to scroll the page past the map. We disable drag / touchZoom /
+ * doubleClickZoom while this gate is mounted, so a finger swipe over the map area
+ * scrolls the page (`touch-action: pan-y` on the gate). A tap on the gate dismisses it
+ * and Leaflet handlers are re-enabled by the cleanup → from then on, all gestures work.
+ *
+ * Desktop is unaffected because the parent only renders this gate when `compact` is true.
+ */
+function MobileMapTouchGate({ onActivate }: { onActivate: () => void }) {
+  const map = useMap();
+
+  useEffect(() => {
+    map.dragging.disable();
+    map.touchZoom.disable();
+    map.doubleClickZoom.disable();
+    return () => {
+      map.dragging.enable();
+      map.touchZoom.enable();
+      map.doubleClickZoom.enable();
+    };
+  }, [map]);
+
+  return (
+    <button
+      type="button"
+      className={styles.chMapTouchGate}
+      onClick={onActivate}
+      aria-label="Tap to explore the map"
+    >
+      <span className={styles.chMapTouchGatePill}>
+        <span className={styles.chMapTouchGateIcon} aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M9 11V6.5a1.5 1.5 0 0 1 3 0V11m0-2.5a1.5 1.5 0 0 1 3 0V12m0-1.5a1.5 1.5 0 0 1 3 0V15a5 5 0 0 1-5 5h-1.2a4 4 0 0 1-3-1.36L7 16l-1.6-1.6a1.4 1.4 0 0 1 1.7-2.2L9 13.5"
+              stroke="currentColor"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
+        Tap to explore
+      </span>
+    </button>
+  );
+}
+
 function MapStickyPreviewDismiss({ active, onDismiss }: { active: boolean; onDismiss: () => void }) {
   const map = useMap();
   useEffect(() => {
@@ -688,6 +738,28 @@ export default function ChooseMapLeafletMap({
   /** Forces a fresh MapContainer instance after error recovery / full remount. */
   const [mapContainerKey] = useState(newMapContainerKey);
 
+  /**
+   * Mobile-only tap-to-activate gate state. Once the user taps to explore, we don't
+   * re-arm during the session: re-prompting on every tab change would feel hostile.
+   * `compactViewport` follows the same breakpoint used in the parent (≤980px).
+   */
+  const [compactViewport, setCompactViewport] = useState<boolean>(() => {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia("(max-width: 980px)").matches;
+  });
+  const [touchActivated, setTouchActivated] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(max-width: 980px)");
+    const sync = () => setCompactViewport(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  const showTouchGate = compactViewport && !touchActivated;
+
   const [pinPreview, setPinPreview] = useState<{
     slug: string;
     latlng: L.LatLng;
@@ -842,6 +914,9 @@ export default function ChooseMapLeafletMap({
               onCloseSticky={closeStickyPreview}
               onLeaveHover={onLeaveHoverCard}
             />
+          ) : null}
+          {showTouchGate ? (
+            <MobileMapTouchGate onActivate={() => setTouchActivated(true)} />
           ) : null}
         </MapContainer>
       ) : (

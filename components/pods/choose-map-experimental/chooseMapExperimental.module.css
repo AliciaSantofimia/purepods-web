@@ -38,9 +38,9 @@
 @media (max-width: 980px) {
   .chooseMapLeafTune {
     min-height: 0 !important;
-    height: clamp(168px, 30vh, 240px);
-    max-height: 240px;
-    border-radius: 18px;
+    height: clamp(168px, 26vh, 208px);
+    max-height: 208px;
+    border-radius: 16px;
   }
 
   .chooseMapLeafTune :global(.leaflet-container),
@@ -49,26 +49,26 @@
   }
 
   .chooseMapPodsLayout {
-    gap: 12px;
+    gap: 18px;
   }
 
   .chooseMapPodsCards {
-    margin-top: 2px;
+    margin-top: 4px;
     min-height: 0;
   }
 }
 
 @media (min-width: 768px) and (max-width: 980px) {
   .chooseMapLeafTune {
-    height: clamp(200px, 34vh, 288px);
-    max-height: 288px;
+    height: clamp(208px, 30vh, 264px);
+    max-height: 264px;
   }
 }
 
 @media (max-width: 420px) {
   .chooseMapLeafTune {
-    height: clamp(156px, 26vh, 208px);
-    max-height: 208px;
+    height: clamp(148px, 23vh, 184px);
+    max-height: 184px;
   }
 }
 
@@ -594,4 +594,159 @@
   color: rgba(46, 42, 36, 0.95);
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+/* ---------- Overlay táctil “Tap to explore” (solo móvil) ---------- */
+/*
+ * Cubre el mapa hasta el primer tap. Permite scroll vertical de la página gracias a
+ * `touch-action: pan-y` (los swipes verticales NO disparan el click → el usuario puede
+ * desplazar la página sin quedarse atrapado en el mapa). Tras el tap, el componente
+ * desmonta y Leaflet reactiva drag/touchZoom/doubleClickZoom.
+ */
+.chMapTouchGate {
+  position: absolute;
+  inset: 0;
+  z-index: 720;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 0 14px;
+  margin: 0;
+  border: none;
+  border-radius: inherit;
+  cursor: pointer;
+  background: linear-gradient(
+    to bottom,
+    rgba(252, 250, 244, 0) 0%,
+    rgba(252, 250, 244, 0.18) 55%,
+    rgba(252, 250, 244, 0.46) 100%
+  );
+  font-family: "Noto Serif Display", Georgia, serif;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+  appearance: none;
+}
+
+.chMapTouchGate:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--brand-green, #5c5f3e) 55%, transparent);
+  outline-offset: -3px;
+}
+
+.chMapTouchGatePill {
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px 9px 12px;
+  border-radius: 999px;
+  background: rgba(252, 250, 244, 0.96);
+  border: 1px solid rgba(74, 63, 54, 0.18);
+  box-shadow: 0 6px 18px rgba(46, 42, 36, 0.1);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(74, 63, 54, 0.82);
+  animation: chMapTouchGatePulse 2.4s ease-in-out infinite;
+}
+
+.chMapTouchGateIcon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  color: rgba(74, 63, 54, 0.6);
+}
+
+.chMapTouchGateIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes chMapTouchGatePulse {
+  0%, 100% {
+    box-shadow: 0 6px 18px rgba(46, 42, 36, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 8px 22px rgba(46, 42, 36, 0.16);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chMapTouchGatePill {
+    animation: none;
+  }
+}
+
+/* ---------- Móvil: pins más pequeños, compass/caption discretos ---------- */
+/*
+ * Los pins escalan visualmente desde el ápice (50% 100%): el tip del pin queda en la
+ * coord real, y la caja de hit-test (30×38) se mantiene → buena área táctil.
+ */
+@media (max-width: 980px) {
+  .chooseMapLeafTune .chMapPinWrap {
+    transform: scale(0.74);
+    transform-origin: 50% 100%;
+  }
+
+  .chooseMapLeafTune .chMapPinWrap[data-active="true"] {
+    transform: scale(0.8);
+  }
+
+  .infographicCompass {
+    width: 38px;
+    height: 38px;
+    top: 8px;
+    right: 8px;
+    opacity: 0.42;
+  }
+
+  .infographicCaption {
+    padding: 3px 9px !important;
+    font-size: 9px !important;
+    letter-spacing: 0.22em !important;
+  }
+
+  /* City labels: un punto más discretas en mapa pequeño */
+  .chMapGeoLabel__text {
+    font-size: 8px;
+    letter-spacing: 0.18em;
+  }
+}
+
+@media (max-width: 420px) {
+  .chooseMapLeafTune .chMapPinWrap {
+    transform: scale(0.66);
+  }
+
+  .chooseMapLeafTune .chMapPinWrap[data-active="true"] {
+    transform: scale(0.72);
+  }
+
+  .infographicCompass {
+    width: 32px;
+    height: 32px;
+    top: 6px;
+    right: 6px;
+  }
+}
+
+/* Zoom control: más compacto y mejor tap target en móvil */
+@media (max-width: 980px) {
+  .chooseMapLeafTune :global(.leaflet-control-zoom) {
+    margin: 8px !important;
+  }
+
+  .chooseMapLeafTune :global(.leaflet-control-zoom a) {
+    width: 30px !important;
+    height: 30px !important;
+    line-height: 28px !important;
+    font-size: 15px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chooseMapLeafTune .chMapPinWrap {
+    transition: none;
+  }
 }
