@@ -35,8 +35,10 @@ export const ruruExperimentalHero = {
   imageAlt:
     "Ruru PurePod glass cabin in the Coromandel landscape, New Zealand",
   title: "Ruru",
-  subtitle:
-    "In the Coromandel — where forest meets the coast — PurePod Ruru is a private glass cabin for two in the hills amid native bush. A short walk through forest from the road leads to a hidden site with no neighbours; sturdy footwear is recommended. Slow down, breathe and let the landscape take over.",
+  subtitleParagraphs: [
+    "A private glass cabin hidden among the hills near Mount Karangahake, surrounded by native bush, farmland and wide valley views.",
+    "Just beyond the Coromandel, Ruru is a place for quiet mornings, changing light and complete stillness far from the pace of the city.",
+  ],
   imagePosition: "70% 50%" as const,
   imagePositionMd: "60% 55%" as const,
   imagePositionXl: "55% 60%" as const,
@@ -46,11 +48,12 @@ export const ruruPodNarrative = {
   title: "The Pod",
   hint: "The essentials, no fluff",
   paragraphs: [
-    "PurePod Ruru sits in the Coromandel — a region of green hills, native bush and a coastline of bays and beaches. The pod is designed for two: a simple, comfortable base from which to experience the stillness of the forest, the changing light and the sense of being away from the everyday. Here the land feels close — birdsong, wind in the trees and the quiet of the hills.",
-    "Arrival is part of the experience. A short walk from the road brings you into your own private world — no neighbours, no distractions. Inside, the glass cabin brings the outside in: you sleep, eat and rest with the landscape always in view. Warm, minimal and built for slowing down.",
+    "Set among the hills near Mount Karangahake, Ruru looks out across a landscape of native bush, farmland and wide valley views.",
+    "Designed for two, the pod offers a slower rhythm — mornings wrapped in mist, changing mountain light and the feeling of being completely removed from the pace of everyday life.",
+    "The final approach follows rural farmland before a short walk through open landscape towards the pod. Inside, floor-to-ceiling glass keeps the surrounding hills, sky and shifting weather constantly in view.",
   ],
   galleryCaption:
-    "An immersion in the Coromandel — bush, hills and sky in every quiet moment. A calm glass space for two: to watch the light change, the stars appear, and the land fall still.",
+    "Ruru is shaped by silence, distance and landscape — a private glass retreat where the hills, birdsong and changing seasons become part of the stay itself.",
   gallery: [
     {
       src: podSunset,
@@ -185,8 +188,11 @@ export const ruruTravelBlock = {
           alt: "Hillside access road to Ruru PurePod, Coromandel, New Zealand",
         },
       ],
-      body:
-        "Reaching PurePod Ruru is a drive through the Coromandel, followed by a short walk through forest to the pod. The final stretch is what makes the pod feel truly hidden and private. Suitable footwear is recommended for the track. The journey is part of the experience: leaving the road behind and arriving slowly in the bush.",
+      body: `Reaching Ruru feels like travelling deeper into the landscape.
+
+The final approach follows quiet rural roads through farmland and rolling hills before a roughly ten-minute walk towards the pod. Along the way, wide valley views, birdsong and the presence of Mount Karangahake make the journey feel slow, remote and deeply connected to nature.
+
+The terrain is natural and can become muddy after rain, so suitable walking footwear and light luggage are recommended.`,
     },
     {
       key: "climate",
@@ -276,12 +282,12 @@ export const ruruCta = {
 
 /** Single source for `EditorialPodLocationView` on `/location/ruru`. */
 export const ruruEditorialConfig: EditorialPodLocationConfig = {
-  heroKicker: "PurePod · Coromandel",
+  heroKicker: "PUREPOD · COROMANDEL",
   hero: {
     imageSrc: ruruExperimentalHero.imageSrc,
     imageAlt: ruruExperimentalHero.imageAlt,
     title: ruruExperimentalHero.title,
-    subtitleParagraphs: [ruruExperimentalHero.subtitle],
+    subtitleParagraphs: ruruExperimentalHero.subtitleParagraphs,
     imagePosition: ruruExperimentalHero.imagePosition,
     imagePositionMd: ruruExperimentalHero.imagePositionMd,
     imagePositionXl: ruruExperimentalHero.imagePositionXl,

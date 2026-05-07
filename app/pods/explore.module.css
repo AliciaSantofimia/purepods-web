@@ -365,10 +365,18 @@
     z-index: 58;
   }
 
+  /*
+   * Edge-to-edge horizontal scroll: el ancho del .wrap (max - 40px) recorta el 3er tab.
+   * Sangramos el scroller 20px más allá del wrap a cada lado y compensamos con padding,
+   * para que el 1er tab siga alineado con el contenido y el 3er tab pueda asomar / hacer
+   * scroll completo hasta el borde del viewport (cue claro de scroll horizontal).
+   */
   .pagePodsChoose .tabs {
     gap: 8px;
-    padding: 12px 0 14px;
+    padding: 12px 20px 14px;
+    margin-inline: -20px;
     scroll-snap-type: x mandatory;
+    scroll-padding-inline: 20px;
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
@@ -381,9 +389,9 @@
   .pagePodsChoose .tab {
     scroll-snap-align: start;
     min-height: 44px;
-    padding: 12px 17px;
+    padding: 11px 15px;
     font-size: 12px;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.06em;
   }
 
   .pagePodsChoose .hero {

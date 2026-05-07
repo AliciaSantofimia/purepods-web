@@ -25,8 +25,11 @@ const travelBreakfast =
 export const REWAREWA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=15";
 
-const HERO_SUBTITLE =
-  "On the Muriwai Coast — where black sand beaches meet the Waitākere Ranges — PurePod Rewarewa is a private glass cabin for two near Auckland. A short approach from the road leads to a fully private site with no neighbours; suitable footwear helps. Slow down, breathe and let the coast take over.";
+const HERO_PARAGRAPH_1 =
+  "A private glass cabin on the Muriwai Coast, surrounded by native bush, open farmland and wide western skies.";
+
+const HERO_PARAGRAPH_2 =
+  "Just outside Auckland, Rewarewa is a quiet place to slow down — black sand beaches, changing light and complete stillness overlooking the landscape.";
 
 export const REWAREWA_FAQ_ITEMS: LocationFaqItem[] = [
   {
@@ -60,11 +63,12 @@ const rewarewaPodNarrative = {
   title: "The Pod",
   hint: "The essentials, no fluff",
   paragraphs: [
-    "PurePod Rewarewa sits on the Muriwai Coast — the wild west coast near Auckland, where black sand, surf and the Waitākere Ranges define the landscape. The pod is designed for two: a simple, comfortable base from which to experience the sound of the ocean, the changing light and the sense of being away from the city. Here the coast feels close — wind, birds and the quiet of the bush.",
-    "Arrival is part of the experience. A short approach from the road brings you into your own private world — no neighbours, no distractions. Inside, the glass cabin brings the outside in: you sleep, eat and rest with the landscape always in view. Warm, minimal and built for slowing down.",
+    "Set on the Muriwai Coast near Auckland, Rewarewa sits between open farmland, native bush and the wild west coast.",
+    "Designed for two, the pod is a quiet place to slow down — with black sand beaches nearby, wide evening skies and the feeling of being far removed from the city.",
+    "The final approach crosses open paddocks and low rolling hills before reaching the pod hidden near the bushline. Inside, floor-to-ceiling glass keeps the landscape constantly in view as the light shifts across the coast throughout the day.",
   ],
   galleryCaption:
-    "PurePod Rewarewa is not just a place to sleep but an immersion in the Muriwai landscape. The coast, the ranges and the wide sky are part of every moment. Inside, everything is designed for two: a warm, comfortable space from which to watch the changing light, the stars and the stillness of the land. A place to disconnect, observe and simply be.",
+    "Rewarewa is less about escape and more about perspective — a calm, private space shaped by western light, open land and the stillness of the Muriwai landscape.",
   gallery: [
     {
       src: podStairs,
@@ -102,8 +106,11 @@ const rewarewaTravelBlock = {
           alt: "Rewarewa PurePod glass cabin on the Muriwai Coast, New Zealand",
         },
       ],
-      body:
-        "Reaching PurePod Rewarewa is a drive from Auckland through the Waitākere Ranges or along the coast — about 45 minutes to an hour. The final approach is via quiet roads and a short walk to the pod. Suitable footwear is recommended. The journey is part of the experience: leaving the city behind and arriving slowly at the edge of the coast.",
+      body: `Reaching Rewarewa is part of leaving the city behind.
+
+The final approach follows quiet rural roads and open farmland before a short five-minute walk across grassy paddocks towards the pod. The landscape feels wide, exposed and deeply calm — with coastal wind, birdsong and big western skies all around.
+
+The terrain is natural and uneven in places, so suitable walking footwear and light luggage are recommended.`,
     },
     {
       key: "climate",
@@ -129,8 +136,11 @@ const rewarewaTravelBlock = {
           alt: "Breakfast basket at Rewarewa PurePod, Muriwai Coast, New Zealand",
         },
       ],
-      body:
-        "Your PurePod is fully equipped for a relaxed, self-contained stay. Inside you will find a selection of meals ready to heat, breakfast provisions, snacks, tea and coffee — wherever possible from local producers. Meals are designed to be simple to prepare, so you spend less time in the kitchen and more time enjoying the views and the sound of the coast. As there are no shops or restaurants nearby, everything is provided so your stay is comfortable and worry-free.",
+      body: `Rewarewa is designed for slow evenings and simple, relaxed meals.
+
+Inside the pod you will find breakfast provisions, snacks, tea and coffee, along with a selection of locally sourced dishes ready to heat and enjoy. Everything is designed to keep cooking simple, so more time can be spent watching the changing light, listening to the wind through the bush and settling into the quiet rhythm of the coast.
+
+As the pod sits far from shops and restaurants, the experience is intentionally self-contained — private, calm and immersed in the landscape.`,
     },
   ],
 };
@@ -247,13 +257,13 @@ const rewarewaReviews = {
 
 /** Single source for `EditorialPodLocationView` on `/location/rewarewa` and FAQ JSON-LD. */
 export const rewarewaEditorialConfig: EditorialPodLocationConfig = {
-  heroKicker: "PurePod · Muriwai Coast",
+  heroKicker: "PUREPOD · MURIWAI COAST",
   hero: {
     imageSrc: heroImage,
     imageAlt:
       "Rewarewa PurePod glass cabin in the Muriwai Coast landscape, New Zealand",
     title: "Rewarewa",
-    subtitleParagraphs: [HERO_SUBTITLE],
+    subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
     imagePosition: "70% 50%",
     imagePositionMd: "60% 55%",
     imagePositionXl: "55% 60%",

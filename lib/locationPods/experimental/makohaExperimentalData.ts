@@ -23,12 +23,11 @@ const travelDinner = "/assets/img/makoha/makoha-dinner-outdoor-dining-kerikeri.j
 export const MAKOHA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=14";
 
-/** Verbatim/factual lead + atmospheric line — preserved from the previous location page. */
-const HERO_GEO =
-  "PurePod Mākōha is a private glass cabin for two near Kerikeri in the Bay of Islands, Northland, New Zealand. Guests complete arrival with a 5–10 minute walk through native forest; suitable footwear is recommended. The site is fully private with no neighbours, set in subtropical forest with the coast and islands within reach.";
+const HERO_PARAGRAPH_1 =
+  "A private glass cabin for two near Kerikeri, surrounded by subtropical forest and close to the coast.";
 
-const HERO_EXISTING =
-  "A private, quiet retreat for two, where you can slow down and discover the wilder side of the north — no big towns, no crowds, just nature. Native forest, coastal walks and some of the clearest night skies you will find.";
+const HERO_PARAGRAPH_2 =
+  "Arrive through a short forest walk and settle into complete quiet — native bush, coastal air and clear night skies far from the crowds.";
 
 export const MAKOHA_FAQ_ITEMS: LocationFaqItem[] = [
   {
@@ -60,13 +59,14 @@ export const MAKOHA_FAQ_ITEMS: LocationFaqItem[] = [
 
 const makohaPodNarrative = {
   title: "The Pod",
-  hint: "The essentials, no fluff",
+  hint: "The essentials, nothing extra",
   paragraphs: [
-    "In the far north of New Zealand, where subtropical forest meets the sea, PurePod Mākōha offers a different kind of escape — quiet, private and deeply connected to nature. Designed for two, it is a place to stop, disconnect and experience the Bay of Islands at its most pure: wild beaches, coastal walks, glowworms at night and vast, clear skies.",
-    "Inside, the minimalist design and warm materials let nature take centre stage. The bed faces the landscape. Your arrival ends with a gentle 5–10 minute walk through native forest, where the sound of roads and towns fades away. At the end of the track you find a fully private pod — no neighbours, no distractions, only birdsong, wind in the trees and the distant sound of the sea.",
+    "Hidden in subtropical forest near Kerikeri, PurePod Mākōha is a private glass cabin designed for two.",
+    "Here, the Bay of Islands feels close but the world feels far away — with native bush, coastal walks, glowworms at night and wide, clear skies.",
+    "A short 5–10 minute forest walk leads you to the pod, tucked quietly into the landscape. Once inside, warm materials and floor-to-ceiling glass keep the focus on the forest, the changing light and the calm of Northland.",
   ],
   galleryCaption:
-    "PurePod Mākōha is not a typical accommodation. It is an immersion in the natural world of Northland. Inside, everything is designed for two: a warm, comfortable retreat from which to watch the forest, the sky and the changing light — all from the intimacy of your hideaway in the heart of nature.",
+    "Mākōha is less about accommodation and more about slowing down — a quiet, comfortable retreat where everything is designed to bring you closer to nature.",
   gallery: [
     {
       src: podNight,
@@ -104,8 +104,11 @@ const makohaTravelBlock = {
           alt: "Bridge on native forest walking track near Mākōha PurePod, Kerikeri, New Zealand",
         },
       ],
-      body:
-        "The final part of your journey follows quiet rural roads and ends with a 5–10 minute walk through native forest. This last stretch is what makes the pod feel truly hidden and private. Suitable footwear is recommended for the track.",
+      body: `The final part of the journey slows everything down.
+
+After leaving the car behind, a short 5–10 minute forest walk leads you quietly towards the pod — through native bush, birdsong and the feeling of being completely removed from the outside world.
+
+The track includes uneven natural terrain, so suitable walking footwear and light luggage are recommended.`,
     },
     {
       key: "climate",
@@ -131,8 +134,9 @@ const makohaTravelBlock = {
           alt: "Outdoor dinner at Mākōha PurePod, Kerikeri, New Zealand",
         },
       ],
-      body:
-        "Your PurePod is fully equipped for a relaxed, self-contained stay. Inside you will find a selection of gourmet meals ready to heat, breakfast provisions, snacks, tea and coffee — wherever possible from local Northland producers. Meals are designed to be simple to prepare, so you spend less time cooking and more time enjoying the views. As there are no shops or restaurants nearby, everything is provided so your stay is comfortable, easy and worry-free.",
+      body: `Meals at Mākōha are designed to feel simple and relaxed.
+
+Inside the pod you will find locally sourced provisions, breakfast essentials and easy-to-prepare dishes — so evenings can be spent slowly, with the forest outside and no need to go anywhere else.`,
     },
   ],
 };
@@ -246,8 +250,8 @@ export const makohaEditorialConfig: EditorialPodLocationConfig = {
     imageSrc: heroImage,
     imageAlt:
       "Mākōha PurePod glass cabin in native forest near Kerikeri, Bay of Islands, New Zealand",
-    title: "Mākōha",
-    subtitleParagraphs: [HERO_GEO, HERO_EXISTING],
+    title: "Mākoha",
+    subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
     imagePosition: "70% 82%",
     imagePositionMd: "60% 86%",
     imagePositionXl: "55% 90%",
