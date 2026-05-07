@@ -29,7 +29,7 @@ export const journeyExperienceSlides: AdventureExperienceSlide[] = [
   },
   {
     image: `${J}redwoods-treewalk-rotorua.jpg`,
-    alt: "Redwoods Treewalk in Whakarewarewa Forest Rotorua, New Zealand",
+    alt: "Redwoods Treewalk canopy bridge surrounded by native ferns in Whakarewarewa Forest, Rotorua, New Zealand",
     title: "Redwoods Treewalk / Whakarewarewa Forest",
     description:
       "Walk among towering redwoods, forest trails and suspended bridges in one of Rotorua’s most atmospheric natural settings.",
@@ -53,7 +53,7 @@ export const journeyExperienceSlides: AdventureExperienceSlide[] = [
   },
   {
     image: `${J}karangahake-gorge-coromandel.jpg`,
-    alt: "Karangahake Gorge river, bridges and native bush in the Coromandel, New Zealand",
+    alt: "Suspension bridge over the river in Karangahake Gorge with rocky cliffs and native bush in New Zealand",
     title: "Karangahake Gorge (hiking)",
     description:
       "Historic trails, river paths, bridges and native bush make this gorge one of the North Island’s most memorable walking areas.",
@@ -64,8 +64,8 @@ export const journeyExperienceSlides: AdventureExperienceSlide[] = [
     url: "https://thecoromandel.nz/destinations/karangahake-gorge/",
   },
   {
-    image: `${J}kaikoura-coast-track-south-island-new-zealand.jpg`,
-    alt: "Kaikōura coastal walking landscape with ocean and mountain views in New Zealand",
+    image: `${J}kaikoura-peninsula-walkway-coastal-bay-new-zealand.jpg`,
+    alt: "Kaikoura Peninsula Walkway with coastal bay, turquoise ocean and grassy clifftop views in New Zealand",
     title: "Kaikōura Peninsula Walkway",
     description:
       "A coastal walkway shaped by sea cliffs, wildlife, mountain views and the distinctive meeting point of land and ocean.",
@@ -79,8 +79,8 @@ export const journeyExperienceSlides: AdventureExperienceSlide[] = [
     url: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/kaikoura-area/things-to-do/kaikoura-peninsula-walkway/",
   },
   {
-    image: `${J}Lake Dunstan Trail, Central Otago.jpg`,
-    alt: "Lake Dunstan Trail in Central Otago with turquoise water, cliffs and cycling path, New Zealand",
+    image: `${J}lake-dunstan-trail-central-otago.jpg`,
+    alt: "Cyclists riding the Lake Dunstan Trail boardwalk beside turquoise lake waters and rocky cliffs in Central Otago, New Zealand",
     title: "Lake Dunstan Trail - Bannockburn Bridge Car Park",
     description:
       "A scenic trail section above Lake Dunstan, with boardwalks, cliffs and wide Central Otago views.",
@@ -94,8 +94,8 @@ export const journeyExperienceSlides: AdventureExperienceSlide[] = [
     url: "https://www.centralotagonz.com/tracks-and-trails/lake-dunstan-trail/map-and-sections/",
   },
   {
-    image: `${J}rakiura-national-park-beach-stewart-island-new-zealand.jpg`,
-    alt: "Rakiura National Park beach and coastal track on Stewart Island, New Zealand",
+    image: `${J}rakiura-track-stewart-island-coastal-trail-new-zealand.jpg`,
+    alt: "Rakiura Track coastal trail with native bush, rocky shoreline and turquoise ocean on Stewart Island, New Zealand",
     title: "Rakiura Track",
     description:
       "A Great Walk through coastal forest, beaches and sheltered bays on Stewart Island / Rakiura.",
