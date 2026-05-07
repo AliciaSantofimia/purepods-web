@@ -246,6 +246,7 @@ export function AdventureExperienceCarousel({ slides }: Props) {
                 fill
                 sizes="(max-width: 720px) 100vw, min(1180px, 92vw)"
                 className="aw-xp-carousel__img"
+                objectPosition={slide.imagePosition}
                 priority={i === 0}
               />
             </div>

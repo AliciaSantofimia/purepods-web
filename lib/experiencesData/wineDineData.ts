@@ -30,6 +30,7 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
   {
     image: "/assets/img/experiences/wine-dine/black-estate-winery-dining-wine-pairing-waipara-valley-new-zealand.jpg",
     alt: "Winery dining and wine pairing at Black Estate in the Waipara Valley, North Canterbury, New Zealand",
+    imagePosition: "center 65%",
     title: "Black Estate (Waipara Valley)",
     description:
       "Organic wines, seasonal food and vineyard views come together in one of Waipara Valley’s most distinctive wine-country settings.",

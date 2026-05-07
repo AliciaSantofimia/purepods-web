@@ -19,6 +19,7 @@ export type AdventureExperienceSlidePod = {
 export type AdventureExperienceSlide = {
   image: string;
   alt: string;
+  imagePosition?: string;
   title: string;
   description: string;
   pods: AdventureExperienceSlidePod[];
