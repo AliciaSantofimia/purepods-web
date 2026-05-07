@@ -13,8 +13,8 @@ export const wineDineContextBody =
 
 export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
   {
-    image: "/assets/img/experiences/experiences/new-zealand-wine-dine-local-food-experience.jpg",
-    alt: "Local food and wine spread in a scenic New Zealand landscape, slow dining and regional flavours",
+    image: "/assets/img/experiences/wine-dine/te-kano-estate-central-otago-vineyard-architecture-lake-view-new-zealand.jpg",
+    alt: "Te Kano Estate vineyard architecture with lake and mountain views in Central Otago, New Zealand",
     title: "Te Kano Estate (Central Otago)",
     description:
       "A Central Otago wine experience shaped by distinctive landscapes, elegant cellar-door hospitality and carefully made wines.",
@@ -139,8 +139,8 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     url: "https://www.thehuntinglodge.com/",
   },
   {
-    image: "/assets/img/experiences/wine-dine/lakeland-queen-rotorua-lake-dinner-cruise-new-zealand.jpg",
-    alt: "Lakeland Queen dinner cruise on Lake Rotorua with geothermal shoreline scenery, New Zealand",
+    image: "/assets/img/experiences/wine-dine/lakeland-queen-cruise-lake-rotorua-mountain-view.jpg",
+    alt: "Lakeland Queen cruise on Lake Rotorua with mountain views, New Zealand",
     title: "Lakeland Queen Cruise (Lake Rotorua)",
     description:
       "A lake dining cruise that pairs Rotorua scenery, geothermal shoreline and an easy on-water dining rhythm.",
