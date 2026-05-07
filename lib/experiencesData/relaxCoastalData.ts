@@ -27,8 +27,8 @@ export const relaxExperienceSlides: AdventureExperienceSlide[] = [
     url: "https://www.polynesianspa.co.nz/",
   },
   {
-    image: `${RC}wai-ariki-hot-springs-spa-rotorua-geothermal-luxury-new-zealand.jpg`,
-    alt: "Wai Ariki Hot Springs and Spa in Rotorua with geothermal bathing and luxury wellness setting, New Zealand",
+    image: `${RC}wai-ariki-hot-springs-spa-rotorua-thermal-pools.jpg`,
+    alt: "Luxury thermal pool experience at Wai Ariki Hot Springs and Spa in Rotorua, New Zealand",
     title: "Wai Ariki Hot Springs & Spa",
     description:
       "A restorative Rotorua wellness experience shaped by geothermal waters, architecture and Māori cultural inspiration.",
@@ -39,8 +39,8 @@ export const relaxExperienceSlides: AdventureExperienceSlide[] = [
     url: "https://www.wai-ariki.co.nz/",
   },
   {
-    image: `${RC}secret-spot-purepods-forest-hot-tub-ferns-rotorua.jpg`,
-    alt: "Private cedar hot tub surrounded by native ferns in a tranquil forest setting in Rotorua, New Zealand",
+    image: `${RC}secret-spot-hot-tubs-rotorua-forest-spa.jpg`,
+    alt: "Private cedar hot tub surrounded by native forest at Secret Spot Hot Tubs Rotorua",
     title: "Secret Spot Hot Tubs Rotorua",
     description:
       "Private cedar hot tubs tucked into forest, with ferns close by and a pace that naturally slows everything down.",
@@ -51,8 +51,8 @@ export const relaxExperienceSlides: AdventureExperienceSlide[] = [
     url: "https://secretspot.co.nz/",
   },
   {
-    image: `${RC}rotorua-geothermal-mud-bath-couple-hells-gate-new-zealand.jpg`,
-    alt: "Outdoor geothermal mud bath at Hell's Gate, Rotorua, New Zealand, with steam and native planting",
+    image: `${RC}hells-gate-geothermal-reserve-mud-spa-rotorua.jpg`,
+    alt: "Couple enjoying a geothermal mud spa at Hells Gate Rotorua during sunset",
     title: "Hell's Gate Geothermal Reserve & Mud Spa",
     description:
       "Mineral mud, sulphur waters and an active geothermal landscape make this one of Rotorua’s most elemental spa experiences.",
@@ -75,8 +75,8 @@ export const relaxExperienceSlides: AdventureExperienceSlide[] = [
     url: "https://www.hamurana.co.nz/",
   },
   {
-    image: `${RC}cathedral-cove-beach-new-zealand-rock-arch-sea-stack.jpg`,
-    alt: "Coastal beach and calm sea in New Zealand, a relaxed shoreline experience near the Coromandel and Bay of Plenty",
+    image: `${RC}waihi-beach-new-zealand-aerial-coastline.jpg`,
+    alt: "Aerial view of Waihi Beach in New Zealand with golden sand, turquoise ocean and coastal town",
     title: "Waihi Beach",
     description:
       "A relaxed beach stop with long sand, open water and a classic coastal rhythm close to the Coromandel and Bay of Plenty.",
