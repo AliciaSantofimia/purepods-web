@@ -26,8 +26,11 @@ const travelBreakfast =
 export const MANAKAU_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=2";
 
-const HERO_SUBTITLE =
-  "Where the mountains meet the ocean. PurePod Manakau is a private glass cabin for two in Kaikōura — dramatic peaks, Pacific coast and wildlife all around. A short walk from the road leads to a fully private site with no neighbours; suitable footwear helps. Slow down, breathe and let the landscape take over.";
+const HERO_PARAGRAPH_1 =
+  "A private glass cabin set within an isolated sheep station inland from Kaikōura, surrounded by open hills and wide views towards the Seaward Kaikōura Range.";
+
+const HERO_PARAGRAPH_2 =
+  "Manakau is shaped by mountain light, vast skies and the quiet rhythm of the countryside — a remote retreat where farmland, bush and coastline meet.";
 
 export const MANAKAU_FAQ_ITEMS: LocationFaqItem[] = [
   {
@@ -61,11 +64,12 @@ const manakauPodNarrative = {
   title: "The Pod",
   hint: "The essentials, no fluff",
   paragraphs: [
-    "PurePod Manakau is a secluded retreat in one of New Zealand’s most striking landscapes. The Kaikōura region — with the Seaward Kaikōura range rising behind and the Pacific in front — offers a sense of space and stillness that is rare. The pod is designed for two: a simple, comfortable base from which to watch the light change on the mountains, the stars at night and the quiet life of the coast.",
-    "Arrival is part of the experience. A short walk from the road brings you into your own private world — no neighbours, no distractions. Inside, the glass cabin brings the outside in: you sleep, eat and rest with the landscape always in view. Warm, minimal and built for slowing down.",
+    "Set within an isolated sheep station inland from Kaikōura, Manakau looks out across rolling farmland towards the Seaward Kaikōura Range, including Mt Manakau.",
+    "Designed for two, the pod sits quietly within a landscape of open hills, tussock grass and vast southern skies — a place shaped by distance, weather and the rhythm of the land.",
+    "The final walk crosses paddocks and kānuka and mānuka bush before opening onto the hills surrounding the pod. Inside, floor-to-ceiling glass keeps the mountains, farmland and changing light constantly in view.",
   ],
   galleryCaption:
-    "PurePod Manakau is not just a place to sleep but an immersion in the Kaikōura landscape. The mountains, the ocean and the wide sky are part of every moment. Inside, everything is designed for two: a warm, comfortable space from which to watch the changing light, the stars and the stillness of the land. A place to disconnect, observe and simply be.",
+    "Manakau is defined by wide landscapes, mountain views and deep rural stillness — a private glass retreat immersed in the Kaikōura countryside.",
   gallery: [
     {
       src: podHills,
@@ -103,8 +107,11 @@ const manakauTravelBlock = {
           alt: "River valley landscape in the Kaikōura region, New Zealand",
         },
       ],
-      body:
-        "Reaching PurePod Manakau is part of the experience. The drive from Christchurch to the Kaikōura region is one of the South Island’s most scenic — coastal road, mountain views and the sense of leaving the everyday behind. The final approach to the pod is via quiet roads and a short walk. Suitable footwear is recommended.",
+      body: `Reaching Manakau feels like travelling deeper into the Kaikōura backcountry.
+
+The final drive follows unpaved farm roads through an isolated sheep station, crossing several shallow fords with wide views towards the Seaward Kaikōura Range. From the carpark, a 10–15 minute walk continues through paddocks, kānuka and mānuka bush before opening onto the hills surrounding the pod.
+
+The track is natural and uneven in places, so suitable walking footwear and light luggage are recommended.`,
     },
     {
       key: "climate",
@@ -220,13 +227,13 @@ const manakauReviews = {
 
 /** Single source for `EditorialPodLocationView` on `/location/manakau` and FAQ JSON-LD. */
 export const manakauEditorialConfig: EditorialPodLocationConfig = {
-  heroKicker: "PurePod · Kaikōura",
+  heroKicker: "PUREPOD · KAIKŌURA",
   hero: {
     imageSrc: heroImage,
     imageAlt:
       "Manakau PurePod glass cabin with view toward the Seaward Kaikōura mountains, New Zealand",
     title: "Manakau",
-    subtitleParagraphs: [HERO_SUBTITLE],
+    subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
     imagePosition: "50% 78%",
     imagePositionMd: "50% 76%",
     imagePositionXl: "50% 74%",

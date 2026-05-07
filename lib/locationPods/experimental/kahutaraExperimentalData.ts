@@ -25,8 +25,11 @@ const travelWine =
 export const KAHUTARA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=1";
 
-const HERO_SUBTITLE =
-  "PurePod Kahutara is a private glass cabin for two on the wild Kaikōura coast, Canterbury, New Zealand. Guests reach the pod on foot after a 10–15 minute walk from the parking area. The retreat sits among open hills and native landscape with the ocean and mountains near, with no neighbours or shared spaces.";
+const HERO_PARAGRAPH_1 =
+  "A private glass cabin set high above the Kahutara River within an isolated sheep farm inland from Kaikōura.";
+
+const HERO_PARAGRAPH_2 =
+  "Surrounded by open hills, native bush and wide views towards the Seaward Kaikōura Range, Kahutara is a remote retreat shaped by mountain light, vast skies and deep rural stillness.";
 
 export const KAHUTARA_FAQ_ITEMS: LocationFaqItem[] = [
   {
@@ -60,12 +63,12 @@ const kahutaraPodNarrative = {
   title: "The Pod",
   hint: "The essentials, no fluff",
   paragraphs: [
-    "Open hills, endless skies and the Seaward Kaikōura Range rising behind you. A remote retreat where everything slows down and nature sets the pace.",
-    "On the wild Kaikōura coast, where open hills and endless skies meet the ocean, PurePod Kahutara offers a rare escape — quiet, private and deeply connected to the landscape.",
-    "Arrival is part of the experience. A short walk takes you away from the everyday world and into complete stillness. At the end of the track, a fully private retreat awaits — no neighbours, no distractions, just you and the natural world.",
+    "Set high above the Kahutara River within an isolated sheep farm inland from Kaikōura, Kahutara is surrounded by open hills, native bush and wide views towards the Seaward Kaikōura Range.",
+    "Designed for two, the pod sits quietly within a remote rural landscape shaped by mountain weather, birdsong and vast southern skies.",
+    "The final walk follows a bush track through paddocks and kānuka forest before opening onto the hills surrounding the pod. Inside, floor-to-ceiling glass keeps the mountains, changing light and surrounding landscape constantly in view.",
   ],
   galleryCaption:
-    "PurePod Kahutara is not a typical place to stay. It is a full immersion in the natural landscape of the Kaikōura coast. Surrounded by open hills and native vegetation, the pod is completely secluded — no neighbours, no shared spaces, just wind across the hills, silence, and a deep sense of being in nature. Inside, everything is designed for two: a warm and comfortable retreat from which to watch the wide sky, shifting light and open landscape, all from the privacy of your own hideaway in nature.",
+    "Kahutara is defined by mountain views, open countryside and deep rural stillness — a private glass retreat immersed in the Kaikōura landscape.",
   gallery: [
     {
       src: podRiverValley,
@@ -104,7 +107,7 @@ const kahutaraTravelBlock = {
         },
       ],
       body:
-        "The final part of the journey is completed on foot. A short 10–15 minute walk leads you from the parking area to the pod, creating a sense of privacy and gentle disconnection from the outside world.",
+        "Reaching Kahutara feels remote in the best possible way. The final approach follows quiet rural roads through an isolated sheep station with wide views towards the Seaward Kaikōura Range. From the carpark, a 10–15 minute walk continues through paddocks and native bush before opening onto the hills surrounding the pod. The track is natural and uneven in places, so suitable walking footwear and light luggage are recommended.",
     },
     {
       key: "climate",
@@ -232,13 +235,13 @@ const kahutaraReviews = {
 
 /** Single source for `EditorialPodLocationView` on `/location/kahutara` and FAQ JSON-LD. */
 export const kahutaraEditorialConfig: EditorialPodLocationConfig = {
-  heroKicker: "PurePod · Kaikōura",
+  heroKicker: "PUREPOD · KAIKŌURA",
   hero: {
     imageSrc: heroImage,
     imageAlt:
       "Kahutara PurePod glass cabin overlooking the Kaikōura mountains and river valley in New Zealand",
-    title: "Kaikōura, Kahutara",
-    subtitleParagraphs: [HERO_SUBTITLE],
+    title: "Kahutara",
+    subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
     imagePosition: "70% 85%",
   },
   podCarouselAriaLabel: "PurePod Kahutara — photo gallery",
