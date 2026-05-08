@@ -9,16 +9,32 @@ const podBedroom =
   "/assets/img/makoha/makoha-purepod-bedroom-interior-glass-cabin-kerikeri.jpg";
 const podLandscape =
   "/assets/img/makoha/makoha-purepod-glass-cabin-forest-exterior-night-lighting-new-zealand.jpg";
+const podInteriorForest =
+  "/assets/img/makoha/purepod-makoha-glass-cabin-interior-forest-view-new-zealand.jpg";
+const podDeckDining =
+  "/assets/img/makoha/purepod-makoha-private-deck-forest-dining-new-zealand.jpg";
+const podAerialForest =
+  "/assets/img/makoha/purepod-makoha-aerial-view-native-forest-new-zealand.jpg";
 const expBoat = "/assets/img/makoha/bay-of-islands-boat-cruise-aerial.jpg";
 const expWaitangi =
   "/assets/img/makoha/waitangi-treaty-grounds-maori-meeting-hous.jpg";
 const expMahinepua =
   "/assets/img/makoha/mahinepua-peninsula-coastal-walk-bay-of-islands.jpg";
+const travelWalkingTrack =
+  "/assets/img/makoha/purepod-makoha-walking-track-forest-path-new-zealand.jpg";
+const travelForestArrival =
+  "/assets/img/makoha/purepod-makoha-forest-arrival-track-new-zealand.jpg";
 const travelForest = "/assets/img/makoha/kerikeri-native-forest-walking-track.jpg";
 const travelBridge =
   "/assets/img/makoha/kerikeri-native-forest-bridge-walking-track.jpg";
 const travelPlatter = "/assets/img/makoha/makoha-local-food-platter-kerikeri.jpg";
 const travelDinner = "/assets/img/makoha/makoha-dinner-outdoor-dining-kerikeri.jpg";
+const travelBreakfastBasket =
+  "/assets/img/makoha/purepod-makoha-breakfast-basket-local-produce-new-zealand.jpg";
+const travelKitchenForest =
+  "/assets/img/makoha/purepod-makoha-kitchen-forest-view-new-zealand.jpg";
+const travelEveningMeal =
+  "/assets/img/makoha/purepod-makoha-evening-meal-local-produce-new-zealand.jpg";
 
 export const MAKOHA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=14";
@@ -83,6 +99,21 @@ const makohaPodNarrative = {
       alt: "Native forest landscape around Mākōha PurePod, Kerikeri, Northland, New Zealand",
       position: "50% 45%",
     },
+    {
+      src: podInteriorForest,
+      alt: "Interior of PurePod Mākōha with floor-to-ceiling glass walls overlooking native forest in New Zealand",
+      position: "50% 48%",
+    },
+    {
+      src: podDeckDining,
+      alt: "Outdoor dining setup on the private deck of PurePod Mākōha overlooking native forest in New Zealand",
+      position: "50% 52%",
+    },
+    {
+      src: podAerialForest,
+      alt: "Aerial view of PurePod Mākōha surrounded by dense native forest in New Zealand",
+      position: "50% 45%",
+    },
   ],
 };
 
@@ -95,6 +126,14 @@ const makohaTravelBlock = {
       variant: "photos" as const,
       title: "The journey",
       images: [
+        {
+          src: travelWalkingTrack,
+          alt: "Walking track sign surrounded by native forest near PurePod Mākōha in New Zealand",
+        },
+        {
+          src: travelForestArrival,
+          alt: "Rural forest track and directional sign near the entrance to PurePod Mākōha in New Zealand",
+        },
         {
           src: travelForest,
           alt: "Native forest walking track near Mākōha PurePod, Kerikeri, Northland, New Zealand",
@@ -132,6 +171,18 @@ The track includes uneven natural terrain, so suitable walking footwear and ligh
         {
           src: travelDinner,
           alt: "Outdoor dinner at Mākōha PurePod, Kerikeri, New Zealand",
+        },
+        {
+          src: travelBreakfastBasket,
+          alt: "Breakfast basket with fresh local ingredients at PurePod Mākōha in New Zealand",
+        },
+        {
+          src: travelKitchenForest,
+          alt: "Kitchen area inside PurePod Mākōha overlooking native forest in New Zealand",
+        },
+        {
+          src: travelEveningMeal,
+          alt: "Evening meal served on the private deck at PurePod Mākōha in New Zealand",
         },
       ],
       body: `Meals at Mākōha are designed to feel simple and relaxed.

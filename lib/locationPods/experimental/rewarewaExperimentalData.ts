@@ -9,6 +9,12 @@ const podBedroom =
   "/assets/img/rewarewa/rewarewa-purepod-bedroom-interior-muriwai-coast.jpg";
 const podStars =
   "/assets/img/rewarewa/rewarewa-purepod-glass-cabin-terrace-exterior-view-new-zealand.jpg";
+const podAerial =
+  "/assets/img/rewarewa/purepod-rewarewa-aerial-view-glass-cabin-new-zealand.jpg";
+const podBathroom =
+  "/assets/img/rewarewa/purepod-rewarewa-glass-bathroom-forest-view-new-zealand.jpg";
+const podKitchen =
+  "/assets/img/rewarewa/purepod-rewarewa-kitchen-interior-glass-cabin-new-zealand.jpg";
 const expBeach = "/assets/img/rewarewa/muriwai-black-sand-beach-coastline.jpg";
 const expRanges =
   "/assets/img/rewarewa/waitakere-ranges-coastal-landscape-auckland.jpg";
@@ -21,6 +27,8 @@ const travelPlatter =
   "/assets/img/rewarewa/rewarewa-local-food-platter-muriwai-coast.JPG";
 const travelBreakfast =
   "/assets/img/rewarewa/rewarewa-breakfast-basket-muriwai-coast.JPG";
+const travelKitchenForestView =
+  "/assets/img/rewarewa/purepod-rewarewa-kitchen-forest-view-new-zealand.jpg";
 
 export const REWAREWA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=15";
@@ -85,6 +93,21 @@ const rewarewaPodNarrative = {
       alt: "Rewarewa PurePod terrace and glass cabin exterior, Muriwai Coast, New Zealand",
       position: "50% 50%",
     },
+    {
+      src: podAerial,
+      alt: "Aerial view of PurePod Rewarewa with glass cabin and private deck in New Zealand",
+      position: "50% 45%",
+    },
+    {
+      src: podBathroom,
+      alt: "Bathroom interior at PurePod Rewarewa with glass walls overlooking native landscape in New Zealand",
+      position: "50% 50%",
+    },
+    {
+      src: podKitchen,
+      alt: "Kitchen interior inside PurePod Rewarewa with panoramic glass walls in New Zealand",
+      position: "50% 48%",
+    },
   ],
 };
 
@@ -134,6 +157,10 @@ The terrain is natural and uneven in places, so suitable walking footwear and li
         {
           src: travelBreakfast,
           alt: "Breakfast basket at Rewarewa PurePod, Muriwai Coast, New Zealand",
+        },
+        {
+          src: travelKitchenForestView,
+          alt: "Kitchen area inside PurePod Rewarewa overlooking the surrounding landscape in New Zealand",
         },
       ],
       body: `Rewarewa is designed for slow evenings and simple, relaxed meals.

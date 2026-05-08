@@ -9,14 +9,24 @@ const podBedroom =
   "/assets/img/matu/matu-purepod-bedroom-sunset-view-waitomo.jpg";
 const podSunset =
   "/assets/img/matu/matu-purepod-glass-cabin-sunset-exterior-waitomo.jpg";
+const podSunsetPink =
+  "/assets/img/matu/purepod-matu-sunset-glass-cabin-new-zealand.jpg";
+const podCloseUpNative =
+  "/assets/img/matu/purepod-matu-glass-cabin-close-up-native-landscape-new-zealand.jpg";
 const expGlowworm = "/assets/img/matu/waitomo-glowworm-cave-boat-ride.jpg";
 const expRuakuri = "/assets/img/matu/waitomo-ruakuri-cave-spiral.jpg";
 const expMarokopa = "/assets/img/matu/waitomo-marokopa-waterfall.jpg";
 const travelRoad = "/assets/img/matu/waitomo-countryside-access-road.jpg";
 const travelForest =
   "/assets/img/matu/waitomo-native-forest-walking-track.jpg";
+const travelHillsideWalk =
+  "/assets/img/matu/purepod-matu-open-hillside-walk-new-zealand.jpg";
 const travelPlatter = "/assets/img/matu/matu-local-food-platter-waitomo.jpg";
 const travelBreakfast = "/assets/img/matu/matu-breakfast-board-waitomo.jpg";
+const travelBreakfastTray =
+  "/assets/img/matu/purepod-matu-breakfast-tray-bed-new-zealand.jpg";
+const travelBreakfastProvisions =
+  "/assets/img/matu/purepod-matu-breakfast-provisions-fresh-local-food-new-zealand.jpg";
 
 export const MATU_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=16";
@@ -72,6 +82,11 @@ const matuPodNarrative = {
       position: "50% 55%",
     },
     {
+      src: podCloseUpNative,
+      alt: "Close exterior view of PurePod Matū with glass walls and native New Zealand landscape around the cabin",
+      position: "50% 48%",
+    },
+    {
       src: podBedroom,
       alt: "Bedroom at sunset inside Matū PurePod, Waitomo, New Zealand",
       position: "50% 50%",
@@ -80,6 +95,11 @@ const matuPodNarrative = {
       src: podSunset,
       alt: "Matū PurePod at sunset, Waitomo, New Zealand",
       position: "50% 50%",
+    },
+    {
+      src: podSunsetPink,
+      alt: "PurePod Matū glass cabin surrounded by rolling countryside at sunset in New Zealand",
+      position: "50% 52%",
     },
   ],
 };
@@ -96,6 +116,10 @@ const matuTravelBlock = {
         {
           src: travelRoad,
           alt: "Countryside access road in the Waitomo region, New Zealand",
+        },
+        {
+          src: travelHillsideWalk,
+          alt: "Guests walking across open rolling hills near PurePod Matū in New Zealand",
         },
         {
           src: travelForest,
@@ -130,6 +154,14 @@ The track includes steep and uneven sections, and the final stage crosses a farm
         {
           src: travelBreakfast,
           alt: "Breakfast at Matū PurePod, Waitomo, New Zealand",
+        },
+        {
+          src: travelBreakfastProvisions,
+          alt: "Fresh bread, eggs and granola prepared for guests at PurePod Matū in New Zealand",
+        },
+        {
+          src: travelBreakfastTray,
+          alt: "Breakfast tray with granola, yoghurt and tea served on a bed inside PurePod Matū in New Zealand",
         },
       ],
       body: `At Matū, meals become part of the landscape.

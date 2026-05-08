@@ -9,6 +9,10 @@ const podBedroom =
   "/assets/img/pamu/pamu-purepod-glass-cabin-bedroom-interior-mountain-view-new-zealand.jpg";
 const podBathroom =
   "/assets/img/pamu/pamu-purepod-bathroom-shower-view-rotorua.jpg";
+const podSunrise =
+  "/assets/img/pamu/purepod-matu-glass-cabin-sunrise-landscape-new-zealand.jpg";
+const podNightSky =
+  "/assets/img/pamu/purepod-pamu-night-sky-glass-cabin-new-zealand.jpg";
 const expGeothermal =
   "/assets/img/pamu/rotorua-geothermal-hot-springs-lake-new-zealand.jpg";
 const expMaori =
@@ -19,6 +23,8 @@ const travelFence =
   "/assets/img/pamu/pamu-purepod-farm-fence-landscape-rotorua.jpg";
 const travelAerial =
   "/assets/img/pamu/pamu-purepod-aerial-landscape-valley-rotorua.jpg";
+const travelRollingHills =
+  "/assets/img/pamu/purepod-pamu-rolling-hills-forest-landscape-new-zealand.jpg";
 const travelCheese =
   "/assets/img/pamu/pamu-purepod-local-cheese-platter-food-rotorua.jpg";
 const travelBbq =
@@ -87,6 +93,16 @@ const pamuPodNarrative = {
       alt: "Bathroom and shower with view at Pāmu PurePod, Rotorua, New Zealand",
       position: "50% 50%",
     },
+    {
+      src: podSunrise,
+      alt: "Pāmu PurePod glass cabin at sunrise surrounded by open rural landscape in New Zealand",
+      position: "50% 48%",
+    },
+    {
+      src: podNightSky,
+      alt: "Pāmu PurePod illuminated beneath a clear night sky in New Zealand",
+      position: "50% 52%",
+    },
   ],
 };
 
@@ -106,6 +122,10 @@ const pamuTravelBlock = {
         {
           src: travelAerial,
           alt: "Aerial view of valley landscape near Pāmu PurePod, Rotorua, New Zealand",
+        },
+        {
+          src: travelRollingHills,
+          alt: "Rolling green hills and forest landscape surrounding PurePod Pāmu in New Zealand",
         },
       ],
       body: `Reaching Pāmu feels like stepping into a quieter rural landscape.

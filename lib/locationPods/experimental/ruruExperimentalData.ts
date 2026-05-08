@@ -13,6 +13,10 @@ const podDeck =
   "/assets/img/ruru/ruru-purepod-interior-view-deck-coromandel.jpg";
 const podNight =
   "/assets/img/ruru/ruru-purepod-glass-cabin-night-sky-coromandel.jpg";
+const podSunsetAerialForest =
+  "/assets/img/ruru/purepod-ruru-sunset-aerial-view-native-forest-new-zealand.jpg";
+const podBedroomGlass =
+  "/assets/img/ruru/purepod-ruru-glass-cabin-bedroom-interior-new-zealand.jpg";
 const expKarangahake =
   "/assets/img/ruru/karangahake-gorge-hiking-suspension-bridge.jpg";
 const expOrokawa = "/assets/img/ruru/orokawa-bay-coastal-walk-coromandel.jpg";
@@ -22,10 +26,18 @@ const travelForestPath =
   "/assets/img/ruru/coromandel-forest-path-to-ruru-purepod.jpg";
 const travelHillside =
   "/assets/img/ruru/ruru-purepod-hillside-access-road-coromandel.jpg";
+const travelAerialRemote =
+  "/assets/img/ruru/purepod-ruru-aerial-view-remote-landscape-new-zealand.jpg";
 const travelPicnic =
   "/assets/img/ruru/ruru-purepod-picnic-local-food-coromandel.jpg";
 const travelBreakfast =
   "/assets/img/ruru/ruru-purepod-breakfast-coromandel.jpg";
+const travelGrazingPlatter =
+  "/assets/img/ruru/purepod-ruru-local-grazing-platter-new-zealand.jpg";
+const travelSlowBreakfastProduce =
+  "/assets/img/ruru/purepod-ruru-slow-breakfast-local-produce-new-zealand.jpg";
+const travelDiningSpread =
+  "/assets/img/ruru/purepod-ruru-local-dining-spread-new-zealand.jpg";
 
 export const RURU_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=7";
@@ -72,6 +84,16 @@ export const ruruPodNarrative = {
       alt: "Night sky from Ruru PurePod, Coromandel, New Zealand",
       position: "50% 63%",
       span: "half" as const,
+    },
+    {
+      src: podSunsetAerialForest,
+      alt: "Aerial sunset view of PurePod Ruru immersed in native forest landscape in New Zealand",
+      position: "50% 45%",
+    },
+    {
+      src: podBedroomGlass,
+      alt: "Interior bedroom view inside PurePod Ruru with panoramic glass walls in New Zealand",
+      position: "50% 50%",
     },
   ],
 };
@@ -180,6 +202,10 @@ export const ruruTravelBlock = {
       title: "The journey",
       images: [
         {
+          src: travelAerialRemote,
+          alt: "Aerial view of PurePod Ruru surrounded by forested hills and remote landscape in New Zealand",
+        },
+        {
           src: travelForestPath,
           alt: "Forest path to Ruru PurePod, Coromandel, New Zealand",
         },
@@ -216,6 +242,18 @@ The terrain is natural and can become muddy after rain, so suitable walking foot
         {
           src: travelBreakfast,
           alt: "Breakfast at Ruru PurePod, Coromandel, New Zealand",
+        },
+        {
+          src: travelGrazingPlatter,
+          alt: "Local cheese and charcuterie platter served at PurePod Ruru in New Zealand",
+        },
+        {
+          src: travelSlowBreakfastProduce,
+          alt: "Slow breakfast setup with yoghurt, granola and local produce at PurePod Ruru in New Zealand",
+        },
+        {
+          src: travelDiningSpread,
+          alt: "Local seasonal dining spread served at PurePod Ruru in New Zealand",
         },
       ],
       body:
