@@ -28,8 +28,8 @@ export const TAIMA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=13";
 
 const HERO_SUBTITLE_PARAS = [
-  "A relaxed retreat above Central Otago's rugged landscapes",
-  "PurePod Tāima is defined by open space and dramatic landscapes above the Kawarau Gorge near Cromwell, with wide views across rocky valleys, rivers and mountain ranges. Golden sunsets and clear southern skies shape slow days and quiet nights in the heart of Central Otago.",
+  "A private glass cabin set high above the Kawarau Gorge, surrounded by dry hills, rocky valleys and expansive views across the Central Otago landscape.",
+  "Tāima is shaped by open skies, mountain light and the quiet scale of the high country — a secluded retreat immersed in the elevated landscapes above Cromwell.",
 ];
 
 export const TAIMA_FAQ_ITEMS: LocationFaqItem[] = [
@@ -61,15 +61,15 @@ export const TAIMA_FAQ_ITEMS: LocationFaqItem[] = [
 ];
 
 const taimaPodNarrative = {
-  title: "The experience of the Pod — Tāima",
+  title: "The Pod",
   hint: "The essentials, no fluff",
   paragraphs: [
-    "Set at around 350 metres above sea level, the pod feels suspended above the landscape, with wide views and a strong sense of isolation.",
-    "With no neighbours or shared spaces, the experience is shaped by silence, space and changing light — a retreat to slow down and take in Central Otago.",
-    "Inside, everything is designed for two: a quiet, comfortable base from which to watch the shifting light and the wide horizon.",
+    "Set high above the Central Otago landscape, Tāima looks out across dry hills, rocky valleys and expansive views towards the Kawarau Gorge and surrounding mountain ranges.",
+    "Designed for two, the pod sits quietly within an elevated high-country setting shaped by open skies, changing mountain light and the wide stillness of the landscape.",
+    "The final walk climbs gently through dry hillside terrain before opening onto the elevated landscape surrounding the pod. From inside, floor-to-ceiling glass keeps the mountains, valleys and shifting weather constantly present throughout the day.",
   ],
   galleryCaption:
-    "PurePod Tāima is not a typical place to stay. It is a full immersion in Central Otago above the Kawarau Gorge — open space, dramatic landforms and clear southern skies. With no neighbours and no shared spaces, the pod is shaped by silence and changing light. Inside, everything is designed for two: a private retreat from which to take in rocky valleys, rivers and distant ranges at an unhurried pace.",
+    "Tāima is defined by elevation, openness and the vast scale of Central Otago — a private glass retreat immersed in the high-country landscape above the Kawarau Gorge.",
   gallery: [
     {
       src: podExterior,
@@ -96,7 +96,7 @@ const taimaTravelBlock = {
     {
       key: "journey",
       variant: "photos" as const,
-      title: "The Journey",
+      title: "The journey",
       images: [
         {
           src: travelJourneyLeft,
@@ -108,7 +108,7 @@ const taimaTravelBlock = {
         },
       ],
       body:
-        "PurePod Tāima is located near Cromwell, around one hour from Queenstown, following the Kawarau Gorge. The final section includes a short 300-metre walk (5–10 minutes) across historic gold-mining ground, where views begin to open.",
+        "Reaching Tāima is part of the Central Otago high-country experience.\n\nThe drive follows quiet rural roads through the Cromwell basin before continuing along gravel farm tracks that climb gradually into the surrounding hills. The landscape becomes increasingly open and elevated, with wide views towards the Kawarau Gorge, Lake Dunstan and the mountains beyond.\n\nFrom the PurePod carpark, a short 5–10 minute walk continues uphill through dry rocky terrain and steps towards the pod. Suitable walking footwear and light luggage are recommended.",
     },
     {
       key: "climate",
@@ -123,7 +123,7 @@ const taimaTravelBlock = {
     {
       key: "food",
       variant: "photos" as const,
-      title: "The Food",
+      title: "Food & dining",
       images: [
         {
           src: travelFood,
@@ -135,7 +135,7 @@ const taimaTravelBlock = {
         },
       ],
       body:
-        "You may bring your own food or pre-order a breakfast and dinner hamper when booking. Meals are designed to be simple and enjoyed at the pod with wide open views.",
+        "Food at Tāima is designed to complement the openness of the Central Otago landscape.\n\nBring your own supplies or pre-order a breakfast and dinner hamper when booking. Meals are simple and easy to prepare, best enjoyed slowly at the pod with elevated views across dry hills, changing mountain light and the wide landscape surrounding Lake Dunstan and the Kawarau Gorge.\n\nAs there are no nearby shops or restaurants, everything you need is brought with you — keeping the experience quiet, private and immersed in the high-country setting.",
     },
   ],
 };
@@ -230,12 +230,12 @@ const taimaReviews = {
 };
 
 export const taimaEditorialConfig: EditorialPodLocationConfig = {
-  heroKicker: "PurePod · Central Otago",
+  heroKicker: "PUREPOD · CENTRAL OTAGO",
   hero: {
     imageSrc: heroImage,
     imageAlt:
       "Tāima PurePod glass cabin with vineyard views and Central Otago hills near Cromwell, New Zealand",
-    title: "Central Otago, Tāima",
+    title: "Tāima",
     subtitleParagraphs: HERO_SUBTITLE_PARAS,
     imagePosition: "50% 55%",
     imagePositionMd: "50% 55%",

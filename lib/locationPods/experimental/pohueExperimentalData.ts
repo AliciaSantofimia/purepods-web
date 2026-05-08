@@ -28,8 +28,10 @@ const travelView =
 export const POHUE_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=4";
 
-const IMPACT_SUMMARY =
-  "PurePod Pōhue is a private glass cabin for two set high above Port Levy on Banks Peninsula, Canterbury, New Zealand. Guests reach the pod on foot via a 1.2 km uphill track (about 20–25 minutes). The site offers wide views of the harbour, volcanic hills and coast, with no neighbours or shared facilities.";
+const HERO_SUBTITLE_PARAGRAPHS = [
+  "A private glass cabin set high above Port Levy on Banks Peninsula, surrounded by volcanic hills, native bush and wide coastal horizons.",
+  "Pōhue is shaped by sea air, changing light and the quiet openness of the peninsula — a secluded retreat immersed in the landscapes of the Canterbury coast.",
+];
 
 export const POHUE_FAQ_ITEMS: LocationFaqItem[] = [
   {
@@ -60,15 +62,16 @@ export const POHUE_FAQ_ITEMS: LocationFaqItem[] = [
 ];
 
 const pohuePodNarrative = {
-  title: "The experience of the Pod",
+  title: "The Pod",
   hint: "The essentials, no fluff",
   paragraphs: [
-    "A secluded escape overlooking Port Levy. PurePod Pōhue is defined by elevation, space and deep quiet, set high above Port Levy with wide views across volcanic hills, native bush and the ocean. It's a place shaped by changing light, birdsong and open horizons — a peaceful setting to disconnect and experience Banks Peninsula at its most untouched.",
-    "A 1.2 km uphill walk (20–25 minutes) leads to the pod, creating privacy and a true sense of arrival. As the track climbs, views open over Port Levy.",
-    "With no neighbours or shared spaces, the pod feels fully immersed in bush, hills and sky. Designed for two, it offers a simple, comfortable place to rest and slow down.",
+    "Set high above Port Levy on Banks Peninsula, Pōhue looks out across volcanic hills, native bush and wide coastal horizons.",
+    "Designed for two, the pod sits quietly within an exposed hilltop landscape shaped by sea air, changing light and the openness of the surrounding countryside.",
+    "The walk to the pod climbs gradually through regenerating native bush and grassy hills before opening onto sweeping views across the bay and surrounding landscape.",
+    "Inside, floor-to-ceiling glass keeps the hills, sky and shifting weather constantly present throughout the day.",
   ],
   galleryCaption:
-    "PurePod Pōhue sits high above Port Levy with no neighbours and no shared spaces — only native bush, volcanic hills and open sky. The uphill walk completes the sense of arrival; inside, everything is calm and paired back for two, with shifting light and wide horizons over land and sea.",
+    "Pōhue is defined by elevation, open horizons and the quiet isolation of Banks Peninsula — a private glass retreat immersed in the landscape above Port Levy.",
   gallery: [
     {
       src: podCoastalHills,
@@ -95,7 +98,7 @@ const pohueTravelBlock = {
     {
       key: "journey",
       variant: "photos" as const,
-      title: "The Journey",
+      title: "The journey",
       images: [
         {
           src: travelAccess,
@@ -107,22 +110,22 @@ const pohueTravelBlock = {
         },
       ],
       body:
-        "PurePod Pōhue is located around 40 km from Christchurch (approximately 1 hour). The final part of the journey includes a 1.2 km uphill walk, taking around 20–25 minutes.",
+        "Reaching Pōhue is part of the Banks Peninsula experience.\n\nThe drive winds through the hills above Port Levy, following narrow rural roads with wide views across bays, tussock-covered hills and open farmland. From the PurePod carpark, a 20–25 minute walk continues through regenerating native bush and grassy hill tracks towards the pod, gradually opening onto the landscape above the bay.\n\nThe track includes a few stiles and uneven ground in places, so suitable walking footwear and light luggage are recommended.",
     },
     {
       key: "climate",
       variant: "editorial" as const,
       title: "The climate",
-      editorialEyebrow: "Banks Peninsula",
+      editorialEyebrow: "BANKS PENINSULA",
       editorialLead:
-        "Banks Peninsula conditions can change quickly.",
+        "Banks Peninsula weather shifts quickly — coastal winds, changing cloud and cool evenings are all part of the landscape.",
       body:
-        "Expect cooler evenings and coastal winds — layers are recommended year-round.",
+        "Layered clothing and a windproof outer layer are recommended year-round, especially for evenings on the exposed hills above Port Levy.",
     },
     {
       key: "food",
       variant: "photos" as const,
-      title: "The Food",
+      title: "Food & dining",
       images: [
         {
           src: travelFood,
@@ -134,7 +137,7 @@ const pohueTravelBlock = {
         },
       ],
       body:
-        "You can bring your own supplies or pre-order a breakfast and dinner hamper when booking. Meals are designed to be enjoyed slowly at the pod, with views over Port Levy.",
+        "Food at Pōhue is designed to stay simple and relaxed.\n\nBring your own supplies or pre-order a breakfast and dinner hamper when booking. Meals can be prepared easily at the pod and enjoyed slowly with wide views across Port Levy, the surrounding hills and the changing evening light.\n\nAs there are no nearby shops or restaurants, everything you need is brought with you — keeping the stay private, quiet and fully connected to the landscape.",
     },
   ],
 };
@@ -236,13 +239,13 @@ const pohueReviews = {
 
 /** Single source for `EditorialPodLocationView` on `/location/pohue` and FAQ JSON-LD. */
 export const pohueEditorialConfig: EditorialPodLocationConfig = {
-  heroKicker: "PurePod · Banks Peninsula",
+  heroKicker: "PUREPOD · BANKS PENINSULA",
   hero: {
     imageSrc: heroImage,
     imageAlt:
       "Pōhue PurePod glass cabin above coastal hills with views toward Port Levy and Banks Peninsula, New Zealand",
-    title: "Banks Peninsula, Pōhue",
-    subtitleParagraphs: [IMPACT_SUMMARY],
+    title: "Pōhue",
+    subtitleParagraphs: HERO_SUBTITLE_PARAGRAPHS,
     imagePosition: "50% 75%",
   },
   podCarouselAriaLabel: "PurePod Pōhue — photo gallery",

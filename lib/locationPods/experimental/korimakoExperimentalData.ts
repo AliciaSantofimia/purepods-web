@@ -27,8 +27,10 @@ const travelDinner =
 export const KORIMAKO_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=6";
 
-const HERO_SUBTITLE =
-  "PurePod Korimako is a private glass cabin for two, set high in the Hurunui hills of North Canterbury — open fields, long horizons and light that moves across the land. A short walk completes the arrival; there are no neighbours here, only space, glass and the wide Canterbury sky.";
+const HERO_SUBTITLE_PARAGRAPHS = [
+  "A private glass cabin nestled into native bush along the Greta Valley coastline, surrounded by rolling farmland, coastal hills and wide views towards Motunau Island.",
+  "Korimako is shaped by birdsong, sea air and the changing light of the Canterbury coast — a quiet retreat immersed in native bush and open coastal landscapes.",
+];
 
 export const KORIMAKO_FAQ_ITEMS: LocationFaqItem[] = [
   {
@@ -62,11 +64,12 @@ const korimakoPodNarrative = {
   title: "The Pod",
   hint: "The essentials, no fluff",
   paragraphs: [
-    "PurePod Korimako is an open, quiet escape deeply connected to the land. Set high on the Hurunui landscape, the pod is surrounded by gentle hills, open fields and wide horizons stretching toward distant mountains; on clear days, the ocean appears on the horizon.",
-    "Arrival is part of the journey: a 10–15 minute walk (about 750 m) marks the transition into calm. At the end there are no neighbours or distractions — only space, privacy and views that open in every direction. Designed for two, it is a simple, comfortable retreat to rest, breathe and let the pace of the day slow down.",
+    "Nestled into native bush along the Greta Valley coastline, Korimako looks out across rolling farmland, coastal hills and wide views towards Motunau Island.",
+    "Designed for two, the pod sits quietly within a landscape shaped by birdsong, sea air and the changing light of the Canterbury coast.",
+    "The final walk passes through grassy hills and native bush before opening onto the coastal landscape surrounding the pod. Inside, floor-to-ceiling glass keeps the bay views, vegetation and shifting light constantly present throughout the day.",
   ],
   galleryCaption:
-    "PurePod Korimako is not just a place to sleep but an immersion in a wide, open landscape. Surrounded by fields and rolling hills, the pod feels elevated and free, with a direct connection to the natural setting. Inside, everything is designed for two: a warm, comfortable space from which to watch the changing light, the vast sky and the stillness of the land. A place to disconnect, observe and simply be.",
+    "Korimako is defined by coastal stillness, native bush and wide rural horizons — a private glass retreat immersed in the Greta Valley landscape.",
   gallery: [
     {
       src: podAerial,
@@ -105,7 +108,7 @@ const korimakoTravelBlock = {
         },
       ],
       body:
-        "The final part of the journey includes a 750 m walk to the pod. The track has steps and uneven ground, so suitable footwear is recommended. The drive to PurePod Korimako is about 90 minutes north of Christchurch (100 km), through historic farming country.",
+        "Reaching Korimako is a gradual transition from open farmland into native bush along the Greta Valley coastline.\n\nThe final drive follows quiet country and farm roads through rolling hills and working farmland before arriving at the PurePod carpark. From there, a gentle 7–10 minute walk continues through native bush and grassy hills towards the pod, with birdsong and coastal views accompanying the track.\n\nParts of the path can become slippery after rain, so suitable walking footwear and light luggage are recommended.",
     },
     {
       key: "climate",
@@ -252,13 +255,13 @@ const korimakoReviews = {
 
 /** Single source for `EditorialPodLocationView` on `/location/korimako` and FAQ JSON-LD. */
 export const korimakoEditorialConfig: EditorialPodLocationConfig = {
-  heroKicker: "PurePod · Hurunui",
+  heroKicker: "PUREPOD · HURUNUI",
   hero: {
     imageSrc: heroImage,
     imageAlt:
       "Korimako PurePod glass cabin in the Hurunui landscape, New Zealand",
     title: "Korimako",
-    subtitleParagraphs: [HERO_SUBTITLE],
+    subtitleParagraphs: HERO_SUBTITLE_PARAGRAPHS,
     imagePosition: "70% 50%",
     imagePositionMd: "60% 55%",
     imagePositionXl: "55% 60%",

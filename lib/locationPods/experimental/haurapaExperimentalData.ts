@@ -27,8 +27,10 @@ const foodHamper =
 export const HAURAPA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=9";
 
-const HERO_SUBTITLE =
-  "A peaceful retreat in the dramatic heart of Central Otago. PurePod Haurapa offers high-country calm and wide, rugged landscapes above Cromwell, with views across rocky formations and toward the Pisa Range. Shaped by geology and extreme seasons, it's a place of expansive days, quiet nights and a deep sense of space.";
+const HERO_SUBTITLE_PARAGRAPHS = [
+  "A private glass cabin set high above the Cromwell basin, surrounded by dry hills, rocky terrain and expansive views towards the Pisa Range and Lake Dunstan.",
+  "Haurapa is shaped by mountain light, open skies and the quiet scale of the Central Otago landscape — a secluded retreat immersed in New Zealand high country.",
+];
 
 export const HAURAPA_FAQ_ITEMS: LocationFaqItem[] = [
   {
@@ -62,11 +64,12 @@ const haurapaPodNarrative = {
   title: "The Pod",
   hint: "The essentials, no fluff",
   paragraphs: [
-    "A 700-metre walk (15–20 minutes) leads to the pod, following historic gold-rush tracks as views open and privacy increases. Set high above the landscape, the pod feels completely secluded, with no neighbours or shared spaces.",
-    "Designed for two, it offers a warm, comfortable base to take in the vastness of Central Otago — simple accommodation where the landscape takes the lead.",
+    "Set high above the Central Otago landscape, Haurapa looks out across dry hills, rocky terrain and expansive views towards the Pisa Range and Lake Dunstan.",
+    "Designed for two, the pod sits quietly within a high-country landscape shaped by mountain light, open skies and the wide stillness of the Upper Clutha basin.",
+    "The final walk climbs gradually through dry hillside tracks before opening onto the elevated landscape surrounding the pod. From inside, floor-to-ceiling glass keeps the mountains, changing weather and vast horizons constantly in view.",
   ],
   galleryCaption:
-    "High-country calm and wide views across rocky formations and the Pisa Range — a place to rest, walk and let the vast Central Otago landscape shape your stay.",
+    "Haurapa is defined by elevation, openness and the dramatic scale of Central Otago — a private glass retreat immersed in the high-country landscape.",
   gallery: [
     {
       src: podExterior,
@@ -93,7 +96,7 @@ const haurapaTravelBlock = {
     {
       key: "journey",
       variant: "photos" as const,
-      title: "The Journey",
+      title: "The journey",
       images: [
         {
           src: journeyWalking,
@@ -105,7 +108,7 @@ const haurapaTravelBlock = {
         },
       ],
       body:
-        "PurePod Haurapa is located near Cromwell, approximately one hour from Queenstown. The final part of the journey includes a 700 m uphill walk, following historic gold-mining tracks.",
+        "Reaching Haurapa is part of the Central Otago high-country experience.\n\nThe drive follows quiet rural roads through the Cromwell basin and surrounding hills before arriving at the working farm where the PurePod is located. From the carpark, a 15–20 minute uphill walk continues across dry hillside tracks and rocky ground, gradually opening onto vast views towards the Pisa Range and Lake Dunstan.\n\nThe exposed landscape can feel hot, dry or windy depending on the season, so suitable walking footwear, light luggage and weather layers are recommended.",
     },
     {
       key: "climate",
@@ -120,7 +123,7 @@ const haurapaTravelBlock = {
     {
       key: "food",
       variant: "photos" as const,
-      title: "The Food",
+      title: "Food & dining",
       images: [
         {
           src: foodDining,
@@ -132,7 +135,7 @@ const haurapaTravelBlock = {
         },
       ],
       body:
-        "You may bring your own food or pre-order a breakfast and dinner hamper when booking. Hampers feature fresh Central Otago produce and are designed for simple meals enjoyed at the pod, with uninterrupted views across the landscape.",
+        "Food at Haurapa is designed to complement the wide-open landscape of Central Otago.\n\nBring your own supplies or pre-order a breakfast and dinner hamper when booking. Meals are simple and easy to prepare, best enjoyed slowly at the pod with expansive views towards the Pisa Range, Lake Dunstan and the changing evening light across the hills.\n\nAs there are no nearby shops or restaurants, everything you need is brought with you — keeping the experience quiet, private and immersed in the landscape.",
     },
   ],
 };
@@ -228,13 +231,13 @@ const haurapaReviews = {
 
 /** Single source for `EditorialPodLocationView` on `/location/haurapa`. */
 export const haurapaEditorialConfig: EditorialPodLocationConfig = {
-  heroKicker: "PurePod · Central Otago",
+  heroKicker: "PUREPOD · CENTRAL OTAGO",
   hero: {
     imageSrc: heroImage,
     imageAlt:
       "Haurapa PurePod bedroom with panoramic mountain views in Central Otago, New Zealand",
-    title: "Central Otago, Haurapa",
-    subtitleParagraphs: [HERO_SUBTITLE],
+    title: "Haurapa",
+    subtitleParagraphs: HERO_SUBTITLE_PARAGRAPHS,
     imagePosition: "52% 72%",
     imagePositionMd: "51% 70%",
     imagePositionXl: "50% 68%",

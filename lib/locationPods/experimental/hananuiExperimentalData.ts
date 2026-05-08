@@ -26,14 +26,13 @@ const travelFood =
 export const HANANUI_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=12";
 
-/** Same copy as legacy `JOURNEY_BODY` — used for FAQ “How do I get…” and travel card. */
+/** FAQ answer for “How do I get to PurePod Hananui?” — travel card uses `HANANUI_JOURNEY_CARD_BODY`. */
 export const HANANUI_JOURNEY_BODY =
   "Travel by flight or ferry to Stewart Island, then continue to Mamaku Point Conservation Reserve. A short 350-metre walk leads you through the predator-proof fence and into deep natural quiet. Reach Hananui by a 15-minute flight from Invercargill or a 60-minute ferry from Bluff, followed by a short transfer to Mamaku Point Conservation Reserve. A final 380-metre nature walk (5–10 minutes) takes you through the predator-proof fence and into the sanctuary.";
 
 const HERO_SUBTITLE_PARAS = [
-  "A secluded sanctuary above the sea",
-  "PurePod Hananui is a secluded retreat into Stewart Island's wild calm. Set within a predator-free sanctuary, it offers forest stillness, ocean views and a rare sense of true isolation.",
-  "By night, stars, birdsong and the chance to spot kiwi define the experience.",
+  "A private glass cabin set within Mamaku Point Conservation Reserve on Rakiura Stewart Island, surrounded by native bush, coastal views and abundant birdlife.",
+  "Hananui is shaped by sea air, forest stillness and the dark skies of the island — a secluded retreat immersed in one of New Zealand's most protected coastal landscapes.",
 ];
 
 export const HANANUI_FAQ_ITEMS: LocationFaqItem[] = [
@@ -59,14 +58,15 @@ export const HANANUI_FAQ_ITEMS: LocationFaqItem[] = [
 ];
 
 const hananuiPodNarrative = {
-  title: "The experience of the Pod — Hananui",
+  title: "The Pod",
   hint: "The essentials, no fluff",
   paragraphs: [
-    "Set above Lee Bay, the pod is surrounded by native forest, birdsong and wide ocean views.",
-    "At night, stars and the chance of kiwi create a rare, intimate connection with the wild.",
+    "Set within Mamaku Point Conservation Reserve on Rakiura Stewart Island, Hananui is surrounded by native bush, birdlife and wide coastal views across Lee Bay.",
+    "Designed for two, the pod sits quietly within a protected sanctuary landscape shaped by forest, sea air and the changing skies of the island.",
+    "The final approach follows a short nature track through dense native bush before opening onto the secluded coastal setting surrounding the pod. From inside, floor-to-ceiling glass keeps the forest, ocean and shifting light constantly present throughout the stay.",
   ],
   galleryCaption:
-    "At night, stars and the chance of kiwi create a rare, intimate connection with the wild.",
+    "At night, the surrounding Dark Sky Sanctuary and special red lighting beneath the deck create the rare opportunity to spot kiwi while preserving the darkness of the reserve.",
   gallery: [
     {
       src: podAerial,
@@ -86,6 +86,9 @@ const hananuiPodNarrative = {
   ],
 };
 
+const HANANUI_JOURNEY_CARD_BODY =
+  "Reaching Hananui is part of the Stewart Island experience.\n\nAfter arriving on Rakiura by scenic flight or ferry, the journey continues through the quiet roads and native bush surrounding Oban and Mamaku Point Conservation Reserve. The final approach follows a short nature track through dense native forest, crossing the predator-proof sanctuary fence before climbing gently towards the secluded coastal setting surrounding the pod.\n\nThe track includes natural bush paths, steps and uneven ground in places, so suitable walking footwear and light luggage are recommended.";
+
 const hananuiTravelBlock = {
   title: "Know before you go",
   hint: "Practical details, without losing the mood",
@@ -93,7 +96,7 @@ const hananuiTravelBlock = {
     {
       key: "journey",
       variant: "photos" as const,
-      title: "The Journey",
+      title: "The journey",
       images: [
         {
           src: travelAerial,
@@ -104,7 +107,7 @@ const hananuiTravelBlock = {
           alt: "Hananui PurePod exterior with forest and ocean outlook, Stewart Island, New Zealand",
         },
       ],
-      body: HANANUI_JOURNEY_BODY,
+      body: HANANUI_JOURNEY_CARD_BODY,
     },
     {
       key: "climate",
@@ -119,7 +122,7 @@ const hananuiTravelBlock = {
     {
       key: "food",
       variant: "photos" as const,
-      title: "The Food",
+      title: "Food & dining",
       images: [
         {
           src: travelFood,
@@ -131,7 +134,7 @@ const hananuiTravelBlock = {
         },
       ],
       body:
-        "Bring your own supplies or pre-order a breakfast and dinner hamper featuring locally sourced Southland produce. Meals are simple and generous, perfect for relaxed evenings and slow mornings at the pod.",
+        "Food at Hananui is designed to complement the quiet rhythm of Rakiura Stewart Island.\n\nBring your own supplies or pre-order a breakfast and dinner hamper when booking. Meals are simple and easy to prepare, best enjoyed slowly at the pod surrounded by native bush, coastal views and the constant sounds of birdlife around the reserve.\n\nAs there are no nearby shops or restaurants at the pod, everything you need is brought with you — keeping the experience private, peaceful and immersed in the island landscape.",
     },
   ],
 };
@@ -223,12 +226,12 @@ const hananuiReviews = {
 };
 
 export const hananuiEditorialConfig: EditorialPodLocationConfig = {
-  heroKicker: "PurePod · Stewart Island",
+  heroKicker: "PUREPOD · STEWART ISLAND",
   hero: {
     imageSrc: heroImage,
     imageAlt:
       "PurePod Hananui glass cabin with native forest and ocean outlook above Lee Bay, Stewart Island, New Zealand",
-    title: "Stewart Island, Hananui",
+    title: "Hananui",
     subtitleParagraphs: HERO_SUBTITLE_PARAS,
     imagePosition: "50% 55%",
     imagePositionMd: "50% 55%",

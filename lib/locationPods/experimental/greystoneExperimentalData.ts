@@ -27,8 +27,10 @@ const travelDining =
 export const GREYSTONE_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=3";
 
-const IMPACT_SUMMARY =
-  "PurePod Greystone is a private glass cabin for two set atop the Greystone vineyard in the Waipara Valley, North Canterbury, New Zealand. Guests reach the pod on foot after about 10 minutes walking uphill from the car park. The stay sits above the vines with valley views, for two guests, with no shops or restaurants on site.";
+const HERO_SUBTITLE_PARAGRAPHS = [
+  "A private glass cabin set high above the Greystone organic vineyard in the Waipara Valley, surrounded by rolling vines, open hills and wide views towards the Southern Alps.",
+  "Greystone is shaped by vineyard light, quiet horizons and the calm rhythm of North Canterbury wine country — a secluded retreat immersed in the landscape of the valley.",
+];
 
 export const GREYSTONE_FAQ_ITEMS: LocationFaqItem[] = [
   {
@@ -62,12 +64,13 @@ const greystonePodNarrative = {
   title: "The Pod",
   hint: "The essentials, no fluff",
   paragraphs: [
-    "In the heart of the Waipara Valley, PurePod Greystone is defined by wine, landscape and rural calm. Vineyards spread over gentle hills, changing light on the rows of vines and a constant sense of open space. Here time follows the rhythm of the land.",
-    "PurePod Greystone sits at the top of the award-winning Greystone vineyard, raised above the rows of vines with wide views over the Waipara Valley and the surrounding hills — a landscape where viticulture and nature sit in balance.",
-    "Arrival is part of the experience: a walk of about 10 minutes uphill leads to the pod. Set on the highest part of the hill and out of sight from below, the sense of privacy is immediate. From its position, the pod opens onto a wide, peaceful horizon. Depending on the season, you may see the vineyard team working in the distance — pruning, harvesting or tending the vines — connecting your stay with the living rhythm of the land.",
+    "Set high above the Greystone organic vineyard in the Waipara Valley, Greystone is surrounded by rolling vines, open hills and wide views stretching towards the Southern Alps.",
+    "Designed for two, the pod sits quietly within a landscape shaped by changing light, vineyard rows and the calm rhythm of the North Canterbury countryside.",
+    "A gentle walk climbs through the vineyard towards the pod, where the elevated position opens onto wide valley views and long evening light across the hills.",
+    "Inside, floor-to-ceiling glass keeps the landscape, sky and surrounding vines constantly present throughout the day.",
   ],
   galleryCaption:
-    "Designed for two, PurePod Greystone offers simple, comfortable accommodation: a space to rest, sleep and let the days pass slowly among vineyards and silence.",
+    "Greystone is defined by open horizons, vineyard calm and the changing colours of the Waipara landscape — a private glass retreat immersed in New Zealand wine country.",
   gallery: [
     {
       src: podBedroom,
@@ -106,7 +109,7 @@ const greystoneTravelBlock = {
         },
       ],
       body:
-        "PurePod Greystone is less than an hour north of Christchurch, in the Waipara Valley. The final part of the journey is a short but steep walk uphill to the pod, so comfortable footwear and light luggage are recommended.",
+        "Reaching Greystone is part of the Waipara wine country experience.\n\nThe final drive winds quietly through the Greystone organic vineyard, following narrow gravel roads between vines and rolling hills before arriving at the PurePod carpark. From there, a gentle 8–10 minute walk continues up through open hillside tracks with wide views across the Waipara Valley towards the Southern Alps.\n\nParts of the track can become slippery after rain, so suitable walking footwear and light luggage are recommended.",
     },
     {
       key: "climate",
@@ -237,13 +240,13 @@ const greystoneReviews = {
 
 /** Single source for `EditorialPodLocationView` on `/location/greystone` and FAQ JSON-LD. */
 export const greystoneEditorialConfig: EditorialPodLocationConfig = {
-  heroKicker: "PurePod · Waipara Valley",
+  heroKicker: "PUREPOD · WAIPARA VALLEY",
   hero: {
     imageSrc: heroImage,
     imageAlt:
       "Greystone PurePod glass cabin exterior with mountain landscape in Waipara Valley, New Zealand",
     title: "Greystone",
-    subtitleParagraphs: [IMPACT_SUMMARY],
+    subtitleParagraphs: HERO_SUBTITLE_PARAGRAPHS,
     imagePosition: "50% 56%",
     imagePositionMd: "50% 54%",
     imagePositionXl: "50% 52%",

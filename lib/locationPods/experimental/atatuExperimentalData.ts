@@ -27,8 +27,10 @@ const travelProduce =
 export const ATATU_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=5";
 
-const HERO_SUBTITLE =
-  "PurePod Atatū is a private hilltop glass cabin for two in the Hurunui district, North Canterbury, New Zealand. Guests complete a 750 metre walk of about 10–15 minutes over steps and uneven ground to reach the pod. The setting offers open rural views toward mountains and, on clear days, the ocean, with no neighbours or shared spaces.";
+const HERO_SUBTITLE_PARAGRAPHS = [
+  "A private glass cabin set high above the Greta Valley coastline, surrounded by rolling sheep farmland, native forest and distant sea views.",
+  "Atatū is shaped by open horizons, changing light and the quiet rhythm of the Canterbury hills — an elevated retreat immersed in wide rural landscapes.",
+];
 
 export const ATATU_FAQ_ITEMS: LocationFaqItem[] = [
   {
@@ -62,12 +64,12 @@ const atatuPodNarrative = {
   title: "The Pod",
   hint: "The essentials, no fluff",
   paragraphs: [
-    "High on the Hurunui landscape, PurePod Atatū is defined by space and openness. Views unfold over hills and fields, with mountains in the distance and, on clear days, the ocean. Here the light shifts, time stretches and everything invites you to slow down.",
-    "PurePod Atatū is an open, quiet escape deeply connected to the land. Set high on the Hurunui landscape, the pod is surrounded by gentle hills, open fields and wide horizons stretching toward distant mountains; on clear days, the ocean appears on the horizon.",
-    "Arrival is part of the journey: a 10–15 minute walk (about 750 m) marks the transition into calm. At the end there are no neighbours or distractions — only space, privacy and views that open in every direction. Designed for two, it is a simple, comfortable retreat to rest, breathe and let the pace of the day slow down.",
+    "Perched high above the Greta Valley coastline, Atatū looks out across rolling sheep farmland, native forest and distant sea views.",
+    "Designed for two, the pod sits quietly within an open hilltop landscape shaped by wind, changing light and wide Canterbury skies.",
+    "The final walk climbs gently through grassy hills and native bush before opening onto the ridgeline surrounding the pod. From inside, floor-to-ceiling glass keeps the landscape and shifting light constantly in view.",
   ],
   galleryCaption:
-    "PurePod Atatū is not just a place to sleep but an immersion in a wide, open landscape. Surrounded by fields and rolling hills, the pod feels elevated and free, with a direct connection to the natural setting. Inside, everything is designed for two: a warm, comfortable space from which to watch the changing light, the vast sky and the stillness of the land. A place to disconnect, observe and simply be.",
+    "Atatū is defined by openness, elevation and coastal horizons — a private glass retreat immersed in the hills of Greta Valley.",
   gallery: [
     {
       src: podHilltop,
@@ -106,7 +108,7 @@ const atatuTravelBlock = {
         },
       ],
       body:
-        "The final part of the journey is a 750 m walk to the pod. The track has steps and uneven ground, so suitable footwear is recommended. The drive to PurePod Atatū is about 90 minutes north of Christchurch (100 km), through a historic farming region.",
+        "Reaching Atatū feels like travelling deeper into the Greta Valley countryside.\n\nThe final drive follows quiet farm roads through rolling hills, native forest and open coastal farmland before arriving at the PurePod carpark. From there, a gentle 15-minute walk continues through grassy hills and native bush towards the pod, with wide sea views gradually opening along the way.\n\nParts of the track can become slippery after rain, so suitable walking footwear and light luggage are recommended.",
     },
     {
       key: "climate",
@@ -253,13 +255,13 @@ const atatuReviews = {
 
 /** Single source for `EditorialPodLocationView` on `/location/atatu` and FAQ JSON-LD. */
 export const atatuEditorialConfig: EditorialPodLocationConfig = {
-  heroKicker: "PurePod · Hurunui",
+  heroKicker: "PUREPOD · HURUNUI",
   hero: {
     imageSrc: heroImage,
     imageAlt:
       "Atatū PurePod glass cabin at night under a starry sky in the New Zealand countryside",
     title: "Atatū",
-    subtitleParagraphs: [HERO_SUBTITLE],
+    subtitleParagraphs: HERO_SUBTITLE_PARAGRAPHS,
     imagePosition: "70% 90%",
     imagePositionMd: "60% 75%",
     imagePositionXl: "55% 70%",

@@ -27,9 +27,8 @@ export const TOKOEKA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=11";
 
 const HERO_SUBTITLE_PARAS = [
-  "Stewart Island · native forest & island wildlife · South Island",
-  "A hidden sanctuary in New Zealand's far south",
-  "PurePod Tokoeka is a complete immersion into New Zealand's wildest nature. Set within a predator-free eco-sanctuary and surrounded by native forest and wildlife, this is a place of deep silence, birdsong, stars and the rare chance to see kiwi in the wild.",
+  "A private glass cabin set within a protected conservation reserve on Rakiura Stewart Island, surrounded by native forest, coastal views and abundant birdlife.",
+  "Tokoeka is shaped by the quiet rhythms of the island — dense bush, dark skies, sea air and the rare stillness of one of New Zealand's most remote landscapes.",
 ];
 
 export const TOKOEKA_FAQ_ITEMS: LocationFaqItem[] = [
@@ -61,14 +60,16 @@ export const TOKOEKA_FAQ_ITEMS: LocationFaqItem[] = [
 ];
 
 const tokoekaPodNarrative = {
-  title: "The experience of the Pod — Tokoeka",
+  title: "The Pod",
   hint: "The essentials, no fluff",
   paragraphs: [
-    "Surrounded by native forest, the pod feels completely secluded, with birdsong, forest views and a deep connection to nature.",
-    "At night, special red lighting offers the rare opportunity to spot kiwi directly from the pod.",
+    "Set within Mamaku Point Conservation Reserve on Rakiura Stewart Island, Tokoeka is surrounded by native bush, birdlife and wide coastal views.",
+    "Designed for two, the pod sits quietly inside a protected sanctuary landscape, where forest, sea and night sky shape the experience of staying here.",
+    "The final approach passes through native bush and the predator-proof sanctuary fence before opening onto the secluded coastal setting around the pod.",
+    "At night, special red lighting under the deck offers the chance to spot kiwi without disturbing the darkness of the surrounding reserve.",
   ],
   galleryCaption:
-    "At night, special red lighting offers the rare opportunity to spot kiwi directly from the pod.",
+    "Tokoeka is defined by native forest, coastal views and the rare stillness of Rakiura — a private glass retreat immersed in one of New Zealand's most distinctive conservation landscapes.",
   gallery: [
     {
       src: podAerial,
@@ -95,7 +96,7 @@ const tokoekaTravelBlock = {
     {
       key: "journey",
       variant: "photos" as const,
-      title: "The Journey",
+      title: "The journey",
       images: [
         {
           src: travelAerial,
@@ -107,7 +108,7 @@ const tokoekaTravelBlock = {
         },
       ],
       body:
-        "Reach Tokoeka by a 15-minute flight from Invercargill or a 60-minute ferry from Bluff, followed by a short transfer to Mamaku Point Conservation Reserve. A final 380-metre nature walk (5–10 minutes) takes you through the predator-proof fence and into the sanctuary.",
+        "Reaching Tokoeka is part of the Stewart Island experience.\n\nAfter arriving on Rakiura by scenic flight or ferry, the journey continues through the quiet roads and native bush surrounding Oban and Mamaku Point Conservation Reserve. The final approach follows a short walking track through dense native forest, crossing the predator-proof sanctuary fence before opening onto the secluded coastal landscape surrounding the pod.\n\nThe track includes natural bush paths, steps and uneven ground in places, so suitable walking footwear and light luggage are recommended.",
     },
     {
       key: "climate",
@@ -122,7 +123,7 @@ const tokoekaTravelBlock = {
     {
       key: "food",
       variant: "photos" as const,
-      title: "The Food",
+      title: "Food & dining",
       images: [
         {
           src: travelFood,
@@ -134,7 +135,7 @@ const tokoekaTravelBlock = {
         },
       ],
       body:
-        "Bring your own supplies or pre-order a breakfast and dinner hamper featuring locally sourced Southland produce. Meals are simple and generous, perfect for relaxed evenings and slow mornings at the pod.",
+        "Food at Tokoeka is designed to feel simple, generous and connected to the quiet rhythm of Rakiura.\n\nBring your own supplies or pre-order a breakfast and dinner hamper when booking. Meals are easy to prepare and best enjoyed slowly at the pod, surrounded by native bush, coastal views and the sounds of birdlife around the reserve.\n\nAs there are no nearby shops or restaurants at the pod, everything you need is brought with you — keeping the experience private, peaceful and immersed in the Stewart Island landscape.",
     },
   ],
 };
@@ -226,12 +227,12 @@ const tokoekaReviews = {
 };
 
 export const tokoekaEditorialConfig: EditorialPodLocationConfig = {
-  heroKicker: "PurePod · Stewart Island",
+  heroKicker: "PUREPOD · STEWART ISLAND",
   hero: {
     imageSrc: heroImage,
     imageAlt:
       "PurePod Tokoeka glass cabin at sunset in native forest on Stewart Island, New Zealand",
-    title: "Stewart Island, Tokoeka",
+    title: "Tokoeka",
     subtitleParagraphs: HERO_SUBTITLE_PARAS,
     imagePosition: "50% 55%",
     imagePositionMd: "50% 55%",
