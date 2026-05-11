@@ -78,8 +78,9 @@ export const EXPLORE_POD_CARDS: ExplorePodCard[] = [
     title: "Kokomea",
     islandLine: "North Island",
     imageSrc:
-      "/assets/img/kokomea/kokomea-purepod-exterior-sunrise-landscape-kapiti-coast.jpg",
-    imageAlt: "Kokomea PurePod at sunrise on the Kāpiti Coast",
+      "/assets/img/kokomea/kokomea-purepod-glass-cabin-sunset-kapiti-coast.jpg",
+    imageAlt:
+      "Kokomea PurePod glass cabin at sunset on the Kāpiti Coast, New Zealand",
   },
   {
     slug: "manakau",

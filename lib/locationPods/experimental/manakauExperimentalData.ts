@@ -2,12 +2,19 @@ import type { LocationFaqItem } from "@/components/location/LocationFaqSection";
 import type { EditorialPodLocationConfig } from "./editorialPodLocationTypes";
 
 const heroImage =
-  "/assets/img/manakau/manakau-purepod-glass-cabin-seaward-kaikoura-mountains.jpg";
-const podHills =
+  "/assets/img/manakau/manakau-purepod-sunrise-over-mountain-landscape.jpg";
+/** The Pod carousel — exterior → interior → detail → vistas → shower → night (hero sunrise JPG only on hero). */
+const podHillsLandscape =
   "/assets/img/manakau/manakau-purepod-glass-cabin-hills-landscape-kaikoura.jpg";
-const podBedroom =
-  "/assets/img/manakau/manakau-purepod-bedroom-view-kaikoura.jpg";
-const podStars =
+const podBedroomMountainView =
+  "/assets/img/manakau/manakau-purepod-bedroom-with-mountain-view.jpg";
+const podSunset =
+  "/assets/img/manakau/manakau-purepod-glass-cabin-sunset-kaikoura.jpg";
+const podSeawardMountains =
+  "/assets/img/manakau/manakau-purepod-glass-cabin-seaward-kaikoura-mountains.jpg";
+const podShowerMountainView =
+  "/assets/img/manakau/manakau-purepod-shower-with-mountain-view.jpg";
+const podMilkyWay =
   "/assets/img/manakau/manakau-purepod-milky-way-stargazing-kaikoura.jpg";
 const expWhale =
   "/assets/img/manakau/kaikoura-whale-watching-sperm-whale.jpg";
@@ -18,6 +25,10 @@ const travelFarm =
   "/assets/img/manakau/kaikoura-countryside-farm-entrance.jpg";
 const travelValley =
   "/assets/img/manakau/kaikoura-river-valley-landscape.jpg";
+const foodBreakfastMountainView =
+  "/assets/img/manakau/manakau-purepod-breakfast-with-mountain-view.jpg";
+const foodOutdoorGrazingPlatter =
+  "/assets/img/manakau/manakau-purepod-outdoor-grazing-platter.jpg";
 const travelPlatter =
   "/assets/img/manakau/manakau-local-food-platter-kaikoura.jpg";
 const travelBreakfast =
@@ -72,18 +83,33 @@ const manakauPodNarrative = {
     "Manakau is defined by wide landscapes, mountain views and deep rural stillness — a private glass retreat immersed in the Kaikōura countryside.",
   gallery: [
     {
-      src: podHills,
+      src: podHillsLandscape,
       alt: "Manakau PurePod glass cabin in the Kaikōura hills landscape, New Zealand",
       position: "50% 55%",
     },
     {
-      src: podBedroom,
-      alt: "Bedroom view inside Manakau PurePod, Kaikōura, New Zealand",
+      src: podBedroomMountainView,
+      alt: "Bedroom with mountain views inside Manakau PurePod, Kaikōura, New Zealand",
+      position: "50% 48%",
+    },
+    {
+      src: podSunset,
+      alt: "Sunset light on Manakau PurePod glass cabin, Kaikōura, New Zealand",
+      position: "50% 52%",
+    },
+    {
+      src: podSeawardMountains,
+      alt: "View through glass toward the Seaward Kaikōura Range from Manakau PurePod",
+      position: "50% 55%",
+    },
+    {
+      src: podShowerMountainView,
+      alt: "Shower with mountain views inside Manakau PurePod, Kaikōura, New Zealand",
       position: "50% 50%",
     },
     {
-      src: podStars,
-      alt: "Stargazing and Milky Way from Manakau PurePod, Kaikōura, New Zealand",
+      src: podMilkyWay,
+      alt: "Milky Way and night sky above Manakau PurePod, Kaikōura, New Zealand",
       position: "50% 50%",
     },
   ],
@@ -129,12 +155,20 @@ The track is natural and uneven in places, so suitable walking footwear and ligh
       title: "Food & dining",
       images: [
         {
+          src: foodBreakfastMountainView,
+          alt: "Breakfast with mountain views at Manakau PurePod, Kaikōura, New Zealand",
+        },
+        {
+          src: foodOutdoorGrazingPlatter,
+          alt: "Outdoor grazing platter with local produce at Manakau PurePod, Kaikōura",
+        },
+        {
           src: travelPlatter,
-          alt: "Local food platter at Manakau PurePod, Kaikōura, New Zealand",
+          alt: "Local food platter ready to enjoy at Manakau PurePod, Kaikōura, New Zealand",
         },
         {
           src: travelBreakfast,
-          alt: "Breakfast outdoors at Manakau PurePod, Kaikōura, New Zealand",
+          alt: "Breakfast outdoors on the deck at Manakau PurePod, Kaikōura, New Zealand",
         },
       ],
       body:
@@ -231,12 +265,12 @@ export const manakauEditorialConfig: EditorialPodLocationConfig = {
   hero: {
     imageSrc: heroImage,
     imageAlt:
-      "Manakau PurePod glass cabin with view toward the Seaward Kaikōura mountains, New Zealand",
+      "Manakau PurePod at sunrise over the Kaikōura mountains and farmland, New Zealand",
     title: "Manakau",
     subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
-    imagePosition: "50% 78%",
-    imagePositionMd: "50% 76%",
-    imagePositionXl: "50% 74%",
+    imagePosition: "50% 30%",
+    imagePositionMd: "50% 32%",
+    imagePositionXl: "50% 34%",
   },
   podCarouselAriaLabel: "PurePod Manakau — photo gallery",
   podNarrative: manakauPodNarrative,

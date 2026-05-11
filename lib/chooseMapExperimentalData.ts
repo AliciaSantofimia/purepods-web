@@ -119,8 +119,9 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     title: "Kokomea",
     islandLine: "North Island",
     imageSrc:
-      "/assets/img/kokomea/kokomea-purepod-exterior-sunrise-landscape-kapiti-coast.jpg",
-    imageAlt: "Kokomea PurePod at sunrise on the Kāpiti Coast",
+      "/assets/img/kokomea/kokomea-purepod-glass-cabin-sunset-kapiti-coast.jpg",
+    imageAlt:
+      "Kokomea PurePod glass cabin at sunset on the Kāpiti Coast, New Zealand",
     lat: -40.81559036922355,
     lng: 175.10623434237164,
   },

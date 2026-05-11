@@ -5,7 +5,7 @@ import { MANAKAU_FAQ_ITEMS } from "@/lib/locationPods/experimental/manakauExperi
 
 const CANONICAL_URL = "https://purepods.com/location/manakau/";
 const OG_IMAGE_URL =
-  "https://purepods.com/assets/img/manakau/manakau-purepod-glass-cabin-seaward-kaikoura-mountains.jpg";
+  "https://purepods.com/assets/img/manakau/manakau-purepod-sunrise-over-mountain-landscape.jpg";
 
 const META_DESCRIPTION =
   "PurePod Manakau: glass cabin for two in the Kaikōura region, Canterbury. Seaward mountains & Pacific; short walk-in, private site. Self-contained stay with local provisions.";
@@ -97,7 +97,7 @@ export const podMetadata: Metadata = {
     images: [
       {
         url: OG_IMAGE_URL,
-        alt: "Manakau PurePod glass cabin with view toward the Seaward Kaikōura mountains, New Zealand",
+        alt: "Manakau PurePod at sunrise over the Kaikōura mountains and farmland, New Zealand",
       },
     ],
   },

@@ -3,12 +3,19 @@ import type { EditorialPodLocationConfig } from "./editorialPodLocationTypes";
 
 const heroImage =
   "/assets/img/kokomea/kokomea-purepod-glass-cabin-sunset-view-kapiti-coast.jpg";
-const podSunrise =
+/** The Pod carousel — editorial order: exterior hero, interior, detail, night, aerial. */
+const podGalleryExteriorHero =
   "/assets/img/kokomea/kokomea-purepod-glass-cabin-isolated-landscape-sunset-new-zealand.jpg";
-const podNight =
-  "/assets/img/kokomea/kokomea-purepod-glass-cabin-night-exterior-kapiti-coast.jpg";
-const podBedroom =
+const podGalleryBedroomInteriorSunset =
   "/assets/img/kokomea/kokomea-purepod-bedroom-interior-sunset-kapiti-coast.jpg";
+const podGalleryWarmWoodInterior =
+  "/assets/img/kokomea/purepod-kokomea-warm-wooden-interior-details.jpg";
+const podGalleryBedroomDetailInterior =
+  "/assets/img/kokomea/kokomea-purepod-bedroom-detail-interior-kapiti-coast.jpg";
+const podGalleryGlassPodUnderStars =
+  "/assets/img/kokomea/purepod-kokomea-glass-pod-under-stars.jpg";
+const podGalleryAerialCountryside =
+  "/assets/img/kokomea/kokomea-purepod-aerial-countryside-landscape-kapiti-coast.jpg";
 const expIsland =
   "/assets/img/kokomea/kapiti-island-aerial-landscape-kapiti-coast.jpg";
 const expEscarpment =
@@ -19,10 +26,15 @@ const travelRoad =
   "/assets/img/kokomea/kokomea-countryside-access-road-kapiti-coast.jpg";
 const travelSunrise =
   "/assets/img/kokomea/kokomea-purepod-exterior-sunrise-landscape-kapiti-coast.jpg";
-const travelDinner =
-  "/assets/img/kokomea/kokomea-local-food-dinner-platter-kapiti-coast.jpg";
-const travelBreakfast =
+/** Food & dining carousel — local dining hero first, then outdoor meals and provisions. */
+const foodLocalDiningExperience =
+  "/assets/img/kokomea/purepod-kokomea-local-dining-experience.jpg";
+const foodOutdoorBreakfast =
   "/assets/img/kokomea/kokomea-breakfast-outdoor-table-kapiti-coast.jpg";
+const foodSeasonalLocalProduce =
+  "/assets/img/kokomea/purepod-kokomea-seasonal-local-produce.jpg";
+const foodBreakfastBasket =
+  "/assets/img/kokomea/kokomea-breakfast-basket-kapiti-coast.jpg";
 
 export const KOKOMEA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=10";
@@ -74,19 +86,34 @@ const kokomeaPodNarrative = {
     "Kokomea is shaped by sunset light, countryside calm and the feeling of being quietly removed from the pace of everyday life.",
   gallery: [
     {
-      src: podSunrise,
-      alt: "Kokomea PurePod glass cabin at sunset in the Kāpiti Coast landscape, New Zealand",
+      src: podGalleryExteriorHero,
+      alt: "Kokomea PurePod glass cabin in open Kāpiti Coast countryside at sunset, New Zealand",
       position: "50% 55%",
     },
     {
-      src: podNight,
-      alt: "Kokomea PurePod glass cabin at night on the Kāpiti Coast",
-      position: "50% 60%",
+      src: podGalleryBedroomInteriorSunset,
+      alt: "Bedroom with floor-to-ceiling glass and warm sunset light at Kokomea PurePod, Kāpiti Coast",
+      position: "50% 48%",
     },
     {
-      src: podBedroom,
-      alt: "Bedroom inside Kokomea PurePod with sunset light, Kāpiti Coast",
-      position: "50% 45%",
+      src: podGalleryWarmWoodInterior,
+      alt: "Warm timber interior and crafted details inside Kokomea PurePod on the Kāpiti Coast",
+      position: "50% 58%",
+    },
+    {
+      src: podGalleryBedroomDetailInterior,
+      alt: "Interior bedroom detail with linen and soft light at Kokomea PurePod, Kāpiti Coast, New Zealand",
+      position: "50% 52%",
+    },
+    {
+      src: podGalleryGlassPodUnderStars,
+      alt: "Night sky and stars above Kokomea PurePod’s glass cabin on the Kāpiti Coast, New Zealand",
+      position: "50% 50%",
+    },
+    {
+      src: podGalleryAerialCountryside,
+      alt: "Aerial view of Kokomea PurePod, vineyards and rolling hills towards Kāpiti Island, New Zealand",
+      position: "50% 48%",
     },
   ],
 };
@@ -131,12 +158,20 @@ Parts of the path can become rocky or slippery after rain, so suitable walking f
       title: "Food & dining",
       images: [
         {
-          src: travelDinner,
-          alt: "Local food platter at Kokomea PurePod, Kāpiti Coast",
+          src: foodLocalDiningExperience,
+          alt: "Local dining experience with seasonal produce at Kokomea PurePod, Kāpiti Coast, New Zealand",
         },
         {
-          src: travelBreakfast,
-          alt: "Breakfast outdoors at Kokomea PurePod, Kāpiti Coast",
+          src: foodOutdoorBreakfast,
+          alt: "Breakfast on the deck at Kokomea PurePod with views across the Kāpiti Coast countryside",
+        },
+        {
+          src: foodSeasonalLocalProduce,
+          alt: "Seasonal local produce ready to prepare at Kokomea PurePod on the Kāpiti Coast",
+        },
+        {
+          src: foodBreakfastBasket,
+          alt: "Breakfast basket with local provisions at Kokomea PurePod, Kāpiti Coast",
         },
       ],
       body:
