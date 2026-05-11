@@ -87,8 +87,8 @@ export const relaxExperienceSlides: AdventureExperienceSlide[] = [
     url: "https://www.waihibeachinfo.co.nz/",
   },
   {
-    image: `${RC}gore-bay-purepods-coastal-beach-cliffs-new-zealand.jpg`,
-    alt: "Calm sandy beach with gentle waves and white cliffs on a quiet New Zealand coastline",
+    image: `${RC}purau-bay-beach-near-pohue-purepod-banks-peninsula-new-zealand.jpg`,
+    alt: "Purau Bay Beach on Banks Peninsula near Pōhue PurePod, New Zealand",
     title: "Purau Bay Beach",
     description:
       "A sheltered Banks Peninsula beach with harbour views and a quieter coastal pace before returning to Pōhue.",
