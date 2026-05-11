@@ -32,7 +32,7 @@ export const romanticGallery = [
   },
   {
     src: "/assets/img/experiences/romantic/purepods-romantic-getaway-couple-shower-sunset.jpg",
-    alt: "Couple enjoying a sunset shower in a PurePods glass cabin",
+    alt: "Couple enjoying an outdoor shower at sunset at a PurePods glass cabin in New Zealand",
   },
   {
     src: "/assets/img/experiences/romantic/purepods-romantic-getaway-stargazing-bed-glass-roof.jpg",

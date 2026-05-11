@@ -169,7 +169,7 @@ export function RomanticView() {
                   <div className="media">
                     <ExpRefImage
                       src="/assets/img/experiences/romantic/purepods-romantic-getaway-picnic-wine-experience-new-zealand.jpg"
-                      alt="Special celebrations: picnic and wine at a PurePods glass cabin in New Zealand"
+                      alt="Picnic and wine set up for a romantic PurePods getaway in New Zealand"
                       fill
                       sizes="(max-width:900px) 100vw, 50vw"
                       className="img-contain"
