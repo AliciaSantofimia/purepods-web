@@ -21,7 +21,7 @@ export default function OurStoryPage() {
       <main className={styles.page}>
         <section className={styles.hero} aria-labelledby="story-heading">
           <Image
-            src="/assets/img/experiences/night-falls/night-falls-stargazing.jpg"
+            src="/assets/img/experiences/night-falls/purepods-night-falls-stargazing-new-zealand-night-sky.jpg"
             alt="PurePod glass cabin beneath a clear New Zealand night sky"
             fill
             priority
@@ -99,7 +99,7 @@ export default function OurStoryPage() {
         <section className={`${styles.imageStatement} ${styles.reveal}`}>
           <Image
             src="/assets/img/kahutara/kahutara-purepod-glass-cabin-mountain-landscape-kaikoura.jpg"
-            alt="A tiny PurePod glass cabin surrounded by mountains and open nature"
+            alt="Kahutara PurePod glass cabin surrounded by mountains near Kaikōura, New Zealand"
             fill
             className={styles.statementImage}
             sizes="100vw"

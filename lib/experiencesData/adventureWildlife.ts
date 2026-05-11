@@ -65,7 +65,7 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
   },
   {
     image:
-      "/assets/img/pamu/rotorua-volcanic-geothermal-valley-landscape-new-zealand..jpg",
+      "/assets/img/pamu/rotorua-volcanic-geothermal-valley-landscape-new-zealand.jpg",
     alt: "Volcanic landscape flyover with geothermal steam near Rotorua, New Zealand",
     title: "Volcanic landscapes by air",
     description:
@@ -139,8 +139,8 @@ export type AdventureRestClosingSlide = {
 
 export const adventureRestClosingSlides: AdventureRestClosingSlide[] = [
   {
-    src: "/assets/img/rest-stay-carousel/hananui-purepod-deckchairs-coastal-view-northland-new-zealand.jpg",
-    alt: "Deckchairs on a Hananui PurePod deck overlooking the Northland coast, sea and distant headlands in soft daylight",
+    src: "/assets/img/rest-stay-carousel/hananui-purepod-deckchairs-coastal-view-rakiura-stewart-island-new-zealand.jpg",
+    alt: "Deckchairs on a Hananui PurePod deck overlooking the Rakiura Stewart Island coast, sea and native bush in soft daylight",
     label: "Coast at your feet",
     subline: "Sit with the breeze; nothing on the schedule but the tide and the light.",
   },
@@ -169,8 +169,8 @@ export const adventureRestClosingSlides: AdventureRestClosingSlide[] = [
     subline: "Flavours from the region, eaten slowly as the light finally gives way.",
   },
   {
-    src: "/assets/img/rest-stay-carousel/hananui-purepod-outdoor-shower-ocean-view-northland-new-zealand.jpg",
-    alt: "Outdoor shower at a Hananui PurePod with open views to the ocean and sky along the Northland coastline",
+    src: "/assets/img/rest-stay-carousel/hananui-purepod-outdoor-shower-ocean-view-rakiura-stewart-island-new-zealand.jpg",
+    alt: "Outdoor shower at a Hananui PurePod with ocean and native bush views on Rakiura Stewart Island, New Zealand",
     label: "Rinse the day away",
     subline: "Salt, dust and trail miles — gone under sky before you turn in for the night.",
   },

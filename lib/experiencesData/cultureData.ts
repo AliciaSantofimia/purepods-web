@@ -55,7 +55,7 @@ export const cultureExperienceSlides: AdventureExperienceSlide[] = [
   },
   {
     image: `${C}hobbiton-movie-set-hobbit-house-matamata-new-zealand.jpg`,
-    alt: "Rolling Waikato countryside near Waitomo and Matū PurePod, a quiet rural landscape close to Hobbiton Movie Set",
+    alt: "Hobbiton Movie Set hobbit house in Matamata, New Zealand",
     title: "Hobbiton™ Movie Set",
     description:
       "Step into the crafted landscapes of Middle-earth with a guided visit through the Hobbiton Movie Set, one of New Zealand’s most recognisable screen heritage experiences.",

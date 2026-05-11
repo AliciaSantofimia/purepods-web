@@ -19,7 +19,7 @@ const featured = {
   description:
     "Dark sky stargazing in remote New Zealand — pure silence and a deep connection to the night.",
   cta: "View Night Falls →",
-  image: "/assets/img/experiences/night-falls/dark-sky-purepod.jpg",
+  image: "/assets/img/experiences/night-falls/purepods-dark-sky-stargazing-glass-cabin-new-zealand.jpg",
 };
 
 type GridCard = {

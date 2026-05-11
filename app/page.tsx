@@ -137,7 +137,7 @@ const experiences = [
     title: "Stars without stage lights",
     description:
       "Deep dark, slow minutes, and the night sky as the main event.",
-    image: "/assets/img/experiences/night-falls/dark-sky-purepod.jpg",
+    image: "/assets/img/experiences/night-falls/purepods-dark-sky-stargazing-glass-cabin-new-zealand.jpg",
     alt: "Dark sky above a PurePod",
     link: "/experiences/night-falls",
     width: 1104,

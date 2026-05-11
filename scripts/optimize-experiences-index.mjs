@@ -15,7 +15,7 @@ const JPEG_QUALITY = 84;
 
 const REL_PATHS = [
   "assets/img/purepods-logo-new-zealand.jpg",
-  "assets/img/experiences/night-falls/dark-sky-purepod.jpg",
+  "assets/img/experiences/night-falls/purepods-dark-sky-stargazing-glass-cabin-new-zealand.jpg",
   "assets/img/experiences/romantic/purepods-romantic-getaway-bedroom-fireplace-night.jpg",
   "assets/img/experiences/journeys/new-zealand-native-forest-sunrise-landscape.jpg",
   "assets/img/experiences/experiences/new-zealand-adventure-wildlife-kayaking.jpg",

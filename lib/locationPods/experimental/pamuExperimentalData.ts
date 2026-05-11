@@ -18,7 +18,7 @@ const expGeothermal =
 const expMaori =
   "/assets/img/pamu/rotorua-maori-cultural-experience-village-new-zealand.jpg";
 const expValley =
-  "/assets/img/pamu/rotorua-volcanic-geothermal-valley-landscape-new-zealand..jpg";
+  "/assets/img/pamu/rotorua-volcanic-geothermal-valley-landscape-new-zealand.jpg";
 const travelFence =
   "/assets/img/pamu/pamu-purepod-farm-fence-landscape-rotorua.jpg";
 const travelAerial =

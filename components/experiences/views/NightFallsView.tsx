@@ -42,8 +42,8 @@ export function NightFallsView() {
           >
             <header className="hero" id="top">
               <ExpRefImage
-                src="/assets/img/experiences/night-falls/night-falls-stargazing.jpg"
-                alt="Night Falls starry sky experience"
+                src="/assets/img/experiences/night-falls/purepods-night-falls-stargazing-new-zealand-night-sky.jpg"
+                alt="A star-filled night sky above a remote PurePod in New Zealand"
                 fill
                 sizes="100vw"
                 className="heroImg"
@@ -93,8 +93,8 @@ export function NightFallsView() {
               <div className="nightBlock">
                 <div className="nightImg night-reveal night-reveal--image">
                   <ExpRefImage
-                    src="/assets/img/experiences/night-falls/dark-sky-purepod.jpg"
-                    alt="Dark sky stargazing above a PurePod glass cabin in New Zealand"
+                    src="/assets/img/experiences/night-falls/purepods-dark-sky-stargazing-glass-cabin-new-zealand.jpg"
+                    alt="Dark night sky above a PurePod glass cabin in remote New Zealand"
                     fill
                     sizes="(max-width:860px) 100vw, 50vw"
                   />
@@ -121,8 +121,8 @@ export function NightFallsView() {
               <div className="nightBlock reverse">
                 <div className="nightImg night-reveal night-reveal--image">
                   <ExpRefImage
-                    src="/assets/img/experiences/night-falls/purepod-full-moon.jpg"
-                    alt="PurePod glass cabin under a full moon in New Zealand"
+                    src="/assets/img/experiences/night-falls/purepods-glass-cabin-full-moon-new-zealand-night-sky.jpg"
+                    alt="A PurePod glass cabin under a full moon in New Zealand"
                     fill
                     sizes="(max-width:860px) 100vw, 50vw"
                   />
@@ -149,8 +149,8 @@ export function NightFallsView() {
                 <div className="nightBlock">
                   <div className="nightImg night-reveal night-reveal--image">
                     <ExpRefImage
-                      src="/assets/img/experiences/night-falls/southern-aurora-purepod.jpg"
-                      alt="Southern Aurora visible above a PurePod glass cabin in New Zealand"
+                      src="/assets/img/experiences/night-falls/aurora-australis-purepod-glass-cabin-new-zealand-night-sky.jpg"
+                      alt="Aurora Australis glowing above a PurePod glass cabin in New Zealand"
                       fill
                       sizes="(max-width:860px) 100vw, 50vw"
                     />

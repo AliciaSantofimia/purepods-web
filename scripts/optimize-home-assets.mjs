@@ -37,7 +37,7 @@ const REL_PATHS = [
   "assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg",
   "assets/img/tokoeka/tokoeka-purepod-aerial-forest-location-stewart-island.jpg",
   "assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg",
-  "assets/img/experiences/night-falls/dark-sky-purepod.jpg",
+  "assets/img/experiences/night-falls/purepods-dark-sky-stargazing-glass-cabin-new-zealand.jpg",
   "assets/img/experiences/romantic/purepods-romantic-getaway-stargazing-bed-glass-roof.jpg",
   "assets/img/experiences/adventure-wildlife/kaikoura-whale-watch-sperm-whale-coast-new-zealand.jpg",
   "assets/img/experiences/culture/ohinetahi-gardens-lyttelton-harbour-christchurch-new-zealand-historic-estate.jpg",

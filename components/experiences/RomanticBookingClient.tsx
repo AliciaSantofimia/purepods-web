@@ -51,7 +51,7 @@ export function RomanticBookingClient() {
                     <div className="pod-thumb">
                       <Image
                         src="/assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg"
-                        alt="Greystone PurePod in Central Otago"
+                        alt="Greystone PurePod glass cabin exterior in Waipara, New Zealand"
                         width={184}
                         height={184}
                       />
