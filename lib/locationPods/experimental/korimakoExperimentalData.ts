@@ -9,6 +9,10 @@ const podShower =
   "/assets/img/kiromako/korimako-purepod-glass-cabin-aerial-top-view-solar-panels-new-zealand.jpg";
 const podBed =
   "/assets/img/kiromako/kiromako-purepod-glass-cabin-interior-bed-new-zealand.jpg";
+const podNativeGrass =
+  "/assets/img/korimako/korimako-purepod-hidden-glass-cabin-in-native-grass.jpg";
+const podCoastalLight =
+  "/assets/img/korimako/korimako-purepod-glass-cabin-coastal-light-exterior.jpg";
 const expGully =
   "/assets/img/kiromako/kiromako-experience-cathedral-gully-coastal-landscape-new-zealand.jpg";
 const expWine =
@@ -23,6 +27,10 @@ const travelDining =
   "/assets/img/kiromako/kiromako-purepod-local-produce-dining-experience-new-zealand.jpg";
 const travelDinner =
   "/assets/img/kiromako/kiromako-purepod-local-dinner-meal-new-zealand.jpg";
+const travelBreakfast =
+  "/assets/img/kiromako/korimako-purepod-homemade-breakfast-jars-outdoors.jpg";
+const travelBbq =
+  "/assets/img/kiromako/korimako-purepod-private-bbq-dining-experience.jpg";
 
 export const KORIMAKO_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=6";
@@ -77,9 +85,19 @@ const korimakoPodNarrative = {
       position: "52% 50%",
     },
     {
+      src: podNativeGrass,
+      alt: "Korimako PurePod surrounded by native coastal grass and bush",
+      position: "48% 52%",
+    },
+    {
       src: podShower,
       alt: "Aerial top view of Korimako PurePod glass cabin with solar panels, Hurunui, New Zealand",
       position: "50% 60%",
+    },
+    {
+      src: podCoastalLight,
+      alt: "Glass PurePod exterior with coastal views at Korimako",
+      position: "52% 48%",
     },
     {
       src: podBed,
@@ -126,12 +144,20 @@ const korimakoTravelBlock = {
       title: "Food & dining",
       images: [
         {
+          src: travelBreakfast,
+          alt: "Homemade breakfast jars served outdoors at Korimako PurePod",
+        },
+        {
           src: travelDining,
           alt: "Local produce and dining at Korimako PurePod, Hurunui, New Zealand",
         },
         {
           src: travelDinner,
           alt: "Dinner at Korimako PurePod, Hurunui, New Zealand",
+        },
+        {
+          src: travelBbq,
+          alt: "Preparing a private BBQ dinner at Korimako PurePod",
         },
       ],
       body:

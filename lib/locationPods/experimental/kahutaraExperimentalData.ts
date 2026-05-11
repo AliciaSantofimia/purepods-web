@@ -2,13 +2,20 @@ import type { LocationFaqItem } from "@/components/location/LocationFaqSection";
 import type { EditorialPodLocationConfig } from "./editorialPodLocationTypes";
 
 const heroImage =
-  "/assets/img/kahutara/kahutara-purepod-glass-cabin-kaikoura-new-zealand.jpg";
-const podRiverValley =
+  "/assets/img/kahutara/kahutara-purepod-sunrise-over-river-valley.jpg";
+/** The Pod carousel — exterior → glass/views → interior → bathroom */
+const podMountainValleyLandscape =
   "/assets/img/kahutara/kahutara-purepod-glass-cabin-mountain-valley-landscape-kaikoura-new-zealand.jpg";
+const podGlassReflectionsLandscape =
+  "/assets/img/kahutara/kahutara-purepod-glass-reflections-and-landscape.jpg";
+const podRiverValleyView =
+  "/assets/img/kahutara/kahutara-purepod-river-valley-view-kaikoura.jpg";
 const podBedroom =
   "/assets/img/kahutara/kahutara-purepod-bedroom-view-kaikoura-mountain.jpg";
-const podMountain =
-  "/assets/img/kahutara/kahutara-purepod-glass-cabin-mountain-landscape-kaikoura.jpg";
+const podShowerRiverMountain =
+  "/assets/img/kahutara/kahutara-purepod-shower-with-river-and-mountain-view.jpg";
+const podWarmWoodenBathroom =
+  "/assets/img/kahutara/kahutara-purepod-warm-wooden-bathroom-interior.jpg";
 const expWhale = "/assets/img/kahutara/kaikoura-whale-watching-new-zealand.jpg";
 const expPeninsula =
   "/assets/img/kahutara/kaikoura-peninsula-walkway-coastal-track.jpg";
@@ -71,9 +78,19 @@ const kahutaraPodNarrative = {
     "Kahutara is defined by mountain views, open countryside and deep rural stillness — a private glass retreat immersed in the Kaikōura landscape.",
   gallery: [
     {
-      src: podRiverValley,
-      alt: "Kahutara PurePod glass cabin at sunset in the Kaikōura countryside, New Zealand",
-      position: "50% 78%",
+      src: podMountainValleyLandscape,
+      alt: "Kahutara PurePod glass cabin above the mountain valley near Kaikōura, New Zealand",
+      position: "50% 55%",
+    },
+    {
+      src: podGlassReflectionsLandscape,
+      alt: "Glass reflections and open landscape at Kahutara PurePod, Kaikōura",
+      position: "50% 52%",
+    },
+    {
+      src: podRiverValleyView,
+      alt: "River valley view from Kahutara PurePod toward the Kaikōura ranges, New Zealand",
+      position: "50% 55%",
     },
     {
       src: podBedroom,
@@ -81,9 +98,14 @@ const kahutaraPodNarrative = {
       position: "50% 58%",
     },
     {
-      src: podMountain,
-      alt: "Kahutara PurePod glass cabin surrounded by hills and Kaikōura mountains in New Zealand",
-      position: "50% 70%",
+      src: podShowerRiverMountain,
+      alt: "Shower with river and mountain views inside Kahutara PurePod, Kaikōura",
+      position: "50% 50%",
+    },
+    {
+      src: podWarmWoodenBathroom,
+      alt: "Warm timber bathroom interior at Kahutara PurePod on the Kaikōura coast",
+      position: "50% 52%",
     },
   ],
 };
@@ -242,7 +264,9 @@ export const kahutaraEditorialConfig: EditorialPodLocationConfig = {
       "Kahutara PurePod glass cabin overlooking the Kaikōura mountains and river valley in New Zealand",
     title: "Kahutara",
     subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
-    imagePosition: "70% 85%",
+    imagePosition: "30% 48%",
+    imagePositionMd: "28% 46%",
+    imagePositionXl: "26% 44%",
   },
   podCarouselAriaLabel: "PurePod Kahutara — photo gallery",
   podNarrative: kahutaraPodNarrative,

@@ -44,6 +44,8 @@ export type EditorialPodLocationConfig = {
     imagePosition: string;
     imagePositionMd?: string;
     imagePositionXl?: string;
+    /** Stronger gradient tint on hero overlays (e.g. night sky photography). */
+    heroNightOverlay?: boolean;
   };
   podCarouselAriaLabel: string;
   podNarrative: {

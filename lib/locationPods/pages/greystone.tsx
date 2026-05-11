@@ -5,7 +5,7 @@ import { GREYSTONE_FAQ_ITEMS } from "@/lib/locationPods/experimental/greystoneEx
 
 const CANONICAL_URL = "https://purepods.com/location/greystone/";
 const OG_IMAGE_URL =
-  "https://purepods.com/assets/img/greystone/greystone-purepod-aerial-vineyard-landscape-waipara.jpg";
+  "https://purepods.com/assets/img/greystone/greystone-purepod-milky-way-night-sky-retreat.jpg";
 
 const META_DESCRIPTION =
   "PurePod Greystone: glass cabin for two above Greystone vineyard, Waipara Valley. ~10 min uphill walk. Under 1 hr from Christchurch. Wine country; self-contained.";
@@ -97,7 +97,7 @@ export const podMetadata: Metadata = {
     images: [
       {
         url: OG_IMAGE_URL,
-        alt: "Aerial view of Greystone PurePod surrounded by vineyards and rolling hills in Waipara, New Zealand",
+        alt: "Greystone PurePod glass cabin at night beneath the Milky Way in Waipara Valley, New Zealand",
       },
     ],
   },

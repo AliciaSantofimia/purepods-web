@@ -5,7 +5,7 @@ import { KAHUTARA_FAQ_ITEMS } from "@/lib/locationPods/experimental/kahutaraExpe
 
 const CANONICAL_URL = "https://purepods.com/location/kahutara/";
 const OG_IMAGE_URL =
-  "https://purepods.com/assets/img/kahutara/kahutara-purepod-glass-cabin-kaikoura-new-zealand.jpg";
+  "https://purepods.com/assets/img/kahutara/kahutara-purepod-sunrise-over-river-valley.jpg";
 
 const META_DESCRIPTION =
   "PurePod Kahutara: remote glass cabin for two on the Kaikōura coast. Access: 10–15 min walk from parking. Coast, mountains and seclusion—no shared spaces.";

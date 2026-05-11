@@ -77,6 +77,38 @@
     );
 }
 
+.hero.heroNightOverlay::after {
+  background:
+    radial-gradient(
+      ellipse 55% 45% at 75% 18%,
+      rgba(0, 0, 0, 0.2) 0%,
+      transparent 62%
+    ),
+    radial-gradient(
+      ellipse 120% 85% at 50% 100%,
+      rgba(0, 0, 0, 0.42) 0%,
+      transparent 56%
+    ),
+    radial-gradient(
+      ellipse 90% 72% at 16% 86%,
+      rgba(0, 0, 0, 0.56) 0%,
+      transparent 54%
+    ),
+    linear-gradient(
+      to top,
+      rgba(8, 10, 6, 0.76) 0%,
+      rgba(8, 10, 6, 0.26) 44%,
+      transparent 58%
+    ),
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.68) 0%,
+      rgba(0, 0, 0, 0.28) 44%,
+      rgba(0, 0, 0, 0.09) 64%,
+      transparent 80%
+    );
+}
+
 .heroFadeToPage {
   position: absolute;
   bottom: 0;

@@ -2,13 +2,19 @@ import type { LocationFaqItem } from "@/components/location/LocationFaqSection";
 import type { EditorialPodLocationConfig } from "./editorialPodLocationTypes";
 
 const heroImage =
-  "/assets/img/greystone/greystone-purepod-glass-cabin-exterior-mountain-landscape-daylight-new-zealand.jpg";
+  "/assets/img/greystone/greystone-purepod-milky-way-night-sky-retreat.jpg";
 const podAerial =
   "/assets/img/greystone/greystone-purepod-bedroom-interior-valley-view-waipara-new-zealand.jpg";
 const podExterior =
   "/assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg";
 const podBedroom =
   "/assets/img/greystone/greystone-purepod-glass-cabin-exterior-sunset-valley-view-new-zealand.jpg";
+const podMountainDaylight =
+  "/assets/img/greystone/greystone-purepod-glass-cabin-exterior-mountain-landscape-daylight-new-zealand.jpg";
+const podGoldenHour =
+  "/assets/img/greystone/greystone-purepod-golden-hour-glass-cabin-retreat.jpg";
+const podSunsetDeck =
+  "/assets/img/greystone/greystone-purepod-sunset-deck-outdoor-retreat.jpg";
 const expWine =
   "/assets/img/greystone/greystone-wine-dinner-experience-waipara.jpg";
 const expSculpture =
@@ -73,14 +79,29 @@ const greystonePodNarrative = {
     "Greystone is defined by open horizons, vineyard calm and the changing colours of the Waipara landscape — a private glass retreat immersed in New Zealand wine country.",
   gallery: [
     {
-      src: podBedroom,
-      alt: "Greystone PurePod glass cabin exterior at sunset, Waipara Valley, New Zealand",
-      position: "50% 58%",
+      src: podMountainDaylight,
+      alt: "Greystone PurePod glass cabin exterior with mountain landscape in daylight, Waipara Valley, New Zealand",
+      position: "50% 52%",
     },
     {
       src: podExterior,
       alt: "Greystone PurePod glass cabin exterior in Waipara Valley, New Zealand",
       position: "50% 70%",
+    },
+    {
+      src: podGoldenHour,
+      alt: "Greystone PurePod glass cabin at golden hour, Waipara Valley, New Zealand",
+      position: "50% 55%",
+    },
+    {
+      src: podBedroom,
+      alt: "Greystone PurePod glass cabin exterior at sunset, Waipara Valley, New Zealand",
+      position: "50% 58%",
+    },
+    {
+      src: podSunsetDeck,
+      alt: "Greystone PurePod outdoor deck at sunset, Waipara Valley, New Zealand",
+      position: "52% 56%",
     },
     {
       src: podAerial,
@@ -244,12 +265,13 @@ export const greystoneEditorialConfig: EditorialPodLocationConfig = {
   hero: {
     imageSrc: heroImage,
     imageAlt:
-      "Greystone PurePod glass cabin exterior with mountain landscape in Waipara Valley, New Zealand",
+      "Greystone PurePod glass cabin at night beneath the Milky Way in Waipara Valley, New Zealand",
     title: "Greystone",
     subtitleParagraphs: HERO_SUBTITLE_PARAGRAPHS,
-    imagePosition: "50% 56%",
-    imagePositionMd: "50% 54%",
-    imagePositionXl: "50% 52%",
+    imagePosition: "48% 58%",
+    imagePositionMd: "49% 54%",
+    imagePositionXl: "50% 50%",
+    heroNightOverlay: true,
   },
   podCarouselAriaLabel: "PurePod Greystone — photo gallery",
   podNarrative: greystonePodNarrative,
