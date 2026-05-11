@@ -5,7 +5,7 @@ import { POHUE_FAQ_ITEMS } from "@/lib/locationPods/experimental/pohueExperiment
 
 const CANONICAL_URL = "https://purepods.com/location/pohue/";
 const OG_IMAGE_URL =
-  "https://purepods.com/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg";
+  "https://purepods.com/assets/img/pohue/pohue-purepod-lakeside-glass-cabin-sunset-retreat-new-zealand.jpg";
 
 const META_DESCRIPTION =
   "PurePod Pōhue: glass cabin for two above Port Levy, Banks Peninsula. Access: 1.2 km uphill walk, 20–25 min. Harbour views; private; no shared spaces.";
@@ -97,7 +97,7 @@ export const podMetadata: Metadata = {
     images: [
       {
         url: OG_IMAGE_URL,
-        alt: "Pōhue PurePod glass cabin above coastal hills with views toward Port Levy and Banks Peninsula, New Zealand",
+        alt: "Pōhue PurePod glass cabin at sunset beside the lake on Banks Peninsula, New Zealand",
       },
     ],
   },

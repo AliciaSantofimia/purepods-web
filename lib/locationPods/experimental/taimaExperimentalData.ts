@@ -9,6 +9,12 @@ const podMilkyWay =
   "/assets/img/taima/PurePod%20T%C4%81ima%20outdoor%20deck%20sunset%20with%20mountain%20views%20and%20private%20seating%20New%20Zealand.jpg";
 const podEveningReflections =
   "/assets/img/taima/Tāima PurePod evening reflections _ photo credit Paul Wilson.jpg";
+const podOutdoorShower =
+  "/assets/img/taima/taima-purepod-outdoor-shower-mountain-view-new-zealand.jpg";
+const podKitchenPanorama =
+  "/assets/img/taima/taima-purepod-kitchen-mountain-panorama-view-new-zealand.jpg";
+const podInteriorOpenDeck =
+  "/assets/img/taima/taima-purepod-glass-cabin-interior-open-deck-view-new-zealand.jpg";
 const expSluicings =
   "/assets/img/taima/central-otago-rocky-canyon-hiking-trail.jpg";
 const expLakeDunstan =
@@ -21,6 +27,8 @@ const travelJourneyRight =
   "/assets/img/taima/taima-purepod-bedroom-mountain-view-central-otago.jpg";
 const travelFood =
   "/assets/img/taima/taima-local-food-platter-central-otago.jpg";
+const travelMorningTea =
+  "/assets/img/taima/taima-purepod-morning-tea-kettle-mountain-view-new-zealand.jpg";
 const travelVineyard =
   "/assets/img/taima/T%C4%81ima%20PurePod%20BBQ%20views%20_%20photo%20credit%20Paul%20Wilson.jpg";
 
@@ -77,9 +85,24 @@ const taimaPodNarrative = {
       position: "50% 50%",
     },
     {
+      src: podInteriorOpenDeck,
+      alt: "Glass cabin interior looking toward the open deck at Tāima PurePod, Central Otago, New Zealand",
+      position: "50% 52%",
+    },
+    {
+      src: podKitchenPanorama,
+      alt: "Kitchen with panoramic mountain views inside Tāima PurePod, Central Otago, New Zealand",
+      position: "50% 48%",
+    },
+    {
       src: podMilkyWay,
       alt: "PurePod Tāima outdoor deck at sunset with mountain views and private seating, Central Otago, New Zealand",
       position: "50% 52%",
+    },
+    {
+      src: podOutdoorShower,
+      alt: "Outdoor shower with mountain views at Tāima PurePod in Central Otago, New Zealand",
+      position: "50% 50%",
     },
     {
       src: podEveningReflections,
@@ -125,6 +148,10 @@ const taimaTravelBlock = {
       variant: "photos" as const,
       title: "Food & dining",
       images: [
+        {
+          src: travelMorningTea,
+          alt: "Morning tea with kettle and mountain views at Tāima PurePod in Central Otago, New Zealand",
+        },
         {
           src: travelFood,
           alt: "Local food platter ready to enjoy at Tāima PurePod in Central Otago, New Zealand",

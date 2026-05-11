@@ -86,11 +86,14 @@ export function EditorialPodLocationView({ config }: Props) {
     <div className={styles.root}>
       <LightboxProvider>
         <header
-          className={
-            hero.heroNightOverlay
-              ? `${styles.hero} ${styles.heroNightOverlay}`
-              : styles.hero
-          }
+          className={[
+            styles.hero,
+            hero.heroNightOverlay && styles.heroNightOverlay,
+            hero.heroPhotoForwardComposition && styles.heroPhotoForward,
+            hero.heroSunsetOverlay && styles.heroSunsetOverlay,
+          ]
+            .filter(Boolean)
+            .join(" ")}
           id="top"
         >
           <div className={styles.heroMedia}>

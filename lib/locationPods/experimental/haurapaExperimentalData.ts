@@ -9,6 +9,12 @@ const podInterior =
   "/assets/img/haurapa/haurapa-purepod-interior-view-central-otago.jpg";
 const podBedroomSunset =
   "/assets/img/haurapa/haurapa-purepod-bedroom-sunset-central-otago.jpg";
+const podTwilight =
+  "/assets/img/haurapa/haurapa-purepod-glass-cabin-mountain-twilight-view-new-zealand.jpg";
+const podSunlitDeck =
+  "/assets/img/haurapa/haurapa-purepod-glass-cabin-exterior-sunlit-deck-new-zealand.jpg";
+const podMountainDeckBreakfast =
+  "/assets/img/haurapa/haurapa-purepod-mountain-deck-breakfast-quiet-evening-new-zealand.jpg";
 const expHiking =
   "/assets/img/haurapa/haurapa-hiking-trail-central-otago-landscape-new-zealand.jpg";
 const expOliveGrove =
@@ -23,6 +29,8 @@ const foodDining =
   "/assets/img/haurapa/haurapa-outdoor-dining-local-produce-central-otago-new-zealand.jpg";
 const foodHamper =
   "/assets/img/haurapa/haurapa-purepod-food-hamper-lunch-central-otago.jpg";
+const foodBbqSunset =
+  "/assets/img/haurapa/haurapa-purepod-bbq-mountain-valley-sunset-new-zealand.jpg";
 
 export const HAURAPA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=9";
@@ -72,9 +80,9 @@ const haurapaPodNarrative = {
     "Haurapa is defined by elevation, openness and the dramatic scale of Central Otago — a private glass retreat immersed in the high-country landscape.",
   gallery: [
     {
-      src: podExterior,
-      alt: "Haurapa PurePod exterior in Central Otago landscape, New Zealand",
-      position: "50% 55%",
+      src: podSunlitDeck,
+      alt: "Sunlit deck outside Haurapa PurePod glass cabin in Central Otago high country, New Zealand",
+      position: "50% 52%",
     },
     {
       src: podInterior,
@@ -82,9 +90,24 @@ const haurapaPodNarrative = {
       position: "50% 70%",
     },
     {
+      src: podExterior,
+      alt: "Haurapa PurePod exterior in Central Otago landscape, New Zealand",
+      position: "50% 55%",
+    },
+    {
+      src: podMountainDeckBreakfast,
+      alt: "Breakfast on the mountain-view deck at Haurapa PurePod in Central Otago, New Zealand",
+      position: "50% 54%",
+    },
+    {
       src: podBedroomSunset,
       alt: "Glass cabin bedroom at Haurapa PurePod with sunset reflections in Central Otago",
       position: "50% 70%",
+    },
+    {
+      src: podTwilight,
+      alt: "Haurapa PurePod glass cabin at twilight with mountain views in Central Otago, New Zealand",
+      position: "50% 48%",
     },
   ],
 };
@@ -132,6 +155,10 @@ const haurapaTravelBlock = {
         {
           src: foodHamper,
           alt: "Food hamper lunch at Haurapa PurePod with local produce and mountain views in Central Otago, New Zealand",
+        },
+        {
+          src: foodBbqSunset,
+          alt: "BBQ at sunset with mountain valley views from Haurapa PurePod in Central Otago, New Zealand",
         },
       ],
       body:

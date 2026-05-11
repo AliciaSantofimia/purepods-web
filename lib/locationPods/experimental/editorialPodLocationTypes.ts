@@ -46,6 +46,13 @@ export type EditorialPodLocationConfig = {
     imagePositionXl?: string;
     /** Stronger gradient tint on hero overlays (e.g. night sky photography). */
     heroNightOverlay?: boolean;
+    /**
+     * Softer left legibility column + tighter copy block so the photograph reads larger
+     * (e.g. Milky Way hero). Pairs with `heroNightOverlay` when used.
+     */
+    heroPhotoForwardComposition?: boolean;
+    /** Slightly tuned gradients for bright sunset / lakeside heroes (legibility without flattening colour). */
+    heroSunsetOverlay?: boolean;
   };
   podCarouselAriaLabel: string;
   podNarrative: {

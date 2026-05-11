@@ -2,7 +2,7 @@ import type { LocationFaqItem } from "@/components/location/LocationFaqSection";
 import type { EditorialPodLocationConfig } from "./editorialPodLocationTypes";
 
 const heroImage =
-  "/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg";
+  "/assets/img/pohue/pohue-purepod-lakeside-glass-cabin-sunset-retreat-new-zealand.jpg";
 /** Same URLs as legacy `encodeURIComponent(...)` — static ASCII so dev bundlers never misparse template + Unicode. */
 const podCoastalHills =
   "/assets/img/pohue/PurePod%20P%C5%8Dhue%20interior%20with%20glass%20floor%20and%20panoramic%20mountain%20views%20New%20Zealand.jpg";
@@ -10,6 +10,12 @@ const podBedroom =
   "/assets/img/pohue/PurePod%20P%C5%8Dhue%20glass%20cabin%20bedroom%20with%20mountain%20landscape%20views%20New%20Zealand.jpg";
 const podGlassCabin =
   "/assets/img/pohue/Mountain%20and%20lake%20views%20from%20PurePod%20P%C5%8Dhue%20location%20in%20Banks%20Peninsula%20New%20Zealand.jpg";
+const podTwilight =
+  "/assets/img/pohue/pohue-purepod-twilight-glass-cabin-lake-view-retreat.jpg";
+const podForestEdge =
+  "/assets/img/pohue/pohue-purepod-forest-edge-glass-cabin-retreat.jpg";
+const podKitchenMorning =
+  "/assets/img/pohue/pohue-purepod-lakeside-kitchen-view-morning-light.jpg";
 const expPenguins =
   "/assets/img/pohue/pohue-blue-penguins-wildlife-new-zealand.jpg";
 const expVolcanicHills =
@@ -24,6 +30,10 @@ const travelFood =
   "/assets/img/pohue/pohue-local-produce-food-basket-new-zealand.jpg";
 const travelView =
   "/assets/img/pohue/Local%20produce%20breakfast%20hamper%20at%20PurePod%20P%C5%8Dhue.jpg";
+const travelCoffee =
+  "/assets/img/pohue/pohue-purepod-morning-coffee-lakeside-hills-new-zealand.jpg";
+const travelBbq =
+  "/assets/img/pohue/pohue-purepod-bbq-lakeside-hill-country-view-new-zealand.jpg";
 
 export const POHUE_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=4";
@@ -74,6 +84,11 @@ const pohuePodNarrative = {
     "Pōhue is defined by elevation, open horizons and the quiet isolation of Banks Peninsula — a private glass retreat immersed in the landscape above Port Levy.",
   gallery: [
     {
+      src: podKitchenMorning,
+      alt: "Morning light on the kitchen inside Pōhue PurePod with lakeside views through glass, Banks Peninsula, New Zealand",
+      position: "50% 48%",
+    },
+    {
       src: podCoastalHills,
       alt: "Pōhue PurePod interior with glass floor and panoramic mountain views, Banks Peninsula, New Zealand",
       position: "50% 48%",
@@ -87,6 +102,16 @@ const pohuePodNarrative = {
       src: podGlassCabin,
       alt: "Mountain and lake views from PurePod Pōhue on Banks Peninsula, New Zealand",
       position: "50% 50%",
+    },
+    {
+      src: podForestEdge,
+      alt: "Pōhue PurePod glass cabin set at the forest edge above Banks Peninsula, New Zealand",
+      position: "50% 52%",
+    },
+    {
+      src: podTwilight,
+      alt: "Pōhue PurePod glass cabin at twilight with lake view and Banks Peninsula hills, New Zealand",
+      position: "50% 48%",
     },
   ],
 };
@@ -132,8 +157,16 @@ const pohueTravelBlock = {
           alt: "Local produce and hamper-style ingredients for meals at Pōhue PurePod on Banks Peninsula, New Zealand",
         },
         {
+          src: travelCoffee,
+          alt: "Morning coffee with lakeside and hill views from Pōhue PurePod on Banks Peninsula, New Zealand",
+        },
+        {
           src: travelView,
           alt: "Coastal outlook over Port Levy from Pōhue PurePod for slow meals above Banks Peninsula, New Zealand",
+        },
+        {
+          src: travelBbq,
+          alt: "BBQ on the deck with hill-country and lake views at Pōhue PurePod on Banks Peninsula, New Zealand",
         },
       ],
       body:
@@ -243,10 +276,13 @@ export const pohueEditorialConfig: EditorialPodLocationConfig = {
   hero: {
     imageSrc: heroImage,
     imageAlt:
-      "Pōhue PurePod glass cabin above coastal hills with views toward Port Levy and Banks Peninsula, New Zealand",
+      "Pōhue PurePod glass cabin at sunset beside the lake on Banks Peninsula, New Zealand",
     title: "Pōhue",
     subtitleParagraphs: HERO_SUBTITLE_PARAGRAPHS,
-    imagePosition: "50% 75%",
+    imagePosition: "46% 54%",
+    imagePositionMd: "47% 52%",
+    imagePositionXl: "48% 48%",
+    heroSunsetOverlay: true,
   },
   podCarouselAriaLabel: "PurePod Pōhue — photo gallery",
   podNarrative: pohuePodNarrative,
