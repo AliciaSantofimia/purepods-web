@@ -9,6 +9,12 @@ const podBedroom =
   "/assets/img/tokoeka/PurePod%20Tokoeka%20glass%20cabin%20deck%20with%20ocean%20views%20and%20native%20forest%20New%20Zealand.jpg";
 const podAstro =
   "/assets/img/tokoeka/PurePod%20Tokoeka%20glass%20cabin%20bedroom%20with%20ocean%20sunset%20view%20New%20Zealand.jpg";
+const podSunsetCoastline =
+  "/assets/img/tokoeka/tokoeka-purepod-sunset-stewart-island-coastline.jpg";
+const podSunriseBedroom =
+  "/assets/img/tokoeka/tokoeka-purepod-sunrise-bedroom-ocean-view.jpg";
+const podCoastalDeckTwilight =
+  "/assets/img/tokoeka/tokoeka-purepod-coastal-deck-twilight-view.jpg";
 const expUlva = "/assets/img/tokoeka/stewart-island-native-bird-wildlife.jpg";
 const expMason =
   "/assets/img/tokoeka/stewart-island-tokoeka-kiwi-wildlife..jpg";
@@ -18,8 +24,16 @@ const travelAerial =
   "/assets/img/tokoeka/tokoeka-purepod-forest-walkway-sign.jpg";
 const travelForest =
   "/assets/img/tokoeka/stewart-island-coastal-forest-landscape.jpg";
+const travelCoastalJourneyAerial =
+  "/assets/img/tokoeka/tokoeka-stewart-island-coastal-journey-aerial.jpg";
 const travelFood =
   "/assets/img/tokoeka/tokoeka-local-food-platter-stewart-island..jpg";
+const travelBreakfastOcean =
+  "/assets/img/tokoeka/tokoeka-purepod-breakfast-ocean-view-stewart-island.jpg";
+const travelGrazingBreakfast =
+  "/assets/img/tokoeka/tokoeka-purepod-local-grazing-platter-breakfast.jpg";
+const travelDeckDining =
+  "/assets/img/tokoeka/tokoeka-purepod-private-deck-dining-stewart-island.jpg";
 const travelBedroom =
   "/assets/img/tokoeka/tokoeka-purepod-gourmet-food-platter.jpg";
 
@@ -77,14 +91,29 @@ const tokoekaPodNarrative = {
       position: "50% 50%",
     },
     {
+      src: podSunriseBedroom,
+      alt: "Tokoeka PurePod bedroom at sunrise with ocean view through glass walls, Stewart Island, New Zealand",
+      position: "50% 48%",
+    },
+    {
       src: podBedroom,
       alt: "Tokoeka PurePod glass cabin deck with ocean views and native forest, Stewart Island, New Zealand",
       position: "50% 52%",
     },
     {
+      src: podSunsetCoastline,
+      alt: "Stewart Island coastline at sunset from Tokoeka PurePod, with native bush and open sea, New Zealand",
+      position: "50% 50%",
+    },
+    {
       src: podAstro,
       alt: "Tokoeka PurePod glass cabin bedroom with ocean sunset view, Stewart Island, New Zealand",
       position: "50% 48%",
+    },
+    {
+      src: podCoastalDeckTwilight,
+      alt: "Tokoeka PurePod coastal deck at twilight with ocean and native bush, Stewart Island, New Zealand",
+      position: "50% 52%",
     },
   ],
 };
@@ -98,6 +127,10 @@ const tokoekaTravelBlock = {
       variant: "photos" as const,
       title: "The journey",
       images: [
+        {
+          src: travelCoastalJourneyAerial,
+          alt: "Aerial view of Stewart Island's remote coastline on the journey toward Tokoeka PurePod, New Zealand",
+        },
         {
           src: travelAerial,
           alt: "Aerial view of Tokoeka PurePod in native forest at Mamaku Point Conservation Reserve, Stewart Island, New Zealand",
@@ -130,8 +163,20 @@ const tokoekaTravelBlock = {
           alt: "Local food platter with Southland produce at Tokoeka PurePod, Stewart Island, New Zealand",
         },
         {
+          src: travelBreakfastOcean,
+          alt: "Breakfast with ocean view at Tokoeka PurePod on Stewart Island, New Zealand",
+        },
+        {
+          src: travelGrazingBreakfast,
+          alt: "Local grazing-style breakfast platter at Tokoeka PurePod, Stewart Island, New Zealand",
+        },
+        {
           src: travelBedroom,
           alt: "Tokoeka PurePod bedroom with ocean view for relaxed mornings and evenings, Stewart Island, New Zealand",
+        },
+        {
+          src: travelDeckDining,
+          alt: "Private deck dining at Tokoeka PurePod with Stewart Island coastline and ocean view, New Zealand",
         },
       ],
       body:
