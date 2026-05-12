@@ -9,6 +9,10 @@ const podKitchen =
   "/assets/img/atatu/atatu-purepod-glass-cabin-kitchen-ocean-view-new-zealand.jpg";
 const podBedroom =
   "/assets/img/atatu/atatu-purepod-glass-cabin-bedroom-ocean-view-new-zealand.jpg";
+const podSunriseBedroom =
+  "/assets/img/atatu/atatu-purepod-sunrise-bedroom-ocean-view.jpg";
+const podSunsetGlass =
+  "/assets/img/atatu/atatu-purepod-sunset-glass-cabin-ocean-view.jpg";
 const expCathedral =
   "/assets/img/atatu/atatu-experience-cathedral-gully-coastal-landscape-new-zealand.jpg";
 const expWine =
@@ -77,6 +81,11 @@ const atatuPodNarrative = {
       position: "50% 55%",
     },
     {
+      src: podSunriseBedroom,
+      alt: "Atatū PurePod glass cabin bedroom at sunrise with ocean outlook, remote coastal stay in New Zealand",
+      position: "50% 48%",
+    },
+    {
       src: podKitchen,
       alt: "Kitchen inside Atatu PurePod glass cabin with panoramic ocean views in New Zealan",
       position: "50% 70%",
@@ -85,6 +94,11 @@ const atatuPodNarrative = {
       src: podBedroom,
       alt: "Bedroom inside Atatu PurePod glass cabin with panoramic ocean views in New Zealand",
       position: "50% 45%",
+    },
+    {
+      src: podSunsetGlass,
+      alt: "Atatū PurePod glass cabin at sunset with ocean outlook from a remote coastal hilltop in New Zealand",
+      position: "50% 52%",
     },
   ],
 };

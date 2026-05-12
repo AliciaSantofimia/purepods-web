@@ -9,19 +9,29 @@ const podUnderStars =
   "/assets/img/hananui/PurePod%20Hananui%20outdoor%20deck%20with%20ocean%20views%20and%20private%20seating%20New%20Zealand.jpg";
 const podSeaView =
   "/assets/img/hananui/hananui-purepod-sea-view-glass-pod-stewart-island.jpg";
+const podShowerOcean =
+  "/assets/img/hananui/hananui-purepod-glass-shower-ocean-view-stewart-island.jpg";
+const podGlassBedroomInterior =
+  "/assets/img/hananui/hananui-purepod-glass-bedroom-interior-stewart-island.jpg";
+const podKitchenOcean =
+  "/assets/img/hananui/hananui-purepod-kitchen-ocean-view-stewart-island.jpg";
 const expUlva = "/assets/img/hananui/stewart-island-native-bird-wildlife.jpg";
 const expMason =
   "/assets/img/hananui/stewart-island-tokoeka-kiwi-wildlife.jpg";
 const expPaterson =
   "/assets/img/hananui/stewart-island-yellow-eyed-penguin-wildlife.jpg";
-const travelAerial =
-  "/assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg";
 const travelExterior =
   "/assets/img/hananui/hananui-purepod-dining-experience-ocean-view-stewart-island-new-zealand.jpg";
 const travelJourneyRight =
   "/assets/img/hananui/hananui-purepod-walking-path-native-bush-stewart-island-new-zealand.jpg";
+const travelCoastalJourneyAerial =
+  "/assets/img/hananui/hananui-stewart-island-coastal-journey-aerial-view.jpg";
 const travelFood =
   "/assets/img/hananui/hananui-local-food-platter-stewart-island.jpg";
+const travelBreakfastCoastal =
+  "/assets/img/hananui/hananui-purepod-breakfast-with-coastal-view.jpg";
+const travelOutdoorCooking =
+  "/assets/img/hananui/hananui-purepod-outdoor-cooking-ocean-view.jpg";
 
 export const HANANUI_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=12";
@@ -74,14 +84,29 @@ const hananuiPodNarrative = {
       position: "50% 50%",
     },
     {
+      src: podSeaView,
+      alt: "PurePod Hananui glass cabin with ocean views on Stewart Island, New Zealand",
+      position: "50% 50%",
+    },
+    {
       src: podUnderStars,
       alt: "PurePod Hananui outdoor deck with ocean views and private seating, Stewart Island, New Zealand",
       position: "50% 52%",
     },
     {
-      src: podSeaView,
-      alt: "PurePod Hananui glass cabin with ocean views on Stewart Island, New Zealand",
+      src: podGlassBedroomInterior,
+      alt: "Glass bedroom interior at Hananui PurePod with Stewart Island coastal retreat light, New Zealand",
       position: "50% 50%",
+    },
+    {
+      src: podKitchenOcean,
+      alt: "Kitchen view with ocean outlook at Hananui PurePod on Stewart Island, New Zealand",
+      position: "50% 48%",
+    },
+    {
+      src: podShowerOcean,
+      alt: "Glass shower with ocean view inside Hananui PurePod, Stewart Island, New Zealand",
+      position: "50% 48%",
     },
   ],
 };
@@ -99,8 +124,8 @@ const hananuiTravelBlock = {
       title: "The journey",
       images: [
         {
-          src: travelAerial,
-          alt: "Aerial view of Hananui PurePod at Mamaku Point Conservation Reserve, Stewart Island, New Zealand",
+          src: travelCoastalJourneyAerial,
+          alt: "Aerial view of Stewart Island's remote coastline on the journey toward Hananui PurePod, New Zealand",
         },
         {
           src: travelJourneyRight,
@@ -127,6 +152,14 @@ const hananuiTravelBlock = {
         {
           src: travelFood,
           alt: "Local food platter with Southland produce at Hananui PurePod, Stewart Island, New Zealand",
+        },
+        {
+          src: travelBreakfastCoastal,
+          alt: "Breakfast with coastal view at Hananui PurePod on Stewart Island, New Zealand",
+        },
+        {
+          src: travelOutdoorCooking,
+          alt: "Outdoor cooking with ocean view at Hananui PurePod, Stewart Island, New Zealand",
         },
         {
           src: travelExterior,
