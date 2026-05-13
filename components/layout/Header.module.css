@@ -10,9 +10,10 @@
   background: transparent;
   border-bottom: 1px solid transparent;
   transition:
-    background 0.22s ease,
-    border-color 0.22s ease,
-    backdrop-filter 0.22s ease;
+    background 0.28s ease,
+    border-color 0.28s ease,
+    backdrop-filter 0.28s ease,
+    box-shadow 0.28s ease;
 }
 
 .topnavSolid {
@@ -21,41 +22,72 @@
   backdrop-filter: blur(10px);
 }
 
-/* Ruru experimental — minimal tint + strong blur so content shows through; shadows keep white UI readable */
-.topnavGlass {
-  background: rgba(23, 25, 20, 0.1);
-  border-bottom-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(22px) saturate(1.12);
-  -webkit-backdrop-filter: blur(22px) saturate(1.12);
-}
-
-.topnavGlass .brand,
-.topnavGlass .links a {
+/* `/location/*` — still on hero: slightly stronger legibility on bright sky areas */
+.topnavLocationHero .links a:not(.cta) {
   text-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.55),
-    0 0 20px rgba(0, 0, 0, 0.25);
+    0 1px 2px rgba(0, 0, 0, 0.42),
+    0 0 14px rgba(0, 0, 0, 0.22);
 }
 
-.topnavGlass .back {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
-  background: rgba(12, 14, 10, 0.28);
-  border-color: rgba(255, 255, 255, 0.22);
+/* `/location/*` — scrolled past hero: frosted bar + editorial ink (aligned with experiences `nav--solid`, lighter glass) */
+.topnavLocationLightGlass {
+  background: rgba(247, 246, 243, 0.78);
+  border-bottom-color: rgba(92, 95, 62, 0.12);
+  backdrop-filter: blur(18px) saturate(1.08);
+  -webkit-backdrop-filter: blur(18px) saturate(1.08);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.55) inset;
 }
 
-.topnavGlass .cta {
-  background: rgba(12, 14, 10, 0.22);
-  border-color: rgba(255, 255, 255, 0.28);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+.topnavLocationLightGlass .brand {
+  color: var(--brand-green);
+  text-shadow: none;
 }
 
-.topnavGlass .cta:hover {
-  background: rgba(12, 14, 10, 0.38);
+.topnavLocationLightGlass .links a:not(.cta) {
+  color: rgba(92, 95, 62, 0.78);
+  text-shadow: none;
+}
+
+.topnavLocationLightGlass .links a:not(.cta):hover {
+  color: var(--ink);
+}
+
+.topnavLocationLightGlass .cta {
+  background: var(--brand-beige);
+  border-color: rgba(92, 95, 62, 0.22);
+  color: var(--brand-green);
+  font-weight: 700;
+  text-shadow: none;
+  box-shadow: 0 8px 22px rgba(22, 24, 18, 0.12);
+}
+
+.topnavLocationLightGlass .cta:hover {
+  background: rgba(247, 240, 228, 0.98);
+  box-shadow: 0 10px 26px rgba(22, 24, 18, 0.16);
+  color: var(--brand-green);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .topnavGlass {
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+  .topnav {
+    transition-duration: 0.01ms;
+  }
+
+  .topnavLocationLightGlass {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .brandLogoImg {
+    transition-duration: 0.01ms;
+  }
+
+  .brand {
+    transition-duration: 0.01ms;
+  }
+
+  .links a,
+  .cta {
+    transition-duration: 0.01ms;
   }
 }
 
@@ -78,6 +110,9 @@
   font-weight: 700;
   text-decoration: none;
   color: rgba(244, 244, 234, 0.96);
+  transition:
+    color 0.26s ease,
+    text-shadow 0.26s ease;
 }
 
 .brandWithLogo {
@@ -86,8 +121,17 @@
   line-height: 0;
 }
 
-/* White wordmark on Mākōha — slightly larger; soft shadow for contrast on bright hero areas */
+.brandLogoDual {
+  display: grid;
+  grid-template-columns: max-content;
+  grid-template-rows: clamp(32px, 5.2vw, 42px);
+  align-items: center;
+  justify-items: start;
+}
+
+/* White wordmark — soft shadow for contrast on bright hero areas */
 .brandLogoImg {
+  grid-area: 1 / 1;
   display: block;
   height: clamp(32px, 5.2vw, 42px);
   width: auto;
@@ -95,11 +139,20 @@
   object-fit: contain;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55))
     drop-shadow(0 0 18px rgba(0, 0, 0, 0.28));
+  transition: opacity 0.26s ease;
 }
 
-.topnavGlass .brandLogoImg {
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55))
-    drop-shadow(0 0 20px rgba(0, 0, 0, 0.25));
+.brandLogoImgGreen {
+  filter: none;
+}
+
+.brandLogoSwapShown {
+  opacity: 1;
+}
+
+.brandLogoSwapHidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .brand:hover {
@@ -133,9 +186,12 @@
   text-decoration: none;
   color: rgba(244, 244, 234, 0.88);
   font-size: 14px;
+  transition:
+    color 0.26s ease,
+    text-shadow 0.26s ease;
 }
 
-.links a:hover {
+.links a:not(.cta):hover {
   color: #fff;
   text-decoration: none;
 }
@@ -145,6 +201,11 @@
   border-radius: 999px;
   border: 1px solid rgba(244, 244, 234, 0.22);
   background: rgba(244, 244, 234, 0.1);
+  transition:
+    background 0.26s ease,
+    border-color 0.26s ease,
+    color 0.26s ease,
+    box-shadow 0.26s ease;
 }
 
 .cta:hover {

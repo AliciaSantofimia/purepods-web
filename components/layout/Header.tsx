@@ -2,28 +2,47 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { BOOKING_URL } from "@/lib/constants";
 import { bookingUrlForLocationSlug } from "@/lib/locationPods";
+import {
+  getLocationPodPastHeroFromDom,
+  LOCATION_POD_PAST_HERO_EVENT,
+} from "@/lib/locationPods/locationHeaderHeroSync";
 import styles from "./Header.module.css";
 
-function pathnameMatchesBase(pathname: string | null, base: string): boolean {
-  if (!pathname) return false;
-  return pathname === base || pathname.startsWith(`${base}/`);
-}
-
-/** Shared with `/location/ruru`: translucent bar + blur on scroll (not heavy solid green). */
+/** Location pod pages: transparent over hero; light glass + dark nav once the hero clears the bar (see `LocationPodNavHeroSync`). */
 export function Header() {
   const pathname = usePathname();
   const [isSolid, setIsSolid] = useState(false);
+  const [locationPastHero, setLocationPastHero] = useState(false);
 
   const isLocationPage = pathname?.startsWith("/location/");
   const isEditorialLocationPage = Boolean(isLocationPage);
 
+  useLayoutEffect(() => {
+    if (!isEditorialLocationPage) {
+      setLocationPastHero(false);
+      return;
+    }
+    setLocationPastHero(getLocationPodPastHeroFromDom());
+  }, [isEditorialLocationPage, pathname]);
+
   useEffect(() => {
-    const threshold = isEditorialLocationPage ? 64 : 40;
+    if (!isEditorialLocationPage) return;
+    function onPastHero(e: Event) {
+      const ce = e as CustomEvent<{ pastHero: boolean }>;
+      setLocationPastHero(Boolean(ce.detail?.pastHero));
+    }
+    document.addEventListener(LOCATION_POD_PAST_HERO_EVENT, onPastHero);
+    return () =>
+      document.removeEventListener(LOCATION_POD_PAST_HERO_EVENT, onPastHero);
+  }, [isEditorialLocationPage]);
+
+  useEffect(() => {
+    if (isEditorialLocationPage) return;
     function onScroll() {
-      setIsSolid(window.scrollY > threshold);
+      setIsSolid(window.scrollY > 40);
     }
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
@@ -42,17 +61,17 @@ export function Header() {
     return BOOKING_URL;
   }, [pathname]);
 
+  const topnavMods = [
+    styles.topnav,
+    isEditorialLocationPage && !locationPastHero ? styles.topnavLocationHero : "",
+    isEditorialLocationPage && locationPastHero ? styles.topnavLocationLightGlass : "",
+    !isEditorialLocationPage && isSolid ? styles.topnavSolid : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <header
-      className={`${styles.topnav} ${
-        isSolid
-          ? isEditorialLocationPage
-            ? styles.topnavGlass
-            : styles.topnavSolid
-          : ""
-      }`}
-      role="banner"
-    >
+    <header className={topnavMods} role="banner">
       <div className={styles.inner}>
         <div className={styles.left}>
           {showBackToPods && (
@@ -70,18 +89,28 @@ export function Header() {
             aria-label="PurePods — Home"
           >
             {isLocationPage ? (
-              // Native <img>: avoids next/image wrapper lifecycle racing with scroll-driven
-              // re-renders (removeChild on null). Static public asset; CSS controls display size.
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src="/assets/img/LogoPCblancosinfondo.png"
-                alt=""
-                width={603}
-                height={414}
-                className={styles.brandLogoImg}
-                decoding="async"
-                fetchPriority="high"
-              />
+              <span className={styles.brandLogoDual}>
+                {/* Native <img>: avoids next/image wrapper lifecycle racing with scroll-driven re-renders. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/assets/img/LogoPCblancosinfondo.png"
+                  alt=""
+                  width={603}
+                  height={414}
+                  className={`${styles.brandLogoImg} ${locationPastHero ? styles.brandLogoSwapHidden : styles.brandLogoSwapShown}`}
+                  decoding="async"
+                  fetchPriority="high"
+                />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/assets/img/LogoPCverdesinfondo.png"
+                  alt=""
+                  width={603}
+                  height={414}
+                  className={`${styles.brandLogoImg} ${styles.brandLogoImgGreen} ${locationPastHero ? styles.brandLogoSwapShown : styles.brandLogoSwapHidden}`}
+                  decoding="async"
+                />
+              </span>
             ) : (
               "PurePods"
             )}

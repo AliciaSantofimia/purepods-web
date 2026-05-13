@@ -7,6 +7,7 @@ import {
   LocationFaqSection,
   LocationReviewsSection,
 } from "@/components/location";
+import { LocationPodNavHeroSync } from "@/components/location/LocationPodNavHeroSync";
 import type { EditorialPodLocationConfig } from "@/lib/locationPods/experimental/editorialPodLocationTypes";
 import { RuruExperimentalImageCarousel } from "./RuruExperimentalImageCarousel";
 import { RuruExperimentalLightboxImage } from "./RuruExperimentalLightboxImage";
@@ -123,6 +124,7 @@ export function EditorialPodLocationView({ config }: Props) {
           </div>
           <div className={styles.heroFadeToPage} aria-hidden="true" />
         </header>
+        <LocationPodNavHeroSync />
 
         <main className={styles.main} id="main">
           <section
