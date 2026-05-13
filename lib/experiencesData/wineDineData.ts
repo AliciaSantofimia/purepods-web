@@ -133,7 +133,12 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     title: "The Hunting Lodge (Auckland)",
     description:
       "A vineyard and dining destination with tastings, seasonal food and open green space within reach of Auckland’s west coast.",
-    pods: [{ label: "Rewarewa PurePod", href: "https://purepods.com/booking/?force_site_id=15" }],
+    pods: [
+      {
+        label: "Rewarewa PurePod near Auckland and the Muriwai Coast",
+        href: "/location/rewarewa/?from=wine-dine",
+      },
+    ],
     distance: "Auckland wine country",
     timing: "long lunch or tasting",
     nearbyRegion: " — Auckland / Muriwai Coast, North Island",
@@ -233,7 +238,12 @@ export const wineDineRestaurantSlides: HikingSlide[] = [
     placeHref: "https://www.thehuntinglodge.com/",
     description:
       "A complete vineyard experience combining wine tasting, seasonal dining and open green spaces. Ideal for a long, relaxed afternoon surrounded by vines.",
-    ctas: [{ label: "Stay at Rewarewa →", href: "/location/rewarewa" }],
+    ctas: [
+      {
+        label: "Stay at Rewarewa PurePod on the Muriwai Coast",
+        href: "/location/rewarewa/?from=wine-dine",
+      },
+    ],
   },
 ];
 

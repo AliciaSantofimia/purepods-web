@@ -100,7 +100,12 @@ export const cultureExperienceSlides: AdventureExperienceSlide[] = [
     title: "New Zealand Maritime Museum",
     description:
       "Discover Aotearoa New Zealand’s relationship with the sea, from Polynesian navigation to modern ocean stories, at the waterfront museum in Auckland.",
-    pods: [{ label: "Rewarewa PurePod", href: "/location/rewarewa" }],
+    pods: [
+      {
+        label: "Rewarewa PurePod near Auckland and the Muriwai Coast",
+        href: "/location/rewarewa/?from=culture",
+      },
+    ],
     distance: "Auckland waterfront museum",
     timing: "allow 1–2 hours",
     nearbyRegion: " — Auckland / Muriwai Coast, North Island",
@@ -235,7 +240,12 @@ export const cultureMuseumsSlides: HikingSlide[] = [
     placeHref: "https://www.maritimemuseum.co.nz/",
     description:
       "Discover the deep connection between New Zealand and the sea, from Polynesian navigation to modern exploration. Located on the waterfront, it blends storytelling, history and ocean heritage.",
-    ctas: [{ label: "Stay at Rewarewa, Muriwai Coast →", href: "/location/rewarewa" }],
+    ctas: [
+      {
+        label: "Stay at Rewarewa PurePod on the Muriwai Coast",
+        href: "/location/rewarewa/?from=culture",
+      },
+    ],
   },
   {
     image: `${C}kaikoura-museum-interior-maritime-whaling-exhibits-new-zealand.png`,
