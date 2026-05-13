@@ -54,7 +54,7 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     href: "/location/makoha",
     filter: "north",
     pill: "Kerikeri",
-    title: "Mākōha",
+    title: "Mākoha",
     islandLine: "North Island",
     imageSrc:
       "/assets/img/makoha/purepod-makoha-aerial-view-native-forest-new-zealand.jpg",

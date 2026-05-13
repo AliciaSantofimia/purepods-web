@@ -8,10 +8,10 @@ const OG_IMAGE_URL =
   "https://purepods.com/assets/img/rewarewa/rewarewa-purepod-aerial-landscape-muriwai-coast.jpg";
 
 const META_DESCRIPTION =
-  "PurePod Rewarewa: glass cabin for two on the Muriwai Coast, Auckland. Black sand beaches & Waitākere Ranges; short walk-in, private site. Self-contained coastal stay.";
+  "Rewarewa PurePod is a private off-grid glass cabin for two near Auckland and the Muriwai Coast, designed for a secluded nature escape among native bush, farmland, birdlife and wide western skies.";
 
 const SEO_TITLE_ABSOLUTE =
-  "Rewarewa PurePod | Glass Cabin, Muriwai Coast, New Zealand";
+  "Rewarewa PurePod, Muriwai Coast | Private Off-Grid Glass Cabin";
 
 function rewarewaStructuredData() {
   const faqEntities = REWAREWA_FAQ_ITEMS.map((item) => ({

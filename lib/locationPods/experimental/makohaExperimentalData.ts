@@ -40,36 +40,58 @@ export const MAKOHA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=14";
 
 const HERO_PARAGRAPH_1 =
-  "A private glass cabin for two near Kerikeri, surrounded by subtropical forest and close to the coast.";
-
-const HERO_PARAGRAPH_2 =
-  "Arrive through a short forest walk and settle into complete quiet — native bush, coastal air and clear night skies far from the crowds.";
+  "Mākoha PurePod is a private off-grid glass cabin for two near Kerikeri in Northland, designed for a secluded nature escape among native bush, birdsong and Bay of Islands experiences.";
 
 export const MAKOHA_FAQ_ITEMS: LocationFaqItem[] = [
   {
-    question: "How do I get to PurePod Mākōha?",
+    question: "Is Mākoha PurePod suitable for a romantic getaway?",
     answer:
-      "The final part of your journey follows quiet rural roads and ends with a 5–10 minute walk through native forest. This last stretch is what makes the pod feel truly hidden and private. Suitable footwear is recommended for the track.",
+      "Yes. Mākoha PurePod is designed for two guests and suits couples looking for a private, quiet nature escape near Kerikeri. Set among native bush, birdsong and the Waipapa Stream, it offers a secluded off-grid stay with the comfort of a glass cabin immersed in Northland nature.",
   },
   {
-    question: "What is the walk to the pod like?",
+    question: "How many guests can stay at Mākoha PurePod?",
     answer:
-      "Your arrival ends with a gentle 5–10 minute walk through native forest, where the sound of roads and towns fades away. At the end of the track you find a fully private pod — no neighbours, no distractions, only birdsong, wind in the trees and the distant sound of the sea.",
+      "Mākoha PurePod is designed for a maximum of two guests. Like all PurePods, it is created as a private glass cabin for two, making it best suited to couples or two adults seeking a secluded nature stay.",
   },
   {
-    question: "What is the climate usually like?",
+    question: "How private is Mākoha PurePod?",
     answer:
-      "The Bay of Islands has a subtropical climate — warm and humid in summer, cooler and sometimes rainy in winter. Rain is part of the landscape here, deepening the lush, green, almost jungle-like character of the place.",
+      "Mākoha PurePod is designed for privacy and seclusion. Guests are left undisturbed during their stay unless there is an emergency, and there is no daily servicing for multiple-night stays, so the experience remains quiet and uninterrupted.",
   },
   {
-    question: "How does food work at the pod?",
+    question: "What is the walk to Mākoha PurePod like?",
     answer:
-      "Your PurePod is fully equipped for a relaxed, self-contained stay. Inside you will find a selection of gourmet meals ready to heat, breakfast provisions, snacks, tea and coffee — wherever possible from local Northland producers. Meals are designed to be simple to prepare, so you spend less time cooking and more time enjoying the views. As there are no shops or restaurants nearby, everything is provided so your stay is comfortable, easy and worry-free.",
+      "Mākoha PurePod is reached by a 350m nature walk from the carpark. Allow up to 15 minutes for the walk, as the bush farm track is undulating, includes steps and can be steep, rocky and uneven in places. Supportive walking shoes and a backpack are recommended.",
   },
   {
-    question: "How many people can stay, and how private is it?",
+    question: "Is Mākoha PurePod off-grid?",
     answer:
-      "Designed for two, it is a place to stop, disconnect and experience the Bay of Islands at its most pure. At the end of the track you find a fully private pod — no neighbours, no distractions, only birdsong, wind in the trees and the distant sound of the sea.",
+      "Yes. Mākoha PurePod is solar powered and designed as an off-grid stay. There is no wifi, no TV and no standard power plugs, although a USB charging port and an emergency telephone are provided.",
+  },
+  {
+    question: "What should I bring for a stay at Mākoha PurePod?",
+    answer:
+      "Bring supportive walking shoes, weather-appropriate clothing and a backpack or small overnight bag for the walk from the carpark. Guests should also bring their favourite drinks, especially if ordering the food hamper.",
+  },
+  {
+    question: "How does the food hamper work at Mākoha PurePod?",
+    answer:
+      "The food hamper is optional and can be pre-ordered. It is priced per couple, per night and will be waiting at the PurePod on arrival. The hamper includes a simple evening platter, a main meal, dessert and breakfast items, which may vary by season. Guests should bring their favourite drinks.",
+  },
+  {
+    question: "What can you do near Mākoha PurePod?",
+    answer:
+      "Mākoha PurePod is near Kerikeri in Northland, with easy access to Bay of Islands experiences. Nearby options may include Rainbow Falls, Waitangi Treaty Grounds, local markets, glowworm caves, coastal walks, quiet beaches and exploring the wider Bay of Islands region.",
+  },
+  {
+    question: "What is the landscape around Mākoha PurePod?",
+    answer:
+      "Mākoha PurePod is set within native bush, surrounded by kauri trees, birdlife and the gentle sound of the Waipapa Stream. The experience is focused on forest, privacy, birdsong and a secluded Northland landscape rather than a coastal or sea-view setting.",
+  },
+  {
+    question: "How far is Mākoha PurePod from Kerikeri?",
+    answer:
+      "Mākoha PurePod is located in Kerikeri, Northland. It is approximately a 5-minute drive from Kerikeri Airport and around a 4-hour drive from Auckland, depending on route and road conditions.",
   },
 ];
 
@@ -77,41 +99,41 @@ const makohaPodNarrative = {
   title: "The Pod",
   hint: "The essentials, no fluff",
   paragraphs: [
-    "Hidden in subtropical forest near Kerikeri, PurePod Mākōha is a private glass cabin designed for two.",
+    "Hidden in subtropical forest near Kerikeri, Mākoha PurePod is a private glass cabin designed for two.",
     "Here, the Bay of Islands feels close but the world feels far away — with native bush, coastal walks, glowworms at night and wide, clear skies.",
     "A short 5–10 minute forest walk leads you to the pod, tucked quietly into the landscape. Once inside, warm materials and floor-to-ceiling glass keep the focus on the forest, the changing light and the calm of Northland.",
   ],
   galleryCaption:
-    "Mākōha is less about accommodation and more about slowing down — a quiet, comfortable retreat where everything is designed to bring you closer to nature.",
+    "Mākoha is less about accommodation and more about slowing down — a quiet, comfortable retreat where everything is designed to bring you closer to native bush.",
   gallery: [
     {
       src: podNight,
-      alt: "Mākōha PurePod glass cabin at night in native forest, Kerikeri, New Zealand",
+      alt: "Mākoha PurePod glass cabin at night in native forest near Kerikeri, Northland, New Zealand",
       position: "50% 55%",
     },
     {
       src: podBedroom,
-      alt: "Bedroom inside Mākōha PurePod glass cabin, Kerikeri, New Zealand",
+      alt: "Bedroom inside Mākoha PurePod glass cabin near Kerikeri, Northland, New Zealand",
       position: "50% 50%",
     },
     {
       src: podLandscape,
-      alt: "Native forest landscape around Mākōha PurePod, Kerikeri, Northland, New Zealand",
+      alt: "Mākoha PurePod glass cabin and sign in native forest near Kerikeri, Northland, New Zealand",
       position: "50% 45%",
     },
     {
       src: podInteriorForest,
-      alt: "Interior of PurePod Mākōha with floor-to-ceiling glass walls overlooking native forest in New Zealand",
+      alt: "Interior of Mākoha PurePod with floor-to-ceiling glass walls overlooking native forest near Kerikeri, Northland, New Zealand",
       position: "50% 48%",
     },
     {
       src: podDeckDining,
-      alt: "Outdoor dining setup on the private deck of PurePod Mākōha overlooking native forest in New Zealand",
+      alt: "Outdoor dining setup on the private deck of Mākoha PurePod overlooking native forest near Kerikeri, Northland, New Zealand",
       position: "50% 52%",
     },
     {
       src: podAerialForest,
-      alt: "Aerial view of PurePod Mākōha surrounded by dense native forest in New Zealand",
+      alt: "Aerial view of Mākoha PurePod surrounded by dense native forest near Kerikeri, Northland, New Zealand",
       position: "50% 45%",
     },
   ],
@@ -128,19 +150,19 @@ const makohaTravelBlock = {
       images: [
         {
           src: travelWalkingTrack,
-          alt: "Walking track sign surrounded by native forest near PurePod Mākōha in New Zealand",
+          alt: "Walking track sign to Mākoha PurePod through native forest near Kerikeri, Northland, New Zealand",
         },
         {
           src: travelForestArrival,
-          alt: "Rural forest track and directional sign near the entrance to PurePod Mākōha in New Zealand",
+          alt: "Forest arrival track and directional sign near Mākoha PurePod, Kerikeri, Northland, New Zealand",
         },
         {
           src: travelForest,
-          alt: "Native forest walking track near Mākōha PurePod, Kerikeri, Northland, New Zealand",
+          alt: "Native forest walking track to Mākoha PurePod near Kerikeri, Northland, New Zealand",
         },
         {
           src: travelBridge,
-          alt: "Bridge on native forest walking track near Mākōha PurePod, Kerikeri, New Zealand",
+          alt: "Bridge on the native forest walking track to Mākoha PurePod near Kerikeri, Northland, New Zealand",
         },
       ],
       body: `The final part of the journey slows everything down.
@@ -166,26 +188,26 @@ The track includes uneven natural terrain, so suitable walking footwear and ligh
       images: [
         {
           src: travelPlatter,
-          alt: "Local food platter at Mākōha PurePod, Kerikeri, New Zealand",
+          alt: "Local food platter at Mākoha PurePod near Kerikeri, Northland, New Zealand",
         },
         {
           src: travelDinner,
-          alt: "Outdoor dinner at Mākōha PurePod, Kerikeri, New Zealand",
+          alt: "Outdoor dinner on the private deck at Mākoha PurePod near Kerikeri, Northland, New Zealand",
         },
         {
           src: travelBreakfastBasket,
-          alt: "Breakfast basket with fresh local ingredients at PurePod Mākōha in New Zealand",
+          alt: "Breakfast basket with local produce at Mākoha PurePod near Kerikeri, Northland, New Zealand",
         },
         {
           src: travelKitchenForest,
-          alt: "Kitchen area inside PurePod Mākōha overlooking native forest in New Zealand",
+          alt: "Kitchen area inside Mākoha PurePod overlooking native forest near Kerikeri, Northland, New Zealand",
         },
         {
           src: travelEveningMeal,
-          alt: "Evening meal served on the private deck at PurePod Mākōha in New Zealand",
+          alt: "Evening meal served on the private deck at Mākoha PurePod near Kerikeri, Northland, New Zealand",
         },
       ],
-      body: `Meals at Mākōha are designed to feel simple and relaxed.
+      body: `Meals at Mākoha are designed to feel simple and relaxed.
 
 Inside the pod you will find locally sourced provisions, breakfast essentials and easy-to-prepare dishes — so evenings can be spent slowly, with the forest outside and no need to go anywhere else.`,
     },
@@ -193,7 +215,7 @@ Inside the pod you will find locally sourced provisions, breakfast essentials an
 };
 
 const makohaExperiencesBlock = {
-  title: "Around Mākōha",
+  title: "Around Mākoha",
   hint: "Sea, culture and wild landscape",
   intro:
     "A curated selection of three experiences that capture the essence of this place: sea, culture and wild landscape.",
@@ -204,7 +226,7 @@ const makohaExperiencesBlock = {
       imageAlt:
         "Boat cruise in the Bay of Islands near Kerikeri, Northland, New Zealand",
       paragraphs: [
-        "Explore one of New Zealand’s most iconic coastal regions by boat — a scattered archipelago of islands, turquoise water and marine life that reflects the untamed coast surrounding PurePod Mākōha.",
+        "Explore one of New Zealand’s most iconic coastal regions by boat — a scattered archipelago of islands, turquoise water and marine life within reach of Mākoha PurePod.",
         "Seeing the Bay of Islands from the water is the best way to understand why this region feels so remote and extraordinary.",
       ],
       links: [
@@ -218,11 +240,11 @@ const makohaExperiencesBlock = {
       title: "Waitangi Treaty Grounds",
       image: expWaitangi,
       imageAlt:
-        "Māori meeting house at Waitangi Treaty Grounds near Kerikeri, Bay of Islands, New Zealand",
+        "Māori meeting house at Waitangi Treaty Grounds near Kerikeri, Bay of Islands, Northland, New Zealand",
       imageObjectPosition: "28% 50%",
       paragraphs: [
         "The spiritual and historical heart of New Zealand. Walk the place where Māori and European cultures first met and discover the stories that shaped the country.",
-        "Staying at Mākōha puts you at the centre of this rich cultural landscape.",
+        "Staying at Mākoha puts you within reach of this rich cultural landscape.",
       ],
       links: [
         {
@@ -235,10 +257,10 @@ const makohaExperiencesBlock = {
       title: "Mahinepua Peninsula Track",
       image: expMahinepua,
       imageAlt:
-        "Mahinepua Peninsula coastal walk, Bay of Islands near Kerikeri, New Zealand",
+        "Mahinepua Peninsula coastal walk near Kerikeri, Bay of Islands, Northland, New Zealand",
       paragraphs: [
-        "A striking coastal walk that winds through green hills and opens onto hidden beaches and wide ocean views.",
-        "Here the Bay of Islands shows its wildest, most untouched side — the perfect complement to the sense of isolation and nature you experience at PurePod Mākōha.",
+        "A striking coastal walk that winds through green hills and opens onto hidden beaches and wide views across the Bay of Islands.",
+        "Here the Bay of Islands shows its wildest, most untouched side — a strong contrast to the native forest privacy you experience at Mākoha PurePod.",
       ],
       links: [
         {
@@ -274,7 +296,7 @@ const makohaExperiencesBlock = {
 
 const makohaReviews = {
   title: "What guests say",
-  hint: "From recent Mākōha stays",
+  hint: "From recent Mākoha stays",
   intro: "Reflections from guests who stayed in the Kerikeri forest setting.",
   items: [
     {
@@ -301,18 +323,18 @@ export const makohaEditorialConfig: EditorialPodLocationConfig = {
   hero: {
     imageSrc: heroImage,
     imageAlt:
-      "Mākōha PurePod glass cabin in native forest near Kerikeri, Bay of Islands, New Zealand",
+      "Mākoha PurePod glass cabin in native forest near Kerikeri, Northland, New Zealand",
     title: "Mākoha",
-    subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
+    subtitleParagraphs: [HERO_PARAGRAPH_1],
     imagePosition: "70% 82%",
     imagePositionMd: "60% 86%",
     imagePositionXl: "55% 90%",
   },
-  podCarouselAriaLabel: "PurePod Mākōha — photo gallery",
+  podCarouselAriaLabel: "Mākoha PurePod — photo gallery",
   podNarrative: makohaPodNarrative,
   travelBlock: makohaTravelBlock,
   experiencesCollapsible: {
-    summaryTitle: "Explore around Mākōha",
+    summaryTitle: "Explore around Mākoha",
     summaryIntro:
       "Bay cruises, Waitangi and wild coast — when you feel like leaving the forest for a day.",
   },

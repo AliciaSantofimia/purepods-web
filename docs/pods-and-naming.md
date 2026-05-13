@@ -35,7 +35,7 @@ These names must always be preserved exactly and must **never be translated, mod
 #### North Island
 
 - Matū — Waitomo  
-- Mākōha — Kerikeri  
+- Mākoha — Kerikeri  
 - Rewarewa — Muriwai Coast  
 - Pāmu — Rotorua  
 - Ruru — Coromandel  

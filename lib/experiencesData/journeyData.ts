@@ -21,7 +21,12 @@ export const journeyExperienceSlides: AdventureExperienceSlide[] = [
     title: "Waitangi Mountain Bike Park",
     description:
       "A purpose-built network of forest trails near the Bay of Islands, with flowing rides for a range of abilities.",
-    pods: [{ label: "Mākoha PurePod", href: "/location/makoha" }],
+    pods: [
+      {
+        label: "Mākoha PurePod near Kerikeri and Bay of Islands experiences",
+        href: "/location/makoha/?from=journey",
+      },
+    ],
     distance: "Bay of Islands bike park",
     timing: "half-day ride",
     nearbyRegion: " — Waitangi / Kerikeri, North Island",
@@ -144,8 +149,8 @@ export const journeyForestSlides: ForestSlide[] = [
     placeHref: "https://www.newzealand.com/uk/feature/waitakere-ranges/",
     description:
       "A wild landscape where dense rainforest meets dramatic cliffs and black sand beaches. Ideal for exploring breathtaking views along Auckland’s rugged west coast.",
-    ctaLabel: "Stay at Rewarewa, Muriwai coast →",
-    ctaHref: "/location/rewarewa",
+    ctaLabel: "Stay at Rewarewa PurePod on the Muriwai Coast",
+    ctaHref: "/location/rewarewa/?from=journey",
   },
   {
     image: `${J}karangahake-gorge-coromandel.jpg`,
@@ -250,7 +255,12 @@ export const journeyCyclingSlides: HikingSlide[] = [
     placeHref: "https://www.bikeparks.co.nz/es",
     description:
       "A purpose-built riding destination set within a vast pine forest, offering trails for every level from flowing beginner tracks to technical downhill lines. A must-visit for mountain biking enthusiasts near Auckland.",
-    ctas: [{ label: "Stay at Rewarewa, Muriwai coast →", href: "/location/rewarewa" }],
+    ctas: [
+      {
+        label: "Stay at Rewarewa PurePod on the Muriwai Coast",
+        href: "/location/rewarewa/?from=journey",
+      },
+    ],
   },
   {
     image: `${J}Lake Dunstan Trail, Central Otago.jpg`,
