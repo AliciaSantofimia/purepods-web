@@ -219,7 +219,7 @@ export const relaxRcChapters: RelaxRcChapter[] = [
           alt: "Wide sandy beach and turquoise water at Matauri Bay, Northland coastline, New Zealand",
         },
         layout: "image-left",
-        ctas: [{ label: "Stay at Mākōha →", href: "/location/makoha" }],
+        ctas: [{ label: "Stay at Mākoha →", href: "/location/makoha" }],
       },
       {
         id: "observation-rock-viewpoint",

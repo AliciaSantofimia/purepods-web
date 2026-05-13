@@ -21,7 +21,12 @@ export const journeyExperienceSlides: AdventureExperienceSlide[] = [
     title: "Waitangi Mountain Bike Park",
     description:
       "A purpose-built network of forest trails near the Bay of Islands, with flowing rides for a range of abilities.",
-    pods: [{ label: "Mākoha PurePod", href: "/location/makoha" }],
+    pods: [
+      {
+        label: "Mākoha PurePod near Kerikeri and Bay of Islands experiences",
+        href: "/location/makoha/?from=journey",
+      },
+    ],
     distance: "Bay of Islands bike park",
     timing: "half-day ride",
     nearbyRegion: " — Waitangi / Kerikeri, North Island",

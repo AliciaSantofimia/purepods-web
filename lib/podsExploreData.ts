@@ -23,10 +23,10 @@ export const EXPLORE_POD_CARDS: ExplorePodCard[] = [
     href: "/location/makoha",
     filter: "north",
     pill: "Kerikeri",
-    title: "Mākōha",
+    title: "Mākoha",
     islandLine: "North Island",
     imageSrc: "/assets/img/makoha/makoha-purepod-native-forest-landscape-kerikeri.jpg",
-    imageAlt: "Mākōha PurePod native forest landscape near Kerikeri",
+    imageAlt: "Mākoha PurePod native forest landscape near Kerikeri",
   },
   {
     slug: "rewarewa",

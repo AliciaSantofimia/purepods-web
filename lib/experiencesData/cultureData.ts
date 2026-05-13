@@ -23,7 +23,12 @@ export const cultureExperienceSlides: AdventureExperienceSlide[] = [
     title: "Waitangi Treaty Grounds",
     description:
       "The birthplace of modern New Zealand, where the Treaty of Waitangi was signed. Walk the grounds, explore the museums and experience powerful Māori cultural performance.",
-    pods: [{ label: "Mākoha PurePod", href: "/location/makoha" }],
+    pods: [
+      {
+        label: "Mākoha PurePod near Kerikeri and Bay of Islands experiences",
+        href: "/location/makoha/?from=culture",
+      },
+    ],
     distance: "Bay of Islands cultural landmark",
     timing: "allow a half day",
     nearbyRegion: " — Kerikeri / Bay of Islands, North Island",
@@ -111,8 +116,8 @@ export const cultureMaoriSlides: ForestSlide[] = [
     placeHref: "https://www.waitangi.org.nz/",
     description:
       "The birthplace of modern New Zealand, where the Treaty of Waitangi was signed. Walk through beautifully preserved grounds, explore interactive museums, and experience powerful Māori cultural performances that bring history to life.",
-    ctaLabel: "Stay at Mākoha, Kerikeri →",
-    ctaHref: "/location/makoha",
+    ctaLabel: "Mākoha PurePod near Kerikeri and Bay of Islands experiences",
+    ctaHref: "/location/makoha/?from=culture",
   },
   {
     image: `${C}te-puia-rotorua-geothermal-geyser-maori-cultural-centre-new-zealand.jpg`,
@@ -186,7 +191,12 @@ export const cultureHeritageSlides: HikingSlide[] = [
       "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/kerikeri-area/kororipo-heritage-park/",
     description:
       "One of New Zealand’s earliest settlement areas, home to the country’s oldest stone building and rich Māori and European history. Set beside the river, it’s a peaceful place layered with stories.",
-    ctas: [{ label: "Stay at Mākoha, Kerikeri →", href: "/location/makoha" }],
+    ctas: [
+      {
+        label: "Mākoha PurePod near Kerikeri and Bay of Islands experiences",
+        href: "/location/makoha/?from=culture",
+      },
+    ],
   },
   {
     image: `${C}ohinetahi-gardens-lyttelton-harbour-christchurch-new-zealand-historic-estate.jpg`,
