@@ -80,32 +80,32 @@ const rewarewaPodNarrative = {
   gallery: [
     {
       src: podStairs,
-      alt: "Rewarewa PurePod glass cabin exterior on the Muriwai Coast, New Zealand",
+      alt: "Rewarewa PurePod glass cabin at sunset among native bush and farmland near Auckland's west coast, New Zealand",
       position: "center 70%",
     },
     {
       src: podBedroom,
-      alt: "Bedroom interior at Rewarewa PurePod, Muriwai Coast, New Zealand",
+      alt: "Bedroom inside Rewarewa PurePod glass cabin with farmland views near Auckland's west coast, New Zealand",
       position: "50% 50%",
     },
     {
       src: podStars,
-      alt: "Rewarewa PurePod terrace and glass cabin exterior, Muriwai Coast, New Zealand",
+      alt: "Private deck and glass cabin exterior at Rewarewa PurePod among native bush and farmland near Auckland, New Zealand",
       position: "50% 50%",
     },
     {
       src: podAerial,
-      alt: "Aerial view of PurePod Rewarewa with glass cabin and private deck in New Zealand",
+      alt: "Aerial view of Rewarewa PurePod glass cabin and private deck among farmland and native bush near Auckland, New Zealand",
       position: "50% 45%",
     },
     {
       src: podBathroom,
-      alt: "Bathroom interior at PurePod Rewarewa with glass walls overlooking native landscape in New Zealand",
+      alt: "Bathroom inside Rewarewa PurePod with glass walls overlooking native bush near Auckland's west coast, New Zealand",
       position: "50% 50%",
     },
     {
       src: podKitchen,
-      alt: "Kitchen interior inside PurePod Rewarewa with panoramic glass walls in New Zealand",
+      alt: "Kitchen interior inside Rewarewa PurePod glass cabin near Auckland's west coast, New Zealand",
       position: "50% 48%",
     },
   ],
@@ -122,11 +122,11 @@ const rewarewaTravelBlock = {
       images: [
         {
           src: travelRoad,
-          alt: "Countryside access road on the Muriwai Coast, New Zealand",
+          alt: "Countryside access road through farmland toward Rewarewa PurePod on the Muriwai Coast, New Zealand",
         },
         {
           src: travelAerialLandscape,
-          alt: "Rewarewa PurePod glass cabin on the Muriwai Coast, New Zealand",
+          alt: "Green hills, farmland and native bush on the journey to Rewarewa PurePod near Auckland's west coast, New Zealand",
         },
       ],
       body: `Reaching Rewarewa is part of leaving the city behind.
@@ -152,15 +152,15 @@ The terrain is natural and uneven in places, so suitable walking footwear and li
       images: [
         {
           src: travelPlatter,
-          alt: "Local food platter at Rewarewa PurePod, Muriwai Coast, New Zealand",
+          alt: "Local food platter at Rewarewa PurePod on the Muriwai Coast near Auckland, New Zealand",
         },
         {
           src: travelBreakfast,
-          alt: "Breakfast basket at Rewarewa PurePod, Muriwai Coast, New Zealand",
+          alt: "Breakfast basket at Rewarewa PurePod on the Muriwai Coast near Auckland, New Zealand",
         },
         {
           src: travelKitchenForestView,
-          alt: "Kitchen area inside PurePod Rewarewa overlooking the surrounding landscape in New Zealand",
+          alt: "Kitchen area inside Rewarewa PurePod overlooking native bush near Auckland's west coast, New Zealand",
         },
       ],
       body: `Rewarewa is designed for slow evenings and simple, relaxed meals.
@@ -181,7 +181,8 @@ const rewarewaExperiencesBlock = {
     {
       title: "Muriwai Beach & black sand coast",
       image: expBeach,
-      imageAlt: "Muriwai black sand beach and coastline, New Zealand",
+      imageAlt:
+        "Muriwai black sand beach and gannet colony on Auckland's west coast, New Zealand",
       paragraphs: [
         "Muriwai’s black sand beach is one of the region’s defining experiences — long stretches of coast, surf and the sound of the Tasman Sea. Walk the beach, watch the gannet colony on the headland and feel the wind and the scale of the ocean.",
         "A landscape that feels raw and open.",
@@ -197,7 +198,7 @@ const rewarewaExperiencesBlock = {
       title: "Waitākere Ranges",
       image: expRanges,
       imageAlt:
-        "Waitākere Ranges coastal landscape near Auckland, New Zealand",
+        "Waitākere Ranges coastal landscape and black sand beach on Auckland's west coast, New Zealand",
       paragraphs: [
         "The Waitākere Ranges form the backdrop to the coast — native forest, walking tracks and the green hills that run down to the sea. Scenic drives and short walks reveal waterfalls, bush and the sense of being in a different world, minutes from the city.",
         "Where bush and coast meet.",
@@ -213,7 +214,7 @@ const rewarewaExperiencesBlock = {
       title: "Te Henga (Bethells Beach)",
       image: expTeHenga,
       imageAlt:
-        "Te Henga (Bethells Beach) coastal landscape, Muriwai region, New Zealand",
+        "Te Henga Bethells Beach coastal landscape on Auckland's west coast near Rewarewa PurePod, New Zealand",
       paragraphs: [
         "Te Henga is another stretch of wild coast — black sand, dunes and the same sense of space and wind. A short drive from the pod, it offers long walks, surf and the feeling of being at the edge of the land.",
         "Another face of the same coast — raw, open and quiet.",
@@ -288,14 +289,14 @@ export const rewarewaEditorialConfig: EditorialPodLocationConfig = {
   hero: {
     imageSrc: heroImage,
     imageAlt:
-      "Rewarewa PurePod glass cabin in the Muriwai Coast landscape, New Zealand",
+      "Rewarewa PurePod glass cabin among native bush and farmland near Auckland's west coast, New Zealand",
     title: "Rewarewa",
     subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
     imagePosition: "70% 50%",
     imagePositionMd: "60% 55%",
     imagePositionXl: "55% 60%",
   },
-  podCarouselAriaLabel: "PurePod Rewarewa — photo gallery",
+  podCarouselAriaLabel: "Rewarewa PurePod — photo gallery",
   podNarrative: rewarewaPodNarrative,
   travelBlock: rewarewaTravelBlock,
   experiencesCollapsible: {
