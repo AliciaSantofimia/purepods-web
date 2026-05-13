@@ -204,8 +204,8 @@ export function EditorialPodLocationView({ config }: Props) {
                 <p className={styles.sectionHint}>{travelBlock.hint}</p>
               </header>
               <p className={styles.travelMediaHint}>
-                Journey and dining include two photos each — swipe or use arrows.
-                Climate is covered in text only.
+                Swipe through the photos for a closer look at the journey, the setting and
+                what to expect before you arrive. Climate is covered in text only.
               </p>
               <div className={styles.travelGrid}>
                 {travelBlock.cards.map((card) =>
@@ -309,6 +309,11 @@ export function EditorialPodLocationView({ config }: Props) {
                         sizes="(max-width: 899px) 100vw, min(30vw, 320px)"
                         buttonClassName={styles.xpSplitFigure}
                         imageClassName={styles.xpEdFigureImg}
+                        imageStyle={
+                          xp.imageObjectPosition
+                            ? { objectPosition: xp.imageObjectPosition }
+                            : undefined
+                        }
                       />
                     );
 

@@ -318,6 +318,14 @@
 }
 
 /*
+ * /pods — scroll target when switching island tab (`ChooseMapExperimentalClient`).
+ * Offsets sticky nav + tabs so “Choose your place” stays visible.
+ */
+.pagePodsChoose :global(#pods-choose-place) {
+  scroll-margin-top: clamp(56px, 10vw, 96px);
+}
+
+/*
  * /pods (ChooseMapPodsShell) — pull hero + map/cards block higher in the first paint on desktop
  * without changing copy, colours, or map/card components.
  */

@@ -17,7 +17,7 @@ const podAerialForest =
   "/assets/img/makoha/purepod-makoha-aerial-view-native-forest-new-zealand.jpg";
 const expBoat = "/assets/img/makoha/bay-of-islands-boat-cruise-aerial.jpg";
 const expWaitangi =
-  "/assets/img/makoha/waitangi-treaty-grounds-maori-meeting-hous.jpg";
+  "/assets/img/makoha/waitangi-treaty-grounds-maori-meeting-house-bay-of-islands-new-zealand.jpg";
 const expMahinepua =
   "/assets/img/makoha/mahinepua-peninsula-coastal-walk-bay-of-islands.jpg";
 const travelWalkingTrack =
@@ -75,7 +75,7 @@ export const MAKOHA_FAQ_ITEMS: LocationFaqItem[] = [
 
 const makohaPodNarrative = {
   title: "The Pod",
-  hint: "The essentials, nothing extra",
+  hint: "The essentials, no fluff",
   paragraphs: [
     "Hidden in subtropical forest near Kerikeri, PurePod Mākōha is a private glass cabin designed for two.",
     "Here, the Bay of Islands feels close but the world feels far away — with native bush, coastal walks, glowworms at night and wide, clear skies.",
@@ -219,6 +219,7 @@ const makohaExperiencesBlock = {
       image: expWaitangi,
       imageAlt:
         "Māori meeting house at Waitangi Treaty Grounds near Kerikeri, Bay of Islands, New Zealand",
+      imageObjectPosition: "28% 50%",
       paragraphs: [
         "The spiritual and historical heart of New Zealand. Walk the place where Māori and European cultures first met and discover the stories that shaped the country.",
         "Staying at Mākōha puts you at the centre of this rich cultural landscape.",
@@ -296,7 +297,7 @@ const makohaReviews = {
 
 /** Single source for `EditorialPodLocationView` on `/location/makoha`. */
 export const makohaEditorialConfig: EditorialPodLocationConfig = {
-  heroKicker: "PurePod · Kerikeri",
+  heroKicker: "PUREPOD · KERIKERI",
   hero: {
     imageSrc: heroImage,
     imageAlt:

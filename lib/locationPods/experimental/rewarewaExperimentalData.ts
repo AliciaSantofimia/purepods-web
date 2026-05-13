@@ -189,7 +189,7 @@ const rewarewaExperiencesBlock = {
       links: [
         {
           label: "Muriwai Beach",
-          href: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/auckland/places/muriwai-beach/",
+          href: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/auckland/places/muriwai-and-te-henga-area/",
         },
       ],
     },
@@ -205,7 +205,7 @@ const rewarewaExperiencesBlock = {
       links: [
         {
           label: "Waitākere Ranges Regional Park",
-          href: "https://www.aucklandcouncil.govt.nz/parks-recreation/places-to-go/regional-parks/Pages/waitakere-ranges-regional-park.aspx",
+          href: "https://www.aucklandnz.com/explore/te-wao-nui-o-tiriwa-waitakere-ranges",
         },
       ],
     },
@@ -221,7 +221,7 @@ const rewarewaExperiencesBlock = {
       links: [
         {
           label: "Te Henga / Bethells Beach",
-          href: "https://www.aucklandcouncil.govt.nz/parks-recreation/places-to-go/regional-parks/Pages/te-henga-bethells-beach.aspx",
+          href: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/auckland/places/muriwai-and-te-henga-area/tracks/te-henga-walkway/",
         },
       ],
     },

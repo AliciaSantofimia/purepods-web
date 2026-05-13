@@ -56,8 +56,11 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     pill: "Kerikeri",
     title: "Mākōha",
     islandLine: "North Island",
-    imageSrc: "/assets/img/makoha/makoha-purepod-native-forest-landscape-kerikeri.jpg",
-    imageAlt: "Mākōha PurePod native forest landscape near Kerikeri",
+    imageSrc:
+      "/assets/img/makoha/purepod-makoha-aerial-view-native-forest-new-zealand.jpg",
+    imageAlt:
+      "Aerial view of Mākōha PurePod glass cabin in native forest at golden hour near Kerikeri, New Zealand",
+    imagePosition: "50% 42%",
     lat: -35.204,
     lng: 173.9485,
   },
@@ -163,8 +166,10 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     title: "Atatū",
     islandLine: "South Island",
     imageSrc:
-      "/assets/img/atatu/atatu-purepod-glass-cabin-bedroom-ocean-view-new-zealand.jpg",
-    imageAlt: "Atatū PurePod bedroom with ocean view",
+      "/assets/img/atatu/atatu-purepod-hilltop-landscape-aerial-new-zealand.jpg",
+    imageAlt:
+      "Aerial view of Atatū PurePod glass cabin on a hilltop at sunset above rolling hills, Hurunui, New Zealand",
+    imagePosition: "50% 44%",
     lat: -42.855,
     lng: 173.205,
     mapLat: -42.785,
@@ -178,8 +183,10 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     title: "Korimako",
     islandLine: "South Island",
     imageSrc:
-      "/assets/img/kiromako/kiromako-purepod-forest-path-walking-trail-new-zealand.jpg",
-    imageAlt: "Korimako PurePod forest path walking trail",
+      "/assets/img/kiromako/korimako-purepod-glass-cabin-native-forest-aerial-new-zealand.jpg",
+    imageAlt:
+      "Aerial view of Korimako PurePod glass cabin nestled in native forest, Hurunui, New Zealand",
+    imagePosition: "50% 48%",
     lat: -42.85,
     lng: 173.2,
     mapLat: -42.92,
@@ -205,8 +212,11 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     pill: "Banks Peninsula",
     title: "Pōhue",
     islandLine: "South Island",
-    imageSrc: "/assets/img/pohue/pohue-coastal-hills-cabin-view-new-zealand.jpg",
-    imageAlt: "Pōhue PurePod coastal hills cabin view",
+    imageSrc:
+      "/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg",
+    imageAlt:
+      "Pōhue PurePod glass cabin on coastal hills above Banks Peninsula, New Zealand",
+    imagePosition: "36% 52%",
     lat: -43.733,
     lng: 172.866,
   },

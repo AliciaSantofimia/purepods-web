@@ -206,7 +206,7 @@ const experiences = [
     description:
       "Local flavour, open air, and the kind of meal that lingers.",
     image:
-      "/assets/img/experiences/journeys/romantic-picnic-wine-cheese-board-nature-experience.jpg",
+      "/assets/img/experiences/experiences/romantic-picnic-wine-cheese-board-nature-experience.jpg",
     alt: "Wine and local produce picnic in nature",
     link: "/experiences/wine-dine",
     width: 1536,

@@ -39,7 +39,7 @@ export function ChooseMapPodsShell({ initialRegion }: Props) {
       </header>
 
       <main className={`wrap ${styles.main}`}>
-        <section className={styles.hero}>
+        <section id="pods-choose-place" className={styles.hero}>
           <h1>Choose your place</h1>
           <p className={styles.lead}>
             Not every silence sounds the same. Discover where you want to spend the night.

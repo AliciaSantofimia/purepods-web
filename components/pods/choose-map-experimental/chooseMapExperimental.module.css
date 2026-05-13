@@ -440,10 +440,6 @@
   }
 }
 
-/*
- * Card list: en desktop scroll interno alineado con columna sticky del mapa.
- * En móvil/tablet (≤980px) el listado sigue el scroll de la página — más cómodo en pantalla pequeña.
- */
 .chooseMapCardsScroll {
   min-height: 0;
   overscroll-behavior: contain;
@@ -458,14 +454,13 @@
   display: none;
 }
 
+/*
+ * Card list: en desktop el scroll es el de la página (como North Island), para que
+ * listas largas (p. ej. 8 pods en South) sigan siendo alcanzables sin scroll interno
+ * con barra oculta. Móvil/tablet: sin max-height (reglas más abajo).
+ */
 @media (min-width: 981px) {
-  .chooseMapCardsScroll {
-    max-height: calc(100dvh - clamp(26px, 3.2vw, 52px));
-    overflow-y: auto;
-  }
-
-  /* North Island: keep page scroll active even over pod cards. */
-  .chooseMapPodsLayout[data-region="north"] .chooseMapCardsScroll {
+  .chooseMapPodsLayout[data-region] .chooseMapCardsScroll {
     max-height: none;
     overflow-y: visible;
   }

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { HaurapaExperimentalView } from "@/components/location/experimental/HaurapaExperimentalView";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { HAURAPA_FAQ_ITEMS } from "@/lib/locationPods/experimental/haurapaExperimentalData";
 
 const CANONICAL_URL = "https://purepods.com/location/haurapa/";
 const OG_IMAGE_URL =
@@ -9,6 +11,76 @@ const META_DESCRIPTION =
   "PurePod Haurapa is a secluded glass cabin retreat in Central Otago. High-country calm, wide views across the Pisa Range and complete privacy for two above Cromwell.";
 
 const SEO_TITLE = "Haurapa PurePod | Glass Cabin in Central Otago, New Zealand";
+
+function haurapaStructuredData() {
+  const faqEntities = HAURAPA_FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  }));
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${CANONICAL_URL}#webpage`,
+        name: SEO_TITLE,
+        description: META_DESCRIPTION,
+        url: CANONICAL_URL,
+        inLanguage: "en-NZ",
+        isPartOf: {
+          "@type": "WebSite",
+          name: "PurePods",
+          url: "https://purepods.com",
+        },
+        about: { "@id": `${CANONICAL_URL}#lodging` },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: OG_IMAGE_URL,
+        },
+      },
+      {
+        "@type": "LodgingBusiness",
+        "@id": `${CANONICAL_URL}#lodging`,
+        name: "PurePod Haurapa",
+        description: META_DESCRIPTION,
+        url: CANONICAL_URL,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Cromwell",
+          addressRegion: "Otago",
+          addressCountry: "NZ",
+        },
+        amenityFeature: [
+          {
+            "@type": "LocationFeatureSpecification",
+            name: "Secluded glass cabin in Central Otago with wide views across the Pisa Range",
+            value: true,
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            name: "Accommodation for two guests",
+            value: true,
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            name: "700 m uphill walk from the car park following historic gold-mining tracks",
+            value: true,
+          },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${CANONICAL_URL}#faq`,
+        mainEntity: faqEntities,
+      },
+    ],
+  };
+}
 
 export const podMetadata: Metadata = {
   title: SEO_TITLE,
@@ -38,8 +110,14 @@ export const podMetadata: Metadata = {
 
 /**
  * Editorial UI aligned with Pōhue, Pāmu and other migrated pods.
+ * JSON-LD FAQ matches `HAURAPA_FAQ_ITEMS` on the page.
  * @see `@/components/location/experimental/HaurapaExperimentalView`
  */
 export function PodView() {
-  return <HaurapaExperimentalView />;
+  return (
+    <>
+      <JsonLd data={haurapaStructuredData()} />
+      <HaurapaExperimentalView />
+    </>
+  );
 }

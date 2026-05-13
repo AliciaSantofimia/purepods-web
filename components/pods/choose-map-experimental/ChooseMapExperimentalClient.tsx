@@ -56,6 +56,17 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
       setFilter(next);
       const path = pathname || "/pods";
       router.replace(`${path}?region=${next}`, { scroll: false });
+      const anchor = document.getElementById("pods-choose-place");
+      if (!anchor) return;
+      const prefersReduced =
+        typeof window !== "undefined" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      requestAnimationFrame(() => {
+        anchor.scrollIntoView({
+          behavior: prefersReduced ? "auto" : "smooth",
+          block: "start",
+        });
+      });
     },
     [router, pathname],
   );

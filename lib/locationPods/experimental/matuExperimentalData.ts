@@ -13,7 +13,8 @@ const podSunsetPink =
   "/assets/img/matu/purepod-matu-sunset-glass-cabin-new-zealand.jpg";
 const podCloseUpNative =
   "/assets/img/matu/purepod-matu-glass-cabin-close-up-native-landscape-new-zealand.jpg";
-const expGlowworm = "/assets/img/matu/waitomo-glowworm-cave-boat-ride.jpg";
+const expOkohua =
+  "/assets/img/matu/okohua-glowworm-cave-tour-private-firefly-cave-waitomo-new-zealand.jpg";
 const expRuakuri = "/assets/img/matu/waitomo-ruakuri-cave-spiral.jpg";
 const expMarokopa = "/assets/img/matu/waitomo-marokopa-waterfall.jpg";
 const travelRoad = "/assets/img/matu/waitomo-countryside-access-road.jpg";
@@ -180,17 +181,18 @@ const matuExperiencesBlock = {
     "A curated selection of three experiences that capture the essence of the Waitomo region — glowworm caves, limestone formations and the native forest above.",
   items: [
     {
-      title: "Waitomo Glowworm Caves",
-      image: expGlowworm,
-      imageAlt: "Glowworm cave boat ride in Waitomo, New Zealand",
+      title: "Okohua Glowworm Cave Tour",
+      image: expOkohua,
+      imageAlt:
+        "Private Okohua glowworm cave with blue bioluminescence and limestone chamber in Waitomo, New Zealand",
       paragraphs: [
-        "The iconic experience of Waitomo. Drift through limestone caves lit by thousands of glowworms — a silent, almost unreal atmosphere that is unique in the world.",
-        "Darkness, stillness and the soft light of the glowworms.",
+        "Visit a private cave with glowworms and ancient limestone formations in a small group (max. 6 people).",
+        "The experience usually ends with a soak in a forest-surrounded hot tub — a quieter and more intimate way to experience Waitomo.",
       ],
       links: [
         {
-          label: "Waitomo Glowworm Caves",
-          href: "https://www.waitomo.com/glowworms-and-caves/waitomo-glowworm-caves",
+          label: "Okohua Glowworm Cave Tour",
+          href: "https://www.thewaitomoexperience.co.nz/okohua-glowworm-cave",
         },
       ],
     },
@@ -267,7 +269,7 @@ const matuExperiencesBlock = {
 
 const matuReviews = {
   title: "What guests say",
-  hint: "From recent Matu stays",
+  hint: "From recent Matū stays",
   intro: "Guest notes from the Waitomo bush-and-caves region.",
   items: [
     {

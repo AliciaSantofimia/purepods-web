@@ -24,6 +24,8 @@ export type EditorialExperienceItem = {
   imageAlt: string;
   paragraphs: string[];
   links: { label: string; href: string }[];
+  /** Focal point for `object-fit: cover` cards (e.g. architecture weighted to one side). */
+  imageObjectPosition?: string;
 };
 
 /** Optional grouped “explore more” block (same visual language as flat `moreRecommendations`). */

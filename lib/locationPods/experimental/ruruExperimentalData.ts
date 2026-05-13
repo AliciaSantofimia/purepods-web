@@ -116,7 +116,7 @@ export const ruruExperiencesBlock = {
       links: [
         {
           label: "Karangahake Gorge",
-          href: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/karangahake-gorge/",
+          href: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/kaimai-mamaku-conservation-park/karangahake-gorge",
         },
       ],
     },
@@ -131,7 +131,7 @@ export const ruruExperiencesBlock = {
       links: [
         {
           label: "Orokawa Bay walk",
-          href: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/whenuakura-orokawa-coastal-walk/",
+          href: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/orokawa-scenic-reserve/things-to-do/orokawa-bay-track/",
         },
       ],
     },
@@ -147,7 +147,7 @@ export const ruruExperiencesBlock = {
       links: [
         {
           label: "Whiritoa Beach",
-          href: "https://www.thecoromandel.com/visit/whiritoa/",
+          href: "https://www.thecoromandel.com/explore/whiritoa-beach-and-waimama-bay/",
         },
       ],
     },
