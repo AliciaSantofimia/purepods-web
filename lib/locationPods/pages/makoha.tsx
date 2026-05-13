@@ -8,10 +8,10 @@ const OG_IMAGE_URL =
   "https://purepods.com/assets/img/makoha/makoha-purepod-aerial-glass-cabin-forest-kerikeri.jpg";
 
 const META_DESCRIPTION =
-  "PurePod Mākōha: glass cabin for two near Kerikeri, Bay of Islands, Northland. Final access: 5–10 min walk in native forest. Private site; self-contained stay with local meals.";
+  "Mākoha PurePod is a private off-grid glass cabin near Kerikeri, designed for a quiet luxury escape among native bush, birdsong and Bay of Islands experiences.";
 
 const SEO_TITLE_ABSOLUTE =
-  "Mākōha PurePod | Glass Cabin, Kerikeri / Bay of Islands, New Zealand";
+  "Mākoha PurePod, Kerikeri | Private Off-Grid Glass Cabin";
 
 function makohaStructuredData() {
   const faqEntities = MAKOHA_FAQ_ITEMS.map((item) => ({
@@ -47,7 +47,7 @@ function makohaStructuredData() {
       {
         "@type": "LodgingBusiness",
         "@id": `${CANONICAL_URL}#lodging`,
-        name: "PurePod Mākōha",
+        name: "Mākoha PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
         address: {
@@ -97,7 +97,7 @@ export const podMetadata: Metadata = {
     images: [
       {
         url: OG_IMAGE_URL,
-        alt: "Mākōha PurePod glass cabin in native forest near Kerikeri, Bay of Islands, New Zealand",
+        alt: "Mākoha PurePod glass cabin in native forest near Kerikeri, Northland, New Zealand",
       },
     ],
   },
