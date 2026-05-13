@@ -34,36 +34,58 @@ export const REWAREWA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=15";
 
 const HERO_PARAGRAPH_1 =
-  "A private glass cabin on the Muriwai Coast, surrounded by native bush, open farmland and wide western skies.";
-
-const HERO_PARAGRAPH_2 =
-  "Just outside Auckland, Rewarewa is a quiet place to slow down — black sand beaches, changing light and complete stillness overlooking the landscape.";
+  "Rewarewa PurePod is a private off-grid glass cabin for two near Auckland and the Muriwai Coast, designed for a secluded nature escape among native bush, farmland, birdlife and wide western skies.";
 
 export const REWAREWA_FAQ_ITEMS: LocationFaqItem[] = [
   {
-    question: "How do I get to PurePod Rewarewa?",
+    question: "Is Rewarewa PurePod suitable for a romantic getaway?",
     answer:
-      "Reaching PurePod Rewarewa is a drive from Auckland through the Waitākere Ranges or along the coast — about 45 minutes to an hour. The final approach is via quiet roads and a short walk to the pod. Suitable footwear is recommended. The journey is part of the experience: leaving the city behind and arriving slowly at the edge of the coast.",
+      "Yes. Rewarewa PurePod is designed for two guests and suits couples looking for a private nature escape within easy reach of Auckland. Set near the Muriwai Coast among native bush, farmland, birdlife and wide western skies, it offers a secluded off-grid stay with the comfort of a glass cabin immersed in nature.",
   },
   {
-    question: "What is the walk to the pod like?",
+    question: "How many guests can stay at Rewarewa PurePod?",
     answer:
-      "A short approach from the road brings you into your own private world — no neighbours, no distractions. Inside, the glass cabin brings the outside in: you sleep, eat and rest with the landscape always in view.",
+      "Rewarewa PurePod is designed for a maximum of two guests. Like all PurePods, it is created as a private glass cabin for two, making it best suited to couples or two adults seeking a quiet, secluded stay.",
   },
   {
-    question: "What is the climate usually like?",
+    question: "How private is Rewarewa PurePod?",
     answer:
-      "The Muriwai Coast has a temperate maritime climate — often windy, with mild temperatures year-round. The west coast can be changeable; layered clothing and a windproof layer are recommended so you can enjoy both the pod and the beach in comfort.",
+      "Rewarewa PurePod is designed for privacy and seclusion. Guests are left undisturbed during their stay unless there is an emergency, and there is no daily servicing for multiple-night stays, so the experience remains quiet and uninterrupted.",
   },
   {
-    question: "How does food work at the pod?",
+    question: "What is the walk to Rewarewa PurePod like?",
     answer:
-      "Your PurePod is fully equipped for a relaxed, self-contained stay. Inside you will find a selection of meals ready to heat, breakfast provisions, snacks, tea and coffee — wherever possible from local producers. Meals are designed to be simple to prepare, so you spend less time in the kitchen and more time enjoying the views and the sound of the coast. As there are no shops or restaurants nearby, everything is provided so your stay is comfortable and worry-free.",
+      "Rewarewa PurePod is reached by a short 150m nature walk from the carpark. Allow up to 10 minutes for the walk across the grassy paddock and natural ground. Sturdy footwear and luggage that is easy to carry are recommended.",
   },
   {
-    question: "How many people can stay, and how private is it?",
+    question: "Is Rewarewa PurePod off-grid?",
     answer:
-      "The pod is designed for two: a simple, comfortable base from which to experience the sound of the ocean, the changing light and the sense of being away from the city. A short approach from the road brings you into your own private world — no neighbours, no distractions.",
+      "Yes. Rewarewa PurePod is solar powered and designed as an off-grid stay. There is no wifi, no TV and no standard power plugs, although a USB charging port and an emergency telephone are provided.",
+  },
+  {
+    question: "What should I bring for a stay at Rewarewa PurePod?",
+    answer:
+      "Bring sturdy footwear, weather-appropriate clothing and luggage that is easy to carry for the short walk from the carpark. Guests should also bring their favourite drinks, especially if ordering the food hamper.",
+  },
+  {
+    question: "How does the food hamper work at Rewarewa PurePod?",
+    answer:
+      "The food hamper is optional and can be pre-ordered. It is priced per couple, per night and will be waiting at the PurePod on arrival. The hamper includes a simple evening platter, a main meal, dessert and breakfast items, which may vary by season. Guests should bring their favourite drinks.",
+  },
+  {
+    question: "What can you do near Rewarewa PurePod?",
+    answer:
+      "Rewarewa PurePod is within easy reach of Auckland, Helensville, Kaipara Harbour and the Muriwai Coast. Nearby experiences may include Muriwai Beach, Waitākere Ranges walks, Te Henga / Bethells Beach, Kumeū wineries, hot pools, garden walks, beach horse riding, skydiving, local markets and west coast landscapes.",
+  },
+  {
+    question: "What is the landscape around Rewarewa PurePod?",
+    answer:
+      "Rewarewa PurePod sits beside a protected bird corridor and overlooks regenerating native bush, farmland and wide western skies. The experience is focused on native trees, birdlife, sunset light, stargazing and a quiet rural landscape near Auckland’s west coast.",
+  },
+  {
+    question: "How far is Rewarewa PurePod from Auckland?",
+    answer:
+      "Rewarewa PurePod is located near Helensville, around 40 minutes’ drive northwest of downtown Auckland, depending on traffic and road conditions. Its location makes it a secluded nature escape within relatively easy reach of the city.",
   },
 ];
 
@@ -291,7 +313,7 @@ export const rewarewaEditorialConfig: EditorialPodLocationConfig = {
     imageAlt:
       "Rewarewa PurePod glass cabin among native bush and farmland near Auckland's west coast, New Zealand",
     title: "Rewarewa",
-    subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
+    subtitleParagraphs: [HERO_PARAGRAPH_1],
     imagePosition: "70% 50%",
     imagePositionMd: "60% 55%",
     imagePositionXl: "55% 60%",
