@@ -45,7 +45,7 @@ export const RURU_BOOKING_URL =
 export const ruruExperimentalHero = {
   imageSrc: heroImage,
   imageAlt:
-    "Ruru PurePod glass cabin in the Coromandel landscape, New Zealand",
+    "Aerial view of Ruru PurePod glass cabin and private deck among native bush in the Coromandel, New Zealand",
   title: "Ruru",
   subtitleParagraphs: [
     "A private glass cabin hidden among the hills near Mount Karangahake, surrounded by native bush, farmland and wide valley views.",
@@ -69,30 +69,30 @@ export const ruruPodNarrative = {
   gallery: [
     {
       src: podSunset,
-      alt: "Ruru PurePod glass cabin at sunset in the Coromandel, New Zealand",
+      alt: "Ruru PurePod glass cabin at sunset among native bush and hills in the Coromandel, New Zealand",
       position: "50% 55%",
       span: "hero" as const,
     },
     {
       src: podDeck,
-      alt: "Interior and deck view at Ruru PurePod, Coromandel, New Zealand",
+      alt: "Bedroom and private deck inside Ruru PurePod with mountain views in the Coromandel, New Zealand",
       position: "50% 50%",
       span: "half" as const,
     },
     {
       src: podNight,
-      alt: "Night sky from Ruru PurePod, Coromandel, New Zealand",
+      alt: "Ruru PurePod glass cabin under a starry night sky in the Coromandel, New Zealand",
       position: "50% 63%",
       span: "half" as const,
     },
     {
       src: podSunsetAerialForest,
-      alt: "Aerial sunset view of PurePod Ruru immersed in native forest landscape in New Zealand",
+      alt: "Aerial sunset view of Ruru PurePod among native bush and forested hills in the Coromandel, New Zealand",
       position: "50% 45%",
     },
     {
       src: podBedroomGlass,
-      alt: "Interior bedroom view inside PurePod Ruru with panoramic glass walls in New Zealand",
+      alt: "Bedroom inside Ruru PurePod glass cabin with native bush views in the Coromandel, New Zealand",
       position: "50% 50%",
     },
   ],
@@ -108,7 +108,7 @@ export const ruruExperiencesBlock = {
       title: "Karangahake Gorge",
       image: expKarangahake,
       imageAlt:
-        "Karangahake Gorge suspension bridge and walking track, Coromandel, New Zealand",
+        "Karangahake Gorge suspension bridge over a rocky stream among native bush near Ruru PurePod, New Zealand",
       paragraphs: [
         "A historic gorge with walking and cycling tracks, old railway tunnels and a suspension bridge over the river. The landscape mixes bush, water and the remains of the gold-mining era — a place where history and nature sit side by side.",
         "A gentle way to explore the inland Coromandel.",
@@ -123,7 +123,8 @@ export const ruruExperiencesBlock = {
     {
       title: "Orokawa Bay coastal walk",
       image: expOrokawa,
-      imageAlt: "Orokawa Bay coastal walk, Coromandel, New Zealand",
+      imageAlt:
+        "Orokawa Bay beach and coastal landscape near Waihi, a nearby experience from Ruru PurePod",
       paragraphs: [
         "A coastal track that leads to a quiet bay — native bush, views of the ocean and the sense of reaching a place that feels tucked away. The walk is well formed and rewards a slow pace with light, shade and the sound of the sea.",
         "Where the bush meets the coast.",
@@ -139,7 +140,7 @@ export const ruruExperiencesBlock = {
       title: "Whiritoa Beach",
       image: expWhiritoa,
       imageAlt:
-        "Whiritoa Beach coastal landscape, Coromandel, New Zealand",
+        "Whiritoa Beach coastal landscape in the Coromandel, a nearby experience from Ruru PurePod",
       paragraphs: [
         "A stretch of coast that captures the Coromandel mood — beach, dunes and the open Pacific. A place for long walks, swimming and the kind of stillness that comes with a quiet stretch of sand and sea.",
         "The coast in its simplest form — sand, sky and horizon.",
@@ -203,15 +204,15 @@ export const ruruTravelBlock = {
       images: [
         {
           src: travelAerialRemote,
-          alt: "Aerial view of PurePod Ruru surrounded by forested hills and remote landscape in New Zealand",
+          alt: "Remote forested hills and valley landscape on the journey to Ruru PurePod in the Coromandel, New Zealand",
         },
         {
           src: travelForestPath,
-          alt: "Forest path to Ruru PurePod, Coromandel, New Zealand",
+          alt: "Walking track through native bush toward Ruru PurePod in the Coromandel, New Zealand",
         },
         {
           src: travelHillside,
-          alt: "Hillside access road to Ruru PurePod, Coromandel, New Zealand",
+          alt: "Hillside access road through farmland and native bush toward Ruru PurePod in the Coromandel, New Zealand",
         },
       ],
       body: `Reaching Ruru feels like travelling deeper into the landscape.
@@ -237,23 +238,23 @@ The terrain is natural and can become muddy after rain, so suitable walking foot
       images: [
         {
           src: travelPicnic,
-          alt: "Picnic and local food at Ruru PurePod, Coromandel, New Zealand",
+          alt: "Local food platter at Ruru PurePod in the Coromandel, New Zealand",
         },
         {
           src: travelBreakfast,
-          alt: "Breakfast at Ruru PurePod, Coromandel, New Zealand",
+          alt: "Breakfast provisions at Ruru PurePod in the Coromandel, New Zealand",
         },
         {
           src: travelGrazingPlatter,
-          alt: "Local cheese and charcuterie platter served at PurePod Ruru in New Zealand",
+          alt: "Local grazing platter served at Ruru PurePod in the Coromandel, New Zealand",
         },
         {
           src: travelSlowBreakfastProduce,
-          alt: "Slow breakfast setup with yoghurt, granola and local produce at PurePod Ruru in New Zealand",
+          alt: "Slow breakfast with local produce at Ruru PurePod in the Coromandel, New Zealand",
         },
         {
           src: travelDiningSpread,
-          alt: "Local seasonal dining spread served at PurePod Ruru in New Zealand",
+          alt: "Local seasonal dining spread served at Ruru PurePod in the Coromandel, New Zealand",
         },
       ],
       body:
@@ -330,7 +331,7 @@ export const ruruEditorialConfig: EditorialPodLocationConfig = {
     imagePositionMd: ruruExperimentalHero.imagePositionMd,
     imagePositionXl: ruruExperimentalHero.imagePositionXl,
   },
-  podCarouselAriaLabel: "PurePod Ruru — photo gallery",
+  podCarouselAriaLabel: "Ruru PurePod — photo gallery",
   podNarrative: ruruPodNarrative,
   travelBlock: ruruTravelBlock,
   experiencesCollapsible: {
