@@ -158,6 +158,11 @@
   border: none !important;
 }
 
+/* Stewart twin marker shell — targeted below so mobile keeps full-size pins (better tap). */
+.chMapStewartTwinRoot {
+  box-sizing: border-box;
+}
+
 .chooseMapLeafTune :global(.leaflet-marker-icon) {
   cursor: pointer !important;
 }
@@ -684,8 +689,20 @@
     transform-origin: 50% 100%;
   }
 
+  /*
+   * Stewart Island: two markers share one lat/lng with offset artwork. Scaling the pin down
+   * shrinks the effective touch target on top of overlapping hit boxes — keep full pin size.
+   */
+  .chooseMapLeafTune :global(.leaflet-marker-icon) .chMapStewartTwinRoot .chMapPinWrap {
+    transform: none;
+  }
+
   .chooseMapLeafTune .chMapPinWrap[data-active="true"] {
     transform: scale(0.8);
+  }
+
+  .chooseMapLeafTune :global(.leaflet-marker-icon) .chMapStewartTwinRoot .chMapPinWrap[data-active="true"] {
+    transform: none;
   }
 
   .infographicCompass {
@@ -714,8 +731,16 @@
     transform: scale(0.66);
   }
 
+  .chooseMapLeafTune :global(.leaflet-marker-icon) .chMapStewartTwinRoot .chMapPinWrap {
+    transform: none;
+  }
+
   .chooseMapLeafTune .chMapPinWrap[data-active="true"] {
     transform: scale(0.72);
+  }
+
+  .chooseMapLeafTune :global(.leaflet-marker-icon) .chMapStewartTwinRoot .chMapPinWrap[data-active="true"] {
+    transform: none;
   }
 
   .infographicCompass {

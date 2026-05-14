@@ -1,47 +1,20 @@
-import Link from "next/link";
 import { Button } from "@/components/ui";
 import { BOOKING_URL } from "@/lib/constants";
 import styles from "./LocationCta.module.css";
 
 interface LocationCtaProps {
-  priceFrom: string | number;
   /** Pod-specific booking: use BOOKING_URL (force_site_id=16) per agent.md */
   bookHref?: string;
 }
 
-const DEFAULT_FROM_PRICE_NZD = 890;
+/** Shown instead of a fixed nightly rate — live pricing comes from NewBook after “Book now”. */
+const CTA_AVAILABILITY_COPY = "Check availability & rates";
 
-function formatPriceFrom(priceFrom: string | number): string {
-  if (typeof priceFrom === "number" && Number.isFinite(priceFrom)) {
-    const normalized =
-      Math.floor(priceFrom) === priceFrom
-        ? priceFrom.toFixed(0)
-        : priceFrom.toFixed(2);
-    return `From $${normalized} NZD / night`;
-  }
-
-  const priceText = String(priceFrom);
-  const matched = priceText.match(/(\d[\d,.]*)/);
-  if (matched) {
-    const parsed = Number.parseFloat(matched[1].replaceAll(",", ""));
-    if (Number.isFinite(parsed)) {
-      const normalized =
-        Math.floor(parsed) === parsed ? parsed.toFixed(0) : parsed.toFixed(2);
-      return `From $${normalized} NZD / night`;
-    }
-  }
-
-  return `From $${DEFAULT_FROM_PRICE_NZD} NZD / night`;
-}
-
-export function LocationCta({
-  priceFrom,
-  bookHref = BOOKING_URL,
-}: LocationCtaProps) {
+export function LocationCta({ bookHref = BOOKING_URL }: LocationCtaProps) {
   return (
     <div className={styles.cta} id="reserve">
       <div className={styles.inner}>
-        <span className={styles.price}>{formatPriceFrom(priceFrom)}</span>
+        <span className={styles.price}>{CTA_AVAILABILITY_COPY}</span>
         <Button
           href={bookHref}
           external

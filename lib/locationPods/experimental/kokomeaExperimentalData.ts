@@ -214,7 +214,7 @@ const kokomeaExperiencesBlock = {
       links: [
         {
           label: "Explore Paekākāriki Escarpment Track",
-          href: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/paekakariki-escapment-track/",
+          href: "https://www.wellingtonnz.com/visit/trails/escarpment-track",
         },
       ],
     },
@@ -230,7 +230,7 @@ const kokomeaExperiencesBlock = {
       links: [
         {
           label: "Explore the Kāpiti Coast",
-          href: "https://www.kapiticoast.govt.nz/our-district/visit-kapiti/",
+          href: "https://www.visitkapiti.co.nz/",
         },
       ],
     },

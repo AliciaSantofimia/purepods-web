@@ -142,17 +142,19 @@ function stewartTwinPinDivIcon(
 ): L.DivIcon {
   const w = 132;
   const h = 54;
+  /** Class on twin root so mobile CSS can keep full pin hit-target (see chooseMapExperimental.module.css). */
+  const rootClass = styles.chMapStewartTwinRoot;
   if (slug === "tokoeka") {
     return L.divIcon({
       className: styles.chMapDivicon,
-      html: `<div style="width:${w}px;height:${h}px;position:relative;overflow:visible" aria-hidden="true"><div style="position:absolute;left:6px;bottom:2px;transform:translate(-2px,-9px)">${inner}</div></div>`,
+      html: `<div class="${rootClass}" style="width:${w}px;height:${h}px;position:relative;overflow:visible" aria-hidden="true"><div style="position:absolute;left:6px;bottom:2px;transform:translate(-2px,-9px)">${inner}</div></div>`,
       iconSize: [w, h],
       iconAnchor: [19, h],
     });
   }
   return L.divIcon({
     className: styles.chMapDivicon,
-    html: `<div style="width:${w}px;height:${h}px;position:relative;overflow:visible" aria-hidden="true"><div style="position:absolute;left:86px;bottom:0;transform:translate(4px,7px) scale(0.86);transform-origin:50% 100%">${inner}</div></div>`,
+    html: `<div class="${rootClass}" style="width:${w}px;height:${h}px;position:relative;overflow:visible" aria-hidden="true"><div style="position:absolute;left:86px;bottom:0;transform:translate(4px,7px) scale(0.86);transform-origin:50% 100%">${inner}</div></div>`,
     iconSize: [w, h],
     iconAnchor: [101, h],
   });
@@ -255,6 +257,9 @@ type ChooseMapLeafletMapProps = {
   region: ChooseMapRegion;
   highlightSlug: string | null;
   onHighlightSlug: (slug: string | null) => void;
+  /** Stack layout (≤980px): map above cards — scroll cards into view on pin tap. */
+  compactLayout: boolean;
+  onCompactPinSelect?: (slug: string) => void;
 };
 
 type PinPreviewPayload =
@@ -546,6 +551,8 @@ function PodMarkersLayer({
   onPinPreview,
   onPinPreviewLeave,
   onPinPreviewClear,
+  compactLayout,
+  onCompactPinSelect,
 }: {
   pods: MapPod[];
   highlightSlug: string | null;
@@ -553,6 +560,8 @@ function PodMarkersLayer({
   onPinPreview: (payload: NonNullable<PinPreviewPayload>) => void;
   onPinPreviewLeave: () => void;
   onPinPreviewClear: () => void;
+  compactLayout: boolean;
+  onCompactPinSelect?: (slug: string) => void;
 }) {
   const map = useMap();
   const router = useRouter();
@@ -572,6 +581,10 @@ function PodMarkersLayer({
   onPinPreviewClearRef.current = onPinPreviewClear;
   const routerRef = useRef(router);
   routerRef.current = router;
+  const compactLayoutRef = useRef(compactLayout);
+  compactLayoutRef.current = compactLayout;
+  const onCompactPinSelectRef = useRef(onCompactPinSelect);
+  onCompactPinSelectRef.current = onCompactPinSelect;
 
   const syncMarkerClasses = useCallback(
     (slug: string | null) => {
@@ -637,11 +650,17 @@ function PodMarkersLayer({
       const orderIdx = orderBySlug.get(pod.slug) ?? 0;
       const icon = podPinDivIcon(pod, orderIdx, podList);
       const stewartStack = isStewartIslandTabPods(podList);
+      const coarse = isCoarsePointer();
+      /** Stewart twins share one lat/lng; icon boxes overlap ~50px. Hananui used a higher z-index, so it stole taps in the overlap (bad for Tokoeka on touch). Invert stacking on coarse pointers only — desktop hover/stack unchanged. */
       const zIndexOffset =
         stewartStack && pod.slug === "tokoeka"
-          ? 620
+          ? coarse
+            ? 780
+            : 620
           : stewartStack && pod.slug === "hananui"
-            ? 740
+            ? coarse
+              ? 560
+              : 740
             : 0;
       const marker = L.marker([pod.lat, pod.lng], {
         icon,
@@ -674,6 +693,9 @@ function PodMarkersLayer({
         }
         onHighlightRef.current(pod.slug);
         marker.closeTooltip?.();
+        if (compactLayoutRef.current) {
+          onCompactPinSelectRef.current?.(pod.slug);
+        }
         if (isCoarsePointer()) {
           L.DomEvent.stopPropagation(e);
           onPinPreviewRef.current({
@@ -681,9 +703,11 @@ function PodMarkersLayer({
             latlng: marker.getLatLng(),
             mode: "sticky",
           });
-        } else {
+        } else if (!compactLayoutRef.current) {
           onPinPreviewClearRef.current();
           routerRef.current.push(pod.href);
+        } else {
+          onPinPreviewClearRef.current();
         }
       });
       marker.addTo(m);
@@ -734,6 +758,8 @@ export default function ChooseMapLeafletMap({
   region,
   highlightSlug,
   onHighlightSlug,
+  compactLayout,
+  onCompactPinSelect,
 }: ChooseMapLeafletMapProps) {
   /** Forces a fresh MapContainer instance after error recovery / full remount. */
   const [mapContainerKey] = useState(newMapContainerKey);
@@ -901,6 +927,8 @@ export default function ChooseMapLeafletMap({
             onPinPreview={openPinPreview}
             onPinPreviewLeave={onPinPreviewLeave}
             onPinPreviewClear={clearPinPreview}
+            compactLayout={compactLayout}
+            onCompactPinSelect={onCompactPinSelect}
           />
           <MapStickyPreviewDismiss
             active={Boolean(pinPreview && pinPreview.mode === "sticky")}

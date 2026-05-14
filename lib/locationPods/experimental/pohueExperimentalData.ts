@@ -186,6 +186,7 @@ const pohueExperiencesBlock = {
       image: expPenguins,
       imageAlt:
         "Little blue penguin wildlife along the Banks Peninsula coast near Akaroa, New Zealand",
+      imageObjectPosition: "50% 36%",
       paragraphs: [
         "Akaroa blends French heritage and harbour life with standout marine wildlife. From dolphin cruises to experiences like Ecoseaker and conservation-led encounters with little blue penguins, it offers a distinctive way to experience Banks Peninsula.",
         "Why it's special: French heritage + harbour village + dolphins + little blue penguins + scenic harbour.",
@@ -218,7 +219,7 @@ const pohueExperiencesBlock = {
       links: [
         {
           label: "Explore Te Ahu Pātiki / Mount Herbert",
-          href: "https://doc.govt.nz/parks-and-recreation/places-to-go/christchurch-canterbury/places/banks-peninsula/places/herbert-and-pukerewa-reserves/things-to-do/te-ahu-patiki-mount-herbert-track/",
+          href: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/banks-peninsula-area/things-to-do/te-ara-pataka/mt-herbert-walkway/",
         },
       ],
     },

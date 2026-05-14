@@ -3,7 +3,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 10px 14px;
+  padding: 10px 14px 18px;
   background: rgba(245, 243, 238, 0.86);
   backdrop-filter: blur(8px);
   border-top: 1px solid rgba(80, 76, 68, 0.18);
@@ -39,6 +39,7 @@
     background: transparent;
     border: 0;
     padding: 0;
+    padding-bottom: 20px;
     margin-top: 12px;
   }
 

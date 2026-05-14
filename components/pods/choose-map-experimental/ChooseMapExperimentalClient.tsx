@@ -99,6 +99,28 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
     setHoverSlug(slug);
   }, []);
 
+  const scrollPodCardIntoView = useCallback(
+    (slug: string) => {
+      if (!compactLayout) return;
+      const card =
+        typeof document !== "undefined"
+          ? document.getElementById(`pods-choose-map-card-${slug}`)
+          : null;
+      if (!card || !(card instanceof HTMLElement)) return;
+      const prefersReduced =
+        typeof window !== "undefined" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      requestAnimationFrame(() => {
+        card.scrollIntoView({
+          behavior: prefersReduced ? "auto" : "smooth",
+          block: "center",
+          inline: "nearest",
+        });
+      });
+    },
+    [compactLayout],
+  );
+
   useEffect(() => {
     setScrollSlug(null);
     ratiosRef.current.clear();
@@ -214,6 +236,8 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
               region={filter}
               highlightSlug={markerHighlightSlug}
               onHighlightSlug={setHoverFromMapPin}
+              compactLayout={compactLayout}
+              onCompactPinSelect={scrollPodCardIntoView}
             />
           </aside>
 
@@ -226,6 +250,7 @@ export function ChooseMapExperimentalClient({ initialRegion }: ClientProps) {
                 return (
                   <Link
                     key={pod.slug}
+                    id={`pods-choose-map-card-${pod.slug}`}
                     href={pod.href}
                     className={`${styles.pod} ${isHover ? xstyles.podMapHighlight : ""} ${isHover ? chooseMapStyles.chooseMapPodLinkActive : ""} ${isScrollCue ? xstyles.podScrollCue : ""}`}
                     data-island={pod.filter}

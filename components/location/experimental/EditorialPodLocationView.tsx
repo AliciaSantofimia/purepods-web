@@ -249,6 +249,11 @@ export function EditorialPodLocationView({ config }: Props) {
                           fill
                           sizes="(max-width: 640px) 22vw, 110px"
                           className={styles.xpPreviewThumbImg}
+                          style={
+                            xp.imageObjectPosition
+                              ? { objectPosition: xp.imageObjectPosition }
+                              : undefined
+                          }
                         />
                       </span>
                     ))}
@@ -445,10 +450,7 @@ export function EditorialPodLocationView({ config }: Props) {
           ) : null}
 
           <div className={styles.ctaSlot}>
-            <LocationCta
-              priceFrom={config.cta.priceFrom}
-              bookHref={config.cta.bookHref}
-            />
+            <LocationCta bookHref={config.cta.bookHref} />
           </div>
         </main>
       </LightboxProvider>

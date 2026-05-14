@@ -185,7 +185,7 @@ const pamuExperiencesBlock = {
       links: [
         {
           label: "Explore geothermal Rotorua",
-          href: "https://www.rotoruanz.com/see-and-do/geothermal",
+          href: "https://www.rotoruanz.com/things-to-do/geothermal-wonders",
         },
       ],
     },
@@ -201,7 +201,7 @@ const pamuExperiencesBlock = {
       links: [
         {
           label: "Māori culture in Rotorua",
-          href: "https://www.rotoruanz.com/see-and-do/maori-culture",
+          href: "https://www.rotoruanz.com/things-to-do/maori-culture",
         },
       ],
     },
@@ -217,7 +217,7 @@ const pamuExperiencesBlock = {
       links: [
         {
           label: "Explore Rotorua",
-          href: "https://www.rotoruanz.com/see-and-do",
+          href: "https://www.rotoruanz.com/things-to-do/",
         },
       ],
     },

@@ -16,11 +16,10 @@ const podShowerMountainView =
   "/assets/img/manakau/manakau-purepod-shower-with-mountain-view.jpg";
 const podMilkyWay =
   "/assets/img/manakau/manakau-purepod-milky-way-stargazing-kaikoura.jpg";
-const expWhale =
-  "/assets/img/manakau/kaikoura-whale-watching-sperm-whale.jpg";
+const expWhale = "/assets/img/kahutara/kaikoura-whale-watching-new-zealand.jpg";
 const expWalkway =
-  "/assets/img/manakau/kaikoura-peninsula-walkway-coastal-view.jpg";
-const expSeals = "/assets/img/manakau/kaikoura-seal-colony-new-zealand.jpg";
+  "/assets/img/kahutara/kaikoura-peninsula-walkway-coastal-track.jpg";
+const expSeals = "/assets/img/kahutara/kaikoura-seal-colony-new-zealand.jpg";
 const travelFarm =
   "/assets/img/manakau/kaikoura-countryside-farm-entrance.jpg";
 const travelValley =
@@ -184,47 +183,58 @@ const manakauExperiencesBlock = {
     "A curated selection of three experiences that capture the essence of the Kaikōura region — marine wildlife, coastal walks and the meeting of mountains and sea.",
   items: [
     {
-      title: "Whale watching",
+      title: "Kaikōura Whale Experiences",
       image: expWhale,
-      imageAlt: "Sperm whale off the coast of Kaikōura, New Zealand",
+      imageAlt:
+        "Sperm whale tail diving in the ocean during whale watching in Kaikōura, New Zealand",
       paragraphs: [
-        "Kaikōura is one of the few places in the world where you can see sperm whales year-round. Boat trips take you offshore into the deep waters where these giants feed — a powerful, humbling encounter with wild ocean life.",
-        "A chance to see the ocean from a different perspective.",
+        "A unique opportunity to see whales both from the air and from the ocean, revealing the full scale and beauty of Kaikōura's marine landscape — where deep waters, dramatic mountains and open sea meet.",
+        "An iconic Kaikōura experience combining extraordinary marine wildlife, open horizons and the striking mountain range rising beside the ocean.",
       ],
       links: [
         {
-          label: "Whale Watch Kaikōura",
-          href: "https://www.whalewatch.co.nz/",
+          label: "Explore Whale Watch Kaikōura",
+          href: "https://whalewatch.co.nz/your-experience/our-tours/whale-watch-trip-gift-voucher/",
+        },
+        {
+          label: "Explore Kaikōura Scenic Flights",
+          href: "https://gchaviation.com/kaikoura-scenic-flights/",
         },
       ],
     },
     {
       title: "Kaikōura Peninsula Walkway",
       image: expWalkway,
-      imageAlt: "Kaikōura Peninsula Walkway coastal view, New Zealand",
+      imageAlt:
+        "Coastal cliffs along the Kaikōura Peninsula Walkway in New Zealand",
       paragraphs: [
-        "A coastal walk that winds around the peninsula with sweeping views of the mountains and the Pacific. The track is well formed and suitable for a gentle half-day — ocean on one side, peaks on the other.",
-        "One of the region’s most rewarding walks — sea, sky and steady pace.",
+        "A scenic coastal walk with open ocean views, rocky headlands and distant mountains — perfect for exploring at a relaxed pace while observing wildlife in its natural habitat, including New Zealand fur seals, seabirds and, at times, dolphins and whales offshore.",
+        "Staying at Manakau places you right in the heart of this wild coastal landscape.",
       ],
       links: [
         {
-          label: "Kaikōura Peninsula Walkway",
-          href: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/kaikoura-peninsula/things-to-do/kaikoura-peninsula-walkway/",
+          label: "Explore Kaikōura Peninsula Walkway",
+          href: "https://www.google.com/maps/place/Kaik%C5%8Dura+Peninsula+Walkway,+Canterbury+Region+7300,+New+Zealand/@-42.4256257,173.6889881,17z",
         },
       ],
     },
     {
-      title: "Seal colony & coastal wildlife",
+      title: "Seal Kayak & Seal Swim Kaikōura",
       image: expSeals,
-      imageAlt: "New Zealand fur seals at Kaikōura coast, New Zealand",
+      imageAlt:
+        "New Zealand fur seal resting on rocks near the Kaikōura coast",
       paragraphs: [
-        "The Kaikōura coast is home to New Zealand fur seals — you can see them from viewpoints and short walks along the shore. Dolphins, albatross and other seabirds are often seen from the peninsula. The region is a wildlife corridor where land, sea and sky meet.",
-        "A place where wildlife and landscape share the same stage.",
+        "An active and immersive way to explore the coastline — paddling alongside seals or swimming with them in their natural habitat for a truly close-to-nature experience.",
+        "A signature Kaikōura experience where wild coastline, marine wildlife and open ocean combine in a direct encounter with nature.",
       ],
       links: [
         {
-          label: "Explore Kaikōura Peninsula",
-          href: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/kaikoura-peninsula/",
+          label: "Explore Seal Kayak Kaikōura",
+          href: "https://www.sealkayakkaikoura.com/tours/seal-kayak-tour",
+        },
+        {
+          label: "Explore Seal Swim Kaikōura",
+          href: "https://www.sealswimkaikoura.co.nz/",
         },
       ],
     },

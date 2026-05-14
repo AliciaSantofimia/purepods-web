@@ -96,5 +96,6 @@ export type EditorialPodLocationConfig = {
     items: LocationReviewItem[];
   };
   faqItems: LocationFaqItem[];
-  cta: { priceFrom: string | number; bookHref: string };
+  /** `priceFrom` is optional/legacy — CTA copy is fixed in `LocationCta` (live rates via NewBook). */
+  cta: { bookHref: string; priceFrom?: string | number };
 };
