@@ -673,11 +673,13 @@ function PodMarkersLayer({
           hoverOutTimer = null;
         }
         onHighlightRef.current(pod.slug);
-        onPinPreviewRef.current({
-          slug: pod.slug,
-          latlng: marker.getLatLng(),
-          mode: "hover",
-        });
+        if (!compactLayoutRef.current) {
+          onPinPreviewRef.current({
+            slug: pod.slug,
+            latlng: marker.getLatLng(),
+            mode: "hover",
+          });
+        }
       });
       marker.on("mouseout", () => {
         if (hoverOutTimer) clearTimeout(hoverOutTimer);
@@ -698,11 +700,13 @@ function PodMarkersLayer({
         }
         if (isCoarsePointer()) {
           L.DomEvent.stopPropagation(e);
-          onPinPreviewRef.current({
-            slug: pod.slug,
-            latlng: marker.getLatLng(),
-            mode: "sticky",
-          });
+          if (!compactLayoutRef.current) {
+            onPinPreviewRef.current({
+              slug: pod.slug,
+              latlng: marker.getLatLng(),
+              mode: "sticky",
+            });
+          }
         } else if (!compactLayoutRef.current) {
           onPinPreviewClearRef.current();
           routerRef.current.push(pod.href);
@@ -886,6 +890,13 @@ export default function ChooseMapLeafletMap({
     previewHoverLockRef.current = false;
   }, [fitKey, clearPinLeaveTimer]);
 
+  useEffect(() => {
+    if (!compactLayout) return;
+    clearPinLeaveTimer();
+    setPinPreview(null);
+    previewHoverLockRef.current = false;
+  }, [compactLayout, clearPinLeaveTimer]);
+
   const nzMaxBounds = useMemo(
     () => L.latLngBounds(L.latLng(-48.2, 165.2), L.latLng(-33.8, 179.4)).pad(0.04),
     [],
@@ -931,10 +942,12 @@ export default function ChooseMapLeafletMap({
             onCompactPinSelect={onCompactPinSelect}
           />
           <MapStickyPreviewDismiss
-            active={Boolean(pinPreview && pinPreview.mode === "sticky")}
+            active={Boolean(
+              !compactLayout && pinPreview && pinPreview.mode === "sticky",
+            )}
             onDismiss={closeStickyPreview}
           />
-          {pinPreview ? (
+          {pinPreview && !compactLayout ? (
             <MapPodHoverPreview
               pods={pods}
               preview={pinPreview}
