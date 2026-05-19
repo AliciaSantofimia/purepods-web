@@ -1,0 +1,688 @@
+/**
+ * `/pods/luxury-test` — layout editorial premium (refinamiento v3: escala + ritmo).
+ */
+
+.page {
+  --lux-shadow: 0 12px 32px rgba(61, 74, 58, 0.055);
+  --lux-shadow-hover: 0 18px 44px rgba(61, 74, 58, 0.08);
+  --lux-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --font-heading: "Noto Serif Display", Georgia, "Times New Roman", serif;
+  --lux-card-media-h: 188px;
+  --lux-card-min-h: 328px;
+  --lux-split-gap: clamp(20px, 2.4vw, 32px);
+  /* Mapa: mismas proporciones que /pods (ExplorePageWithMapExperimental + chooseMapLeafTune) */
+  --lux-map-min-h: clamp(280px, 48vh, 520px);
+  --lux-map-max-h: calc(100dvh - clamp(100px, 18vh, 140px));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* No estirar el main: evita hueco “accidental” antes del footer en islas con pocos pods */
+.main {
+  flex: 0 1 auto;
+  width: 100%;
+}
+
+/* Header: mismas clases globales que /experiences (`nav nav--solid`, `nav__bar`, etc.) */
+
+/* —— Hero (mismas medidas que main.experiences-index en globals.css) —— */
+.hero {
+  text-align: center;
+  padding: 48px 0 32px;
+}
+
+.kicker {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero h1 {
+  margin: 14px auto 10px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: -0.02em;
+  color: var(--brand-green);
+  max-width: 22ch;
+}
+
+.lead {
+  margin: 0 auto;
+  max-width: 65ch;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.page :global(#pods-luxury-choose-place) {
+  scroll-margin-top: clamp(68px, 11vw, 98px);
+}
+
+/* —— Tabs —— */
+.tabsWrap {
+  position: sticky;
+  /* Debajo de `nav--solid` + `nav__bar` (mismas medidas que /experiences) */
+  top: clamp(68px, 11vw, 98px);
+  z-index: 55;
+  background: linear-gradient(
+    to bottom,
+    rgba(247, 246, 243, 0.98) 0%,
+    rgba(247, 246, 243, 0.9) 100%
+  );
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid color-mix(in srgb, var(--stroke) 65%, transparent);
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 0 16px;
+}
+
+.tab {
+  flex: 0 0 auto;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--stroke) 80%, transparent);
+  background: var(--card);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  cursor: pointer;
+  transition:
+    background 0.3s var(--lux-ease),
+    border-color 0.3s var(--lux-ease),
+    color 0.3s var(--lux-ease),
+    box-shadow 0.3s var(--lux-ease);
+  user-select: none;
+}
+
+.tab:hover {
+  color: var(--ink);
+  border-color: color-mix(in srgb, var(--brand-green) 20%, var(--stroke));
+}
+
+.tabActive {
+  background: color-mix(in srgb, var(--brand-green) 7%, var(--card));
+  border-color: color-mix(in srgb, var(--brand-green) 24%, var(--stroke));
+  color: var(--brand-green);
+  box-shadow: 0 2px 12px rgba(92, 95, 60, 0.05);
+}
+
+/* —— Section + split —— */
+.section {
+  padding: 8px 0 0;
+}
+
+.sectionHead {
+  margin: 0 0 18px;
+  text-align: center;
+}
+
+.count {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: color-mix(in srgb, var(--muted) 90%, var(--ink));
+}
+
+.split {
+  display: grid;
+  /* Columna mapa: idéntica a /pods */
+  grid-template-columns: minmax(min(280px, 34vw), min(400px, 40vw)) minmax(0, 1fr);
+  gap: var(--lux-split-gap);
+  align-items: start;
+}
+
+@media (min-width: 981px) {
+  .section {
+    max-width: 960px;
+    margin-inline: auto;
+  }
+
+  .split {
+    justify-content: center;
+  }
+
+  .splitCards .grid {
+    max-width: 580px;
+  }
+}
+
+.splitMap {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.splitCards {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+@media (min-width: 981px) {
+  .splitMap {
+    position: sticky;
+    top: clamp(96px, 13vw, 118px);
+    align-self: start;
+    z-index: 1;
+  }
+
+}
+
+/* —— Map frame —— */
+.mapFrame {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 14px 14px 12px;
+  border-radius: 22px;
+  border: 1px solid color-mix(in srgb, var(--brand-green) 14%, var(--stroke));
+  background: color-mix(in srgb, var(--card) 62%, var(--bg));
+  box-shadow:
+    var(--lux-shadow),
+    0 0 0 1px color-mix(in srgb, #fff 45%, transparent);
+}
+
+.mapFrameHeader {
+  text-align: center;
+  padding: 2px 10px 10px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid color-mix(in srgb, var(--stroke) 55%, transparent);
+}
+
+.mapCaption {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 10.5px;
+  font-weight: 650;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--brand-green) 82%, var(--muted));
+}
+
+.mapCaptionSub {
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  line-height: 1.48;
+  color: color-mix(in srgb, var(--muted) 88%, var(--ink));
+  font-style: italic;
+}
+
+.mapFrameInner {
+  width: 100%;
+}
+
+.mapHost {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.mapFrame > .mapHost > :global(.exmapShell) {
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--brand-green) 8%, var(--stroke)) !important;
+  box-shadow: inset 0 1px 0 color-mix(in srgb, #fff 50%, transparent) !important;
+  min-height: var(--lux-map-min-h);
+  max-height: var(--lux-map-max-h);
+}
+
+/* Superficie Leaflet: alturas de /pods */
+.mapHost :global(.chooseMapLeafTune) :global(.leaflet-container),
+.mapHost :global(.chooseMapMapSurface) {
+  min-height: var(--lux-map-min-h) !important;
+}
+
+/* Tono PurePods sobre teselas Leaflet */
+.mapHost :global(.chooseMapLeafTune) {
+  --inf-bg: #f3f0e6;
+  --inf-land: #d8cdb0;
+  --inf-ink: #5c5f3e;
+  --inf-muted: rgba(92, 95, 62, 0.58);
+  --inf-line: #b8a88a;
+  --inf-pin-a: #5c5f3e;
+}
+
+.mapHost :global(.leaflet-tile-pane) {
+  filter: sepia(0.1) saturate(0.58) brightness(1.03) contrast(0.94) hue-rotate(-2deg);
+}
+
+.mapHost :global(.leaflet-container) {
+  background: #f3f0e6 !important;
+}
+
+/* Controles zoom discretos */
+.mapHost :global(.leaflet-control-zoom) {
+  margin: 10px !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.mapHost :global(.leaflet-control-zoom a) {
+  width: 28px !important;
+  height: 28px !important;
+  line-height: 26px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: color-mix(in srgb, var(--brand-green) 85%, var(--ink)) !important;
+  background: rgba(252, 250, 244, 0.94) !important;
+  border: 1px solid color-mix(in srgb, var(--stroke) 70%, transparent) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(61, 74, 58, 0.05) !important;
+  transition:
+    background 0.2s var(--lux-ease),
+    border-color 0.2s var(--lux-ease);
+}
+
+.mapHost :global(.leaflet-control-zoom a:hover) {
+  background: var(--card) !important;
+  border-color: color-mix(in srgb, var(--brand-green) 22%, var(--stroke)) !important;
+}
+
+.mapHost :global(.leaflet-control-zoom-in) {
+  border-radius: 8px 8px 4px 4px !important;
+  margin-bottom: 3px !important;
+}
+
+.mapHost :global(.leaflet-control-zoom-out) {
+  border-radius: 4px 4px 8px 8px !important;
+}
+
+.mapHost :global(.leaflet-control-attribution) {
+  font-size: 8px !important;
+  letter-spacing: 0.02em;
+  opacity: 0.42;
+  background: transparent !important;
+  color: color-mix(in srgb, var(--muted) 90%, transparent) !important;
+  padding: 2px 6px !important;
+}
+
+.mapHost :global(.leaflet-control-attribution a) {
+  color: inherit !important;
+}
+
+/* Brújula editorial — presente pero discreta */
+.mapHost :global(.infographicCompass) {
+  opacity: 0.44;
+  width: 50px;
+  height: 50px;
+  top: 10px;
+  right: 10px;
+}
+
+/* Pines alineados con marca */
+.mapHost :global(.chMapPinWrap) {
+  color: #5c5f3e;
+}
+
+.mapHost :global(.chMapCallout) {
+  border-radius: 6px;
+  border-color: color-mix(in srgb, var(--stroke) 75%, transparent);
+  background: rgba(252, 250, 244, 0.96);
+  box-shadow: 0 3px 12px rgba(61, 74, 58, 0.06);
+}
+
+/* —— Cards —— */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 22px);
+  width: 100%;
+}
+
+.card {
+  border-radius: 20px;
+  border: 1px solid color-mix(in srgb, var(--stroke) 85%, transparent);
+  background: var(--card);
+  box-shadow: var(--lux-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: var(--lux-card-min-h);
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform 0.45s var(--lux-ease),
+    box-shadow 0.45s var(--lux-ease),
+    border-color 0.45s var(--lux-ease);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--lux-shadow-hover);
+  border-color: color-mix(in srgb, var(--brand-green) 16%, var(--stroke));
+}
+
+.card:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--brand-green) 35%, transparent);
+  outline-offset: 3px;
+}
+
+.cardMedia {
+  position: relative;
+  height: var(--lux-card-media-h);
+  overflow: hidden;
+  background: color-mix(in srgb, var(--stroke) 25%, transparent);
+}
+
+.cardMedia :global(img) {
+  transition: transform 0.7s var(--lux-ease);
+}
+
+.card:hover .cardMedia :global(img) {
+  transform: scale(1.03);
+}
+
+.cardMedia::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(17, 18, 23, 0) 62%,
+    rgba(247, 246, 243, 0.14) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cardBody {
+  padding: 16px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+}
+
+.cardPill {
+  display: inline-flex;
+  width: fit-content;
+  padding: 4px 10px;
+  margin-bottom: 8px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--stroke) 75%, transparent);
+  background: transparent;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--muted) 95%, transparent);
+}
+
+.cardTitle {
+  margin: 0 0 4px;
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+  color: var(--brand-green);
+}
+
+.cardMeta {
+  margin: 0 0 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--muted) 92%, transparent);
+}
+
+.cardCta {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: auto;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--brand-green) 22%, var(--stroke));
+  background: transparent;
+  color: var(--brand-green);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition:
+    background 0.35s var(--lux-ease),
+    border-color 0.35s var(--lux-ease),
+    color 0.35s var(--lux-ease);
+}
+
+.card:hover .cardCta {
+  background: color-mix(in srgb, var(--brand-green) 6%, var(--card));
+  border-color: color-mix(in srgb, var(--brand-green) 32%, var(--stroke));
+}
+
+.cardMapHighlight {
+  border-color: color-mix(in srgb, var(--brand-green) 28%, var(--stroke)) !important;
+  box-shadow:
+    var(--lux-shadow-hover),
+    0 0 0 1px color-mix(in srgb, var(--brand-green) 10%, transparent) !important;
+  transform: translateY(-1px) !important;
+}
+
+.cardScrollCue {
+  border-color: color-mix(in srgb, var(--brand-green) 12%, var(--stroke)) !important;
+  box-shadow: 0 14px 36px rgba(92, 95, 60, 0.05) !important;
+}
+
+/* —— Cierre editorial —— */
+.pageClose {
+  margin-top: clamp(36px, 5vw, 56px);
+  padding: clamp(28px, 4vw, 40px) 0 clamp(6px, 1.5vw, 12px);
+  text-align: center;
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+.pageCloseLine {
+  width: 48px;
+  height: 1px;
+  margin: 0 auto 22px;
+  background: color-mix(in srgb, var(--brand-green) 25%, var(--stroke));
+  border: none;
+}
+
+.pageCloseText {
+  margin: 0 auto 20px;
+  font-family: var(--font-heading);
+  font-size: clamp(17px, 2.2vw, 20px);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: color-mix(in srgb, var(--brand-green) 88%, var(--ink));
+  max-width: 32ch;
+}
+
+.pageCloseCta {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 20px;
+  border-radius: 999px;
+  border: 1.5px solid color-mix(in srgb, var(--brand-green) 28%, var(--stroke));
+  background: color-mix(in srgb, var(--brand-beige) 35%, var(--card));
+  color: var(--brand-green);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    background 0.35s var(--lux-ease),
+    border-color 0.35s var(--lux-ease),
+    box-shadow 0.35s var(--lux-ease);
+}
+
+.pageCloseCta:hover {
+  background: color-mix(in srgb, var(--brand-beige) 55%, var(--card));
+  border-color: color-mix(in srgb, var(--brand-green) 38%, var(--stroke));
+  box-shadow: 0 8px 24px rgba(92, 95, 60, 0.08);
+}
+
+/* —— Footer zone —— */
+.footerZone {
+  margin-top: auto;
+  padding-top: clamp(20px, 3vw, 32px);
+  background: color-mix(in srgb, var(--card) 50%, var(--bg));
+  border-top: 1px solid color-mix(in srgb, var(--stroke) 70%, transparent);
+}
+
+.footerZone footer {
+  margin-top: 0;
+  padding: clamp(2.25rem, 5vw, 3.25rem) 1rem clamp(2rem, 4vw, 2.75rem) !important;
+  border-top: none !important;
+  background: transparent !important;
+}
+
+.footerZone footer img {
+  height: clamp(28px, 4vw, 38px) !important;
+  width: auto !important;
+  max-width: min(160px, 50vw) !important;
+}
+
+.footerZone footer p {
+  font-family: var(--font-heading);
+  letter-spacing: 0.12em;
+}
+
+.footerZone footer nav a {
+  transition: color 0.25s var(--lux-ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card:hover,
+  .cardMapHighlight,
+  .cardMedia :global(img),
+  .card:hover .cardMedia :global(img),
+  .tab,
+  .pageCloseCta {
+    transform: none !important;
+    transition-duration: 0.01ms;
+  }
+}
+
+@media (max-width: 980px) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .section {
+    max-width: none;
+  }
+
+  .splitMap {
+    position: relative;
+    top: auto;
+  }
+
+  .tabs {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 14px 20px 16px;
+    margin-inline: -20px;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 20px;
+    scrollbar-width: none;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab {
+    scroll-snap-align: start;
+    min-height: 44px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    max-width: none;
+  }
+
+  .card {
+    --lux-card-min-h: 312px;
+    --lux-card-media-h: 180px;
+  }
+
+  .mapFrame {
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  /* Móvil/tablet: mismas alturas compactas que /pods (chooseMapLeafTune) */
+  .mapFrame > .mapHost > :global(.exmapShell) {
+    min-height: 0 !important;
+    max-height: none !important;
+    height: clamp(168px, 26vh, 208px);
+    max-height: 208px;
+  }
+
+  .mapHost :global(.chooseMapLeafTune) :global(.leaflet-container),
+  .mapHost :global(.chooseMapMapSurface) {
+    min-height: 0 !important;
+    height: 100% !important;
+  }
+
+  .pageClose {
+    margin-top: 40px;
+    padding-top: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cardBody {
+    padding: 18px 18px 22px;
+  }
+
+  .cardTitle {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+  .mapFrame > .mapHost > :global(.exmapShell) {
+    height: clamp(208px, 30vh, 264px);
+    max-height: 264px;
+  }
+}
+
+@media (max-width: 420px) {
+  .mapFrame > .mapHost > :global(.exmapShell) {
+    height: clamp(148px, 23vh, 184px);
+    max-height: 184px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section {
+    max-width: 1000px;
+  }
+
+  .split {
+    grid-template-columns: minmax(min(280px, 34vw), min(400px, 40vw)) minmax(0, 580px);
+    gap: 34px;
+  }
+
+  .splitCards .grid {
+    max-width: 560px;
+  }
+}

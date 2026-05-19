@@ -49,7 +49,7 @@ export function ExpStandardChrome({
           </nav>
           <a
             className="nav__book"
-            href="https://purepods.com/booking/?cart=Checkout"
+            href="https://purepods.com/booking/"
             target="_blank"
             rel="noopener noreferrer"
           >

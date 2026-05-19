@@ -260,6 +260,8 @@ type ChooseMapLeafletMapProps = {
   /** Stack layout (≤980px): map above cards — scroll cards into view on pin tap. */
   compactLayout: boolean;
   onCompactPinSelect?: (slug: string) => void;
+  /** Oculta la etiqueta flotante “New Zealand” (p. ej. /pods luxury con cabecera editorial). */
+  hideCaption?: boolean;
 };
 
 type PinPreviewPayload =
@@ -764,6 +766,7 @@ export default function ChooseMapLeafletMap({
   onHighlightSlug,
   compactLayout,
   onCompactPinSelect,
+  hideCaption = false,
 }: ChooseMapLeafletMapProps) {
   /** Forces a fresh MapContainer instance after error recovery / full remount. */
   const [mapContainerKey] = useState(newMapContainerKey);
@@ -904,7 +907,9 @@ export default function ChooseMapLeafletMap({
 
   return (
     <div className={`${xstyles.exmapShell} ${styles.chooseMapLeafTune}`}>
-      <p className={`${xstyles.exmapCaption} ${styles.infographicCaption}`}>New Zealand</p>
+      {!hideCaption ? (
+        <p className={`${xstyles.exmapCaption} ${styles.infographicCaption}`}>New Zealand</p>
+      ) : null}
       <InfographicCompass />
       {mapDomReady ? (
         <MapContainer

@@ -169,7 +169,7 @@ export function NightFallsView() {
                       stars, and extraordinary darkness.
                     </p>
                     <a
-                      href="https://purepods.com/booking/?cart=Checkout"
+                      href="https://purepods.com/booking/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="nightBtn primary"

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import styles from "./myJourney.module.css";
 
-const BOOKING_CHECKOUT = "https://purepods.com/booking/?cart=Checkout";
+const BOOKING_CHECKOUT = "https://purepods.com/booking/";
 
 export const metadata: Metadata = {
   title: { absolute: "Mi viaje — PurePods (Demo)" },
