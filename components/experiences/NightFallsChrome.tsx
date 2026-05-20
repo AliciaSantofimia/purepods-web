@@ -10,6 +10,8 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { ExpExperiencesMega } from "@/components/experiences/ExpExperiencesMega";
+import { ExpPodsMega } from "@/components/experiences/ExpPodsMega";
 
 type NavItem = { href: string; label: string };
 
@@ -61,7 +63,7 @@ export function NightFallsChrome({
   return (
     <>
       <header
-        className={`nav nav--solid nf-nav${drawerOpen ? " nf-nav--open" : ""}`}
+        className={`experience-ref nav nav--solid nf-nav${drawerOpen ? " nf-nav--open" : ""}`}
         role="banner"
         aria-label="Main navigation"
       >
@@ -83,8 +85,8 @@ export function NightFallsChrome({
           </Link>
 
           <nav className="nav__links links nf-nav__links" aria-label="Primary">
-            <Link href="/experiences">Experiences</Link>
-            <Link href="/pods">Pods</Link>
+            <ExpExperiencesMega />
+            <ExpPodsMega />
             {navItems.map((item) => (
               <a key={item.href + item.label} href={item.href}>
                 {item.label}
