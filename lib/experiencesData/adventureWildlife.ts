@@ -70,7 +70,12 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
     title: "Volcanic landscapes by air",
     description:
       "Fly over crater lakes and geothermal terrain shaped by eruption and time. Remote, dramatic and unlike anywhere else.",
-    pods: [{ label: "Pāmu PurePod", href: "/location/pamu/?from=adventure-wildlife" }],
+    pods: [
+      {
+        label: "Pāmu PurePod near Rotorua geothermal and wellness experiences",
+        href: "/location/pamu/?from=adventure-wildlife",
+      },
+    ],
     distance: "~20–30 min drive",
     timing: "weather dependent",
     nearbyRegion: " — Rotorua region, North Island",
@@ -109,7 +114,12 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
     title: "Kaituna River rafting",
     description:
       "A short, intense run through native forest and waterfalls, including one of the highest commercially rafted drops in the world.",
-    pods: [{ label: "Pāmu PurePod", href: "/location/pamu/?from=adventure-wildlife" }],
+    pods: [
+      {
+        label: "Pāmu PurePod near Rotorua culture, hot springs and forest experiences",
+        href: "/location/pamu/?from=adventure-wildlife",
+      },
+    ],
     distance: "~15–20 min drive",
     timing: "half-day experience",
     nearbyRegion: " — Rotorua region, North Island",

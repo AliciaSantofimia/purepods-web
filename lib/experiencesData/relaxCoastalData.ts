@@ -20,7 +20,12 @@ export const relaxExperienceSlides: AdventureExperienceSlide[] = [
     title: "Polynesian Spa",
     description:
       "Lakeside mineral pools fed by natural springs, designed for an unhurried soak on the edge of Lake Rotorua.",
-    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    pods: [
+      {
+        label: "Pāmu PurePod near Rotorua geothermal and wellness experiences",
+        href: "/location/pamu/?from=relax-coastal",
+      },
+    ],
     distance: "Rotorua lakeside spa",
     timing: "book ahead",
     nearbyRegion: " — Rotorua region, North Island",
@@ -32,7 +37,12 @@ export const relaxExperienceSlides: AdventureExperienceSlide[] = [
     title: "Wai Ariki Hot Springs & Spa",
     description:
       "A restorative Rotorua wellness experience shaped by geothermal waters, architecture and Māori cultural inspiration.",
-    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    pods: [
+      {
+        label: "Pāmu PurePod near Rotorua geothermal and wellness experiences",
+        href: "/location/pamu/?from=relax-coastal",
+      },
+    ],
     distance: "Rotorua geothermal spa",
     timing: "wellness experience",
     nearbyRegion: " — Rotorua region, North Island",
@@ -44,7 +54,12 @@ export const relaxExperienceSlides: AdventureExperienceSlide[] = [
     title: "Secret Spot Hot Tubs Rotorua",
     description:
       "Private cedar hot tubs tucked into forest, with ferns close by and a pace that naturally slows everything down.",
-    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    pods: [
+      {
+        label: "Pāmu PurePod near Rotorua culture, hot springs and forest experiences",
+        href: "/location/pamu/?from=relax-coastal",
+      },
+    ],
     distance: "Rotorua forest hot tubs",
     timing: "private soaking",
     nearbyRegion: " — Rotorua region, North Island",
@@ -56,7 +71,12 @@ export const relaxExperienceSlides: AdventureExperienceSlide[] = [
     title: "Hell's Gate Geothermal Reserve & Mud Spa",
     description:
       "Mineral mud, sulphur waters and an active geothermal landscape make this one of Rotorua’s most elemental spa experiences.",
-    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    pods: [
+      {
+        label: "Pāmu PurePod near Rotorua geothermal and wellness experiences",
+        href: "/location/pamu/?from=relax-coastal",
+      },
+    ],
     distance: "Tikitere geothermal reserve",
     timing: "mud spa and walk",
     nearbyRegion: " — Rotorua region, North Island",
@@ -68,7 +88,12 @@ export const relaxExperienceSlides: AdventureExperienceSlide[] = [
     title: "Hamurana Springs Nature Reserve",
     description:
       "Clear spring water, shaded paths and redwood forest combine into a gentle nature walk with a restorative feel.",
-    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    pods: [
+      {
+        label: "Pāmu PurePod near Rotorua culture, hot springs and forest experiences",
+        href: "/location/pamu/?from=relax-coastal",
+      },
+    ],
     distance: "Rotorua spring walk",
     timing: "slow nature walk",
     nearbyRegion: " — Rotorua region, North Island",
@@ -165,7 +190,12 @@ export const relaxRcChapters: RelaxRcChapter[] = [
           alt: "Geothermal pool at Polynesian Spa, Rotorua, beside Lake Rotorua with native greenery, New Zealand",
         },
         layout: "image-left",
-        ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
+        ctas: [
+          {
+            label: "Pāmu PurePod near Rotorua geothermal and wellness experiences",
+            href: "/location/pamu/?from=relax-coastal",
+          },
+        ],
       },
       {
         id: "secret-spot-hot-tubs",
@@ -181,7 +211,12 @@ export const relaxRcChapters: RelaxRcChapter[] = [
           alt: "Private cedar hot tub surrounded by native ferns in a tranquil forest setting in Rotorua, New Zealand",
         },
         layout: "image-right",
-        ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
+        ctas: [
+          {
+            label: "Pāmu PurePod near Rotorua culture, hot springs and forest experiences",
+            href: "/location/pamu/?from=relax-coastal",
+          },
+        ],
       },
       {
         id: "hells-gate-mud-spa",
@@ -197,7 +232,12 @@ export const relaxRcChapters: RelaxRcChapter[] = [
           alt: "Outdoor geothermal mud bath at Hell's Gate, Rotorua, New Zealand, with steam and native planting",
         },
         layout: "full-bleed",
-        ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
+        ctas: [
+          {
+            label: "Pāmu PurePod near Rotorua geothermal and wellness experiences",
+            href: "/location/pamu/?from=relax-coastal",
+          },
+        ],
       },
     ],
   },
@@ -279,7 +319,12 @@ export const relaxRcChapters: RelaxRcChapter[] = [
           alt: "Crystal-clear spring water surrounded by redwood forest and wooden walkway at Hamurana Springs, Rotorua, New Zealand",
         },
         layout: "image-right",
-        ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
+        ctas: [
+          {
+            label: "Pāmu PurePod near Rotorua culture, hot springs and forest experiences",
+            href: "/location/pamu/?from=relax-coastal",
+          },
+        ],
       },
     ],
   },

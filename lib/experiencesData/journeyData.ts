@@ -38,7 +38,12 @@ export const journeyExperienceSlides: AdventureExperienceSlide[] = [
     title: "Redwoods Treewalk / Whakarewarewa Forest",
     description:
       "Walk among towering redwoods, forest trails and suspended bridges in one of Rotorua’s most atmospheric natural settings.",
-    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    pods: [
+      {
+        label: "Pāmu PurePod near Rotorua culture, hot springs and forest experiences",
+        href: "/location/pamu/?from=journey",
+      },
+    ],
     distance: "Rotorua forest experience",
     timing: "day or evening",
     nearbyRegion: " — Rotorua region, North Island",
@@ -133,8 +138,8 @@ export const journeyForestSlides: ForestSlide[] = [
     placeHref: "https://www.treewalk.co.nz/",
     description:
       "An elevated walkway among towering redwoods that immerses you in a magical forest, especially at dusk. A unique experience blending nature and design in the heart of Rotorua.",
-    ctaLabel: "Stay at Pāmu, Rotorua →",
-    ctaHref: "/location/pamu",
+    ctaLabel: "Stay at Pāmu PurePod in Rotorua",
+    ctaHref: "/location/pamu/?from=journey",
   },
   {
     image: `${J}otanewainuku-scenic-reserve-rotorua.jpg`,
@@ -144,8 +149,8 @@ export const journeyForestSlides: ForestSlide[] = [
       "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/otanewainuku-forest/",
     description:
       "A hidden gem featuring waterfalls and natural pools surrounded by lush native bush. Perfect for switching off and enjoying nature at its purest.",
-    ctaLabel: "Stay at Pāmu, Rotorua →",
-    ctaHref: "/location/pamu",
+    ctaLabel: "Pāmu PurePod near Rotorua culture, hot springs and forest experiences",
+    ctaHref: "/location/pamu/?from=journey",
   },
   {
     image: `${J}waitākere-ranges-muriwai-coast.jpg`,

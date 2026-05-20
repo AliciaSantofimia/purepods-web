@@ -40,7 +40,12 @@ export const cultureExperienceSlides: AdventureExperienceSlide[] = [
     title: "Te Puia",
     description:
       "Geothermal energy and Māori culture meet at Te Puia, home to Pōhutu Geyser, carving and weaving schools, and living traditions passed through generations.",
-    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    pods: [
+      {
+        label: "Pāmu PurePod near Rotorua culture, hot springs and forest experiences",
+        href: "/location/pamu/?from=culture",
+      },
+    ],
     distance: "Rotorua cultural and geothermal experience",
     timing: "guided visits available",
     nearbyRegion: " — Rotorua region, North Island",
@@ -52,7 +57,12 @@ export const cultureExperienceSlides: AdventureExperienceSlide[] = [
     title: "Te Pā Tū",
     description:
       "An immersive evening of storytelling, performance and seasonal kai in a forest setting, shaped around Māori traditions, identity and connection to the land.",
-    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    pods: [
+      {
+        label: "Pāmu PurePod near Rotorua culture, hot springs and forest experiences",
+        href: "/location/pamu/?from=culture",
+      },
+    ],
     distance: "Rotorua evening experience",
     timing: "book ahead",
     nearbyRegion: " — Rotorua region, North Island",
@@ -131,8 +141,8 @@ export const cultureMaoriSlides: ForestSlide[] = [
     placeHref: "https://www.tepuia.com/",
     description:
       "A unique place where geothermal wonders and Māori culture come together. Witness the powerful Pōhutu Geyser, visit traditional carving and weaving schools, and learn about living traditions passed down through generations.",
-    ctaLabel: "Stay at Pāmu, Rotorua →",
-    ctaHref: "/location/pamu",
+    ctaLabel: "Pāmu PurePod near Rotorua culture, hot springs and forest experiences",
+    ctaHref: "/location/pamu/?from=culture",
   },
   {
     image: `${C}whakarewarewa-living-maori-village-rotorua-geothermal-cultural-new-zealand.jpg`,
@@ -141,8 +151,8 @@ export const cultureMaoriSlides: ForestSlide[] = [
     placeHref: "https://whakarewarewa.com/",
     description:
       "Step into a living Māori village where families have lived for generations, using geothermal energy for cooking, bathing, and daily life. A rare opportunity to experience culture not as a show, but as everyday reality.",
-    ctaLabel: "Stay at Pāmu, Rotorua →",
-    ctaHref: "/location/pamu",
+    ctaLabel: "Pāmu PurePod near Rotorua culture, hot springs and forest experiences",
+    ctaHref: "/location/pamu/?from=culture",
   },
   {
     image: `${C}te-pa-tu-maori-cultural-experience-rotorua-night-performance-new-zealand.jpg`,
@@ -151,8 +161,8 @@ export const cultureMaoriSlides: ForestSlide[] = [
     placeHref: "https://te-pa-tu.com/",
     description:
       "An immersive evening experience combining storytelling, performance, and seasonal cuisine. Set within a forest setting, this is a deeply sensory journey into Māori traditions, identity, and connection to the land.",
-    ctaLabel: "Stay at Pāmu, Rotorua →",
-    ctaHref: "/location/pamu",
+    ctaLabel: "Pāmu PurePod near Rotorua culture, hot springs and forest experiences",
+    ctaHref: "/location/pamu/?from=culture",
   },
   {
     image: `${C}koukourarata-marae-banks-peninsula-maori-meeting-house-cultural-new-zealand.jpg`,
@@ -313,7 +323,7 @@ export const cultureIndustrySlides: HikingSlide[] = [
       "https://www.mountainjade.co.nz/tours/mountain-jade-highlights-tour?srsltid=AfmBOorU-vdiYM8DlUuJFAldqm1Qh5WyRRqRFJ20IYQE3y7ooYnx2b9L",
     description:
       "Discover the art of carving pounamu (greenstone), a material deeply connected to Māori culture and identity. Watch skilled artisans at work and learn the meaning behind each piece.",
-    ctas: [{ label: "Stay at Pāmu, Rotorua →", href: "/location/pamu" }],
+    ctas: [{ label: "Stay at Pāmu, Rotorua →", href: "/location/pamu/?from=culture" }],
   },
   {
     image: null,

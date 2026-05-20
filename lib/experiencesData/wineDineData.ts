@@ -64,7 +64,12 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     title: "Stratosfare Restaurant & Bar (Rotorua)",
     description:
       "A panoramic Rotorua dining experience with wide views, local flavours and a memorable sense of arrival above the city.",
-    pods: [{ label: "Pāmu PurePod", href: "/location/pamu/?from=wine-dine" }],
+    pods: [
+      {
+        label: "Stay at Pāmu PurePod in Rotorua",
+        href: "/location/pamu/?from=wine-dine",
+      },
+    ],
     distance: "Rotorua dining with views",
     timing: "lunch or dinner",
     nearbyRegion: " — Rotorua region, North Island",
@@ -155,7 +160,12 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     title: "Lakeland Queen Cruise (Lake Rotorua)",
     description:
       "A lake dining cruise that pairs Rotorua scenery, geothermal shoreline and an easy on-water dining rhythm.",
-    pods: [{ label: "Pāmu PurePod", href: "/location/pamu/?from=wine-dine" }],
+    pods: [
+      {
+        label: "Stay at Pāmu PurePod in Rotorua",
+        href: "/location/pamu/?from=wine-dine",
+      },
+    ],
     distance: "Lake Rotorua cruise",
     timing: "on-water dining",
     nearbyRegion: " — Rotorua region, North Island",
@@ -274,7 +284,12 @@ export const wineDineViewSlides: HikingSlide[] = [
     placeHref: "https://lakelandqueen.com/",
     description:
       "A unique on-water dining experience across Lake Rotorua, combining good food with geothermal scenery and ever-changing views.",
-    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
+    ctas: [
+      {
+        label: "Stay at Pāmu PurePod in Rotorua",
+        href: "/location/pamu/?from=wine-dine",
+      },
+    ],
   },
   {
     image: "/assets/img/experiences/wine-dine/stratosfare-restaurant-rotorua-panoramic-view-dining-new-zealand.jpg",
@@ -283,7 +298,12 @@ export const wineDineViewSlides: HikingSlide[] = [
     placeHref: "https://rotorua.skyline.co.nz/things-to-do/stratosfare-restaurant-rotorua/",
     description:
       "A relaxed dining experience with panoramic views over Rotorua. Ideal for enjoying local flavours while taking in the wider landscape from above.",
-    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
+    ctas: [
+      {
+        label: "Stay at Pāmu PurePod in Rotorua",
+        href: "/location/pamu/?from=wine-dine",
+      },
+    ],
   },
 ];
 
@@ -295,7 +315,12 @@ export const wineDineLocalSlides: HikingSlide[] = [
     placeHref: "https://atticusfinch.co.nz/",
     description:
       "A lively, modern bistro known for its share-style plates and social atmosphere. A great option for a relaxed evening in the heart of Eat Street.",
-    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
+    ctas: [
+      {
+        label: "Stay at Pāmu PurePod in Rotorua",
+        href: "/location/pamu/?from=wine-dine",
+      },
+    ],
   },
   {
     image: "/assets/img/experiences/wine-dine/le-cafe-de-paris-macarons-dessert-patisserie-new-zealand.jpg",
@@ -304,7 +329,12 @@ export const wineDineLocalSlides: HikingSlide[] = [
     placeHref: "https://www.cafedeparis.co.nz/",
     description:
       "A charming French-style café known for pastries, coffee and relaxed breakfasts. A simple, well-loved stop to start the day.",
-    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
+    ctas: [
+      {
+        label: "Stay at Pāmu PurePod in Rotorua",
+        href: "/location/pamu/?from=wine-dine",
+      },
+    ],
   },
   {
     image: "/assets/img/experiences/wine-dine/poco-tapas-and-wine-rotorua-modern-dining-dish-new-zealand.jpg",
@@ -313,7 +343,12 @@ export const wineDineLocalSlides: HikingSlide[] = [
     placeHref: "https://www.poco.nz/",
     description:
       "An intimate tapas and wine bar offering creative small plates and a curated drinks list. Ideal for a slower, more atmospheric dining experience.",
-    ctas: [{ label: "Stay at Pāmu →", href: "/location/pamu" }],
+    ctas: [
+      {
+        label: "Stay at Pāmu PurePod in Rotorua",
+        href: "/location/pamu/?from=wine-dine",
+      },
+    ],
   },
 ];
 
