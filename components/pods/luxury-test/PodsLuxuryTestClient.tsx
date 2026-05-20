@@ -77,9 +77,18 @@ export function PodsLuxuryTestClient({ initialRegion }: ClientProps) {
   );
 
   const splitRef = useRef<HTMLDivElement>(null);
+  const mapBlockRef = useRef<HTMLElement>(null);
   const cardsScrollerRef = useRef<HTMLDivElement>(null);
   const ratiosRef = useRef<Map<string, number>>(new Map());
   const rafId = useRef(0);
+  /** Incrementa en cada tap de pin; el FAB reaparece mientras gen > dismissed. */
+  const mapNavGenerationRef = useRef(0);
+  const mapNavDismissedRef = useRef(0);
+  /** Evita “dismiss” mientras el mapa sigue visible al iniciar scroll hacia una card. */
+  const pinScrollActiveRef = useRef(false);
+  const pinScrollTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const [showBackToMap, setShowBackToMap] = useState(false);
 
   const [compactLayout, setCompactLayout] = useState(() => {
     if (typeof window === "undefined") return false;
@@ -110,11 +119,27 @@ export function PodsLuxuryTestClient({ initialRegion }: ClientProps) {
   const scrollPodCardIntoView = useCallback(
     (slug: string) => {
       if (!compactLayout) return;
-      const card = document.getElementById(`pods-luxury-card-${slug}`);
-      if (!card || !(card instanceof HTMLElement)) return;
+
+      mapNavGenerationRef.current += 1;
+
+      if (pinScrollTimerRef.current) {
+        clearTimeout(pinScrollTimerRef.current);
+      }
+      pinScrollActiveRef.current = true;
       const prefersReduced =
         typeof window !== "undefined" &&
         window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      pinScrollTimerRef.current = setTimeout(
+        () => {
+          pinScrollActiveRef.current = false;
+          pinScrollTimerRef.current = null;
+        },
+        prefersReduced ? 80 : 720,
+      );
+
+      const card = document.getElementById(`pods-luxury-card-${slug}`);
+      if (!card || !(card instanceof HTMLElement)) return;
+
       requestAnimationFrame(() => {
         card.scrollIntoView({
           behavior: prefersReduced ? "auto" : "smooth",
@@ -126,18 +151,98 @@ export function PodsLuxuryTestClient({ initialRegion }: ClientProps) {
     [compactLayout],
   );
 
+  const scrollToMapBlock = useCallback(() => {
+    const anchor = document.getElementById("pods-luxury-map");
+    if (!anchor) return;
+    const prefersReduced =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    requestAnimationFrame(() => {
+      anchor.scrollIntoView({
+        behavior: prefersReduced ? "auto" : "smooth",
+        block: "start",
+      });
+    });
+  }, []);
+
   useEffect(() => {
     setScrollSlug(null);
     ratiosRef.current.clear();
+    mapNavGenerationRef.current = 0;
+    mapNavDismissedRef.current = 0;
+    pinScrollActiveRef.current = false;
+    if (pinScrollTimerRef.current) {
+      clearTimeout(pinScrollTimerRef.current);
+      pinScrollTimerRef.current = null;
+    }
+    setShowBackToMap(false);
   }, [filter]);
+
+  useEffect(
+    () => () => {
+      if (pinScrollTimerRef.current) {
+        clearTimeout(pinScrollTimerRef.current);
+      }
+    },
+    [],
+  );
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 980px)");
-    const sync = () => setCompactLayout(mq.matches);
+    const sync = () => {
+      const compact = mq.matches;
+      setCompactLayout(compact);
+      if (!compact) {
+        mapNavGenerationRef.current = 0;
+        mapNavDismissedRef.current = 0;
+        pinScrollActiveRef.current = false;
+        if (pinScrollTimerRef.current) {
+          clearTimeout(pinScrollTimerRef.current);
+          pinScrollTimerRef.current = null;
+        }
+        setShowBackToMap(false);
+      }
+    };
     sync();
     mq.addEventListener("change", sync);
     return () => mq.removeEventListener("change", sync);
   }, []);
+
+  /** Móvil/tablet: FAB “Back to map” tras pulsar un pin (oculto cuando el mapa vuelve a verse). */
+  useEffect(() => {
+    if (!compactLayout) return;
+    const mapEl = mapBlockRef.current;
+    if (!mapEl || typeof IntersectionObserver === "undefined") return;
+
+    const syncFab = (ratio: number) => {
+      const mapVisible = ratio >= 0.32;
+      const pendingPinScroll = mapNavGenerationRef.current > mapNavDismissedRef.current;
+
+      if (mapVisible) {
+        if (!pinScrollActiveRef.current) {
+          mapNavDismissedRef.current = mapNavGenerationRef.current;
+        }
+        setShowBackToMap(false);
+        return;
+      }
+
+      setShowBackToMap(pendingPinScroll);
+    };
+
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        syncFab(entry?.intersectionRatio ?? 0);
+      },
+      {
+        root: null,
+        threshold: [0, 0.12, 0.22, 0.32, 0.45, 0.6],
+        rootMargin: "-8% 0px -12% 0px",
+      },
+    );
+
+    obs.observe(mapEl);
+    return () => obs.disconnect();
+  }, [compactLayout, filter, visibleSlugsKey]);
 
   useEffect(() => {
     const scroller = cardsScrollerRef.current;
@@ -199,6 +304,22 @@ export function PodsLuxuryTestClient({ initialRegion }: ClientProps) {
 
   return (
     <>
+      {compactLayout ? (
+        <button
+          type="button"
+          className={`${luxury.backToMapFab} ${showBackToMap ? luxury.backToMapFabVisible : ""}`}
+          aria-label="Back to map"
+          aria-hidden={!showBackToMap}
+          tabIndex={showBackToMap ? 0 : -1}
+          onClick={scrollToMapBlock}
+        >
+          <span className={luxury.backToMapFabIcon} aria-hidden="true">
+            ↑
+          </span>
+          Back to map
+        </button>
+      ) : null}
+
       <div className={luxury.tabsWrap}>
         <div className="wrap">
           <div className={luxury.tabs} role="tablist" aria-label="Filter by island">
@@ -237,7 +358,12 @@ export function PodsLuxuryTestClient({ initialRegion }: ClientProps) {
             }
           }}
         >
-          <aside className={luxury.splitMap} aria-label="Map of pod locations">
+          <aside
+            ref={mapBlockRef}
+            id="pods-luxury-map"
+            className={luxury.splitMap}
+            aria-label="Map of pod locations"
+          >
             <div className={luxury.mapFrame}>
               <div className={luxury.mapFrameHeader}>
                 <p className={luxury.mapCaption}>Aotearoa New Zealand</p>
