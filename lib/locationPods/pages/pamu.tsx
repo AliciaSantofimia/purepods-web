@@ -8,10 +8,10 @@ const OG_IMAGE_URL =
   "https://purepods.com/assets/img/pamu/pamu-purepod-aerial-glass-cabin-landscape-rotorua.jpg";
 
 const META_DESCRIPTION =
-  "PurePod Pāmu: glass cabin for two near Rotorua, Bay of Plenty. Geothermal country, lakes & farmland; short walk-in, private site. Self-contained stay with outdoor cooking.";
+  "Pāmu PurePod is a private off-grid glass cabin for two in Rotorua, set within green farmland near geothermal landscapes, Māori culture, wellness experiences and forest adventures.";
 
 const SEO_TITLE_ABSOLUTE =
-  "Pāmu PurePod | Glass Cabin, Rotorua, New Zealand";
+  "Pāmu PurePod, Rotorua | Private Off-Grid Glass Cabin";
 
 function pamuStructuredData() {
   const faqEntities = PAMU_FAQ_ITEMS.map((item) => ({
@@ -47,7 +47,7 @@ function pamuStructuredData() {
       {
         "@type": "LodgingBusiness",
         "@id": `${CANONICAL_URL}#lodging`,
-        name: "PurePod Pāmu",
+        name: "Pāmu PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
         address: {

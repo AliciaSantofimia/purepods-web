@@ -34,36 +34,58 @@ export const PAMU_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=8";
 
 const HERO_PARAGRAPH_1 =
-  "A private glass cabin surrounded by green farmland in the Rotorua countryside, where geothermal landscapes, native bush and rural life meet.";
-
-const HERO_PARAGRAPH_2 =
-  "Set within the rolling hills of a working farm, Pāmu offers a quieter rhythm — open skies, grazing animals, birdsong and the calm of the valley beyond the city.";
+  "Pāmu PurePod is a private off-grid glass cabin for two in Rotorua, set within green farmland near geothermal landscapes, Māori culture, wellness experiences, Whakarewarewa Forest and Lake Rotorua.";
 
 export const PAMU_FAQ_ITEMS: LocationFaqItem[] = [
   {
-    question: "How do I get to PurePod Pāmu?",
+    question: "Is Pāmu PurePod suitable for a romantic getaway?",
     answer:
-      "Reaching PurePod Pāmu is a drive through the Rotorua region — past lakes, geothermal areas and farming country. The final approach is via quiet roads and a short walk to the pod. Suitable footwear is recommended. The journey is part of the experience: leaving the everyday behind and arriving slowly.",
+      "Yes. Pāmu PurePod is designed for two guests and suits couples looking for a private nature escape near Rotorua. Set within green farmland, with birdsong, open skies and the Ngongotahā Stream nearby, it offers a quiet off-grid stay close to Rotorua’s geothermal, wellness and cultural experiences.",
   },
   {
-    question: "What is the walk to the pod like?",
+    question: "How many guests can stay at Pāmu PurePod?",
     answer:
-      "A short approach from the road brings you into your own private world — no neighbours, no distractions. Inside, the glass cabin brings the outside in: you sleep, eat and rest with the landscape always in view.",
+      "Pāmu PurePod is designed for a maximum of two guests. Like all PurePods, it is created as a private glass cabin for two, making it best suited to couples or two adults seeking a peaceful, secluded stay.",
   },
   {
-    question: "What is the climate usually like?",
+    question: "How private is Pāmu PurePod?",
     answer:
-      "Rotorua has a temperate climate with warm summers and cooler winters. Geothermal areas can feel warmer and sometimes humid; the rest of the region is mild. Layered clothing is recommended so you can enjoy both the pod and the outdoors in comfort.",
+      "Pāmu PurePod is designed for privacy and seclusion. Guests are left undisturbed during their stay unless there is an emergency, and there is no daily servicing for multiple-night stays, so the experience remains quiet and uninterrupted.",
   },
   {
-    question: "How does food work at the pod?",
+    question: "What is the walk to Pāmu PurePod like?",
     answer:
-      "Your PurePod is fully equipped for a relaxed, self-contained stay. Inside you will find a selection of meals ready to heat, breakfast provisions, snacks, tea and coffee — wherever possible from local producers. The outdoor cooking area lets you eat with the landscape in view. Meals are designed to be simple to prepare, so you spend less time in the kitchen and more time enjoying the calm. As there are no shops or restaurants nearby, everything is provided so your stay is comfortable and worry-free.",
+      "Pāmu PurePod is reached by a 420m nature walk from the carpark, taking around 7–10 minutes. The walk follows a marked track through green grassy hills, so sturdy footwear and luggage that is easy to carry are recommended.",
   },
   {
-    question: "How many people can stay, and how private is it?",
+    question: "Is Pāmu PurePod off-grid?",
     answer:
-      "The pod is designed for two: a simple, comfortable base from which to experience the stillness of the land, the changing light and the sense of being away from the everyday. A short approach from the road brings you into your own private world — no neighbours, no distractions.",
+      "Yes. Pāmu PurePod is solar powered and designed as an off-grid stay. There is no wifi, no TV and no standard power plugs, although a USB charging port and an emergency telephone are provided.",
+  },
+  {
+    question: "What should I bring for a stay at Pāmu PurePod?",
+    answer:
+      "Bring sturdy footwear, weather-appropriate clothing and luggage that is easy to carry for the walk from the carpark. Guests should also bring their favourite drinks, especially if ordering the food hamper.",
+  },
+  {
+    question: "How does the food hamper work at Pāmu PurePod?",
+    answer:
+      "The food hamper is optional and can be pre-ordered. It will be waiting at the PurePod on arrival if selected. Guests should bring their favourite drinks.",
+  },
+  {
+    question: "What can you do near Pāmu PurePod?",
+    answer:
+      "Pāmu PurePod is near Rotorua, with easy access to geothermal parks, spa and wellness experiences, Māori cultural tours, forest walking, mountain biking, adventure activities and lakeside landscapes. Nearby experiences may include Whakarewarewa Forest, Redwoods Treewalk, Polynesian Spa, Wai Ariki Hot Springs and Rotorua’s geothermal landscapes.",
+  },
+  {
+    question: "What is the landscape around Pāmu PurePod?",
+    answer:
+      "Pāmu PurePod is set within green farmland on a working farm near Rotorua. The experience is focused on open skies, grassy hills, farm animals, birdlife, native flora and fauna, and the nearby Ngongotahā Stream.",
+  },
+  {
+    question: "How far is Pāmu PurePod from Rotorua?",
+    answer:
+      "Pāmu PurePod is located in Rotorua, Bay of Plenty, around 15 minutes from Rotorua town centre, depending on traffic and road conditions. Its location makes it a quiet countryside escape within easy reach of Rotorua’s geothermal, cultural and wellness experiences.",
   },
 ];
 
@@ -283,7 +305,7 @@ export const pamuEditorialConfig: EditorialPodLocationConfig = {
     imageAlt:
       "Aerial view of Pāmu PurePod glass cabin and private deck among green farmland near Rotorua, Bay of Plenty",
     title: "Pāmu",
-    subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
+    subtitleParagraphs: [HERO_PARAGRAPH_1],
     imagePosition: "70% 50%",
     imagePositionMd: "60% 55%",
     imagePositionXl: "55% 60%",
