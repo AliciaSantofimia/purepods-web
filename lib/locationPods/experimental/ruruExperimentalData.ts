@@ -48,8 +48,7 @@ export const ruruExperimentalHero = {
     "Aerial view of Ruru PurePod glass cabin and private deck among native bush in the Coromandel, New Zealand",
   title: "Ruru",
   subtitleParagraphs: [
-    "A private glass cabin hidden among the hills near Mount Karangahake, surrounded by native bush, farmland and wide valley views.",
-    "Just beyond the Coromandel, Ruru is a place for quiet mornings, changing light and complete stillness far from the pace of the city.",
+    "Ruru PurePod is a private off-grid glass cabin for two in Waikino, Coromandel, designed for a secluded nature escape among native bush, farmland and views of Mount Karangahake, within reach of Waihi, Karangahake Gorge and the Hauraki Rail Trail.",
   ],
   imagePosition: "70% 50%" as const,
   imagePositionMd: "60% 55%" as const,
@@ -265,29 +264,59 @@ The terrain is natural and can become muddy after rain, so suitable walking foot
 
 export const RURU_FAQ_ITEMS: LocationFaqItem[] = [
   {
-    question: "How do I get to PurePod Ruru?",
+    question: "Is Ruru PurePod suitable for a romantic getaway?",
     answer:
-      "Reaching PurePod Ruru is a drive through the Coromandel, followed by a short walk through forest to the pod. The final stretch is what makes the pod feel truly hidden and private. Suitable footwear is recommended for the track. The journey is part of the experience: leaving the road behind and arriving slowly in the bush.",
+      "Yes. Ruru PurePod is designed for two guests and suits couples looking for a private nature escape in the Coromandel. Set near Waikino with views of Mount Karangahake, native bush, farmland and wide valley landscapes, it offers a secluded off-grid stay with the comfort of a glass cabin immersed in nature.",
   },
   {
-    question: "What is the walk to the pod like?",
+    question: "How many guests can stay at Ruru PurePod?",
     answer:
-      "A short walk from the road through native forest brings you into your own private world — no neighbours, no distractions. Sturdy footwear helps on the track. Inside, the glass cabin brings the outside in: you sleep, eat and rest with the landscape always in view.",
+      "Ruru PurePod is designed for a maximum of two guests. Like all PurePods, it is created as a private glass cabin for two, making it best suited to couples or two adults seeking a quiet, secluded stay.",
   },
   {
-    question: "What is the climate usually like?",
+    question: "How private is Ruru PurePod?",
     answer:
-      "The Coromandel has a mild, often humid climate — warm in summer, cooler in winter. Rain is part of the landscape and keeps the bush green. Layered clothing is recommended so you can enjoy both the pod and the outdoors in comfort.",
+      "Ruru PurePod is designed for privacy and seclusion. Guests are left undisturbed during their stay unless there is an emergency, and there is no daily servicing for multiple-night stays, so the experience remains quiet and uninterrupted.",
   },
   {
-    question: "How does food work at the pod?",
+    question: "What is the walk to Ruru PurePod like?",
     answer:
-      "Your PurePod is fully equipped for a relaxed, self-contained stay. Inside you will find a selection of meals ready to heat, breakfast provisions, snacks, tea and coffee — wherever possible from local producers. Meals are designed to be simple to prepare, so you spend less time in the kitchen and more time enjoying the views and the calm. As there are no shops or restaurants nearby, everything is provided so your stay is comfortable and worry-free.",
+      "Ruru PurePod is reached by a nature walk from the carpark. Allow around 10 minutes for the walk, and bring sturdy footwear and luggage that is easy to carry. The track can become wet after heavy rainfall, so take extra care on the walking track.",
   },
   {
-    question: "How many people can stay, and how private is it?",
+    question: "Is Ruru PurePod off-grid?",
     answer:
-      "The pod is designed for two: a simple, comfortable base from which to experience the stillness of the forest, the changing light and the sense of being away from the everyday. A short walk from the road brings you into your own private world — no neighbours, no distractions.",
+      "Yes. Ruru PurePod is solar powered and designed as an off-grid stay. There is no wifi, no TV and no standard power plugs, although a USB charging port and an emergency telephone are provided.",
+  },
+  {
+    question: "Is there mobile reception at Ruru PurePod?",
+    answer:
+      "Ruru PurePod has limited cell reception. As with many remote nature stays, reception may vary depending on weather, location and mobile provider.",
+  },
+  {
+    question: "What should I bring for a stay at Ruru PurePod?",
+    answer:
+      "Bring sturdy walking shoes, weather-appropriate clothing and luggage that is easy to carry for the walk from the carpark. Guests should also bring their favourite drinks, especially if ordering the food hamper.",
+  },
+  {
+    question: "How does the food hamper work at Ruru PurePod?",
+    answer:
+      "The food hamper is optional and can be pre-ordered. It will be waiting at the PurePod on arrival if selected. Guests should bring their favourite drinks.",
+  },
+  {
+    question: "What can you do near Ruru PurePod?",
+    answer:
+      "Ruru PurePod is near Waikino, Waihi, Mount Karangahake and the wider Coromandel region. Nearby experiences may include Karangahake Gorge walks, the Hauraki Rail Trail, Waihi heritage sites, Waihi Beach, coastal walks, swimming, surfing and waterfalls such as Owharoa Falls.",
+  },
+  {
+    question: "What is the landscape around Ruru PurePod?",
+    answer:
+      "Ruru PurePod is set among forest, mountains and farmland, with views towards Mount Karangahake. The experience is focused on native bush, birdsong, wide valley views, night skies and a quiet rural Coromandel landscape.",
+  },
+  {
+    question: "How far is Ruru PurePod from Auckland and Waihi?",
+    answer:
+      "Ruru PurePod is located in Waikino, around 90 minutes’ drive from Auckland and approximately 15 minutes from Waihi, depending on traffic and road conditions.",
   },
 ];
 

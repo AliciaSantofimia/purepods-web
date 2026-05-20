@@ -8,10 +8,10 @@ const OG_IMAGE_URL =
   "https://purepods.com/assets/img/ruru/ruru-purepod-glass-cabin-aerial-view-coromandel.jpg";
 
 const META_DESCRIPTION =
-  "PurePod Ruru: glass cabin for two in the Coromandel Peninsula, Waikato. Native bush & coast nearby; forest walk-in, private site. Self-contained stay with local provisions.";
+  "Ruru PurePod is a private off-grid glass cabin for two in Waikino, Coromandel, with Mount Karangahake views, native bush, farmland and nearby Waihi.";
 
 const SEO_TITLE_ABSOLUTE =
-  "Ruru PurePod | Glass Cabin, Coromandel, New Zealand";
+  "Ruru PurePod, Coromandel | Private Off-Grid Glass Cabin";
 
 function ruruStructuredData() {
   const faqEntities = RURU_FAQ_ITEMS.map((item) => ({
@@ -47,7 +47,7 @@ function ruruStructuredData() {
       {
         "@type": "LodgingBusiness",
         "@id": `${CANONICAL_URL}#lodging`,
-        name: "PurePod Ruru",
+        name: "Ruru PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
         address: {
