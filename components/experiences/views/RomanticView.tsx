@@ -174,6 +174,7 @@ export function RomanticView() {
                       fill
                       sizes="(max-width:900px) 100vw, 50vw"
                       className="img-contain"
+                      objectPosition="center 45%"
                     />
                   </div>
                   <div className="copy">
