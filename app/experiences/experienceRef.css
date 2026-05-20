@@ -1208,7 +1208,7 @@
   line-height: 1.55;
 }
 
-.experience-ref footer {
+.experience-ref footer:not([class]) {
   padding: 34px 0;
   color: var(--muted);
   font-size: 13px;
@@ -1225,7 +1225,7 @@
   align-items: center;
   gap: 10px;
 }
-.experience-ref footer img {
+.experience-ref .foot-brand img {
   width: 28px;
   height: 28px;
   border-radius: 999px;

@@ -12,8 +12,9 @@
 .wrap {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: 0 var(--content-padding);
+  padding: 0 clamp(14px, 4vw, 20px);
   text-align: center;
+  box-sizing: border-box;
 }
 
 .brand {
@@ -51,10 +52,13 @@
 }
 
 .brandLogoImg {
-  width: auto;
-  height: clamp(22px, 5.5vw, 32px);
-  max-width: min(140px, 46vw);
-  object-fit: contain;
+  display: block;
+  width: auto !important;
+  height: clamp(22px, 5.5vw, 32px) !important;
+  max-width: min(140px, 46vw) !important;
+  border-radius: 0 !important;
+  object-fit: contain !important;
+  opacity: 1 !important;
 }
 
 .nav {

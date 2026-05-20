@@ -619,12 +619,6 @@
   background: transparent !important;
 }
 
-.footerZone footer img {
-  height: clamp(28px, 4vw, 38px) !important;
-  width: auto !important;
-  max-width: min(160px, 50vw) !important;
-}
-
 .footerZone footer p {
   font-family: var(--font-heading);
   letter-spacing: 0.12em;
