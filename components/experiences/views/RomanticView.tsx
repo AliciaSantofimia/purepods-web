@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ExpRefImage } from "@/components/experiences/ExpRefImage";
 import { ExperienceRevealMotionRoot } from "@/components/experiences/ExperienceRevealMotionRoot";
 import { ExpStandardChrome } from "@/components/experiences/ExpStandardChrome";
-import { RomanticBookingClient } from "@/components/experiences/RomanticBookingClient";
 import { RomanticGalleryClient } from "@/components/experiences/RomanticGalleryClient";
 import { AdventureWildlifeFaqAccordion } from "@/components/experiences/views/AdventureWildlifeFaqAccordion";
 import {
@@ -281,9 +280,39 @@ export function RomanticView() {
               </div>
             </section>
 
-            <div className="romantic-reveal">
-              <RomanticBookingClient />
-            </div>
+            <section
+              className="cta romantic-reveal"
+              id="cta"
+              aria-labelledby="romantic-cta-heading"
+            >
+              <div className="wrap cta-inner">
+                <div className="cta-panel">
+                  <div className="cta-icon" aria-hidden="true">
+                    ♥
+                  </div>
+                  <p id="romantic-cta-heading" className="cta-kicker">
+                    Romantic escapes in New Zealand
+                  </p>
+                  <p className="cta-text">
+                    A private glass cabin made for two, surrounded by stillness,
+                    nature and some of New Zealand&apos;s most secluded
+                    landscapes.
+                  </p>
+                  <div className="cta-actions">
+                    <a
+                      className="btn btn-primary"
+                      href="https://purepods.com/booking/"
+                    >
+                      See available PurePods →
+                    </a>
+                  </div>
+                  <p className="cta-note">
+                    Choose your PurePod and plan a romantic escape that feels
+                    completely your own.
+                  </p>
+                </div>
+              </div>
+            </section>
           </main>
         </ExpStandardChrome>
       </ExperienceRevealMotionRoot>
