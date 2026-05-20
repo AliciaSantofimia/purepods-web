@@ -62,7 +62,12 @@ export const journeyExperienceSlides: AdventureExperienceSlide[] = [
     title: "Karangahake Gorge (hiking)",
     description:
       "Historic trails, river paths, bridges and native bush make this gorge one of the North Island’s most memorable walking areas.",
-    pods: [{ label: "Ruru PurePod", href: "/location/ruru" }],
+    pods: [
+      {
+        label: "Ruru PurePod near Mount Karangahake and Waihi",
+        href: "/location/ruru/?from=journey",
+      },
+    ],
     distance: "Coromandel gorge walk",
     timing: "choose short or longer loops",
     nearbyRegion: " — Coromandel, North Island",
@@ -159,8 +164,8 @@ export const journeyForestSlides: ForestSlide[] = [
     placeHref: "https://thecoromandel.nz/destinations/karangahake-gorge/",
     description:
       "A striking gorge with flowing rivers, suspension bridges and historic mining trails. A unique mix of adventure, history and natural beauty.",
-    ctaLabel: "Stay at Ruru, Coromandel →",
-    ctaHref: "/location/ruru",
+    ctaLabel: "Stay at Ruru PurePod in the Coromandel",
+    ctaHref: "/location/ruru/?from=journey",
   },
   {
     image: `${J}te-ara-papararangi-waipara.jpg`,
@@ -234,7 +239,12 @@ export const journeyCyclingSlides: HikingSlide[] = [
     placeHref: "https://haurakirailtrail.co.nz/",
     description:
       "A scenic and relaxed cycling journey following historic railway lines through lush countryside, rivers and charming towns. Perfect for all levels, with plenty of stops to enjoy the landscape along the way.",
-    ctas: [{ label: "Stay at Ruru, Coromandel →", href: "/location/ruru" }],
+    ctas: [
+      {
+        label: "Ruru PurePod near Karangahake Gorge and the Hauraki Rail Trail",
+        href: "/location/ruru/?from=journey",
+      },
+    ],
   },
   {
     image: `${J}clyde-alexandra-river-trail-central-otago.jpg`,
@@ -281,7 +291,12 @@ export const journeyCyclingSlides: HikingSlide[] = [
     placeHref: "https://haurakirailtrail.co.nz/",
     description:
       "Ride the Hauraki Rail Trail through a dramatic river gorge: suspension bridges, historic mining relics and native bush close to the track. One of the North Island’s most memorable rail-trail sections.",
-    ctas: [{ label: "Stay at Ruru, Coromandel →", href: "/location/ruru" }],
+    ctas: [
+      {
+        label: "Ruru PurePod near Karangahake Gorge and the Hauraki Rail Trail",
+        href: "/location/ruru/?from=journey",
+      },
+    ],
   },
 ];
 

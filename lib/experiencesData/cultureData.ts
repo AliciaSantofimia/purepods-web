@@ -219,7 +219,12 @@ export const cultureHeritageSlides: HikingSlide[] = [
     placeHref: "https://www.athenreehomestead.org.nz/",
     description:
       "A beautifully preserved colonial homestead offering a glimpse into early settler life. Surrounded by gardens and coastal calm, it feels quietly removed from modern time.",
-    ctas: [{ label: "Stay at Ruru, Coromandel →", href: "/location/ruru" }],
+    ctas: [
+      {
+        label: "Ruru PurePod near Mount Karangahake and Waihi",
+        href: "/location/ruru/?from=culture",
+      },
+    ],
   },
 ];
 
@@ -293,7 +298,12 @@ export const cultureIndustrySlides: HikingSlide[] = [
     placeHref: "https://www.waihirail.co.nz/",
     description:
       "A scenic journey aboard a vintage train following historic gold mining routes through lush countryside and river gorges. Slow travel with a strong sense of place and history.",
-    ctas: [{ label: "Stay at Ruru, Coromandel →", href: "/location/ruru" }],
+    ctas: [
+      {
+        label: "Ruru PurePod near Karangahake Gorge and the Hauraki Rail Trail",
+        href: "/location/ruru/?from=culture",
+      },
+    ],
   },
   {
     image: `${C}mountain-jade-hokitika-pounamu-carving-workshop-west-coast-new-zealand.png`,
@@ -312,7 +322,12 @@ export const cultureIndustrySlides: HikingSlide[] = [
     placeHref: "https://www.golddiscoverycentre.co.nz/",
     description:
       "An engaging introduction to the gold mining heritage of Waihi, explaining how the industry shaped both the landscape and local communities. Best paired with a visit to the nearby mine.",
-    ctas: [{ label: "Stay at Ruru, Coromandel →", href: "/location/ruru" }],
+    ctas: [
+      {
+        label: "Ruru PurePod near Mount Karangahake and Waihi",
+        href: "/location/ruru/?from=culture",
+      },
+    ],
     noVisual: true,
   },
   {
@@ -322,7 +337,12 @@ export const cultureIndustrySlides: HikingSlide[] = [
     placeHref: "https://www.vbts.org.nz/",
     description:
       "Explore the atmospheric remains of one of the largest gold processing plants in the Southern Hemisphere. Industrial ruins set within nature create a powerful contrast between past and present.",
-    ctas: [{ label: "Stay at Ruru, Coromandel →", href: "/location/ruru" }],
+    ctas: [
+      {
+        label: "Ruru PurePod near Karangahake Gorge and the Hauraki Rail Trail",
+        href: "/location/ruru/?from=culture",
+      },
+    ],
   },
 ];
 

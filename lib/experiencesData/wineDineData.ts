@@ -121,7 +121,12 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     title: "Flatwhite Café (Waihi Beach)",
     description:
       "Beachfront dining with ocean views, relaxed service and a coastal pace that works beautifully with a Coromandel stay.",
-    pods: [{ label: "Ruru PurePod", href: "/location/ruru/?from=wine-dine" }],
+    pods: [
+      {
+        label: "Ruru PurePod near Mount Karangahake and Waihi",
+        href: "/location/ruru/?from=wine-dine",
+      },
+    ],
     distance: "Waihi Beach dining",
     timing: "lunch or dinner",
     nearbyRegion: " — Waihi Beach, North Island",
@@ -255,7 +260,12 @@ export const wineDineViewSlides: HikingSlide[] = [
     placeHref: "https://www.flatwhite.co.nz/",
     description:
       "A beachfront restaurant offering refined yet relaxed dining with uninterrupted ocean views. A perfect stop for lunch or dinner by the sea.",
-    ctas: [{ label: "Stay at Ruru →", href: "/location/ruru" }],
+    ctas: [
+      {
+        label: "Stay at Ruru PurePod in the Coromandel",
+        href: "/location/ruru/?from=wine-dine",
+      },
+    ],
   },
   {
     image: "/assets/img/experiences/wine-dine/lakeland-queen-rotorua-lake-dinner-cruise-new-zealand.jpg",

@@ -80,7 +80,12 @@ export const relaxExperienceSlides: AdventureExperienceSlide[] = [
     title: "Waihi Beach",
     description:
       "A relaxed beach stop with long sand, open water and a classic coastal rhythm close to the Coromandel and Bay of Plenty.",
-    pods: [{ label: "Ruru PurePod", href: "/location/ruru" }],
+    pods: [
+      {
+        label: "Ruru PurePod near Mount Karangahake and Waihi",
+        href: "/location/ruru/?from=relax-coastal",
+      },
+    ],
     distance: "Bay of Plenty coastline",
     timing: "best in settled weather",
     nearbyRegion: " — Waihi Beach, North Island",
