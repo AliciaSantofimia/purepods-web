@@ -4,6 +4,7 @@ import { ExperienceRevealMotionRoot } from "@/components/experiences/ExperienceR
 import { ExpStandardChrome } from "@/components/experiences/ExpStandardChrome";
 import { RomanticBookingClient } from "@/components/experiences/RomanticBookingClient";
 import { RomanticGalleryClient } from "@/components/experiences/RomanticGalleryClient";
+import { AdventureWildlifeFaqAccordion } from "@/components/experiences/views/AdventureWildlifeFaqAccordion";
 import {
   romanticFaq,
   romanticGallery,
@@ -266,18 +267,15 @@ export function RomanticView() {
               </div>
             </section>
 
-            <section className="faq" id="faq" aria-labelledby="faq-heading">
+            <section
+              className="faq aw-faq-accordion"
+              id="faq"
+              aria-labelledby="faq-heading"
+            >
               <div className="wrap">
                 <div className="surface romantic-reveal">
                   <h2 id="faq-heading">Frequently asked questions</h2>
-                  <ul>
-                    {romanticFaq.map((f) => (
-                      <li key={f.q}>
-                        <h3>{f.q}</h3>
-                        <p>{f.a}</p>
-                      </li>
-                    ))}
-                  </ul>
+                  <AdventureWildlifeFaqAccordion items={romanticFaq} />
                 </div>
               </div>
             </section>

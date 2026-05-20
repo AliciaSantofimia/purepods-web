@@ -1406,7 +1406,7 @@
 
 /* FAQ: native details accordion (answers always in DOM; visibility only) */
 
-.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__list {
+.experience-ref:is(.adventure-wildlife-ref, .romantic-ref) .faq.aw-faq-accordion .aw-faq-accordion__list {
 
   margin: 4px 0 0;
 
@@ -1416,7 +1416,7 @@
 
 }
 
-.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__item {
+.experience-ref:is(.adventure-wildlife-ref, .romantic-ref) .faq.aw-faq-accordion .aw-faq-accordion__item {
 
   padding: 0;
 
@@ -1424,19 +1424,19 @@
 
 }
 
-.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__item:last-child {
+.experience-ref:is(.adventure-wildlife-ref, .romantic-ref) .faq.aw-faq-accordion .aw-faq-accordion__item:last-child {
 
   border-bottom: none;
 
 }
 
-.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__details {
+.experience-ref:is(.adventure-wildlife-ref, .romantic-ref) .faq.aw-faq-accordion .aw-faq-accordion__details {
 
   margin: 0;
 
 }
 
-.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__summary {
+.experience-ref:is(.adventure-wildlife-ref, .romantic-ref) .faq.aw-faq-accordion .aw-faq-accordion__summary {
 
   list-style: none;
 
@@ -1458,25 +1458,25 @@
 
 }
 
-.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__summary::-webkit-details-marker {
+.experience-ref:is(.adventure-wildlife-ref, .romantic-ref) .faq.aw-faq-accordion .aw-faq-accordion__summary::-webkit-details-marker {
 
   display: none;
 
 }
 
-.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__summary::marker {
+.experience-ref:is(.adventure-wildlife-ref, .romantic-ref) .faq.aw-faq-accordion .aw-faq-accordion__summary::marker {
 
   content: "";
 
 }
 
-.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__summary:hover .aw-faq-accordion__q {
+.experience-ref:is(.adventure-wildlife-ref, .romantic-ref) .faq.aw-faq-accordion .aw-faq-accordion__summary:hover .aw-faq-accordion__q {
 
   color: var(--ink);
 
 }
 
-.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__summary:focus-visible {
+.experience-ref:is(.adventure-wildlife-ref, .romantic-ref) .faq.aw-faq-accordion .aw-faq-accordion__summary:focus-visible {
 
   outline: 2px solid rgba(92, 95, 62, 0.35);
 
@@ -1486,7 +1486,7 @@
 
 }
 
-.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__q {
+.experience-ref:is(.adventure-wildlife-ref, .romantic-ref) .faq.aw-faq-accordion .aw-faq-accordion__q {
 
   flex: 1;
 
@@ -1510,7 +1510,7 @@
 
 }
 
-.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__chevron {
+.experience-ref:is(.adventure-wildlife-ref, .romantic-ref) .faq.aw-faq-accordion .aw-faq-accordion__chevron {
 
   flex-shrink: 0;
 
@@ -1532,7 +1532,7 @@
 
 }
 
-.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__details[open] .aw-faq-accordion__chevron {
+.experience-ref:is(.adventure-wildlife-ref, .romantic-ref) .faq.aw-faq-accordion .aw-faq-accordion__details[open] .aw-faq-accordion__chevron {
 
   margin-top: 11px;
 
@@ -1542,7 +1542,7 @@
 
 }
 
-.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__answer {
+.experience-ref:is(.adventure-wildlife-ref, .romantic-ref) .faq.aw-faq-accordion .aw-faq-accordion__answer {
 
   padding: 0 0 16px;
 
@@ -1550,7 +1550,7 @@
 
 }
 
-.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__answer p {
+.experience-ref:is(.adventure-wildlife-ref, .romantic-ref) .faq.aw-faq-accordion .aw-faq-accordion__answer p {
 
   margin: 0;
 
@@ -1564,7 +1564,7 @@
 
 }
 
-.experience-ref.adventure-wildlife-ref .faq.aw-faq-accordion .aw-faq-accordion__item:first-child .aw-faq-accordion__summary {
+.experience-ref:is(.adventure-wildlife-ref, .romantic-ref) .faq.aw-faq-accordion .aw-faq-accordion__item:first-child .aw-faq-accordion__summary {
 
   padding-top: 10px;
 
