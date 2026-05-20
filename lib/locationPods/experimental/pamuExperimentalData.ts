@@ -80,27 +80,27 @@ const pamuPodNarrative = {
   gallery: [
     {
       src: podExterior,
-      alt: "Pāmu PurePod glass cabin exterior in the Rotorua landscape, New Zealand",
+      alt: "Pāmu PurePod glass cabin exterior among grassy hills and farmland near Rotorua, Bay of Plenty",
       position: "50% 61%",
     },
     {
       src: podBedroom,
-      alt: "Bedroom with landscape view inside Pāmu PurePod, Rotorua, New Zealand",
+      alt: "Bedroom inside Pāmu PurePod glass cabin with views of grassy hills near Rotorua, Bay of Plenty",
       position: "50% 50%",
     },
     {
       src: podBathroom,
-      alt: "Bathroom and shower with view at Pāmu PurePod, Rotorua, New Zealand",
+      alt: "Bathroom shower inside Pāmu PurePod with green farmland views near Rotorua, Bay of Plenty",
       position: "50% 50%",
     },
     {
       src: podSunrise,
-      alt: "Pāmu PurePod glass cabin at sunrise surrounded by open rural landscape in New Zealand",
+      alt: "Pāmu PurePod glass cabin at sunrise with private deck and rural farmland near Rotorua, Bay of Plenty",
       position: "50% 48%",
     },
     {
       src: podNightSky,
-      alt: "Pāmu PurePod illuminated beneath a clear night sky in New Zealand",
+      alt: "Pāmu PurePod glass cabin beneath a clear night sky near Rotorua, Bay of Plenty",
       position: "50% 52%",
     },
   ],
@@ -117,15 +117,15 @@ const pamuTravelBlock = {
       images: [
         {
           src: travelFence,
-          alt: "Farm fence and landscape near Pāmu PurePod, Rotorua, New Zealand",
+          alt: "Farm fence on the working farm near Pāmu PurePod in green farmland near Rotorua, Bay of Plenty",
         },
         {
           src: travelAerial,
-          alt: "Aerial view of valley landscape near Pāmu PurePod, Rotorua, New Zealand",
+          alt: "Aerial view of Pāmu PurePod, walking track, green farmland and valley landscape near Rotorua, Bay of Plenty",
         },
         {
           src: travelRollingHills,
-          alt: "Rolling green hills and forest landscape surrounding PurePod Pāmu in New Zealand",
+          alt: "Rolling green hills and forest landscape around Pāmu PurePod near Rotorua, Bay of Plenty",
         },
       ],
       body: `Reaching Pāmu feels like stepping into a quieter rural landscape.
@@ -151,11 +151,11 @@ The track is natural and uneven in places, so suitable walking footwear and ligh
       images: [
         {
           src: travelCheese,
-          alt: "Local cheese platter and food at Pāmu PurePod, Rotorua, New Zealand",
+          alt: "Food hamper cheese platter on the deck at Pāmu PurePod near Rotorua, Bay of Plenty",
         },
         {
           src: travelBbq,
-          alt: "Outdoor BBQ and cooking at Pāmu PurePod, Rotorua, New Zealand",
+          alt: "Outdoor BBQ cooking on the deck at Pāmu PurePod with farmland views near Rotorua, Bay of Plenty",
         },
       ],
       body: `Meals at Pāmu are designed to feel simple, warm and deeply connected to the surrounding farmland.
@@ -177,7 +177,7 @@ const pamuExperiencesBlock = {
       title: "Geothermal lakes & hot springs",
       image: expGeothermal,
       imageAlt:
-        "Geothermal hot springs and lake in the Rotorua region, New Zealand",
+        "Rotorua geothermal hot springs and steaming lake in the Bay of Plenty, New Zealand",
       paragraphs: [
         "The Rotorua region is defined by geothermal activity — hot springs, steaming lakes and the sense that the earth is alive beneath you. A walk or drive through the geothermal valleys reveals colours, steam and a landscape that feels unlike anywhere else.",
         "A chance to experience the raw character of the land.",
@@ -193,7 +193,7 @@ const pamuExperiencesBlock = {
       title: "Māori culture & heritage",
       image: expMaori,
       imageAlt:
-        "Māori cultural experience in the Rotorua region, New Zealand",
+        "Māori cultural experience in a forest village setting near Rotorua, Bay of Plenty",
       paragraphs: [
         "Rotorua is a centre of Māori culture — living villages, storytelling and the connection between people and the land. Visiting a marae or cultural experience offers a deeper understanding of the place and its history.",
         "The human heart of the region, woven into the landscape.",
@@ -209,7 +209,7 @@ const pamuExperiencesBlock = {
       title: "Volcanic valley & landscape",
       image: expValley,
       imageAlt:
-        "Volcanic geothermal valley landscape in the Rotorua region, New Zealand",
+        "Volcanic geothermal valley with steam in the Rotorua region, Bay of Plenty",
       paragraphs: [
         "The wider Rotorua landscape combines volcanic terrain, forest and farmland. Scenic drives and short walks reveal craters, lakes and the quiet of the countryside — a region that rewards slow exploration.",
         "Where the land tells its own story.",
@@ -281,14 +281,14 @@ export const pamuEditorialConfig: EditorialPodLocationConfig = {
   hero: {
     imageSrc: heroImage,
     imageAlt:
-      "Pāmu PurePod glass cabin in the Rotorua landscape, New Zealand",
+      "Aerial view of Pāmu PurePod glass cabin and private deck among green farmland near Rotorua, Bay of Plenty",
     title: "Pāmu",
     subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
     imagePosition: "70% 50%",
     imagePositionMd: "60% 55%",
     imagePositionXl: "55% 60%",
   },
-  podCarouselAriaLabel: "PurePod Pāmu — photo gallery",
+  podCarouselAriaLabel: "Pāmu PurePod — photo gallery",
   podNarrative: pamuPodNarrative,
   travelBlock: pamuTravelBlock,
   experiencesCollapsible: {
