@@ -98,9 +98,6 @@ export function AdventureWildlifePageTemplate({
               <div className="heroInner">
                 <h1>{heroTitle}</h1>
                 <p className="impact-summary">{heroSummary}</p>
-                <Link className="btnGhost" href="#context-heading">
-                  Read on
-                </Link>
               </div>
             </header>
 
