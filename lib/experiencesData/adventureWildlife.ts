@@ -40,8 +40,8 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
     description:
       "Out on the open ocean, sperm whales surface and dive against a backdrop of mountains. A rare chance to witness marine life at close range.",
     pods: [
-      { label: "Kahutara PurePod", href: "/location/kahutara" },
-      { label: "Manakau PurePod", href: "/location/manakau" },
+      { label: "Kahutara PurePod", href: "/location/kahutara/?from=adventure-wildlife" },
+      { label: "Manakau PurePod", href: "/location/manakau/?from=adventure-wildlife" },
     ],
     distance: "~60 min drive",
     timing: "year-round sightings",
@@ -55,8 +55,8 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
     description:
       "From above, the scale of the ocean becomes clear — whales, dolphins and shifting blues seen in complete silence.",
     pods: [
-      { label: "Kahutara PurePod", href: "/location/kahutara" },
-      { label: "Manakau PurePod", href: "/location/manakau" },
+      { label: "Kahutara PurePod", href: "/location/kahutara/?from=adventure-wildlife" },
+      { label: "Manakau PurePod", href: "/location/manakau/?from=adventure-wildlife" },
     ],
     distance: "~60 min drive",
     timing: "best in clear weather",
@@ -70,7 +70,7 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
     title: "Volcanic landscapes by air",
     description:
       "Fly over crater lakes and geothermal terrain shaped by eruption and time. Remote, dramatic and unlike anywhere else.",
-    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    pods: [{ label: "Pāmu PurePod", href: "/location/pamu/?from=adventure-wildlife" }],
     distance: "~20–30 min drive",
     timing: "weather dependent",
     nearbyRegion: " — Rotorua region, North Island",
@@ -83,8 +83,8 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
     description:
       "Fly across remote coastline and open ocean to reach one of New Zealand’s most isolated landscapes. A quiet, expansive journey at the edge of the country.",
     pods: [
-      { label: "Tokoeka PurePod", href: "/location/tokoeka" },
-      { label: "Hananui PurePod", href: "/location/hananui" },
+      { label: "Tokoeka PurePod", href: "/location/tokoeka/?from=adventure-wildlife" },
+      { label: "Hananui PurePod", href: "/location/hananui/?from=adventure-wildlife" },
     ],
     distance: "Weather dependent",
     timing: "best in calm conditions",
@@ -97,7 +97,7 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
     title: "Little blue penguins at Pōhatu",
     description:
       "At dusk, kororā return quietly from the sea. Small groups, guided access and a strong focus on conservation make this deeply personal.",
-    pods: [{ label: "Pōhue PurePod", href: "/location/pohue" }],
+    pods: [{ label: "Pōhue PurePod", href: "/location/pohue/?from=adventure-wildlife" }],
     distance: "~20 min drive",
     timing: "best at dusk",
     nearbyRegion: " — Banks Peninsula, South Island",
@@ -109,7 +109,7 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
     title: "Kaituna River rafting",
     description:
       "A short, intense run through native forest and waterfalls, including one of the highest commercially rafted drops in the world.",
-    pods: [{ label: "Pāmu PurePod", href: "/location/pamu" }],
+    pods: [{ label: "Pāmu PurePod", href: "/location/pamu/?from=adventure-wildlife" }],
     distance: "~15–20 min drive",
     timing: "half-day experience",
     nearbyRegion: " — Rotorua region, North Island",
@@ -121,7 +121,7 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
     title: "Waitomo Glowworm Caves",
     description:
       "Drift through a dark cavern as thousands of glowworms light the ceiling above — a still, almost weightless experience.",
-    pods: [{ label: "Matū PurePod", href: "/location/matu" }],
+    pods: [{ label: "Matū PurePod", href: "/location/matu/?from=adventure-wildlife" }],
     distance: "~15 min drive",
     timing: "guided boat experience",
     nearbyRegion: " — Waitomo region, North Island",

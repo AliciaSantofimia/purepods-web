@@ -19,8 +19,8 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     description:
       "A Central Otago wine experience shaped by distinctive landscapes, elegant cellar-door hospitality and carefully made wines.",
     pods: [
-      { label: "Haurapa PurePod", href: "https://purepods.com/booking/?force_site_id=9" },
-      { label: "Tāima PurePod", href: "https://purepods.com/booking/?force_site_id=13" },
+      { label: "Haurapa PurePod", href: "/location/haurapa/?from=wine-dine" },
+      { label: "Tāima PurePod", href: "/location/taima/?from=wine-dine" },
     ],
     distance: "Central Otago vineyard",
     timing: "book tastings ahead",
@@ -35,8 +35,8 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     description:
       "Organic wines, seasonal food and vineyard views come together in one of Waipara Valley’s most distinctive wine-country settings.",
     pods: [
-      { label: "Atatū PurePod", href: "https://purepods.com/booking/?force_site_id=5" },
-      { label: "Korimako PurePod", href: "https://purepods.com/booking/?force_site_id=6" },
+      { label: "Atatū PurePod", href: "/location/atatu/?from=wine-dine" },
+      { label: "Korimako PurePod", href: "/location/korimako/?from=wine-dine" },
     ],
     distance: "Waipara Valley winery",
     timing: "lunch and tastings",
@@ -50,8 +50,8 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     description:
       "An organic winery and restaurant experience where seasonal food, considered winemaking and vineyard landscapes meet.",
     pods: [
-      { label: "Atatū PurePod", href: "https://purepods.com/booking/?force_site_id=5" },
-      { label: "Korimako PurePod", href: "https://purepods.com/booking/?force_site_id=6" },
+      { label: "Atatū PurePod", href: "/location/atatu/?from=wine-dine" },
+      { label: "Korimako PurePod", href: "/location/korimako/?from=wine-dine" },
     ],
     distance: "Waipara Valley winery",
     timing: "seasonal dining",
@@ -64,7 +64,7 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     title: "Stratosfare Restaurant & Bar (Rotorua)",
     description:
       "A panoramic Rotorua dining experience with wide views, local flavours and a memorable sense of arrival above the city.",
-    pods: [{ label: "Pāmu PurePod", href: "https://purepods.com/booking/?force_site_id=8" }],
+    pods: [{ label: "Pāmu PurePod", href: "/location/pamu/?from=wine-dine" }],
     distance: "Rotorua dining with views",
     timing: "lunch or dinner",
     nearbyRegion: " — Rotorua region, North Island",
@@ -77,8 +77,8 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     description:
       "A biodynamic Central Otago winery known for intimate tastings, thoughtful hospitality and expressive Pinot Noir.",
     pods: [
-      { label: "Haurapa PurePod", href: "https://purepods.com/booking/?force_site_id=9" },
-      { label: "Tāima PurePod", href: "https://purepods.com/booking/?force_site_id=13" },
+      { label: "Haurapa PurePod", href: "/location/haurapa/?from=wine-dine" },
+      { label: "Tāima PurePod", href: "/location/taima/?from=wine-dine" },
     ],
     distance: "Central Otago winery",
     timing: "tastings by appointment",
@@ -92,8 +92,8 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     description:
       "A relaxed Cromwell dining stop centred on slow cooking, wine-country flavour and a distinctly local Central Otago atmosphere.",
     pods: [
-      { label: "Haurapa PurePod", href: "https://purepods.com/booking/?force_site_id=9" },
-      { label: "Tāima PurePod", href: "https://purepods.com/booking/?force_site_id=13" },
+      { label: "Haurapa PurePod", href: "/location/haurapa/?from=wine-dine" },
+      { label: "Tāima PurePod", href: "/location/taima/?from=wine-dine" },
     ],
     distance: "Cromwell dining",
     timing: "lunch or dinner",
@@ -107,8 +107,8 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     description:
       "A refined Central Otago tasting experience with handcrafted wines, strong terroir and a quiet sense of place.",
     pods: [
-      { label: "Haurapa PurePod", href: "https://purepods.com/booking/?force_site_id=9" },
-      { label: "Tāima PurePod", href: "https://purepods.com/booking/?force_site_id=13" },
+      { label: "Haurapa PurePod", href: "/location/haurapa/?from=wine-dine" },
+      { label: "Tāima PurePod", href: "/location/taima/?from=wine-dine" },
     ],
     distance: "Central Otago winery",
     timing: "book tastings ahead",
@@ -121,7 +121,7 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     title: "Flatwhite Café (Waihi Beach)",
     description:
       "Beachfront dining with ocean views, relaxed service and a coastal pace that works beautifully with a Coromandel stay.",
-    pods: [{ label: "Ruru PurePod", href: "https://purepods.com/booking/?force_site_id=7" }],
+    pods: [{ label: "Ruru PurePod", href: "/location/ruru/?from=wine-dine" }],
     distance: "Waihi Beach dining",
     timing: "lunch or dinner",
     nearbyRegion: " — Waihi Beach, North Island",
@@ -150,7 +150,7 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     title: "Lakeland Queen Cruise (Lake Rotorua)",
     description:
       "A lake dining cruise that pairs Rotorua scenery, geothermal shoreline and an easy on-water dining rhythm.",
-    pods: [{ label: "Pāmu PurePod", href: "https://purepods.com/booking/?force_site_id=8" }],
+    pods: [{ label: "Pāmu PurePod", href: "/location/pamu/?from=wine-dine" }],
     distance: "Lake Rotorua cruise",
     timing: "on-water dining",
     nearbyRegion: " — Rotorua region, North Island",
