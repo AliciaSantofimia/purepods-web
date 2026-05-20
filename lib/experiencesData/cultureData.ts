@@ -18,7 +18,7 @@ export const cultureContextBody =
 
 export const cultureExperienceSlides: AdventureExperienceSlide[] = [
   {
-    image: `${C}waitangi-treaty-grounds-bay-of-islands-maori-cultural-performance-new-zealand.jpg`,
+    image: "/assets/img/makoha/waitangi-treaty-grounds-maori-meeting-house-bay-of-islands-new-zealand.jpg",
     alt: "Māori cultural performance at Waitangi Treaty Grounds Bay of Islands with traditional haka and historic heritage setting New Zealand",
     title: "Waitangi Treaty Grounds",
     description:
@@ -115,7 +115,7 @@ export const cultureExperienceSlides: AdventureExperienceSlide[] = [
 
 export const cultureMaoriSlides: ForestSlide[] = [
   {
-    image: `${C}waitangi-treaty-grounds-bay-of-islands-maori-cultural-performance-new-zealand.jpg`,
+    image: "/assets/img/makoha/waitangi-treaty-grounds-maori-meeting-house-bay-of-islands-new-zealand.jpg",
     alt: "Māori cultural performance at Waitangi Treaty Grounds Bay of Islands with traditional haka and historic heritage setting New Zealand",
     title: "Waitangi Treaty Grounds",
     placeHref: "https://www.waitangi.org.nz/",
