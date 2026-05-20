@@ -624,6 +624,41 @@
   box-sizing: border-box;
 }
 
+@media (max-width: 720px) {
+  .experience-ref.romantic-ref .nav__bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: calc(100% - 28px);
+    max-width: calc(100% - 28px);
+  }
+
+  .experience-ref.romantic-ref .nav .nav-brand {
+    flex: 0 1 auto;
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+  }
+
+  .experience-ref.romantic-ref .nav .links {
+    flex: 0 1 auto;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    justify-content: flex-start;
+    row-gap: 10px;
+    column-gap: clamp(12px, 3vw, 20px);
+  }
+
+  .experience-ref.romantic-ref .exp-nav-pods-mega--mobile {
+    max-width: 100%;
+  }
+
+  .experience-ref.romantic-ref .nav__book {
+    align-self: center;
+  }
+}
+
 @media (min-width: 821px) and (max-width: 1160px) {
   .experience-ref.romantic-ref .nav__bar {
     gap: 10px;
