@@ -538,6 +538,17 @@
   .romantic-ref .moment,
   .romantic-ref .moment.reverse {
     grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .romantic-ref .moment > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .romantic-ref .moment .media {
+    width: 100%;
+    max-width: 100%;
   }
   .romantic-ref .quote-grid {
     grid-template-columns: 1fr;
