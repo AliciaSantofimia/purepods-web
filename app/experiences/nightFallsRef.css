@@ -727,16 +727,39 @@
 }
 
 .night-falls-ref .nightCalendarCta__button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 18px;
-  padding: 11px 18px;
+  padding: 12px 24px;
   border-radius: 999px;
-  border: 1px solid var(--stroke);
-  background: var(--brand-green);
+  border: 1px solid #2a2c1d;
+  background: #3d4029;
   color: #fff;
-  font-weight: 800;
-  font-size: 13px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   text-decoration: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+  transition:
+    background 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.18s ease;
+}
+
+.night-falls-ref .nightCalendarCta__button:hover {
+  background: #323524;
+  border-color: #1f2115;
+}
+
+.night-falls-ref .nightCalendarCta__button:focus-visible {
+  outline: 2px solid rgba(92, 95, 62, 0.35);
+  outline-offset: 4px;
+}
+
+.night-falls-ref .nightCalendarCta__button:active {
+  transform: scale(0.98);
 }
 
 .night-falls-ref .momentsGrid {
@@ -1309,7 +1332,7 @@
 
   .night-falls-ref .nightCalendarCta__button {
     margin-top: 14px;
-    padding: 10px 16px;
+    padding: 11px 22px;
   }
 
   .night-falls-ref .momentsGrid {
