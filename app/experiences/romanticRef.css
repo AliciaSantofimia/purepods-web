@@ -565,6 +565,24 @@
   }
 }
 
+@media (max-width: 720px) {
+  .experience-ref.romantic-ref .moment .media img.romantic-moment-img--anniversaries {
+    object-position: center 58% !important;
+  }
+
+  .experience-ref.romantic-ref .moment .media img.romantic-moment-img--proposal {
+    object-position: 62% center !important;
+  }
+
+  .experience-ref.romantic-ref .moment .media img.romantic-moment-img--celebrations {
+    object-position: 52% 52% !important;
+  }
+
+  .experience-ref.romantic-ref .moment .media img.romantic-moment-img--escape {
+    object-position: 48% center !important;
+  }
+}
+
 /* —— Romantic page only: nav + Pods mega (does not apply to other experience views) —— */
 
 .experience-ref.romantic-ref {

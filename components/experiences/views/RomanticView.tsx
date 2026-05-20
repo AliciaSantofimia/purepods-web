@@ -113,6 +113,7 @@ export function RomanticView() {
                       alt="Couple watching sunset from PurePods deck with mountain views in New Zealand"
                       fill
                       sizes="(max-width:900px) 100vw, 50vw"
+                      className="romantic-moment-img romantic-moment-img--anniversaries"
                     />
                   </div>
                   <div className="copy">
@@ -161,6 +162,7 @@ export function RomanticView() {
                       alt="Marriage proposal at PurePods glass cabin during sunset in New Zealand"
                       fill
                       sizes="(max-width:900px) 100vw, 50vw"
+                      className="romantic-moment-img romantic-moment-img--proposal"
                     />
                   </div>
                 </div>
@@ -172,7 +174,7 @@ export function RomanticView() {
                       alt="Picnic and wine set up for a romantic PurePods getaway in New Zealand"
                       fill
                       sizes="(max-width:900px) 100vw, 50vw"
-                      className="img-contain"
+                      className="img-contain romantic-moment-img romantic-moment-img--celebrations"
                       objectPosition="center 45%"
                     />
                   </div>
@@ -217,6 +219,7 @@ export function RomanticView() {
                       alt="Romantic PurePods bedroom at night with fireplace and candles"
                       fill
                       sizes="(max-width:900px) 100vw, 50vw"
+                      className="romantic-moment-img romantic-moment-img--escape"
                     />
                   </div>
                 </div>
