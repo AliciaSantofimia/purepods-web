@@ -118,7 +118,7 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     slug: "kokomea",
     href: "/location/kokomea",
     filter: "north",
-    pill: "Kapiti Coast",
+    pill: "Kāpiti Coast",
     title: "Kokomea",
     islandLine: "North Island",
     imageSrc:

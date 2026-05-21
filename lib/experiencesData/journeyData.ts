@@ -51,11 +51,16 @@ export const journeyExperienceSlides: AdventureExperienceSlide[] = [
   },
   {
     image: `${J}table-top-kapiti-coast.jpg`,
-    alt: "Kapiti Coast ridgeline track with expansive views across hills and coastline, New Zealand",
+    alt: "Kāpiti Coast ridgeline track with expansive views across hills and coastline, New Zealand",
     title: "Paekākāriki Escarpment Track",
     description:
       "A dramatic coastal escarpment walk with stair climbs, swing bridges and big views over the Kāpiti coastline.",
-    pods: [{ label: "Kokomea PurePod", href: "/location/kokomea" }],
+    pods: [
+      {
+        label: "Kokomea PurePod near Wellington and Kāpiti Island",
+        href: "/location/kokomea/?from=journey",
+      },
+    ],
     distance: "Kāpiti Coast walk",
     timing: "day hike",
     nearbyRegion: " — Kāpiti Coast, North Island",
@@ -196,13 +201,18 @@ export const journeyHikingSlides: HikingSlide[] = [
   },
   {
     image: `${J}table-top-kapiti-coast.jpg`,
-    alt: "Table Top — Tararua Range ridgeline walk with views toward the Kapiti Coast",
+    alt: "Table Top — Tararua Range ridgeline walk with views toward the Kāpiti Coast",
     title: "Table Top (Tararua Range)",
     placeHref:
       "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/field-hut-and-table-top/",
     description:
-      "A stunning ridgeline walk offering sweeping views over the Tararua Range and Kapiti Coast. Dramatic skies and open landscapes make it an unforgettable hike.",
-    ctas: [{ label: "Stay at Kokomea, Kapiti Coast →", href: "/location/kokomea" }],
+      "A stunning ridgeline walk offering sweeping views over the Tararua Range and Kāpiti Coast. Dramatic skies and open landscapes make it an unforgettable hike.",
+    ctas: [
+      {
+        label: "Stay at Kokomea PurePod on the Kāpiti Coast",
+        href: "/location/kokomea/?from=journey",
+      },
+    ],
   },
   {
     image: `${J}te-au-track-kapiti-coast.jpg`,
@@ -211,7 +221,12 @@ export const journeyHikingSlides: HikingSlide[] = [
     placeHref: "https://maps.app.goo.gl/AE8yYzVvYBooYqxW9",
     description:
       "A peaceful track through native bush and rolling ridgelines, offering a quieter way to experience the natural beauty of Tararua Forest Park. Ideal for those seeking immersion, stillness and expansive views.",
-    ctas: [{ label: "Stay at Kokomea, Kapiti Coast →", href: "/location/kokomea" }],
+    ctas: [
+      {
+        label: "Kokomea PurePod on the Kāpiti Coast near Wellington",
+        href: "/location/kokomea/?from=journey",
+      },
+    ],
   },
   {
     image: `${J}bendigohistoric-reserve-central-otago.jpg`,
