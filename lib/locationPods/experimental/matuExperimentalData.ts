@@ -79,27 +79,27 @@ const matuPodNarrative = {
   gallery: [
     {
       src: podExterior,
-      alt: "Matū PurePod glass cabin exterior in the Waitomo landscape, New Zealand",
+      alt: "Matū PurePod glass cabin exterior with private deck in rolling farmland near Waitomo and Ōtorohanga",
       position: "50% 55%",
     },
     {
       src: podCloseUpNative,
-      alt: "Close exterior view of PurePod Matū with glass walls and native New Zealand landscape around the cabin",
+      alt: "Close exterior view of Matū PurePod glass cabin with native bush and rural Waitomo landscape",
       position: "50% 48%",
     },
     {
       src: podBedroom,
-      alt: "Bedroom at sunset inside Matū PurePod, Waitomo, New Zealand",
+      alt: "Bedroom inside Matū PurePod glass cabin with sunset views across rural Waitomo farmland",
       position: "50% 50%",
     },
     {
       src: podSunset,
-      alt: "Matū PurePod at sunset, Waitomo, New Zealand",
+      alt: "Matū PurePod glass cabin and private deck at sunset in the Waitomo countryside",
       position: "50% 50%",
     },
     {
       src: podSunsetPink,
-      alt: "PurePod Matū glass cabin surrounded by rolling countryside at sunset in New Zealand",
+      alt: "Matū PurePod glass cabin surrounded by rolling countryside at sunset near Waitomo",
       position: "50% 52%",
     },
   ],
@@ -116,15 +116,15 @@ const matuTravelBlock = {
       images: [
         {
           src: travelRoad,
-          alt: "Countryside access road in the Waitomo region, New Zealand",
+          alt: "Countryside access road on the approach to Matū PurePod in the Waitomo region",
         },
         {
           src: travelHillsideWalk,
-          alt: "Guests walking across open rolling hills near PurePod Matū in New Zealand",
+          alt: "Guests walking across open paddocks and rolling farmland near Matū PurePod in Waitomo",
         },
         {
           src: travelForest,
-          alt: "Native forest walking track near Matū PurePod, Waitomo, New Zealand",
+          alt: "Native bush walking track on the approach to Matū PurePod near Waitomo",
         },
       ],
       body: `Reaching Matū feels like travelling higher into the landscape.
@@ -150,19 +150,19 @@ The track includes steep and uneven sections, and the final stage crosses a farm
       images: [
         {
           src: travelPlatter,
-          alt: "Local food platter at Matū PurePod, Waitomo, New Zealand",
+          alt: "Food platter set outdoors near Matū PurePod in the Waitomo countryside",
         },
         {
           src: travelBreakfast,
-          alt: "Breakfast at Matū PurePod, Waitomo, New Zealand",
+          alt: "Breakfast board inside Matū PurePod with rural Waitomo views",
         },
         {
           src: travelBreakfastProvisions,
-          alt: "Fresh bread, eggs and granola prepared for guests at PurePod Matū in New Zealand",
+          alt: "Fresh bread, eggs and granola breakfast provisions prepared for guests at Matū PurePod",
         },
         {
           src: travelBreakfastTray,
-          alt: "Breakfast tray with granola, yoghurt and tea served on a bed inside PurePod Matū in New Zealand",
+          alt: "Breakfast tray with granola, yoghurt and tea served on the bed inside Matū PurePod",
         },
       ],
       body: `At Matū, meals become part of the landscape.
@@ -184,7 +184,7 @@ const matuExperiencesBlock = {
       title: "Okohua Glowworm Cave Tour",
       image: expOkohua,
       imageAlt:
-        "Private Okohua glowworm cave with blue bioluminescence and limestone chamber in Waitomo, New Zealand",
+        "Okohua Glowworm Cave with blue glowworms and limestone chamber near Waitomo",
       paragraphs: [
         "Visit a private cave with glowworms and ancient limestone formations in a small group (max. 6 people).",
         "The experience usually ends with a soak in a forest-surrounded hot tub — a quieter and more intimate way to experience Waitomo.",
@@ -199,7 +199,7 @@ const matuExperiencesBlock = {
     {
       title: "Ruakuri Cave",
       image: expRuakuri,
-      imageAlt: "Ruakuri Cave spiral entrance, Waitomo, New Zealand",
+      imageAlt: "Ruakuri Cave spiral walkway in the Waitomo Caves limestone landscape",
       paragraphs: [
         "A striking cave system that combines glowworms, underground streams and dramatic limestone formations. The spiral entrance and walkways make it an accessible yet immersive journey underground.",
         "A different way to experience the hidden landscape of Waitomo.",
@@ -214,7 +214,7 @@ const matuExperiencesBlock = {
     {
       title: "Marokopa Falls",
       image: expMarokopa,
-      imageAlt: "Marokopa Falls in the Waitomo region, New Zealand",
+      imageAlt: "Marokopa Falls surrounded by native bush in the Waitomo region",
       paragraphs: [
         "One of the North Island’s most beautiful waterfalls, set in native bush and reached by a short, easy walk. A place where water, forest and the sense of discovery come together.",
         "The perfect complement to the cave experiences — open sky, green and the sound of water.",
@@ -296,14 +296,14 @@ export const matuEditorialConfig: EditorialPodLocationConfig = {
   hero: {
     imageSrc: heroImage,
     imageAlt:
-      "Matū PurePod glass cabin in the Waitomo landscape, New Zealand",
+      "Aerial view of Matū PurePod glass cabin among rolling farmland and native bush near Ōtorohanga and Waitomo",
     title: "Matū",
     subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
     imagePosition: "70% 50%",
     imagePositionMd: "60% 55%",
     imagePositionXl: "55% 60%",
   },
-  podCarouselAriaLabel: "PurePod Matū — photo gallery",
+  podCarouselAriaLabel: "Matū PurePod — photo gallery",
   podNarrative: matuPodNarrative,
   travelBlock: matuTravelBlock,
   experiencesCollapsible: {
