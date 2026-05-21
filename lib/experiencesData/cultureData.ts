@@ -74,7 +74,12 @@ export const cultureExperienceSlides: AdventureExperienceSlide[] = [
     title: "Hobbiton™ Movie Set",
     description:
       "Step into the crafted landscapes of Middle-earth with a guided visit through the Hobbiton Movie Set, one of New Zealand’s most recognisable screen heritage experiences.",
-    pods: [{ label: "Matū PurePod", href: "/location/matu" }],
+    pods: [
+      {
+        label: "Matū PurePod near Waitomo and Ōtorohanga",
+        href: "/location/matu/?from=culture",
+      },
+    ],
     distance: "Waikato day trip",
     timing: "guided tours",
     nearbyRegion: " — Waikato region, North Island",

@@ -197,7 +197,12 @@ export const journeyHikingSlides: HikingSlide[] = [
     placeHref: "https://www.waikatonz.com/walking-and-hiking-trails/mt-pirongia-forest-park/",
     description:
       "A rewarding climb through native forest leading to panoramic views across the Waikato region. A peaceful escape with a true sense of wilderness at the summit.",
-    ctas: [{ label: "Stay at Matū, Waitomo →", href: "/location/matu" }],
+    ctas: [
+      {
+        label: "Stay at Matū PurePod near Waitomo",
+        href: "/location/matu/?from=journey",
+      },
+    ],
   },
   {
     image: `${J}table-top-kapiti-coast.jpg`,
