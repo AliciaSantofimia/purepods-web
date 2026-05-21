@@ -212,6 +212,11 @@ export function AdventureExperienceCarousel({ slides }: Props) {
   const hasMultiplePods = active.pods.length > 1;
   const nearbyContext = active.nearbyRegion?.replace(/^\s*—\s*/, "") ?? "";
   const stayMenuId = `${uid}-stay-nearby`;
+  const stayCtaLabel = firstPod
+    ? hasMultiplePods
+      ? "Choose nearby PurePod"
+      : "View nearby PurePod"
+    : "";
 
   return (
     <div
@@ -274,14 +279,14 @@ export function AdventureExperienceCarousel({ slides }: Props) {
                   aria-controls={stayMenuId}
                   onClick={() => setStayMenuOpen((open) => !open)}
                 >
-                  Stay nearby
+                  {stayCtaLabel}
                 </button>
               ) : (
                 <Link
                   href={firstPod.href}
                   className="aw-xp-carousel__cta aw-xp-carousel__cta--stay"
                 >
-                  Stay nearby
+                  {stayCtaLabel}
                 </Link>
               )
             ) : null}
