@@ -33,36 +33,63 @@ export const MATU_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=16";
 
 const HERO_PARAGRAPH_1 =
-  "A private glass cabin in the Ōtorohanga countryside, set above rolling farmland with native bush and wide rural views.";
-
-const HERO_PARAGRAPH_2 =
-  "Near the Waitomo region, Matū is a quiet place for sunrise, birdsong and clear night skies — a peaceful retreat surrounded by the calm of the countryside.";
+  "Matū PurePod is a private off-grid glass cabin for two near Waitomo and Ōtorohanga, designed for a secluded rural escape above rolling farmland, with native bush, King Country views, birdsong, sunrise skies and glowworm cave experiences nearby.";
 
 export const MATU_FAQ_ITEMS: LocationFaqItem[] = [
   {
-    question: "How do I get to PurePod Matū?",
+    question: "Is Matū PurePod suitable for a romantic getaway?",
     answer:
-      "Reaching PurePod Matū is a scenic drive through the Waitomo region, followed by a short walk through native forest. The final stretch is what makes the pod feel truly hidden and private. Suitable footwear is recommended for the track.",
+      "Yes. Matū PurePod is designed for two guests and suits couples looking for a private rural nature escape near Waitomo and Ōtorohanga. Set above rolling farmland with native bush, King Country views, birdsong and open night skies, it offers a secluded off-grid stay within easy reach of Waitomo’s cave and glowworm experiences.",
   },
   {
-    question: "What is the walk to the pod like?",
+    question: "How many guests can stay at Matū PurePod?",
     answer:
-      "A short walk from the road brings you into your own private world — no neighbours, no distractions. Inside, the glass cabin brings the outside in: you sleep, eat and rest with the forest and the sky always in view.",
+      "Matū PurePod is designed for a maximum of two guests. Like all PurePods, it is created as a private glass cabin for two, making it best suited to couples or two adults seeking a quiet, secluded stay.",
   },
   {
-    question: "What is the climate usually like?",
+    question: "How private is Matū PurePod?",
     answer:
-      "Waitomo has a temperate climate — cooler in the forest and inside the caves. Layered clothing is recommended, especially for cave visits and evenings. Rain is part of the landscape here and keeps the bush green and the atmosphere rich.",
+      "Matū PurePod is designed for privacy and seclusion. Guests are left undisturbed during their stay unless there is an emergency, and there is no daily servicing for multiple-night stays, so the experience remains quiet and uninterrupted.",
   },
   {
-    question: "How does food work at the pod?",
+    question: "What is the walk to Matū PurePod like?",
     answer:
-      "Your PurePod is fully equipped for a relaxed, self-contained stay. Inside you will find a selection of meals ready to heat, breakfast provisions, snacks, tea and coffee — wherever possible from local producers. Meals are designed to be simple to prepare, so you spend less time in the kitchen and more time enjoying the forest, the light and the calm. As there are no shops or restaurants nearby, everything is provided so your stay is comfortable and worry-free.",
+      "Matū PurePod is reached by a 600m nature walk from the carpark, taking roughly 20 minutes. The walking track is steep in places and crosses working farmland, so sturdy footwear and luggage that is easy to carry are recommended.",
   },
   {
-    question: "How many people can stay, and how private is it?",
+    question: "Is Matū PurePod off-grid?",
     answer:
-      "The pod is designed for two: a simple, comfortable base from which to experience the bush, the night sky and the calm of the land. A short walk from the road brings you into your own private world — no neighbours, no distractions.",
+      "Yes. Matū PurePod is solar powered and designed as an off-grid stay. There is no WiFi, no TV and no standard power plugs, although a USB charging port and an emergency telephone are provided.",
+  },
+  {
+    question: "Is there mobile reception at Matū PurePod?",
+    answer:
+      "Matū PurePod has limited cell reception. As with many remote rural stays, coverage may vary depending on location and mobile provider. An emergency telephone and EPIRB are provided for safety.",
+  },
+  {
+    question: "What should I bring for a stay at Matū PurePod?",
+    answer:
+      "Bring sturdy walking shoes, weather-appropriate clothing and luggage that is easy to carry for the walk from the carpark. Guests should also bring their favourite drinks, especially if ordering the food hamper.",
+  },
+  {
+    question: "How does the food hamper work at Matū PurePod?",
+    answer:
+      "The food hamper is optional and can be pre-ordered. If selected, the dinner and breakfast package will be waiting at the PurePod on arrival. Guests should bring their favourite drinks.",
+  },
+  {
+    question: "What can you do near Matū PurePod?",
+    answer:
+      "Matū PurePod is near the Waitomo region, with easy access to glowworm caves, limestone landscapes, black water rafting, caving, scenic walks, Ruakuri Cave, Ruakuri Walk, Marokopa Falls and Otorohanga Kiwi House.",
+  },
+  {
+    question: "What is the landscape around Matū PurePod?",
+    answer:
+      "Matū PurePod is set above rolling farmland in the Ōtorohanga countryside, with native bush, open paddocks, King Country views, native birds, sunrise skies and clear night skies for stargazing.",
+  },
+  {
+    question: "How far is Matū PurePod from Hamilton?",
+    answer:
+      "Matū PurePod is located near Ōtorohanga in the Waitomo region, around a 60-minute drive from Hamilton, depending on traffic and road conditions.",
   },
 ];
 
@@ -298,7 +325,7 @@ export const matuEditorialConfig: EditorialPodLocationConfig = {
     imageAlt:
       "Aerial view of Matū PurePod glass cabin among rolling farmland and native bush near Ōtorohanga and Waitomo",
     title: "Matū",
-    subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
+    subtitleParagraphs: [HERO_PARAGRAPH_1],
     imagePosition: "70% 50%",
     imagePositionMd: "60% 55%",
     imagePositionXl: "55% 60%",

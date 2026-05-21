@@ -8,10 +8,10 @@ const OG_IMAGE_URL =
   "https://purepods.com/assets/img/matu/matu-purepod-aerial-landscape-waitomo.jpg";
 
 const META_DESCRIPTION =
-  "PurePod Matū: glass cabin for two in Waitomo, Waikato. Native forest & limestone country; short walk-in, private site. Self-contained stay — caves, bush & night skies nearby.";
+  "Matū PurePod is a private off-grid glass cabin for two near Waitomo and Ōtorohanga, with rolling farmland, native bush, King Country views and glowworm cave experiences nearby.";
 
 const SEO_TITLE_ABSOLUTE =
-  "Matū PurePod | Glass Cabin, Waitomo, New Zealand";
+  "Matū PurePod, Waitomo | Private Off-Grid Glass Cabin";
 
 function matuStructuredData() {
   const faqEntities = MATU_FAQ_ITEMS.map((item) => ({
@@ -47,7 +47,7 @@ function matuStructuredData() {
       {
         "@type": "LodgingBusiness",
         "@id": `${CANONICAL_URL}#lodging`,
-        name: "PurePod Matū",
+        name: "Matū PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
         address: {
