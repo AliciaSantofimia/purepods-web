@@ -27,6 +27,16 @@ const nextConfig = {
         destination: "/experiences",
         permanent: true,
       },
+      {
+        source: "/location/kokomea-purepod-luxury-glass-cabin-near-wellington",
+        destination: "/location/kokomea",
+        permanent: true,
+      },
+      {
+        source: "/location/kokomea-purepod-luxury-glass-cabin-near-wellington/",
+        destination: "/location/kokomea",
+        permanent: true,
+      },
       { source: "/home/index.html", destination: "/", permanent: true },
     ];
   },
