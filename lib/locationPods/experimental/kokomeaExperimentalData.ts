@@ -87,32 +87,32 @@ const kokomeaPodNarrative = {
   gallery: [
     {
       src: podGalleryExteriorHero,
-      alt: "Kokomea PurePod glass cabin in open Kāpiti Coast countryside at sunset, New Zealand",
+      alt: "Kokomea PurePod glass cabin beside a grapevine nursery at sunset in Te Horo, Kāpiti Coast",
       position: "50% 55%",
     },
     {
       src: podGalleryBedroomInteriorSunset,
-      alt: "Bedroom with floor-to-ceiling glass and warm sunset light at Kokomea PurePod, Kāpiti Coast",
+      alt: "Bedroom inside Kokomea PurePod glass cabin with sunset light and countryside views in Te Horo, Kāpiti Coast",
       position: "50% 48%",
     },
     {
       src: podGalleryWarmWoodInterior,
-      alt: "Warm timber interior and crafted details inside Kokomea PurePod on the Kāpiti Coast",
+      alt: "Warm timber kitchen and bathroom details inside Kokomea PurePod on the Kāpiti Coast near Wellington",
       position: "50% 58%",
     },
     {
       src: podGalleryBedroomDetailInterior,
-      alt: "Interior bedroom detail with linen and soft light at Kokomea PurePod, Kāpiti Coast, New Zealand",
+      alt: "Bedroom linen detail inside Kokomea PurePod glass cabin on the Kāpiti Coast near Wellington",
       position: "50% 52%",
     },
     {
       src: podGalleryGlassPodUnderStars,
-      alt: "Night sky and stars above Kokomea PurePod’s glass cabin on the Kāpiti Coast, New Zealand",
+      alt: "Kokomea PurePod glass cabin and private deck beneath a clear night sky on the Kāpiti Coast",
       position: "50% 50%",
     },
     {
       src: podGalleryAerialCountryside,
-      alt: "Aerial view of Kokomea PurePod, vineyards and rolling hills towards Kāpiti Island, New Zealand",
+      alt: "Kokomea PurePod glass cabin in Te Horo countryside with sunset views towards Kāpiti Island",
       position: "50% 48%",
     },
   ],
@@ -129,11 +129,11 @@ const kokomeaTravelBlock = {
       images: [
         {
           src: travelRoad,
-          alt: "Countryside access road to Kokomea PurePod on the Kāpiti Coast",
+          alt: "Countryside access road and walking approach to Kokomea PurePod in Te Horo, Kāpiti Coast",
         },
         {
           src: travelSunrise,
-          alt: "Kokomea PurePod at sunrise in the Kāpiti Coast landscape",
+          alt: "Aerial view of Kokomea PurePod beside a grapevine nursery and rolling hills in Te Horo, Kāpiti Coast",
         },
       ],
       body: `Reaching Kokomea feels calm from the very beginning.
@@ -159,19 +159,19 @@ Parts of the path can become rocky or slippery after rain, so suitable walking f
       images: [
         {
           src: foodLocalDiningExperience,
-          alt: "Local dining experience with seasonal produce at Kokomea PurePod, Kāpiti Coast, New Zealand",
+          alt: "Seasonal dining spread on the deck at Kokomea PurePod on the Kāpiti Coast",
         },
         {
           src: foodOutdoorBreakfast,
-          alt: "Breakfast on the deck at Kokomea PurePod with views across the Kāpiti Coast countryside",
+          alt: "Breakfast on the private deck at Kokomea PurePod with Kāpiti Coast countryside views",
         },
         {
           src: foodSeasonalLocalProduce,
-          alt: "Seasonal local produce ready to prepare at Kokomea PurePod on the Kāpiti Coast",
+          alt: "Seasonal produce and prepared food for dining at Kokomea PurePod on the Kāpiti Coast",
         },
         {
           src: foodBreakfastBasket,
-          alt: "Breakfast basket with local provisions at Kokomea PurePod, Kāpiti Coast",
+          alt: "Breakfast table on the private deck at Kokomea PurePod with rural Kāpiti Coast views",
         },
       ],
       body:
@@ -190,7 +190,7 @@ const kokomeaExperiencesBlock = {
       title: "Kāpiti Island",
       image: expIsland,
       imageAlt:
-        "Aerial view of Kapiti Island nature reserve, Kāpiti Coast, New Zealand",
+        "Aerial view of Kāpiti Island nature reserve on the Kāpiti Coast near Wellington",
       paragraphs: [
         "A protected nature reserve visible from the coast, Kāpiti Island is home to native birds and restored forest. Access is by boat; visits are guided and limited, keeping the island quiet and wild.",
         "A chance to step into a world where birdsong and forest take over.",
@@ -206,7 +206,7 @@ const kokomeaExperiencesBlock = {
       title: "Paekākāriki Escarpment Track",
       image: expEscarpment,
       imageAlt:
-        "Paekākāriki Escarpment Track on the Kāpiti Coast, New Zealand",
+        "Paekākāriki Escarpment Track on the Kāpiti Coast with views towards Kāpiti Island",
       paragraphs: [
         "A striking walk along the coastal escarpment with wide views over the Tasman Sea and Kāpiti Island. The track climbs and winds through native scrub and coastal landscape, offering a strong sense of space and horizon.",
         "One of the region's most memorable walks — sea, sky and steady pace.",
@@ -222,7 +222,7 @@ const kokomeaExperiencesBlock = {
       title: "Coast, lagoons & slow exploration",
       image: expLagoon,
       imageAlt:
-        "River and lagoon landscape on the Kāpiti Coast, New Zealand",
+        "River, lagoon and wetland landscape on the Kāpiti Coast near Wellington",
       paragraphs: [
         "The Kāpiti Coast is a mix of beach, river mouths and lagoons, with quiet roads and small settlements. Explore at a gentle pace — coastal reserves, river walks and the constant presence of the sea and the island on the horizon.",
         "A landscape made for unhurried discovery.",
@@ -300,14 +300,14 @@ export const kokomeaEditorialConfig: EditorialPodLocationConfig = {
   hero: {
     imageSrc: heroImage,
     imageAlt:
-      "Kokomea PurePod glass cabin at sunset on the Kāpiti Coast, New Zealand",
+      "Kokomea PurePod glass cabin at sunset in Te Horo, Kāpiti Coast, with views towards Kāpiti Island near Wellington",
     title: "Kokomea",
     subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
     imagePosition: "70% 50%",
     imagePositionMd: "60% 55%",
     imagePositionXl: "55% 60%",
   },
-  podCarouselAriaLabel: "PurePod Kokomea — photo gallery",
+  podCarouselAriaLabel: "Kokomea PurePod — photo gallery",
   podNarrative: kokomeaPodNarrative,
   travelBlock: kokomeaTravelBlock,
   experiencesCollapsible: {
