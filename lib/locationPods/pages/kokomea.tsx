@@ -8,10 +8,10 @@ const OG_IMAGE_URL =
   "https://purepods.com/assets/img/kokomea/kokomea-purepod-glass-cabin-sunset-view-kapiti-coast.jpg";
 
 const META_DESCRIPTION =
-  "PurePod Kokomea: glass cabin for two on the Kāpiti Coast. Walk-in access through the hills. Forest, birdsong and privacy; BYO food or hampers.";
+  "Kokomea PurePod is a private off-grid glass cabin for two on the Kāpiti Coast near Wellington, with Kāpiti Island views and sunset skies.";
 
 const SEO_TITLE_ABSOLUTE =
-  "Kokomea PurePod | Glass Cabin, Kāpiti Coast, New Zealand";
+  "Kokomea PurePod, Kāpiti Coast | Private Off-Grid Glass Cabin";
 
 function kokomeaStructuredData() {
   const faqEntities = KOKOMEA_FAQ_ITEMS.map((item) => ({
@@ -47,7 +47,7 @@ function kokomeaStructuredData() {
       {
         "@type": "LodgingBusiness",
         "@id": `${CANONICAL_URL}#lodging`,
-        name: "PurePod Kokomea",
+        name: "Kokomea PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
         address: {

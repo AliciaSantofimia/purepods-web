@@ -40,36 +40,63 @@ export const KOKOMEA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=10";
 
 const HERO_PARAGRAPH_1 =
-  "A private glass cabin set within the rolling countryside of the Kāpiti Coast, surrounded by open farmland, regenerating bush and wide coastal skies.";
-
-const HERO_PARAGRAPH_2 =
-  "Kokomea is shaped by sunset light, birdsong and the quiet rhythm of the land — a peaceful retreat with views stretching towards Kāpiti Island.";
+  "Kokomea PurePod is a private off-grid glass cabin for two on the Kāpiti Coast near Wellington, designed for a secluded nature escape among grapevines, olive trees, regenerating bush, coastal skies and views towards Kāpiti Island.";
 
 export const KOKOMEA_FAQ_ITEMS: LocationFaqItem[] = [
   {
-    question: "How do I get to PurePod Kokomea?",
+    question: "Is Kokomea PurePod suitable for a romantic getaway?",
     answer:
-      "Reaching PurePod Kokomea is a gentle walk through the hills of the Kāpiti Coast. Part of the experience is leaving the everyday behind and arriving slowly, surrounded by nature and silence. Comfortable footwear is recommended for the track.",
+      "Yes. Kokomea PurePod is designed for two guests and suits couples looking for a private nature escape on the Kāpiti Coast near Wellington. Set on a grapevine nursery with olive trees, sunset skies and views towards Kāpiti Island, it offers a secluded off-grid stay in a peaceful coastal countryside setting.",
   },
   {
-    question: "What footwear should I bring?",
+    question: "How many guests can stay at Kokomea PurePod?",
     answer:
-      "Comfortable footwear is recommended for the track into the pod.",
+      "Kokomea PurePod is designed for a maximum of two guests. Like all PurePods, it is created as a private glass cabin for two, making it best suited to couples or two adults seeking a quiet, secluded stay.",
   },
   {
-    question: "What is the climate usually like?",
+    question: "How private is Kokomea PurePod?",
     answer:
-      "The Kāpiti Coast has a mild, often windy climate. Evenings can be cool year-round; layered clothing is recommended. The mix of ocean and hills makes the weather changeable — part of the character of the place.",
+      "Kokomea PurePod is designed for privacy and seclusion. Guests make their own way from the carpark to the pod and are left undisturbed during their stay unless there is an emergency, so the experience remains quiet and uninterrupted.",
   },
   {
-    question: "How does food work at the pod?",
+    question: "What is the walk to Kokomea PurePod like?",
     answer:
-      "Bring your own supplies or pre-book a breakfast and dinner basket with local produce when you reserve. Everything is designed to be simple, comforting and enjoyed at your own pace — the kind of moments that stay with you long after you leave.",
+      "Kokomea PurePod is reached by a 450m nature walk from the carpark, taking around 10 minutes. The track passes regenerating bush, a bubbling stream, a gully and olive trees before reaching the PurePod. Sturdy footwear and luggage that is easy to carry are recommended.",
   },
   {
-    question: "How many people can stay, and what is in the pod?",
+    question: "Is Kokomea PurePod off-grid?",
     answer:
-      "The pod is fully private and designed for two, offering the feeling of being alone with nature. Inside, everything is simple and welcoming: king bed, hot shower, flush toilet, essential kitchen and comfortable heating for cooler evenings.",
+      "Yes. Kokomea PurePod is solar powered and designed as an off-grid stay. There is no WiFi, no TV and no standard power plugs, although a USB charging port and an emergency telephone are provided.",
+  },
+  {
+    question: "Is there phone signal at Kokomea PurePod?",
+    answer:
+      "Kokomea PurePod has limited phone signal. As with many remote nature stays, coverage may vary, and an emergency telephone and EPIRB are provided for safety.",
+  },
+  {
+    question: "What should I bring for a stay at Kokomea PurePod?",
+    answer:
+      "Bring sturdy walking shoes, layered clothing for changeable coastal weather and luggage that is easy to carry for the walk from the carpark. Guests should also bring their favourite drinks, especially if ordering the food hamper.",
+  },
+  {
+    question: "How does the food hamper work at Kokomea PurePod?",
+    answer:
+      "The food hamper is optional and can be pre-ordered. If selected, the dinner and breakfast package will be waiting at the PurePod on arrival. Guests should bring their favourite drinks.",
+  },
+  {
+    question: "What can you do near Kokomea PurePod?",
+    answer:
+      "Kokomea PurePod is close to Kāpiti Coast experiences including west coast beaches, Kāpiti Island, horse riding, cycling, hiking, local art and the region’s culinary scene.",
+  },
+  {
+    question: "What is the landscape around Kokomea PurePod?",
+    answer:
+      "Kokomea PurePod is set on a grapevine nursery high above the Kāpiti Coast, beside olive trees and regenerating bush. The experience is focused on sunset views towards Kāpiti Island, birdsong, stargazing, coastal skies and peaceful rural surroundings.",
+  },
+  {
+    question: "How far is Kokomea PurePod from Wellington?",
+    answer:
+      "Kokomea PurePod is located in Te Horo on the Kāpiti Coast, about one hour north of Wellington, depending on traffic and road conditions.",
   },
 ];
 
@@ -302,7 +329,7 @@ export const kokomeaEditorialConfig: EditorialPodLocationConfig = {
     imageAlt:
       "Kokomea PurePod glass cabin at sunset in Te Horo, Kāpiti Coast, with views towards Kāpiti Island near Wellington",
     title: "Kokomea",
-    subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
+    subtitleParagraphs: [HERO_PARAGRAPH_1],
     imagePosition: "70% 50%",
     imagePositionMd: "60% 55%",
     imagePositionXl: "55% 60%",
