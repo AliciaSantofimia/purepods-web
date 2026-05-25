@@ -32,35 +32,65 @@ export const ATATU_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=5";
 
 const HERO_SUBTITLE_PARAGRAPHS = [
-  "A private glass cabin set high above the Greta Valley coastline, surrounded by rolling sheep farmland, native forest and distant sea views.",
-  "Atatū is shaped by open horizons, changing light and the quiet rhythm of the Canterbury hills — an elevated retreat immersed in wide rural landscapes.",
+  "Atatū PurePod is a private off-grid glass cabin for two set high above the Greta Valley coastline in Hurunui.",
+  "Surrounded by rolling sheep farmland, native forest, sunrise light and sweeping sea views, it offers an elevated South Island escape close to nature.",
 ];
 
 export const ATATU_FAQ_ITEMS: LocationFaqItem[] = [
   {
-    question: "How do I get to PurePod Atatū?",
+    question: "Where is Atatū PurePod?",
     answer:
-      "The drive to PurePod Atatū is about 90 minutes north of Christchurch (100 km), through a historic farming region. The final part of the journey is a 750 m walk to the pod.",
+      "Atatū PurePod is set high above the Greta Valley coastline in Hurunui, North Canterbury, about 90 minutes north-east of Christchurch. Its hilltop setting looks across rolling sheep farmland, native forest and sweeping sea views.",
   },
   {
-    question: "How long is the walk, and what should I wear?",
+    question: "What makes Atatū PurePod unique?",
     answer:
-      "The walk takes about 10–15 minutes (around 750 m). The track has steps and uneven ground, so suitable footwear is recommended.",
+      "Atatū PurePod is shaped by its elevated hilltop position, sunrise light and wide coastal outlook. The experience combines open horizons, rolling farmland, native forest and sea views from a private off-grid glass cabin for two.",
   },
   {
-    question: "What is the climate usually like?",
+    question: "Is Atatū PurePod suitable for two guests?",
     answer:
-      "Atatū has a warm, dry interior climate. Days are often sunny, with cooler evenings and clear mornings. Layered clothing is recommended.",
+      "Yes. Atatū PurePod is designed for two guests, making it well suited to couples or two adults looking for a private nature escape in Hurunui. The pod has a queen bed, self-contained facilities and a secluded setting for an uninterrupted stay.",
   },
   {
-    question: "How does food work at the pod?",
+    question: "What views can you see from Atatū PurePod?",
     answer:
-      "Your PurePod Atatū is fully equipped for a quiet, comfortable and self-contained stay. Inside you’ll find a curated selection of heat-and-eat gourmet meals, breakfast provisions, snacks, tea and coffee — wherever possible from local Hurunui producers. With no shops or restaurants nearby, everything is provided so your stay is easy, comfortable and worry-free.",
+      "From Atatū PurePod, guests can take in sweeping sea views, rolling hills, sheep farmland and native forest. The elevated setting above the Greta Valley coastline makes sunrise and changing coastal light a memorable part of the stay.",
   },
   {
-    question: "How many people can stay?",
+    question: "How far is Atatū PurePod from Christchurch?",
     answer:
-      "The pod is designed for two guests. At the end of the walk there are no neighbours or distractions — only space, privacy and views.",
+      "Atatū PurePod is about 90 minutes north-east of Christchurch by car. It is located in the Greta Valley area of Hurunui, making it a secluded rural coastal escape within reach of Christchurch and North Canterbury.",
+  },
+  {
+    question: "How long is the walk to Atatū PurePod?",
+    answer:
+      "The walk from the carpark to Atatū PurePod is approximately 750 metres and usually takes around 15 minutes. The track leads through a rural hilltop setting and native bush, so sturdy footwear is recommended, especially in wet weather.",
+  },
+  {
+    question: "Is Atatū PurePod good for stargazing?",
+    answer:
+      "Yes. Atatū PurePod has a glass roof, telescope and star map for guests, making stargazing part of the experience. Its private rural setting above the Greta Valley coastline offers dark skies away from the light of larger towns.",
+  },
+  {
+    question: "What facilities are inside Atatū PurePod?",
+    answer:
+      "Atatū PurePod includes a queen bed, glass roof, three large glass sliding doors, kitchenette, gas hob, cooking equipment, fridge, bathroom, shower, heating, fresh drinking water, USB charging, books, games, telescope, star map, torch and picnic blankets.",
+  },
+  {
+    question: "Is Atatū PurePod off-grid?",
+    answer:
+      "Yes. Atatū PurePod is solar powered and designed as a private off-grid glass cabin. There is no Wi-Fi, TV or standard power plugs, and phone signal is limited, helping guests slow down and reconnect with the surrounding Hurunui landscape.",
+  },
+  {
+    question: "What should guests bring for the walk-in?",
+    answer:
+      "Guests should bring sturdy footwear, weather-appropriate clothing and only the overnight luggage they need for the stay. The guide recommends arriving before dark because there is no lighting on the nature walk from the carpark to the pod.",
+  },
+  {
+    question: "What can guests do near Atatū PurePod?",
+    answer:
+      "Guests can relax at the pod, watch sunrise over the coast, listen to birdsong, stargaze, read, play games or enjoy the changing light across the hills and bay. Nearby Hurunui experiences include Waipara wineries, Nape Nape Beach, Fossil Point Cafe & Gallery, the Hurunui River mouth and local coastal walks.",
   },
 ];
 
@@ -77,27 +107,27 @@ const atatuPodNarrative = {
   gallery: [
     {
       src: podHilltop,
-      alt: "Atatu PurePod glass cabin on a hilltop surrounded by rolling countryside in New Zealand",
+      alt: "Atatū PurePod glass cabin on a Hurunui hilltop with rolling farmland and sea views",
       position: "50% 55%",
     },
     {
       src: podSunriseBedroom,
-      alt: "Atatū PurePod glass cabin bedroom at sunrise with ocean outlook, remote coastal stay in New Zealand",
+      alt: "Sunrise view from the bed at Atatū PurePod over the Greta Valley coastline",
       position: "50% 48%",
     },
     {
       src: podKitchen,
-      alt: "Kitchen inside Atatu PurePod glass cabin with panoramic ocean views in New Zealan",
+      alt: "Kitchen inside Atatū PurePod with glass walls and sea views over the Greta Valley coastline",
       position: "50% 70%",
     },
     {
       src: podBedroom,
-      alt: "Bedroom inside Atatu PurePod glass cabin with panoramic ocean views in New Zealand",
+      alt: "Bedroom inside Atatū PurePod with sweeping sea views from the Greta Valley coast",
       position: "50% 45%",
     },
     {
       src: podSunsetGlass,
-      alt: "Atatū PurePod glass cabin at sunset with ocean outlook from a remote coastal hilltop in New Zealand",
+      alt: "Atatū PurePod glass cabin at sunset with ocean views from the Hurunui hilltop",
       position: "50% 52%",
     },
   ],
@@ -114,11 +144,11 @@ const atatuTravelBlock = {
       images: [
         {
           src: travelRoad,
-          alt: "Countryside road through rolling hills on the journey to Atatū PurePod in New Zealand",
+          alt: "Country road journey to Atatū PurePod through Greta Valley farmland",
         },
         {
           src: travelAerial,
-          alt: "Aerial landscape view of Atatu PurePod on a hilltop surrounded by rolling countryside in New Zealand",
+          alt: "Atatū PurePod hilltop landscape above the Greta Valley coastline, New Zealand",
         },
       ],
       body:
@@ -141,15 +171,15 @@ const atatuTravelBlock = {
       images: [
         {
           src: travelDining,
-          alt: "Outdoor dining at Atatū PurePod with sunset views over the New Zealand countryside",
+          alt: "Outdoor dining setup at Atatū PurePod with Hurunui hilltop views",
         },
         {
           src: travelProduce,
-          alt: "Local produce and gourmet provisions at Atatū PurePod in New Zealand",
+          alt: "Local produce dining experience at Atatū PurePod in Hurunui",
         },
       ],
       body:
-        "Your PurePod Atatū is fully equipped for a quiet, comfortable and self-contained stay. Inside you’ll find a curated selection of heat-and-eat gourmet meals, breakfast provisions, snacks, tea and coffee — wherever possible from local Hurunui producers. Meals are designed to be simple to prepare, so you spend less time cooking and more time enjoying the landscape, the changing light and the calm. With no shops or restaurants nearby, everything is provided so your stay is easy, comfortable and worry-free.",
+        "Your Atatū PurePod is fully equipped for a quiet, comfortable and self-contained stay. Inside you’ll find a curated selection of heat-and-eat gourmet meals, breakfast provisions, snacks, tea and coffee — wherever possible from local Hurunui producers. Meals are designed to be simple to prepare, so you spend less time cooking and more time enjoying the landscape, the changing light and the calm. With no shops or restaurants nearby, everything is provided so your stay is easy, comfortable and worry-free.",
     },
   ],
 };
@@ -164,7 +194,7 @@ const atatuExperiencesBlock = {
       title: "Cathedral Gully & Gore Bay",
       image: expCathedral,
       imageAlt:
-        "Cathedral Gully and Gore Bay coastal limestone landscape, North Canterbury, New Zealand",
+        "Cathedral Gully coastal landscape near Atatū PurePod in Hurunui",
       paragraphs: [
         "Limestone formations, sculpted cliffs and an open coast define this part of North Canterbury. Cathedral Gully and Gore Bay reveal wide beaches, clear horizons and a strong sense of space.",
         "A landscape where time moves slowly and nature sets the pace.",
@@ -184,10 +214,10 @@ const atatuExperiencesBlock = {
       title: "Wine & Local Flavour — Waipara",
       image: expWine,
       imageAlt:
-        "Wine tasting experience in Waipara Valley near Atatu PurePod in New Zealand",
+        "Waipara Valley wine tasting experience near Atatū PurePod",
       paragraphs: [
         "Cool-climate vineyards and family-run wineries offer a relaxed way to discover the region’s food and wine culture. Waipara Springs Winery & Restaurant stands out for its seasonal cooking and local wines, with tables among the vines.",
-        "About 25 minutes from PurePod Atatū, it’s a perfect pause between landscape and flavour.",
+        "About 25 minutes from Atatū PurePod, it’s a perfect pause between landscape and flavour.",
       ],
       links: [
         {
@@ -200,7 +230,7 @@ const atatuExperiencesBlock = {
       title: "Rural Heritage & Slow Discoveries — Hurunui Life",
       image: expCoast,
       imageAlt:
-        "Coastal cliffs and beach landscape on the Waipara coast near Atatu PurePod in New Zealand",
+        "Waipara Coast cliffs and beach near Atatū PurePod in North Canterbury",
       paragraphs: [
         "Local experiences reflect the rural character of the region. The historic Weka Pass Railway offers a gentle journey through the farming landscape, while the Amberley Farmers’ Market connects you with local flavours and produce.",
         "Tradition, community and rural life in an open, peaceful setting.",
@@ -273,14 +303,14 @@ export const atatuEditorialConfig: EditorialPodLocationConfig = {
   hero: {
     imageSrc: heroImage,
     imageAlt:
-      "Atatū PurePod glass cabin at night under a starry sky in the New Zealand countryside",
+      "Atatū PurePod glass cabin under night stars above the Greta Valley coastline, New Zealand",
     title: "Atatū",
     subtitleParagraphs: HERO_SUBTITLE_PARAGRAPHS,
     imagePosition: "70% 90%",
     imagePositionMd: "60% 75%",
     imagePositionXl: "55% 70%",
   },
-  podCarouselAriaLabel: "PurePod Atatū — photo gallery",
+  podCarouselAriaLabel: "Atatū PurePod — photo gallery",
   podNarrative: atatuPodNarrative,
   travelBlock: atatuTravelBlock,
   experiencesCollapsible: {

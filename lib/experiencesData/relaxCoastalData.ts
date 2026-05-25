@@ -301,8 +301,8 @@ export const relaxRcChapters: RelaxRcChapter[] = [
         },
         layout: "image-left",
         ctas: [
-          { label: "Stay at Atatū, Hurunui →", href: "/location/atatu" },
-          { label: "Stay at Korimako, Hurunui →", href: "/location/korimako" },
+          { label: "Stay at Atatū, Hurunui →", href: "/location/atatu/?from=relax-coastal" },
+          { label: "Stay at Korimako, Hurunui →", href: "/location/korimako/?from=relax-coastal" },
         ],
       },
       {

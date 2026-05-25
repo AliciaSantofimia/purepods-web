@@ -203,8 +203,8 @@ export const wineDineVineyardSlides: HikingSlide[] = [
     description:
       "A leading organic winery offering a refined food and wine experience in a stunning vineyard setting. Seasonal menus, locally sourced ingredients and beautifully crafted wines make this one of the region's most complete and memorable stops.",
     ctas: [
-      { label: "Stay at Atatū, Hurunui →", href: "/location/atatu" },
-      { label: "Stay at Korimako, Hurunui →", href: "/location/korimako" },
+      { label: "Stay at Atatū, Hurunui →", href: "/location/atatu/?from=wine-dine" },
+      { label: "Stay at Korimako, Hurunui →", href: "/location/korimako/?from=wine-dine" },
     ],
   },
   {
@@ -230,8 +230,8 @@ export const wineDineRestaurantSlides: HikingSlide[] = [
     description:
       "One of the region's standout destinations, pairing organic wines with a seasonal restaurant focused on local produce. Elegant yet relaxed, with beautiful vineyard views.",
     ctas: [
-      { label: "Stay at Atatū →", href: "/location/atatu" },
-      { label: "Stay at Korimako →", href: "/location/korimako" },
+      { label: "Stay at Atatū →", href: "/location/atatu/?from=wine-dine" },
+      { label: "Stay at Korimako →", href: "/location/korimako/?from=wine-dine" },
     ],
   },
   {

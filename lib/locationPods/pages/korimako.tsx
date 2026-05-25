@@ -8,10 +8,10 @@ const OG_IMAGE_URL =
   "https://purepods.com/assets/img/korimako/korimako-purepod-glass-cabin-native-bush-greta-valley-new-zealand.jpg";
 
 const META_DESCRIPTION =
-  "PurePod Korimako: glass cabin for two in Hurunui, North Canterbury. Final access: 750 m walk (10–15 min) with steps. About 90 min north of Christchurch; open views and privacy.";
+  "Korimako PurePod is a private off-grid glass cabin for two in native bush along the Greta Valley coastline, with bay views, birdsong and Motunau Island.";
 
 const SEO_TITLE_ABSOLUTE =
-  "Korimako PurePod | Glass Cabin, Hurunui, New Zealand";
+  "Korimako PurePod | Native Bush Glass Cabin, Greta Valley";
 
 function korimakoStructuredData() {
   const faqEntities = KORIMAKO_FAQ_ITEMS.map((item) => ({
@@ -47,19 +47,19 @@ function korimakoStructuredData() {
       {
         "@type": "LodgingBusiness",
         "@id": `${CANONICAL_URL}#lodging`,
-        name: "PurePod Korimako",
+        name: "Korimako PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
         address: {
           "@type": "PostalAddress",
-          addressLocality: "Hurunui",
+          addressLocality: "Greta Valley",
           addressRegion: "Canterbury",
           addressCountry: "NZ",
         },
         amenityFeature: [
           {
             "@type": "LocationFeatureSpecification",
-            name: "Private glass cabin with open Hurunui landscape views",
+            name: "Private off-grid glass cabin in native bush with bay views towards Motunau Island",
             value: true,
           },
           {
@@ -69,7 +69,7 @@ function korimakoStructuredData() {
           },
           {
             "@type": "LocationFeatureSpecification",
-            name: "Walk-in access (~750 m, steps and uneven ground)",
+            name: "Walk-in access (~450 m, around 7–10 minutes)",
             value: true,
           },
         ],
@@ -97,7 +97,7 @@ export const podMetadata: Metadata = {
     images: [
       {
         url: OG_IMAGE_URL,
-        alt: "Korimako PurePod glass cabin in the Hurunui landscape, New Zealand",
+        alt: "Korimako PurePod glass cabin nestled in native bush near the Greta Valley coastline, New Zealand",
       },
     ],
   },

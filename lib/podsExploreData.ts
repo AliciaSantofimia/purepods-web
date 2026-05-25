@@ -113,7 +113,7 @@ export const EXPLORE_POD_CARDS: ExplorePodCard[] = [
     islandLine: "South Island",
     imageSrc:
       "/assets/img/atatu/atatu-purepod-glass-cabin-bedroom-ocean-view-new-zealand.jpg",
-    imageAlt: "Atatū PurePod bedroom with ocean view",
+    imageAlt: "Bedroom inside Atatū PurePod with sweeping sea views from the Greta Valley coast",
   },
   {
     slug: "korimako",
@@ -124,7 +124,7 @@ export const EXPLORE_POD_CARDS: ExplorePodCard[] = [
     islandLine: "South Island",
     imageSrc:
       "/assets/img/korimako/korimako-purepod-native-bush-walking-track-new-zealand.jpg",
-    imageAlt: "Korimako PurePod forest path walking trail",
+    imageAlt: "Native bush walking track to Korimako PurePod in Hurunui",
   },
   {
     slug: "greystone",

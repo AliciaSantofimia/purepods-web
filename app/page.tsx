@@ -20,7 +20,7 @@ const LOGO = {
 const HERO_SLIDES = [
   {
     src: "/assets/img/atatu/atatu-purepod-glass-cabin-hilltop-landscape-new-zealand.jpg",
-    alt: "",
+    alt: "Atatū PurePod glass cabin on a Hurunui hilltop with rolling farmland and sea views",
   },
   {
     src: "/assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg",
@@ -28,11 +28,11 @@ const HERO_SLIDES = [
   },
   {
     src: "/assets/img/atatu/atatu-purepod-glass-cabin-night-stars-new-zealand.jpg",
-    alt: "",
+    alt: "Atatū PurePod glass cabin under night stars above the Greta Valley coastline, New Zealand",
   },
   {
     src: "/assets/img/atatu/atatu-purepod-glass-cabin-bedroom-ocean-view-new-zealand.jpg",
-    alt: "",
+    alt: "Bedroom inside Atatū PurePod with sweeping sea views from the Greta Valley coast",
   },
   {
     src: "/assets/img/pamu/pamu-purepod-glass-cabin-exterior-landscape-rotorua.jpg",
@@ -79,11 +79,11 @@ const LANDSCAPE_SLIDES = [
   },
   {
     src: "/assets/img/atatu/atatu-purepod-glass-cabin-hilltop-landscape-new-zealand.jpg",
-    alt: "Atatū PurePod on a Hurunui hilltop",
+    alt: "Atatū PurePod glass cabin on a Hurunui hilltop with rolling farmland and sea views",
   },
   {
     src: "/assets/img/korimako/korimako-purepod-aerial-native-bush-coastal-landscape-new-zealand.jpg",
-    alt: "Korimako PurePod aerial coastal view near Hurunui",
+    alt: "Aerial view of Korimako PurePod in native bush above the Greta Valley coastal landscape",
   },
   {
     src: "/assets/img/greystone/greystone-purepod-aerial-vineyard-landscape-waipara.jpg",

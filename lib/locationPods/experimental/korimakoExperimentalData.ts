@@ -36,35 +36,65 @@ export const KORIMAKO_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=6";
 
 const HERO_SUBTITLE_PARAGRAPHS = [
-  "A private glass cabin nestled into native bush along the Greta Valley coastline, surrounded by rolling farmland, coastal hills and wide views towards Motunau Island.",
-  "Korimako is shaped by birdsong, sea air and the changing light of the Canterbury coast — a quiet retreat immersed in native bush and open coastal landscapes.",
+  "Korimako PurePod is a private off-grid glass cabin for two nestled into native bush along the Greta Valley coastline in Hurunui.",
+  "With bay views towards Motunau Island, abundant birdlife and birdsong around the pod, it offers a sheltered South Island escape shaped by coastal light and quiet forest.",
 ];
 
 export const KORIMAKO_FAQ_ITEMS: LocationFaqItem[] = [
   {
-    question: "How do I get to PurePod Korimako?",
+    question: "Where is Korimako PurePod?",
     answer:
-      "The drive to PurePod Korimako is about 90 minutes north of Christchurch (100 km), through historic farming country. The final part of the journey includes a 750 m walk to the pod. The track has steps and uneven ground, so suitable footwear is recommended.",
+      "Korimako PurePod is set in native bush along the Greta Valley coastline in Hurunui, North Canterbury, about 90 minutes north-east of Christchurch. Its setting looks towards the bay and Motunau Island, with birdlife and coastal bush surrounding the pod.",
   },
   {
-    question: "What is the walk to the pod like?",
+    question: "What makes Korimako PurePod unique?",
     answer:
-      "Arrival is part of the journey: a 10–15 minute walk (about 750 m) marks the transition into calm. The track has steps and uneven ground, so suitable footwear is recommended.",
+      "Korimako PurePod is defined by its sheltered native bush setting, birdsong and views towards Motunau Island. It feels more tucked-away and forested than Atatū, while still offering a private off-grid glass cabin experience near the Greta Valley coast.",
   },
   {
-    question: "What is the climate usually like?",
+    question: "Is Korimako PurePod suitable for two guests?",
     answer:
-      "Korimako enjoys a warm, dry inland climate. Days are often sunny, with cooler evenings and clear mornings. Layered clothing is recommended. The mix of open hills and distant sea keeps the air clear and the light strong.",
+      "Yes. Korimako PurePod is designed for two guests, making it well suited to couples or two adults looking for a private nature escape in Hurunui. The pod has a queen bed, self-contained facilities and a secluded setting surrounded by native bush.",
   },
   {
-    question: "How does food work at the pod?",
+    question: "What views can you see from Korimako PurePod?",
     answer:
-      "Your PurePod Korimako is fully equipped for a quiet, comfortable and self-contained stay. Inside you will find a selection of gourmet meals ready to heat, breakfast provisions, snacks, tea and coffee — wherever possible from local Hurunui producers. Meals are designed to be simple to prepare, so you spend less time cooking and more time enjoying the landscape, the changing light and the calm. As there are no shops or restaurants nearby, everything is provided so your stay is easy, comfortable and worry-free.",
+      "From Korimako PurePod, guests can enjoy views through native bush towards the bay and Motunau Island. The glass design brings the surrounding coastal bush, birdlife and changing light close to the bed, deck and living space.",
   },
   {
-    question: "How many people can stay?",
+    question: "How far is Korimako PurePod from Christchurch?",
     answer:
-      "PurePod Korimako is designed for two. At the end of the walk there are no neighbours or distractions — only space, privacy and views that open in every direction.",
+      "Korimako PurePod is about 90 minutes north-east of Christchurch by car. It is located in the Greta Valley area of Hurunui, making it a secluded coastal bush escape within reach of Christchurch and North Canterbury.",
+  },
+  {
+    question: "How long is the walk to Korimako PurePod?",
+    answer:
+      "The walk from the carpark to Korimako PurePod is approximately 450 metres and usually takes around 7–10 minutes. The track leads gently through a rural native bush setting, so sturdy footwear is recommended, especially after rain.",
+  },
+  {
+    question: "Is Korimako PurePod good for stargazing?",
+    answer:
+      "Yes. Korimako PurePod has a glass roof, telescope and star map for guests, making stargazing part of the experience. Its private rural setting along the Greta Valley coastline offers dark skies away from the light of larger towns.",
+  },
+  {
+    question: "What facilities are inside Korimako PurePod?",
+    answer:
+      "Korimako PurePod includes a queen bed, glass roof, three large glass sliding doors, kitchenette, gas hob, cooking equipment, fridge, bathroom, shower, heating, fresh drinking water, USB charging, books, games, telescope, star map, torch and picnic blankets.",
+  },
+  {
+    question: "Is Korimako PurePod off-grid?",
+    answer:
+      "Yes. Korimako PurePod is solar powered and designed as a private off-grid glass cabin. There is no Wi-Fi, TV or standard power plugs, and phone signal is limited, helping guests slow down and connect with the surrounding native bush and coastal landscape.",
+  },
+  {
+    question: "What should guests bring for the walk-in?",
+    answer:
+      "Guests should bring sturdy footwear, weather-appropriate clothing and only the overnight luggage they need for the stay. The guide recommends arriving before dark because there is no lighting on the nature walk from the carpark to the pod.",
+  },
+  {
+    question: "What can guests do near Korimako PurePod?",
+    answer:
+      "Guests can relax at the pod, listen to birdsong, stargaze, read, play games or watch the changing light across the bay and surrounding bush. Nearby Hurunui experiences include Waipara wineries, Nape Nape Beach, Fossil Point Cafe & Gallery, the Hurunui River mouth and local coastal walks.",
   },
 ];
 
@@ -81,27 +111,27 @@ const korimakoPodNarrative = {
   gallery: [
     {
       src: podAerial,
-      alt: "Korimako PurePod glass cabin exterior with coastal view, Hurunui, New Zealand",
+      alt: "Korimako PurePod glass cabin with coastal bush and bay views towards Motunau Island",
       position: "52% 50%",
     },
     {
       src: podNativeGrass,
-      alt: "Korimako PurePod surrounded by native coastal grass and bush",
+      alt: "Korimako PurePod hidden among native grass and coastal bush in Hurunui",
       position: "48% 52%",
     },
     {
       src: podShower,
-      alt: "Aerial top view of Korimako PurePod glass cabin with solar panels, Hurunui, New Zealand",
+      alt: "Aerial view of Korimako PurePod with solar panels surrounded by native bush",
       position: "50% 60%",
     },
     {
       src: podCoastalLight,
-      alt: "Glass PurePod exterior with coastal views at Korimako",
+      alt: "Korimako PurePod glass cabin exterior in soft coastal light near Greta Valley",
       position: "52% 48%",
     },
     {
       src: podBed,
-      alt: "Interior of Korimako PurePod glass cabin with bed, Hurunui, New Zealand",
+      alt: "Bed inside Korimako PurePod with glass walls facing native bush and coastal light",
       position: "50% 65%",
     },
   ],
@@ -118,11 +148,11 @@ const korimakoTravelBlock = {
       images: [
         {
           src: travelPath,
-          alt: "Walking path toward Korimako PurePod in the Hurunui, New Zealand",
+          alt: "Walking path arrival to Korimako PurePod through the Greta Valley farm setting",
         },
         {
           src: travelForest,
-          alt: "Forest path and walking trail near Korimako PurePod, New Zealand",
+          alt: "Native bush walking track to Korimako PurePod in Hurunui",
         },
       ],
       body:
@@ -145,23 +175,23 @@ const korimakoTravelBlock = {
       images: [
         {
           src: travelBreakfast,
-          alt: "Homemade breakfast jars served outdoors at Korimako PurePod",
+          alt: "Homemade breakfast jars outdoors at Korimako PurePod in Hurunui",
         },
         {
           src: travelDining,
-          alt: "Local produce and dining at Korimako PurePod, Hurunui, New Zealand",
+          alt: "Local produce dining experience at Korimako PurePod in Hurunui",
         },
         {
           src: travelDinner,
-          alt: "Dinner at Korimako PurePod, Hurunui, New Zealand",
+          alt: "Local dinner meal at Korimako PurePod after a coastal bush walk-in",
         },
         {
           src: travelBbq,
-          alt: "Preparing a private BBQ dinner at Korimako PurePod",
+          alt: "Private barbecue dining experience at Korimako PurePod surrounded by native bush",
         },
       ],
       body:
-        "Your PurePod Korimako is fully equipped for a quiet, comfortable and self-contained stay. Inside you will find a selection of gourmet meals ready to heat, breakfast provisions, snacks, tea and coffee — wherever possible from local Hurunui producers. Meals are designed to be simple to prepare, so you spend less time cooking and more time enjoying the landscape, the changing light and the calm. As there are no shops or restaurants nearby, everything is provided so your stay is easy, comfortable and worry-free.",
+        "Your Korimako PurePod is fully equipped for a quiet, comfortable and self-contained stay. Inside you will find a selection of gourmet meals ready to heat, breakfast provisions, snacks, tea and coffee — wherever possible from local Hurunui producers. Meals are designed to be simple to prepare, so you spend less time cooking and more time enjoying the landscape, the changing light and the calm. As there are no shops or restaurants nearby, everything is provided so your stay is easy, comfortable and worry-free.",
     },
   ],
 };
@@ -176,7 +206,7 @@ const korimakoExperiencesBlock = {
       title: "Cathedral Gully & Gore Bay",
       image: expGully,
       imageAlt:
-        "Cathedral Gully and Gore Bay coastal landscape, North Canterbury, New Zealand",
+        "Cathedral Gully coastal landscape near Korimako PurePod in Hurunui",
       paragraphs: [
         "Limestone formations, sculpted cliffs and an open coast define this part of North Canterbury. Cathedral Gully and Gore Bay reveal wide beaches, clear horizons and a strong sense of space.",
         "A landscape where time moves slowly and nature sets the pace.",
@@ -196,10 +226,10 @@ const korimakoExperiencesBlock = {
       title: "Wine & local flavour — Waipara",
       image: expWine,
       imageAlt:
-        "Wine tasting in Waipara Valley near Korimako PurePod, New Zealand",
+        "Waipara Valley wine tasting experience near Korimako PurePod",
       paragraphs: [
         "Cool-climate vineyards and family-run wineries offer a relaxed way to discover the region’s food culture. Waipara Springs Winery & Restaurant is known for seasonal cooking and local wines, with tables among the vines.",
-        "About 25 minutes from PurePod Korimako, it is a perfect pause between landscape and flavour.",
+        "About 25 minutes from Korimako PurePod, it is a perfect pause between landscape and flavour.",
       ],
       links: [
         {
@@ -212,7 +242,7 @@ const korimakoExperiencesBlock = {
       title: "Rural heritage & slow discoveries",
       image: expCoast,
       imageAlt:
-        "Waipara coast with cliffs and beach near Korimako PurePod, New Zealand",
+        "Waipara Coast cliffs and beach near Korimako PurePod in North Canterbury",
       paragraphs: [
         "Local experiences reflect the rural character of the region. The historic Weka Pass Railway offers a gentle journey through farming country, while the Amberley Farmers’ Market connects you with local produce and the rhythm of the community.",
         "Tradition, community and rural life in an open, serene setting.",
@@ -285,14 +315,14 @@ export const korimakoEditorialConfig: EditorialPodLocationConfig = {
   hero: {
     imageSrc: heroImage,
     imageAlt:
-      "Korimako PurePod glass cabin in the Hurunui landscape, New Zealand",
+      "Korimako PurePod glass cabin nestled in native bush near the Greta Valley coastline, New Zealand",
     title: "Korimako",
     subtitleParagraphs: HERO_SUBTITLE_PARAGRAPHS,
     imagePosition: "70% 50%",
     imagePositionMd: "60% 55%",
     imagePositionXl: "55% 60%",
   },
-  podCarouselAriaLabel: "PurePod Korimako — photo gallery",
+  podCarouselAriaLabel: "Korimako PurePod — photo gallery",
   podNarrative: korimakoPodNarrative,
   travelBlock: korimakoTravelBlock,
   experiencesCollapsible: {

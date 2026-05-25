@@ -8,10 +8,10 @@ const OG_IMAGE_URL =
   "https://purepods.com/assets/img/atatu/atatu-purepod-glass-cabin-night-stars-new-zealand.jpg";
 
 const META_DESCRIPTION =
-  "PurePod Atatū: private hilltop glass cabin for two in Hurunui. Access: 750 m walk (10–15 min), uneven track. ~100 km from Christchurch. Rural views; private.";
+  "Atatū PurePod is a private off-grid glass cabin for two above the Greta Valley coastline, with sweeping sea views, sunrise light, rolling hills and native forest.";
 
 const SEO_TITLE_ABSOLUTE =
-  "Atatū PurePod | Hilltop Glass Cabin, Hurunui, New Zealand";
+  "Atatū PurePod | Hilltop Glass Cabin, Greta Valley Coast";
 
 function atatuStructuredData() {
   const faqEntities = ATATU_FAQ_ITEMS.map((item) => ({
@@ -47,11 +47,12 @@ function atatuStructuredData() {
       {
         "@type": "LodgingBusiness",
         "@id": `${CANONICAL_URL}#lodging`,
-        name: "PurePod Atatū",
+        name: "Atatū PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
         address: {
           "@type": "PostalAddress",
+          addressLocality: "Greta Valley",
           addressRegion: "Canterbury",
           addressCountry: "NZ",
         },
@@ -96,7 +97,7 @@ export const podMetadata: Metadata = {
     images: [
       {
         url: OG_IMAGE_URL,
-        alt: "Atatū PurePod glass cabin at night under a starry sky in the New Zealand countryside",
+        alt: "Atatū PurePod glass cabin on a Hurunui hilltop above the Greta Valley coastline, New Zealand",
       },
     ],
   },

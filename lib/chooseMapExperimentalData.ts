@@ -168,7 +168,7 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     imageSrc:
       "/assets/img/atatu/atatu-purepod-hilltop-landscape-aerial-new-zealand.jpg",
     imageAlt:
-      "Aerial view of Atatū PurePod glass cabin on a hilltop at sunset above rolling hills, Hurunui, New Zealand",
+      "Atatū PurePod hilltop landscape above the Greta Valley coastline, New Zealand",
     imagePosition: "50% 44%",
     lat: -42.855,
     lng: 173.205,
@@ -185,7 +185,7 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     imageSrc:
       "/assets/img/korimako/korimako-purepod-glass-cabin-native-forest-aerial-new-zealand.jpg",
     imageAlt:
-      "Aerial view of Korimako PurePod glass cabin nestled in native forest, Hurunui, New Zealand",
+      "Aerial view of Korimako PurePod glass cabin surrounded by native forest",
     imagePosition: "50% 48%",
     lat: -42.85,
     lng: 173.2,
