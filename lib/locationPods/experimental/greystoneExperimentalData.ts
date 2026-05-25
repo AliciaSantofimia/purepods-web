@@ -34,35 +34,65 @@ export const GREYSTONE_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=3";
 
 const HERO_SUBTITLE_PARAGRAPHS = [
-  "A private glass cabin set high above the Greystone organic vineyard in the Waipara Valley, surrounded by rolling vines, open hills and wide views towards the Southern Alps.",
-  "Greystone is shaped by vineyard light, quiet horizons and the calm rhythm of North Canterbury wine country — a secluded retreat immersed in the landscape of the valley.",
+  "Greystone PurePod is a private off-grid glass cabin for two set high above Greystone Wines organic vineyard in Waipara Valley.",
+  "With the Teviotdale Hills behind and views across the valley towards the Southern Alps, it offers a secluded North Canterbury wine country escape.",
 ];
 
 export const GREYSTONE_FAQ_ITEMS: LocationFaqItem[] = [
   {
-    question: "How do I get to PurePod Greystone?",
+    question: "Where is Greystone PurePod?",
     answer:
-      "PurePod Greystone is less than an hour north of Christchurch, in the Waipara Valley. The final part of the journey is a short but steep walk uphill to the pod, so comfortable footwear and light luggage are recommended.",
+      "Greystone PurePod is set high above Greystone Wines organic vineyard in Waipara Valley, North Canterbury. It is less than one hour north of Christchurch, with the Teviotdale Hills behind and views across the valley towards the Southern Alps.",
   },
   {
-    question: "How long is the walk to the pod?",
+    question: "What makes Greystone PurePod unique?",
     answer:
-      "Arrival is part of the experience: a walk of about 10 minutes uphill leads to the pod.",
+      "Greystone PurePod is defined by its vineyard setting above Greystone Wines, one of Waipara’s organic wineries. The experience combines a private off-grid glass cabin for two with wine country views, rolling hills, vineyard light and a strong sense of place in North Canterbury.",
   },
   {
-    question: "What is the climate usually like?",
+    question: "Is Greystone PurePod suitable for two guests?",
     answer:
-      "Waipara has warm, dry summers and cooler winters. Evenings can be cool year-round, so layered clothing is recommended to adapt to changing temperatures.",
+      "Yes. Greystone PurePod is designed for two guests, making it well suited to couples or two adults looking for a private vineyard escape. The pod has a queen bed, self-contained facilities and a secluded setting above the Waipara Valley landscape.",
   },
   {
-    question: "How does food work at the pod?",
+    question: "What views can you see from Greystone PurePod?",
     answer:
-      "Your PurePod Greystone is fully equipped for a quiet, comfortable and self-contained stay. Inside you’ll find a curated selection of heat-and-eat gourmet meals, breakfast provisions, snacks, tea and coffee — wherever possible from local producers in the region. Meals are designed to be simple to prepare, so you spend less time cooking and more time enjoying the landscape, the changing light and the calm, whether in the pod or on the terrace with views over the vines. With no shops or restaurants nearby, everything is provided so your stay is easy, comfortable and worry-free.",
+      "From Greystone PurePod, guests can look across Greystone Wines organic vineyard, the Waipara Valley and the surrounding North Canterbury hills. The setting also opens towards the Southern Alps, with changing light across the vines, valley and hillside.",
   },
   {
-    question: "How many people can stay?",
+    question: "How far is Greystone PurePod from Christchurch?",
     answer:
-      "Designed for two, PurePod Greystone offers simple, comfortable accommodation: a space to rest, sleep and let the days pass slowly among vineyards and silence.",
+      "Greystone PurePod is less than one hour north of Christchurch by car. It sits in the Waipara wine region, making it a secluded off-grid stay that still feels naturally connected to a North Canterbury food and wine itinerary.",
+  },
+  {
+    question: "How long is the walk to Greystone PurePod?",
+    answer:
+      "The walk from the carpark to Greystone PurePod is approximately 700 metres and usually takes around 8–10 minutes. The route follows a vineyard and hillside setting, so sturdy footwear is recommended, especially after rain.",
+  },
+  {
+    question: "Is Greystone PurePod good for stargazing?",
+    answer:
+      "Yes. Greystone PurePod has a glass roof, telescope and star map for guests, making stargazing part of the experience. Its elevated rural position above Waipara Valley offers dark skies away from the light of larger towns.",
+  },
+  {
+    question: "What facilities are inside Greystone PurePod?",
+    answer:
+      "Greystone PurePod includes a queen bed, glass roof, three large glass sliding doors, kitchenette, gas hob, cooking equipment, fridge, bathroom, shower, heating, fresh drinking water, USB charging, books, games, telescope, star map, torch and picnic blankets.",
+  },
+  {
+    question: "Is Greystone PurePod off-grid?",
+    answer:
+      "Yes. Greystone PurePod is solar powered and designed as a private off-grid glass cabin. There is no Wi-Fi, TV or standard power plugs, helping guests slow down and connect with the vineyard, valley and surrounding North Canterbury landscape.",
+  },
+  {
+    question: "Can guests visit Greystone Wines during their stay?",
+    answer:
+      "Greystone PurePod is set above Greystone Wines organic vineyard, and the welcome guide notes that guests can stop at the Greystone Wines Cellar Door for a tasting or to purchase wine. Opening times and tasting availability should be checked directly with the winery before visiting.",
+  },
+  {
+    question: "What can guests do near Greystone PurePod?",
+    answer:
+      "Guests can relax at the pod, watch light move across the hills and valley, stargaze, read, play games or enjoy the vineyard setting. Nearby Waipara experiences include award-winning wineries, scenic walkways, local food producers, black truffles, olives, the Weka Pass Railway and outdoor art at Iron Ridge Quarry.",
   },
 ];
 
@@ -80,32 +110,32 @@ const greystonePodNarrative = {
   gallery: [
     {
       src: podMountainDaylight,
-      alt: "Greystone PurePod glass cabin exterior with mountain landscape in daylight, Waipara Valley, New Zealand",
+      alt: "Greystone PurePod glass cabin with Waipara Valley hills and Southern Alps outlook",
       position: "50% 52%",
     },
     {
       src: podExterior,
-      alt: "Greystone PurePod glass cabin exterior in Waipara Valley, New Zealand",
+      alt: "Greystone PurePod glass cabin exterior above the Waipara Valley vineyard landscape",
       position: "50% 70%",
     },
     {
       src: podGoldenHour,
-      alt: "Greystone PurePod glass cabin at golden hour, Waipara Valley, New Zealand",
+      alt: "Greystone PurePod glass cabin in golden hour light above Greystone Wines vineyard",
       position: "50% 55%",
     },
     {
       src: podBedroom,
-      alt: "Greystone PurePod glass cabin exterior at sunset, Waipara Valley, New Zealand",
+      alt: "Greystone PurePod glass cabin at sunset with views across Waipara Valley, New Zealand",
       position: "50% 58%",
     },
     {
       src: podSunsetDeck,
-      alt: "Greystone PurePod outdoor deck at sunset, Waipara Valley, New Zealand",
+      alt: "Sunset deck view at Greystone PurePod above Waipara wine country",
       position: "52% 56%",
     },
     {
       src: podAerial,
-      alt: "Greystone PurePod bedroom interior with Waipara Valley view through glass walls, New Zealand",
+      alt: "Bedroom inside Greystone PurePod with views across Waipara Valley, New Zealand",
       position: "50% 50%",
     },
   ],
@@ -122,11 +152,11 @@ const greystoneTravelBlock = {
       images: [
         {
           src: travelValley,
-          alt: "Waipara Valley countryside landscape in North Canterbury, New Zealand",
+          alt: "Waipara Valley countryside landscape near Greystone PurePod",
         },
         {
           src: travelFarm,
-          alt: "Countryside track through farming landscape, New Zealand",
+          alt: "Vineyard access road to Greystone PurePod through Waipara wine country",
         },
       ],
       body:
@@ -149,15 +179,15 @@ const greystoneTravelBlock = {
       images: [
         {
           src: travelFood,
-          alt: "Local produce and food basket at Greystone PurePod, New Zealand",
+          alt: "Local food basket at Greystone PurePod in Waipara Valley",
         },
         {
           src: travelDining,
-          alt: "Outdoor dinner with wine and vineyard views at Greystone PurePod, New Zealand",
+          alt: "Outdoor dinner with wine at Greystone PurePod overlooking Waipara Valley",
         },
       ],
       body:
-        "Your PurePod Greystone is fully equipped for a quiet, comfortable and self-contained stay. Inside you’ll find a curated selection of heat-and-eat gourmet meals, breakfast provisions, snacks, tea and coffee — wherever possible from local producers in the region. Meals are designed to be simple to prepare, so you spend less time cooking and more time enjoying the landscape, the changing light and the calm, whether in the pod or on the terrace with views over the vines. With no shops or restaurants nearby, everything is provided so your stay is easy, comfortable and worry-free.",
+        "Your Greystone PurePod is fully equipped for a quiet, comfortable and self-contained stay. Inside you’ll find a curated selection of heat-and-eat gourmet meals, breakfast provisions, snacks, tea and coffee — wherever possible from local producers in the region. Meals are designed to be simple to prepare, so you spend less time cooking and more time enjoying the landscape, the changing light and the calm, whether in the pod or on the terrace with views over the vines. With no shops or restaurants nearby, everything is provided so your stay is easy, comfortable and worry-free.",
     },
   ],
 };
@@ -172,9 +202,9 @@ const greystoneExperiencesBlock = {
       title: "Living the Vineyard — Greystone, Waipara",
       image: expWine,
       imageAlt:
-        "Greystone wine and dinner experience in Waipara Valley, New Zealand",
+        "Wine and dinner experience at Greystone PurePod in Waipara Valley",
       paragraphs: [
-        "PurePod Greystone sits within a working, award-winning vineyard, offering an immersive way to experience Waipara wine country. Surrounded by vines and raised above the valley, the stay is shaped by light, the seasons and the quiet rhythm of vineyard work.",
+        "Greystone PurePod sits within a working, award-winning vineyard, offering an immersive way to experience Waipara wine country. Surrounded by vines and raised above the valley, the stay is shaped by light, the seasons and the quiet rhythm of vineyard work.",
         "A setting where productive landscape and rural calm meet.",
       ],
       links: [
@@ -188,7 +218,7 @@ const greystoneExperiencesBlock = {
       title: "Iron Ridge Quarry Sculpture Park",
       image: expSculpture,
       imageAlt:
-        "Iron Ridge Quarry Sculpture Park landscape near Waipara Valley, New Zealand",
+        "Iron Ridge Quarry Sculpture Park landscape near Greystone PurePod in Waipara",
       paragraphs: [
         "An outdoor sculpture park set in a former limestone quarry, where contemporary art meets dramatic natural forms. Iron Ridge Quarry Sculpture Park offers a relaxed, evocative walk where art and landscape are experienced as one.",
         "Creativity, limestone and open horizon.",
@@ -204,7 +234,7 @@ const greystoneExperiencesBlock = {
       title: "Te Ara Paparārangi & Mt Cass",
       image: expTrail,
       imageAlt:
-        "Waipara Valley vineyard rows along walking trail in North Canterbury, New Zealand",
+        "Waipara vineyard walking trail near Greystone PurePod",
       paragraphs: [
         "Two distinct walks reveal the wine and limestone character of North Canterbury. Te Ara Paparārangi starts at Greystone Wines and winds through the vineyard landscape from within, while the Mt Cass Walkway climbs over limestone hills for wide views of the Waipara Valley and the Pacific.",
         "Trails among vines, hills and open panoramas.",
@@ -265,7 +295,7 @@ export const greystoneEditorialConfig: EditorialPodLocationConfig = {
   hero: {
     imageSrc: heroImage,
     imageAlt:
-      "Greystone PurePod glass cabin at night beneath the Milky Way in Waipara Valley, New Zealand",
+      "Greystone PurePod glass cabin under the Milky Way above Waipara Valley, New Zealand",
     title: "Greystone",
     subtitleParagraphs: HERO_SUBTITLE_PARAGRAPHS,
     imagePosition: "46% 56%",
@@ -274,7 +304,7 @@ export const greystoneEditorialConfig: EditorialPodLocationConfig = {
     heroNightOverlay: true,
     heroPhotoForwardComposition: true,
   },
-  podCarouselAriaLabel: "PurePod Greystone — photo gallery",
+  podCarouselAriaLabel: "Greystone PurePod — photo gallery",
   podNarrative: greystonePodNarrative,
   travelBlock: greystoneTravelBlock,
   experiencesCollapsible: {

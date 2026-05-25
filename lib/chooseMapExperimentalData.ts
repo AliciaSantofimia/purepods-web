@@ -201,7 +201,7 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     islandLine: "South Island",
     imageSrc:
       "/assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg",
-    imageAlt: "Greystone PurePod glass cabin exterior in Waipara",
+    imageAlt: "Greystone PurePod glass cabin exterior above the Waipara Valley vineyard landscape",
     lat: -43.08,
     lng: 172.76,
   },

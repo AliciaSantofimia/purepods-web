@@ -24,7 +24,7 @@ const HERO_SLIDES = [
   },
   {
     src: "/assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg",
-    alt: "",
+    alt: "Greystone PurePod glass cabin exterior above the Waipara Valley vineyard landscape",
   },
   {
     src: "/assets/img/atatu/atatu-purepod-glass-cabin-night-stars-new-zealand.jpg",
@@ -87,7 +87,7 @@ const LANDSCAPE_SLIDES = [
   },
   {
     src: "/assets/img/greystone/greystone-purepod-aerial-vineyard-landscape-waipara.jpg",
-    alt: "Greystone PurePod aerial view over Waipara vineyards",
+    alt: "Aerial view of Greystone PurePod above Greystone Wines vineyard in Waipara",
   },
   {
     src: "/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg",

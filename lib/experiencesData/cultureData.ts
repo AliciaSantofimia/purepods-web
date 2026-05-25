@@ -251,7 +251,7 @@ export const cultureMuseumsSlides: HikingSlide[] = [
     placeHref: "http://www.iceberg.co.nz/",
     description:
       "An immersive journey into the world of Antarctica, where you can experience icy storms, meet rescued penguins, and explore the extreme environment of the southern continent. Engaging, unexpected and unforgettable.",
-    ctas: [{ label: "Stay at Greystone, Waipara →", href: "/location/greystone" }],
+    ctas: [{ label: "Stay at Greystone, Waipara →", href: "/location/greystone/?from=culture" }],
   },
   {
     image: `${C}new-zealand-maritime-museum-auckland-viaduct-harbour-exterior-waterfront.png`,

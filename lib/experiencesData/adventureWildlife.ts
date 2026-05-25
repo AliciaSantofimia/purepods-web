@@ -162,7 +162,7 @@ export const adventureRestClosingSlides: AdventureRestClosingSlide[] = [
   },
   {
     src: "/assets/img/rest-stay-carousel/greystone-purepod-glass-doors-open-hills-view-north-canterbury-new-zealand.jpg",
-    alt: "Greystone PurePod with full-height glass doors folded open to rolling hills and farmland in North Canterbury",
+    alt: "Greystone PurePod glass doors open to North Canterbury hills and vineyard views",
     label: "Room to breathe",
     subline: "Cool evening air drifts in; the hills sit quiet beyond the frame.",
   },

@@ -185,7 +185,7 @@ export const journeyForestSlides: ForestSlide[] = [
     description:
       "A peaceful track through native greenery, perfect for slowing down and reconnecting with nature. An easy, immersive walk for those seeking calm and quiet.",
     ctaLabel: "Stay at Greystone, Waipara →",
-    ctaHref: "/location/greystone",
+    ctaHref: "/location/greystone/?from=journey",
   },
 ];
 
@@ -252,7 +252,7 @@ export const journeyHikingSlides: HikingSlide[] = [
     placeHref: "https://transwastecanterbury.co.nz/walkways/mt-cass-walkway-2/",
     description:
       "A scenic loop track climbing through farmland and limestone landscapes to panoramic views over the Waipara Valley, vineyards and coastline. A rewarding walk combining wide-open scenery and unique terrain.",
-    ctas: [{ label: "Stay at Greystone, Waipara →", href: "/location/greystone" }],
+    ctas: [{ label: "Stay at Greystone, Waipara →", href: "/location/greystone/?from=journey" }],
   },
 ];
 

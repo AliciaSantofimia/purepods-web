@@ -135,7 +135,7 @@ export const EXPLORE_POD_CARDS: ExplorePodCard[] = [
     islandLine: "South Island",
     imageSrc:
       "/assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg",
-    imageAlt: "Greystone PurePod glass cabin exterior in Waipara",
+    imageAlt: "Greystone PurePod glass cabin exterior above the Waipara Valley vineyard landscape",
   },
   {
     slug: "pohue",

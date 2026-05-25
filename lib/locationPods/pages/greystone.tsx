@@ -8,10 +8,10 @@ const OG_IMAGE_URL =
   "https://purepods.com/assets/img/greystone/greystone-purepod-milky-way-night-sky-retreat.jpg";
 
 const META_DESCRIPTION =
-  "PurePod Greystone: glass cabin for two above Greystone vineyard, Waipara Valley. ~10 min uphill walk. Under 1 hr from Christchurch. Wine country; self-contained.";
+  "Greystone PurePod is a private off-grid glass cabin for two above Greystone Wines organic vineyard in Waipara Valley, with vineyard views and Southern Alps outlooks.";
 
 const SEO_TITLE_ABSOLUTE =
-  "Greystone PurePod | Glass Cabin in Waipara Valley, New Zealand";
+  "Greystone PurePod | Vineyard Glass Cabin in Waipara Valley";
 
 function greystoneStructuredData() {
   const faqEntities = GREYSTONE_FAQ_ITEMS.map((item) => ({
@@ -47,7 +47,7 @@ function greystoneStructuredData() {
       {
         "@type": "LodgingBusiness",
         "@id": `${CANONICAL_URL}#lodging`,
-        name: "PurePod Greystone",
+        name: "Greystone PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
         address: {
@@ -59,7 +59,7 @@ function greystoneStructuredData() {
         amenityFeature: [
           {
             "@type": "LocationFeatureSpecification",
-            name: "Private glass cabin above a working vineyard",
+            name: "Private off-grid glass cabin above Greystone Wines organic vineyard",
             value: true,
           },
           {
@@ -97,7 +97,7 @@ export const podMetadata: Metadata = {
     images: [
       {
         url: OG_IMAGE_URL,
-        alt: "Greystone PurePod glass cabin at night beneath the Milky Way in Waipara Valley, New Zealand",
+        alt: "Greystone PurePod glass cabin above Greystone Wines organic vineyard in Waipara Valley, New Zealand",
       },
     ],
   },
