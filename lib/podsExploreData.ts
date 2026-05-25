@@ -145,7 +145,8 @@ export const EXPLORE_POD_CARDS: ExplorePodCard[] = [
     title: "Pōhue",
     islandLine: "South Island",
     imageSrc: "/assets/img/pohue/pohue-coastal-hills-cabin-view-new-zealand.jpg",
-    imageAlt: "Pōhue PurePod coastal hills cabin view",
+    imageAlt:
+      "Pōhue PurePod view across Banks Peninsula coastal hills and bay landscape",
   },
   {
     slug: "haurapa",

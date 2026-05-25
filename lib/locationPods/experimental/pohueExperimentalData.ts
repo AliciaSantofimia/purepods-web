@@ -38,35 +38,64 @@ export const POHUE_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=4";
 
 const HERO_SUBTITLE_PARAGRAPHS = [
-  "A private glass cabin set high above Port Levy on Banks Peninsula, surrounded by volcanic hills, native bush and wide coastal horizons.",
-  "Pōhue is shaped by sea air, changing light and the quiet openness of the peninsula — a secluded retreat immersed in the landscapes of the Canterbury coast.",
+  "Pōhue PurePod is a private off-grid glass cabin for two set high above historic Port Levy on Banks Peninsula. Surrounded by bay views, rocky outcrops, tussock-covered hills and sheep-dotted farmland, it offers a secluded coastal nature escape about one hour from Christchurch.",
 ];
 
 export const POHUE_FAQ_ITEMS: LocationFaqItem[] = [
   {
-    question: "How do I get to PurePod Pōhue?",
+    question: "Where is Pōhue PurePod?",
     answer:
-      "PurePod Pōhue is around 40 km from Christchurch (approximately one hour by car). The final access is on foot: a 1.2 km uphill walk, usually about 20–25 minutes.",
+      "Pōhue PurePod is set high above historic Port Levy on Banks Peninsula, about one hour from Christchurch. The pod sits within a rural sheep farm landscape with views across the bay, rocky outcrops and tussock-covered rolling hills.",
   },
   {
-    question: "How long is the walk to the pod?",
+    question: "What makes Pōhue PurePod unique?",
     answer:
-      "The track is about 1.2 km uphill and takes roughly 20–25 minutes. It is part of how the site stays private and quiet.",
+      "Pōhue PurePod is defined by its elevated Banks Peninsula setting above Port Levy. The experience combines a private off-grid glass cabin for two with bay views, rocky coastal outcrops, tussock hills, sheep-dotted farmland and a strong sense of coastal seclusion.",
   },
   {
-    question: "What is the weather usually like at Pōhue?",
+    question: "Is Pōhue PurePod suitable for two guests?",
     answer:
-      "Banks Peninsula conditions can change quickly. Evenings are often cooler and coastal winds are common; layered clothing is recommended year-round.",
+      "Yes. Pōhue PurePod is designed for two guests, making it well suited to couples or two adults looking for a private nature escape near Christchurch. The pod has a queen bed, self-contained facilities and a secluded setting above the Port Levy landscape.",
   },
   {
-    question: "How does food work at the pod?",
+    question: "What views can you see from Pōhue PurePod?",
     answer:
-      "You may bring your own supplies or pre-order a breakfast and dinner hamper when you book. Meals are intended to be enjoyed slowly at the pod with views over Port Levy.",
+      "From Pōhue PurePod, guests can take in views of Port Levy, the surrounding bay, rocky outcrops and tussock-covered rolling hills. The glass design keeps the Banks Peninsula landscape close from the bed, deck, kitchen and living space.",
   },
   {
-    question: "How many people can stay?",
+    question: "How far is Pōhue PurePod from Christchurch?",
     answer:
-      "PurePod Pōhue is designed for two guests. There are no shared spaces with other visitors.",
+      "Pōhue PurePod is about one hour from Christchurch by car. The journey follows Banks Peninsula roads towards Purau and Port Levy, giving guests a secluded coastal escape that still feels close enough for a short South Island getaway.",
+  },
+  {
+    question: "How long is the walk to Pōhue PurePod?",
+    answer:
+      "The main walk from the carpark to Pōhue PurePod is approximately 1.2 km and usually takes around 20–25 minutes. The track follows an old stock route through regenerating native bush and includes two stiles, so sturdy footwear is recommended.",
+  },
+  {
+    question: "Is there a wet weather track to Pōhue PurePod?",
+    answer:
+      "Yes. In wet weather there is an alternative walking track that is shorter, at around 700 metres, and usually takes about 15 minutes. It is slightly steeper and less scenic than the main track, so guests should still wear suitable footwear and take care.",
+  },
+  {
+    question: "Is Pōhue PurePod good for stargazing?",
+    answer:
+      "Yes. Pōhue PurePod has a glass roof, telescope and star map for guests, making stargazing part of the experience. Its remote rural setting above Port Levy has no phone signal and very little artificial light nearby.",
+  },
+  {
+    question: "What facilities are inside Pōhue PurePod?",
+    answer:
+      "Pōhue PurePod includes a queen bed, glass roof, three large glass sliding doors, kitchenette, gas hob, cooking equipment, fridge, bathroom, shower, heating, fresh drinking water, USB charging, books, games, telescope, star map, torch and picnic blankets.",
+  },
+  {
+    question: "Is Pōhue PurePod off-grid?",
+    answer:
+      "Yes. Pōhue PurePod is solar powered and designed as a private off-grid glass cabin. There is no Wi-Fi, TV, phone signal or standard power plugs, helping guests disconnect from everyday routines and reconnect with the Banks Peninsula landscape.",
+  },
+  {
+    question: "What can guests do near Pōhue PurePod?",
+    answer:
+      "Guests can relax at the pod, watch the light change across the hills and bay, listen to birdsong, stargaze, read, play games or enjoy the walking track. Nearby Banks Peninsula experiences include Port Levy, coastal walks, the historic jetty, Akaroa and wildlife or nature activities around the peninsula.",
   },
 ];
 
@@ -84,32 +113,32 @@ const pohuePodNarrative = {
   gallery: [
     {
       src: podKitchenMorning,
-      alt: "Morning light on the kitchen inside Pōhue PurePod with lakeside views through glass, Banks Peninsula, New Zealand",
+      alt: "Kitchen inside Pōhue PurePod with morning light over Port Levy bay",
       position: "50% 48%",
     },
     {
       src: podCoastalHills,
-      alt: "Pōhue PurePod interior with glass floor and panoramic mountain views, Banks Peninsula, New Zealand",
+      alt: "Interior of Pōhue PurePod with glass floor and views across Port Levy and Banks Peninsula",
       position: "50% 48%",
     },
     {
       src: podBedroom,
-      alt: "Bedroom in Pōhue PurePod with mountain landscape views through glass walls, Banks Peninsula, New Zealand",
+      alt: "Bedroom inside Pōhue PurePod with Banks Peninsula hill and bay views",
       position: "50% 52%",
     },
     {
       src: podGlassCabin,
-      alt: "Mountain and lake views from PurePod Pōhue on Banks Peninsula, New Zealand",
+      alt: "Port Levy bay and Banks Peninsula views from Pōhue PurePod",
       position: "50% 50%",
     },
     {
       src: podForestEdge,
-      alt: "Pōhue PurePod glass cabin set at the forest edge above Banks Peninsula, New Zealand",
+      alt: "Pōhue PurePod glass cabin beside regenerating native bush on Banks Peninsula",
       position: "50% 52%",
     },
     {
       src: podTwilight,
-      alt: "Pōhue PurePod glass cabin at twilight with lake view and Banks Peninsula hills, New Zealand",
+      alt: "Pōhue PurePod glass cabin at twilight with Port Levy bay views",
       position: "50% 48%",
     },
   ],
@@ -126,11 +155,11 @@ const pohueTravelBlock = {
       images: [
         {
           src: travelAccess,
-          alt: "Coastal access track and gate along the walk toward Pōhue PurePod on Banks Peninsula, New Zealand",
+          alt: "Access gate and coastal walking track to Pōhue PurePod on Banks Peninsula",
         },
         {
           src: travelWalkingTrack,
-          alt: "Pōhue PurePod glass cabin awaiting at the end of the arrival walk above Port Levy, New Zealand",
+          alt: "Walking track to Pōhue PurePod through Banks Peninsula coastal farmland",
         },
       ],
       body:
@@ -153,19 +182,19 @@ const pohueTravelBlock = {
       images: [
         {
           src: travelFood,
-          alt: "Local produce and hamper-style ingredients for meals at Pōhue PurePod on Banks Peninsula, New Zealand",
+          alt: "Local produce food basket at Pōhue PurePod on Banks Peninsula",
         },
         {
           src: travelCoffee,
-          alt: "Morning coffee with lakeside and hill views from Pōhue PurePod on Banks Peninsula, New Zealand",
+          alt: "Morning coffee at Pōhue PurePod with Port Levy hill views",
         },
         {
           src: travelView,
-          alt: "Coastal outlook over Port Levy from Pōhue PurePod for slow meals above Banks Peninsula, New Zealand",
+          alt: "Local produce breakfast hamper at Pōhue PurePod",
         },
         {
           src: travelBbq,
-          alt: "BBQ on the deck with hill-country and lake views at Pōhue PurePod on Banks Peninsula, New Zealand",
+          alt: "Barbecue at Pōhue PurePod with Port Levy hill country views",
         },
       ],
       body:
@@ -184,7 +213,7 @@ const pohueExperiencesBlock = {
       title: "Akaroa — The Heart of Banks Peninsula",
       image: expPenguins,
       imageAlt:
-        "Little blue penguin wildlife along the Banks Peninsula coast near Akaroa, New Zealand",
+        "Blue penguins wildlife experience near Pōhue PurePod on Banks Peninsula",
       imageObjectPosition: "50% 36%",
       paragraphs: [
         "Akaroa blends French heritage and harbour life with standout marine wildlife. From dolphin cruises to experiences like Ecoseaker and conservation-led encounters with little blue penguins, it offers a distinctive way to experience Banks Peninsula.",
@@ -209,7 +238,7 @@ const pohueExperiencesBlock = {
       title: "Te Ahu Pātiki / Mount Herbert — The Scale",
       image: expVolcanicHills,
       imageAlt:
-        "Volcanic coastal hills and ridgelines above Port Levy from Pōhue PurePod on Banks Peninsula, New Zealand",
+        "Pōhue PurePod view across Banks Peninsula coastal hills and bay landscape",
       paragraphs: [
         "Te Ahu Pātiki (Mount Herbert) offers Banks Peninsula's most powerful sense of scale. From the summit, you stand on the rim of two collapsed volcanoes, with sweeping views across the natural harbours.",
         "It's a rare perspective that reveals the peninsula's dramatic volcanic landscape.",
@@ -226,7 +255,7 @@ const pohueExperiencesBlock = {
       title: "Ohinetahi Gardens — The Aesthetic",
       image: expOhinetahi,
       imageAlt:
-        "Refined garden paths, stonework and sculpture at Ohinetahi above Governors Bay, Canterbury, New Zealand",
+        "Ōhinetahi garden on Banks Peninsula near Pōhue PurePod",
       paragraphs: [
         "Ohinetahi Gardens showcases Canterbury's refined, artistic side. One of the Southern Hemisphere's most significant gardens, it blends sculpture, stone architecture and exceptional landscape design.",
         "Set above Governors Bay, it offers an elegant mix of art, nature and harbour views.",
@@ -276,7 +305,7 @@ export const pohueEditorialConfig: EditorialPodLocationConfig = {
   hero: {
     imageSrc: heroImage,
     imageAlt:
-      "Pōhue PurePod glass cabin at sunset beside the lake on Banks Peninsula, New Zealand",
+      "Pōhue PurePod glass cabin at sunset above Port Levy on Banks Peninsula, New Zealand",
     title: "Pōhue",
     subtitleParagraphs: HERO_SUBTITLE_PARAGRAPHS,
     imagePosition: "46% 54%",
@@ -284,7 +313,7 @@ export const pohueEditorialConfig: EditorialPodLocationConfig = {
     imagePositionXl: "48% 48%",
     heroSunsetOverlay: true,
   },
-  podCarouselAriaLabel: "PurePod Pōhue — photo gallery",
+  podCarouselAriaLabel: "Pōhue PurePod — photo gallery",
   podNarrative: pohuePodNarrative,
   travelBlock: pohueTravelBlock,
   experiencesCollapsible: {

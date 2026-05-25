@@ -91,7 +91,7 @@ const LANDSCAPE_SLIDES = [
   },
   {
     src: "/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg",
-    alt: "Pōhue PurePod among coastal hills on Banks Peninsula",
+    alt: "Pōhue PurePod glass cabin above the coastal hills of Banks Peninsula",
   },
   {
     src: "/assets/img/haurapa/haurapa-purepod-glass-cabin-central-otago-landscape-new-zealand.jpg",

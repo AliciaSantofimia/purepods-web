@@ -91,7 +91,7 @@ export const cultureExperienceSlides: AdventureExperienceSlide[] = [
     title: "Akaroa Village",
     description:
       "A harbour village with French heritage, colonial cottages, waterfront cafés and a gentle pace that rewards unhurried wandering through streets layered with history.",
-    pods: [{ label: "Pōhue PurePod", href: "/location/pohue" }],
+    pods: [{ label: "Pōhue PurePod", href: "/location/pohue/?from=culture" }],
     distance: "Banks Peninsula village",
     timing: "best explored slowly",
     nearbyRegion: " — Banks Peninsula, South Island",
@@ -103,7 +103,7 @@ export const cultureExperienceSlides: AdventureExperienceSlide[] = [
     title: "Te Rūnanga o Koukourarata, Tūtehuarewa Marae",
     description:
       "A more intimate cultural connection on Banks Peninsula, centred on local iwi, community, identity and the marae as a place of storytelling and belonging.",
-    pods: [{ label: "Pōhue PurePod", href: "/location/pohue" }],
+    pods: [{ label: "Pōhue PurePod", href: "/location/pohue/?from=culture" }],
     distance: "Banks Peninsula cultural connection",
     timing: "confirm access before travelling",
     nearbyRegion: " — Banks Peninsula, South Island",
@@ -177,7 +177,7 @@ export const cultureMaoriSlides: ForestSlide[] = [
     description:
       "A more intimate and authentic cultural connection on Banks Peninsula. Engage with local iwi, learn about traditions, and experience the significance of the marae as a place of community, identity, and storytelling.",
     ctaLabel: "Stay at Pōhue, Banks Peninsula →",
-    ctaHref: "/location/pohue",
+    ctaHref: "/location/pohue/?from=culture",
   },
 ];
 
@@ -189,7 +189,7 @@ export const cultureHeritageSlides: HikingSlide[] = [
     placeHref: "https://maps.app.goo.gl/5BocPVTijT6WZvsQ8",
     description:
       "A charming seaside village with a distinct French heritage, where colonial cottages, waterfront cafés and quiet streets create a relaxed, old-world atmosphere. A place to slow down and soak in history by the sea.",
-    ctas: [{ label: "Stay at Pōhue, Banks Peninsula →", href: "/location/pohue" }],
+    ctas: [{ label: "Stay at Pōhue, Banks Peninsula →", href: "/location/pohue/?from=culture" }],
   },
   {
     image: `${C}cromwell-heritage-precinct-historic-town-central-otago-new-zealand.jpg`,
@@ -225,7 +225,7 @@ export const cultureHeritageSlides: HikingSlide[] = [
     placeHref: "https://ohinetahi.co.nz/",
     description:
       "A hidden cultural gem combining heritage architecture, sculpture gardens and sweeping coastal views. Thoughtful, artistic and deeply atmospheric.",
-    ctas: [{ label: "Stay at Pōhue, Banks Peninsula →", href: "/location/pohue" }],
+    ctas: [{ label: "Stay at Pōhue, Banks Peninsula →", href: "/location/pohue/?from=culture" }],
   },
   {
     image: `${C}athenree-homestead-hauraki-plains-bay-of-plenty-new-zealand-historic-house.jpg`,

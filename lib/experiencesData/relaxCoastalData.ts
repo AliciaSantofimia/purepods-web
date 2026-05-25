@@ -122,7 +122,7 @@ export const relaxExperienceSlides: AdventureExperienceSlide[] = [
     title: "Purau Bay Beach",
     description:
       "A sheltered Banks Peninsula beach with harbour views and a quieter coastal pace before returning to Pōhue.",
-    pods: [{ label: "Pōhue PurePod", href: "/location/pohue" }],
+    pods: [{ label: "Pōhue PurePod", href: "/location/pohue/?from=relax-coastal" }],
     distance: "Banks Peninsula beach",
     timing: "coastal day trip",
     nearbyRegion: " — Banks Peninsula, South Island",

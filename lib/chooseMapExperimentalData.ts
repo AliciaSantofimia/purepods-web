@@ -215,7 +215,7 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     imageSrc:
       "/assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg",
     imageAlt:
-      "Pōhue PurePod glass cabin on coastal hills above Banks Peninsula, New Zealand",
+      "Pōhue PurePod glass cabin above the coastal hills of Banks Peninsula",
     imagePosition: "36% 52%",
     lat: -43.733,
     lng: 172.866,

@@ -8,10 +8,10 @@ const OG_IMAGE_URL =
   "https://purepods.com/assets/img/pohue/pohue-purepod-glass-cabin-port-levy-bay-sunset-new-zealand.jpg";
 
 const META_DESCRIPTION =
-  "PurePod Pōhue: glass cabin for two above Port Levy, Banks Peninsula. Access: 1.2 km uphill walk, 20–25 min. Harbour views; private; no shared spaces.";
+  "Pōhue PurePod is a private off-grid glass cabin for two high above Port Levy on Banks Peninsula, with bay views, rocky outcrops and tussock hills.";
 
 const SEO_TITLE_ABSOLUTE =
-  "Pōhue PurePod | Glass Cabin Above Port Levy, Banks Peninsula, New Zealand";
+  "Pōhue PurePod | Glass Cabin above Port Levy, Banks Peninsula";
 
 function pohueStructuredData() {
   const faqEntities = POHUE_FAQ_ITEMS.map((item) => ({
@@ -47,7 +47,7 @@ function pohueStructuredData() {
       {
         "@type": "LodgingBusiness",
         "@id": `${CANONICAL_URL}#lodging`,
-        name: "PurePod Pōhue",
+        name: "Pōhue PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
         address: {
@@ -97,7 +97,7 @@ export const podMetadata: Metadata = {
     images: [
       {
         url: OG_IMAGE_URL,
-        alt: "Pōhue PurePod glass cabin at sunset beside the lake on Banks Peninsula, New Zealand",
+        alt: "Pōhue PurePod glass cabin above Port Levy on Banks Peninsula, New Zealand",
       },
     ],
   },
