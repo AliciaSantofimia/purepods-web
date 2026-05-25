@@ -2,26 +2,25 @@ import type { LocationFaqItem } from "@/components/location/LocationFaqSection";
 import type { EditorialPodLocationConfig } from "./editorialPodLocationTypes";
 
 const heroImage =
-  "/assets/img/pohue/pohue-purepod-lakeside-glass-cabin-sunset-retreat-new-zealand.jpg";
-/** Same URLs as legacy `encodeURIComponent(...)` — static ASCII so dev bundlers never misparse template + Unicode. */
+  "/assets/img/pohue/pohue-purepod-glass-cabin-port-levy-bay-sunset-new-zealand.jpg";
 const podCoastalHills =
-  "/assets/img/pohue/PurePod%20P%C5%8Dhue%20interior%20with%20glass%20floor%20and%20panoramic%20mountain%20views%20New%20Zealand.jpg";
+  "/assets/img/pohue/pohue-purepod-interior-glass-floor-port-levy-bay-views-new-zealand.jpg";
 const podBedroom =
-  "/assets/img/pohue/PurePod%20P%C5%8Dhue%20glass%20cabin%20bedroom%20with%20mountain%20landscape%20views%20New%20Zealand.jpg";
+  "/assets/img/pohue/pohue-purepod-bedroom-banks-peninsula-hill-views-new-zealand.jpg";
 const podGlassCabin =
-  "/assets/img/pohue/Mountain%20and%20lake%20views%20from%20PurePod%20P%C5%8Dhue%20location%20in%20Banks%20Peninsula%20New%20Zealand.jpg";
+  "/assets/img/pohue/pohue-purepod-port-levy-bay-banks-peninsula-views-new-zealand.jpg";
 const podTwilight =
-  "/assets/img/pohue/pohue-purepod-twilight-glass-cabin-lake-view-retreat.jpg";
+  "/assets/img/pohue/pohue-purepod-twilight-glass-cabin-port-levy-bay-view.jpg";
 const podForestEdge =
   "/assets/img/pohue/pohue-purepod-forest-edge-glass-cabin-retreat.jpg";
 const podKitchenMorning =
-  "/assets/img/pohue/pohue-purepod-lakeside-kitchen-view-morning-light.jpg";
+  "/assets/img/pohue/pohue-purepod-kitchen-port-levy-bay-morning-light.jpg";
 const expPenguins =
   "/assets/img/pohue/pohue-blue-penguins-wildlife-new-zealand.jpg";
 const expVolcanicHills =
   "/assets/img/pohue/pohue-coastal-hills-cabin-view-new-zealand.jpg";
 const expOhinetahi =
-  "/assets/img/pohue/pohue-greystone-gardens-north-canterbury-new-zealand.jpg";
+  "/assets/img/pohue/ohinetahi-garden-banks-peninsula-new-zealand.jpg";
 const travelAccess =
   "/assets/img/pohue/pohue-purepod-access-gate-coastal-track-new-zealand.jpeg";
 const travelWalkingTrack =
@@ -29,11 +28,11 @@ const travelWalkingTrack =
 const travelFood =
   "/assets/img/pohue/pohue-local-produce-food-basket-new-zealand.jpg";
 const travelView =
-  "/assets/img/pohue/Local%20produce%20breakfast%20hamper%20at%20PurePod%20P%C5%8Dhue.jpg";
+  "/assets/img/pohue/pohue-purepod-local-produce-breakfast-hamper.jpg";
 const travelCoffee =
-  "/assets/img/pohue/pohue-purepod-morning-coffee-lakeside-hills-new-zealand.jpg";
+  "/assets/img/pohue/pohue-purepod-morning-coffee-port-levy-hills-new-zealand.jpg";
 const travelBbq =
-  "/assets/img/pohue/pohue-purepod-bbq-lakeside-hill-country-view-new-zealand.jpg";
+  "/assets/img/pohue/pohue-purepod-bbq-port-levy-hill-country-view-new-zealand.jpg";
 
 export const POHUE_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=4";
