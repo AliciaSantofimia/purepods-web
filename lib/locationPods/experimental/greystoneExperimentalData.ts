@@ -24,7 +24,7 @@ const expTrail =
 const travelValley =
   "/assets/img/greystone/waipara-valley-countryside-landscape.jpg";
 const travelFarm =
-  "/assets/img/greystone/kaikoura-sheep-farm-track-countryside-landscape-new-zealand.jpg";
+  "/assets/img/greystone/greystone-vineyard-access-road-waipara-new-zealand.jpg";
 const travelFood =
   "/assets/img/greystone/greystone-local-food-basket-new-zealand.jpg";
 const travelDining =
