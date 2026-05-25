@@ -30,7 +30,7 @@ const REL_PATHS = [
   "assets/img/kokomea/kokomea-purepod-aerial-countryside-landscape-kapiti-coast.jpg",
   "assets/img/manakau/manakau-purepod-glass-cabin-hills-landscape-kaikoura.jpg",
   "assets/img/kahutara/kahutara-purepod-glass-cabin-mountain-landscape-kaikoura.jpg",
-  "assets/img/kiromako/kiromako-purepod-aerial-coastal-landscape-new-zealand.jpg",
+  "assets/img/korimako/korimako-purepod-aerial-native-bush-coastal-landscape-new-zealand.jpg",
   "assets/img/greystone/greystone-purepod-aerial-vineyard-landscape-waipara.jpg",
   "assets/img/pohue/pohue-purepod-glass-cabin-coastal-hills-new-zealand.jpg",
   "assets/img/haurapa/haurapa-purepod-glass-cabin-central-otago-landscape-new-zealand.jpg",

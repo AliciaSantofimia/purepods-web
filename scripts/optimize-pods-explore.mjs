@@ -23,7 +23,7 @@ const REL_PATHS = [
   "assets/img/manakau/manakau-purepod-glass-cabin-hills-landscape-kaikoura.jpg",
   "assets/img/kahutara/kahutara-purepod-glass-cabin-kaikoura-new-zealand.jpg",
   "assets/img/atatu/atatu-purepod-glass-cabin-bedroom-ocean-view-new-zealand.jpg",
-  "assets/img/kiromako/kiromako-purepod-forest-path-walking-trail-new-zealand.jpg",
+  "assets/img/korimako/korimako-purepod-native-bush-walking-track-new-zealand.jpg",
   "assets/img/greystone/greystone-purepod-glass-cabin-exterior-waipara.jpg",
   "assets/img/pohue/pohue-coastal-hills-cabin-view-new-zealand.jpg",
   "assets/img/haurapa/haurapa-purepod-glass-cabin-central-otago-landscape-new-zealand.jpg",

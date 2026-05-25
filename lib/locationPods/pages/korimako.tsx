@@ -5,7 +5,7 @@ import { KORIMAKO_FAQ_ITEMS } from "@/lib/locationPods/experimental/korimakoExpe
 
 const CANONICAL_URL = "https://purepods.com/location/korimako/";
 const OG_IMAGE_URL =
-  "https://purepods.com/assets/img/kiromako/kiromako-purepod-remote-glass-cabin-nature-new-zealand.jpg";
+  "https://purepods.com/assets/img/korimako/korimako-purepod-glass-cabin-native-bush-greta-valley-new-zealand.jpg";
 
 const META_DESCRIPTION =
   "PurePod Korimako: glass cabin for two in Hurunui, North Canterbury. Final access: 750 m walk (10–15 min) with steps. About 90 min north of Christchurch; open views and privacy.";

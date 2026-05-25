@@ -183,7 +183,7 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     title: "Korimako",
     islandLine: "South Island",
     imageSrc:
-      "/assets/img/kiromako/korimako-purepod-glass-cabin-native-forest-aerial-new-zealand.jpg",
+      "/assets/img/korimako/korimako-purepod-glass-cabin-native-forest-aerial-new-zealand.jpg",
     imageAlt:
       "Aerial view of Korimako PurePod glass cabin nestled in native forest, Hurunui, New Zealand",
     imagePosition: "50% 48%",

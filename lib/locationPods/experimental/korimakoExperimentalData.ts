@@ -2,35 +2,35 @@ import type { LocationFaqItem } from "@/components/location/LocationFaqSection";
 import type { EditorialPodLocationConfig } from "./editorialPodLocationTypes";
 
 const heroImage =
-  "/assets/img/kiromako/kiromako-purepod-remote-glass-cabin-nature-new-zealand.jpg";
+  "/assets/img/korimako/korimako-purepod-glass-cabin-native-bush-greta-valley-new-zealand.jpg";
 const podAerial =
-  "/assets/img/kiromako/korimako-purepod-glass-cabin-exterior-coastal-view-new-zealand.jpg";
+  "/assets/img/korimako/korimako-purepod-glass-cabin-exterior-coastal-view-new-zealand.jpg";
 const podShower =
-  "/assets/img/kiromako/korimako-purepod-glass-cabin-aerial-top-view-solar-panels-new-zealand.jpg";
+  "/assets/img/korimako/korimako-purepod-glass-cabin-aerial-solar-panels-native-bush-new-zealand.jpg";
 const podBed =
-  "/assets/img/kiromako/kiromako-purepod-glass-cabin-interior-bed-new-zealand.jpg";
+  "/assets/img/korimako/korimako-purepod-glass-cabin-interior-bed-new-zealand.jpg";
 const podNativeGrass =
   "/assets/img/korimako/korimako-purepod-hidden-glass-cabin-in-native-grass.jpg";
 const podCoastalLight =
   "/assets/img/korimako/korimako-purepod-glass-cabin-coastal-light-exterior.jpg";
 const expGully =
-  "/assets/img/kiromako/kiromako-experience-cathedral-gully-coastal-landscape-new-zealand.jpg";
+  "/assets/img/korimako/korimako-experience-cathedral-gully-coastal-landscape-new-zealand.jpg";
 const expWine =
-  "/assets/img/kiromako/kiromako-experience-waipara-valley-wine-tasting-new-zealand.jpg";
+  "/assets/img/korimako/korimako-experience-waipara-valley-wine-tasting-new-zealand.jpg";
 const expCoast =
-  "/assets/img/kiromako/kiromako-experience-waipara-coast-cliffs-beach-new-zealand.jpg";
+  "/assets/img/korimako/korimako-experience-waipara-coast-cliffs-beach-new-zealand.jpg";
 const travelPath =
-  "/assets/img/kiromako/kiromako-purepod-walking-path-arrival-new-zealand.jpg";
+  "/assets/img/korimako/korimako-purepod-walking-path-arrival-new-zealand.jpg";
 const travelForest =
-  "/assets/img/kiromako/kiromako-purepod-forest-path-walking-trail-new-zealand.jpg";
+  "/assets/img/korimako/korimako-purepod-native-bush-walking-track-new-zealand.jpg";
 const travelDining =
-  "/assets/img/kiromako/kiromako-purepod-local-produce-dining-experience-new-zealand.jpg";
+  "/assets/img/korimako/korimako-purepod-local-produce-dining-experience-new-zealand.jpg";
 const travelDinner =
-  "/assets/img/kiromako/kiromako-purepod-local-dinner-meal-new-zealand.jpg";
+  "/assets/img/korimako/korimako-purepod-local-dinner-meal-new-zealand.jpg";
 const travelBreakfast =
-  "/assets/img/kiromako/korimako-purepod-homemade-breakfast-jars-outdoors.jpg";
+  "/assets/img/korimako/korimako-purepod-homemade-breakfast-jars-outdoors.jpg";
 const travelBbq =
-  "/assets/img/kiromako/korimako-purepod-private-bbq-dining-experience.jpg";
+  "/assets/img/korimako/korimako-purepod-private-bbq-dining-experience.jpg";
 
 export const KORIMAKO_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=6";

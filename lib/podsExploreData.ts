@@ -15,7 +15,7 @@ export type ExplorePodCard = {
 
 /**
  * Pod grid for `/pods` — order and copy from `reference-html/explore.html`.
- * Images use the same asset paths as the reference (including `kiromako` folder where used).
+ * Images use the same asset paths as the reference.
  */
 export const EXPLORE_POD_CARDS: ExplorePodCard[] = [
   {
@@ -123,7 +123,7 @@ export const EXPLORE_POD_CARDS: ExplorePodCard[] = [
     title: "Korimako",
     islandLine: "South Island",
     imageSrc:
-      "/assets/img/kiromako/kiromako-purepod-forest-path-walking-trail-new-zealand.jpg",
+      "/assets/img/korimako/korimako-purepod-native-bush-walking-track-new-zealand.jpg",
     imageAlt: "Korimako PurePod forest path walking trail",
   },
   {

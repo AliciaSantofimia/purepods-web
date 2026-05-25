@@ -82,7 +82,7 @@ const LANDSCAPE_SLIDES = [
     alt: "Atatū PurePod on a Hurunui hilltop",
   },
   {
-    src: "/assets/img/kiromako/kiromako-purepod-aerial-coastal-landscape-new-zealand.jpg",
+    src: "/assets/img/korimako/korimako-purepod-aerial-native-bush-coastal-landscape-new-zealand.jpg",
     alt: "Korimako PurePod aerial coastal view near Hurunui",
   },
   {
