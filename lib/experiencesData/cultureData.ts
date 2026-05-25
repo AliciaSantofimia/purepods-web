@@ -275,8 +275,8 @@ export const cultureMuseumsSlides: HikingSlide[] = [
     description:
       "A small but rich museum telling the story of Kaikōura’s relationship with the ocean, from whaling history to modern conservation. Personal, local and deeply connected to place.",
     ctas: [
-      { label: "Stay at Kahutara →", href: "/location/kahutara" },
-      { label: "Stay at Manakau →", href: "/location/manakau" },
+      { label: "Stay at Kahutara →", href: "/location/kahutara/?from=culture" },
+      { label: "Stay at Manakau →", href: "/location/manakau/?from=culture" },
     ],
   },
   {
@@ -287,8 +287,8 @@ export const cultureMuseumsSlides: HikingSlide[] = [
     description:
       "Set right on the coastline, this historic house built on whale bone foundations offers a unique glimpse into early life in Kaikōura. Raw, coastal and full of character.",
     ctas: [
-      { label: "Stay at Kahutara →", href: "/location/kahutara" },
-      { label: "Stay at Manakau →", href: "/location/manakau" },
+      { label: "Stay at Kahutara →", href: "/location/kahutara/?from=culture" },
+      { label: "Stay at Manakau →", href: "/location/manakau/?from=culture" },
     ],
   },
 ];

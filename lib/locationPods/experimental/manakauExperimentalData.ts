@@ -37,36 +37,66 @@ export const MANAKAU_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=2";
 
 const HERO_PARAGRAPH_1 =
-  "A private glass cabin set within an isolated sheep station inland from Kaikōura, surrounded by open hills and wide views towards the Seaward Kaikōura Range.";
+  "Manakau PurePod is a private off-grid glass cabin for two on an isolated sheep station inland from Kaikōura.";
 
 const HERO_PARAGRAPH_2 =
-  "Manakau is shaped by mountain light, vast skies and the quiet rhythm of the countryside — a remote retreat where farmland, bush and coastline meet.";
+  "Set among open hills, paddocks and kānuka and mānuka bush, it looks toward Mt Manakau and the Seaward Kaikōura Range for a quiet South Island escape.";
 
 export const MANAKAU_FAQ_ITEMS: LocationFaqItem[] = [
   {
-    question: "How do I get to PurePod Manakau?",
+    question: "Where is Manakau PurePod?",
     answer:
-      "Reaching PurePod Manakau is part of the experience. The drive from Christchurch to the Kaikōura region is one of the South Island’s most scenic — coastal road, mountain views and the sense of leaving the everyday behind. The final approach to the pod is via quiet roads and a short walk. Suitable footwear is recommended.",
+      "Manakau PurePod is set on an isolated sheep station about 20 minutes inland from Kaikōura, in the South Island of New Zealand. The pod looks toward Mt Manakau and the Seaward Kaikōura Range, with open hills, paddocks and native bush shaping the surrounding landscape.",
   },
   {
-    question: "What is the walk to the pod like?",
+    question: "What makes Manakau PurePod unique?",
     answer:
-      "A short walk from the road brings you into your own private world — no neighbours, no distractions. Inside, the glass cabin brings the outside in: you sleep, eat and rest with the landscape always in view.",
+      "Manakau PurePod is defined by its wide rural outlook, views toward Mt Manakau and the Seaward Kaikōura Range, and its private off-grid setting. It offers a quiet glass cabin escape where farmland, mountains, big skies and native kānuka and mānuka bush create a strong sense of place.",
   },
   {
-    question: "What is the climate usually like?",
+    question: "Is Manakau PurePod suitable for two guests?",
     answer:
-      "Kaikōura has a temperate maritime climate. Days can be warm and clear; evenings are often cooler. The weather can change quickly with the mountains and ocean nearby. Layered clothing and a windproof layer are recommended so you can enjoy the outdoors in comfort.",
+      "Yes. Manakau PurePod is designed for two guests, making it well suited to couples or two adults looking for a private nature escape near Kaikōura. The pod has a queen bed, self-contained facilities and a secluded setting for an uninterrupted stay.",
   },
   {
-    question: "How does food work at the pod?",
+    question: "What views can you see from Manakau PurePod?",
     answer:
-      "Your PurePod is fully equipped for a relaxed, self-contained stay. Inside you will find a selection of meals ready to heat, breakfast provisions, snacks, tea and coffee — wherever possible from local producers. Meals are designed to be simple to prepare, so you spend less time in the kitchen and more time enjoying the views and the calm. As there are no shops or restaurants nearby, everything is provided so your stay is comfortable and worry-free.",
+      "From Manakau PurePod, guests can enjoy open views across the surrounding sheep station, paddocks, hills and the Seaward Kaikōura Range, including Mt Manakau. The glass design keeps the landscape close from the bed, deck, kitchen and living space.",
   },
   {
-    question: "How many people can stay, and how private is it?",
+    question: "How far is Manakau PurePod from Kaikōura?",
     answer:
-      "The pod is designed for two: a simple, comfortable base from which to watch the light change on the mountains, the stars at night and the quiet life of the coast. A short walk from the road brings you into your own private world — no neighbours, no distractions.",
+      "Manakau PurePod is around 20 minutes inland from Kaikōura by car. It is also about 2.5 hours north of Christchurch, making it a secluded South Island escape that still connects naturally with a wider Kaikōura itinerary.",
+  },
+  {
+    question: "How long is the walk to Manakau PurePod?",
+    answer:
+      "The walk from the carpark to Manakau PurePod is approximately 850 metres and usually takes around 10–15 minutes. The track leads through paddocks and kānuka and mānuka bush, so sturdy footwear is recommended, especially after rain.",
+  },
+  {
+    question: "Is Manakau PurePod good for stargazing?",
+    answer:
+      "Yes. Manakau PurePod is an excellent stargazing escape, with a glass roof, telescope and star map provided inside the pod. Its rural position near Kaikōura, an International Dark Sky Sanctuary, gives guests the chance to experience dark skies with very little artificial light.",
+  },
+  {
+    question: "What facilities are inside Manakau PurePod?",
+    answer:
+      "Manakau PurePod includes a queen bed, glass roof, three large glass sliding doors, kitchenette, gas hob, cooking equipment, fridge, bathroom, shower, heating, fresh drinking water, USB charging, books, games, telescope, star map, torch and picnic blankets.",
+  },
+  {
+    question: "Is Manakau PurePod off-grid?",
+    answer:
+      "Yes. Manakau PurePod is solar powered and designed as a private off-grid glass cabin. There is no Wi-Fi, TV or standard power plugs, helping guests disconnect from everyday routines and reconnect with the surrounding Kaikōura landscape.",
+  },
+  {
+    question: "What should guests bring for the walk-in?",
+    answer:
+      "Guests should bring sturdy footwear, weather-appropriate clothing and only the overnight luggage they need for the stay. The walk is short but rural, and the guide recommends arriving before dark because there is no lighting on the nature walk to the pod.",
+  },
+  {
+    question: "What can guests do near Manakau PurePod?",
+    answer:
+      "Guests can slow down at the pod, watch the light change across the hills, stargaze, listen to birdsong, read, play games or walk nearby for wider views. In the Kaikōura region, guests can explore whale watching, dolphin and seabird experiences, coastal walks, horse trekking, wilderness walks and local food experiences.",
   },
 ];
 
@@ -83,7 +113,7 @@ const manakauPodNarrative = {
   gallery: [
     {
       src: podHillsLandscape,
-      alt: "Manakau PurePod glass cabin in the Kaikōura hills landscape, New Zealand",
+      alt: "Manakau PurePod glass cabin among open hills inland from Kaikōura, New Zealand",
       position: "50% 55%",
     },
     {
@@ -98,7 +128,7 @@ const manakauPodNarrative = {
     },
     {
       src: podSeawardMountains,
-      alt: "View through glass toward the Seaward Kaikōura Range from Manakau PurePod",
+      alt: "View through glass from Manakau PurePod toward Mt Manakau and the Seaward Kaikōura Range",
       position: "50% 55%",
     },
     {
@@ -125,11 +155,11 @@ const manakauTravelBlock = {
       images: [
         {
           src: travelFarm,
-          alt: "Countryside and farm entrance in the Kaikōura region, New Zealand",
+          alt: "Rural sheep station entrance on the journey to Manakau PurePod near Kaikōura",
         },
         {
           src: travelValley,
-          alt: "River valley landscape in the Kaikōura region, New Zealand",
+          alt: "River valley and open hills on the journey to Manakau PurePod in the Kaikōura region",
         },
       ],
       body: `Reaching Manakau feels like travelling deeper into the Kaikōura backcountry.
@@ -189,7 +219,7 @@ const manakauExperiencesBlock = {
         "Sperm whale tail diving in the ocean during whale watching in Kaikōura, New Zealand",
       paragraphs: [
         "A unique opportunity to see whales both from the air and from the ocean, revealing the full scale and beauty of Kaikōura's marine landscape — where deep waters, dramatic mountains and open sea meet.",
-        "An iconic Kaikōura experience combining extraordinary marine wildlife, open horizons and the striking mountain range rising beside the ocean.",
+        "From Manakau, a wildlife day on the coast pairs with a quiet return inland to open hills, paddocks and the night sky above the sheep station.",
       ],
       links: [
         {
@@ -209,7 +239,7 @@ const manakauExperiencesBlock = {
         "Coastal cliffs along the Kaikōura Peninsula Walkway in New Zealand",
       paragraphs: [
         "A scenic coastal walk with open ocean views, rocky headlands and distant mountains — perfect for exploring at a relaxed pace while observing wildlife in its natural habitat, including New Zealand fur seals, seabirds and, at times, dolphins and whales offshore.",
-        "Staying at Manakau places you right in the heart of this wild coastal landscape.",
+        "Staying at Manakau places you within reach of this wild coastal landscape while keeping the pod experience private, rural and deeply connected to the Kaikōura backcountry.",
       ],
       links: [
         {
@@ -225,7 +255,7 @@ const manakauExperiencesBlock = {
         "New Zealand fur seal resting on rocks near the Kaikōura coast",
       paragraphs: [
         "An active and immersive way to explore the coastline — paddling alongside seals or swimming with them in their natural habitat for a truly close-to-nature experience.",
-        "A signature Kaikōura experience where wild coastline, marine wildlife and open ocean combine in a direct encounter with nature.",
+        "A signature Kaikōura experience to balance with the slower rural escape of Manakau PurePod, where the evening returns to mountains, farmland and stars.",
       ],
       links: [
         {
@@ -275,14 +305,14 @@ export const manakauEditorialConfig: EditorialPodLocationConfig = {
   hero: {
     imageSrc: heroImage,
     imageAlt:
-      "Manakau PurePod at sunrise over the Kaikōura mountains and farmland, New Zealand",
+      "Manakau PurePod glass cabin with views toward Mt Manakau and the Seaward Kaikōura Range, New Zealand",
     title: "Manakau",
     subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
     imagePosition: "50% 30%",
     imagePositionMd: "50% 32%",
     imagePositionXl: "50% 34%",
   },
-  podCarouselAriaLabel: "PurePod Manakau — photo gallery",
+  podCarouselAriaLabel: "Manakau PurePod — photo gallery",
   podNarrative: manakauPodNarrative,
   travelBlock: manakauTravelBlock,
   experiencesCollapsible: {

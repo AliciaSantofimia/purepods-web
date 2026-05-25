@@ -91,7 +91,7 @@ export const EXPLORE_POD_CARDS: ExplorePodCard[] = [
     islandLine: "South Island",
     imageSrc:
       "/assets/img/manakau/manakau-purepod-glass-cabin-hills-landscape-kaikoura.jpg",
-    imageAlt: "Manakau PurePod glass cabin in the Kaikōura hills",
+    imageAlt: "Manakau PurePod glass cabin among open hills inland from Kaikōura",
   },
   {
     slug: "kahutara",
@@ -101,7 +101,7 @@ export const EXPLORE_POD_CARDS: ExplorePodCard[] = [
     title: "Kahutara",
     islandLine: "South Island",
     imageSrc: "/assets/img/kahutara/kahutara-purepod-glass-cabin-kaikoura-new-zealand.jpg",
-    imageAlt: "Kahutara PurePod glass cabin near Kaikōura",
+    imageAlt: "Kahutara PurePod glass cabin above the river valley near Kaikōura",
     imagePosition: "center 80%",
   },
   {

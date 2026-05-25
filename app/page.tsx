@@ -71,11 +71,11 @@ const LANDSCAPE_SLIDES = [
   },
   {
     src: "/assets/img/manakau/manakau-purepod-glass-cabin-hills-landscape-kaikoura.jpg",
-    alt: "Manakau PurePod above Kaikōura hills",
+    alt: "Manakau PurePod glass cabin among open hills inland from Kaikōura",
   },
   {
     src: "/assets/img/kahutara/kahutara-purepod-glass-cabin-mountain-landscape-kaikoura.jpg",
-    alt: "Kahutara PurePod with Kaikōura mountain landscape",
+    alt: "Kahutara PurePod glass cabin in a Kaikōura river valley mountain landscape",
   },
   {
     src: "/assets/img/atatu/atatu-purepod-glass-cabin-hilltop-landscape-new-zealand.jpg",

@@ -33,36 +33,66 @@ export const KAHUTARA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=1";
 
 const HERO_PARAGRAPH_1 =
-  "A private glass cabin set high above the Kahutara River within an isolated sheep farm inland from Kaikōura.";
+  "Kahutara PurePod is a private off-grid glass cabin for two set high above the Kahutara River on an isolated sheep farm inland from Kaikōura.";
 
 const HERO_PARAGRAPH_2 =
-  "Surrounded by open hills, native bush and wide views towards the Seaward Kaikōura Range, Kahutara is a remote retreat shaped by mountain light, vast skies and deep rural stillness.";
+  "Surrounded by river valley, foothills and views to the Seaward Kaikōura Range, it offers a quiet South Island escape shaped by privacy, stargazing and open rural landscape.";
 
 export const KAHUTARA_FAQ_ITEMS: LocationFaqItem[] = [
   {
-    question: "How do I get to PurePod Kahutara?",
+    question: "Where is Kahutara PurePod?",
     answer:
-      "The final part of the journey is completed on foot. A short 10–15 minute walk leads you from the parking area to the pod, creating a sense of privacy and gentle disconnection from the outside world.",
+      "Kahutara PurePod is set high above the Kahutara River on an isolated sheep farm about 20 minutes inland from Kaikōura, in the South Island of New Zealand. Its setting combines river valley, foothills and views toward the Seaward Kaikōura Range.",
   },
   {
-    question: "How long is the walk from the car park?",
+    question: "What makes Kahutara PurePod unique?",
     answer:
-      "The walk from the parking area to the pod takes about 10–15 minutes.",
+      "Kahutara PurePod is shaped by its elevated position above the Kahutara River. The experience feels quiet, expansive and deeply connected to the river valley, with mountain views, rural farmland and the privacy of a secluded off-grid glass cabin.",
   },
   {
-    question: "What is the climate usually like?",
+    question: "Is Kahutara PurePod suitable for two guests?",
     answer:
-      "Kahutara sits on the exposed Kaikōura coast, where conditions can change quickly. Expect fresh air, coastal winds and cooler evenings throughout the year. Rain is part of the landscape and often adds even more atmosphere to the experience.",
+      "Yes. Kahutara PurePod is designed for two guests, making it ideal for couples or two adults seeking a private glass cabin escape near Kaikōura. The pod is self-contained, secluded and created for a peaceful stay immersed in nature.",
   },
   {
-    question: "How does food work at the pod?",
+    question: "What views can you see from Kahutara PurePod?",
     answer:
-      "Each PurePod is equipped with a gas cooktop, barbecue, small fridge and all the essential cookware — utensils, pots, plates and cutlery — to prepare simple meals during your stay. You will also find a selection of tea and coffee to enjoy at the pod. You are welcome to bring your own food or pre-book a PurePod locally sourced dinner and breakfast package, ready to prepare and enjoy at your own pace.",
+      "Kahutara PurePod looks across the Kahutara River landscape toward the Seaward Kaikōura Range. Its elevated setting gives guests a strong sense of river valley, foothills, open farmland and mountain scenery from inside the glass cabin and from the deck.",
   },
   {
-    question: "How many people can stay?",
+    question: "How far is Kahutara PurePod from Kaikōura?",
     answer:
-      "Inside, everything is designed for two: a warm and comfortable retreat from which to watch the wide sky, shifting light and open landscape, all from the privacy of your own hideaway in nature.",
+      "Kahutara PurePod is around 20 minutes inland from Kaikōura by car. It is also about 2.5 hours north of Christchurch, so guests can combine a secluded rural stay with time exploring the wider Kaikōura region.",
+  },
+  {
+    question: "How long is the walk to Kahutara PurePod?",
+    answer:
+      "The walk from the carpark to Kahutara PurePod is approximately 950 metres and usually takes around 10–15 minutes. The track follows a rural bush setting, so good shoes or boots are recommended, particularly in wet weather.",
+  },
+  {
+    question: "Is Kahutara PurePod good for stargazing?",
+    answer:
+      "Yes. Kahutara PurePod is very well suited to stargazing, with a glass roof, telescope and star map provided for guests. Its rural setting near Kaikōura, an International Dark Sky Sanctuary, makes the night sky a memorable part of the stay.",
+  },
+  {
+    question: "What facilities are inside Kahutara PurePod?",
+    answer:
+      "Kahutara PurePod includes a queen bed, glass roof, three large glass sliding doors, kitchenette, gas hob, cooking equipment, fridge, bathroom, shower, heating, fresh drinking water, USB charging, books, games, telescope, star map, torch and picnic blankets.",
+  },
+  {
+    question: "Is Kahutara PurePod off-grid?",
+    answer:
+      "Yes. Kahutara PurePod is solar powered and designed as a private off-grid glass cabin. There is no Wi-Fi, TV or standard power plugs, creating a calm, low-distraction stay above the Kahutara River landscape.",
+  },
+  {
+    question: "What should guests bring for the walk-in?",
+    answer:
+      "Guests should bring sturdy footwear, suitable outdoor clothing and only the overnight luggage they need. The guide recommends arriving before dark, as there is no lighting on the nature walk from the carpark to the pod.",
+  },
+  {
+    question: "What can guests do near Kahutara PurePod?",
+    answer:
+      "Guests can relax at the pod, watch sunrise or sunset over the hills, listen to birdsong, stargaze, read, play games or explore the surrounding rural landscape. In the Kaikōura region, guests can also enjoy whale watching, dolphin and seabird experiences, guided walks, horse trekking, wine tasting and coastal activities.",
   },
 ];
 
@@ -70,16 +100,16 @@ const kahutaraPodNarrative = {
   title: "The Pod",
   hint: "The essentials, no fluff",
   paragraphs: [
-    "Set high above the Kahutara River within an isolated sheep farm inland from Kaikōura, Kahutara is surrounded by open hills, native bush and wide views towards the Seaward Kaikōura Range.",
-    "Designed for two, the pod sits quietly within a remote rural landscape shaped by mountain weather, birdsong and vast southern skies.",
-    "The final walk follows a bush track through paddocks and kānuka forest before opening onto the hills surrounding the pod. Inside, floor-to-ceiling glass keeps the mountains, changing light and surrounding landscape constantly in view.",
+    "Set high above the Kahutara River within an isolated sheep farm inland from Kaikōura, Kahutara looks across river valley, foothills and wide views towards the Seaward Kaikōura Range.",
+    "Designed for two, the pod sits quietly within an elevated rural landscape shaped by mountain weather, birdsong, flowing water below and vast southern skies.",
+    "The final walk follows a bush track through paddocks and kānuka forest before opening into the river valley setting around the pod. Inside, floor-to-ceiling glass keeps the range, changing light and surrounding landscape constantly in view.",
   ],
   galleryCaption:
-    "Kahutara is defined by mountain views, open countryside and deep rural stillness — a private glass retreat immersed in the Kaikōura landscape.",
+    "Kahutara is defined by river valley views, the Seaward Kaikōura Range and deep rural stillness — a private glass retreat immersed in the inland Kaikōura landscape.",
   gallery: [
     {
       src: podMountainValleyLandscape,
-      alt: "Kahutara PurePod glass cabin above the mountain valley near Kaikōura, New Zealand",
+      alt: "Kahutara PurePod glass cabin high above the river valley inland from Kaikōura, New Zealand",
       position: "50% 55%",
     },
     {
@@ -89,12 +119,12 @@ const kahutaraPodNarrative = {
     },
     {
       src: podRiverValleyView,
-      alt: "River valley view from Kahutara PurePod toward the Kaikōura ranges, New Zealand",
+      alt: "River valley view from Kahutara PurePod toward the Seaward Kaikōura Range, New Zealand",
       position: "50% 55%",
     },
     {
       src: podBedroom,
-      alt: "Bed inside Kahutara PurePod with panoramic view of the Kaikōura mountains, New Zealand",
+      alt: "Bed inside Kahutara PurePod with panoramic river valley and Kaikōura mountain views, New Zealand",
       position: "50% 58%",
     },
     {
@@ -104,7 +134,7 @@ const kahutaraPodNarrative = {
     },
     {
       src: podWarmWoodenBathroom,
-      alt: "Warm timber bathroom interior at Kahutara PurePod on the Kaikōura coast",
+      alt: "Warm timber bathroom interior at Kahutara PurePod inland from Kaikōura",
       position: "50% 52%",
     },
   ],
@@ -121,7 +151,7 @@ const kahutaraTravelBlock = {
       images: [
         {
           src: travelValley,
-          alt: "River valley landscape in the Kaikōura countryside, New Zealand",
+          alt: "Kahutara River valley landscape in the Kaikōura countryside, New Zealand",
         },
         {
           src: travelFarm,
@@ -129,17 +159,17 @@ const kahutaraTravelBlock = {
         },
       ],
       body:
-        "Reaching Kahutara feels remote in the best possible way. The final approach follows quiet rural roads through an isolated sheep station with wide views towards the Seaward Kaikōura Range. From the carpark, a 10–15 minute walk continues through paddocks and native bush before opening onto the hills surrounding the pod. The track is natural and uneven in places, so suitable walking footwear and light luggage are recommended.",
+        "Reaching Kahutara feels remote in the best possible way. The final approach follows quiet rural roads through an isolated sheep station with wide views towards the Seaward Kaikōura Range and the river valley below. From the carpark, an approximately 950 m, 10–15 minute walk continues through paddocks and native bush before opening into the elevated setting around the pod. The track is natural and uneven in places, so suitable walking footwear and light luggage are recommended.",
     },
     {
       key: "climate",
       variant: "editorial" as const,
       title: "The climate",
-      editorialEyebrow: "Kaikōura coast",
+      editorialEyebrow: "Inland from Kaikōura",
       editorialLead:
-        "An exposed coastal climate with fresh air, regular winds, and cooler evenings year-round.",
+        "Fresh air, cooler evenings and fast-changing conditions where river valley and mountain range meet.",
       body:
-        "Conditions can change quickly on the Kaikōura coast, so layers are recommended. Rain is part of the landscape and often adds to the atmosphere.",
+        "Conditions can change quickly in the inland Kaikōura foothills, so layers are recommended. Rain and shifting light are part of the landscape and often add to the atmosphere.",
     },
     {
       key: "food",
@@ -163,9 +193,9 @@ const kahutaraTravelBlock = {
 
 const kahutaraExperiencesBlock = {
   title: "Experiences that define Kahutara",
-  hint: "Mountains meeting the sea, marine wildlife and open horizons",
+  hint: "River valley stillness, mountain range views and Kaikōura wildlife within reach",
   intro:
-    "A curated selection of three experiences that capture the essence of this place — wild coastline, marine wildlife and dramatic landscapes.",
+    "A curated selection of three experiences that complement Kahutara's river valley setting — Kaikōura wildlife by day, then a private return inland to the foothills and night sky.",
   items: [
     {
       title: "Kaikōura Whale Experiences",
@@ -174,7 +204,7 @@ const kahutaraExperiencesBlock = {
         "Sperm whale tail diving in the ocean during whale watching in Kaikōura, New Zealand",
       paragraphs: [
         "A unique opportunity to see whales both from the air and from the ocean, revealing the full scale and beauty of Kaikōura's marine landscape — where deep waters, dramatic mountains and open sea meet.",
-        "An iconic Kaikōura experience combining extraordinary marine wildlife, open horizons and the striking mountain range rising beside the ocean.",
+        "After time on the water or in the air, Kahutara draws the day back inland to river valley quiet, elevated views and the Seaward Kaikōura Range.",
       ],
       links: [
         {
@@ -194,7 +224,7 @@ const kahutaraExperiencesBlock = {
         "Coastal cliffs along the Kaikōura Peninsula Walkway in New Zealand",
       paragraphs: [
         "A scenic coastal walk with open ocean views, rocky headlands and distant mountains — perfect for exploring at a relaxed pace while observing wildlife in its natural habitat, including New Zealand fur seals, seabirds and, at times, dolphins and whales offshore.",
-        "Staying at Kahutara places you right in the heart of this wild coastal landscape.",
+        "Staying at Kahutara keeps this wild coastal walk within reach while the pod itself remains an inland hideaway above the Kahutara River.",
       ],
       links: [
         {
@@ -210,7 +240,7 @@ const kahutaraExperiencesBlock = {
         "New Zealand fur seal resting on rocks near the Kaikōura coast",
       paragraphs: [
         "An active and immersive way to explore the coastline — paddling alongside seals or swimming with them in their natural habitat for a truly close-to-nature experience.",
-        "A signature Kaikōura experience where wild coastline, marine wildlife and open ocean combine in a direct encounter with nature.",
+        "It gives the stay a strong Kaikōura wildlife connection without changing Kahutara's quieter identity: river valley, foothills, privacy and stars.",
       ],
       links: [
         {
@@ -226,16 +256,16 @@ const kahutaraExperiencesBlock = {
   ],
   moreTitle: "More ways to explore Kaikōura",
   moreSubtitle:
-    "Beyond the pod, the coastline continues to unfold at a gentle pace.",
+    "Beyond the river valley, Kaikōura opens out slowly.",
   moreBody:
-    "Coastal walks and easy trails invite you to explore without hurry. Lookouts such as Ohau Point Lookout, Point Kean Viewpoint and Dolphin View Lookout offer wide horizons and ever-changing ocean views. The constant presence of the sea and marine wildlife accompanies every journey. Quiet hills and inland vineyards complete the feeling of space, stillness and open sky.",
+    "Coastal walks and easy trails invite you to explore without hurry, while inland roads return you to foothills, river valleys and broad rural views. Lookouts such as Ohau Point Lookout, Point Kean Viewpoint and Dolphin View Lookout offer wide horizons, then Kahutara brings the evening back to the Seaward Kaikōura Range, privacy and open sky.",
   moreRecommendations: [],
 };
 
 const kahutaraReviews = {
   title: "What guests say",
   hint: "From recent Kahutara stays",
-  intro: "Guest comments from the Kaikōura coast and mountain setting.",
+  intro: "Guest comments from Kahutara's inland Kaikōura river valley and mountain setting.",
   items: [
     {
       quote:
@@ -245,11 +275,11 @@ const kahutaraReviews = {
     {
       quote:
         "The walk in gave us the sense of arrival we wanted, and once there it felt completely private.",
-      author: "Coastal weekend",
+      author: "River valley weekend",
     },
     {
       quote:
-        "Being close to coastal wildlife experiences by day, then returning to quiet nights, made this stay memorable.",
+        "Being close to Kaikōura wildlife experiences by day, then returning inland to quiet nights, made this stay memorable.",
       author: "Recent stay",
     },
   ],
@@ -261,20 +291,20 @@ export const kahutaraEditorialConfig: EditorialPodLocationConfig = {
   hero: {
     imageSrc: heroImage,
     imageAlt:
-      "Kahutara PurePod glass cabin overlooking the Kaikōura mountains and river valley in New Zealand",
+      "Kahutara PurePod glass cabin above the Kahutara River with views to the Seaward Kaikōura Range, New Zealand",
     title: "Kahutara",
     subtitleParagraphs: [HERO_PARAGRAPH_1, HERO_PARAGRAPH_2],
     imagePosition: "30% 48%",
     imagePositionMd: "28% 46%",
     imagePositionXl: "26% 44%",
   },
-  podCarouselAriaLabel: "PurePod Kahutara — photo gallery",
+  podCarouselAriaLabel: "Kahutara PurePod — photo gallery",
   podNarrative: kahutaraPodNarrative,
   travelBlock: kahutaraTravelBlock,
   experiencesCollapsible: {
     summaryTitle: "Explore around Kahutara",
     summaryIntro:
-      "Whales, peninsula walks and the coast — when you feel like a day beyond the pod.",
+      "Whales, peninsula walks and Kaikōura wildlife — when you feel like a day beyond the river valley.",
   },
   experiencesBlock: kahutaraExperiencesBlock,
   reviews: kahutaraReviews,

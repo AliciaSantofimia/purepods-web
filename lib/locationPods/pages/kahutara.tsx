@@ -8,10 +8,10 @@ const OG_IMAGE_URL =
   "https://purepods.com/assets/img/kahutara/kahutara-purepod-sunrise-over-river-valley.jpg";
 
 const META_DESCRIPTION =
-  "PurePod Kahutara: remote glass cabin for two on the Kaikōura coast. Access: 10–15 min walk from parking. Coast, mountains and seclusion—no shared spaces.";
+  "Kahutara PurePod is a private off-grid glass cabin for two high above the Kahutara River, inland from Kaikōura, with views to the Seaward Kaikōura Range.";
 
 const SEO_TITLE_ABSOLUTE =
-  "Kahutara PurePod | Glass Cabin on the Kaikōura Coast, New Zealand";
+  "Kahutara PurePod | Glass Cabin above the Kahutara River near Kaikōura";
 
 function kahutaraStructuredData() {
   const faqEntities = KAHUTARA_FAQ_ITEMS.map((item) => ({
@@ -47,7 +47,7 @@ function kahutaraStructuredData() {
       {
         "@type": "LodgingBusiness",
         "@id": `${CANONICAL_URL}#lodging`,
-        name: "PurePod Kahutara",
+        name: "Kahutara PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
         address: {
@@ -59,7 +59,7 @@ function kahutaraStructuredData() {
         amenityFeature: [
           {
             "@type": "LocationFeatureSpecification",
-            name: "Private glass cabin with coastal and mountain outlook",
+            name: "Private off-grid glass cabin above the Kahutara River with views to the Seaward Kaikōura Range",
             value: true,
           },
           {
@@ -97,7 +97,7 @@ export const podMetadata: Metadata = {
     images: [
       {
         url: OG_IMAGE_URL,
-        alt: "Kahutara PurePod glass cabin overlooking the Kaikōura mountains and river valley in New Zealand",
+        alt: "Kahutara PurePod glass cabin above the Kahutara River with views to the Seaward Kaikōura Range, New Zealand",
       },
     ],
   },

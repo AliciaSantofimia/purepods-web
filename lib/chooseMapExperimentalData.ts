@@ -137,7 +137,7 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     islandLine: "South Island",
     imageSrc:
       "/assets/img/manakau/manakau-purepod-glass-cabin-hills-landscape-kaikoura.jpg",
-    imageAlt: "Manakau PurePod glass cabin in the Kaikōura hills",
+    imageAlt: "Manakau PurePod glass cabin among open hills inland from Kaikōura",
     lat: -42.45,
     lng: 173.55,
     mapLat: -42.375,
@@ -151,7 +151,7 @@ export const CHOOSE_MAP_EXPERIMENTAL_PODS: ChooseMapPod[] = [
     title: "Kahutara",
     islandLine: "South Island",
     imageSrc: "/assets/img/kahutara/kahutara-purepod-glass-cabin-kaikoura-new-zealand.jpg",
-    imageAlt: "Kahutara PurePod glass cabin near Kaikōura",
+    imageAlt: "Kahutara PurePod glass cabin above the river valley near Kaikōura",
     imagePosition: "center 80%",
     lat: -42.4,
     lng: 173.68,

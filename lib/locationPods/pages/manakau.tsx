@@ -8,10 +8,10 @@ const OG_IMAGE_URL =
   "https://purepods.com/assets/img/manakau/manakau-purepod-sunrise-over-mountain-landscape.jpg";
 
 const META_DESCRIPTION =
-  "PurePod Manakau: glass cabin for two in the Kaikōura region, Canterbury. Seaward mountains & Pacific; short walk-in, private site. Self-contained stay with local provisions.";
+  "Manakau PurePod is a private off-grid glass cabin for two on an isolated sheep station inland from Kaikōura, with views toward Mt Manakau.";
 
 const SEO_TITLE_ABSOLUTE =
-  "Manakau PurePod | Glass Cabin, Kaikōura, New Zealand";
+  "Manakau PurePod | Private Off-Grid Glass Cabin near Kaikōura";
 
 function manakauStructuredData() {
   const faqEntities = MANAKAU_FAQ_ITEMS.map((item) => ({
@@ -47,7 +47,7 @@ function manakauStructuredData() {
       {
         "@type": "LodgingBusiness",
         "@id": `${CANONICAL_URL}#lodging`,
-        name: "PurePod Manakau",
+        name: "Manakau PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
         address: {
@@ -59,7 +59,7 @@ function manakauStructuredData() {
         amenityFeature: [
           {
             "@type": "LocationFeatureSpecification",
-            name: "Private glass cabin with Seaward Kaikōura and ocean outlook",
+            name: "Private off-grid glass cabin with views toward Mt Manakau and the Seaward Kaikōura Range",
             value: true,
           },
           {
@@ -97,7 +97,7 @@ export const podMetadata: Metadata = {
     images: [
       {
         url: OG_IMAGE_URL,
-        alt: "Manakau PurePod at sunrise over the Kaikōura mountains and farmland, New Zealand",
+        alt: "Manakau PurePod glass cabin with views toward Mt Manakau and the Seaward Kaikōura Range, New Zealand",
       },
     ],
   },

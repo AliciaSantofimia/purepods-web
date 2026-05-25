@@ -85,13 +85,13 @@ export const journeyExperienceSlides: AdventureExperienceSlide[] = [
   },
   {
     image: `${J}kaikoura-peninsula-walkway-coastal-bay-new-zealand.jpg`,
-    alt: "Kaikoura Peninsula Walkway with coastal bay, turquoise ocean and grassy clifftop views in New Zealand",
+    alt: "Kaikōura Peninsula Walkway with coastal bay, turquoise ocean and grassy clifftop views in New Zealand",
     title: "Kaikōura Peninsula Walkway",
     description:
       "A coastal walkway shaped by sea cliffs, wildlife, mountain views and the distinctive meeting point of land and ocean.",
     pods: [
-      { label: "Kahutara PurePod", href: "/location/kahutara" },
-      { label: "Manakau PurePod", href: "/location/manakau" },
+      { label: "Kahutara PurePod", href: "/location/kahutara/?from=journey" },
+      { label: "Manakau PurePod", href: "/location/manakau/?from=journey" },
     ],
     distance: "Kaikōura coastal walk",
     timing: "short sections or longer loop",
