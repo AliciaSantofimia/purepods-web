@@ -81,32 +81,32 @@ const taimaPodNarrative = {
   gallery: [
     {
       src: podExterior,
-      alt: "Tāima PurePod glass cabin exterior set in the Central Otago high country near Cromwell, New Zealand",
+      alt: "Bedroom inside Tāima PurePod with Central Otago mountain views near Cromwell",
       position: "50% 50%",
     },
     {
       src: podInteriorOpenDeck,
-      alt: "Glass cabin interior looking toward the open deck at Tāima PurePod, Central Otago, New Zealand",
+      alt: "Interior of Tāima PurePod opening to a private deck and rocky Central Otago terrain",
       position: "50% 52%",
     },
     {
       src: podKitchenPanorama,
-      alt: "Kitchen with panoramic mountain views inside Tāima PurePod, Central Otago, New Zealand",
+      alt: "Kitchen inside Tāima PurePod with rugged Central Otago mountain views near Cromwell",
       position: "50% 48%",
     },
     {
       src: podMilkyWay,
-      alt: "PurePod Tāima outdoor deck at sunset with mountain views and private seating, Central Otago, New Zealand",
+      alt: "Tāima PurePod private deck at sunset with Central Otago mountain views",
       position: "50% 52%",
     },
     {
       src: podOutdoorShower,
-      alt: "Outdoor shower with mountain views at Tāima PurePod in Central Otago, New Zealand",
+      alt: "Outdoor shower at Tāima PurePod with rugged Central Otago mountain views",
       position: "50% 50%",
     },
     {
       src: podEveningReflections,
-      alt: "Tāima PurePod at sunset with reflections in the glass, Central Otago, New Zealand",
+      alt: "Tāima PurePod at sunset with evening reflections and rocky Central Otago terrain",
       position: "50% 50%",
     },
   ],
@@ -123,11 +123,11 @@ const taimaTravelBlock = {
       images: [
         {
           src: travelJourneyLeft,
-          alt: "Clutha River and autumn tones in the Central Otago landscape near Cromwell, New Zealand",
+          alt: "Walking track to Tāima PurePod through rocky Central Otago terrain near Cromwell",
         },
         {
           src: travelJourneyRight,
-          alt: "Tāima PurePod in the Central Otago landscape, approached along the Kawarau Gorge near Cromwell, New Zealand",
+          alt: "Arrival walk to Tāima PurePod through rocky outcrops near Cromwell in Central Otago",
         },
       ],
       body:
@@ -150,15 +150,15 @@ const taimaTravelBlock = {
       images: [
         {
           src: travelMorningTea,
-          alt: "Morning tea with kettle and mountain views at Tāima PurePod in Central Otago, New Zealand",
+          alt: "Morning tea at Tāima PurePod with Central Otago mountain views",
         },
         {
           src: travelFood,
-          alt: "Local food platter ready to enjoy at Tāima PurePod in Central Otago, New Zealand",
+          alt: "Local food platter at Tāima PurePod in Central Otago",
         },
         {
           src: travelVineyard,
-          alt: "Tāima PurePod glass cabin with vineyard outlook — a setting for simple meals with wide views, Central Otago, New Zealand",
+          alt: "BBQ on the deck at Tāima PurePod with Central Otago high-country views",
         },
       ],
       body:
@@ -177,7 +177,7 @@ const taimaExperiencesBlock = {
       title: "Bannockburn Sluicings — Gold-Mining Landscapes",
       image: expSluicings,
       imageAlt:
-        "Rocky canyon and eroded landforms in Central Otago, echoing gold-era sculpted landscapes near Bannockburn, New Zealand",
+        "Bannockburn Sluicings rocky gold-mining landscape in Central Otago",
       paragraphs: [
         "This historic reserve reveals landscapes sculpted by Central Otago's gold-mining past. Eroded cliffs and exposed earth create a striking setting that connects directly with the region's geology and history.",
         "Why it's special: gold-mining heritage + sculpted landscapes + geology + history in the land.",
@@ -193,7 +193,7 @@ const taimaExperiencesBlock = {
       title: "Lake Dunstan Trail — Bannockburn Bridge",
       image: expLakeDunstan,
       imageAlt:
-        "Lake Dunstan Trail along the lakeshore with cliffs and open water in Central Otago, New Zealand",
+        "Lake Dunstan Trail beside Lake Dunstan with rugged Central Otago hills near Bannockburn",
       paragraphs: [
         "One of Central Otago's most scenic routes, following the lakeshore between rugged cliffs and open water. Starting near Bannockburn Bridge, the trail offers wide valley views and a strong sense of space, ideal for cycling or walking.",
         "Why it's special: lakeside trail + dramatic geology + cycling & walking + open landscapes.",
@@ -209,7 +209,7 @@ const taimaExperiencesBlock = {
       title: "Wine Tasting — Te Kano Estate or Mt Difficulty",
       image: expWine,
       imageAlt:
-        "Tāima PurePod with vineyard rows and rugged Central Otago hills near Bannockburn wine country, New Zealand",
+        "Te Kano Estate winery and vineyard in the Central Otago wine region",
       paragraphs: [
         "Bannockburn sits at the heart of one of the world's great cool-climate wine regions. A tasting at Te Kano Estate or Mt Difficulty offers the chance to experience Central Otago's celebrated Pinot Noir among vines and rugged hills.",
         "Why it's special: Central Otago wines + Pinot Noir + vineyard views + local flavour.",
@@ -261,14 +261,14 @@ export const taimaEditorialConfig: EditorialPodLocationConfig = {
   hero: {
     imageSrc: heroImage,
     imageAlt:
-      "Tāima PurePod glass cabin with vineyard views and Central Otago hills near Cromwell, New Zealand",
+      "Tāima PurePod glass cabin among rocky outcrops near Cromwell in Central Otago",
     title: "Tāima",
     subtitleParagraphs: HERO_SUBTITLE_PARAS,
     imagePosition: "50% 55%",
     imagePositionMd: "50% 55%",
     imagePositionXl: "50% 55%",
   },
-  podCarouselAriaLabel: "PurePod Tāima — photo gallery",
+  podCarouselAriaLabel: "Tāima PurePod — photo gallery",
   podNarrative: taimaPodNarrative,
   travelBlock: taimaTravelBlock,
   experiencesCollapsible: {
