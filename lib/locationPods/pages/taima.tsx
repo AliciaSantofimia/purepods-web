@@ -8,10 +8,10 @@ const OG_IMAGE_URL =
   "https://purepods.com/assets/img/taima/taima-purepod-glass-cabin-vineyard-view-central-otago.jpg";
 
 const META_DESCRIPTION =
-  "PurePod Tāima: private glass cabin for two above the Kawarau Gorge near Cromwell, Central Otago. Final walk: about 300 metres across gold-mining ground. Wide views, no shared spaces.";
+  "Tāima PurePod is a private off-grid glass cabin for two near Cromwell, Central Otago, with Kawarau Gorge views, rocky outcrops, Lake Dunstan and rugged mountain scenery.";
 
 const SEO_TITLE_ABSOLUTE =
-  "Tāima PurePod | Glass Cabin above the Kawarau Gorge, Central Otago, New Zealand";
+  "Tāima PurePod, Central Otago | Private Off-Grid Glass Cabin";
 
 function taimaStructuredData() {
   const faqEntities = TAIMA_FAQ_ITEMS.map((item) => ({
@@ -47,7 +47,7 @@ function taimaStructuredData() {
       {
         "@type": "LodgingBusiness",
         "@id": `${CANONICAL_URL}#lodging`,
-        name: "PurePod Tāima",
+        name: "Tāima PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
         address: {

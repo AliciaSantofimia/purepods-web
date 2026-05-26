@@ -36,35 +36,59 @@ export const TAIMA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=13";
 
 const HERO_SUBTITLE_PARAS = [
-  "A private glass cabin set high above the Kawarau Gorge, surrounded by dry hills, rocky valleys and expansive views across the Central Otago landscape.",
-  "Tāima is shaped by open skies, mountain light and the quiet scale of the high country — a secluded retreat immersed in the elevated landscapes above Cromwell.",
+  "Tāima PurePod is a private off-grid glass cabin for two near Cromwell, Central Otago, set above the Kawarau Gorge with rugged mountains, rocky outcrops, Lake Dunstan views and vast high-country skies.",
 ];
 
 export const TAIMA_FAQ_ITEMS: LocationFaqItem[] = [
   {
-    question: "How do I get to PurePod Tāima?",
+    question: "Is Tāima PurePod suitable for a romantic getaway?",
     answer:
-      "PurePod Tāima is located near Cromwell, around one hour from Queenstown following the Kawarau Gorge. The final section includes a short walk across historic gold-mining ground, where views begin to open.",
+      "Yes. Tāima PurePod is designed for two guests and suits couples looking for a private high-country nature escape near Cromwell, Central Otago. Set above the Kawarau Gorge with rocky outcrops, rugged mountains and Lake Dunstan nearby, it offers a secluded off-grid stay surrounded by dramatic Central Otago scenery.",
   },
   {
-    question: "How long is the walk from the car park?",
+    question: "How many guests can stay at Tāima PurePod?",
     answer:
-      "The final walk is about 300 metres and takes roughly five to ten minutes.",
+      "Tāima PurePod is designed for a maximum of two guests. Like all PurePods, it is created as a private glass cabin for two, making it best suited to couples or two adults seeking a quiet, secluded stay.",
   },
   {
-    question: "What is the climate usually like?",
+    question: "How private is Tāima PurePod?",
     answer:
-      "Central Otago experiences hot, dry summers and cold winters. Layers are recommended year-round.",
+      "Tāima PurePod is designed for privacy and seclusion. Guests are left undisturbed during their stay unless there is an emergency, and there is no daily servicing for multiple-night stays, so the experience remains quiet and uninterrupted.",
   },
   {
-    question: "How does food work at the pod?",
+    question: "What is the walk to Tāima PurePod like?",
     answer:
-      "You may bring your own food or pre-order a breakfast and dinner hamper when booking. Meals are designed to be simple and enjoyed at the pod with wide open views.",
+      "Tāima PurePod is reached by a 350m nature walk from the carpark, taking around 5–10 minutes. The track includes rocky terrain, so sturdy footwear and luggage that is easy to carry are recommended.",
   },
   {
-    question: "How many people can stay?",
+    question: "Is Tāima PurePod off-grid?",
     answer:
-      "Inside, everything is designed for two: a warm and comfortable retreat from which to watch the wide sky, shifting light and open landscape, all from the privacy of your own hideaway in nature.",
+      "Yes. Tāima PurePod is solar powered and designed as an off-grid stay. There is no WiFi, no TV and no standard power plugs, although a USB charging port and an emergency telephone are provided.",
+  },
+  {
+    question: "What should I bring for a stay at Tāima PurePod?",
+    answer:
+      "Bring sturdy walking shoes, layered clothing for Central Otago conditions and luggage that is easy to carry for the short walk from the carpark. Guests should also bring their favourite drinks, especially if ordering the food hamper.",
+  },
+  {
+    question: "How does the food hamper work at Tāima PurePod?",
+    answer:
+      "The food hamper is optional and can be pre-ordered. If selected, the dinner and breakfast package will be waiting at the PurePod on arrival. Guests should bring their favourite drinks.",
+  },
+  {
+    question: "What can you do near Tāima PurePod?",
+    answer:
+      "Tāima PurePod is near Cromwell and Lake Dunstan, with easy access to Central Otago experiences such as the Lake Dunstan Trail, Bannockburn Sluicings, local wineries, award-winning restaurants and the Clutha River Heritage Cruise.",
+  },
+  {
+    question: "What is the landscape around Tāima PurePod?",
+    answer:
+      "Tāima PurePod is set in Central Otago high country near Cromwell, with views towards the Kawarau Gorge, rugged mountains, rocky outcrops and Lake Dunstan landscapes. The experience is focused on dramatic mountain light, stargazing, rocky terrain and the wide open feel of Central Otago.",
+  },
+  {
+    question: "How far is Tāima PurePod from Queenstown and Wānaka?",
+    answer:
+      "Tāima PurePod is located near Cromwell in Central Otago, around one hour’s drive from Queenstown and Wānaka, depending on traffic and road conditions.",
   },
 ];
 
