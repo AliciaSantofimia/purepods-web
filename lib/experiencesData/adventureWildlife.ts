@@ -92,7 +92,10 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
         label: "Tokoeka PurePod on Rakiura Stewart Island",
         href: "/location/tokoeka/?from=adventure-wildlife",
       },
-      { label: "Hananui PurePod", href: "/location/hananui/?from=adventure-wildlife" },
+      {
+        label: "Hananui PurePod on Rakiura Stewart Island",
+        href: "/location/hananui/?from=adventure-wildlife",
+      },
     ],
     distance: "Weather dependent",
     timing: "best in calm conditions",

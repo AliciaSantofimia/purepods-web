@@ -130,7 +130,10 @@ export const journeyExperienceSlides: AdventureExperienceSlide[] = [
         label: "Tokoeka PurePod near Rakiura walks and island wildlife",
         href: "/location/tokoeka/?from=journey",
       },
-      { label: "Hananui PurePod", href: "/location/hananui" },
+      {
+        label: "Hananui PurePod near Rakiura walks and island wildlife",
+        href: "/location/hananui/?from=journey",
+      },
     ],
     distance: "Stewart Island / Rakiura",
     timing: "multi-day walk",
