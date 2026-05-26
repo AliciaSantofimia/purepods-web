@@ -81,32 +81,32 @@ const haurapaPodNarrative = {
   gallery: [
     {
       src: podSunlitDeck,
-      alt: "Sunlit deck outside Haurapa PurePod glass cabin in Central Otago high country, New Zealand",
+      alt: "Sunlit deck outside Haurapa PurePod in the Central Otago high country near Cromwell",
       position: "50% 52%",
     },
     {
       src: podInterior,
-      alt: "Interior view from Haurapa PurePod with bed, dining table and mountain landscape in Central Otago",
+      alt: "Interior of Haurapa PurePod with bed, dining table and Central Otago mountain views near Cromwell",
       position: "50% 70%",
     },
     {
       src: podExterior,
-      alt: "Haurapa PurePod exterior in Central Otago landscape, New Zealand",
+      alt: "Haurapa PurePod exterior above Cromwell in the Central Otago high-country landscape",
       position: "50% 55%",
     },
     {
       src: podMountainDeckBreakfast,
-      alt: "Breakfast on the mountain-view deck at Haurapa PurePod in Central Otago, New Zealand",
+      alt: "Breakfast on the deck at Haurapa PurePod with rocky Central Otago high-country views",
       position: "50% 54%",
     },
     {
       src: podBedroomSunset,
-      alt: "Glass cabin bedroom at Haurapa PurePod with sunset reflections in Central Otago",
+      alt: "Haurapa PurePod glass cabin bedroom with sunset reflections in Central Otago",
       position: "50% 70%",
     },
     {
       src: podTwilight,
-      alt: "Haurapa PurePod glass cabin at twilight with mountain views in Central Otago, New Zealand",
+      alt: "Haurapa PurePod glass cabin at twilight with Central Otago mountain views near Cromwell",
       position: "50% 48%",
     },
   ],
@@ -123,11 +123,11 @@ const haurapaTravelBlock = {
       images: [
         {
           src: journeyWalking,
-          alt: "Walking track to Haurapa PurePod arrival in Central Otago, New Zealand",
+          alt: "Walking track to Haurapa PurePod through rocky Central Otago high-country terrain",
         },
         {
           src: journeyTrack,
-          alt: "Haurapa PurePod access track through Central Otago high-country, New Zealand",
+          alt: "Haurapa PurePod access track above Cromwell with Lake Dunstan and Central Otago high-country views",
         },
       ],
       body:
@@ -150,15 +150,15 @@ const haurapaTravelBlock = {
       images: [
         {
           src: foodDining,
-          alt: "Outdoor dining with local produce at Haurapa PurePod, Central Otago, New Zealand",
+          alt: "Outdoor dining with local produce at Haurapa PurePod in Central Otago",
         },
         {
           src: foodHamper,
-          alt: "Food hamper lunch at Haurapa PurePod with local produce and mountain views in Central Otago, New Zealand",
+          alt: "Local produce food hamper at Haurapa PurePod with Central Otago mountain views",
         },
         {
           src: foodBbqSunset,
-          alt: "BBQ at sunset with mountain valley views from Haurapa PurePod in Central Otago, New Zealand",
+          alt: "BBQ at sunset at Haurapa PurePod with Central Otago high-country views near Cromwell",
         },
       ],
       body:
@@ -177,7 +177,7 @@ const haurapaExperiencesBlock = {
       title: "Lake Dunstan Trail — Bannockburn Bridge",
       image: expHiking,
       imageAlt:
-        "Lake Dunstan Trail hiking path with lakeside and valley views in Central Otago, New Zealand",
+        "Lake Dunstan Trail beside Lake Dunstan with rugged Central Otago hills near Bannockburn",
       paragraphs: [
         "One of Central Otago's most scenic routes, following the lakeshore between rugged cliffs and open water. Starting near Bannockburn Bridge, the trail offers wide valley views and a strong sense of space, ideal for cycling or walking.",
         "Why it's special: lakeside trail, dramatic geology, cycling and walking, open landscapes.",
@@ -193,7 +193,7 @@ const haurapaExperiencesBlock = {
       title: "Bannockburn Sluicings — Gold-Mining Landscapes",
       image: expOliveGrove,
       imageAlt:
-        "Bannockburn Sluicings sculpted gold-mining landscapes in Central Otago, New Zealand",
+        "Bannockburn Sluicings rocky gold-mining landscape in Central Otago",
       paragraphs: [
         "This historic reserve reveals landscapes sculpted by Central Otago's gold-mining past. Eroded cliffs and exposed earth create a striking setting that connects directly with the region's geology and history.",
         "Why it's special: gold-mining heritage, sculpted landscapes, geology, history in the land.",
@@ -209,7 +209,7 @@ const haurapaExperiencesBlock = {
       title: "Wine Tasting — Te Kano Estate or Mt Difficulty",
       image: expVineyard,
       imageAlt:
-        "Te Kano Estate vineyard and Central Otago wine region landscape, New Zealand",
+        "Te Kano Estate winery and vineyard in the Central Otago wine region",
       paragraphs: [
         "Bannockburn sits at the heart of one of the world's great cool-climate wine regions. A tasting at Te Kano Estate or Mt Difficulty offers the chance to experience Central Otago's celebrated Pinot Noir among vines and rugged hills.",
         "Why it's special: Central Otago wines, Pinot Noir, vineyard views, local flavour.",
@@ -262,14 +262,14 @@ export const haurapaEditorialConfig: EditorialPodLocationConfig = {
   hero: {
     imageSrc: heroImage,
     imageAlt:
-      "Haurapa PurePod bedroom with panoramic mountain views in Central Otago, New Zealand",
+      "Haurapa PurePod glass cabin above Cromwell with Central Otago high-country mountain views",
     title: "Haurapa",
     subtitleParagraphs: HERO_SUBTITLE_PARAGRAPHS,
     imagePosition: "52% 72%",
     imagePositionMd: "51% 70%",
     imagePositionXl: "50% 68%",
   },
-  podCarouselAriaLabel: "PurePod Haurapa — photo gallery",
+  podCarouselAriaLabel: "Haurapa PurePod — photo gallery",
   podNarrative: haurapaPodNarrative,
   travelBlock: haurapaTravelBlock,
   experiencesCollapsible: {
