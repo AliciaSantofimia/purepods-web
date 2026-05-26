@@ -109,7 +109,10 @@ export const journeyExperienceSlides: AdventureExperienceSlide[] = [
         label: "Haurapa PurePod near the Lake Dunstan Trail",
         href: "/location/haurapa/?from=journey",
       },
-      { label: "Tāima PurePod", href: "/location/taima" },
+      {
+        label: "Tāima PurePod near the Lake Dunstan Trail",
+        href: "/location/taima/?from=journey",
+      },
     ],
     distance: "Central Otago trail",
     timing: "cycle or walk sections",
