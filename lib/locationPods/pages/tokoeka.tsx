@@ -8,10 +8,10 @@ const OG_IMAGE_URL =
   "https://purepods.com/assets/img/tokoeka/tokoeka-purepod-exterior-sunset-view-stewart-island.jpg";
 
 const META_DESCRIPTION =
-  "PurePod Tokoeka: glass cabin for two in a predator-free eco-sanctuary on Stewart Island. Flight from Invercargill or ferry from Bluff; final walk through the predator-proof fence. Native forest, birdsong and stars.";
+  "Tokoeka PurePod is a private off-grid glass cabin for two on Rakiura Stewart Island, with native bush, sea views, kiwi spotting and dark sky stargazing.";
 
 const SEO_TITLE_ABSOLUTE =
-  "Tokoeka PurePod | Stewart Island Eco-Sanctuary, New Zealand";
+  "Tokoeka PurePod, Stewart Island | Private Off-Grid Glass Cabin";
 
 function tokoekaStructuredData() {
   const faqEntities = TOKOEKA_FAQ_ITEMS.map((item) => ({
@@ -47,7 +47,7 @@ function tokoekaStructuredData() {
       {
         "@type": "LodgingBusiness",
         "@id": `${CANONICAL_URL}#lodging`,
-        name: "PurePod Tokoeka",
+        name: "Tokoeka PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
         address: {

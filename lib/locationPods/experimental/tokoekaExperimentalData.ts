@@ -41,35 +41,64 @@ export const TOKOEKA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=11";
 
 const HERO_SUBTITLE_PARAS = [
-  "A private glass cabin set within a protected conservation reserve on Rakiura Stewart Island, surrounded by native forest, coastal views and abundant birdlife.",
-  "Tokoeka is shaped by the quiet rhythms of the island — dense bush, dark skies, sea air and the rare stillness of one of New Zealand's most remote landscapes.",
+  "Tokoeka PurePod is a private off-grid glass cabin for two on Rakiura Stewart Island, set in native bush within a predator-proof conservation reserve, with sea views, birdlife, kiwi spotting, dark skies and remote island wilderness nearby.",
 ];
 
 export const TOKOEKA_FAQ_ITEMS: LocationFaqItem[] = [
   {
-    question: "How do I get to PurePod Tokoeka?",
+    question: "Is Tokoeka PurePod suitable for a romantic getaway?",
     answer:
-      "Reach Tokoeka by a 15-minute flight from Invercargill or a 60-minute ferry from Bluff, followed by a short transfer to Mamaku Point Conservation Reserve. A final 380-metre nature walk (5–10 minutes) takes you through the predator-proof fence and into the sanctuary.",
+      "Yes. Tokoeka PurePod is designed for two guests and suits couples looking for a private island nature escape on Rakiura Stewart Island. Set in native bush within a predator-proof conservation reserve, it offers sea views, birdlife, kiwi spotting, stargazing and a secluded off-grid stay surrounded by remote island wilderness.",
   },
   {
-    question: "How long is the walk from the car park?",
+    question: "How many guests can stay at Tokoeka PurePod?",
     answer:
-      "The final walk is about 380 metres and takes roughly five to ten minutes, including passing through the predator-proof fence into the sanctuary.",
+      "Tokoeka PurePod is designed for a maximum of two guests. Like all PurePods, it is created as a private glass cabin for two, making it best suited to couples or two adults seeking a quiet, secluded stay.",
   },
   {
-    question: "What is the climate usually like?",
+    question: "How private is Tokoeka PurePod?",
     answer:
-      "Stewart Island has a cool, changeable coastal climate. Rain and cooler temperatures are common, so waterproof clothing is recommended year-round.",
+      "Tokoeka PurePod is designed for privacy and seclusion. Guests are left undisturbed during their stay unless there is an emergency, and there is no daily servicing for multiple-night stays, so the experience remains quiet and uninterrupted.",
   },
   {
-    question: "How does food work at the pod?",
+    question: "What is the walk to Tokoeka PurePod like?",
     answer:
-      "Bring your own supplies or pre-order a breakfast and dinner hamper featuring locally sourced Southland produce. Meals are simple and generous, perfect for relaxed evenings and slow mornings at the pod.",
+      "Tokoeka PurePod is reached by a 380m nature walk from the turnoff, taking around 10 minutes. The track passes through native bush and includes uneven ground, roots, mud or steps in places, so sturdy footwear and luggage that is easy to carry are recommended.",
   },
   {
-    question: "How many people can stay?",
+    question: "Is Tokoeka PurePod off-grid?",
     answer:
-      "Inside, everything is designed for two: a warm and comfortable retreat from which to watch the wide sky, shifting light and open landscape, all from the privacy of your own hideaway in nature.",
+      "Yes. Tokoeka PurePod is solar powered and designed as an off-grid stay. There is no WiFi, no TV and no standard power plugs, although a USB charging port and an emergency telephone are provided.",
+  },
+  {
+    question: "Is there phone signal at Tokoeka PurePod?",
+    answer:
+      "Tokoeka PurePod has limited phone signal. As with many remote island and conservation reserve locations, coverage may vary depending on provider and conditions. An emergency telephone and EPIRB are provided for safety.",
+  },
+  {
+    question: "What should I bring for a stay at Tokoeka PurePod?",
+    answer:
+      "Bring sturdy walking shoes, weather-appropriate clothing, luggage that is easy to carry and your favourite drinks, especially if ordering the food hamper. Rakiura Stewart Island weather can change quickly, so layered clothing is recommended.",
+  },
+  {
+    question: "How does the food hamper work at Tokoeka PurePod?",
+    answer:
+      "The food hamper is optional and can be pre-ordered. If selected, the dinner and breakfast package will be waiting at the PurePod on arrival. Guests should bring their favourite drinks.",
+  },
+  {
+    question: "What can you do near Tokoeka PurePod?",
+    answer:
+      "Tokoeka PurePod is close to Rakiura Stewart Island experiences such as native bush walks, island wildlife, kiwi spotting, Ulva Island, Paterson Inlet, kayaking, beaches and day trips by boat. Oban, Halfmoon Bay and local island food options are also part of the wider stay experience.",
+  },
+  {
+    question: "What is the landscape around Tokoeka PurePod?",
+    answer:
+      "Tokoeka PurePod is set in native bush on Rakiura Stewart Island, with sea views, birdlife, coastal forest, white sand beaches nearby and some of the darkest skies in New Zealand. The setting is shaped by island wilderness, conservation land, stargazing and the chance to spot kiwi at night.",
+  },
+  {
+    question: "How do you get to Tokoeka PurePod?",
+    answer:
+      "Tokoeka PurePod is on Rakiura Stewart Island. Guests first reach the island by scenic flight from Invercargill or ferry from Bluff, then travel from Oban towards Mamaku Point Conservation Reserve. The final approach includes a short nature walk through native bush to the PurePod.",
   },
 ];
 
