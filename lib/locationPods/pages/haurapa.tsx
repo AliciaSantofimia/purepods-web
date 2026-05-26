@@ -8,9 +8,10 @@ const OG_IMAGE_URL =
   "https://purepods.com/assets/img/haurapa/haurapa-purepod-bedroom-view-mountains-central-otago-new-zealand.jpg";
 
 const META_DESCRIPTION =
-  "PurePod Haurapa is a secluded glass cabin retreat in Central Otago. High-country calm, wide views across the Pisa Range and complete privacy for two above Cromwell.";
+  "Haurapa PurePod is a private off-grid glass cabin for two near Cromwell, Central Otago, with Pisa Range views, Lake Dunstan landscapes and high-country stillness.";
 
-const SEO_TITLE = "Haurapa PurePod | Glass Cabin in Central Otago, New Zealand";
+const SEO_TITLE =
+  "Haurapa PurePod, Central Otago | Private Off-Grid Glass Cabin";
 
 function haurapaStructuredData() {
   const faqEntities = HAURAPA_FAQ_ITEMS.map((item) => ({
@@ -46,7 +47,7 @@ function haurapaStructuredData() {
       {
         "@type": "LodgingBusiness",
         "@id": `${CANONICAL_URL}#lodging`,
-        name: "PurePod Haurapa",
+        name: "Haurapa PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
         address: {

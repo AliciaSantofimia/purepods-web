@@ -36,35 +36,59 @@ export const HAURAPA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=9";
 
 const HERO_SUBTITLE_PARAGRAPHS = [
-  "A private glass cabin set high above the Cromwell basin, surrounded by dry hills, rocky terrain and expansive views towards the Pisa Range and Lake Dunstan.",
-  "Haurapa is shaped by mountain light, open skies and the quiet scale of the Central Otago landscape — a secluded retreat immersed in New Zealand high country.",
+  "Haurapa PurePod is a private off-grid glass cabin for two near Cromwell, Central Otago, set high above the landscape with views towards the Pisa Range, Lake Dunstan, rugged hills and wide high-country skies.",
 ];
 
 export const HAURAPA_FAQ_ITEMS: LocationFaqItem[] = [
   {
-    question: "How do I get to PurePod Haurapa?",
+    question: "Is Haurapa PurePod suitable for a romantic getaway?",
     answer:
-      "PurePod Haurapa is located near Cromwell, around one hour from Queenstown. The final part of the journey includes a 700 m uphill walk following historic gold-mining tracks.",
+      "Yes. Haurapa PurePod is designed for two guests and suits couples looking for a private high-country nature escape near Cromwell, Central Otago. Set above rugged hills with views towards the Pisa Range and Lake Dunstan landscapes, it offers a secluded off-grid stay surrounded by wide skies, rocky terrain and Central Otago stillness.",
   },
   {
-    question: "How long is the walk from the car park?",
+    question: "How many guests can stay at Haurapa PurePod?",
     answer:
-      "The final walk is about 700 metres and usually takes around 15 to 20 minutes uphill.",
+      "Haurapa PurePod is designed for a maximum of two guests. Like all PurePods, it is created as a private glass cabin for two, making it best suited to couples or two adults seeking a quiet, secluded stay.",
   },
   {
-    question: "What is the weather usually like?",
+    question: "How private is Haurapa PurePod?",
     answer:
-      "Central Otago has strong seasonal contrasts, with hot dry summers and cold winters, sometimes with snow. Layered clothing is recommended year-round.",
+      "Haurapa PurePod is designed for privacy and seclusion. Guests are left undisturbed during their stay unless there is an emergency, and there is no daily servicing for multiple-night stays, so the experience remains quiet and uninterrupted.",
   },
   {
-    question: "How does food work at the pod?",
+    question: "What is the walk to Haurapa PurePod like?",
     answer:
-      "You can bring your own food or pre-order a breakfast and dinner hamper when booking. Hampers feature local Central Otago produce and are designed for simple meals enjoyed at the pod.",
+      "Haurapa PurePod is reached by an uphill nature walk from the carpark. The walk is about 700m and takes around 20 minutes. The track crosses rocky terrain and is not suitable for wheeled luggage, so sturdy footwear and a small backpack or easy-to-carry overnight bag are recommended.",
   },
   {
-    question: "How many people can stay?",
+    question: "Is Haurapa PurePod off-grid?",
     answer:
-      "PurePod Haurapa is designed for two guests, with a private setting and no shared spaces.",
+      "Yes. Haurapa PurePod is solar powered and designed as an off-grid stay. There is no WiFi, no TV and no standard power plugs, although a USB charging port and an emergency telephone are provided.",
+  },
+  {
+    question: "What should I bring for a stay at Haurapa PurePod?",
+    answer:
+      "Bring sturdy walking shoes, layered clothing for Central Otago conditions and luggage that is easy to carry for the uphill walk from the carpark. Guests should also bring their favourite drinks, especially if ordering the food hamper.",
+  },
+  {
+    question: "How does the food hamper work at Haurapa PurePod?",
+    answer:
+      "The food hamper is optional and can be pre-ordered. If selected, the dinner and breakfast package will be waiting at the PurePod on arrival. Guests should bring their favourite drinks.",
+  },
+  {
+    question: "What can you do near Haurapa PurePod?",
+    answer:
+      "Haurapa PurePod is near Cromwell and Lake Dunstan, with easy access to Central Otago experiences such as the Lake Dunstan Trail, Bannockburn Sluicings, local wineries, award-winning restaurants and the Clutha River Heritage Cruise.",
+  },
+  {
+    question: "What is the landscape around Haurapa PurePod?",
+    answer:
+      "Haurapa PurePod is set in Central Otago high country near Cromwell, with rugged hills, rocky terrain, wide skies and views towards the Pisa Range and Lake Dunstan landscapes. The experience is focused on mountain light, stargazing, quiet rural surroundings and the open feel of the high-country landscape.",
+  },
+  {
+    question: "How far is Haurapa PurePod from Queenstown and Wānaka?",
+    answer:
+      "Haurapa PurePod is located near Cromwell in Central Otago, around one hour’s drive from Queenstown and Wānaka, depending on traffic and road conditions.",
   },
 ];
 
