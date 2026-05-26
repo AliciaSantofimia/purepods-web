@@ -80,32 +80,32 @@ const hananuiPodNarrative = {
   gallery: [
     {
       src: podAerial,
-      alt: "Aerial view of Hananui PurePod above Lee Bay and native forest on Stewart Island, New Zealand",
+      alt: "Hananui PurePod glass cabin surrounded by native bush on Rakiura Stewart Island",
       position: "50% 50%",
     },
     {
       src: podSeaView,
-      alt: "PurePod Hananui glass cabin with ocean views on Stewart Island, New Zealand",
+      alt: "Hananui PurePod glass cabin with sea views and native bush on Rakiura Stewart Island",
       position: "50% 50%",
     },
     {
       src: podUnderStars,
-      alt: "PurePod Hananui outdoor deck with ocean views and private seating, Stewart Island, New Zealand",
+      alt: "Hananui PurePod private deck with sea views on Rakiura Stewart Island",
       position: "50% 52%",
     },
     {
       src: podGlassBedroomInterior,
-      alt: "Glass bedroom interior at Hananui PurePod with Stewart Island coastal retreat light, New Zealand",
+      alt: "Glass bedroom inside Hananui PurePod on Rakiura Stewart Island",
       position: "50% 50%",
     },
     {
       src: podKitchenOcean,
-      alt: "Kitchen view with ocean outlook at Hananui PurePod on Stewart Island, New Zealand",
+      alt: "Kitchen inside Hananui PurePod with sea views on Rakiura Stewart Island",
       position: "50% 48%",
     },
     {
       src: podShowerOcean,
-      alt: "Glass shower with ocean view inside Hananui PurePod, Stewart Island, New Zealand",
+      alt: "Glass shower inside Hananui PurePod with sea views on Rakiura Stewart Island",
       position: "50% 48%",
     },
   ],
@@ -125,11 +125,11 @@ const hananuiTravelBlock = {
       images: [
         {
           src: travelCoastalJourneyAerial,
-          alt: "Aerial view of Stewart Island's remote coastline on the journey toward Hananui PurePod, New Zealand",
+          alt: "Aerial view of Hananui PurePod, native bush and white sand beach on Rakiura Stewart Island",
         },
         {
           src: travelJourneyRight,
-          alt: "Hananui PurePod exterior with forest and ocean outlook, Stewart Island, New Zealand",
+          alt: "Hananui PurePod walking track sign in native bush on Rakiura Stewart Island",
         },
       ],
       body: HANANUI_JOURNEY_CARD_BODY,
@@ -151,19 +151,19 @@ const hananuiTravelBlock = {
       images: [
         {
           src: travelFood,
-          alt: "Local food platter with Southland produce at Hananui PurePod, Stewart Island, New Zealand",
+          alt: "Food platter at Hananui PurePod with native bush surroundings on Rakiura Stewart Island",
         },
         {
           src: travelBreakfastCoastal,
-          alt: "Breakfast with coastal view at Hananui PurePod on Stewart Island, New Zealand",
+          alt: "Breakfast at Hananui PurePod with coastal views on Rakiura Stewart Island",
         },
         {
           src: travelOutdoorCooking,
-          alt: "Outdoor cooking with ocean view at Hananui PurePod, Stewart Island, New Zealand",
+          alt: "Outdoor cooking at Hananui PurePod with sea views on Rakiura Stewart Island",
         },
         {
           src: travelExterior,
-          alt: "Hananui PurePod with forest and ocean views, Stewart Island, New Zealand",
+          alt: "Dining at Hananui PurePod with native bush and sea views on Rakiura Stewart Island",
         },
       ],
       body:
@@ -180,7 +180,8 @@ const hananuiExperiencesBlock = {
     {
       title: "Ulva Island — Predator-Free Sanctuary",
       image: expUlva,
-      imageAlt: "Native birdlife in forest on Stewart Island, New Zealand",
+      imageAlt:
+        "Native birdlife in forest on Stewart Island near Ulva Island wildlife sanctuary",
       paragraphs: [
         "A world-class wildlife sanctuary where native birds thrive in a completely predator-free environment. Ancient forest, close encounters and the rare feeling of walking among New Zealand's most iconic birdlife.",
         "Why it's special: rare native birds (tīeke, kākāriki, mōhua) + pristine forest + close wildlife encounters",
@@ -196,7 +197,7 @@ const hananuiExperiencesBlock = {
       title: "Mason Bay — Wild West Coast",
       image: expMason,
       imageAlt:
-        "Coastal landscape and open sea from above, Stewart Island, New Zealand",
+        "Tokoeka kiwi in native vegetation on Rakiura Stewart Island, relevant to kiwi spotting near Mason Bay",
       paragraphs: [
         "A vast, remote beach on Stewart Island's wild west coast, shaped by dunes, ocean swells and powerful isolation. One of the best places on the island to experience true wilderness.",
         "Why it's special: wild beaches + dunes + chance to spot kiwi + seals & sea lions + extreme isolation",
@@ -216,7 +217,7 @@ const hananuiExperiencesBlock = {
       title: "Paterson Inlet — Cruise or Kayak",
       image: expPaterson,
       imageAlt:
-        "Yellow-eyed penguin and coastal wildlife near Paterson Inlet, Stewart Island, New Zealand",
+        "Coastal penguins and wildlife near Paterson Inlet on Rakiura Stewart Island",
       paragraphs: [
         "Sheltered waters ideal for exploring Stewart Island by boat or kayak. Cruising Paterson Inlet reveals quiet bays, small islands and rich marine life in one of the island's most peaceful settings.",
         "Why it's special: dolphins + little blue penguins + seals + seabirds + sheltered waters",
@@ -263,14 +264,14 @@ export const hananuiEditorialConfig: EditorialPodLocationConfig = {
   hero: {
     imageSrc: heroImage,
     imageAlt:
-      "PurePod Hananui glass cabin with native forest and ocean outlook above Lee Bay, Stewart Island, New Zealand",
+      "Hananui PurePod in native bush with sea views on Rakiura Stewart Island",
     title: "Hananui",
     subtitleParagraphs: HERO_SUBTITLE_PARAS,
     imagePosition: "50% 55%",
     imagePositionMd: "50% 55%",
     imagePositionXl: "50% 55%",
   },
-  podCarouselAriaLabel: "PurePod Hananui — photo gallery",
+  podCarouselAriaLabel: "Hananui PurePod — photo gallery",
   podNarrative: hananuiPodNarrative,
   travelBlock: hananuiTravelBlock,
   experiencesCollapsible: {
