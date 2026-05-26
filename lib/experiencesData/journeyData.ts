@@ -105,7 +105,10 @@ export const journeyExperienceSlides: AdventureExperienceSlide[] = [
     description:
       "A scenic trail section above Lake Dunstan, with boardwalks, cliffs and wide Central Otago views.",
     pods: [
-      { label: "Haurapa PurePod", href: "/location/haurapa" },
+      {
+        label: "Haurapa PurePod near the Lake Dunstan Trail",
+        href: "/location/haurapa/?from=journey",
+      },
       { label: "Tāima PurePod", href: "/location/taima" },
     ],
     distance: "Central Otago trail",

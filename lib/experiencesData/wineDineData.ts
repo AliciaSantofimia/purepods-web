@@ -19,7 +19,10 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     description:
       "A Central Otago wine experience shaped by distinctive landscapes, elegant cellar-door hospitality and carefully made wines.",
     pods: [
-      { label: "Haurapa PurePod", href: "/location/haurapa/?from=wine-dine" },
+      {
+        label: "Stay at Haurapa PurePod in Central Otago",
+        href: "/location/haurapa/?from=wine-dine",
+      },
       { label: "Tāima PurePod", href: "/location/taima/?from=wine-dine" },
     ],
     distance: "Central Otago vineyard",
@@ -82,7 +85,10 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     description:
       "A biodynamic Central Otago winery known for intimate tastings, thoughtful hospitality and expressive Pinot Noir.",
     pods: [
-      { label: "Haurapa PurePod", href: "/location/haurapa/?from=wine-dine" },
+      {
+        label: "Haurapa PurePod in Central Otago high country",
+        href: "/location/haurapa/?from=wine-dine",
+      },
       { label: "Tāima PurePod", href: "/location/taima/?from=wine-dine" },
     ],
     distance: "Central Otago winery",
@@ -97,7 +103,10 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     description:
       "A relaxed Cromwell dining stop centred on slow cooking, wine-country flavour and a distinctly local Central Otago atmosphere.",
     pods: [
-      { label: "Haurapa PurePod", href: "/location/haurapa/?from=wine-dine" },
+      {
+        label: "Haurapa PurePod near Cromwell and Lake Dunstan",
+        href: "/location/haurapa/?from=wine-dine",
+      },
       { label: "Tāima PurePod", href: "/location/taima/?from=wine-dine" },
     ],
     distance: "Cromwell dining",
@@ -112,7 +121,10 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     description:
       "A refined Central Otago tasting experience with handcrafted wines, strong terroir and a quiet sense of place.",
     pods: [
-      { label: "Haurapa PurePod", href: "/location/haurapa/?from=wine-dine" },
+      {
+        label: "Stay at Haurapa PurePod in Central Otago",
+        href: "/location/haurapa/?from=wine-dine",
+      },
       { label: "Tāima PurePod", href: "/location/taima/?from=wine-dine" },
     ],
     distance: "Central Otago winery",
