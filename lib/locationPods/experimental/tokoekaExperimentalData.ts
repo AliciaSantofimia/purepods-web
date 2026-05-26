@@ -87,32 +87,32 @@ const tokoekaPodNarrative = {
   gallery: [
     {
       src: podAerial,
-      alt: "Aerial view of Tokoeka PurePod set in native forest on Stewart Island, New Zealand",
+      alt: "Aerial view of Tokoeka PurePod in native bush above a white sand beach on Rakiura Stewart Island",
       position: "50% 50%",
     },
     {
       src: podSunriseBedroom,
-      alt: "Tokoeka PurePod bedroom at sunrise with ocean view through glass walls, Stewart Island, New Zealand",
+      alt: "Tokoeka PurePod bedroom at sunrise with sea views through glass walls on Rakiura Stewart Island",
       position: "50% 48%",
     },
     {
       src: podBedroom,
-      alt: "Tokoeka PurePod glass cabin deck with ocean views and native forest, Stewart Island, New Zealand",
+      alt: "Tokoeka PurePod deck with native bush and sea views on Rakiura Stewart Island",
       position: "50% 52%",
     },
     {
       src: podSunsetCoastline,
-      alt: "Stewart Island coastline at sunset from Tokoeka PurePod, with native bush and open sea, New Zealand",
+      alt: "Sunset over native bush and coastline from Tokoeka PurePod on Rakiura Stewart Island",
       position: "50% 50%",
     },
     {
       src: podAstro,
-      alt: "Tokoeka PurePod glass cabin bedroom with ocean sunset view, Stewart Island, New Zealand",
+      alt: "Tokoeka PurePod bedroom with sunset sea views on Rakiura Stewart Island",
       position: "50% 48%",
     },
     {
       src: podCoastalDeckTwilight,
-      alt: "Tokoeka PurePod coastal deck at twilight with ocean and native bush, Stewart Island, New Zealand",
+      alt: "Tokoeka PurePod deck at twilight with native bush and sea views on Rakiura Stewart Island",
       position: "50% 52%",
     },
   ],
@@ -129,15 +129,15 @@ const tokoekaTravelBlock = {
       images: [
         {
           src: travelCoastalJourneyAerial,
-          alt: "Aerial view of Stewart Island's remote coastline on the journey toward Tokoeka PurePod, New Zealand",
+          alt: "Aerial view of Rakiura Stewart Island coastline and white sand beach on the journey to Tokoeka PurePod",
         },
         {
           src: travelAerial,
-          alt: "Aerial view of Tokoeka PurePod in native forest at Mamaku Point Conservation Reserve, Stewart Island, New Zealand",
+          alt: "PurePods walking track sign in native bush at Mamaku Point Conservation Reserve on Rakiura Stewart Island",
         },
         {
           src: travelForest,
-          alt: "Native coastal forest on Stewart Island, New Zealand",
+          alt: "Aerial view of Tokoeka PurePod surrounded by native bush at Mamaku Point Conservation Reserve on Rakiura Stewart Island",
         },
       ],
       body:
@@ -160,23 +160,23 @@ const tokoekaTravelBlock = {
       images: [
         {
           src: travelFood,
-          alt: "Local food platter with Southland produce at Tokoeka PurePod, Stewart Island, New Zealand",
+          alt: "Food platter at Tokoeka PurePod with native bush surroundings on Rakiura Stewart Island",
         },
         {
           src: travelBreakfastOcean,
-          alt: "Breakfast with ocean view at Tokoeka PurePod on Stewart Island, New Zealand",
+          alt: "Breakfast at Tokoeka PurePod with native bush and sea views on Rakiura Stewart Island",
         },
         {
           src: travelGrazingBreakfast,
-          alt: "Local grazing-style breakfast platter at Tokoeka PurePod, Stewart Island, New Zealand",
+          alt: "Grazing-style breakfast platter at Tokoeka PurePod on Rakiura Stewart Island",
         },
         {
           src: travelBedroom,
-          alt: "Tokoeka PurePod bedroom with ocean view for relaxed mornings and evenings, Stewart Island, New Zealand",
+          alt: "Gourmet food platter for a Tokoeka PurePod stay on Rakiura Stewart Island",
         },
         {
           src: travelDeckDining,
-          alt: "Private deck dining at Tokoeka PurePod with Stewart Island coastline and ocean view, New Zealand",
+          alt: "Private deck dining at Tokoeka PurePod with sea views on Rakiura Stewart Island",
         },
       ],
       body:
@@ -193,7 +193,8 @@ const tokoekaExperiencesBlock = {
     {
       title: "Ulva Island — Predator-Free Sanctuary",
       image: expUlva,
-      imageAlt: "Native birdlife in forest on Stewart Island, New Zealand",
+      imageAlt:
+        "Native birdlife in forest on Stewart Island near Ulva Island wildlife sanctuary",
       paragraphs: [
         "A world-class wildlife sanctuary where native birds thrive in a completely predator-free environment. Ancient forest, close encounters and the rare feeling of walking among New Zealand's most iconic birdlife.",
         "Why it's special: rare native birds (tīeke, kākāriki, mōhua) + pristine forest + close wildlife encounters",
@@ -209,7 +210,7 @@ const tokoekaExperiencesBlock = {
       title: "Mason Bay — Wild West Coast",
       image: expMason,
       imageAlt:
-        "Coastal forest and wild landscape on Stewart Island, New Zealand",
+        "Tokoeka kiwi in native vegetation on Rakiura Stewart Island, relevant to kiwi spotting near Mason Bay",
       paragraphs: [
         "A vast, remote beach on Stewart Island's wild west coast, shaped by dunes, ocean swells and powerful isolation. One of the best places on the island to experience true wilderness.",
         "Why it's special: wild beaches + dunes + chance to spot kiwi + seals & sea lions + extreme isolation",
@@ -229,7 +230,7 @@ const tokoekaExperiencesBlock = {
       title: "Paterson Inlet — Cruise or Kayak",
       image: expPaterson,
       imageAlt:
-        "Yellow-eyed penguin and coastal wildlife near Paterson Inlet, Stewart Island, New Zealand",
+        "Coastal penguins and wildlife near Paterson Inlet on Rakiura Stewart Island",
       paragraphs: [
         "Sheltered waters ideal for exploring Stewart Island by boat or kayak. Cruising Paterson Inlet reveals quiet bays, small islands and rich marine life in one of the island's most peaceful settings.",
         "Why it's special: dolphins + little blue penguins + seals + seabirds + sheltered waters",
@@ -276,14 +277,14 @@ export const tokoekaEditorialConfig: EditorialPodLocationConfig = {
   hero: {
     imageSrc: heroImage,
     imageAlt:
-      "PurePod Tokoeka glass cabin at sunset in native forest on Stewart Island, New Zealand",
+      "Tokoeka PurePod glass cabin at sunset in native bush with sea views on Rakiura Stewart Island",
     title: "Tokoeka",
     subtitleParagraphs: HERO_SUBTITLE_PARAS,
     imagePosition: "50% 55%",
     imagePositionMd: "50% 55%",
     imagePositionXl: "50% 55%",
   },
-  podCarouselAriaLabel: "PurePod Tokoeka — photo gallery",
+  podCarouselAriaLabel: "Tokoeka PurePod — photo gallery",
   podNarrative: tokoekaPodNarrative,
   travelBlock: tokoekaTravelBlock,
   experiencesCollapsible: {
