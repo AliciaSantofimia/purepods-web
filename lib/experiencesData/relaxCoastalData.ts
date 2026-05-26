@@ -282,7 +282,10 @@ export const relaxRcChapters: RelaxRcChapter[] = [
         },
         layout: "image-right",
         ctas: [
-          { label: "Stay at Tokoeka, Stewart Island →", href: "/location/tokoeka" },
+          {
+            label: "Stay at Tokoeka PurePod on Stewart Island",
+            href: "/location/tokoeka/?from=relax-coastal",
+          },
           { label: "Stay at Hananui, Stewart Island →", href: "/location/hananui" },
         ],
       },

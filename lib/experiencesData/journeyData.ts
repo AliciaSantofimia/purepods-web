@@ -126,7 +126,10 @@ export const journeyExperienceSlides: AdventureExperienceSlide[] = [
     description:
       "A Great Walk through coastal forest, beaches and sheltered bays on Stewart Island / Rakiura.",
     pods: [
-      { label: "Tokoeka PurePod", href: "/location/tokoeka" },
+      {
+        label: "Tokoeka PurePod near Rakiura walks and island wildlife",
+        href: "/location/tokoeka/?from=journey",
+      },
       { label: "Hananui PurePod", href: "/location/hananui" },
     ],
     distance: "Stewart Island / Rakiura",

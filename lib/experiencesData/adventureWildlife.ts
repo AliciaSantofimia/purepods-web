@@ -88,7 +88,10 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
     description:
       "Fly across remote coastline and open ocean to reach one of New Zealand’s most isolated landscapes. A quiet, expansive journey at the edge of the country.",
     pods: [
-      { label: "Tokoeka PurePod", href: "/location/tokoeka/?from=adventure-wildlife" },
+      {
+        label: "Tokoeka PurePod on Rakiura Stewart Island",
+        href: "/location/tokoeka/?from=adventure-wildlife",
+      },
       { label: "Hananui PurePod", href: "/location/hananui/?from=adventure-wildlife" },
     ],
     distance: "Weather dependent",
