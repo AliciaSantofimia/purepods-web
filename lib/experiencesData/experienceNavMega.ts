@@ -15,7 +15,7 @@ const DISPLAY_ORDER: ExperienceSlug[] = [
   "relax-coastal",
   "romantic",
   "adventure-wildlife",
-  "night-falls",
+  "stargazing",
   "culture",
   "journey",
   "wine-dine",
@@ -40,7 +40,7 @@ const MEGA_COPY: Record<ExperienceSlug, { title: string; subtitle: string }> = {
     title: "Wild & Adventure",
     subtitle: "Wildlife, coastlines & outdoor energy",
   },
-  "night-falls": {
+  stargazing: {
     title: "Night Falls",
     subtitle: "Dark skies, moon phases & stargazing",
   },

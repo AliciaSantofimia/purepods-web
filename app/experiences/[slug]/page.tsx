@@ -59,7 +59,7 @@ export default function ExperienceDetailPage({ params }: Props) {
       return <RelaxCoastalView />;
     case "wine-dine":
       return <WineDineView />;
-    case "night-falls":
+    case "stargazing":
       return <NightFallsView />;
     default:
       notFound();

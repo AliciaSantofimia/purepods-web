@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const featured = {
-  href: "/experiences/night-falls",
+  href: "/experiences/stargazing",
   tag: "Stargazing",
   title: "Night Falls",
   description:

@@ -28,6 +28,16 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/experiences/night-falls",
+        destination: "/experiences/stargazing",
+        permanent: true,
+      },
+      {
+        source: "/experiences/night-falls/",
+        destination: "/experiences/stargazing",
+        permanent: true,
+      },
+      {
         source: "/location/kokomea-purepod-luxury-glass-cabin-near-wellington",
         destination: "/location/kokomea",
         permanent: true,

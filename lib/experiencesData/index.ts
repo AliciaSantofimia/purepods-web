@@ -1,5 +1,5 @@
 export type ExperienceSlug =
-  | "night-falls"
+  | "stargazing"
   | "romantic"
   | "journey"
   | "adventure-wildlife"
@@ -17,7 +17,7 @@ export type ExperiencePageContent = {
 };
 
 export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
-  "night-falls": {
+  stargazing: {
     kicker: "Stargazing",
     heading: "Night Falls",
     metaTitle: "Night Falls by PurePods | Dark Skies, Moon Calendar & Stargazing",
