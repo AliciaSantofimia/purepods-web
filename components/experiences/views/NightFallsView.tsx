@@ -9,16 +9,44 @@ import { Footer } from "@/components/layout/Footer";
 
 const faq = [
   {
-    q: "What is Night Falls at PurePods?",
-    a: "Night Falls is PurePods' dark-sky experience, designed for guests who want to enjoy remote New Zealand landscapes after sunset, with minimal light pollution and exceptional stargazing conditions.",
+    q: "What is Night Falls by PurePods?",
+    a: "Night Falls is the PurePods stargazing experience: a way to plan your stay around New Zealand’s night sky, from deep new-moon darkness and Milky Way viewing to full-moon glow, meteor showers and quiet nights in a private off-grid glass cabin.",
   },
   {
-    q: "Do I need astronomy knowledge to enjoy Night Falls?",
-    a: "No. Night Falls is designed to be simple and immersive, whether you already know the night sky or simply want to slow down and experience it in silence.",
+    q: "When is the best time for stargazing at PurePods?",
+    a: "The darkest skies are usually around the new moon, when moonlight is low and stars, the Milky Way and faint night-sky detail are easier to see. Night Falls highlights upcoming dark-sky windows, full moons and meteor showers so guests can choose the type of night they want to experience.",
   },
   {
-    q: "When is the best time to experience Night Falls?",
-    a: "The best nights are usually around the new moon, when the sky is darkest and stars, planets and the Milky Way can be seen more clearly.",
+    q: "Is a new moon better than a full moon for stargazing?",
+    a: "A new moon is usually better for seeing the darkest skies, the Milky Way and more stars. A full moon creates a different kind of experience, with silver light across the landscape, strong moonlit views and a softer, more atmospheric night.",
+  },
+  {
+    q: "Can you see meteor showers from a PurePod?",
+    a: "Meteor showers can be visible from PurePods when conditions are right, especially away from city lights and during clear, dark nights. Night Falls highlights key meteor-shower windows, but visibility always depends on weather, cloud cover and the timing of the event.",
+  },
+  {
+    q: "Can you see the Milky Way from a PurePod?",
+    a: "In dark-sky conditions, the Milky Way may be visible from many PurePods, especially around the new moon and away from bright artificial light. Visibility depends on the season, cloud cover, moonlight and local conditions on the night of your stay.",
+  },
+  {
+    q: "What happens if the weather is cloudy?",
+    a: "Cloud cover can affect any stargazing experience. Night Falls helps guests choose promising moon phases and meteor-shower windows, but the sky is still part of nature. Even on cloudier nights, the experience remains a quiet off-grid escape in a private glass cabin.",
+  },
+  {
+    q: "What should I bring for a Night Falls stay?",
+    a: "Bring warm layers, comfortable footwear, any favourite drinks and a sense of patience for the night sky. A torch or headlamp can be useful, but keep lighting low where possible so your eyes can adjust to the dark.",
+  },
+  {
+    q: "Is Night Falls suitable for a romantic getaway?",
+    a: "Yes. Night Falls suits couples looking for a quiet, romantic night escape in nature, with stargazing, moonlight, silence and the privacy of a glass cabin designed for two.",
+  },
+  {
+    q: "Can you see the Aurora Australis from PurePods?",
+    a: "The Aurora Australis, or Southern Lights, is never guaranteed. It may be possible in some parts of New Zealand when solar and weather conditions align, but Night Falls should be planned around stargazing, dark skies, moon phases and meteor showers rather than a guaranteed aurora sighting.",
+  },
+  {
+    q: "Do PurePods have glass roofs or glass walls for stargazing?",
+    a: "PurePods are designed as glass cabins, with large glass walls and immersive views into the surrounding landscape and sky. The exact outlook varies by pod, but the experience is designed to bring nature, darkness and the night sky close.",
   },
 ];
 
@@ -53,9 +81,10 @@ export function NightFallsView() {
               <div className="heroInner">
                 <h1>Night Falls: dark-sky stargazing by PurePods</h1>
                 <p>
-                  When the light fades, the universe takes center stage.
-                  Silence, true darkness, and a sky you won&apos;t forget. A
-                  stargazing experience in New Zealand like no other.
+                  As the lights of the world fall away, your private off-grid
+                  glass cabin becomes a front-row seat to New Zealand’s night
+                  sky — from quiet new-moon darkness to full-moon glow, the
+                  Milky Way and meteor-shower nights.
                 </p>
                 <div className="heroCtas">
                   <a className="btnGhost" href="#calendario">

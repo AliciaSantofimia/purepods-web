@@ -20,9 +20,9 @@ export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
   stargazing: {
     kicker: "Stargazing",
     heading: "Night Falls",
-    metaTitle: "Night Falls by PurePods | Dark Skies, Moon Calendar & Stargazing",
+    metaTitle: "Night Falls | Stargazing Experiences in New Zealand — PurePods",
     description:
-      "Plan your perfect stargazing night with Night Falls by PurePods. Follow the moon, find the darkest skies, and book a glass cabin stay under unforgettable New Zealand skies.",
+      "Discover Night Falls by PurePods: stargazing in private off-grid glass cabins across New Zealand, with dark skies, moon phases and meteor showers.",
     heroSrc: "/assets/img/experiences/night-falls/purepods-night-falls-stargazing-new-zealand-night-sky.jpg",
     heroAlt: "A star-filled night sky above a remote PurePod in New Zealand",
   },
