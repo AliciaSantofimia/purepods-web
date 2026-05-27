@@ -1160,11 +1160,51 @@ main.experiences-index .soon-grid{
 }
 
 @media (max-width:640px){
+  .experiences-nav .nav__bar{
+    box-sizing:border-box;
+    width:calc(100% - 24px);
+    gap:14px 18px;
+  }
+  .experiences-nav .nav__links{
+    flex:0 1 auto;
+    min-width:0;
+  }
+  .experiences-nav .nav__book{
+    padding-inline:18px;
+  }
+  main.experiences-index{
+    width:calc(100% - 32px);
+    max-width:calc(100vw - 32px);
+  }
+  main.experiences-index .hero h1,
+  main.experiences-index .lead,
+  main.experiences-index .intro{
+    max-width:100%;
+    overflow-wrap:break-word;
+  }
+  main.experiences-index .grid,
+  main.experiences-index .soon-grid,
+  main.experiences-index .featured,
+  main.experiences-index .card{
+    min-width:0;
+    max-width:100%;
+  }
   main.experiences-index .card .media{
     height:160px;
   }
   main.experiences-index .featured{
     min-height:240px;
+  }
+  main.experiences-index .featured-inner,
+  main.experiences-index .card .body{
+    min-width:0;
+  }
+  main.experiences-index .featured .go,
+  main.experiences-index .card .go{
+    max-width:100%;
+    white-space:normal;
+    text-align:center;
+    overflow-wrap:break-word;
   }
 }
 

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
       "Experiences at PurePods | Stargazing, Romantic Getaways & Nature — PurePods",
   },
   description:
-    "Discover experiences around PurePods — stargazing, romantic retreats, scenic journeys and nature. Choose how you want to live the landscape.",
+    "Explore PurePods experiences in New Zealand — stargazing, romantic getaways, scenic journeys, wildlife, wine, culture and nature.",
   alternates: { canonical: "/experiences" },
 };
 
@@ -17,9 +17,11 @@ const featured = {
   tag: "Stargazing",
   title: "Night Falls",
   description:
-    "Dark sky stargazing in remote New Zealand — pure silence and a deep connection to the night.",
+    "Stargazing, dark skies and night-sky moments from a private off-grid glass cabin.",
   cta: "View Night Falls →",
   image: "/assets/img/experiences/night-falls/purepods-dark-sky-stargazing-glass-cabin-new-zealand.jpg",
+  imageAlt:
+    "PurePods glass cabin under a dark night sky for stargazing in New Zealand",
 };
 
 type GridCard = {
@@ -27,6 +29,7 @@ type GridCard = {
   tag: string;
   title: string;
   description: string;
+  cta: string;
   image: string;
   /** `object-position` for the photo (matches previous background-position). */
   mediaPos?: string;
@@ -40,18 +43,23 @@ const experiencesPrimary: GridCard[] = [
     tag: "Retreat",
     title: "Romantic",
     description:
-      "Romantic stays in nature — slow down, switch off and reconnect in a private eco-cabin.",
+      "A romantic escape for slow mornings, secluded landscapes and time together in nature.",
+    cta: "View Romantic →",
     image:
       "/assets/img/experiences/romantic/purepods-romantic-getaway-bedroom-fireplace-night.jpg",
+    imageAlt: "Romantic PurePods bedroom with fireplace at night",
   },
   {
     href: "/experiences/journey",
     tag: "Journeys",
     title: "Scenic routes",
     description:
-      "Scenic routes across New Zealand — discover landscapes, stops and journeys around your stay.",
+      "Scenic routes and slow travel through New Zealand landscapes, from one PurePod to the next.",
+    cta: "Explore Scenic Journeys →",
     image:
       "/assets/img/experiences/journeys/new-zealand-native-forest-sunrise-landscape.jpg",
+    imageAlt:
+      "New Zealand native forest sunrise landscape for scenic PurePods journeys",
   },
 ];
 
@@ -61,9 +69,11 @@ const experiencesMore: GridCard[] = [
     tag: "Adventure & Wildlife",
     title: "Adventure & Wildlife",
     description:
-      "Wildlife and outdoor experiences in New Zealand — explore, walk and observe nature up close.",
+      "Nature and wildlife experiences shaped by forests, rivers, coastlines and wild New Zealand places.",
+    cta: "Explore Adventure & Wildlife →",
     image:
       "/assets/img/experiences/experiences/new-zealand-adventure-wildlife-kayaking.jpg",
+    imageAlt: "Kayaking beneath a waterfall in a New Zealand adventure setting",
     mediaPos: "center 90%",
   },
   {
@@ -71,9 +81,12 @@ const experiencesMore: GridCard[] = [
     tag: "Wine & Dine",
     title: "Wine & Dine",
     description:
-      "Food and wine experiences in New Zealand — local flavours, small producers and slow dining.",
+      "Local food, wine country and vineyard moments woven into the PurePods experience.",
+    cta: "Explore Wine & Dine →",
     image:
       "/assets/img/experiences/experiences/new-zealand-wine-dine-local-food-experience.jpg",
+    imageAlt:
+      "Local food and wine experience at a PurePods stay in New Zealand wine country",
   },
   {
     href: "/experiences/relax-coastal",
@@ -81,6 +94,7 @@ const experiencesMore: GridCard[] = [
     title: "Relax & Coastal",
     description:
       "Coastal and relaxation experiences — sea air, open space and quiet places to unwind.",
+    cta: "Explore Relax & Coastal →",
     image:
       "/assets/img/experiences/experiences/secret-spot-hot-tubs-forest-rotorua-new-zealand.jpg",
     imageAlt:
@@ -91,9 +105,11 @@ const experiencesMore: GridCard[] = [
     tag: "Culture",
     title: "Culture",
     description:
-      "Cultural experiences in New Zealand — stories of place, heritage and living traditions.",
+      "Stories of Aotearoa, rich culture, living traditions and places that shape the journey.",
+    cta: "Explore Culture →",
     image:
       "/assets/img/experiences/experiences/rotorua-culture-maori-ceremony.jpg",
+    imageAlt: "Māori cultural ceremony in Rotorua, New Zealand",
   },
 ];
 
@@ -106,7 +122,7 @@ const FEATURED_SIZES =
 export default function ExperiencesPage() {
   return (
     <>
-      <header className="nav nav--solid" role="banner">
+      <header className="nav nav--solid experiences-nav" role="banner">
         <div className="nav__bar">
           <a className="nav-brand" href="/" aria-label="PurePods — Home">
             <Image
@@ -137,8 +153,9 @@ export default function ExperiencesPage() {
             Experience New Zealand, your way
           </h1>
           <p className="lead">
-            Nature, stargazing and slow travel experiences around PurePods
-            eco-cabins.
+            Choose your way into the remote New Zealand landscape, from private
+            off-grid glass cabins and dark skies to scenic routes, wildlife,
+            wine country and stories of Aotearoa.
           </p>
         </section>
 
@@ -153,7 +170,7 @@ export default function ExperiencesPage() {
           <span className="featured__media" aria-hidden>
             <Image
               src={featured.image}
-              alt=""
+              alt={featured.imageAlt}
               fill
               sizes={FEATURED_SIZES}
               style={{
@@ -182,7 +199,7 @@ export default function ExperiencesPage() {
                 <div className="media">
                   <Image
                     src={item.image}
-                    alt=""
+                    alt={item.imageAlt ?? ""}
                     fill
                     sizes={CARD_MEDIA_SIZES}
                     style={{
@@ -197,7 +214,7 @@ export default function ExperiencesPage() {
                   <span className="tag">{item.tag}</span>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
-                  <span className="go">View more →</span>
+                  <span className="go">{item.cta}</span>
                 </div>
               </a>
             ))}
@@ -227,7 +244,7 @@ export default function ExperiencesPage() {
                   <span className="tag">{item.tag}</span>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
-                  <span className="go">View more →</span>
+                  <span className="go">{item.cta}</span>
                 </div>
               </a>
             ))}
