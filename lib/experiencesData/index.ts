@@ -39,9 +39,10 @@ export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
   journey: {
     kicker: "Journeys",
     heading: "Scenic routes",
-    metaTitle: "Journey | PurePods — Walking, Hiking & Cycling in New Zealand",
+    metaTitle:
+      "Journey Experiences in New Zealand | Walking, Hiking & Scenic Routes — PurePods",
     description:
-      "Discover walking, hiking and cycling routes across New Zealand with PurePods, paired with private glass eco-cabin stays in remote natural settings. Explore regional trails and book a nearby PurePod.",
+      "Explore Journey by PurePods: walking, hiking and cycling routes across New Zealand, with private off-grid glass cabins from one landscape to the next.",
     heroSrc: "/assets/img/experiences/journeys/owharoa-falls-karangahake-gorge-waterfall-new-zealand.jpg",
     heroAlt: "Native forest and hills at sunrise, New Zealand",
   },

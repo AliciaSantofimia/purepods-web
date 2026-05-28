@@ -12,7 +12,7 @@ export const journeyHero = {
 export const journeyContextHeading = "Where to stay for these experiences";
 
 export const journeyContextBody =
-  "Stay close to routes that move through forest, coast and open landscapes — each PurePod gives you a private base before and after the journey.";
+  "Build a scenic journey around trails, open landscapes and the rest that follows the route — each private glass cabin gives you a quiet base as you move from one PurePod to the next.";
 
 export const journeyExperienceSlides: AdventureExperienceSlide[] = [
   {
@@ -339,15 +339,47 @@ export const journeyCyclingSlides: HikingSlide[] = [
 
 export const journeyFaq: { q: string; a: string }[] = [
   {
-    q: "What is the Journey experience on PurePods?",
-    a: "Journey is a PurePods experience page that groups walking, hiking and cycling ideas with suggested PurePod stays. It presents example forest walks, hikes and cycle routes in selected New Zealand regions, with external links to route information and internal links to each suggested pod’s page on this site.",
+    q: "What is Journey by PurePods?",
+    a: "Journey is the PurePods experience for travellers who want to connect scenic routes, walking tracks, cycling trails and quiet landscapes across New Zealand with a private glass cabin stay at the end of the day.",
   },
   {
-    q: "Which regions appear in the examples on this page?",
-    a: "The carousels highlight examples in Rotorua, Waikato, the Kāpiti Coast, Central Otago, the Coromandel, Waipara and Auckland’s west coast. These are illustrative routes only; availability and access are set by land managers and operators linked from each entry.",
+    q: "Is Journey about fixed itineraries or guided tours?",
+    a: "No. Journey is not a fixed tour or guided itinerary. It is an editorial way to explore New Zealand routes and landscapes, then choose a nearby PurePod as a private place to slow down, stay overnight and continue the journey at your own pace.",
   },
   {
-    q: "How do I book a PurePod from this page?",
-    a: "Use the main Book control in the navigation, the “Find your PurePod” call to action, or each section’s “Stay at [pod name]” link. Those links open the matching pod page on this site, where you can read about the stay and continue to booking.",
+    q: "Can I plan a multi-pod journey with PurePods?",
+    a: "Yes, guests can choose to stay at more than one PurePod if availability and travel plans allow. Journey can help inspire a slower route through New Zealand, from one PurePod to the next, but each stay should be booked separately according to availability.",
+  },
+  {
+    q: "Does Journey include walking and hiking experiences?",
+    a: "Yes. Journey includes walking tracks, hikes, coastal walks, forest routes and scenic landscapes across New Zealand. Some are short and accessible, while others may require more time, planning or fitness, so guests should always check local track information before setting out.",
+  },
+  {
+    q: "Does Journey include cycling routes?",
+    a: "Yes. Some Journey experiences include cycling or mountain biking routes, such as scenic trails, forest tracks or regional cycleways. Guests should check route conditions, bike hire options, safety requirements and weather before travelling.",
+  },
+  {
+    q: "Do the PurePods sit directly on the trails?",
+    a: "Not always. The PurePods are chosen as nearby private stays that pair well with each route or landscape, but guests may still need to drive, walk or arrange transport between the pod and the activity.",
+  },
+  {
+    q: "How do I choose the right PurePod for a Journey experience?",
+    a: "Start with the landscape or route you want to explore, then use the nearby PurePod links on the Journey page to find a stay that fits your plans. Each pod landing gives more detail about the setting, arrival walk and booking flow.",
+  },
+  {
+    q: "Are Journey experiences suitable for all fitness levels?",
+    a: "It depends on the route. Some experiences are gentle scenic walks, while others involve longer hikes, cycling routes or uneven terrain. Guests should always check the official trail information, weather, distance and difficulty before choosing an activity.",
+  },
+  {
+    q: "What should I bring for a Journey stay?",
+    a: "Bring comfortable walking shoes, layered clothing, water, weather protection and anything needed for the route you plan to explore. For the PurePod stay itself, bring luggage that is easy to carry and your favourite drinks if ordering food.",
+  },
+  {
+    q: "Can I book a PurePod directly from the Journey page?",
+    a: "The Journey page helps connect each route or landscape with nearby PurePods. Follow the links to the relevant pod landing first, then continue to the booking flow from there. This keeps the journey editorial before moving into availability and booking.",
+  },
+  {
+    q: "What makes Journey different from Adventure & Wildlife?",
+    a: "Journey focuses on scenic routes, trails, walking, cycling and slow travel through New Zealand landscapes. Adventure & Wildlife is more focused on wildlife encounters, outdoor activities and nature experiences. Some overlap is natural, but Journey is about the route and the rhythm of travel.",
   },
 ];

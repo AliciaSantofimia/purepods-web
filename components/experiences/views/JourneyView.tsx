@@ -23,7 +23,7 @@ export function JourneyView() {
     <AdventureWildlifePageTemplate
       hero={journeyHero}
       heroTitle="Journey Experiences in New Zealand"
-      heroSummary="Days shaped by trails, forests, coastlines and open landscapes — then nights in your PurePod, where remote glass cabins give the journey space to settle."
+      heroSummary="Journey by PurePods connects walking tracks, cycling trails and scenic routes across New Zealand with private off-grid glass cabins made for slowing down between landscapes, from one PurePod to the next."
       contextHeading={journeyContextHeading}
       contextBody={journeyContextBody}
       carouselHeading="Curated journey experiences"
