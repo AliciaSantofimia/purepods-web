@@ -29,9 +29,9 @@ export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
   romance: {
     kicker: "Retreat",
     heading: "Romantic getaway",
-    metaTitle: "Romantic Getaway | PurePods Glass Cabin Experience in New Zealand",
+    metaTitle: "Romantic Getaways in New Zealand | PurePods Glass Cabins",
     description:
-      "Romantic getaway in New Zealand: escape to a private PurePods glass cabin for two. Starry skies, complete privacy and an intimate connection with nature. Book your retreat.",
+      "Romantic getaways in New Zealand: a private off-grid glass cabin for two with privacy, nature, stars and moments for anniversaries, proposals or honeymoons.",
     heroSrc: "/assets/img/experiences/romantic/romantic-getaway-new-zealand-purepods-hero.jpg",
     heroAlt:
       "Couple in a PurePods glass cabin looking out at New Zealand landscape at golden hour",

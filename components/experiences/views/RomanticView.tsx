@@ -38,9 +38,10 @@ export function RomanticView() {
             <div className="heroInner">
               <h1>Where time moves slower.</h1>
               <p className="impact-summary">
-                An intimate retreat to disconnect, raise a glass without rush,
-                and watch the light shift in silence — until the night fills
-                with stars.
+                A romantic getaway in New Zealand for two: a private off-grid
+                glass cabin where privacy, nature, stars and stillness create
+                space for anniversaries, proposals, honeymoons or simply time
+                together.
               </p>
               <Link className="btnGhost" href="#moments">
                 Explore the experience
