@@ -38,6 +38,16 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/experiences/romantic",
+        destination: "/experiences/romance",
+        permanent: true,
+      },
+      {
+        source: "/experiences/romantic/",
+        destination: "/experiences/romance",
+        permanent: true,
+      },
+      {
         source: "/location/kokomea-purepod-luxury-glass-cabin-near-wellington",
         destination: "/location/kokomea",
         permanent: true,

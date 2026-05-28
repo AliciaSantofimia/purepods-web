@@ -49,7 +49,7 @@ export default function ExperienceDetailPage({ params }: Props) {
   switch (slug) {
     case "adventure-wildlife":
       return <AdventureWildlifeView />;
-    case "romantic":
+    case "romance":
       return <RomanticView />;
     case "journey":
       return <JourneyView />;

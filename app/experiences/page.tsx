@@ -39,7 +39,7 @@ type GridCard = {
 
 const experiencesPrimary: GridCard[] = [
   {
-    href: "/experiences/romantic",
+    href: "/experiences/romance",
     tag: "Retreat",
     title: "Romantic",
     description:

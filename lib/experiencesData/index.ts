@@ -1,6 +1,6 @@
 export type ExperienceSlug =
   | "stargazing"
-  | "romantic"
+  | "romance"
   | "journey"
   | "adventure-wildlife"
   | "wine-dine"
@@ -26,7 +26,7 @@ export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
     heroSrc: "/assets/img/experiences/night-falls/purepods-night-falls-stargazing-new-zealand-night-sky.jpg",
     heroAlt: "A star-filled night sky above a remote PurePod in New Zealand",
   },
-  romantic: {
+  romance: {
     kicker: "Retreat",
     heading: "Romantic getaway",
     metaTitle: "Romantic Getaway | PurePods Glass Cabin Experience in New Zealand",

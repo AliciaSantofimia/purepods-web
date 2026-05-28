@@ -151,7 +151,7 @@ const experiences = [
     image:
       "/assets/img/experiences/romantic/purepods-romantic-getaway-stargazing-bed-glass-roof.jpg",
     alt: "Couple stargazing from bed inside a PurePod",
-    link: "/experiences/romantic",
+    link: "/experiences/romance",
     width: 1024,
     height: 1536,
   },

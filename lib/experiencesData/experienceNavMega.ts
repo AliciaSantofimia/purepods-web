@@ -13,7 +13,7 @@ const PATH_SLUG_ALIASES: Record<string, ExperienceSlug> = {};
 /** Preferred editorial order; any slug in `EXPERIENCE_SLUGS` not listed here is appended after. */
 const DISPLAY_ORDER: ExperienceSlug[] = [
   "relax-coastal",
-  "romantic",
+  "romance",
   "adventure-wildlife",
   "stargazing",
   "culture",
@@ -32,7 +32,7 @@ const MEGA_COPY: Record<ExperienceSlug, { title: string; subtitle: string }> = {
     title: "Relax & Coastal",
     subtitle: "Geothermal waters, quiet coast & restorative nature",
   },
-  romantic: {
+  romance: {
     title: "Romantic",
     subtitle: "Intimate glass-cabin retreats for two",
   },
