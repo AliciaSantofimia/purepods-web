@@ -70,10 +70,9 @@ export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
   "relax-coastal": {
     kicker: "Relax & coastal",
     heading: "Relax & coastal",
-    metaTitle:
-      "Relax & Coastal | PurePods — Serenity, Wellness & Restorative New Zealand",
+    metaTitle: "Relaxing Coastal Getaways in New Zealand | PurePods",
     description:
-      "Curated geothermal relaxation in Rotorua and coastal calm from Northland to Stewart Island and Hurunui — official visitor links, honest imagery where available, and each stop paired with a suggested PurePod stay.",
+      "Relax & Coastal by PurePods: relaxing getaways in New Zealand with geothermal waters, coastal escapes, private glass cabins, slow mornings and quiet evenings.",
     heroSrc: "/assets/img/experiences/experiences/rotorua-relax-coastal-geothermal-lake.jpg",
     heroAlt:
       "Geothermal lake with steam and mineral colours near Rotorua, New Zealand",

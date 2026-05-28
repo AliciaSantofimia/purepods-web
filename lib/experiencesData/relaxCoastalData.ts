@@ -11,7 +11,7 @@ export const relaxHero = {
 export const relaxContextHeading = "Where to stay for these experiences";
 
 export const relaxContextBody =
-  "Stay close to geothermal waters, forest springs and open coastlines — each PurePod gives you a quiet natural base for slowing down before and after the day.";
+  "Shape a relaxing getaway around geothermal waters, beaches, coastal views and slow time outdoors — then return to a private glass cabin for quiet evenings and a softer pace.";
 
 export const relaxExperienceSlides: AdventureExperienceSlide[] = [
   {
@@ -338,11 +338,47 @@ export const relaxRcChapters: RelaxRcChapter[] = [
 
 export const relaxFaq: { q: string; a: string }[] = [
   {
-    q: "What does Relax & Coastal cover now?",
-    a: "A small, intentional edit — geothermal waters first, followed by a handful of quiet coastal and inland places.",
+    q: "What is Relax & Coastal by PurePods?",
+    a: "Relax & Coastal is the PurePods experience for travellers who want restorative time in nature, combining geothermal waters, coastal landscapes, forest springs, beaches and private glass cabin stays across New Zealand.",
   },
   {
-    q: "Is this a complete regional guide?",
-    a: "No. It is a curated shortlist for calm pacing — not a checklist of every place.",
+    q: "Is Relax & Coastal a good choice for a relaxing getaway?",
+    a: "Yes. Relax & Coastal is designed for guests looking for a slower, quieter kind of New Zealand escape. It brings together peaceful landscapes, water-based experiences, coastal air and private PurePods stays where you can disconnect and reset.",
+  },
+  {
+    q: "Does Relax & Coastal include coastal escapes?",
+    a: "Yes. Some Relax & Coastal experiences are shaped by beaches, coastal viewpoints, bays, sea air and open coastal landscapes. The page connects these places with nearby PurePods so guests can enjoy the coast during the day and return to a private glass cabin afterwards.",
+  },
+  {
+    q: "Does Relax & Coastal include hot pools, spas or thermal experiences?",
+    a: "Some Relax & Coastal experiences include geothermal pools, hot springs, forest hot tubs or spa-style settings where they are already part of the page. Availability, booking requirements and opening times depend on the individual operator, so guests should check details before visiting.",
+  },
+  {
+    q: "Can I see sunrise or sunset during a Relax & Coastal stay?",
+    a: "Sunrise and sunset can be part of the experience, depending on the pod, landscape, weather and time of year. Relax & Coastal is not a dedicated sunrise-and-sunset itinerary, but slow mornings, evening light and open views are a natural part of many PurePods stays.",
+  },
+  {
+    q: "Are the PurePods directly on the beach or beside the hot pools?",
+    a: "Not always. PurePods are chosen as nearby private stays that pair well with coastal, geothermal or restorative experiences, but guests may still need to drive, walk or arrange transport between the pod and the activity.",
+  },
+  {
+    q: "Is Relax & Coastal suitable for couples?",
+    a: "Yes. Each PurePod is designed for a maximum of two guests, making Relax & Coastal well suited to couples or two adults looking for privacy, nature and a slower pace. The focus is calm, rest and time together in a private setting.",
+  },
+  {
+    q: "What should I bring for a Relax & Coastal stay?",
+    a: "Bring comfortable clothing, layers for changing New Zealand weather, swimwear or spa-friendly clothing if your plans include pools or hot tubs, suitable footwear for short walks and your favourite drinks if ordering food for your PurePod stay.",
+  },
+  {
+    q: "What happens if the weather changes?",
+    a: "Weather is part of any New Zealand nature escape. Coastal views, beaches and outdoor experiences can change with wind, rain or cloud, while geothermal pools, forest settings and private cabin time can still feel restorative in less-than-perfect weather. Always check local conditions before heading out.",
+  },
+  {
+    q: "How do I choose the right PurePod for a Relax & Coastal experience?",
+    a: "Start with the kind of experience you want — geothermal waters, forest springs, coastal views, beaches or quiet time in nature — then follow the nearby PurePod links on the page. Each pod landing gives more detail about the setting, arrival walk and booking flow.",
+  },
+  {
+    q: "What makes Relax & Coastal different from Journey or Romantic?",
+    a: "Relax & Coastal focuses on rest, water, coastlines, geothermal experiences and slower time in nature. Journey is more about routes, walking, cycling and movement through landscapes, while Romantic focuses on private time for two, anniversaries, proposals and special moments.",
   },
 ];

@@ -262,7 +262,7 @@ export function RelaxCoastalView() {
     <AdventureWildlifePageTemplate
       hero={relaxHero}
       heroTitle="Relax & Coastal Experiences in New Zealand"
-      heroSummary="Days shaped by geothermal waters, forest springs and open coastlines — then nights in your PurePod, where remote glass cabins keep the same calm rhythm."
+      heroSummary="Relax & Coastal by PurePods brings together geothermal waters, forest springs, coastal air and private glass cabins across New Zealand, made for slow mornings, quiet evenings and restorative time in nature."
       contextHeading={relaxContextHeading}
       contextBody={relaxContextBody}
       carouselHeading="Curated relax and coastal experiences"
