@@ -81,9 +81,9 @@ export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
     kicker: "Culture",
     heading: "Culture",
     metaTitle:
-      "Culture | PurePods — Cultural and Heritage Experiences in New Zealand",
+      "Cultural Experiences in New Zealand | Heritage, Māori Culture & PurePods",
     description:
-      "Curated cultural and heritage experiences across New Zealand — Māori living heritage, historic towns, museums and local craft stories — each paired with a nearby PurePods glass eco-cabin stay.",
+      "Explore Culture by PurePods: cultural experiences in New Zealand, from Māori heritage and local stories to art, history and nearby private glass cabins.",
     heroSrc: "/assets/img/experiences/experiences/rotorua-culture-maori-ceremony.jpg",
     heroAlt: "Māori cultural gathering in a forest setting, New Zealand",
   },

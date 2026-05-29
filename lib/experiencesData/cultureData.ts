@@ -14,7 +14,7 @@ export const cultureAboutLeadHtml = `Below you will find a calm, editorial selec
 export const cultureContextHeading = "Where to stay for these experiences";
 
 export const cultureContextBody =
-  "Stay close to places shaped by living heritage, storytelling and local identity — each PurePod offers a quiet natural base within reach of memorable cultural experiences across New Zealand.";
+  "Stay close to cultural experiences shaped by local stories, heritage places and connection to place — each nearby PurePod gives you a private glass cabin and time to reflect after the day.";
 
 export const cultureExperienceSlides: AdventureExperienceSlide[] = [
   {
@@ -363,15 +363,47 @@ export const cultureIndustrySlides: HikingSlide[] = [
 
 export const cultureFaq: { q: string; a: string }[] = [
   {
-    q: "What does this Culture page include?",
-    a: "Editorial highlights across Māori living heritage, historic settlements, museums and galleries, and industry or craft stories. Each carousel slide includes an official or authoritative link plus a direct PurePods booking link for a nearby stay where we have a pod in the region.",
+    q: "What is Culture by PurePods?",
+    a: "Culture is the PurePods experience for travellers who want to connect meaningful places, heritage sites, local stories, Māori cultural experiences, art, history and nearby private glass cabin stays across New Zealand.",
   },
   {
-    q: "How are places chosen?",
-    a: "The list is curated for depth and regional balance. Always confirm opening hours, tours and cultural protocols with each venue before you travel.",
+    q: "Does Culture include Māori cultural experiences?",
+    a: "Yes, where they are part of the places and operators already featured on the page. Culture includes experiences connected to Māori heritage, performance, carving, storytelling and place, but it should always be approached with respect for the hosts, context and local significance of each experience.",
   },
   {
-    q: "How do I continue to booking from this page?",
-    a: "Each slide includes a link to the suggested pod’s page on this site where available, and the final call to action opens PurePods booking to check availability and complete your stay.",
+    q: "Is Culture only about Māori culture?",
+    a: "No. Māori culture is an important part of cultural travel in Aotearoa New Zealand, but the Culture experience can also include heritage places, museums, local stories, historic towns, craft, art and other place-based experiences that help guests understand where they are staying.",
+  },
+  {
+    q: "How does PurePods connect with cultural experiences?",
+    a: "The Culture page connects cultural places and experiences with nearby PurePods. Guests can spend the day exploring a heritage site, cultural venue, museum, performance or local story, then return to a private glass cabin for a quiet stay close to nature.",
+  },
+  {
+    q: "Are the cultural experiences run by PurePods?",
+    a: "Not usually. Many cultural experiences are run by external operators, hosts, museums or local organisations. PurePods helps connect guests with nearby places to explore, but guests should check opening times, booking requirements and cultural guidance directly with each operator.",
+  },
+  {
+    q: "How should guests approach Māori cultural experiences respectfully?",
+    a: "Guests should follow the guidance of the host or operator, listen carefully, avoid treating cultural practices as performances without context, and respect any instructions around photography, behaviour, language or place. The best experiences begin with openness, care and respect.",
+  },
+  {
+    q: "Do I need to book cultural experiences in advance?",
+    a: "Some experiences may require advance booking, while others may allow walk-ins or have set opening hours. Guests should check the official website of each operator before travelling, especially for guided experiences, performances, workshops or seasonal activities.",
+  },
+  {
+    q: "What should I bring for a Culture experience?",
+    a: "Bring comfortable clothing, suitable footwear, a charged phone or camera if photography is permitted, and enough time to experience the place without rushing. For the PurePod stay, bring luggage that is easy to carry and any food or drinks you have arranged for your booking.",
+  },
+  {
+    q: "Are Culture experiences suitable for couples?",
+    a: "Yes. Each PurePod is designed for a maximum of two guests, so Culture works well for couples or two adults who want to combine cultural travel, local stories and quiet private accommodation in nature.",
+  },
+  {
+    q: "What makes Culture different from Journey or Wine & Dine?",
+    a: "Culture focuses on heritage, local stories, Māori cultural experiences, art, history and connection to place. Journey is more focused on routes, walking, cycling and movement through landscapes, while Wine & Dine focuses on food, wine and dining experiences.",
+  },
+  {
+    q: "How do I choose the right PurePod for a Culture experience?",
+    a: "Start with the cultural place or experience you want to explore, then follow the nearby PurePod links on the page. Each pod landing gives more detail about the setting, arrival walk and booking flow, so you can choose the stay that best fits your plans.",
   },
 ];

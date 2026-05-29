@@ -13,7 +13,7 @@ export function CultureView() {
     <AdventureWildlifePageTemplate
       hero={cultureHero}
       heroTitle="Culture Experiences in New Zealand"
-      heroSummary="Days shaped by living traditions, heritage places and local stories across New Zealand — then nights in your PurePod, where remote glass cabins give you space to absorb it all."
+      heroSummary="Culture by PurePods connects heritage places, Māori cultural experiences, local stories and meaningful travel across Aotearoa New Zealand with nearby private glass cabins made for quiet reflection after the day."
       contextHeading={cultureContextHeading}
       contextBody={cultureContextBody}
       carouselHeading="Curated culture experiences"
