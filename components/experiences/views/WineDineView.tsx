@@ -23,7 +23,7 @@ export function WineDineView() {
     <AdventureWildlifePageTemplate
       hero={wineDineHero}
       heroTitle="Wine & Dine Experiences in New Zealand"
-      heroSummary="Days shaped by vineyards, long lunches and local flavours — then nights in your PurePod, where the landscape gives every taste time to settle."
+      heroSummary="Wine & Dine by PurePods pairs New Zealand food and wine experiences with nearby private off-grid glass cabins, from vineyard lunches and winery restaurants to local dining, regional flavours and quiet nights close to the landscape."
       contextHeading={wineDineContextHeading}
       contextBody={wineDineContextBody}
       carouselHeading="Curated wine and dining experiences"

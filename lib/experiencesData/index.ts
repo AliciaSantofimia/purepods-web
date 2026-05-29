@@ -60,9 +60,9 @@ export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
   "wine-dine": {
     kicker: "Wine & dine",
     heading: "Wine & dine",
-    metaTitle: "Wine & Dine | PurePods — Food and Wine Experiences in New Zealand",
+    metaTitle: "Wine & Dine in New Zealand | Food & Wine Getaways — PurePods",
     description:
-      "Curated wine and dining experiences across New Zealand — vineyard tastings, winery restaurants, views and local favourites — each paired with a nearby PurePods glass eco-cabin stay.",
+      "Explore Wine & Dine by PurePods: food and wine getaways in New Zealand with vineyard dining, local flavours and nearby private off-grid glass cabins.",
     heroSrc: "/assets/img/experiences/experiences/new-zealand-wine-dine-local-food-experience.jpg",
     heroAlt:
       "Local food and wine spread in a scenic New Zealand landscape, slow dining and regional flavours",

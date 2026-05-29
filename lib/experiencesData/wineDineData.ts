@@ -9,7 +9,7 @@ export const wineDineHero = {
 export const wineDineContextHeading = "Where to stay for these experiences";
 
 export const wineDineContextBody =
-  "Stay close to vineyards, restaurants and local favourites — each PurePod gives you a quiet place to return after a day shaped by flavour and landscape.";
+  "Stay close to vineyards, winery restaurants and local favourites across New Zealand, with nearby PurePods that let each food and wine experience become part of a slower escape. Choose a region, explore what is nearby, then return to your private glass cabin for stillness, views and time to let the day settle.";
 
 export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
   {
@@ -41,8 +41,10 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     description:
       "Organic wines, seasonal food and vineyard views come together in one of Waipara Valley’s most distinctive wine-country settings.",
     pods: [
-      { label: "Atatū PurePod", href: "/location/atatu/?from=wine-dine" },
-      { label: "Korimako PurePod", href: "/location/korimako/?from=wine-dine" },
+      {
+        label: "Greystone PurePod",
+        href: "/location/greystone/?from=wine-dine",
+      },
     ],
     distance: "Waipara Valley winery",
     timing: "lunch and tastings",
@@ -56,8 +58,10 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     description:
       "An organic winery and restaurant experience where seasonal food, considered winemaking and vineyard landscapes meet.",
     pods: [
-      { label: "Atatū PurePod", href: "/location/atatu/?from=wine-dine" },
-      { label: "Korimako PurePod", href: "/location/korimako/?from=wine-dine" },
+      {
+        label: "Greystone PurePod",
+        href: "/location/greystone/?from=wine-dine",
+      },
     ],
     distance: "Waipara Valley winery",
     timing: "seasonal dining",
@@ -378,15 +382,55 @@ export const wineDineLocalSlides: HikingSlide[] = [
 
 export const wineDineFaq: { q: string; a: string }[] = [
   {
-    q: "What does this Wine & Dine page include?",
-    a: "Editorial highlights across vineyard dining and tastings, winery restaurants, dining with a view, and relaxed local favourites. Each carousel slide includes an official experience link plus direct PurePods booking links for nearby stays where we have a pod in the region.",
+    q: "What is Wine & Dine by PurePods?",
+    a: "Wine & Dine by PurePods is a guide to New Zealand food and wine experiences near selected PurePods, from vineyard restaurants and winery visits to local dining, regional flavours and scenic places to stay nearby.",
   },
   {
-    q: "How should I plan my visit?",
-    a: "Always confirm opening hours, reservations and seasonal menus with each venue before you travel.",
+    q: "Are wine tastings or meals included in a PurePod stay?",
+    a: "No. Wine tastings, meals, restaurant bookings and alcohol are not automatically included in a PurePod stay unless clearly stated in a specific booking option. Wine & Dine helps you explore nearby experiences so you can plan them separately.",
   },
   {
-    q: "How do I continue to booking from this page?",
-    a: "Each slide includes booking pathways to suggested PurePods sites where available, and the final call to action opens PurePods booking to check availability and complete your stay.",
+    q: "Do I need to book wineries or restaurants separately?",
+    a: "Yes. Many wineries, restaurants and local dining experiences require separate bookings, especially during weekends, holidays and peak travel periods. Check opening hours, availability and booking requirements directly with each venue before you travel.",
+  },
+  {
+    q: "Can I stay at a PurePod in a wine region?",
+    a: "Yes. Greystone PurePod is set above the award-winning Greystone vineyard in Waipara Valley, less than an hour north of Christchurch. It is one of the clearest Wine & Dine stays, combining a private off-grid glass cabin with a setting in one of New Zealand’s recognised wine-producing regions.",
+  },
+  {
+    q: "What can guests experience at Greystone Wines?",
+    a: "Greystone Wines offers wine tastings, tastings with local cheese, restaurant dining and seasonal food and wine experiences at its Cellar Door & Restaurant in Waipara. These experiences are operated by Greystone Wines and should be checked and booked directly with them before you travel.",
+  },
+  {
+    q: "Is Greystone PurePod part of the Greystone vineyard experience?",
+    a: "Greystone PurePod is located above the Greystone vineyard, with views across Waipara Valley and towards the Southern Alps. It gives guests a private place to stay within the wider Greystone wine-country setting, while any tastings, dining or vineyard experiences should be arranged separately with Greystone Wines.",
+  },
+  {
+    q: "Can I visit wineries near a PurePod?",
+    a: "Yes. Several PurePods are close to wineries, vineyard restaurants and regional dining experiences. Greystone PurePod offers a direct Waipara Valley wine-country setting, while Haurapa and Tāima connect well with Central Otago wine country, and Atatū and Korimako place you near Waipara and North Canterbury.",
+  },
+  {
+    q: "Which PurePods are featured in Wine & Dine?",
+    a: "Wine & Dine currently features nearby stays including Greystone in Waipara Valley, Haurapa and Tāima in Central Otago, Atatū and Korimako near Waipara and North Canterbury, Pāmu near Rotorua, Ruru near the Coromandel and Rewarewa near Auckland and the Muriwai Coast.",
+  },
+  {
+    q: "Is Wine & Dine suitable for couples?",
+    a: "Yes. PurePods are designed for a maximum of two guests, making Wine & Dine well suited to couples planning a food and wine getaway, anniversary, special occasion or slow regional escape.",
+  },
+  {
+    q: "How do I choose the right PurePod for a food and wine getaway?",
+    a: "Start with the kind of experience you want: vineyard dining, winery visits, local restaurants, lake or coastal dining, or a particular region. Then follow the nearby PurePod link to learn more about the cabin, location and booking flow.",
+  },
+  {
+    q: "How do Wine & Dine links work?",
+    a: "The nearby PurePod links take you first to the editorial landing page for that pod, where you can learn about the location, setting and stay. From there, you can continue into the booking flow when you are ready.",
+  },
+  {
+    q: "Do I need a car for Wine & Dine experiences?",
+    a: "In most cases, yes. PurePods are private, off-grid stays in rural or regional settings, and many nearby wineries, restaurants and local experiences are easiest to reach by car. Always plan safe transport if you intend to drink alcohol.",
+  },
+  {
+    q: "How is Wine & Dine different from Romantic or Relax & Coastal?",
+    a: "Wine & Dine focuses on food, wine, vineyards, restaurants and regional flavours near PurePods. Romantic is centred on private moments for two, while Relax & Coastal focuses more on slower coastal, geothermal and restorative escapes.",
   },
 ];
