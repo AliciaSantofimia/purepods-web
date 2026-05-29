@@ -11,6 +11,7 @@ import {
 export function CultureView() {
   return (
     <AdventureWildlifePageTemplate
+      experienceClassName="culture-ref"
       hero={cultureHero}
       heroTitle="Culture Experiences in New Zealand"
       heroSummary="Culture by PurePods connects heritage places, Māori cultural experiences, local stories and meaningful travel across Aotearoa New Zealand with nearby private glass cabins made for quiet reflection after the day."

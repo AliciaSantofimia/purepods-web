@@ -15,6 +15,7 @@ type FaqItem = { q: string; a: string };
 
 type AdventureWildlifePageTemplateProps = {
   faqJsonLd?: Record<string, unknown>;
+  experienceClassName?: string;
   hero: {
     src: string;
     alt: string;
@@ -42,6 +43,7 @@ type AdventureWildlifePageTemplateProps = {
 
 export function AdventureWildlifePageTemplate({
   faqJsonLd,
+  experienceClassName,
   hero,
   heroTitle,
   heroSummary,
@@ -63,9 +65,13 @@ export function AdventureWildlifePageTemplate({
   ctaHref,
   ctaBottomSupport,
 }: AdventureWildlifePageTemplateProps) {
+  const rootClassName = `experience-ref adventure-wildlife-ref${
+    experienceClassName ? ` ${experienceClassName}` : ""
+  }`;
+
   return (
     <>
-      <div className="experience-ref adventure-wildlife-ref">
+      <div className={rootClassName}>
         {faqJsonLd ? (
           <script
             type="application/ld+json"

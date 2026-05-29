@@ -83,3 +83,50 @@
     transform: none !important;
   }
 }
+
+/* Culture uses the shared Adventure/Wildlife template; these tweaks keep the longer
+   Culture copy readable on narrow mobile screens without changing desktop. */
+@media (max-width: 640px) {
+  .experience-ref.culture-ref .hero {
+    min-height: max(620px, 100svh);
+  }
+
+  .experience-ref.culture-ref .hero .heroInner {
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: clamp(34px, 7vh, 56px) 18px 38px;
+    margin: 0;
+  }
+
+  .experience-ref.culture-ref .hero h1,
+  .experience-ref.culture-ref .hero .impact-summary,
+  .experience-ref.culture-ref .aw-context-block__body,
+  .experience-ref.culture-ref .aw-xp-carousel__title,
+  .experience-ref.culture-ref .aw-xp-carousel__desc,
+  .experience-ref.culture-ref .aw-xp-carousel__stayName,
+  .experience-ref.culture-ref .aw-xp-carousel__stayRegion {
+    overflow-wrap: anywhere;
+  }
+
+  .experience-ref.culture-ref .hero h1 {
+    max-width: min(12ch, 100%);
+    font-size: clamp(30px, 9vw, 36px);
+  }
+
+  .experience-ref.culture-ref .hero .impact-summary {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .experience-ref.culture-ref .aw-xp-carousel__caption {
+    box-sizing: border-box;
+    max-width: 100%;
+    padding-inline: 16px;
+  }
+
+  .experience-ref.culture-ref .aw-xp-carousel__actions,
+  .experience-ref.culture-ref .aw-xp-carousel__stay {
+    max-width: 100%;
+  }
+}
