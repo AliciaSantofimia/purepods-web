@@ -5,10 +5,38 @@ import { FaqHeader } from "@/app/frequently-asked-questions/FaqHeader";
 import { ContactForm } from "@/app/contact-us/ContactForm";
 import styles from "./page.module.css";
 
+const CANONICAL = "https://purepods.com/contact-us";
+const SEO_TITLE = "Contact Us | PurePods";
+const META_DESCRIPTION =
+  "Contact PurePods for booking questions, stay enquiries and support with private off-grid glass cabin experiences across New Zealand.";
+const SOCIAL_IMAGE =
+  "https://purepods.com/assets/img/purepods-glass-eco-cabin-new-zealand-nature-stay-hero-home.jpg";
+const SOCIAL_IMAGE_ALT =
+  "PurePods private off-grid glass cabin in a secluded New Zealand landscape";
+
 export const metadata: Metadata = {
-  title: "Contact Us | PurePods",
-  description:
-    "Contact PurePods for booking enquiries, gift vouchers, media requests and general questions.",
+  title: { absolute: SEO_TITLE },
+  description: META_DESCRIPTION,
+  alternates: { canonical: CANONICAL },
+  openGraph: {
+    title: SEO_TITLE,
+    description: META_DESCRIPTION,
+    url: CANONICAL,
+    siteName: "PurePods",
+    type: "website",
+    images: [
+      {
+        url: SOCIAL_IMAGE,
+        alt: SOCIAL_IMAGE_ALT,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SEO_TITLE,
+    description: META_DESCRIPTION,
+    images: [SOCIAL_IMAGE],
+  },
 };
 
 export default function ContactUsPage() {
