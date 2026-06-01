@@ -3,13 +3,40 @@ import { Footer } from "@/components/layout/Footer";
 import { FaqHeader } from "@/app/frequently-asked-questions/FaqHeader";
 import styles from "@/app/privacy-policy/page.module.css";
 
+const CANONICAL = "https://purepods.com/refunds";
+const SEO_TITLE = "Refund Policy | PurePods";
+const META_DESCRIPTION =
+  "Read the PurePods Refund Policy for accommodation bookings, food hamper bookings, specials and discounts.";
+const SOCIAL_IMAGE =
+  "https://purepods.com/assets/img/purepods-glass-eco-cabin-new-zealand-nature-stay-hero-home.jpg";
+const SOCIAL_IMAGE_ALT =
+  "PurePods private off-grid glass cabin in a secluded New Zealand landscape";
+
 export const metadata: Metadata = {
   title: {
-    absolute: "Refund Policy | PurePods",
+    absolute: SEO_TITLE,
   },
-  description:
-    "Read the PurePods Refund Policy for accommodation bookings, food hamper bookings, specials and discounts.",
-  alternates: { canonical: "/refunds/" },
+  description: META_DESCRIPTION,
+  alternates: { canonical: CANONICAL },
+  openGraph: {
+    title: SEO_TITLE,
+    description: META_DESCRIPTION,
+    url: CANONICAL,
+    siteName: "PurePods",
+    type: "website",
+    images: [
+      {
+        url: SOCIAL_IMAGE,
+        alt: SOCIAL_IMAGE_ALT,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SEO_TITLE,
+    description: META_DESCRIPTION,
+    images: [SOCIAL_IMAGE],
+  },
 };
 
 export default function RefundsPage() {

@@ -3,13 +3,40 @@ import { Footer } from "@/components/layout/Footer";
 import { FaqHeader } from "@/app/frequently-asked-questions/FaqHeader";
 import styles from "./page.module.css";
 
+const CANONICAL = "https://purepods.com/privacy-policy";
+const SEO_TITLE = "Privacy Policy | PurePods";
+const META_DESCRIPTION =
+  "Read the PurePods privacy policy to understand how we collect, use, protect and handle personal information.";
+const SOCIAL_IMAGE =
+  "https://purepods.com/assets/img/purepods-glass-eco-cabin-new-zealand-nature-stay-hero-home.jpg";
+const SOCIAL_IMAGE_ALT =
+  "PurePods private off-grid glass cabin in a secluded New Zealand landscape";
+
 export const metadata: Metadata = {
   title: {
-    absolute: "Privacy Policy | PurePods",
+    absolute: SEO_TITLE,
   },
-  description:
-    "Read the PurePods privacy policy to understand how we collect, use, protect and handle personal information.",
-  alternates: { canonical: "/privacy-policy/" },
+  description: META_DESCRIPTION,
+  alternates: { canonical: CANONICAL },
+  openGraph: {
+    title: SEO_TITLE,
+    description: META_DESCRIPTION,
+    url: CANONICAL,
+    siteName: "PurePods",
+    type: "website",
+    images: [
+      {
+        url: SOCIAL_IMAGE,
+        alt: SOCIAL_IMAGE_ALT,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SEO_TITLE,
+    description: META_DESCRIPTION,
+    images: [SOCIAL_IMAGE],
+  },
 };
 
 export default function PrivacyPolicyPage() {

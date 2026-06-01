@@ -3,13 +3,40 @@ import { Footer } from "@/components/layout/Footer";
 import { FaqHeader } from "@/app/frequently-asked-questions/FaqHeader";
 import styles from "@/app/privacy-policy/page.module.css";
 
+const CANONICAL = "https://purepods.com/terms-of-service";
+const SEO_TITLE = "Terms of Service | PurePods";
+const META_DESCRIPTION =
+  "Read the PurePods Terms of Service for website use, bookings, guest responsibilities and stays at PurePod locations across New Zealand.";
+const SOCIAL_IMAGE =
+  "https://purepods.com/assets/img/purepods-glass-eco-cabin-new-zealand-nature-stay-hero-home.jpg";
+const SOCIAL_IMAGE_ALT =
+  "PurePods private off-grid glass cabin in a secluded New Zealand landscape";
+
 export const metadata: Metadata = {
   title: {
-    absolute: "Terms of Service | PurePods",
+    absolute: SEO_TITLE,
   },
-  description:
-    "Read the PurePods Terms of Service for website use, bookings, guest responsibilities and stays at PurePod locations across New Zealand.",
-  alternates: { canonical: "/terms-of-service/" },
+  description: META_DESCRIPTION,
+  alternates: { canonical: CANONICAL },
+  openGraph: {
+    title: SEO_TITLE,
+    description: META_DESCRIPTION,
+    url: CANONICAL,
+    siteName: "PurePods",
+    type: "website",
+    images: [
+      {
+        url: SOCIAL_IMAGE,
+        alt: SOCIAL_IMAGE_ALT,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SEO_TITLE,
+    description: META_DESCRIPTION,
+    images: [SOCIAL_IMAGE],
+  },
 };
 
 export default function TermsOfServicePage() {
