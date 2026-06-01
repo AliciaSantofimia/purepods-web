@@ -13,6 +13,7 @@ const nextConfig = {
   async redirects() {
     return [
       { source: "/explore", destination: "/pods", permanent: true },
+      { source: "/pod", destination: "/pods", permanent: true },
       { source: "/explore.html", destination: "/pods", permanent: true },
       { source: "/pods.html", destination: "/pods", permanent: true },
       {
