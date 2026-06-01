@@ -17,6 +17,11 @@ const nextConfig = {
       { source: "/explore.html", destination: "/pods", permanent: true },
       { source: "/pods.html", destination: "/pods", permanent: true },
       {
+        source: "/faq",
+        destination: "/frequently-asked-questions",
+        permanent: true,
+      },
+      {
         source: "/pods/choose-map-experimental",
         destination: "/pods",
         permanent: true,
