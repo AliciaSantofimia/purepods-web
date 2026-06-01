@@ -2,14 +2,41 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Footer } from "@/components/layout/Footer";
 
+const CANONICAL = "https://purepods.com/experiences";
+const SEO_TITLE =
+  "Experiences at PurePods | Stargazing, Romantic Getaways & Nature — PurePods";
+const META_DESCRIPTION =
+  "Explore PurePods experiences in New Zealand — stargazing, romantic getaways, scenic journeys, wildlife, wine, culture and nature.";
+const SOCIAL_IMAGE =
+  "https://purepods.com/assets/img/experiences/night-falls/purepods-dark-sky-stargazing-glass-cabin-new-zealand.jpg";
+const SOCIAL_IMAGE_ALT =
+  "PurePods glass cabin under a dark night sky for stargazing in New Zealand";
+
 export const metadata: Metadata = {
   title: {
-    absolute:
-      "Experiences at PurePods | Stargazing, Romantic Getaways & Nature — PurePods",
+    absolute: SEO_TITLE,
   },
-  description:
-    "Explore PurePods experiences in New Zealand — stargazing, romantic getaways, scenic journeys, wildlife, wine, culture and nature.",
-  alternates: { canonical: "/experiences" },
+  description: META_DESCRIPTION,
+  alternates: { canonical: CANONICAL },
+  openGraph: {
+    title: SEO_TITLE,
+    description: META_DESCRIPTION,
+    url: CANONICAL,
+    siteName: "PurePods",
+    type: "website",
+    images: [
+      {
+        url: SOCIAL_IMAGE,
+        alt: SOCIAL_IMAGE_ALT,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SEO_TITLE,
+    description: META_DESCRIPTION,
+    images: [SOCIAL_IMAGE],
+  },
 };
 
 const featured = {

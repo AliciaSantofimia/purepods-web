@@ -21,6 +21,8 @@ import "../cultureRef.css";
 import "../journeyRef.css";
 import "../wineDineRef.css";
 
+const SITE_URL = "https://purepods.com";
+
 type Props = { params: { slug: string } };
 
 export function generateStaticParams() {
@@ -32,10 +34,32 @@ export function generateMetadata({ params }: Props): Metadata {
     return {};
   }
   const p = EXPERIENCE_PAGES[params.slug as ExperienceSlug];
+  const canonical = `${SITE_URL}/experiences/${params.slug}`;
+  const socialImage = `${SITE_URL}${p.heroSrc}`;
+
   return {
     title: { absolute: p.metaTitle },
     description: p.description,
-    alternates: { canonical: `/experiences/${params.slug}` },
+    alternates: { canonical },
+    openGraph: {
+      title: p.metaTitle,
+      description: p.description,
+      url: canonical,
+      siteName: "PurePods",
+      type: "website",
+      images: [
+        {
+          url: socialImage,
+          alt: p.heroAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: p.metaTitle,
+      description: p.description,
+      images: [socialImage],
+    },
   };
 }
 
