@@ -5,13 +5,40 @@ import { Footer } from "@/components/layout/Footer";
 import { FaqHeader } from "@/app/frequently-asked-questions/FaqHeader";
 import styles from "./page.module.css";
 
+const CANONICAL = "https://purepods.com/our-story";
+const SEO_TITLE = "The PurePods Story | PurePods";
+const META_DESCRIPTION =
+  "The PurePods concept comes from a deep love for nature and a desire to share an intensely personal immersion into Pure New Zealand.";
+const SOCIAL_IMAGE =
+  "https://purepods.com/assets/img/purepods-glass-eco-cabin-new-zealand-nature-stay-hero-home.jpg";
+const SOCIAL_IMAGE_ALT =
+  "PurePods private off-grid glass cabin in a secluded New Zealand landscape";
+
 export const metadata: Metadata = {
   title: {
-    absolute: "The PurePods Story | PurePods",
+    absolute: SEO_TITLE,
   },
-  description:
-    "The PurePods concept comes from a deep love for nature and a desire to share an intensely personal immersion into Pure New Zealand.",
-  alternates: { canonical: "/our-story/" },
+  description: META_DESCRIPTION,
+  alternates: { canonical: CANONICAL },
+  openGraph: {
+    title: SEO_TITLE,
+    description: META_DESCRIPTION,
+    url: CANONICAL,
+    siteName: "PurePods",
+    type: "website",
+    images: [
+      {
+        url: SOCIAL_IMAGE,
+        alt: SOCIAL_IMAGE_ALT,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SEO_TITLE,
+    description: META_DESCRIPTION,
+    images: [SOCIAL_IMAGE],
+  },
 };
 
 export default function OurStoryPage() {
