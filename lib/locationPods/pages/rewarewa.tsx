@@ -47,9 +47,10 @@ function rewarewaStructuredData() {
       {
         "@type": "LodgingBusiness",
         "@id": `${CANONICAL_URL}#lodging`,
-        name: "PurePod Rewarewa",
+        name: "Rewarewa PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
+        image: OG_IMAGE_URL,
         address: {
           "@type": "PostalAddress",
           addressLocality: "Muriwai",

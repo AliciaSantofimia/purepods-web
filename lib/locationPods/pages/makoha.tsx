@@ -50,6 +50,7 @@ function makohaStructuredData() {
         name: "Mākoha PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
+        image: OG_IMAGE_URL,
         address: {
           "@type": "PostalAddress",
           addressLocality: "Kerikeri",

@@ -50,6 +50,7 @@ function kahutaraStructuredData() {
         name: "Kahutara PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
+        image: OG_IMAGE_URL,
         address: {
           "@type": "PostalAddress",
           addressLocality: "Kaikōura",

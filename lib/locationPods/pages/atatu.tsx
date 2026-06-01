@@ -50,6 +50,7 @@ function atatuStructuredData() {
         name: "Atatū PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
+        image: OG_IMAGE_URL,
         address: {
           "@type": "PostalAddress",
           addressLocality: "Greta Valley",

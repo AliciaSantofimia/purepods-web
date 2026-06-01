@@ -47,9 +47,10 @@ function hananuiStructuredData() {
       {
         "@type": "LodgingBusiness",
         "@id": `${CANONICAL_URL}#lodging`,
-        name: "PurePod Hananui",
+        name: "Hananui PurePod",
         description: META_DESCRIPTION,
         url: CANONICAL_URL,
+        image: OG_IMAGE_URL,
         address: {
           "@type": "PostalAddress",
           addressLocality: "Stewart Island",
