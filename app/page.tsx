@@ -46,6 +46,10 @@ const homeJsonLd = {
       name: "PurePods",
       url: HOME_URL,
       description: META_DESCRIPTION,
+      sameAs: [
+        "https://www.facebook.com/purepods",
+        "https://www.instagram.com/purepods/",
+      ],
     },
     {
       "@type": "WebSite",
