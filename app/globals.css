@@ -393,43 +393,6 @@ h1.heroTitle{
   border-color:rgba(247,240,228,.98);
 }
 
-.hero__dots{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:18px;
-  list-style:none;
-  margin:0;
-  padding:0;
-  opacity:.52;
-}
-
-.hero__dots button{
-  width:4px;
-  height:4px;
-  border-radius:50%;
-  border:1px solid rgba(247,246,243,.2);
-  background:transparent;
-  padding:0;
-  cursor:pointer;
-  transition:background .55s ease, border-color .55s ease, transform .55s ease, opacity .55s ease;
-  opacity:.38;
-}
-
-.hero__dots button:hover{ opacity:.62; }
-
-.hero__dots button[aria-current="true"]{
-  background:rgba(194,181,158,.65);
-  border-color:rgba(194,181,158,.4);
-  transform:scale(1.22);
-  opacity:.88;
-}
-
-.hero__dots button:focus-visible{
-  outline:1px solid rgba(247,246,243,.32);
-  outline-offset:5px;
-}
-
 /* ——— Editorial band ——— */
 .editorial{
   padding:clamp(76px,10.5vw,124px) 0 clamp(74px,10vw,122px);

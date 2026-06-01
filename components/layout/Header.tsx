@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useLayoutEffect, useMemo, useState } from "react";
+import { useEffect, useId, useLayoutEffect, useMemo, useState } from "react";
 import { BOOKING_URL } from "@/lib/constants";
 import { bookingUrlForLocationSlug } from "@/lib/locationPods";
 import {
@@ -14,8 +14,12 @@ import styles from "./Header.module.css";
 /** Location pod pages: transparent over hero; light glass + dark nav once the hero clears the bar (see `LocationPodNavHeroSync`). */
 export function Header() {
   const pathname = usePathname();
+  const menuId = useId();
   const [isSolid, setIsSolid] = useState(false);
   const [locationPastHero, setLocationPastHero] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
 
   const isLocationPage = pathname?.startsWith("/location/");
   const isEditorialLocationPage = Boolean(isLocationPage);
@@ -27,6 +31,10 @@ export function Header() {
     }
     setLocationPastHero(getLocationPodPastHeroFromDom());
   }, [isEditorialLocationPage, pathname]);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (!isEditorialLocationPage) return;
@@ -73,6 +81,20 @@ export function Header() {
   return (
     <header className={topnavMods} role="banner">
       <div className={styles.inner}>
+        <button
+          type="button"
+          className={styles.menuToggle}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          aria-controls={menuId}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span className={styles.menuBars} aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </span>
+        </button>
         <div className={styles.left}>
           {showBackToPods && (
             <Link className={styles.back} href="/pods">
@@ -117,8 +139,12 @@ export function Header() {
           </Link>
         </div>
         <nav className={styles.links} aria-label="Main">
-          <Link href="/pods">Pods</Link>
-          <Link href="/experiences">Experiences</Link>
+          <Link href="/pods" className={styles.navLink}>
+            Pods
+          </Link>
+          <Link href="/experiences" className={styles.navLink}>
+            Experiences
+          </Link>
           <a
             className={styles.cta}
             href={bookingHref}
@@ -127,6 +153,20 @@ export function Header() {
           >
             Book
           </a>
+        </nav>
+      </div>
+      <div
+        id={menuId}
+        className={`${styles.mobileMenu}${menuOpen ? ` ${styles.mobileMenuOpen}` : ""}`}
+        hidden={!menuOpen}
+      >
+        <nav className={styles.mobileMenuNav} aria-label="Mobile primary">
+          <Link href="/pods" onClick={closeMenu}>
+            Pods
+          </Link>
+          <Link href="/experiences" onClick={closeMenu}>
+            Experiences
+          </Link>
         </nav>
       </div>
     </header>

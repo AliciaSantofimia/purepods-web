@@ -24,7 +24,6 @@ export function ExplorePodsMapExperimentalV2Shell() {
           <nav className={styles.links} aria-label="Main">
             <Link href="/pods">Pods</Link>
             <Link href="/experiences">Experiences</Link>
-            <Link href="/my-journey">My journey</Link>
             <a
               className={`${styles.btn} ${styles.btnPrimary}`}
               href="https://purepods.com/booking/"

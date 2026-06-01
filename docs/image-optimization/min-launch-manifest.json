@@ -1,0 +1,115 @@
+{
+  "generatedAt": "2026-06-01T14:28:17.061Z",
+  "backupDir": ".image-backups/min-launch/",
+  "entries": [
+    {
+      "phase": "A",
+      "path": "public/assets/img/pohue/pohue-purepod-lakeside-glass-cabin-sunset-retreat-new-zealand.jpg",
+      "before": {
+        "bytes": 27564637,
+        "sizeHuman": "26.29 MB",
+        "width": 6000,
+        "height": 3997
+      },
+      "after": {
+        "bytes": 566167,
+        "sizeHuman": "553 KB",
+        "width": 2560,
+        "height": 1705,
+        "quality": 84,
+        "maxWidth": 2560
+      },
+      "savedBytes": 26998470,
+      "savedPercent": 97.9
+    },
+    {
+      "phase": "A",
+      "path": "public/assets/img/kahutara/kahutara-purepod-sunrise-over-river-valley.jpg",
+      "before": {
+        "bytes": 17871497,
+        "sizeHuman": "17.04 MB",
+        "width": 6000,
+        "height": 4000
+      },
+      "after": {
+        "bytes": 650829,
+        "sizeHuman": "636 KB",
+        "width": 2560,
+        "height": 1707,
+        "quality": 84,
+        "maxWidth": 2560
+      },
+      "savedBytes": 17220668,
+      "savedPercent": 96.4
+    },
+    {
+      "phase": "A",
+      "path": "public/assets/img/manakau/manakau-purepod-sunrise-over-mountain-landscape.jpg",
+      "before": {
+        "bytes": 13318777,
+        "sizeHuman": "12.70 MB",
+        "width": 5367,
+        "height": 3578
+      },
+      "after": {
+        "bytes": 839406,
+        "sizeHuman": "820 KB",
+        "width": 2560,
+        "height": 1707,
+        "quality": 84,
+        "maxWidth": 2560
+      },
+      "savedBytes": 12479371,
+      "savedPercent": 93.7
+    },
+    {
+      "phase": "B",
+      "path": "public/assets/img/makoha/purepod-makoha-aerial-view-native-forest-new-zealand.jpg",
+      "before": {
+        "bytes": 14736238,
+        "sizeHuman": "14.05 MB",
+        "width": 5272,
+        "height": 2966
+      },
+      "after": {
+        "bytes": 188186,
+        "sizeHuman": "184 KB",
+        "width": 1200,
+        "height": 675,
+        "quality": 82,
+        "maxWidth": 1200
+      },
+      "savedBytes": 14548052,
+      "savedPercent": 98.7
+    },
+    {
+      "phase": "B",
+      "path": "public/assets/img/kiromako/korimako-purepod-glass-cabin-native-forest-aerial-new-zealand.jpg",
+      "before": {
+        "bytes": 6866161,
+        "sizeHuman": "6.55 MB",
+        "width": 3600,
+        "height": 2025
+      },
+      "after": {
+        "bytes": 155823,
+        "sizeHuman": "152 KB",
+        "width": 1200,
+        "height": 675,
+        "quality": 82,
+        "maxWidth": 1200
+      },
+      "savedBytes": 6710338,
+      "savedPercent": 97.7
+    }
+  ],
+  "summary": {
+    "totalBeforeBytes": 80357310,
+    "totalAfterBytes": 2400411,
+    "totalBeforeHuman": "76.63 MB",
+    "totalAfterHuman": "2.29 MB",
+    "savedBytes": 77956899,
+    "savedHuman": "74.35 MB",
+    "savedPercent": 97
+  }
+}

@@ -6,7 +6,7 @@ const heroImage =
 const podAerial =
   "/assets/img/hananui/hananui-purepod-aerial-coastal-location-stewart-island.jpg";
 const podUnderStars =
-  "/assets/img/hananui/PurePod%20Hananui%20outdoor%20deck%20with%20ocean%20views%20and%20private%20seating%20New%20Zealand.jpg";
+  "/assets/img/hananui/PurePod Hananui outdoor deck with ocean views and private seating New Zealand.jpg";
 const podSeaView =
   "/assets/img/hananui/hananui-purepod-sea-view-glass-pod-stewart-island.jpg";
 const podShowerOcean =

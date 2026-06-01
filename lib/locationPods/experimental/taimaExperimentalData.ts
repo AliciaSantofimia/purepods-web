@@ -6,7 +6,7 @@ const heroImage =
 const podExterior =
   "/assets/img/taima/taima-purepod-exterior-landscape-central-otago.png";
 const podMilkyWay =
-  "/assets/img/taima/PurePod%20T%C4%81ima%20outdoor%20deck%20sunset%20with%20mountain%20views%20and%20private%20seating%20New%20Zealand.jpg";
+  "/assets/img/taima/PurePod Tāima outdoor deck sunset with mountain views and private seating New Zealand.jpg";
 const podEveningReflections =
   "/assets/img/taima/Tāima PurePod evening reflections _ photo credit Paul Wilson.jpg";
 const podOutdoorShower =
@@ -22,7 +22,7 @@ const expLakeDunstan =
 const expWine =
   "/assets/img/haurapa/tekano-estate-vineyard-central-otago-wine-region-new-zealand.jpg";
 const travelJourneyLeft =
-  "/assets/img/taima/T%C4%81ima%20PurePod%20walk%20to%20PurePod.jpg";
+  "/assets/img/taima/Tāima PurePod walk to PurePod.jpg";
 const travelJourneyRight =
   "/assets/img/taima/taima-purepod-bedroom-mountain-view-central-otago.jpg";
 const travelFood =
@@ -30,7 +30,7 @@ const travelFood =
 const travelMorningTea =
   "/assets/img/taima/taima-purepod-morning-tea-kettle-mountain-view-new-zealand.jpg";
 const travelVineyard =
-  "/assets/img/taima/T%C4%81ima%20PurePod%20BBQ%20views%20_%20photo%20credit%20Paul%20Wilson.jpg";
+  "/assets/img/taima/Tāima PurePod BBQ views _ photo credit Paul Wilson.jpg";
 
 export const TAIMA_BOOKING_URL =
   "https://purepods.com/booking/?force_site_id=13";

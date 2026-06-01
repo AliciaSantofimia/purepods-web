@@ -16,6 +16,29 @@ const nextConfig = {
       { source: "/pod", destination: "/pods", permanent: true },
       { source: "/explore.html", destination: "/pods", permanent: true },
       { source: "/pods.html", destination: "/pods", permanent: true },
+      { source: "/pods/luxury-test", destination: "/pods", permanent: true },
+      { source: "/pods/map-test", destination: "/pods", permanent: true },
+      {
+        source: "/pods/explore-map-experimental",
+        destination: "/pods",
+        permanent: true,
+      },
+      {
+        source: "/pods/explore-map-experimental-v2",
+        destination: "/pods",
+        permanent: true,
+      },
+      {
+        source: "/pods/infographic-map-test",
+        destination: "/pods",
+        permanent: true,
+      },
+      { source: "/pods/geo-map-preview", destination: "/pods", permanent: true },
+      {
+        source: "/pods/map-preview-experimental",
+        destination: "/pods",
+        permanent: true,
+      },
       {
         source: "/faq",
         destination: "/frequently-asked-questions",
@@ -26,8 +49,9 @@ const nextConfig = {
         destination: "/pods",
         permanent: true,
       },
-      { source: "/my-journey.html", destination: "/my-journey", permanent: true },
-      { source: "/mi-viaje.html", destination: "/my-journey", permanent: true },
+      { source: "/my-journey", destination: "/", permanent: true },
+      { source: "/my-journey.html", destination: "/", permanent: true },
+      { source: "/mi-viaje.html", destination: "/", permanent: true },
       {
         source: "/experiences/experiences.html",
         destination: "/experiences",

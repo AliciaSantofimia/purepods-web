@@ -6,9 +6,9 @@ const heroImage =
 const podAerial =
   "/assets/img/tokoeka/tokoeka-purepod-aerial-forest-location-stewart-island.jpg";
 const podBedroom =
-  "/assets/img/tokoeka/PurePod%20Tokoeka%20glass%20cabin%20deck%20with%20ocean%20views%20and%20native%20forest%20New%20Zealand.jpg";
+  "/assets/img/tokoeka/PurePod Tokoeka glass cabin deck with ocean views and native forest New Zealand.jpg";
 const podAstro =
-  "/assets/img/tokoeka/PurePod%20Tokoeka%20glass%20cabin%20bedroom%20with%20ocean%20sunset%20view%20New%20Zealand.jpg";
+  "/assets/img/tokoeka/PurePod Tokoeka glass cabin bedroom with ocean sunset view New Zealand.jpg";
 const podSunsetCoastline =
   "/assets/img/tokoeka/tokoeka-purepod-sunset-stewart-island-coastline.jpg";
 const podSunriseBedroom =

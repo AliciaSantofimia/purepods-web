@@ -41,3 +41,6 @@ next-env.d.ts
 .tmp_ne110.json
 .tmp_nz_path.txt
 *.tsbuildinfo
+
+# Pre-optimization originals (local only; see docs/image-optimization/)
+.image-backups/

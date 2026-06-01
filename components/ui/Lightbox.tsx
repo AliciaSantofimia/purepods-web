@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useCallback } from "react";
 import type { StaticImageData } from "next/image";
 import styles from "./Lightbox.module.css";
@@ -10,6 +11,9 @@ interface LightboxProps {
   alt: string;
   onClose: () => void;
 }
+
+/** Max width requested from Next image optimizer for full-screen gallery view. */
+const LIGHTBOX_IMAGE_WIDTH = 2400;
 
 export function Lightbox({ isOpen, src, alt, onClose }: LightboxProps) {
   const handleKeyDown = useCallback(
@@ -63,16 +67,18 @@ export function Lightbox({ isOpen, src, alt, onClose }: LightboxProps) {
         >
           ✕
         </button>
-        {imageSrc && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+        {imageSrc ? (
+          <Image
             src={imageSrc}
             alt={alt}
+            fill
             className={styles.img}
-            style={{ objectFit: "contain" }}
+            sizes={`(max-width: ${LIGHTBOX_IMAGE_WIDTH}px) 92vw, ${LIGHTBOX_IMAGE_WIDTH}px`}
+            quality={85}
+            priority
             onClick={(e) => e.stopPropagation()}
           />
-        )}
+        ) : null}
       </div>
     </div>
   );
