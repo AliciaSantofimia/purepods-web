@@ -371,8 +371,9 @@ export function HomePageClient() {
             Stay present.
           </h1>
           <p className="hero__lead">
-            PurePods are secluded glass cabins set in real landscapes — calm,
-            minimal, and designed for two.
+            PurePods are private off-grid glass cabins set in secluded New
+            Zealand landscapes, designed for two guests to slow down, reconnect
+            with nature and experience stillness, stars and complete privacy.
           </p>
           <div className="hero__actions">
             <a className="btn btn-primary" href="https://purepods.com/booking/">
