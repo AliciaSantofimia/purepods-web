@@ -34,6 +34,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/experiences/wine-dine.html",
+        destination: "/experiences/wine-dine",
+        permanent: true,
+      },
+      {
         source: "/experiences/night-falls",
         destination: "/experiences/stargazing",
         permanent: true,
