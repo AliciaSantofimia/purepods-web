@@ -20,7 +20,7 @@ export type FooterProps = {
 
 const informationalLinks = [
   { href: "/our-story/", label: "Our Story" },
-  { href: "/frequently-asked-questions/", label: "FAQ" },
+  { href: "/frequently-asked-questions", label: "FAQ" },
   { href: "/contact-us/", label: "Contact Us" },
 ] as const;
 

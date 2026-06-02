@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   },
   description:
     "Frequently asked questions about PurePods, including privacy, cooking facilities, bookings, check-in, check-out, mobile reception and emergency contact.",
-  alternates: { canonical: "/frequently-asked-questions/" },
+  alternates: { canonical: "https://purepods.com/frequently-asked-questions" },
   openGraph: {
     type: "website",
     siteName: "PurePods",

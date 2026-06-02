@@ -60,7 +60,7 @@ export default function ContactUsPage() {
                   booking enquiries, please include your preferred dates, region,
                   or PurePod if you already have one in mind.
                 </p>
-                <Link href="/frequently-asked-questions/">
+                <Link href="/frequently-asked-questions">
                   Read frequently asked questions
                 </Link>
               </div>
