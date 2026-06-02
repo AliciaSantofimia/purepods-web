@@ -1,4 +1,5 @@
 import { AdventureWildlifePageTemplate } from "@/components/experiences/views/AdventureWildlifePageTemplate";
+import { EXPERIENCE_PAGES } from "@/lib/experiencesData";
 import {
   adventureContextBody,
   adventureContextHeading,
@@ -16,6 +17,7 @@ export function AdventureWildlifeView() {
     <AdventureWildlifePageTemplate
       faqJsonLd={faqJsonLd}
       hero={adventureHero}
+      breadcrumbLabel={EXPERIENCE_PAGES["adventure-wildlife"].breadcrumbLabel}
       heroTitle="Adventure & Wildlife Experiences in New Zealand"
       heroSummary="Days shaped by wildlife, water and open landscapes across New Zealand — then nights in your PurePod, where remote glass cabins settle you into stillness and the sound of the bush."
       contextHeading={adventureContextHeading}

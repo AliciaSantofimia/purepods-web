@@ -6,6 +6,8 @@ import { NightFallsFaqAccordion } from "@/components/experiences/NightFallsFaqAc
 import { NightFallsEffects } from "@/components/experiences/NightFallsEffects";
 import { NightFallsMoonTabs } from "@/components/experiences/NightFallsMoonTabs";
 import { Footer } from "@/components/layout/Footer";
+import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
+import { EXPERIENCE_PAGES } from "@/lib/experiencesData";
 
 const faq = [
   {
@@ -79,6 +81,13 @@ export function NightFallsView() {
               />
               <div className="heroStars" aria-hidden="true" />
               <div className="heroInner">
+                <Breadcrumbs
+                  items={[
+                    { label: "Home", href: "/" },
+                    { label: "Experiences", href: "/experiences" },
+                    { label: EXPERIENCE_PAGES.stargazing.breadcrumbLabel },
+                  ]}
+                />
                 <h1>Night Falls: dark-sky stargazing by PurePods</h1>
                 <p>
                   As the lights of the world fall away, your private off-grid

@@ -5,6 +5,7 @@ import { ExpStandardChrome } from "@/components/experiences/ExpStandardChrome";
 import { ForestCarouselBlock } from "@/components/experiences/ForestCarouselBlock";
 import { HikingCarouselBlock } from "@/components/experiences/HikingCarouselBlock";
 import { AdventureWildlifePageTemplate } from "@/components/experiences/views/AdventureWildlifePageTemplate";
+import { EXPERIENCE_PAGES } from "@/lib/experiencesData";
 import { adventureRestClosingSlides } from "@/lib/experiencesData/adventureWildlife";
 import {
   journeyAboutLeadHtml,
@@ -22,6 +23,7 @@ export function JourneyView() {
   return (
     <AdventureWildlifePageTemplate
       hero={journeyHero}
+      breadcrumbLabel={EXPERIENCE_PAGES.journey.breadcrumbLabel}
       heroTitle="Journey Experiences in New Zealand"
       heroSummary="Journey by PurePods connects walking tracks, cycling trails and scenic routes across New Zealand with private off-grid glass cabins made for slowing down between landscapes, from one PurePod to the next."
       contextHeading={journeyContextHeading}

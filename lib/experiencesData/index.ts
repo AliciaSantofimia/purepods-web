@@ -10,6 +10,7 @@ export type ExperienceSlug =
 export type ExperiencePageContent = {
   kicker: string;
   heading: string;
+  breadcrumbLabel: string;
   metaTitle: string;
   description: string;
   heroSrc: string;
@@ -20,6 +21,7 @@ export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
   stargazing: {
     kicker: "Stargazing",
     heading: "Night Falls",
+    breadcrumbLabel: "Night Falls",
     metaTitle: "Night Falls | Stargazing Experiences in New Zealand — PurePods",
     description:
       "Discover Night Falls by PurePods: stargazing in private off-grid glass cabins across New Zealand, with dark skies, moon phases and meteor showers.",
@@ -29,6 +31,7 @@ export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
   romance: {
     kicker: "Retreat",
     heading: "Romantic getaway",
+    breadcrumbLabel: "Romantic",
     metaTitle: "Romantic Getaways in New Zealand | PurePods Glass Cabins",
     description:
       "Romantic getaways in New Zealand: a private off-grid glass cabin for two with privacy, nature, stars and moments for anniversaries, proposals or honeymoons.",
@@ -39,6 +42,7 @@ export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
   journey: {
     kicker: "Journeys",
     heading: "Scenic routes",
+    breadcrumbLabel: "Journey",
     metaTitle:
       "Journey Experiences in New Zealand | Walking, Hiking & Scenic Routes — PurePods",
     description:
@@ -49,6 +53,7 @@ export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
   "adventure-wildlife": {
     kicker: "Adventure & wildlife",
     heading: "Adventure & wildlife",
+    breadcrumbLabel: "Adventure & Wildlife",
     metaTitle: "Wildlife & Adventure Experiences in New Zealand | PurePods",
     description:
       "Discover curated wildlife and adventure experiences across New Zealand — from whale watching in Kaikōura to remote scenic flights — paired with nearby PurePod stays in quiet natural settings.",
@@ -60,6 +65,7 @@ export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
   "wine-dine": {
     kicker: "Wine & dine",
     heading: "Wine & dine",
+    breadcrumbLabel: "Wine & Dine",
     metaTitle: "Wine & Dine in New Zealand | Food & Wine Getaways — PurePods",
     description:
       "Explore Wine & Dine by PurePods: food and wine getaways in New Zealand with vineyard dining, local flavours and nearby private off-grid glass cabins.",
@@ -70,6 +76,7 @@ export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
   "relax-coastal": {
     kicker: "Relax & coastal",
     heading: "Relax & coastal",
+    breadcrumbLabel: "Relax & Coastal",
     metaTitle: "Relaxing Coastal Getaways in New Zealand | PurePods",
     description:
       "Relax & Coastal by PurePods: relaxing getaways in New Zealand with geothermal waters, coastal escapes, private glass cabins, slow mornings and quiet evenings.",
@@ -80,6 +87,7 @@ export const EXPERIENCE_PAGES: Record<ExperienceSlug, ExperiencePageContent> = {
   culture: {
     kicker: "Culture",
     heading: "Culture",
+    breadcrumbLabel: "Culture",
     metaTitle:
       "Cultural Experiences in New Zealand | Heritage, Māori Culture & PurePods",
     description:

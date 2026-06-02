@@ -4,6 +4,8 @@ import { ExperienceRevealMotionRoot } from "@/components/experiences/ExperienceR
 import { ExpStandardChrome } from "@/components/experiences/ExpStandardChrome";
 import { RomanticGalleryClient } from "@/components/experiences/RomanticGalleryClient";
 import { AdventureWildlifeFaqAccordion } from "@/components/experiences/views/AdventureWildlifeFaqAccordion";
+import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
+import { EXPERIENCE_PAGES } from "@/lib/experiencesData";
 import {
   romanticFaq,
   romanticGallery,
@@ -36,6 +38,13 @@ export function RomanticView() {
               objectPosition="center 42%"
             />
             <div className="heroInner">
+              <Breadcrumbs
+                items={[
+                  { label: "Home", href: "/" },
+                  { label: "Experiences", href: "/experiences" },
+                  { label: EXPERIENCE_PAGES.romance.breadcrumbLabel },
+                ]}
+              />
               <h1>Where time moves slower.</h1>
               <p className="impact-summary">
                 A romantic getaway in New Zealand for two: a private off-grid

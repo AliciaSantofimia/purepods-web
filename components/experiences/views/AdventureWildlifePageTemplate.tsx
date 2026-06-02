@@ -6,6 +6,7 @@ import { AdventureRestClosingCarousel } from "@/components/experiences/Adventure
 import { AdventureWildlifeChrome } from "@/components/experiences/AdventureWildlifeChrome";
 import { ExperienceRevealMotionRoot } from "@/components/experiences/ExperienceRevealMotionRoot";
 import { AdventureWildlifeFaqAccordion } from "@/components/experiences/views/AdventureWildlifeFaqAccordion";
+import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
 import type {
   AdventureExperienceSlide,
   AdventureRestClosingSlide,
@@ -20,6 +21,7 @@ type AdventureWildlifePageTemplateProps = {
     src: string;
     alt: string;
   };
+  breadcrumbLabel: string;
   heroTitle: string;
   heroSummary: string;
   contextHeading: string;
@@ -45,6 +47,7 @@ export function AdventureWildlifePageTemplate({
   faqJsonLd,
   experienceClassName,
   hero,
+  breadcrumbLabel,
   heroTitle,
   heroSummary,
   contextHeading,
@@ -102,6 +105,13 @@ export function AdventureWildlifePageTemplate({
                 priority
               />
               <div className="heroInner">
+                <Breadcrumbs
+                  items={[
+                    { label: "Home", href: "/" },
+                    { label: "Experiences", href: "/experiences" },
+                    { label: breadcrumbLabel },
+                  ]}
+                />
                 <h1>{heroTitle}</h1>
                 <p className="impact-summary">{heroSummary}</p>
               </div>

@@ -4,6 +4,7 @@ import { ExperienceRevealMotionRoot } from "@/components/experiences/ExperienceR
 import { ExpStandardChrome } from "@/components/experiences/ExpStandardChrome";
 import { HikingCarouselBlock } from "@/components/experiences/HikingCarouselBlock";
 import { AdventureWildlifePageTemplate } from "@/components/experiences/views/AdventureWildlifePageTemplate";
+import { EXPERIENCE_PAGES } from "@/lib/experiencesData";
 import { adventureRestClosingSlides } from "@/lib/experiencesData/adventureWildlife";
 import {
   wineDineAboutLeadHtml,
@@ -22,6 +23,7 @@ export function WineDineView() {
   return (
     <AdventureWildlifePageTemplate
       hero={wineDineHero}
+      breadcrumbLabel={EXPERIENCE_PAGES["wine-dine"].breadcrumbLabel}
       heroTitle="Wine & Dine Experiences in New Zealand"
       heroSummary="Wine & Dine by PurePods pairs New Zealand food and wine experiences with nearby private off-grid glass cabins, from vineyard lunches and winery restaurants to local dining, regional flavours and quiet nights close to the landscape."
       contextHeading={wineDineContextHeading}

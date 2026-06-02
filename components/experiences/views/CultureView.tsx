@@ -1,4 +1,5 @@
 import { AdventureWildlifePageTemplate } from "@/components/experiences/views/AdventureWildlifePageTemplate";
+import { EXPERIENCE_PAGES } from "@/lib/experiencesData";
 import { adventureRestClosingSlides } from "@/lib/experiencesData/adventureWildlife";
 import {
   cultureContextBody,
@@ -13,6 +14,7 @@ export function CultureView() {
     <AdventureWildlifePageTemplate
       experienceClassName="culture-ref"
       hero={cultureHero}
+      breadcrumbLabel={EXPERIENCE_PAGES.culture.breadcrumbLabel}
       heroTitle="Culture Experiences in New Zealand"
       heroSummary="Culture by PurePods connects heritage places, Māori cultural experiences, local stories and meaningful travel across Aotearoa New Zealand with nearby private glass cabins made for quiet reflection after the day."
       contextHeading={cultureContextHeading}

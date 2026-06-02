@@ -8,6 +8,7 @@ import {
   LocationReviewsSection,
 } from "@/components/location";
 import { LocationPodNavHeroSync } from "@/components/location/LocationPodNavHeroSync";
+import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
 import type { EditorialPodLocationConfig } from "@/lib/locationPods/experimental/editorialPodLocationTypes";
 import { RuruExperimentalImageCarousel } from "./RuruExperimentalImageCarousel";
 import { RuruExperimentalLightboxImage } from "./RuruExperimentalLightboxImage";
@@ -110,6 +111,13 @@ export function EditorialPodLocationView({ config }: Props) {
           </div>
           <div className={styles.heroInner}>
             <div className={styles.heroCopy}>
+              <Breadcrumbs
+                items={[
+                  { label: "Home", href: "/" },
+                  { label: "Pods", href: "/pods" },
+                  { label: hero.title },
+                ]}
+              />
               <p className={styles.heroKicker}>{config.heroKicker}</p>
               <h1 className={styles.heroTitle}>{hero.title}</h1>
               {hero.subtitleParagraphs.map((para, i) => (

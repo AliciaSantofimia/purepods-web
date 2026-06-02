@@ -4,6 +4,7 @@ import { ExpStandardChrome } from "@/components/experiences/ExpStandardChrome";
 import { StayAtLink } from "@/components/experiences/stayAtLink";
 import { RelaxCoastalMotionRoot } from "@/components/experiences/views/RelaxCoastalMotionRoot";
 import { AdventureWildlifePageTemplate } from "@/components/experiences/views/AdventureWildlifePageTemplate";
+import { EXPERIENCE_PAGES } from "@/lib/experiencesData";
 import { adventureRestClosingSlides } from "@/lib/experiencesData/adventureWildlife";
 import {
   relaxAboutParagraphs,
@@ -261,6 +262,7 @@ export function RelaxCoastalView() {
   return (
     <AdventureWildlifePageTemplate
       hero={relaxHero}
+      breadcrumbLabel={EXPERIENCE_PAGES["relax-coastal"].breadcrumbLabel}
       heroTitle="Relax & Coastal Experiences in New Zealand"
       heroSummary="Relax & Coastal by PurePods brings together geothermal waters, forest springs, coastal air and private glass cabins across New Zealand, made for slow mornings, quiet evenings and restorative time in nature."
       contextHeading={relaxContextHeading}
