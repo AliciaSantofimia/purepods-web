@@ -13,6 +13,8 @@ import { NightFallsView } from "@/components/experiences/views/NightFallsView";
 import { RelaxCoastalView } from "@/components/experiences/views/RelaxCoastalView";
 import { RomanticView } from "@/components/experiences/views/RomanticView";
 import { WineDineView } from "@/components/experiences/views/WineDineView";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { createBreadcrumbListJsonLd } from "@/lib/seo/breadcrumbList";
 import "../experienceRef.css";
 import "../adventureWildlifeRef.css";
 import "../romanticRef.css";
@@ -69,7 +71,24 @@ export default function ExperienceDetailPage({ params }: Props) {
   }
 
   const slug = params.slug as ExperienceSlug;
+  const breadcrumbJsonLd = createBreadcrumbListJsonLd([
+    { name: "Home", item: "https://purepods.com/" },
+    { name: "Experiences", item: "https://purepods.com/experiences" },
+    {
+      name: EXPERIENCE_PAGES[slug].breadcrumbLabel,
+      item: `${SITE_URL}/experiences/${slug}`,
+    },
+  ]);
 
+  return (
+    <>
+      <JsonLd data={breadcrumbJsonLd} />
+      {renderExperienceView(slug)}
+    </>
+  );
+}
+
+function renderExperienceView(slug: ExperienceSlug) {
   switch (slug) {
     case "adventure-wildlife":
       return <AdventureWildlifeView />;
@@ -85,7 +104,5 @@ export default function ExperienceDetailPage({ params }: Props) {
       return <WineDineView />;
     case "stargazing":
       return <NightFallsView />;
-    default:
-      notFound();
   }
 }
