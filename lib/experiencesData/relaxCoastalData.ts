@@ -126,7 +126,7 @@ export const relaxExperienceSlides: AdventureExperienceSlide[] = [
     distance: "Banks Peninsula beach",
     timing: "coastal day trip",
     nearbyRegion: " — Banks Peninsula, South Island",
-    url: "https://maps.app.goo.gl/",
+    url: "https://www.lytteltoninfocentre.nz/purau-bay",
   },
 ];
 
