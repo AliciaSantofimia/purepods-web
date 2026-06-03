@@ -30,7 +30,7 @@ export const journeyExperienceSlides: AdventureExperienceSlide[] = [
     distance: "Bay of Islands bike park",
     timing: "half-day ride",
     nearbyRegion: " — Waitangi / Kerikeri, North Island",
-    url: "https://www.wmbp.nz/",
+    url: "https://ridewaitangi.nz/",
   },
   {
     image: `${J}redwoods-treewalk-rotorua.jpg`,
@@ -64,7 +64,7 @@ export const journeyExperienceSlides: AdventureExperienceSlide[] = [
     distance: "Kāpiti Coast walk",
     timing: "day hike",
     nearbyRegion: " — Kāpiti Coast, North Island",
-    url: "https://www.wellingtonnz.com/visit/trails/paekakariki-escarpment-track",
+    url: "https://www.wellingtonnz.com/visit/trails/escarpment-track",
   },
   {
     image: `${J}karangahake-gorge-coromandel.jpg`,
@@ -96,7 +96,7 @@ export const journeyExperienceSlides: AdventureExperienceSlide[] = [
     distance: "Kaikōura coastal walk",
     timing: "short sections or longer loop",
     nearbyRegion: " — Kaikōura region, South Island",
-    url: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/kaikoura-area/things-to-do/kaikoura-peninsula-walkway/",
+    url: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/kaikoura-area/things-to-do/tracks/kaikoura-peninsula-walkway/",
   },
   {
     image: `${J}lake-dunstan-trail-central-otago.jpg`,
