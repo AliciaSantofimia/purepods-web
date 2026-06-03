@@ -63,7 +63,7 @@ export const relaxExperienceSlides: AdventureExperienceSlide[] = [
     distance: "Rotorua forest hot tubs",
     timing: "private soaking",
     nearbyRegion: " — Rotorua region, North Island",
-    url: "https://secretspot.co.nz/",
+    url: "https://secretspot.nz/",
   },
   {
     image: `${RC}hells-gate-geothermal-reserve-mud-spa-rotorua.jpg`,
@@ -114,7 +114,7 @@ export const relaxExperienceSlides: AdventureExperienceSlide[] = [
     distance: "Bay of Plenty coastline",
     timing: "best in settled weather",
     nearbyRegion: " — Waihi Beach, North Island",
-    url: "https://www.waihibeachinfo.co.nz/",
+    url: "https://waihibeach.co.nz/",
   },
   {
     image: `${RC}purau-bay-beach-near-pohue-purepod-banks-peninsula-new-zealand.jpg`,
@@ -205,7 +205,7 @@ export const relaxRcChapters: RelaxRcChapter[] = [
           "Private cedar tubs set in native forest — ferns close, water nearby, and little else competing for attention.",
           "Designed for quiet, unhurried time.",
         ],
-        officialHref: "https://secretspot.co.nz/",
+        officialHref: "https://secretspot.nz/",
         figure: {
           src: `${RC}secret-spot-purepods-forest-hot-tub-ferns-rotorua.jpg`,
           alt: "Private cedar hot tub surrounded by native ferns in a tranquil forest setting in Rotorua, New Zealand",

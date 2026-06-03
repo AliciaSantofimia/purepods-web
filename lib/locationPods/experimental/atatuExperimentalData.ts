@@ -256,7 +256,7 @@ const atatuExperiencesBlock = {
       links: [
         {
           name: "Weka Pass Railway",
-          href: "https://www.wekapassrailway.co.nz/",
+          href: "https://wekapassrailway.co.nz/",
         },
       ],
     },

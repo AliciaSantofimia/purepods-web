@@ -273,7 +273,7 @@ export const journeyCyclingSlides: HikingSlide[] = [
     image: `${J}hauraki-rail-trail-coastal-cycle-path-coromandel-new-zealand.jpg`,
     alt: "Hauraki Rail Trail",
     title: "Hauraki Rail Trail",
-    placeHref: "https://haurakirailtrail.co.nz/",
+    placeHref: "https://www.haurakirailtrail.co.nz/",
     description:
       "A scenic and relaxed cycling journey following historic railway lines through lush countryside, rivers and charming towns. Perfect for all levels, with plenty of stops to enjoy the landscape along the way.",
     ctas: [
@@ -325,7 +325,7 @@ export const journeyCyclingSlides: HikingSlide[] = [
     image: `${J}karangahake-gorge-coromandel.jpg`,
     alt: "Karangahake Gorge — Hauraki Rail Trail bridges and river gorge",
     title: "Karangahake Gorge (Hauraki Rail Trail)",
-    placeHref: "https://haurakirailtrail.co.nz/",
+    placeHref: "https://www.haurakirailtrail.co.nz/",
     description:
       "Ride the Hauraki Rail Trail through a dramatic river gorge: suspension bridges, historic mining relics and native bush close to the track. One of the North Island’s most memorable rail-trail sections.",
     ctas: [

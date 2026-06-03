@@ -222,7 +222,7 @@ const pohueExperiencesBlock = {
       links: [
         {
           label: "Explore Akaroa",
-          href: "https://www.akaroa.com/",
+          href: "https://akaroa.com/",
         },
         {
           label: "Explore Pōhatu Penguins (Plunge NZ Ltd)",

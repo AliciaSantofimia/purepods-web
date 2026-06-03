@@ -225,7 +225,7 @@ const haurapaExperiencesBlock = {
       links: [
         {
           label: "Explore Bannockburn Sluicings Historic Reserve",
-          href: "https://doc.govt.nz/parks-and-recreation/places-to-go/otago/places/bannockburn-area/things-to-do/bannockburn-sluicings-track",
+          href: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/bannockburn-area/things-to-do/bannockburn-sluicings-track",
         },
       ],
     },

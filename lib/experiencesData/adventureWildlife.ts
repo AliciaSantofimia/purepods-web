@@ -100,7 +100,7 @@ export const adventureExperienceSlides: AdventureExperienceSlide[] = [
     distance: "Weather dependent",
     timing: "best in calm conditions",
     nearbyRegion: " — Stewart Island / Rakiura",
-    url: "http://www.stewartislandflights.com/",
+    url: "https://www.stewartislandflights.co.nz/",
   },
   {
     image: `${B}little-blue-penguin-korora-pohatu-akaroa-new-zealand.jpg`,

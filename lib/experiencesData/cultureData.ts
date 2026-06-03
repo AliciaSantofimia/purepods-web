@@ -248,7 +248,7 @@ export const cultureMuseumsSlides: HikingSlide[] = [
     image: `${C}international-antarctic-centre-igloo-experience-christchurch-new-zealand-family-activity.png`,
     alt: "International Antarctic Centre Christchurch New Zealand igloo experience, indoor snow family activity, Antarctic simulation and Hagglund vehicle",
     title: "International Antarctic Centre",
-    placeHref: "http://www.iceberg.co.nz/",
+    placeHref: "https://www.iceberg.co.nz/",
     description:
       "An immersive journey into the world of Antarctica, where you can experience icy storms, meet rescued penguins, and explore the extreme environment of the southern continent. Engaging, unexpected and unforgettable.",
     ctas: [{ label: "Stay at Greystone, Waipara →", href: "/location/greystone/?from=culture" }],
@@ -283,7 +283,7 @@ export const cultureMuseumsSlides: HikingSlide[] = [
     image: `${C}fyffe-house-kaikoura-historic-whaling-heritage-new-zealand-coastal.png`,
     alt: "Fyffe House Kaikōura New Zealand historic coastal heritage building, former whaling house, colonial architecture and garden setting",
     title: "Fyffe House",
-    placeHref: "http://www.fyffehouse.co.nz/",
+    placeHref: "https://www.visitheritage.co.nz/visit/upper-south-island/fyffe-house",
     description:
       "Set right on the coastline, this historic house built on whale bone foundations offers a unique glimpse into early life in Kaikōura. Raw, coastal and full of character.",
     ctas: [
@@ -298,7 +298,7 @@ export const cultureIndustrySlides: HikingSlide[] = [
     image: `${C}goldfields-mining-centre-cromwell-gold-rush-central-otago-new-zealand.png`,
     alt: "Goldfields Mining Centre Cromwell Central Otago New Zealand historic gold rush site with gold panning, Kawarau River, mining heritage and rugged landscape",
     title: "Goldfields Mining Centre",
-    placeHref: "http://www.goldfieldsmining.co.nz/",
+    placeHref: "https://www.goldfieldsmining.co.nz/",
     description:
       "Step into the gold rush era and try your hand at gold panning in a rugged Central Otago landscape. A hands-on experience that brings history to life in a raw and authentic way.",
     ctas: [
@@ -349,7 +349,7 @@ export const cultureIndustrySlides: HikingSlide[] = [
     image: `${C}victoria-battery-mine-tunnel-karangahake-gorge-gold-mining-new-zealand.png`,
     alt: "Victoria Battery mine tunnel Karangahake Gorge New Zealand historic gold mining site with underground tunnel, rusty cart tracks and industrial heritage atmosphere",
     title: "Victoria Battery Tramway & Museum",
-    placeHref: "https://www.vbts.org.nz/",
+    placeHref: "https://vbts.org.nz/",
     description:
       "Explore the atmospheric remains of one of the largest gold processing plants in the Southern Hemisphere. Industrial ruins set within nature create a powerful contrast between past and present.",
     ctas: [

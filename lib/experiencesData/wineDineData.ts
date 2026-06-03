@@ -31,7 +31,7 @@ export const wineDineExperienceSlides: AdventureExperienceSlide[] = [
     distance: "Central Otago vineyard",
     timing: "book tastings ahead",
     nearbyRegion: " — Central Otago, South Island",
-    url: "https://tekanoestate.com/",
+    url: "https://www.tekanoestate.com/",
   },
   {
     image: "/assets/img/experiences/wine-dine/black-estate-winery-dining-wine-pairing-waipara-valley-new-zealand.jpg",
