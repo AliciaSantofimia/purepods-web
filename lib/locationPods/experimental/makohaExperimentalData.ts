@@ -289,7 +289,7 @@ const makohaExperiencesBlock = {
     {
       label: "Quiet beaches",
       place: "Matauri Bay & Te Ngaere Bay",
-      href: "https://www.newzealand.com/int/plan/bay/bay-of-islands/",
+      href: "https://www.newzealand.com/int/matauri-bay/",
     },
   ],
 };
