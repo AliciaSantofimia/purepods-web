@@ -299,7 +299,7 @@ export const journeyCyclingSlides: HikingSlide[] = [
     image: `${J}Woodhill Mountain Bike Park, Muriwai coast.jpg`,
     alt: "Woodhill Mountain Bike Park",
     title: "Woodhill Mountain Bike Park",
-    placeHref: "https://www.bikeparks.co.nz/es",
+    placeHref: "https://www.bikeparks.co.nz/",
     description:
       "A purpose-built riding destination set within a vast pine forest, offering trails for every level from flowing beginner tracks to technical downhill lines. A must-visit for mountain biking enthusiasts near Auckland.",
     ctas: [

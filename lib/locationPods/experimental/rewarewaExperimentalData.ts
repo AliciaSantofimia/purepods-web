@@ -271,7 +271,7 @@ const rewarewaExperiencesBlock = {
       links: [
         {
           name: "Woodhill MTB Park",
-          href: "https://www.bikeparks.co.nz/es",
+          href: "https://www.bikeparks.co.nz/",
         },
         {
           name: "Tree Adventures (zip lines & treetop course)",

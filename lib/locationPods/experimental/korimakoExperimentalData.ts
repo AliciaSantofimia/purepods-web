@@ -279,7 +279,7 @@ const korimakoExperiencesBlock = {
       links: [
         {
           name: "Amberley Farmers’ Market",
-          href: "https://www.facebook.com/amberleyfarmersmarket/",
+          href: "https://www.amberleyfarmersmarket.org.nz/",
         },
       ],
     },

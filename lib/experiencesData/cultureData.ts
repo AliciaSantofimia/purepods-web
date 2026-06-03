@@ -107,7 +107,7 @@ export const cultureExperienceSlides: AdventureExperienceSlide[] = [
     distance: "Banks Peninsula cultural connection",
     timing: "confirm access before travelling",
     nearbyRegion: " — Banks Peninsula, South Island",
-    url: "https://www.facebook.com/koukourarata/",
+    url: "https://ngaitahu.iwi.nz/ngai-tahu/papatipu-runanga/koukourarata/",
   },
   {
     image: `${C}new-zealand-maritime-museum-auckland-viaduct-harbour-exterior-waterfront.png`,
@@ -173,7 +173,7 @@ export const cultureMaoriSlides: ForestSlide[] = [
     image: `${C}koukourarata-marae-banks-peninsula-maori-meeting-house-cultural-new-zealand.jpg`,
     alt: "Traditional Māori meeting house at Koukourarata Marae Banks Peninsula with carved wood architecture and cultural heritage New Zealand",
     title: "Te Rūnanga o Koukourarata, Tūtehuarewa Marae",
-    placeHref: "https://www.facebook.com/koukourarata/",
+    placeHref: "https://ngaitahu.iwi.nz/ngai-tahu/papatipu-runanga/koukourarata/",
     description:
       "A more intimate and authentic cultural connection on Banks Peninsula. Engage with local iwi, learn about traditions, and experience the significance of the marae as a place of community, identity, and storytelling.",
     ctaLabel: "Stay at Pōhue, Banks Peninsula →",
